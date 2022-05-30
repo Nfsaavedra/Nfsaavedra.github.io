@@ -1,9 +1,17 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
+    <b-navbar variant=primary>
+      <div style="display: block; width: 100%;">
+        <div style="font-size: 40pt; color: black">Nuno Saavedra</div>
+        <b-navbar-nav style="margin-left: 27.5%; width: 45%;" align="center" justified=true>
+          <b-nav-item  href="/">Home</b-nav-item >
+          <b-nav-item  href="/about">About Me</b-nav-item>
+          <b-nav-item  href="/projects">Projects</b-nav-item >
+          <b-nav-item  href="/publications">Publications</b-nav-item>
+          <b-nav-item  href="/contacts">Contacts</b-nav-item>
+        </b-navbar-nav>
+      </div>
+    </b-navbar>
     <router-view/>
   </div>
 </template>
