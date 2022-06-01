@@ -17,7 +17,7 @@
           {{ article['description'] }}
           </b-card-text>
 
-          <b-button class="article-button" :href="'article?id=' + id" variant="secondary">
+          <b-button class="article-button" :href="'/#/article?id=' + id" variant="secondary">
             Read article
           </b-button>
       </b-card>
