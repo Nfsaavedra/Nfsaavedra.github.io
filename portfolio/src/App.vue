@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <b-navbar style="height: 11%" toggleable="xl" variant=white>
+    <b-navbar id="navbar" toggleable="xl" variant=white>
       <div style="display: block; width: 100%;">
         <div id="logo-name">Nuno Saavedra</div>
 
@@ -23,11 +23,47 @@
         </b-collapse>
       </div>
     </b-navbar>
-    <router-view style="height: 85%"/>
+    <router-view id="view"/>
   </div>
 </template>
 
 <style lang="scss">
+#view {
+  background-color: var(--primary);
+  color: black;
+}
+
+@media screen and (min-width: 1024px) {
+  #view {
+    height: 85% !important;
+  }
+  #navbar {
+    height: 11% !important;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px){
+  #view {
+    height: 85% !important;
+  }
+  #navbar {
+    min-height: 11% !important;
+  }
+}
+
+@media screen and (max-width: 767px){
+  #view {
+    height: 80% !important;
+  }
+  #navbar {
+    min-height: 16% !important;
+  }
+}
+
+h1 {
+  margin-top: 2% !important; 
+  margin-bottom: 2% !important;
+}
 
 html, body {
   height: 100vh;
