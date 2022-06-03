@@ -9,8 +9,8 @@
       >
         <div class="authors">
           <div style="display: inline; margin-right: 8px;">{{ publication['authors'] }} - {{ publication['date'] }}</div>
-          <b-badge pill :href="publication['link']">PDF</b-badge>
-          <b-badge v-for="b in publication['badges']" pill :href="b['link']" :key="b['name']">
+          <b-badge pill :href="publication['link']" target="_blank">PDF</b-badge>
+          <b-badge v-for="b in publication['badges']" target="_blank" pill :href="b['link']" :key="b['name']">
             {{ b['name'] }}
           </b-badge>
         </div>

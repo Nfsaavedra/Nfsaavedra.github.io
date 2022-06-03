@@ -24,10 +24,34 @@
       </div>
     </b-navbar>
     <router-view id="view"/>
+    <footer>
+      <div class="footer-space" style="margin-left: 12vh"/>
+      <div>©2022-2022 Nuno Saavedra</div>
+      <div class="footer-icons">
+        <b-avatar href="mailto: nuno@saavedra.pt" size="3vh" target="_blank" icon="envelope"></b-avatar>
+        <b-avatar href="https://github.com/Nfsaavedra" size="3vh" target="_blank" icon="github"></b-avatar>
+        <b-avatar href="https://scholar.google.com/citations?user=iYiwTYUAAAAJ" size="3vh" target="_blank" icon="google"></b-avatar>
+      </div>
+    </footer>
   </div>
 </template>
 
 <style lang="scss">
+footer {
+  height: 4%; 
+  width: 100%; 
+  background-color: white; 
+  position: fixed; 
+  bottom: 0;
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer > div > .b-avatar {
+  margin-right: 1vh;
+}
+
 #view {
   background-color: var(--primary);
   color: black;
@@ -35,8 +59,9 @@
 
 @media screen and (min-width: 1024px) {
   #view {
-    height: 85% !important;
+    height: 82% !important;
   }
+
   #navbar {
     height: 11% !important;
   }
@@ -44,8 +69,9 @@
 
 @media screen and (min-width: 768px) and (max-width: 1023px){
   #view {
-    height: 85% !important;
+    height: 82% !important;
   }
+
   #navbar {
     min-height: 11% !important;
   }
@@ -53,10 +79,23 @@
 
 @media screen and (max-width: 767px){
   #view {
-    height: 80% !important;
+    height: 77% !important;
   }
+
   #navbar {
     min-height: 16% !important;
+  }
+
+  footer {
+    justify-content: center;
+  }
+
+  .footer-space {
+    display: none;
+  }
+
+  .footer-icons {
+    display: none;
   }
 }
 
