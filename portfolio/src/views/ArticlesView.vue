@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Blog</h1>
-    <div id="articles" style="overflow: auto; max-height: calc(96% - 40px);">
+    <div id="articles" style="overflow: auto;">
       <b-card
           :title="article['name']"
           :img-src="article['image']"
@@ -45,6 +45,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  max-height: calc(96% - 120px);
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px){
@@ -52,6 +53,7 @@ export default {
     justify-content: flex-start;
     flex-wrap: nowrap;
     flex-direction: column;
+    max-height: calc(96% - 40px);
   }
 
   .article {
@@ -65,6 +67,7 @@ export default {
     align-items: center;
     flex-wrap: nowrap;
     flex-direction: column;
+    max-height: calc(96% - 40px);
   }
 
   .article {
