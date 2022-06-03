@@ -74,16 +74,19 @@ html, body {
 @font-face {
   font-family: "Lobster";
   src: local("Lobster"), url("./fonts/Lobster/Lobster-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
     font-family: "Nunito";
     src: url("./fonts/Nunito/NunitoSans-Regular.ttf");
+    font-display: swap;
 }
 @font-face {
     font-family: "Nunito";
     src: url("./fonts/Nunito/NunitoSans-Bold.ttf");
     font-weight: bold;
+    font-display: swap;
 }
 
 #app {
