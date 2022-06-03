@@ -48,3 +48,19 @@ export const ARTICLES = {
         "path": "helloworld.md"
     }
 }
+
+export const PUBLICATIONS = [
+    {
+        title: "GLITCH: an Intermediate-Representation-Based Security Analysis for Infrastructure as Code Scripts",
+        abstract: "Infrastructure as Code (IaC) is the process of managing IT infrastructure via programmable configuration files (also called IaC scripts). Like other software artifacts, IaC scripts may contain security smells, which are coding patterns that can result in security weaknesses. Automated analysis tools to detect security smells in IaC scripts exist, but they focus on specific technologies such as Puppet, Ansible, or Chef. This means that when the detection of a new smell is implemented in one of the tools, it is not immediately available for the technologies supported by the other tools -- the only option is to duplicate the effort. This paper presents GLITCH, a new technology-agnostic framework that enables automated polyglot smell detection by transforming IaC scripts into an intermediate representation, on which different security smell detectors can be defined. GLITCH currently supports the detection of nine different security smells in scripts written in Puppet, Ansible, or Chef. We compare GLITCH with state-of-the-art security smell detectors. The results obtained not only show that GLITCH can reduce the effort of writing security smell analyses for multiple IaC technologies, but also that it has higher precision and recall than the current state-of-the-art tools.",
+        authors: "Nuno Saavedra, João F. Ferreira",
+        date: "May 2022",
+        link: "https://arxiv.org/pdf/2205.14371.pdf",
+        badges: [
+            {
+                name: "Submitted to ASE 2022",
+                link: "https://conf.researchr.org/home/ase-2022"
+            }
+        ]
+    }
+]

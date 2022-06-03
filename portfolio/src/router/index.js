@@ -25,6 +25,11 @@ const routes = [
     name: 'articles',
     component: () => import('../views/ArticlesView.vue')
   },
+  {
+    path: '/publications',
+    name: 'publications',
+    component: () => import('../views/PublicationsView.vue')
+  },
 ]
 
 const router = new VueRouter({
