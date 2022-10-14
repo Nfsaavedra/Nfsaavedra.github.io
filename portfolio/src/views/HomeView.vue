@@ -7,18 +7,18 @@
       indicators
       img-height="480"
     >
-
-        <b-carousel-slide
-          caption="Hello world!"
-        >
-          <template #img>
-            <img
-              class="d-block img-fluid w-100 overlay"
-              :src="img_code"
-            >
-          </template>
-        </b-carousel-slide>
+      <b-carousel-slide
+        caption="Hello world!"
+      >
+        <template #img>
+          <img
+            class="d-block img-fluid w-100 overlay"
+            :src="img_code"
+          >
+        </template>
+      </b-carousel-slide>
     </b-carousel>
+    <b-avatar src="img/avatar.png" size="15vh"></b-avatar>
   </div>
 </template>
 
