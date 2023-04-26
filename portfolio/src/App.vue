@@ -31,7 +31,7 @@
         <b-avatar href="mailto: nuno@saavedra.pt" style="background-color: white;" size="3vh" target="_blank" src="img/email.svg"></b-avatar>
         <b-avatar href="https://github.com/Nfsaavedra" style="background-color: white;" size="3vh" target="_blank" src="img/github.svg"></b-avatar>
         <b-avatar href="https://scholar.google.com/citations?user=iYiwTYUAAAAJ" style="background-color: #535e79;" size="3vh" target="_blank" src="img/scholar.svg"></b-avatar>
-        <b-avatar href="https://scholar.google.com/citations?user=iYiwTYUAAAAJ" style="background-color: white;" size="3vh" target="_blank" src="img/orcid.svg"></b-avatar>
+        <b-avatar href="https://orcid.org/0000-0003-4148-5991" style="background-color: white;" size="3vh" target="_blank" src="img/orcid.svg"></b-avatar>
       </div>
     </footer>
   </div>
