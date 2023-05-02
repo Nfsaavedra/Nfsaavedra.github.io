@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <b-navbar id="navbar" toggleable="xl" variant=white>
+    <b-navbar style="min-height: 160px" id="navbar" toggleable="xl" variant=white>
       <div style="display: block; width: 100%;">
         <div id="logo-name">Nuno Saavedra</div>
 
@@ -18,12 +18,12 @@
             <!-- <b-nav-item  href="/#/projects">Projects</b-nav-item > -->
             <b-nav-item  href="/#/publications">Publications</b-nav-item>
             <!-- <b-nav-item  href="/#/blog">Blog</b-nav-item> -->
-            <b-nav-item  href="/#/contacts">Contacts</b-nav-item>
+            <!-- <b-nav-item  href="/#/contacts">Contacts</b-nav-item> -->
           </b-navbar-nav>
         </b-collapse>
       </div>
     </b-navbar>
-    <router-view id="view"/>
+    <router-view id="view" style="padding-bottom: 4vh;"/>
     <footer>
       <div class="footer-space" style="margin-left: 12vh"/>
       <div>©2022-2023 Nuno Saavedra</div>
@@ -31,6 +31,7 @@
         <b-avatar href="mailto: nuno@saavedra.pt" style="background-color: white;" size="3vh" target="_blank" src="img/email.svg"></b-avatar>
         <b-avatar href="https://github.com/Nfsaavedra" style="background-color: white;" size="3vh" target="_blank" src="img/github.svg"></b-avatar>
         <b-avatar href="https://scholar.google.com/citations?user=iYiwTYUAAAAJ" style="background-color: #535e79;" size="3vh" target="_blank" src="img/scholar.svg"></b-avatar>
+        <b-avatar href="https://twitter.com/nunofsaavedra" style="background-color: #535e79;" size="3vh" target="_blank" src="img/twitter.svg"></b-avatar>
         <b-avatar href="https://orcid.org/0000-0003-4148-5991" style="background-color: white;" size="3vh" target="_blank" src="img/orcid.svg"></b-avatar>
       </div>
     </footer>
@@ -39,7 +40,7 @@
 
 <style lang="scss">
 footer {
-  height: 4%; 
+  height: 4vh; 
   width: 100%; 
   background-color: white; 
   position: fixed; 
@@ -109,6 +110,7 @@ html, body {
   height: 100vh;
   margin: 0;
   padding: 0;
+  background-color: var(--primary) !important;
 }
 
 @font-face {
@@ -118,15 +120,16 @@ html, body {
 }
 
 @font-face {
-    font-family: "Nunito";
-    src: url("./fonts/Nunito/NunitoSans-Regular.ttf");
-    font-display: swap;
+  font-family: "Nunito";
+  src: url("./fonts/Nunito/NunitoSans-Regular.ttf");
+  font-display: swap;
 }
+
 @font-face {
-    font-family: "Nunito";
-    src: url("./fonts/Nunito/NunitoSans-Bold.ttf");
-    font-weight: bold;
-    font-display: swap;
+  font-family: "Nunito";
+  src: url("./fonts/Nunito/NunitoSans-Bold.ttf");
+  font-weight: bold;
+  font-display: swap;
 }
 
 #app {
@@ -135,7 +138,6 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  height: 100%;
   background-color: var(--primary);
 }
 
