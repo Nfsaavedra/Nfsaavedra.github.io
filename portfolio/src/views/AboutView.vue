@@ -9,10 +9,9 @@
         </div>
       </div>
     </div>
-    <table class="cv-table" style="">
-      <tr>
-        <td style="width: 11vh !important"></td>
-        <td>
+    <div class="container-fluid mt-5" style="padding-left: 5vw; padding-right: 5vw;">
+      <div class="row">
+        <div class="col-lg-6 col-xl-4">
           <h2>📖 Teaching</h2>
           <h5>Teaching Assistant: </h5>
           <ul>
@@ -21,16 +20,16 @@
             <li><a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65179577/2020-2021/1-semestre" target="_blank">Object Oriented Programming 2020/2021 @ IST</a></li>
             <b-badge>Excellent Teacher Award</b-badge>
           </ul>
-        </td>
-        <td>
+        </div>
+        <div class="col-lg-6 col-xl-4">
           <h2>🔬 Research Interests</h2>
           <ul>
             <li><h5>Software Reliability</h5></li>
             <li><h5>Software Verification</h5></li>
             <li><h5>Infrastructure as Code</h5></li>
           </ul>
-        </td>
-        <td>
+        </div>
+        <div class="col-lg-6 col-xl-4">
           <h2>🏭 Industry Experience</h2>
           <h5>Full-Stack Software Engineer</h5>
           <ul>
@@ -59,26 +58,22 @@
             </b-badge></template>
             Development of a web application in Spring and Vue. Management of Linux servers, Windows servers and workstations with Ansible. Technical support.
           </b-popover>
-        </td>
-        <td style="width: 10vh !important"></td>
-      </tr>
-      <tr>
-        <td style="width: 11vh !important"></td>
-        <td>
+        </div>
+        <div class="col-lg-6 col-xl-4">
           <h2>🎓 Education</h2>
           <ul>
             <li><h5 style="margin-bottom: 0px;">MSc in Computer Science and Engineering</h5><span style="color: rgb(48, 48, 48)">Instituto Superior Técnico</span></li>
             <li><h5 style="margin-bottom: 0px;">BSc in Computer Science and Engineering</h5><span style="color: rgb(48, 48, 48)">Instituto Superior Técnico</span></li>
           </ul>
-        </td>
-        <td>
+        </div>
+        <div class="col-lg-6 col-xl-4">
           <h2>➕ Other Experiences</h2>
           <ul>
             <li><a href="https://www.codingame.com/multiplayer/bot-programming/tic-tac-toe/leaderboard" target="_blank">Top 500 on CodinGame's Ultimate Tic Tac Toe</a><span style="color: rgb(48, 48, 48)"> (Nfsaavedra)</span></li>
             <li><a href="https://github.com/ansible-collections/community.aws/pull/1724" target="_blank">Contributor of the Ansible module community.aws</a></li>
           </ul>
-        </td>
-        <td>
+        </div>
+        <div class="col-lg-6 col-xl-4">
           <h2>♟️ Hobbies</h2>
           <ul>
             <li><h5>Running/Hiking</h5></li>
@@ -86,10 +81,9 @@
             <li><h5>Anime</h5></li>
             <li><h5>Gaming</h5></li>
           </ul>
-        </td>
-        <td style="width: 10vh !important"></td>
-      </tr>
-    </table>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -110,22 +104,14 @@ a:hover {
   color: #881600 !important;
 }
 
-.cv-table {
-  margin-top: 30px; 
-  border-collapse: separate; 
-  border-spacing: 30px;
-}
-
-.cv-table td {
-  width: 26vw; 
-  height: 25vh;
+.row {
   padding-left: 10px;
   text-align: left;
-  vertical-align: top;
 }
 
-.cv-table td h2 {
+.row h2 {
   text-align: center;
   padding-bottom: 4px;
+  padding-top: 30px;
 }
 </style>

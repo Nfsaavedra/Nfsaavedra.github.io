@@ -2,7 +2,7 @@
   <div>
     <h1>Publications</h1>
     <b-spinner v-if="publications.length == 0" style="width: 15vh; height: 15vh;" label="Loading..."></b-spinner>
-    <div style="margin-left:25%; margin-right: 25%; overflow-y: scroll; max-height: calc(96% - 40px);">
+    <div class="mx-lg-5 publication" style="overflow-y: scroll; max-height: calc(96% - 40px);">
       <b-card 
         :title="publication['title']"
         v-for="(publication, index) in publications" 
@@ -46,7 +46,6 @@ export default {
 
     for (let i = 0; i < works.length; i++) {
       const work = (await axios.get('https://pub.orcid.org/v3.0' + works[i]['work-summary'][0]['path'])).data;
-      console.log(work);
       let contributors = '';
 
       for (let e = 0; e < work.contributors.contributor.length; e++) {
@@ -171,5 +170,12 @@ export default {
 
 .badge {
   margin-right: 6px;
+}
+
+@media screen and (min-width: 1921px) {
+  .publication {
+    margin-left: 25% !important;
+    margin-right: 25% !important;
+  }
 }
 </style>

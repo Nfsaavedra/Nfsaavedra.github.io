@@ -8,9 +8,8 @@
         indicators
         img-height="480"
       >
-        <b-carousel-slide
-          caption="Contribute to GLITCH!"
-        >
+        <b-carousel-slide>
+          <h1 class="d-none d-xl-block">Contribute to GLITCH!</h1>
           <template #img>
             <a href="https://github.com/sr-lab/GLITCH" target="_blank">
               <img
@@ -22,16 +21,22 @@
         </b-carousel-slide>
       </b-carousel>
     </div>
-    <div style="display: flex; justify-content: center; margin-top: 30px">
-      <div style="display: block">
+    <div class="d-xl-flex" style="justify-content: center; margin-top: 30px">
+      <div class="d-block">
         <b-avatar src="img/avatar.png" size="20vh"></b-avatar>
         <h2 style="margin-top: 5px;">Nuno Saavedra</h2>
         <h5 style="margin-top: -4px; color: rgb(48, 48, 48)">Computer Scientist</h5>
         <h5 style="margin-top: -4px;"><a href="mailto:nuno@saavedra.pt">nuno@saavedra.pt</a></h5>
+        <div class="d-block d-xl-none">
+          <b-avatar href="https://github.com/Nfsaavedra" class="mr-3" style="background-color: white;" size="40px" target="_blank" src="img/github.svg"></b-avatar>
+          <b-avatar href="https://scholar.google.com/citations?user=iYiwTYUAAAAJ" class="mr-3" style="background-color: #535e79;" size="40px" target="_blank" src="img/scholar.svg"></b-avatar>
+          <b-avatar href="https://twitter.com/nunofsaavedra" class="mr-3" style="background-color: #535e79;" size="40px" target="_blank" src="img/twitter.svg"></b-avatar>
+          <b-avatar href="https://orcid.org/0000-0003-4148-5991" style="background-color: white;" size="40px" target="_blank" src="img/orcid.svg"></b-avatar>
+        </div>
       </div>
-      <div style="margin-left: 30px; display: block">
+      <div class="d-block mx-30">
         <h1 style="text-align: left; color: #535e79">About Me</h1>
-        <p style="font-size: 17pt; width: 35vw; text-align: justify;">
+        <p class="vw-xl-35" style="width: calc(100vw - 60px); font-size: 17pt; text-align: justify;">
         I am a Computer Scientist with a Master's degree from <a href="https://tecnico.ulisboa.pt" target="_blank">Instituto Superior Técnico</a>.
         During my Master's, I specialized in Algorithms and Programming. 
         I also developed <a href="https://github.com/sr-lab/GLITCH" target="_blank">GLITCH</a>, a polyglot code smell detection framework for IaC.
@@ -70,5 +75,16 @@ a {
 
 a:hover {
   color: #881600 !important;
+}
+
+@media (min-width: 1200px) {
+  .vw-xl-35 {
+    width: 35vw !important;
+  }
+}
+
+.mx-30 {
+  margin-left: 30px;
+  margin-right: 30px;
 }
 </style>

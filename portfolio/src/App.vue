@@ -24,10 +24,10 @@
       </div>
     </b-navbar>
     <router-view id="view" style="padding-bottom: 4vh;"/>
-    <footer>
-      <div class="footer-space" style="margin-left: 12vh"/>
+    <footer class="justify-content-center justify-content-xl-between">
+      <div class="d-none d-xl-block" style="margin-left: 12vh"/>
       <div>©2022-2023 Nuno Saavedra</div>
-      <div class="footer-icons">
+      <div class="d-none d-xl-block">
         <b-avatar href="mailto: nuno@saavedra.pt" style="background-color: white;" size="3vh" target="_blank" src="img/email.svg"></b-avatar>
         <b-avatar href="https://github.com/Nfsaavedra" style="background-color: white;" size="3vh" target="_blank" src="img/github.svg"></b-avatar>
         <b-avatar href="https://scholar.google.com/citations?user=iYiwTYUAAAAJ" style="background-color: #535e79;" size="3vh" target="_blank" src="img/scholar.svg"></b-avatar>
@@ -86,18 +86,6 @@ footer > div > .b-avatar {
 
   #navbar {
     min-height: 16% !important;
-  }
-
-  footer {
-    justify-content: center;
-  }
-
-  .footer-space {
-    display: none;
-  }
-
-  .footer-icons {
-    display: none;
   }
 }
 
