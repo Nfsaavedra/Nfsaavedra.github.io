@@ -36,7 +36,7 @@
       </div>
       <div class="d-block mx-30">
         <h1 style="text-align: left; color: #535e79">About Me</h1>
-        <p class="vw-xl-35" style="width: calc(100vw - 60px); font-size: 17pt; text-align: justify;">
+        <p class="vw-xl-40" style="width: calc(100vw - 60px); font-size: 17pt; text-align: justify;">
         I am a Computer Scientist with a Master's degree from <a href="https://tecnico.ulisboa.pt" target="_blank">Instituto Superior Técnico</a>.
         During my Master's, I specialized in Algorithms and Programming. 
         I also developed <a href="https://github.com/sr-lab/GLITCH" target="_blank">GLITCH</a>, a polyglot code smell detection framework for IaC.
@@ -78,8 +78,8 @@ a:hover {
 }
 
 @media (min-width: 1200px) {
-  .vw-xl-35 {
-    width: 35vw !important;
+  .vw-xl-40 {
+    width: 40vw !important;
   }
 }
 
