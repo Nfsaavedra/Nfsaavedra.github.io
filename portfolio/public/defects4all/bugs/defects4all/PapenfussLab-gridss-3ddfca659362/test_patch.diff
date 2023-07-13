@@ -1,0 +1,46 @@
+diff --git a/src/test/java/au/edu/wehi/idsv/GreedyVariantAllocationCacheTest.java b/src/test/java/au/edu/wehi/idsv/GreedyVariantAllocationCacheTest.java
+index d6f8d85..2553bb1 100644
+--- a/src/test/java/au/edu/wehi/idsv/GreedyVariantAllocationCacheTest.java
++++ b/src/test/java/au/edu/wehi/idsv/GreedyVariantAllocationCacheTest.java
+@@ -187,4 +187,20 @@ public class GreedyVariantAllocationCacheTest extends TestHelper {
+ 		assertFalse(cache.isBestBreakpoint("variant1", evidence[1]));
+ 		assertTrue(cache.isBestBreakpoint("variant2", evidence[1]));
+ 	}
++	@Test
++	public void should_call_best_oea_alignment() {
++		NonReferenceReadPair[] evidence = new NonReferenceReadPair[] {
++				NRRP(withReadName("read", OEA(0, 1, "1M", true))),
++				NRRP(withReadName("read", OEA(0, 2, "1M", true))),
++		};
++		GreedyVariantAllocationCache cache = new GreedyVariantAllocationCache();
++		cache.addBreakpoint("variant1", 1, evidence[0]);
++		cache.addBreakpoint("variant2", 2, evidence[1]);
++		
++		assertFalse(cache.isBestBreakpoint("variant1", evidence[0]));
++		assertFalse(cache.isBestBreakpoint("variant2", evidence[0]));
++		
++		assertFalse(cache.isBestBreakpoint("variant1", evidence[1]));
++		assertTrue(cache.isBestBreakpoint("variant2", evidence[1]));
++	}
+ }
+diff --git a/src/test/java/gridss/CallVariantsTest.java b/src/test/java/gridss/CallVariantsTest.java
+index 25fc20d..fd96a3c 100644
+--- a/src/test/java/gridss/CallVariantsTest.java
++++ b/src/test/java/gridss/CallVariantsTest.java
+@@ -51,7 +51,6 @@ public class CallVariantsTest extends IntermediateFilesTest {
+ 			writer.write("realignment.aligner=\n");
+ 		}
+ 		File assembly = new File(testFolder.getRoot(), "assembly.bam");
+-		createBAM(assembly, SortOrder.coordinate);
+ 		String[] args = new String[] {
+ 				"INPUT=" + input.toString(),
+ 				"INPUT_CATEGORY=5",
+@@ -65,7 +64,7 @@ public class CallVariantsTest extends IntermediateFilesTest {
+ 				"INPUT_MAX_FRAGMENT_SIZE=100",
+ 		};
+ 		assertEquals(0, new CallVariants().instanceMain(args));
+-		List<SAMRecord> breakendAssemblies = getRecords(new File(output.getAbsoluteFile() + ".gridss.working/" + output.getName() + ".assembly.bam"));
++		List<SAMRecord> breakendAssemblies = getRecords(assembly);
+ 		assertEquals(1, breakendAssemblies.size());
+ 		assembly.delete();
+ 	}

@@ -1,0 +1,14 @@
+diff --git a/src/main/java/an/awesome/pipelinr/ContinueOnException.java b/src/main/java/an/awesome/pipelinr/ContinueOnException.java
+index 1143cf2..8515d7c 100644
+--- a/src/main/java/an/awesome/pipelinr/ContinueOnException.java
++++ b/src/main/java/an/awesome/pipelinr/ContinueOnException.java
+@@ -24,6 +24,8 @@ public class ContinueOnException implements NotificationHandlingStrategy {
+             exceptions.add(e);
+           }
+         });
+-    throw new AggregateException(exceptions);
++    if (exceptions.size() > 0) {
++      throw new AggregateException(exceptions);
++    }
+   }
+ }

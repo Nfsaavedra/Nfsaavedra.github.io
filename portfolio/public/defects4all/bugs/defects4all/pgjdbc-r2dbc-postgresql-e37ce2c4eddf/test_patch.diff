@@ -1,0 +1,85 @@
+diff --git a/src/test/java/io/r2dbc/postgresql/AbstractCodecIntegrationTests.java b/src/test/java/io/r2dbc/postgresql/AbstractCodecIntegrationTests.java
+index f411153..3c5d677 100644
+--- a/src/test/java/io/r2dbc/postgresql/AbstractCodecIntegrationTests.java
++++ b/src/test/java/io/r2dbc/postgresql/AbstractCodecIntegrationTests.java
+@@ -180,7 +180,7 @@ abstract class AbstractCodecIntegrationTests extends AbstractIntegrationTests {
+ 
+     @Test
+     void instant() {
+-        testCodec(Instant.class, Instant.now(), "TIMESTAMP");
++        testCodec(Instant.class, Instant.now(), "TIMESTAMPTZ");
+     }
+ 
+     @Test
+diff --git a/src/test/java/io/r2dbc/postgresql/codec/DateCodecTest.java b/src/test/java/io/r2dbc/postgresql/codec/DateCodecTest.java
+index 00b11d3..4160de9 100644
+--- a/src/test/java/io/r2dbc/postgresql/codec/DateCodecTest.java
++++ b/src/test/java/io/r2dbc/postgresql/codec/DateCodecTest.java
+@@ -49,9 +49,10 @@ final class DateCodecTest {
+ 
+     @Test
+     void decode() {
+-        Date date = Date.from(Instant.parse("2018-11-04T15:37:31.177Z"));
++        Instant testInstant = LocalDateTime.parse("2010-02-01T10:08:04.412").atZone(ZoneId.systemDefault()).toInstant();
++        Date date = Date.from(testInstant);
+ 
+-        assertThat(new DateCodec(TEST).decode(encode(TEST, "2018-11-04 15:37:31.177"), dataType, FORMAT_TEXT, Date.class))
++        assertThat(new DateCodec(TEST).decode(encode(TEST, "2010-02-01 10:08:04.412"), dataType, FORMAT_TEXT, Date.class))
+             .isEqualTo(date);
+     }
+ 
+@@ -91,12 +92,13 @@ final class DateCodecTest {
+ 
+     @Test
+     void doEncode() {
+-        Date date = new Date();
++        Instant testInstant = LocalDateTime.parse("2010-02-01T10:08:04.412").atZone(ZoneId.systemDefault()).toInstant();
++        Date date = Date.from(testInstant);
+ 
+         assertThat(new DateCodec(TEST).doEncode(date))
+             .hasFormat(FORMAT_TEXT)
+             .hasType(TIMESTAMP.getObjectId())
+-            .hasValue(encode(TEST, date.toInstant().toString()));
++            .hasValue(encode(TEST, "2010-02-01T10:08:04.412"));
+     }
+ 
+     @Test
+diff --git a/src/test/java/io/r2dbc/postgresql/codec/InstantCodecTest.java b/src/test/java/io/r2dbc/postgresql/codec/InstantCodecTest.java
+index 62c2b91..a7cd4c8 100644
+--- a/src/test/java/io/r2dbc/postgresql/codec/InstantCodecTest.java
++++ b/src/test/java/io/r2dbc/postgresql/codec/InstantCodecTest.java
+@@ -20,7 +20,6 @@ import io.r2dbc.postgresql.client.Parameter;
+ import org.junit.jupiter.api.Test;
+ 
+ import java.time.Instant;
+-import java.time.LocalTime;
+ import java.time.ZonedDateTime;
+ 
+ import static io.r2dbc.postgresql.client.Parameter.NULL_VALUE;
+@@ -75,6 +74,8 @@ final class InstantCodecTest {
+         assertThat(codec.doCanDecode(TIMESTAMP, FORMAT_BINARY)).isTrue();
+         assertThat(codec.doCanDecode(MONEY, FORMAT_TEXT)).isFalse();
+         assertThat(codec.doCanDecode(TIMESTAMP, FORMAT_TEXT)).isTrue();
++        assertThat(codec.doCanDecode(TIMESTAMPTZ, FORMAT_TEXT)).isTrue();
++        assertThat(codec.doCanDecode(TIMESTAMPTZ, FORMAT_BINARY)).isTrue();
+     }
+ 
+     @Test
+@@ -95,7 +96,7 @@ final class InstantCodecTest {
+ 
+         assertThat(new InstantCodec(TEST).doEncode(instant))
+             .hasFormat(FORMAT_TEXT)
+-            .hasType(TIMESTAMP.getObjectId())
++            .hasType(TIMESTAMPTZ.getObjectId())
+             .hasValue(encode(TEST, instant.toString()));
+     }
+ 
+@@ -108,7 +109,7 @@ final class InstantCodecTest {
+     @Test
+     void encodeNull() {
+         assertThat(new InstantCodec(TEST).encodeNull())
+-            .isEqualTo(new Parameter(FORMAT_TEXT, TIMESTAMP.getObjectId(), NULL_VALUE));
++            .isEqualTo(new Parameter(FORMAT_TEXT, TIMESTAMPTZ.getObjectId(), NULL_VALUE));
+     }
+ 
+ }

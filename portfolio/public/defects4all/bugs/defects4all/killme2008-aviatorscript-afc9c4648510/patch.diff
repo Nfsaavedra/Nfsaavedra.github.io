@@ -1,0 +1,123 @@
+diff --git a/src/main/java/com/googlecode/aviator/runtime/function/LambdaFunction.java b/src/main/java/com/googlecode/aviator/runtime/function/LambdaFunction.java
+index cef5fd5..758ef48 100644
+--- a/src/main/java/com/googlecode/aviator/runtime/function/LambdaFunction.java
++++ b/src/main/java/com/googlecode/aviator/runtime/function/LambdaFunction.java
+@@ -1,7 +1,10 @@
+ package com.googlecode.aviator.runtime.function;
+ 
++import java.util.HashSet;
+ import java.util.List;
+ import java.util.Map;
++import java.util.Set;
++import com.googlecode.aviator.BaseExpression;
+ import com.googlecode.aviator.Expression;
+ import com.googlecode.aviator.runtime.type.AviatorObject;
+ import com.googlecode.aviator.utils.Env;
+@@ -26,7 +29,14 @@ public abstract class LambdaFunction extends AbstractFunction {
+   public LambdaFunction(List<String> arguments, Expression expression, Env context) {
+     super();
+     this.arguments = arguments;
+-    this.context = context.clone();
++    this.context = context;
++    Set<String> argumentSet = new HashSet<>(this.arguments);
++    for (String var : expression.getVariableNames()) {
++      if (!var.contains(".") && !argumentSet.contains(var)) {
++        // mark the var is captured.
++        context.capture(var, ((BaseExpression) expression).getExpression());
++      }
++    }
+     this.expression = expression;
+   }
+ 
+diff --git a/src/main/java/com/googlecode/aviator/runtime/op/OperationRuntime.java b/src/main/java/com/googlecode/aviator/runtime/op/OperationRuntime.java
+index 4a5045e..16a19cd 100644
+--- a/src/main/java/com/googlecode/aviator/runtime/op/OperationRuntime.java
++++ b/src/main/java/com/googlecode/aviator/runtime/op/OperationRuntime.java
+@@ -166,7 +166,7 @@ public class OperationRuntime {
+       case 3:
+         RuntimeUtils.printTrace(env,
+             TRACE_PREFIX + args[0].desc(env) + WHITE_SPACE + "?" + WHITE_SPACE + args[0].desc(env)
+-            + WHITE_SPACE + ":" + WHITE_SPACE + args[1].desc(env) + " => " + result.desc(env));
++                + WHITE_SPACE + ":" + WHITE_SPACE + args[1].desc(env) + " => " + result.desc(env));
+         break;
+     }
+   }
+diff --git a/src/main/java/com/googlecode/aviator/runtime/type/AviatorJavaType.java b/src/main/java/com/googlecode/aviator/runtime/type/AviatorJavaType.java
+index 21a8e0c..93296b3 100644
+--- a/src/main/java/com/googlecode/aviator/runtime/type/AviatorJavaType.java
++++ b/src/main/java/com/googlecode/aviator/runtime/type/AviatorJavaType.java
+@@ -259,6 +259,7 @@ public class AviatorJavaType extends AviatorObject {
+     if (this.name.contains(".")) {
+       throw new IllegalArgumentException("Can't assignment value to `" + this.name + "`");
+     }
++
+     Object v = value.getValue(env);
+     env.put(this.name, v);
+     return new AviatorRuntimeJavaType(v);
+diff --git a/src/main/java/com/googlecode/aviator/utils/Env.java b/src/main/java/com/googlecode/aviator/utils/Env.java
+index 24d12b6..a89bd6e 100644
+--- a/src/main/java/com/googlecode/aviator/utils/Env.java
++++ b/src/main/java/com/googlecode/aviator/utils/Env.java
+@@ -31,6 +31,7 @@ import java.util.Iterator;
+ import java.util.Map;
+ import java.util.Set;
+ import com.googlecode.aviator.AviatorEvaluatorInstance;
++import com.googlecode.aviator.exception.ExpressionRuntimeException;
+ import com.googlecode.aviator.lexer.token.Variable;
+ 
+ /**
+@@ -68,6 +69,15 @@ public class Env implements Map<String, Object> {
+ 
+   public static final Map<String, Object> EMPTY_ENV = Collections.emptyMap();
+ 
++  private Map<String, String> capturedVars;
++
++  public void capture(String var, String expression) {
++    if (capturedVars == null) {
++      capturedVars = new HashMap<>();
++    }
++    capturedVars.put(var, expression);
++  }
++
+   /**
+    * Constructs an env instance with empty state.
+    */
+@@ -75,14 +85,6 @@ public class Env implements Map<String, Object> {
+     this(EMPTY_ENV);
+   }
+ 
+-  @Override
+-  public Env clone() {
+-    Env ret = new Env(this.mDefaults == EMPTY_ENV ? EMPTY_ENV : new HashMap<>(this.mDefaults),
+-        new HashMap<>(this.mOverrides));
+-    ret.instance = this.instance;
+-    return ret;
+-  }
+-
+   /**
+    * Constructor.
+    *
+@@ -210,6 +212,12 @@ public class Env implements Map<String, Object> {
+    */
+   @Override
+   public Object put(String key, Object value) {
++    String capturedExp = null;
++    if (this.capturedVars != null && this.capturedVars.containsKey(key)) {
++      throw new ExpressionRuntimeException("Can't assignment value to captured variable.The `" + key
++          + "` is already captured by lambda.");
++    }
++
+     Object prior;
+     Map<String, Object> overrides = getmOverrides(false);
+     if (overrides.containsKey(key)) {
+@@ -282,8 +290,8 @@ public class Env implements Map<String, Object> {
+   public String toString() {
+     StringBuffer buf = new StringBuffer(32 * size());
+     buf.append(super.toString()).append("{"). //
+-    append(Variable.INSTANCE_VAR).append("=").append(this.instance).append(", ").//
+-    append(Variable.ENV_VAR).append("=").append("<this>");
++        append(Variable.INSTANCE_VAR).append("=").append(this.instance).append(", ").//
++        append(Variable.ENV_VAR).append("=").append("<this>");
+ 
+     Iterator<String> it = keySet().iterator();
+     boolean hasNext = it.hasNext();

@@ -1,0 +1,116 @@
+diff --git a/src/test/generated_resources/element_scoped/ObjectFactory.java b/src/test/generated_resources/element_scoped/ObjectFactory.java
+index e7e4240..a33b7f3 100644
+--- a/src/test/generated_resources/element_scoped/ObjectFactory.java
++++ b/src/test/generated_resources/element_scoped/ObjectFactory.java
+@@ -1,6 +1,7 @@
+ 
+ package element_scoped;
+ 
++import java.util.List;
+ import javax.xml.bind.JAXBElement;
+ import javax.xml.bind.annotation.XmlElementDecl;
+ import javax.xml.bind.annotation.XmlRegistry;
+@@ -25,6 +26,7 @@ import javax.xml.namespace.QName;
+ public class ObjectFactory {
+ 
+     private final static QName _Age_QNAME = new QName("http://example.com/extra", "age");
++    private final static QName _IdListId_QNAME = new QName("http://example.com/scope", "id");
+     private final static QName _ReturnUsersName_QNAME = new QName("http://example.com/scope", "name");
+     private final static QName _ReturnUsersAge_QNAME = new QName("http://example.com/scope", "age");
+ 
+@@ -44,6 +46,14 @@ public class ObjectFactory {
+     }
+ 
+     /**
++     * Create an instance of {@link SearchParameters }
++     * 
++     */
++    public SearchParameters createSearchParameters() {
++        return new SearchParameters();
++    }
++
++    /**
+      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+      * 
+      */
+@@ -62,4 +72,9 @@ public class ObjectFactory {
+         return new JAXBElement<String>(new QName("http://example.com/scope", "age"), String.class, Return.class, value);
+     }
+ 
++    @XmlElementDecl(namespace = "http://example.com/scope", name = "id", scope = SearchParameters.class)
++    public JAXBElement<List<String>> createSearchParametersId(List<String> value) {
++        return new JAXBElement<List<String>>(new QName("http://example.com/scope", "id"), ((Class) List.class), SearchParameters.class, value);
++    }
++
+ }
+diff --git a/src/test/java/com/sun/tools/xjc/addon/xew/XmlElementWrapperPluginTest.java b/src/test/java/com/sun/tools/xjc/addon/xew/XmlElementWrapperPluginTest.java
+index 3af59ce..b1e0d0f 100644
+--- a/src/test/java/com/sun/tools/xjc/addon/xew/XmlElementWrapperPluginTest.java
++++ b/src/test/java/com/sun/tools/xjc/addon/xew/XmlElementWrapperPluginTest.java
+@@ -195,7 +195,7 @@ public class XmlElementWrapperPluginTest {
+ 	@Test
+ 	public void testElementScoped() throws Exception {
+ 		// Most classes cannot be tested for content
+-		assertXsd("element-scoped", new String[] { "-debug" }, false, "Return", "package-info");
++		assertXsd("element-scoped", new String[] { "-debug" }, false, "Return", "SearchParameters", "package-info");
+ 	}
+ 
+ 	@Test
+diff --git a/src/test/resources/com/sun/tools/xjc/addon/xew/element-scoped.xml b/src/test/resources/com/sun/tools/xjc/addon/xew/element-scoped.xml
+index 256cc03..88d4a2b 100644
+--- a/src/test/resources/com/sun/tools/xjc/addon/xew/element-scoped.xml
++++ b/src/test/resources/com/sun/tools/xjc/addon/xew/element-scoped.xml
+@@ -15,4 +15,11 @@
+ 		<age>26</age>
+ 	</users>
+ 	<x:age>12</x:age>
++	<search-parameters>
++		<provider-ids>
++			<id>A12</id>
++			<id>B49</id>
++			<id>C91</id>
++		</provider-ids>
++	</search-parameters>
+ </return>
+diff --git a/src/test/resources/com/sun/tools/xjc/addon/xew/element-scoped.xsd b/src/test/resources/com/sun/tools/xjc/addon/xew/element-scoped.xsd
+index c55ab9d..751bcd3 100644
+--- a/src/test/resources/com/sun/tools/xjc/addon/xew/element-scoped.xsd
++++ b/src/test/resources/com/sun/tools/xjc/addon/xew/element-scoped.xsd
+@@ -2,6 +2,7 @@
+ <xsd:schema
+ 	jaxb:version="2.0"
+ 	targetNamespace="http://example.com/scope"
++	xmlns:s="http://example.com/scope"
+ 	xmlns:x="http://example.com/extra"
+ 	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+ 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+@@ -33,7 +34,29 @@
+ 					</xsd:complexType>
+ 				</xsd:element>
+ 				<xsd:element ref="x:age" />
++				<xsd:element name="search-parameters" type="s:search-parameters" />
+ 			</xsd:sequence>
+ 		</xsd:complexType>
+ 	</xsd:element>
++
++	<!--
++		Special case when JAXB will generate a wrapper object to hold list of items:
++			JAXBElement<List<String>>
++		and this wrapper object is scoped to "search-parameters" type.
++	-->
++	<xsd:complexType name="id-list">
++		<xsd:sequence>
++			<xsd:element name="id" minOccurs="1" maxOccurs="unbounded">
++				<xsd:simpleType>
++					<xsd:list itemType="xsd:string" />
++				</xsd:simpleType>
++			</xsd:element>
++		</xsd:sequence>
++	</xsd:complexType>
++
++	<xsd:complexType name="search-parameters">
++		<xsd:sequence>
++			<xsd:element name="provider-ids" type="s:id-list" minOccurs="0" maxOccurs="1" />
++		</xsd:sequence>
++	</xsd:complexType>
+ </xsd:schema>

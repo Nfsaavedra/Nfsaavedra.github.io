@@ -1,0 +1,45 @@
+diff --git a/src/test/java/com/github/ksuid/Base62Test.java b/src/test/java/com/github/ksuid/Base62Test.java
+index db944f4..f26fde4 100644
+--- a/src/test/java/com/github/ksuid/Base62Test.java
++++ b/src/test/java/com/github/ksuid/Base62Test.java
+@@ -9,8 +9,10 @@ import org.junit.runner.RunWith;
+ import java.lang.reflect.Constructor;
+ import java.lang.reflect.InvocationTargetException;
+ import java.math.BigInteger;
++import java.time.Instant;
+ import java.util.AbstractMap.SimpleEntry;
+ import java.util.Map.Entry;
++import java.util.Random;
+ 
+ import static com.github.ksuid.Base62.BASE;
+ import static com.github.ksuid.Base62.BASE_62_CHARACTERS;
+@@ -100,4 +102,15 @@ public class Base62Test {
+         assertThat(base62Decode(base62Encode(entry.getKey()))).isEqualTo(entry.getKey());
+         assertThat(base62Decode(base62Encode(entry.getKey(), entry.getValue().length() + 4))).isEqualTo(entry.getKey());
+     }
++    
++    @Test
++    public void testBase62EncodeUnsigned() {
++        final Random random = new Random();
++        random.setSeed(123L);
++
++        final Instant timestamp = Instant.parse("2083-01-27T08:18:32.577Z");
++        final Ksuid ksuid = new KsuidGenerator(random).newKsuid(timestamp);
++        final byte[] ksuidBytes = ksuid.asBytes();
++        assertThat(Base62.base62Encode(ksuidBytes, 27)).isEqualTo("IRIRk6W1GtAY07Hp2RJ1blLjvEo");
++    }
+ }
+diff --git a/src/test/java/com/github/ksuid/KsuidTest.java b/src/test/java/com/github/ksuid/KsuidTest.java
+index f4432ef..84a5971 100644
+--- a/src/test/java/com/github/ksuid/KsuidTest.java
++++ b/src/test/java/com/github/ksuid/KsuidTest.java
+@@ -94,7 +94,8 @@ public class KsuidTest {
+ 
+     @Theory
+     public void testToString(final Ksuid ksuid) {
+-        assertThat(ksuid.toString()).isEqualTo("Ksuid[timestamp = " + TIMESTAMP +
++        assertThat(ksuid.toString()).isEqualTo("Ksuid[asString = 0ujtsYcgvSTl8PAuAdqWYSMnLOv"  + 
++                                                       ", timestamp = " + TIMESTAMP +
+                                                        ", payload = [-75, -95, -51, 52, -75, -7, -99, 17, 84, -5, 104, 83, 52, 92, -105, 53]" +
+                                                        ", ksuidBytes = [6, 105, -9, -17, -75, -95, -51, 52, -75, -7, -99, 17, 84, -5, 104, 83, 52, 92, -105, 53]]");
+     }

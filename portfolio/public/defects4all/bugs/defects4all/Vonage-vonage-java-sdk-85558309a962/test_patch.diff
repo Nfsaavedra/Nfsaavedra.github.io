@@ -1,0 +1,28 @@
+diff --git a/src/test/java/com/nexmo/client/redact/RedactMethodTest.java b/src/test/java/com/nexmo/client/redact/RedactMethodTest.java
+index 45815b3..a5dbf9d 100644
+--- a/src/test/java/com/nexmo/client/redact/RedactMethodTest.java
++++ b/src/test/java/com/nexmo/client/redact/RedactMethodTest.java
+@@ -33,6 +33,7 @@ import static org.junit.Assert.assertEquals;
+ import static org.junit.Assert.assertNotNull;
+ 
+ public class RedactMethodTest {
++
+     private RedactMethod method;
+ 
+     @Before
+@@ -48,6 +49,7 @@ public class RedactMethodTest {
+         HttpEntity entity = builder.getEntity();
+ 
+         assertEquals(entity.getContentType().getValue(), ContentType.APPLICATION_JSON.toString());
++        assertEquals("application/json", builder.getFirstHeader("Content-Type").getValue());
+         assertNotNull(entity.getContent());
+     }
+ 
+@@ -70,7 +72,6 @@ public class RedactMethodTest {
+         method.makeRequest(request);
+     }
+ 
+-
+     @Test(expected = IllegalArgumentException.class)
+     public void testConstructParamsWithMissingProduct() throws Exception {
+         RedactRequest request = new RedactRequest("test-id", null);

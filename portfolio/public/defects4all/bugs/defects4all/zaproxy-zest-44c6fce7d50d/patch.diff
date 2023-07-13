@@ -1,0 +1,18 @@
+diff --git a/src/main/java/org/mozilla/zest/core/v1/ZestClientLaunch.java b/src/main/java/org/mozilla/zest/core/v1/ZestClientLaunch.java
+index bae8a7c..09ed547 100644
+--- a/src/main/java/org/mozilla/zest/core/v1/ZestClientLaunch.java
++++ b/src/main/java/org/mozilla/zest/core/v1/ZestClientLaunch.java
+@@ -106,7 +106,12 @@ public class ZestClientLaunch extends ZestClient {
+ 
+ 	@Override
+ 	public ZestStatement deepCopy() {
+-		ZestClientLaunch copy = new ZestClientLaunch(this.getWindowHandle(), this.getBrowserType(), this.getUrl());
++		ZestClientLaunch copy = new ZestClientLaunch(
++				this.getWindowHandle(),
++				this.getBrowserType(),
++				this.getUrl(),
++				this.getCapabilities(),
++				this.isHeadless());
+ 		copy.setEnabled(this.isEnabled());
+ 		return copy;
+ 	}

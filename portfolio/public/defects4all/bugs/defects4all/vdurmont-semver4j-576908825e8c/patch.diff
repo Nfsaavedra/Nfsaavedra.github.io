@@ -1,0 +1,16 @@
+diff --git a/src/main/java/com/vdurmont/semver4j/Semver.java b/src/main/java/com/vdurmont/semver4j/Semver.java
+index f40ed8d..818e9cb 100644
+--- a/src/main/java/com/vdurmont/semver4j/Semver.java
++++ b/src/main/java/com/vdurmont/semver4j/Semver.java
+@@ -395,9 +395,9 @@ public class Semver implements Comparable<Semver> {
+     }
+ 
+     @Override public int compareTo(Semver version) {
+-        if (this.isGreaterThan(version)) return -1;
++        if (this.isGreaterThan(version)) return 1;
+         else if (this.equals(version)) return 0;
+-        return 1;
++        return -1;
+     }
+ 
+     @Override public String toString() {

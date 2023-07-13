@@ -1,0 +1,631 @@
+diff --git a/pom.xml b/pom.xml
+index 756e857..6f2f10a 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -88,6 +88,34 @@
+ 				</executions>
+ 			</plugin>
+ 
++			<!-- Generate the source jar -->
++			<plugin>
++				<groupId>org.apache.maven.plugins</groupId>
++				<artifactId>maven-source-plugin</artifactId>
++				<executions>
++					<execution>
++						<id>attach-sources</id>
++						<goals>
++							<goal>jar</goal>
++						</goals>
++					</execution>
++				</executions>
++			</plugin>
++			
++			<!-- Generate JavaDoc -->
++			<plugin>
++				<groupId>org.apache.maven.plugins</groupId>
++				<artifactId>maven-javadoc-plugin</artifactId>
++				<executions>
++					<execution>
++						<id>attach-javadocs</id>
++						<goals>
++							<goal>jar</goal>
++						</goals>
++					</execution>
++				</executions>
++			</plugin>
++
+ 		</plugins>
+ 	</build>
+ 
+diff --git a/src/main/java/org/vanilladb/core/query/algebra/AbstractJoinPlan.java b/src/main/java/org/vanilladb/core/query/algebra/AbstractJoinPlan.java
+index ed37ea2..45f49d6 100644
+--- a/src/main/java/org/vanilladb/core/query/algebra/AbstractJoinPlan.java
++++ b/src/main/java/org/vanilladb/core/query/algebra/AbstractJoinPlan.java
+@@ -28,7 +28,6 @@ public abstract class AbstractJoinPlan extends ReduceRecordsPlan {
+ 	/**
+ 	 * Returns a histogram that, for each field, approximates the value
+ 	 * distribution of the join of the specified histograms.
+-	 * 
+ 	 * <p>
+ 	 * Assumes that:
+ 	 * <ul>
+@@ -39,7 +38,6 @@ public abstract class AbstractJoinPlan extends ReduceRecordsPlan {
+ 	 * <li>Distributions of values in different fields are independent with each
+ 	 * other</li>
+ 	 * </ul>
+-	 * </p>
+ 	 * 
+ 	 * @param hist1
+ 	 *            the left-hand histogram
+diff --git a/src/main/java/org/vanilladb/core/query/algebra/SelectPlan.java b/src/main/java/org/vanilladb/core/query/algebra/SelectPlan.java
+index 8e1c3b4..c1fde3e 100644
+--- a/src/main/java/org/vanilladb/core/query/algebra/SelectPlan.java
++++ b/src/main/java/org/vanilladb/core/query/algebra/SelectPlan.java
+@@ -52,7 +52,6 @@ public class SelectPlan extends ReduceRecordsPlan {
+ 	 * <li>Distributions of values in different fields are independent with each
+ 	 * other</li>
+ 	 * </ul>
+-	 * </p>
+ 	 * 
+ 	 * @param hist
+ 	 *            the input join distribution of field values
+@@ -102,7 +101,6 @@ public class SelectPlan extends ReduceRecordsPlan {
+ 	 * <li>Distributions of values in different fields are independent with each
+ 	 * other</li>
+ 	 * </ul>
+-	 * </p>
+ 	 * 
+ 	 * @param hist
+ 	 *            the input histogram
+@@ -172,7 +170,6 @@ public class SelectPlan extends ReduceRecordsPlan {
+ 	 * <li>Equality selection always finds matching records</li>
+ 	 * <li>Values in a bucket have the same frequency (uniform frequency)</li>
+ 	 * </ul>
+-	 * </p>
+ 	 * 
+ 	 * @param bkt
+ 	 *            the input bucket
+@@ -210,7 +207,6 @@ public class SelectPlan extends ReduceRecordsPlan {
+ 	 * <li>Distributions of values in different fields are independent with each
+ 	 * other</li>
+ 	 * </ul>
+-	 * </p>
+ 	 * 
+ 	 * @param hist
+ 	 *            the input histogram
+@@ -280,7 +276,6 @@ public class SelectPlan extends ReduceRecordsPlan {
+ 	 * <li>Distributions of values in different fields are independent with each
+ 	 * other</li>
+ 	 * </ul>
+-	 * </p>
+ 	 * 
+ 	 * @param bkt1
+ 	 *            the input bucket 1
+diff --git a/src/main/java/org/vanilladb/core/query/algebra/materialize/GroupByPlan.java b/src/main/java/org/vanilladb/core/query/algebra/materialize/GroupByPlan.java
+index 433e636..e4a0876 100644
+--- a/src/main/java/org/vanilladb/core/query/algebra/materialize/GroupByPlan.java
++++ b/src/main/java/org/vanilladb/core/query/algebra/materialize/GroupByPlan.java
+@@ -58,7 +58,6 @@ public class GroupByPlan extends ReduceRecordsPlan {
+ 	 * <li>Aggregate values in different groups are distinct</li>
+ 	 * <li></li>
+ 	 * </ul>
+-	 * </p>
+ 	 * 
+ 	 * @param hist
+ 	 *            the input join distribution of field values
+diff --git a/src/main/java/org/vanilladb/core/query/algebra/materialize/GroupByScan.java b/src/main/java/org/vanilladb/core/query/algebra/materialize/GroupByScan.java
+index e2c8367..ea456a8 100644
+--- a/src/main/java/org/vanilladb/core/query/algebra/materialize/GroupByScan.java
++++ b/src/main/java/org/vanilladb/core/query/algebra/materialize/GroupByScan.java
+@@ -34,7 +34,7 @@ public class GroupByScan implements Scan {
+ 	/**
+ 	 * Creates a groupby scan, given a grouped table scan.
+ 	 * 
+-	 * @param ss
++	 * @param s
+ 	 *            the sorted scan
+ 	 * @param groupFlds
+ 	 *            the fields to group by. Can be empty, which means that all
+diff --git a/src/main/java/org/vanilladb/core/query/algebra/materialize/SortPlan.java b/src/main/java/org/vanilladb/core/query/algebra/materialize/SortPlan.java
+index 8969189..645f355 100644
+--- a/src/main/java/org/vanilladb/core/query/algebra/materialize/SortPlan.java
++++ b/src/main/java/org/vanilladb/core/query/algebra/materialize/SortPlan.java
+@@ -52,7 +52,7 @@ public class SortPlan implements Plan {
+ 	 *            the plan for the underlying query
+ 	 * @param sortFields
+ 	 *            the fields to sort by
+-	 * @param sortDir
++	 * @param sortDirs
+ 	 *            the sort direction
+ 	 * @param tx
+ 	 *            the calling transaction
+diff --git a/src/main/java/org/vanilladb/core/query/algebra/materialize/TempRecordPage.java b/src/main/java/org/vanilladb/core/query/algebra/materialize/TempRecordPage.java
+index 40e3443..68d7fd3 100644
+--- a/src/main/java/org/vanilladb/core/query/algebra/materialize/TempRecordPage.java
++++ b/src/main/java/org/vanilladb/core/query/algebra/materialize/TempRecordPage.java
+@@ -39,7 +39,7 @@ public class TempRecordPage extends RecordPage {
+ 	/**
+ 	 * Insert records to TempRecordFile for sorting, at most one block long
+ 	 * 
+-	 * @param s
++	 * @param s the source scan
+ 	 * @return true if another record is inserted false if block is full of
+ 	 *         records
+ 	 */
+@@ -60,10 +60,9 @@ public class TempRecordPage extends RecordPage {
+ 	/**
+ 	 * Copy sorted records to UpdateScan
+ 	 * 
+-	 * @param s
++	 * @param s the target scan
+ 	 * @return true if still record in TempRecordPage
+ 	 */
+-
+ 	public boolean copyToScan(UpdateScan s) {
+ 		if (!this.next())
+ 			return false;
+@@ -84,7 +83,6 @@ public class TempRecordPage extends RecordPage {
+ 	 * @param sortFlds
+ 	 * @param sortDirs
+ 	 */
+-
+ 	public void sortbyselection(List<String> sortFlds, List<Integer> sortDirs) {
+ 		moveToId(-1);
+ 		int i = 0;
+@@ -106,7 +104,6 @@ public class TempRecordPage extends RecordPage {
+ 	 * @param sortDirs
+ 	 * @return the id of smallest record
+ 	 */
+-
+ 	private int findSmallestFrom(int startId, List<String> sortFlds,
+ 			List<Integer> sortDirs) {
+ 		int minId = startId;
+diff --git a/src/main/java/org/vanilladb/core/query/algebra/materialize/TempTable.java b/src/main/java/org/vanilladb/core/query/algebra/materialize/TempTable.java
+index 821f86f..be55fb1 100644
+--- a/src/main/java/org/vanilladb/core/query/algebra/materialize/TempTable.java
++++ b/src/main/java/org/vanilladb/core/query/algebra/materialize/TempTable.java
+@@ -53,6 +53,8 @@ public class TempTable {
+ 
+ 	/**
+ 	 * Opens a table scan for the temporary table.
++	 * 
++	 * @return the scan for the temporary table
+ 	 */
+ 	public UpdateScan open() {
+ 		return new TableScan(ti, tx);
+diff --git a/src/main/java/org/vanilladb/core/query/algebra/multibuffer/BufferNeeds.java b/src/main/java/org/vanilladb/core/query/algebra/multibuffer/BufferNeeds.java
+index 28aafb5..6f9a12b 100644
+--- a/src/main/java/org/vanilladb/core/query/algebra/multibuffer/BufferNeeds.java
++++ b/src/main/java/org/vanilladb/core/query/algebra/multibuffer/BufferNeeds.java
+@@ -30,6 +30,8 @@ public class BufferNeeds {
+ 	 * 
+ 	 * @param size
+ 	 *            the size of the output file
++	 * @param tx
++	 *            the tx to execute
+ 	 * @return the highest number less than the number of available buffers,
+ 	 *         that is a root of the plan's output size
+ 	 */
+@@ -53,6 +55,8 @@ public class BufferNeeds {
+ 	 * 
+ 	 * @param size
+ 	 *            the size of the output file
++	 * @param tx
++	 *            the tx to execute
+ 	 * @return the highest number less than the number of available buffers,
+ 	 *         that is a factor of the plan's output size
+ 	 */
+diff --git a/src/main/java/org/vanilladb/core/server/VanillaDb.java b/src/main/java/org/vanilladb/core/server/VanillaDb.java
+index 2372028..306744b 100644
+--- a/src/main/java/org/vanilladb/core/server/VanillaDb.java
++++ b/src/main/java/org/vanilladb/core/server/VanillaDb.java
+@@ -47,8 +47,12 @@ import org.vanilladb.core.util.Profiler;
+  * be initialized by the method {@link #init(String) init} before use. The
+  * methods {@link #initFileMgr(String) initFileMgr},
+  * {@link #initFileAndLogMgr(String) initFileAndLogMgr},
+- * {@link #initFileLogAndBufferMgr(String) initFileLogAndBufferMgr}, and
+- * {@link #initCatalogMgr(boolean, Transaction) initCatalogMgr} provide limited
++ * {@link #initTaskMgr() initTaskMgr},
++ * {@link #initTxMgr() initTxMgr},
++ * {@link #initCatalogMgr(boolean, Transaction) initCatalogMgr},
++ * {@link #initStatMgr(Transaction) initStatMgr},
++ * {@link #initSPFactory() initSPFactory}, and
++ * {@link #initCheckpointingTask() initCheckpointingTask} provide limited
+  * initialization, and are useful for debugging purposes.
+  */
+ public class VanillaDb {
+diff --git a/src/main/java/org/vanilladb/core/sql/ConstantRange.java b/src/main/java/org/vanilladb/core/sql/ConstantRange.java
+index 79308b8..3e6f500 100644
+--- a/src/main/java/org/vanilladb/core/sql/ConstantRange.java
++++ b/src/main/java/org/vanilladb/core/sql/ConstantRange.java
+@@ -137,7 +137,7 @@ public abstract class ConstantRange {
+ 	 * 
+ 	 * @param c
+ 	 *            the specified constant
+-	 * @param inclusive
++	 * @param incl
+ 	 *            whether the constant is inclusive
+ 	 * @return a new range instance with equal or more strict upper bound
+ 	 */
+diff --git a/src/main/java/org/vanilladb/core/sql/DoubleConstantRange.java b/src/main/java/org/vanilladb/core/sql/DoubleConstantRange.java
+index 3c6dc37..7587eb8 100644
+--- a/src/main/java/org/vanilladb/core/sql/DoubleConstantRange.java
++++ b/src/main/java/org/vanilladb/core/sql/DoubleConstantRange.java
+@@ -40,7 +40,6 @@ public class DoubleConstantRange extends ConstantRange {
+ 	 *            the higher bound. <code>null</code> means unbound.
+ 	 * @param highIncl
+ 	 *            whether the higher bound is inclusive
+-	 * @return a new instance
+ 	 */
+ 	public DoubleConstantRange(Double low, boolean lowIncl, Double high,
+ 			boolean highIncl) {
+diff --git a/src/main/java/org/vanilladb/core/sql/VarcharConstantRange.java b/src/main/java/org/vanilladb/core/sql/VarcharConstantRange.java
+index bb96267..a43dada 100644
+--- a/src/main/java/org/vanilladb/core/sql/VarcharConstantRange.java
++++ b/src/main/java/org/vanilladb/core/sql/VarcharConstantRange.java
+@@ -171,7 +171,6 @@ public class VarcharConstantRange extends ConstantRange {
+ 	 *            the higher bound. <code>null</code> means unbound.
+ 	 * @param highIncl
+ 	 *            whether the higher bound is inclusive
+-	 * @return a new instance
+ 	 */
+ 	public VarcharConstantRange(String low, boolean lowIncl, String high,
+ 			boolean highIncl) {
+diff --git a/src/main/java/org/vanilladb/core/sql/VarcharType.java b/src/main/java/org/vanilladb/core/sql/VarcharType.java
+index 128bf5d..a65358a 100644
+--- a/src/main/java/org/vanilladb/core/sql/VarcharType.java
++++ b/src/main/java/org/vanilladb/core/sql/VarcharType.java
+@@ -67,7 +67,7 @@ public class VarcharType extends Type {
+ 
+ 	/**
+ 	 * Returns the maximum number of bytes required, by following the rule
+-	 * specified in {@link VarcharConstant#getBytes}, to encode a
++	 * specified in {@link VarcharConstant#asBytes}, to encode a
+ 	 * {@link Constant value} of this type.
+ 	 */
+ 	@Override
+diff --git a/src/main/java/org/vanilladb/core/sql/predicate/Predicate.java b/src/main/java/org/vanilladb/core/sql/predicate/Predicate.java
+index 399a73a..075e225 100644
+--- a/src/main/java/org/vanilladb/core/sql/predicate/Predicate.java
++++ b/src/main/java/org/vanilladb/core/sql/predicate/Predicate.java
+@@ -63,7 +63,6 @@ public class Predicate {
+ 	 * 
+ 	 * @param t
+ 	 *            the term to conjunct with
+-	 * @return this predicate
+ 	 */
+ 	public void conjunctWith(Term t) {
+ 		terms.add(t);
+diff --git a/src/main/java/org/vanilladb/core/storage/buffer/BufferMgr.java b/src/main/java/org/vanilladb/core/storage/buffer/BufferMgr.java
+index 06dbb08..7060bc3 100644
+--- a/src/main/java/org/vanilladb/core/storage/buffer/BufferMgr.java
++++ b/src/main/java/org/vanilladb/core/storage/buffer/BufferMgr.java
+@@ -32,7 +32,7 @@ import org.vanilladb.core.util.CoreProperties;
+ 
+ /**
+  * The publicly-accessible buffer manager. A buffer manager wraps a
+- * {@link BasicBufferMgr} instance, and provides the same methods. The
++ * {@link BufferPoolMgr} instance, and provides the same methods. The
+  * difference is that the methods {@link #pin(BlockId)} and
+  * {@link #pinNew(String, PageFormatter)} will never return false and null
+  * respectively. If no buffers are currently available, then the calling thread
+@@ -40,8 +40,7 @@ import org.vanilladb.core.util.CoreProperties;
+  * list when a buffer becomes available. If a thread has been waiting for a
+  * buffer for an excessive amount of time (currently, 10 seconds) then repins
+  * all currently holding blocks by the calling transaction. Buffer manager
+- * implements {@link TransactionStartListener} and
+- * {@link TransactionLifecycleListener} for the purpose of unpinning buffers
++ * implements {@link TransactionLifecycleListener} for the purpose of unpinning buffers
+  * when transaction commit/rollback/recovery.
+  * 
+  * <p>
+@@ -104,8 +103,6 @@ public class BufferMgr implements TransactionLifecycleListener {
+ 	 * 
+ 	 * @param blk
+ 	 *            a block ID
+-	 * @param txNum
+-	 *            the calling transaction id
+ 	 * @return the buffer pinned to that block
+ 	 */
+ 	public Buffer pin(BlockId blk) {
+@@ -177,8 +174,6 @@ public class BufferMgr implements TransactionLifecycleListener {
+ 	 *            the name of the file
+ 	 * @param fmtr
+ 	 *            the formatter used to initialize the page
+-	 * @param txNum
+-	 *            the calling transaction id
+ 	 * @return the buffer pinned to that block
+ 	 */
+ 	public Buffer pinNew(String fileName, PageFormatter fmtr) {
+diff --git a/src/main/java/org/vanilladb/core/storage/file/Page.java b/src/main/java/org/vanilladb/core/storage/file/Page.java
+index f6f0151..873ebf3 100644
+--- a/src/main/java/org/vanilladb/core/storage/file/Page.java
++++ b/src/main/java/org/vanilladb/core/storage/file/Page.java
+@@ -97,8 +97,7 @@ public class Page {
+ 	 * {@link VanillaDb#fileMgr()}. That object is created during system
+ 	 * initialization. Thus this constructor cannot be called until either
+ 	 * {@link VanillaDb#init(String)} or {@link VanillaDb#initFileMgr(String)}
+-	 * or {@link VanillaDb#initFileAndLogMgr(String)} or
+-	 * {@link VanillaDb#initFileLogAndBufferMgr(String)} is called first.
++	 * or {@link VanillaDb#initFileAndLogMgr(String)} is called first.
+ 	 */
+ 	public Page() {
+ 	}
+diff --git a/src/main/java/org/vanilladb/core/storage/index/btree/BTPageFormatter.java b/src/main/java/org/vanilladb/core/storage/index/btree/BTPageFormatter.java
+index 922de93..8240073 100644
+--- a/src/main/java/org/vanilladb/core/storage/index/btree/BTPageFormatter.java
++++ b/src/main/java/org/vanilladb/core/storage/index/btree/BTPageFormatter.java
+@@ -40,8 +40,8 @@ public class BTPageFormatter extends PageFormatter {
+ 	/**
+ 	 * Creates a formatter.
+ 	 * 
+-	 * @param ti
+-	 *            the index's metadata
++	 * @param sch
++	 *            the schema of the page
+ 	 * @param flags
+ 	 *            the page's flag values
+ 	 */
+diff --git a/src/main/java/org/vanilladb/core/storage/index/btree/BTreeIndex.java b/src/main/java/org/vanilladb/core/storage/index/btree/BTreeIndex.java
+index 37a7acf..f3a21b8 100644
+--- a/src/main/java/org/vanilladb/core/storage/index/btree/BTreeIndex.java
++++ b/src/main/java/org/vanilladb/core/storage/index/btree/BTreeIndex.java
+@@ -160,7 +160,7 @@ public class BTreeIndex extends Index {
+ 	 * new leaf page. If the root node splits, then {@link BTreeDir#makeNewRoot}
+ 	 * is called.
+ 	 * 
+-	 * @see Index#insert(Constant, RecordId)
++	 * @see Index#insert(Constant, RecordId, boolean)
+ 	 */
+ 	@Override
+ 	public void insert(Constant key, RecordId dataRecordId, boolean doLogicalLogging) {
+@@ -205,7 +205,7 @@ public class BTreeIndex extends Index {
+ 	 * directory to find the leaf page containing that record; then it deletes
+ 	 * the record from the page. F
+ 	 * 
+-	 * @see Index#delete(Constant, RecordId)
++	 * @see Index#delete(Constant, RecordId, boolean)
+ 	 */
+ 	@Override
+ 	public void delete(Constant key, RecordId dataRecordId, boolean doLogicalLogging) {
+diff --git a/src/main/java/org/vanilladb/core/storage/index/btree/BTreeLeaf.java b/src/main/java/org/vanilladb/core/storage/index/btree/BTreeLeaf.java
+index b021796..7c79959 100644
+--- a/src/main/java/org/vanilladb/core/storage/index/btree/BTreeLeaf.java
++++ b/src/main/java/org/vanilladb/core/storage/index/btree/BTreeLeaf.java
+@@ -152,8 +152,8 @@ public class BTreeLeaf {
+ 	 *            the data file name
+ 	 * @param blk
+ 	 *            a block ID
+-	 * @param ti
+-	 *            the metadata of the B-tree leaf file
++	 * @param keyType
++	 *            the type of the search key
+ 	 * @param searchRange
+ 	 *            the range of search keys
+ 	 * @param tx
+diff --git a/src/main/java/org/vanilladb/core/storage/index/btree/BTreePage.java b/src/main/java/org/vanilladb/core/storage/index/btree/BTreePage.java
+index cc9f856..7d79232 100644
+--- a/src/main/java/org/vanilladb/core/storage/index/btree/BTreePage.java
++++ b/src/main/java/org/vanilladb/core/storage/index/btree/BTreePage.java
+@@ -164,7 +164,6 @@ public class BTreePage {
+ 	 *            flag index, starting from 0
+ 	 * @param val
+ 	 *            the flag value
+-	 * @return the i-th flag
+ 	 */
+ 	public void setFlag(int i, long val) {
+ 		int offset = Page.maxSize(INTEGER) + Page.maxSize(BIGINT) * i;
+diff --git a/src/main/java/org/vanilladb/core/storage/index/hash/HashIndex.java b/src/main/java/org/vanilladb/core/storage/index/hash/HashIndex.java
+index 1d3cae0..e06ccca 100644
+--- a/src/main/java/org/vanilladb/core/storage/index/hash/HashIndex.java
++++ b/src/main/java/org/vanilladb/core/storage/index/hash/HashIndex.java
+@@ -119,7 +119,7 @@ public class HashIndex extends Index {
+ 	 * then opens a {@link RecordFile} on the file corresponding to the bucket.
+ 	 * The record file for the previous bucket (if any) is closed.
+ 	 * 
+-	 * @see Index#beforeFirst(Constant)
++	 * @see Index#beforeFirst(ConstantRange)
+ 	 */
+ 	@Override
+ 	public void beforeFirst(ConstantRange searchRange) {
+@@ -170,7 +170,7 @@ public class HashIndex extends Index {
+ 	/**
+ 	 * Inserts a new index record into this index.
+ 	 * 
+-	 * @see Index#insert(Constant, RecordId)
++	 * @see Index#insert(Constant, RecordId, boolean)
+ 	 */
+ 	@Override
+ 	public void insert(Constant key, RecordId dataRecordId, boolean doLogicalLogging) {
+@@ -197,7 +197,7 @@ public class HashIndex extends Index {
+ 	/**
+ 	 * Deletes the specified index record.
+ 	 * 
+-	 * @see Index#delete(Constant, RecordId)
++	 * @see Index#delete(Constant, RecordId, boolean)
+ 	 */
+ 	@Override
+ 	public void delete(Constant key, RecordId dataRecordId, boolean doLogicalLogging) {
+diff --git a/src/main/java/org/vanilladb/core/storage/log/BasicLogRecord.java b/src/main/java/org/vanilladb/core/storage/log/BasicLogRecord.java
+index e3a3b07..2687bf3 100644
+--- a/src/main/java/org/vanilladb/core/storage/log/BasicLogRecord.java
++++ b/src/main/java/org/vanilladb/core/storage/log/BasicLogRecord.java
+@@ -36,8 +36,8 @@ public class BasicLogRecord {
+ 	 * 
+ 	 * @param pg
+ 	 *            the page containing the log record
+-	 * @param currentPos
+-	 *            the position of the log record
++	 * @param lsn
++	 *            the sequence number of the log record
+ 	 */
+ 	public BasicLogRecord(Page pg, LogSeqNum lsn) {
+ 		this.pg = pg;
+diff --git a/src/main/java/org/vanilladb/core/storage/metadata/index/IndexInfo.java b/src/main/java/org/vanilladb/core/storage/metadata/index/IndexInfo.java
+index 77492aa..0ec1fab 100644
+--- a/src/main/java/org/vanilladb/core/storage/metadata/index/IndexInfo.java
++++ b/src/main/java/org/vanilladb/core/storage/metadata/index/IndexInfo.java
+@@ -44,8 +44,6 @@ public class IndexInfo {
+ 	 *            the name of the indexed field
+ 	 * @param idxType
+ 	 *            the type of the index
+-	 * @param tx
+-	 *            the calling transaction
+ 	 */
+ 	public IndexInfo(String idxName, String tblName, String fldName, int idxType) {
+ 		if (idxType != IDX_HASH && idxType != IDX_BTREE)
+diff --git a/src/main/java/org/vanilladb/core/storage/metadata/statistics/Bucket.java b/src/main/java/org/vanilladb/core/storage/metadata/statistics/Bucket.java
+index c33e4eb..972d918 100644
+--- a/src/main/java/org/vanilladb/core/storage/metadata/statistics/Bucket.java
++++ b/src/main/java/org/vanilladb/core/storage/metadata/statistics/Bucket.java
+@@ -70,7 +70,6 @@ public class Bucket {
+ 	/**
+ 	 * Returns the estimated number of distinct values within the overlap of
+ 	 * this instance's range and the specified range.
+-	 * 
+ 	 * <p>
+ 	 * Assumes that:
+ 	 * <ul>
+@@ -79,7 +78,6 @@ public class Bucket {
+ 	 * <li>Values are uniformly distributed within this instance's range if
+ 	 * percentiles are not provided.</li>
+ 	 * </ul>
+-	 * </p>
+ 	 * 
+ 	 * @param range
+ 	 *            the specified range
+diff --git a/src/main/java/org/vanilladb/core/storage/metadata/statistics/Histogram.java b/src/main/java/org/vanilladb/core/storage/metadata/statistics/Histogram.java
+index 187abf0..94dcb9e 100644
+--- a/src/main/java/org/vanilladb/core/storage/metadata/statistics/Histogram.java
++++ b/src/main/java/org/vanilladb/core/storage/metadata/statistics/Histogram.java
+@@ -25,14 +25,12 @@ import java.util.TreeSet;
+ /**
+  * A histogram that, for each field of a table, approximates the distribution of
+  * values using {@link Bucket buckets}.
+- * 
+  * <p>
+  * Assumes that, for each field:
+  * <ul>
+  * <li>Sets of records in different buckets are disjoint.</li>
+  * <li>Sets of values in different buckets are disjoint.</li>
+  * </ul>
+- * </p>
+  */
+ public class Histogram {
+ 	private Map<String, Collection<Bucket>> dists;
+diff --git a/src/main/java/org/vanilladb/core/storage/metadata/statistics/StatMgr.java b/src/main/java/org/vanilladb/core/storage/metadata/statistics/StatMgr.java
+index b4c705d..e82cb1a 100644
+--- a/src/main/java/org/vanilladb/core/storage/metadata/statistics/StatMgr.java
++++ b/src/main/java/org/vanilladb/core/storage/metadata/statistics/StatMgr.java
+@@ -58,8 +58,6 @@ public class StatMgr {
+ 	 * Creates the statistics manager. The initial statistics are calculated by
+ 	 * traversing the entire database.
+ 	 * 
+-	 * @param tblMgr
+-	 *            the table manager
+ 	 * @param tx
+ 	 *            the startup transaction
+ 	 */
+diff --git a/src/main/java/org/vanilladb/core/storage/record/RecordFile.java b/src/main/java/org/vanilladb/core/storage/record/RecordFile.java
+index 8e10bcb..50e6a93 100644
+--- a/src/main/java/org/vanilladb/core/storage/record/RecordFile.java
++++ b/src/main/java/org/vanilladb/core/storage/record/RecordFile.java
+@@ -55,7 +55,7 @@ public class RecordFile implements Record {
+ 	 * Constructs an object to manage a file of records. If the file does not
+ 	 * exist, it is created. This method should be called by {@link TableInfo}
+ 	 * only. To obtain an instance of this class, call
+-	 * {@link TableInfo#open(Transaction)} instead.
++	 * {@link TableInfo#open(Transaction, boolean)} instead.
+ 	 * 
+ 	 * @param ti
+ 	 *            the table metadata
+@@ -133,7 +133,7 @@ public class RecordFile implements Record {
+ 
+ 	/**
+ 	 * Returns the value of the specified field in the current record. Getter
+-	 * should be called after {@link #next()} or {@link #moveToRecordId()}.
++	 * should be called after {@link #next()} or {@link #moveToRecordId(RecordId)}.
+ 	 * 
+ 	 * @param fldName
+ 	 *            the name of the field
+diff --git a/src/main/java/org/vanilladb/core/storage/record/RecordFormatter.java b/src/main/java/org/vanilladb/core/storage/record/RecordFormatter.java
+index 38540ef..56e7d26 100644
+--- a/src/main/java/org/vanilladb/core/storage/record/RecordFormatter.java
++++ b/src/main/java/org/vanilladb/core/storage/record/RecordFormatter.java
+@@ -53,7 +53,7 @@ public class RecordFormatter extends PageFormatter {
+ 	 * numeric field is given a value of 0, and each string field is given a
+ 	 * value of "".
+ 	 * 
+-	 * @see org.vanilladb.core.storage.buffer.PageFormatter#format(org.vanilladb.core.storage.file.Page)
++	 * @see org.vanilladb.core.storage.buffer.PageFormatter#format(org.vanilladb.core.storage.buffer.Buffer)
+ 	 */
+ 	@Override
+ 	public void format(Buffer buf) {
+diff --git a/src/main/java/org/vanilladb/core/storage/record/RecordId.java b/src/main/java/org/vanilladb/core/storage/record/RecordId.java
+index fd7fa58..b1b1e23 100644
+--- a/src/main/java/org/vanilladb/core/storage/record/RecordId.java
++++ b/src/main/java/org/vanilladb/core/storage/record/RecordId.java
+@@ -29,8 +29,8 @@ public class RecordId {
+ 	 * Creates a record ID for the record having the specified ID in the
+ 	 * specified block.
+ 	 * 
+-	 * @param blkNum
+-	 *            the block number where the record lives
++	 * @param blk
++	 *            the block id where the record lives
+ 	 * @param id
+ 	 *            the record's ID
+ 	 */
+diff --git a/src/main/java/org/vanilladb/core/storage/record/RecordPage.java b/src/main/java/org/vanilladb/core/storage/record/RecordPage.java
+index 0ad6033..0420c5a 100644
+--- a/src/main/java/org/vanilladb/core/storage/record/RecordPage.java
++++ b/src/main/java/org/vanilladb/core/storage/record/RecordPage.java
+@@ -292,8 +292,6 @@ public class RecordPage implements Record {
+ 
+ 	/**
+ 	 * Print all Slot IN_USE or EMPTY, for debugging
+-	 * 
+-	 * @return void
+ 	 */
+ 	public void runAllSlot() {
+ 		moveToId(0);
+diff --git a/src/main/java/org/vanilladb/core/storage/tx/Transaction.java b/src/main/java/org/vanilladb/core/storage/tx/Transaction.java
+index c494783..39ff301 100644
+--- a/src/main/java/org/vanilladb/core/storage/tx/Transaction.java
++++ b/src/main/java/org/vanilladb/core/storage/tx/Transaction.java
+@@ -44,9 +44,8 @@ public class Transaction {
+ 	 * Creates a new transaction and associates it with a recovery manager and a
+ 	 * concurrency manager. This constructor depends on the file, log, and
+ 	 * buffer managers from {@link VanillaDb}, which are created during system
+-	 * initialization. Thus this constructor cannot be called until either
+-	 * {@link VanillaDb#init(String)} or
+-	 * {@link VanillaDb#initFileLogAndBufferMgr(String)} or is called first.
++	 * initialization. Thus this constructor cannot be called until
++	 * {@link VanillaDb#init(String)} is called first.
+ 	 */
+ 	public Transaction(TransactionMgr txMgr, TransactionLifecycleListener concurMgr,
+ 			TransactionLifecycleListener recoveryMgr, TransactionLifecycleListener bufferMgr,
+diff --git a/src/main/java/org/vanilladb/core/storage/tx/recovery/LogRecord.java b/src/main/java/org/vanilladb/core/storage/tx/recovery/LogRecord.java
+index fb8b71c..0b37dae 100644
+--- a/src/main/java/org/vanilladb/core/storage/tx/recovery/LogRecord.java
++++ b/src/main/java/org/vanilladb/core/storage/tx/recovery/LogRecord.java
+@@ -79,9 +79,7 @@ public interface LogRecord {
+ 	LogSeqNum getLSN();
+ 
+ 	/**
+-	 * Undoes the operation encoded by this log record. The log record types for
+-	 * which this method does anything interesting are {@link SetValueRecord},
+-	 * {@link IndexDeleteRecord} and {@link IndexInsertRecord} .
++	 * Undoes the operation encoded by this log record.
+ 	 * 
+ 	 * @param tx
+ 	 *            the transaction that is performing the undo.
+@@ -91,7 +89,7 @@ public interface LogRecord {
+ 	/**
+ 	 * Redoes the operation encoded by this log record.
+ 	 * 
+-	 * @param txNum
++	 * @param tx
+ 	 *            the transaction that is performing the redo.
+ 	 */
+ 	void redo(Transaction tx);

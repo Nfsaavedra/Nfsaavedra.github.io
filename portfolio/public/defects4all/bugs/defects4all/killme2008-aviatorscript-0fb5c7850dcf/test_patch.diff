@@ -1,0 +1,16 @@
+diff --git a/src/test/java/com/googlecode/aviator/test/function/GrammarUnitTest.java b/src/test/java/com/googlecode/aviator/test/function/GrammarUnitTest.java
+index e29c06d..31b279f 100644
+--- a/src/test/java/com/googlecode/aviator/test/function/GrammarUnitTest.java
++++ b/src/test/java/com/googlecode/aviator/test/function/GrammarUnitTest.java
+@@ -64,6 +64,11 @@ public class GrammarUnitTest {
+     assertEquals(new BigInteger("-2017122615550747128008704"), val);
+   }
+ 
++  @Test(expected = ExpressionSyntaxErrorException.class)
++  public void testIssue177() {
++    AviatorEvaluator.compile("$age >30 ($age < 20)");
++  }
++
+   @Test
+   public void testIssue175() {
+     Map<String, Object> env = new HashMap<>();

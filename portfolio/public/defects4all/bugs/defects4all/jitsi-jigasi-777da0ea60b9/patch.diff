@@ -1,0 +1,26 @@
+diff --git a/src/main/java/org/jitsi/jigasi/SipGatewaySession.java b/src/main/java/org/jitsi/jigasi/SipGatewaySession.java
+index 95b2361..b34dbbe 100644
+--- a/src/main/java/org/jitsi/jigasi/SipGatewaySession.java
++++ b/src/main/java/org/jitsi/jigasi/SipGatewaySession.java
+@@ -1218,8 +1218,6 @@ public class SipGatewaySession
+         {
+             soundNotificationManager.notifyLobbyWaitReview();
+         }
+-
+-        this.notifyLobbyJoined();
+     }
+ 
+     /**
+diff --git a/src/main/java/org/jitsi/jigasi/SoundNotificationManager.java b/src/main/java/org/jitsi/jigasi/SoundNotificationManager.java
+index d7ace17..aae8b61 100644
+--- a/src/main/java/org/jitsi/jigasi/SoundNotificationManager.java
++++ b/src/main/java/org/jitsi/jigasi/SoundNotificationManager.java
+@@ -663,7 +663,7 @@ public class SoundNotificationManager
+                     playbackQueue.queueNext(
+                             gatewaySession.getSipCall(),
+                             fileName,
+-                            null,
++                            () -> gatewaySession.notifyLobbyJoined(),
+                             playbackDuration);
+                 }
+                 else

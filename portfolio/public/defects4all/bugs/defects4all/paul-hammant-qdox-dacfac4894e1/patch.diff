@@ -1,0 +1,23 @@
+diff --git a/src/main/java/com/thoughtworks/qdox/model/impl/DefaultJavaTypeVariable.java b/src/main/java/com/thoughtworks/qdox/model/impl/DefaultJavaTypeVariable.java
+index 46a519e..80da556 100644
+--- a/src/main/java/com/thoughtworks/qdox/model/impl/DefaultJavaTypeVariable.java
++++ b/src/main/java/com/thoughtworks/qdox/model/impl/DefaultJavaTypeVariable.java
+@@ -124,7 +124,9 @@ public class DefaultJavaTypeVariable<D extends JavaGenericDeclaration>
+     @Override
+     public String getGenericValue()
+     {
+-        StringBuilder result = new StringBuilder( getValue() );
++        StringBuilder result = new StringBuilder();
++        result.append( '<' );
++        result.append( getValue() );
+         if ( bounds != null && !bounds.isEmpty() )
+         {
+             result.append( " extends " );
+@@ -137,6 +139,7 @@ public class DefaultJavaTypeVariable<D extends JavaGenericDeclaration>
+                 }
+             }
+         }
++        result.append( '>' );
+         return result.toString();
+     }
+ 

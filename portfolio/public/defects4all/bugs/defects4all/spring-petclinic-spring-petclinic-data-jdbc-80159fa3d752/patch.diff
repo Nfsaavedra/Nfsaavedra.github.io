@@ -1,0 +1,39 @@
+diff --git a/src/main/java/org/springframework/samples/petclinic/repository/jpa/JpaOwnerRepositoryImpl.java b/src/main/java/org/springframework/samples/petclinic/repository/jpa/JpaOwnerRepositoryImpl.java
+index dfa00ce..fd0f217 100644
+--- a/src/main/java/org/springframework/samples/petclinic/repository/jpa/JpaOwnerRepositoryImpl.java
++++ b/src/main/java/org/springframework/samples/petclinic/repository/jpa/JpaOwnerRepositoryImpl.java
+@@ -70,7 +70,7 @@ public class JpaOwnerRepositoryImpl implements OwnerRepository {
+ 
+     @Override
+     public void save(Owner owner) {
+-        this.em.merge(owner);
++        this.em.persist(owner);
+ 
+     }
+ 
+diff --git a/src/main/java/org/springframework/samples/petclinic/repository/jpa/JpaPetRepositoryImpl.java b/src/main/java/org/springframework/samples/petclinic/repository/jpa/JpaPetRepositoryImpl.java
+index ea185cc..4823aab 100644
+--- a/src/main/java/org/springframework/samples/petclinic/repository/jpa/JpaPetRepositoryImpl.java
++++ b/src/main/java/org/springframework/samples/petclinic/repository/jpa/JpaPetRepositoryImpl.java
+@@ -53,7 +53,7 @@ public class JpaPetRepositoryImpl implements PetRepository {
+ 
+     @Override
+     public void save(Pet pet) {
+-        this.em.merge(pet);
++        this.em.persist(pet);
+     }
+ 
+ }
+diff --git a/src/main/java/org/springframework/samples/petclinic/repository/jpa/JpaVisitRepositoryImpl.java b/src/main/java/org/springframework/samples/petclinic/repository/jpa/JpaVisitRepositoryImpl.java
+index 58d3709..fccf795 100644
+--- a/src/main/java/org/springframework/samples/petclinic/repository/jpa/JpaVisitRepositoryImpl.java
++++ b/src/main/java/org/springframework/samples/petclinic/repository/jpa/JpaVisitRepositoryImpl.java
+@@ -45,7 +45,7 @@ public class JpaVisitRepositoryImpl implements VisitRepository {
+ 
+     @Override
+     public void save(Visit visit) {
+-        this.em.merge(visit);
++        this.em.persist(visit);
+     }
+ 
+ 

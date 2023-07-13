@@ -1,0 +1,65 @@
+diff --git a/src/test/java/org/mutabilitydetector/cli/SessionResultsFormatterTest.java b/src/test/java/org/mutabilitydetector/cli/SessionResultsFormatterTest.java
+index 6532567..73f24f7 100644
+--- a/src/test/java/org/mutabilitydetector/cli/SessionResultsFormatterTest.java
++++ b/src/test/java/org/mutabilitydetector/cli/SessionResultsFormatterTest.java
+@@ -109,7 +109,7 @@ public class SessionResultsFormatterTest {
+ 
+         assertThat(result.toString(), 
+                    containsString("a.b.c is NOT_IMMUTABLE" + newline +
+-                           "\t1st checker reason message [Class: path.to.MyClass]" + newline +
++                           "\t1st checker reason message [at path.to.MyClass(MyClass.java:1)]" + newline +
+                            "\t2nd checker reason message [Field: myField, Class: path.to.OtherClass]" + newline));
+     }
+ 
+diff --git a/src/test/java/org/mutabilitydetector/locations/ClassLocationTest.java b/src/test/java/org/mutabilitydetector/locations/ClassLocationTest.java
+index 87af3ff..183b0ed 100644
+--- a/src/test/java/org/mutabilitydetector/locations/ClassLocationTest.java
++++ b/src/test/java/org/mutabilitydetector/locations/ClassLocationTest.java
+@@ -59,7 +59,7 @@ public class ClassLocationTest {
+     @Test
+     public void prettyPrintShowsClassNameInDottedFormat() throws Exception {
+         ClassLocation location = fromInternalName("some/package/MyClass");
+-        assertThat(location.prettyPrint(), is("[Class: some.package.MyClass]"));
++        assertThat(location.prettyPrint(), is("[at some.package.MyClass(MyClass.java:1)]"));
+     }
+ 
+ }
+diff --git a/src/test/java/org/mutabilitydetector/unittesting/clientusage/MutabilityAssertTest.java b/src/test/java/org/mutabilitydetector/unittesting/clientusage/MutabilityAssertTest.java
+index 3f9aaac..2fd824b 100644
+--- a/src/test/java/org/mutabilitydetector/unittesting/clientusage/MutabilityAssertTest.java
++++ b/src/test/java/org/mutabilitydetector/unittesting/clientusage/MutabilityAssertTest.java
+@@ -71,7 +71,7 @@ public class MutabilityAssertTest {
+             "Expected: org.mutabilitydetector.benchmarks.MutableByHavingPublicNonFinalField to be IMMUTABLE%n" +
+             "     but: org.mutabilitydetector.benchmarks.MutableByHavingPublicNonFinalField is actually NOT_IMMUTABLE%n" +
+             "    Reasons:%n" +
+-            "        Can be subclassed, therefore parameters declared to be this type could be mutable subclasses at runtime. [Class: org.mutabilitydetector.benchmarks.MutableByHavingPublicNonFinalField]%n" +
++            "        Can be subclassed, therefore parameters declared to be this type could be mutable subclasses at runtime. [at org.mutabilitydetector.benchmarks.MutableByHavingPublicNonFinalField(MutableByHavingPublicNonFinalField.java:1)]%n" +
+             "        Field is visible outwith this class, and is not declared final. [Field: name, Class: org.mutabilitydetector.benchmarks.MutableByHavingPublicNonFinalField]%n" +
+             "        Field is not final, if shared across threads the Java Memory Model will not guarantee it is initialised before it is read. [Field: name, Class: org.mutabilitydetector.benchmarks.MutableByHavingPublicNonFinalField]%n" +
+             "    Allowed reasons:%n" +
+diff --git a/src/test/java/org/mutabilitydetector/unittesting/internal/AssertionReporterTest.java b/src/test/java/org/mutabilitydetector/unittesting/internal/AssertionReporterTest.java
+index 23dc86d..7eccdc9 100644
+--- a/src/test/java/org/mutabilitydetector/unittesting/internal/AssertionReporterTest.java
++++ b/src/test/java/org/mutabilitydetector/unittesting/internal/AssertionReporterTest.java
+@@ -92,7 +92,7 @@ public class AssertionReporterTest {
+             assertThat(errorMessageLines[1], is("Expected: d.e.SimpleClassName to be " + IMMUTABLE));
+             assertThat(errorMessageLines[2], is("     but: d.e.SimpleClassName is actually " + NOT_IMMUTABLE));
+             assertThat(errorMessageLines[3], is("    Reasons:"));
+-            assertThat(errorMessageLines[4], is("        a reason the class is mutable [Class: d.e.SimpleClassName]" ));
++            assertThat(errorMessageLines[4], is("        a reason the class is mutable [at d.e.SimpleClassName(SimpleClassName.java:1)]" ));
+             assertThat(errorMessageLines[5], is("    Allowed reasons:" ));
+             assertThat(errorMessageLines[6], is("        None." ));
+         }
+diff --git a/src/test/java/org/mutabilitydetector/unittesting/matchers/reasons/WithAllowedReasonsMatcherTest.java b/src/test/java/org/mutabilitydetector/unittesting/matchers/reasons/WithAllowedReasonsMatcherTest.java
+index fea97c3..0352cac 100644
+--- a/src/test/java/org/mutabilitydetector/unittesting/matchers/reasons/WithAllowedReasonsMatcherTest.java
++++ b/src/test/java/org/mutabilitydetector/unittesting/matchers/reasons/WithAllowedReasonsMatcherTest.java
+@@ -194,7 +194,7 @@ public class WithAllowedReasonsMatcherTest {
+         String expectedError = String.format(
+                 "org.some.Thing is actually NOT_IMMUTABLE%n" + 
+                 "    Reasons:%n" + 
+-                "        it sucks [Class: org.some.Thing]%n" + 
++                "        it sucks [at org.some.Thing(Thing.java:1)]%n" +
+                 "    Allowed reasons:%n" + 
+                 "        None.");
+         

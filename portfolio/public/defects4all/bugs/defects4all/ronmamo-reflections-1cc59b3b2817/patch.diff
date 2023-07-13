@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/reflections/util/FilterBuilder.java b/src/main/java/org/reflections/util/FilterBuilder.java
+index 767a7ed..d7e41a6 100644
+--- a/src/main/java/org/reflections/util/FilterBuilder.java
++++ b/src/main/java/org/reflections/util/FilterBuilder.java
+@@ -42,7 +42,7 @@ public class FilterBuilder implements Predicate<String> {
+     /** include packages of given prefixes */
+     public FilterBuilder includePackage(final String... prefixes) {
+         for (String prefix : prefixes) {
+-            return add(new Include(prefix(prefix)));
++            add(new Include(prefix(prefix)));
+         }
+         return this;
+     }

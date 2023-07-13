@@ -1,0 +1,105 @@
+diff --git a/src/main/java/com/googlecode/aviator/parser/ExpressionParser.java b/src/main/java/com/googlecode/aviator/parser/ExpressionParser.java
+index 0942255..2e95e61 100644
+--- a/src/main/java/com/googlecode/aviator/parser/ExpressionParser.java
++++ b/src/main/java/com/googlecode/aviator/parser/ExpressionParser.java
+@@ -460,7 +460,7 @@ public class ExpressionParser implements Parser {
+   }
+ 
+   public void exponent() {
+-    unary();
++    factor();
+     while (true) {
+       if (expectChar('*')) {
+         move(true);
+@@ -480,19 +480,19 @@ public class ExpressionParser implements Parser {
+ 
+ 
+   public void term() {
+-    exponent();
++    unary();
+     while (true) {
+       if (expectChar('*')) {
+         move(true);
+-        exponent();
++        unary();
+         getCodeGeneratorWithTimes().onMult(this.lookhead);
+       } else if (expectChar('/')) {
+         move(true);
+-        exponent();
++        unary();
+         getCodeGeneratorWithTimes().onDiv(this.lookhead);
+       } else if (expectChar('%')) {
+         move(true);
+-        exponent();
++        unary();
+         getCodeGeneratorWithTimes().onMod(this.lookhead);
+       } else {
+         break;
+@@ -507,7 +507,7 @@ public class ExpressionParser implements Parser {
+       // check if it is a seq function call,"!" as variable
+       if (expectChar(',') || expectChar(')')) {
+         back();
+-        factor();
++        exponent();
+       } else {
+         unary();
+         getCodeGeneratorWithTimes().onNot(this.lookhead);
+@@ -517,7 +517,7 @@ public class ExpressionParser implements Parser {
+       // check if it is a seq function call,"!" as variable
+       if (expectChar(',') || expectChar(')')) {
+         back();
+-        factor();
++        exponent();
+       } else {
+         unary();
+         getCodeGeneratorWithTimes().onNeg(this.lookhead);
+@@ -527,13 +527,13 @@ public class ExpressionParser implements Parser {
+       // check if it is a seq function call,"~" as variable
+       if (expectChar(',') || expectChar(')')) {
+         back();
+-        factor();
++        exponent();
+       } else {
+         unary();
+         getCodeGeneratorWithTimes().onBitNot(this.lookhead);
+       }
+     } else {
+-      factor();
++      exponent();
+     }
+ 
+ 
+diff --git a/src/main/java/com/googlecode/aviator/runtime/function/math/MathRoundFunction.java b/src/main/java/com/googlecode/aviator/runtime/function/math/MathRoundFunction.java
+index dc99d76..2047e70 100644
+--- a/src/main/java/com/googlecode/aviator/runtime/function/math/MathRoundFunction.java
++++ b/src/main/java/com/googlecode/aviator/runtime/function/math/MathRoundFunction.java
+@@ -3,15 +3,15 @@ package com.googlecode.aviator.runtime.function.math;
+ import java.util.Map;
+ import com.googlecode.aviator.runtime.function.AbstractFunction;
+ import com.googlecode.aviator.runtime.function.FunctionUtils;
+-import com.googlecode.aviator.runtime.type.AviatorDouble;
++import com.googlecode.aviator.runtime.type.AviatorLong;
+ import com.googlecode.aviator.runtime.type.AviatorObject;
+ 
+ 
+ /**
+  * math.round(d) function
+- * 
++ *
+  * @author dennis
+- * 
++ *
+  */
+ public class MathRoundFunction extends AbstractFunction {
+ 
+@@ -20,8 +20,8 @@ public class MathRoundFunction extends AbstractFunction {
+ 
+ 
+   @Override
+-  public AviatorObject call(Map<String, Object> env, AviatorObject arg) {
+-    return AviatorDouble.valueOf(Math.round(FunctionUtils.getNumberValue(arg, env).doubleValue()));
++  public AviatorObject call(final Map<String, Object> env, final AviatorObject arg) {
++    return AviatorLong.valueOf(Math.round(FunctionUtils.getNumberValue(arg, env).doubleValue()));
+   }
+ 
+ 

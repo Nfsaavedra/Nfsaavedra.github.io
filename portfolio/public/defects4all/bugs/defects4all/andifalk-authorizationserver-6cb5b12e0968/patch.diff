@@ -1,0 +1,1377 @@
+diff --git a/AuthServerRequests.postman_collection.json b/AuthServerRequests.postman_collection.json
+index 47cada4..6ce4d8e 100644
+--- a/AuthServerRequests.postman_collection.json
++++ b/AuthServerRequests.postman_collection.json
+@@ -1,47 +1,35 @@
+ {
+ 	"info": {
+-		"_postman_id": "ec503d21-c806-4a3e-8b2f-62c4e5d7e653",
+-		"name": "AuthServerRequests",
+-		"description": "Collection for testing the authorization server manually",
++		"_postman_id": "72d3cfbd-fc4f-46a6-ac8d-47b4eb83e375",
++		"name": "AuthorizationServer",
+ 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+ 	},
+ 	"item": [
+ 		{
+-			"name": "Grant Flows",
++			"name": "SCIM",
+ 			"item": [
+ 				{
+-					"name": "ClientCredentials Grant (Post Body)",
++					"name": "List Users",
+ 					"request": {
+-						"method": "POST",
+-						"header": [
+-							{
+-								"key": "Content-Type",
+-								"value": "application/x-www-form-urlencoded",
+-								"type": "text"
+-							}
+-						],
+-						"body": {
+-							"mode": "urlencoded",
+-							"urlencoded": [
+-								{
+-									"key": "grant_type",
+-									"value": "client_credentials",
+-									"type": "text"
+-								},
++						"auth": {
++							"type": "basic",
++							"basic": [
+ 								{
+-									"key": "client_id",
+-									"value": "confidential-jwt",
+-									"type": "text"
++									"key": "password",
++									"value": "admin",
++									"type": "string"
+ 								},
+ 								{
+-									"key": "client_secret",
+-									"value": "demo",
+-									"type": "text"
++									"key": "username",
++									"value": "admin",
++									"type": "string"
+ 								}
+ 							]
+ 						},
++						"method": "GET",
++						"header": [],
+ 						"url": {
+-							"raw": "http://localhost:9090/auth/token",
++							"raw": "http://localhost:9090/auth/api/Users",
+ 							"protocol": "http",
+ 							"host": [
+ 								"localhost"
+@@ -49,45 +37,35 @@
+ 							"port": "9090",
+ 							"path": [
+ 								"auth",
+-								"token"
++								"api",
++								"Users"
+ 							]
+ 						}
+ 					},
+ 					"response": []
+ 				},
+ 				{
+-					"name": "ClientCredentials Grant (Post Body, Opaque)",
++					"name": "List Groups",
+ 					"request": {
+-						"method": "POST",
+-						"header": [
+-							{
+-								"key": "Content-Type",
+-								"type": "text",
+-								"value": "application/x-www-form-urlencoded"
+-							}
+-						],
+-						"body": {
+-							"mode": "urlencoded",
+-							"urlencoded": [
+-								{
+-									"key": "grant_type",
+-									"value": "client_credentials",
+-									"type": "text"
+-								},
++						"auth": {
++							"type": "basic",
++							"basic": [
+ 								{
+-									"key": "client_id",
+-									"value": "confidential-opaque",
+-									"type": "text"
++									"key": "password",
++									"value": "admin",
++									"type": "string"
+ 								},
+ 								{
+-									"key": "client_secret",
+-									"value": "demo",
+-									"type": "text"
++									"key": "username",
++									"value": "admin",
++									"type": "string"
+ 								}
+ 							]
+ 						},
++						"method": "GET",
++						"header": [],
+ 						"url": {
+-							"raw": "http://localhost:9090/auth/token",
++							"raw": "http://localhost:9090/auth/api/Groups",
+ 							"protocol": "http",
+ 							"host": [
+ 								"localhost"
+@@ -95,50 +73,35 @@
+ 							"port": "9090",
+ 							"path": [
+ 								"auth",
+-								"token"
++								"api",
++								"Groups"
+ 							]
+ 						}
+ 					},
+ 					"response": []
+ 				},
+ 				{
+-					"name": "ClientCredentials Grant (BasicAuth)",
++					"name": "Single User",
+ 					"request": {
+ 						"auth": {
+ 							"type": "basic",
+ 							"basic": [
+ 								{
+-									"key": "username",
+-									"value": "confidential-jwt",
++									"key": "password",
++									"value": "admin",
+ 									"type": "string"
+ 								},
+ 								{
+-									"key": "password",
+-									"value": "demo",
++									"key": "username",
++									"value": "admin",
+ 									"type": "string"
+ 								}
+ 							]
+ 						},
+-						"method": "POST",
+-						"header": [
+-							{
+-								"key": "Content-Type",
+-								"value": "application/x-www-form-urlencoded",
+-								"type": "text"
+-							}
+-						],
+-						"body": {
+-							"mode": "urlencoded",
+-							"urlencoded": [
+-								{
+-									"key": "grant_type",
+-									"value": "client_credentials",
+-									"type": "text"
+-								}
+-							]
+-						},
++						"method": "GET",
++						"header": [],
+ 						"url": {
+-							"raw": "http://localhost:9090/auth/token",
++							"raw": "http://localhost:9090/auth/api/Users/6a9b4a56-a375-4343-aa69-b78fc93bd3fe",
+ 							"protocol": "http",
+ 							"host": [
+ 								"localhost"
+@@ -146,50 +109,36 @@
+ 							"port": "9090",
+ 							"path": [
+ 								"auth",
+-								"token"
++								"api",
++								"Users",
++								"6a9b4a56-a375-4343-aa69-b78fc93bd3fe"
+ 							]
+ 						}
+ 					},
+ 					"response": []
+ 				},
+ 				{
+-					"name": "ClientCredentials Grant (BasicAuth.Opaque)",
++					"name": "Single Group",
+ 					"request": {
+ 						"auth": {
+ 							"type": "basic",
+ 							"basic": [
+ 								{
+-									"key": "username",
+-									"value": "confidential-opaque",
++									"key": "password",
++									"value": "admin",
+ 									"type": "string"
+ 								},
+ 								{
+-									"key": "password",
+-									"value": "demo",
++									"key": "username",
++									"value": "admin",
+ 									"type": "string"
+ 								}
+ 							]
+ 						},
+-						"method": "POST",
+-						"header": [
+-							{
+-								"key": "Content-Type",
+-								"type": "text",
+-								"value": "application/x-www-form-urlencoded"
+-							}
+-						],
+-						"body": {
+-							"mode": "urlencoded",
+-							"urlencoded": [
+-								{
+-									"key": "grant_type",
+-									"value": "client_credentials",
+-									"type": "text"
+-								}
+-							]
+-						},
++						"method": "GET",
++						"header": [],
+ 						"url": {
+-							"raw": "http://localhost:9090/auth/token",
++							"raw": "http://localhost:9090/auth/api/Groups/355382ea-9c94-40d4-a2dc-5c4feb0b2554",
+ 							"protocol": "http",
+ 							"host": [
+ 								"localhost"
+@@ -197,60 +146,36 @@
+ 							"port": "9090",
+ 							"path": [
+ 								"auth",
+-								"token"
++								"api",
++								"Groups",
++								"355382ea-9c94-40d4-a2dc-5c4feb0b2554"
+ 							]
+ 						}
+ 					},
+ 					"response": []
+ 				},
+ 				{
+-					"name": "Password Grant (Opaque)",
++					"name": "Add Group Member",
+ 					"request": {
+ 						"auth": {
+ 							"type": "basic",
+ 							"basic": [
+ 								{
+-									"key": "username",
+-									"value": "confidential-opaque",
+-									"type": "string"
+-								},
+-								{
+ 									"key": "password",
+-									"value": "demo",
++									"value": "admin",
+ 									"type": "string"
+-								}
+-							]
+-						},
+-						"method": "POST",
+-						"header": [
+-							{
+-								"key": "Content-Type",
+-								"type": "text",
+-								"value": "application/x-www-form-urlencoded"
+-							}
+-						],
+-						"body": {
+-							"mode": "urlencoded",
+-							"urlencoded": [
+-								{
+-									"key": "grant_type",
+-									"value": "password",
+-									"type": "text"
+ 								},
+ 								{
+ 									"key": "username",
+-									"value": "bwayne",
+-									"type": "text"
+-								},
+-								{
+-									"key": "password",
+-									"value": "wayne",
+-									"type": "text"
++									"value": "admin",
++									"type": "string"
+ 								}
+ 							]
+ 						},
++						"method": "PUT",
++						"header": [],
+ 						"url": {
+-							"raw": "http://localhost:9090/auth/token",
++							"raw": "http://localhost:9090/auth/api/Groups/355382ea-9c94-40d4-a2dc-5c4feb0b2554/members/6a9b4a56-a375-4343-aa69-b78fc93bd3fe",
+ 							"protocol": "http",
+ 							"host": [
+ 								"localhost"
+@@ -258,68 +183,87 @@
+ 							"port": "9090",
+ 							"path": [
+ 								"auth",
+-								"token"
++								"api",
++								"Groups",
++								"355382ea-9c94-40d4-a2dc-5c4feb0b2554",
++								"members",
++								"6a9b4a56-a375-4343-aa69-b78fc93bd3fe"
+ 							]
+ 						}
+ 					},
+ 					"response": []
+ 				},
+ 				{
+-					"name": "Password Grant",
++					"name": "Remove Group Member",
+ 					"request": {
+ 						"auth": {
+ 							"type": "basic",
+ 							"basic": [
+ 								{
+-									"key": "username",
+-									"value": "confidential-jwt",
++									"key": "password",
++									"value": "admin",
+ 									"type": "string"
+ 								},
+ 								{
+-									"key": "password",
+-									"value": "demo",
++									"key": "username",
++									"value": "admin",
+ 									"type": "string"
+ 								}
+ 							]
+ 						},
++						"method": "DELETE",
++						"header": [],
++						"url": {
++							"raw": "http://localhost:9090/auth/api/Groups/355382ea-9c94-40d4-a2dc-5c4feb0b2554/members/6a9b4a56-a375-4343-aa69-b78fc93bd3fe",
++							"protocol": "http",
++							"host": [
++								"localhost"
++							],
++							"port": "9090",
++							"path": [
++								"auth",
++								"api",
++								"Groups",
++								"355382ea-9c94-40d4-a2dc-5c4feb0b2554",
++								"members",
++								"6a9b4a56-a375-4343-aa69-b78fc93bd3fe"
++							]
++						}
++					},
++					"response": []
++				},
++				{
++					"name": "Create User",
++					"request": {
+ 						"method": "POST",
+ 						"header": [
+ 							{
+ 								"key": "Content-Type",
+-								"type": "text",
+-								"value": "application/x-www-form-urlencoded"
++								"name": "Content-Type",
++								"value": "application/json",
++								"type": "text"
+ 							}
+ 						],
+ 						"body": {
+-							"mode": "urlencoded",
+-							"urlencoded": [
+-								{
+-									"key": "grant_type",
+-									"value": "password",
+-									"type": "text"
+-								},
+-								{
+-									"key": "username",
+-									"value": "bwayne",
+-									"type": "text"
+-								},
+-								{
+-									"key": "password",
+-									"value": "wayne",
+-									"type": "text"
++							"mode": "raw",
++							"raw": "{\n\t\"gender\": \"MALE\",\n\t\"firstName\": \"Bruce\",\n\t\"lastName\": \"Wayne\",\n\t\"username\": \"bwayne\",\n\t\"password\": \"secret\",\n    \"email\": \"bruce.wayne@example.com\",\n    \"phone\": \"0711-1234567\",\n    \"groups\": [\n    \t  \"library_user\"\n    ],\n    \"addresses\": [\n    \t{\n    \t\t\"street\": \"Batman\",\n    \t\t\"zip\": \"70179\",\n    \t\t\"city\": \"Stuttgart\",\n    \t\t\"state\": \"Baden-Württemberg\",\n    \t\t\"country\": \"Germany\"\n    \t}\n    ]\n}",
++							"options": {
++								"raw": {
++									"language": "json"
+ 								}
+-							]
++							}
+ 						},
+ 						"url": {
+-							"raw": "http://localhost:9090/auth/token",
++							"raw": "http://localhost:8080/auth/api/users",
+ 							"protocol": "http",
+ 							"host": [
+ 								"localhost"
+ 							],
+-							"port": "9090",
++							"port": "8080",
+ 							"path": [
+ 								"auth",
+-								"token"
++								"api",
++								"users"
+ 							]
+ 						}
+ 					},
+@@ -328,46 +272,15 @@
+ 			]
+ 		},
+ 		{
+-			"name": "Introspection & Revocation",
++			"name": "OIDC",
+ 			"item": [
+ 				{
+-					"name": "Introspection",
++					"name": "Discovery",
+ 					"request": {
+-						"auth": {
+-							"type": "basic",
+-							"basic": [
+-								{
+-									"key": "username",
+-									"value": "confidential-opaque",
+-									"type": "string"
+-								},
+-								{
+-									"key": "password",
+-									"value": "demo",
+-									"type": "string"
+-								}
+-							]
+-						},
+-						"method": "POST",
+-						"header": [
+-							{
+-								"key": "Content-Type",
+-								"value": "application/x-www-form-urlencoded",
+-								"type": "text"
+-							}
+-						],
+-						"body": {
+-							"mode": "urlencoded",
+-							"urlencoded": [
+-								{
+-									"key": "token",
+-									"value": "ipEbJ3gASbS4VJfQW1rus9bo5U5bt5qjpR5j03eEIfAuMt7E",
+-									"type": "text"
+-								}
+-							]
+-						},
++						"method": "GET",
++						"header": [],
+ 						"url": {
+-							"raw": "http://localhost:9090/auth/introspect",
++							"raw": "http://localhost:9090/auth/.well-known/openid-configuration",
+ 							"protocol": "http",
+ 							"host": [
+ 								"localhost"
+@@ -375,50 +288,20 @@
+ 							"port": "9090",
+ 							"path": [
+ 								"auth",
+-								"introspect"
++								".well-known",
++								"openid-configuration"
+ 							]
+ 						}
+ 					},
+ 					"response": []
+ 				},
+ 				{
+-					"name": "Revocation",
++					"name": "JWKS",
+ 					"request": {
+-						"auth": {
+-							"type": "basic",
+-							"basic": [
+-								{
+-									"key": "username",
+-									"value": "confidential-opaque",
+-									"type": "string"
+-								},
+-								{
+-									"key": "password",
+-									"value": "demo",
+-									"type": "string"
+-								}
+-							]
+-						},
+-						"method": "POST",
+-						"header": [
+-							{
+-								"key": "Content-Type",
+-								"type": "text",
+-								"value": "application/x-www-form-urlencoded"
+-							}
+-						],
+-						"body": {
+-							"mode": "urlencoded",
+-							"urlencoded": [
+-								{
+-									"key": "token",
+-									"value": "gDNUkijLPiqfKGy6enK50kCsieD2GbULIRskx9DITocA8k8J",
+-									"type": "text"
+-								}
+-							]
+-						},
++						"method": "GET",
++						"header": [],
+ 						"url": {
+-							"raw": "http://localhost:9090/auth/revoke",
++							"raw": "http://localhost:9090/auth/jwks",
+ 							"protocol": "http",
+ 							"host": [
+ 								"localhost"
+@@ -426,56 +309,21 @@
+ 							"port": "9090",
+ 							"path": [
+ 								"auth",
+-								"revoke"
++								"jwks"
+ 							]
+ 						}
+ 					},
+ 					"response": []
+ 				},
+ 				{
+-					"name": "UserInfo (with AuthCode + PKCE)",
++					"name": "UserInfo",
+ 					"request": {
+ 						"auth": {
+-							"type": "oauth2",
+-							"oauth2": [
+-								{
+-									"key": "challengeAlgorithm",
+-									"value": "S256",
+-									"type": "string"
+-								},
+-								{
+-									"key": "redirect_uri",
+-									"value": "http://localhost:8080/callback",
+-									"type": "string"
+-								},
+-								{
+-									"key": "grant_type",
+-									"value": "authorization_code",
+-									"type": "string"
+-								},
++							"type": "bearer",
++							"bearer": [
+ 								{
+-									"key": "authUrl",
+-									"value": "http://localhost:9090/auth",
+-									"type": "string"
+-								},
+-								{
+-									"key": "addTokenTo",
+-									"value": "header",
+-									"type": "string"
+-								},
+-								{
+-									"key": "client_authentication",
+-									"value": "header",
+-									"type": "string"
+-								},
+-								{
+-									"key": "accessToken",
+-									"value": "eyJraWQiOiIxIiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiI2NDE4MDRkYS0zNjZlLTRkYTktYWRjNC05NjI4M2M3OTBmYWYiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiZ2VuZGVyIjoiTUFMRSIsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDgwXC9hdXRoIiwiZ3JvdXBzIjpbImxpYnJhcnlfdXNlciJdLCJwaG9uZV9udW1iZXJfdmVyaWZpZWQiOnRydWUsInByZWZlcnJlZF91c2VybmFtZSI6ImJ3YXluZSIsImdpdmVuX25hbWUiOiJCcnVjZSIsImxvY2FsZSI6ImRlIiwiY2xpZW50X2lkIjoiY29uZmlkZW50aWFsLWp3dCIsImF1ZCI6ImNvbmZpZGVudGlhbC1qd3QiLCJuYmYiOjE1ODc1MDc1NDgsInBob25lX3ZlcmlmaWVkIjp0cnVlLCJwaG9uZSI6IjA3MTEtMTIzNDU2NyIsIm5hbWUiOiJid2F5bmUiLCJuaWNrbmFtZSI6ImJ3YXluZSIsInBob25lX251bWJlciI6IjA3MTEtMTIzNDU2NyIsImV4cCI6MTU4NzUwODE0OCwiaWF0IjoxNTg3NTA3NTQ4LCJmYW1pbHlfbmFtZSI6IldheW5lIiwianRpIjoidGVzdCIsImVtYWlsIjoiYnJ1Y2Uud2F5bmVAZXhhbXBsZS5jb20ifQ.W8QqFjy9Mc_3SCNpUS_zS6DKWgYG3eGA_vzrG2pIiZQwD8bV3Z26x4mZp1inyIGWlgALYoLehjpqXRkNFLM1d1S9opqmKqbl9IBusPAfL_7AjV7ZKKrC9IWIndLYASqvOQxHBMBVIgJXMIUuU5SjEZ11iZJWoLJnDdsx-TRDCerfU17C-7aolxKhOL6VuPlGfpwP5dbbe9zxY-erkD2rECKPM-SFMuaiFN4ipaIk34iDueXihsGBPD4oiPaxXfTo6J78yRgyh5xeQ6Y6P-no2WQFbbh48RsfJR9P-ccb1ZSFXiBNX1EaDFS2Rslh-f8_UHEnf-byiNiVkewwiBBYJA",
+-									"type": "string"
+-								},
+-								{
+-									"key": "tokenType",
+-									"value": "Bearer",
++									"key": "token",
++									"value": "eyJraWQiOiIxIiwidHlwIjoiYXQrand0IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIzOWZkOTVlYy00ZjZmLTQ3ZjctOTJmMC0xNmJiYjdmODMyZWUiLCJjdHgiOiJwZXJzb25hbCIsInJvbGVzIjpbIlVTRVIiXSwiaXNzIjoiaHR0cDpcL1wvbG9jYWxob3N0OjkwOTBcL2F1dGgiLCJncm91cHMiOlsibGlicmFyeV91c2VyIl0sInByZWZlcnJlZF91c2VybmFtZSI6ImJ3YXluZSIsImxvY2FsZSI6ImRlIiwiZ2l2ZW5fbmFtZSI6IkJydWNlIiwiY2xpZW50X2lkIjoiY29uZmlkZW50aWFsLWp3dCIsImF1ZCI6ImNvbmZpZGVudGlhbC1qd3QiLCJuYmYiOjE2MTU4MTU2NzIsInNjb3BlIjoicHJvZmlsZSIsIm5hbWUiOiJid2F5bmUiLCJuaWNrbmFtZSI6ImJ3YXluZSIsImV4cCI6MTYxNTgxNjI3MiwiaWF0IjoxNjE1ODE1NjcyLCJmYW1pbHlfbmFtZSI6IldheW5lIiwianRpIjoiMjNhM2FlYTktM2E4MC00YzJlLTlkMGEtZmFiYWY5MjA0YTA1In0.XanfdqMKXHKd0tbrbbdSOAzlgp4N0w-v-Hh_LEDxc-KT4nowEHpuo8gv7WPQohy5ACkvNuwY4s0aWVSHipoipFITKDtK_gFpo06VIupngXUEX2Zw28KPlR_Rm3Mug-IfTTnzY87Ktn8mEDZywUdIKkXCN433LsGEUG5y-SljUT2gcBVD4I4MERjJOnRKn1Ls8JcPU_wcV76f3ukAiOZJqDN2E1kjIZIgPTPV5WVYrdk7E9cOMo55uzyCwaZ35POjSBPojPsKJmIwfTf70OCUpHijctJU4--Y0kTKKcyAdvJCUkxqpdPPdyWMzl-ziWfPWj2pJI54U2cLsKVnK4wX5g",
+ 									"type": "string"
+ 								}
+ 							]
+@@ -483,12 +331,12 @@
+ 						"method": "GET",
+ 						"header": [],
+ 						"url": {
+-							"raw": "http://localhost:8080/auth/userinfo",
++							"raw": "http://localhost:9090/auth/userinfo",
+ 							"protocol": "http",
+ 							"host": [
+ 								"localhost"
+ 							],
+-							"port": "8080",
++							"port": "9090",
+ 							"path": [
+ 								"auth",
+ 								"userinfo"
+@@ -500,57 +348,22 @@
+ 			]
+ 		},
+ 		{
+-			"name": "SCIM",
++			"name": "Clients",
+ 			"item": [
+ 				{
+-					"name": "Get Users",
++					"name": "List Clients",
+ 					"request": {
+ 						"auth": {
+-							"type": "oauth2",
+-							"oauth2": [
+-								{
+-									"key": "tokenName",
+-									"value": "UserToken",
+-									"type": "string"
+-								},
+-								{
+-									"key": "state",
+-									"value": "123456",
+-									"type": "string"
+-								},
+-								{
+-									"key": "scope",
+-									"value": "openid",
+-									"type": "string"
+-								},
+-								{
+-									"key": "redirect_uri",
+-									"value": "http://localhost:8080/demo-client/login/oauth2/code/demo",
+-									"type": "string"
+-								},
+-								{
+-									"key": "clientSecret",
+-									"value": "demo",
+-									"type": "string"
+-								},
+-								{
+-									"key": "clientId",
+-									"value": "confidential-jwt",
+-									"type": "string"
+-								},
+-								{
+-									"key": "accessTokenUrl",
+-									"value": "http://localhost:9090/auth/token",
+-									"type": "string"
+-								},
++							"type": "basic",
++							"basic": [
+ 								{
+-									"key": "authUrl",
+-									"value": "http://localhost:9090/auth/authorize",
++									"key": "password",
++									"value": "admin",
+ 									"type": "string"
+ 								},
+ 								{
+-									"key": "addTokenTo",
+-									"value": "header",
++									"key": "username",
++									"value": "admin",
+ 									"type": "string"
+ 								}
+ 							]
+@@ -558,7 +371,7 @@
+ 						"method": "GET",
+ 						"header": [],
+ 						"url": {
+-							"raw": "http://localhost:9090/auth/api/Users",
++							"raw": "http://localhost:9090/auth/api/clients",
+ 							"protocol": "http",
+ 							"host": [
+ 								"localhost"
+@@ -567,476 +380,7 @@
+ 							"path": [
+ 								"auth",
+ 								"api",
+-								"Users"
+-							]
+-						}
+-					},
+-					"response": []
+-				},
+-				{
+-					"name": "Create User",
+-					"request": {
+-						"auth": {
+-							"type": "oauth2",
+-							"oauth2": [
+-								{
+-									"key": "tokenName",
+-									"value": "UserToken",
+-									"type": "string"
+-								},
+-								{
+-									"key": "state",
+-									"value": "123456",
+-									"type": "string"
+-								},
+-								{
+-									"key": "scope",
+-									"value": "openid",
+-									"type": "string"
+-								},
+-								{
+-									"key": "redirect_uri",
+-									"value": "http://localhost:8080/demo-client/login/oauth2/code/demo",
+-									"type": "string"
+-								},
+-								{
+-									"key": "clientSecret",
+-									"value": "demo",
+-									"type": "string"
+-								},
+-								{
+-									"key": "clientId",
+-									"value": "confidential-jwt",
+-									"type": "string"
+-								},
+-								{
+-									"key": "accessTokenUrl",
+-									"value": "http://localhost:9090/auth/token",
+-									"type": "string"
+-								},
+-								{
+-									"key": "authUrl",
+-									"value": "http://localhost:9090/auth/authorize",
+-									"type": "string"
+-								},
+-								{
+-									"key": "addTokenTo",
+-									"value": "header",
+-									"type": "string"
+-								}
+-							]
+-						},
+-						"method": "POST",
+-						"header": [
+-							{
+-								"key": "Content-Type",
+-								"value": "application/json",
+-								"type": "text"
+-							}
+-						],
+-						"body": {
+-							"mode": "raw",
+-							"raw": "{\n  \"schemas\" : [ \"urn:ietf:params:scim:schemas:core:2.0:User\" ],\n  \"externalId\" : \"1488a992-e47f-4630-8cf8-e2927c6fa622\",\n  \"userName\" : \"mmuster\",\n  \"familyName\" : \"Muster\",\n  \"givenName\" : \"Max\",\n  \"active\" : true,\n  \"emails\" : [ {\n    \"value\" : \"test@example.com\",\n    \"type\" : \"work\",\n    \"primary\" : true\n  } ],\n  \"roles\" : [ \"USER\" ],\n  \"password\" : \"secret4test\",\n  \"displayName\" : \"Max Muster\"\n}"
+-						},
+-						"url": {
+-							"raw": "http://localhost:9090/auth/api/Users",
+-							"protocol": "http",
+-							"host": [
+-								"localhost"
+-							],
+-							"port": "9090",
+-							"path": [
+-								"auth",
+-								"api",
+-								"Users"
+-							]
+-						}
+-					},
+-					"response": []
+-				},
+-				{
+-					"name": "Get User",
+-					"request": {
+-						"auth": {
+-							"type": "oauth2",
+-							"oauth2": [
+-								{
+-									"key": "tokenName",
+-									"value": "UserToken",
+-									"type": "string"
+-								},
+-								{
+-									"key": "state",
+-									"value": "123456",
+-									"type": "string"
+-								},
+-								{
+-									"key": "scope",
+-									"value": "openid",
+-									"type": "string"
+-								},
+-								{
+-									"key": "redirect_uri",
+-									"value": "http://localhost:8080/demo-client/login/oauth2/code/demo",
+-									"type": "string"
+-								},
+-								{
+-									"key": "clientSecret",
+-									"value": "demo",
+-									"type": "string"
+-								},
+-								{
+-									"key": "clientId",
+-									"value": "confidential-jwt",
+-									"type": "string"
+-								},
+-								{
+-									"key": "accessTokenUrl",
+-									"value": "http://localhost:9090/auth/token",
+-									"type": "string"
+-								},
+-								{
+-									"key": "authUrl",
+-									"value": "http://localhost:9090/auth/authorize",
+-									"type": "string"
+-								},
+-								{
+-									"key": "addTokenTo",
+-									"value": "header",
+-									"type": "string"
+-								}
+-							]
+-						},
+-						"method": "GET",
+-						"header": [],
+-						"url": {
+-							"raw": "http://localhost:9090/auth/api/Users/39fd95ec-4f6f-47f7-92f0-16bbb7f832ee",
+-							"protocol": "http",
+-							"host": [
+-								"localhost"
+-							],
+-							"port": "9090",
+-							"path": [
+-								"auth",
+-								"api",
+-								"Users",
+-								"39fd95ec-4f6f-47f7-92f0-16bbb7f832ee"
+-							]
+-						}
+-					},
+-					"response": []
+-				},
+-				{
+-					"name": "Update User",
+-					"request": {
+-						"auth": {
+-							"type": "oauth2",
+-							"oauth2": [
+-								{
+-									"key": "tokenName",
+-									"value": "UserToken",
+-									"type": "string"
+-								},
+-								{
+-									"key": "state",
+-									"value": "123456",
+-									"type": "string"
+-								},
+-								{
+-									"key": "scope",
+-									"value": "openid",
+-									"type": "string"
+-								},
+-								{
+-									"key": "redirect_uri",
+-									"value": "http://localhost:8080/demo-client/login/oauth2/code/demo",
+-									"type": "string"
+-								},
+-								{
+-									"key": "clientSecret",
+-									"value": "demo",
+-									"type": "string"
+-								},
+-								{
+-									"key": "clientId",
+-									"value": "confidential-jwt",
+-									"type": "string"
+-								},
+-								{
+-									"key": "accessTokenUrl",
+-									"value": "http://localhost:9090/auth/token",
+-									"type": "string"
+-								},
+-								{
+-									"key": "authUrl",
+-									"value": "http://localhost:9090/auth/authorize",
+-									"type": "string"
+-								},
+-								{
+-									"key": "addTokenTo",
+-									"value": "header",
+-									"type": "string"
+-								}
+-							]
+-						},
+-						"method": "PUT",
+-						"header": [
+-							{
+-								"key": "Content-Type",
+-								"value": "application/json",
+-								"type": "text"
+-							}
+-						],
+-						"body": {
+-							"mode": "raw",
+-							"raw": "{\n    \"schemas\": [\n        \"urn:ietf:params:scim:schemas:core:2.0:User\"\n    ],\n    \"meta\": {\n        \"location\": \"http://localhost:9090/auth/api/Users/39fd95ec-4f6f-47f7-92f0-16bbb7f832ee\"\n    },\n    \"identifier\": \"39fd95ec-4f6f-47f7-92f0-16bbb7f832ee\",\n    \"externalId\": \"39fd95ec-4f6f-47f7-92f0-16bbb7f832ee\",\n    \"userName\": \"bwayne1\",\n    \"familyName\": \"Wayne\",\n    \"givenName\": \"Bruce\",\n    \"active\": true,\n    \"emails\": [\n        {\n            \"value\": \"bruce.wayne@example.com\",\n            \"type\": \"work\",\n            \"primary\": true\n        }\n    ],\n    \"phoneNumbers\": [],\n    \"ims\": [],\n    \"photos\": [],\n    \"addresses\": [],\n    \"groups\": [\n        {\n            \"value\": \"355382ea-9c94-40d4-a2dc-5c4feb0b2554\",\n            \"display\": \"library_user\",\n            \"$ref\": \"http://localhost:9090/auth/api/Groups/355382ea-9c94-40d4-a2dc-5c4feb0b2554\"\n        }\n    ],\n    \"entitlements\": [],\n    \"roles\": [\n        \"USER\"\n    ],\n    \"x509Certificates\": [],\n    \"displayName\": \"Bruce Wayne\"\n}"
+-						},
+-						"url": {
+-							"raw": "http://localhost:9090/auth/api/Users/39fd95ec-4f6f-47f7-92f0-16bbb7f832ee",
+-							"protocol": "http",
+-							"host": [
+-								"localhost"
+-							],
+-							"port": "9090",
+-							"path": [
+-								"auth",
+-								"api",
+-								"Users",
+-								"39fd95ec-4f6f-47f7-92f0-16bbb7f832ee"
+-							]
+-						}
+-					},
+-					"response": []
+-				},
+-				{
+-					"name": "Get Groups",
+-					"request": {
+-						"auth": {
+-							"type": "oauth2",
+-							"oauth2": [
+-								{
+-									"key": "tokenName",
+-									"value": "UserToken",
+-									"type": "string"
+-								},
+-								{
+-									"key": "state",
+-									"value": "123456",
+-									"type": "string"
+-								},
+-								{
+-									"key": "scope",
+-									"value": "openid",
+-									"type": "string"
+-								},
+-								{
+-									"key": "redirect_uri",
+-									"value": "http://localhost:8080/demo-client/login/oauth2/code/demo",
+-									"type": "string"
+-								},
+-								{
+-									"key": "clientSecret",
+-									"value": "demo",
+-									"type": "string"
+-								},
+-								{
+-									"key": "clientId",
+-									"value": "confidential-jwt",
+-									"type": "string"
+-								},
+-								{
+-									"key": "accessTokenUrl",
+-									"value": "http://localhost:9090/auth/token",
+-									"type": "string"
+-								},
+-								{
+-									"key": "authUrl",
+-									"value": "http://localhost:9090/auth/authorize",
+-									"type": "string"
+-								},
+-								{
+-									"key": "addTokenTo",
+-									"value": "header",
+-									"type": "string"
+-								}
+-							]
+-						},
+-						"method": "GET",
+-						"header": [],
+-						"url": {
+-							"raw": "http://localhost:9090/auth/api/Groups",
+-							"protocol": "http",
+-							"host": [
+-								"localhost"
+-							],
+-							"port": "9090",
+-							"path": [
+-								"auth",
+-								"api",
+-								"Groups"
+-							]
+-						}
+-					},
+-					"response": []
+-				},
+-				{
+-					"name": "Create Group",
+-					"request": {
+-						"auth": {
+-							"type": "oauth2",
+-							"oauth2": [
+-								{
+-									"key": "tokenType",
+-									"value": "Bearer",
+-									"type": "string"
+-								},
+-								{
+-									"key": "accessToken",
+-									"value": "eyJraWQiOiIxIiwidHlwIjoiYXQrand0IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiI1NWJjN2EwMS0zZGIyLTQ2Y2QtOTVmOS1jNGY4ZDRhZTk1NTciLCJjdHgiOiJwZXJzb25hbCIsInJvbGVzIjpbIkFETUlOIiwiVVNFUiJdLCJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6OTA5MFwvYXV0aCIsImxvY2FsZSI6ImRlIiwiY2xpZW50X2lkIjoiY29uZmlkZW50aWFsLWp3dCIsImF1ZCI6ImNvbmZpZGVudGlhbC1qd3QiLCJuYmYiOjE2MTAwNTY4NjcsInNjb3BlIjoib3BlbmlkIiwibmFtZSI6ImFkbWluIiwiZXhwIjoxNjEwMDU3NDY3LCJpYXQiOjE2MTAwNTY4NjcsImp0aSI6ImY1ZDAzOGI5LTdhYWEtNDM0OC05NDJmLTk2ZTdhODJlODM4NCJ9.kEJuWy7FVUMQ-Mb2fBYd68ezfPiS-pQM4vlErpkbvsuy2laweU2yP_v1JpLf8jGbskN-INfYGHN2qLtTR1EMWyiqyjbf8zknI1JOpMU8cxsx_UMBEAOeRdhQv1RbNyJkBNK5w-urNOCNYt4esPiPulF8ZE9WqtKw9bLKKYm1lOFoK893UEApjUXjNe5qjt84hU2rYFW_j0LklvRXiM1s6wVRMwN6n4UrjeOgtCgGo9DdMS3BmJRVrD3vdfKv8olYuCI6C3kQAb_GtkKG9ARefhKxw16h-QEJb9PBgL2b5trLmW2b_JcHYO4kzhT-ntPiPcppwQs4FdMtjjqi6wyDCA",
+-									"type": "string"
+-								},
+-								{
+-									"key": "tokenName",
+-									"value": "UserToken",
+-									"type": "string"
+-								},
+-								{
+-									"key": "state",
+-									"value": "123456",
+-									"type": "string"
+-								},
+-								{
+-									"key": "scope",
+-									"value": "openid",
+-									"type": "string"
+-								},
+-								{
+-									"key": "redirect_uri",
+-									"value": "http://localhost:8080/demo-client/login/oauth2/code/demo",
+-									"type": "string"
+-								},
+-								{
+-									"key": "clientSecret",
+-									"value": "demo",
+-									"type": "string"
+-								},
+-								{
+-									"key": "clientId",
+-									"value": "confidential-jwt",
+-									"type": "string"
+-								},
+-								{
+-									"key": "accessTokenUrl",
+-									"value": "http://localhost:9090/auth/token",
+-									"type": "string"
+-								},
+-								{
+-									"key": "authUrl",
+-									"value": "http://localhost:9090/auth/authorize",
+-									"type": "string"
+-								},
+-								{
+-									"key": "addTokenTo",
+-									"value": "header",
+-									"type": "string"
+-								}
+-							]
+-						},
+-						"method": "POST",
+-						"header": [
+-							{
+-								"key": "Content-Type",
+-								"value": "application/json",
+-								"type": "text"
+-							}
+-						],
+-						"body": {
+-							"mode": "raw",
+-							"raw": "{\n     \"schemas\":[\"urn:ietf:params:scim:schemas:core:2.0:Group\"],\n     \"displayName\":\"mygroup\",\n     \"externalId\":\"12345\"\n}"
+-						},
+-						"url": {
+-							"raw": "http://localhost:9090/auth/api/Groups",
+-							"protocol": "http",
+-							"host": [
+-								"localhost"
+-							],
+-							"port": "9090",
+-							"path": [
+-								"auth",
+-								"api",
+-								"Groups"
+-							]
+-						}
+-					},
+-					"response": []
+-				},
+-				{
+-					"name": "Get Group",
+-					"request": {
+-						"auth": {
+-							"type": "oauth2",
+-							"oauth2": [
+-								{
+-									"key": "tokenName",
+-									"value": "UserToken",
+-									"type": "string"
+-								},
+-								{
+-									"key": "state",
+-									"value": "123456",
+-									"type": "string"
+-								},
+-								{
+-									"key": "scope",
+-									"value": "openid",
+-									"type": "string"
+-								},
+-								{
+-									"key": "redirect_uri",
+-									"value": "http://localhost:8080/demo-client/login/oauth2/code/demo",
+-									"type": "string"
+-								},
+-								{
+-									"key": "clientSecret",
+-									"value": "demo",
+-									"type": "string"
+-								},
+-								{
+-									"key": "clientId",
+-									"value": "confidential-jwt",
+-									"type": "string"
+-								},
+-								{
+-									"key": "accessTokenUrl",
+-									"value": "http://localhost:9090/auth/token",
+-									"type": "string"
+-								},
+-								{
+-									"key": "authUrl",
+-									"value": "http://localhost:9090/auth/authorize",
+-									"type": "string"
+-								},
+-								{
+-									"key": "addTokenTo",
+-									"value": "header",
+-									"type": "string"
+-								}
+-							]
+-						},
+-						"method": "GET",
+-						"header": [],
+-						"url": {
+-							"raw": "http://localhost:9090/auth/api/Groups/88ae8d70-9b17-41b5-853e-7c7308d98b0c",
+-							"protocol": "http",
+-							"host": [
+-								"localhost"
+-							],
+-							"port": "9090",
+-							"path": [
+-								"auth",
+-								"api",
+-								"Groups",
+-								"88ae8d70-9b17-41b5-853e-7c7308d98b0c"
++								"clients"
+ 							]
+ 						}
+ 					},
+@@ -1045,6 +389,81 @@
+ 			]
+ 		}
+ 	],
++	"auth": {
++		"type": "oauth2",
++		"oauth2": [
++			{
++				"key": "tokenType",
++				"value": "Bearer",
++				"type": "string"
++			},
++			{
++				"key": "accessToken",
++				"value": "eyJraWQiOiIxIiwidHlwIjoiYXQrand0IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiI1NWJjN2EwMS0zZGIyLTQ2Y2QtOTVmOS1jNGY4ZDRhZTk1NTciLCJjdHgiOiJwZXJzb25hbCIsInJvbGVzIjpbIkFETUlOIiwiVVNFUiJdLCJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6OTA5MFwvYXV0aCIsImxvY2FsZSI6ImRlIiwiY2xpZW50X2lkIjoiY29uZmlkZW50aWFsLWp3dCIsImF1ZCI6ImNvbmZpZGVudGlhbC1qd3QiLCJuYmYiOjE2MTAxNDU1MzcsInNjb3BlIjoib3BlbmlkIiwibmFtZSI6ImFkbWluIiwiZXhwIjoxNjEwMTQ2MTM3LCJpYXQiOjE2MTAxNDU1MzcsImp0aSI6IjI2NWRkMmYyLTAyMjQtNDNhZi05MmU1LTUxN2QwN2RhYzZjYiJ9.NJQ3rKGMB5qpx0xyjSuHtEUfTILjmyv8ZLj4pSZhtwzkCWAfL7eAd5NimHXpA4QZ0fadDuKqOnHea-SLQ3njDF18qiIDg5xoZPtTDE7sEKpDx6wU1X6P-gpCqtUvBej-5JN5j-ACZjj83JUlZohgaUsmeLMp2rILYTpPcejjJYU2CgGN93I5DAm8JvNzPPnNuf3Nxgg3Tr-bRI9_K3aiE57Yt6jqjhYSLV8IbMSwwsFRbJqCwBrlTv53r2l9vP4ftpygwkXvg9t6QN14mdG9GWnBB77ML3IS_9i-3fFvIpO3JYt1APt6q5jKmHrLON5wv5_lP1p17VOgUJW-rwUQtw",
++				"type": "string"
++			},
++			{
++				"key": "scope",
++				"value": "profile",
++				"type": "string"
++			},
++			{
++				"key": "tokenName",
++				"value": "AdminToken",
++				"type": "string"
++			},
++			{
++				"key": "redirect_uri",
++				"value": "http://localhost:8080/demo-client/login/oauth2/code/demo",
++				"type": "string"
++			},
++			{
++				"key": "clientSecret",
++				"value": "demo",
++				"type": "string"
++			},
++			{
++				"key": "clientId",
++				"value": "confidential-jwt",
++				"type": "string"
++			},
++			{
++				"key": "accessTokenUrl",
++				"value": "http://localhost:9090/auth/token",
++				"type": "string"
++			},
++			{
++				"key": "authUrl",
++				"value": "http://localhost:9090/auth/authorize",
++				"type": "string"
++			},
++			{
++				"key": "challengeAlgorithm",
++				"value": "S256",
++				"type": "string"
++			},
++			{
++				"key": "state",
++				"value": "123456",
++				"type": "string"
++			},
++			{
++				"key": "grant_type",
++				"value": "authorization_code",
++				"type": "string"
++			},
++			{
++				"key": "addTokenTo",
++				"value": "header",
++				"type": "string"
++			},
++			{
++				"key": "client_authentication",
++				"value": "header",
++				"type": "string"
++			}
++		]
++	},
+ 	"event": [
+ 		{
+ 			"listen": "prerequest",
+diff --git a/src/docs/asciidoc/index.adoc b/src/docs/asciidoc/index.adoc
+index da2da68..1727e3d 100644
+--- a/src/docs/asciidoc/index.adoc
++++ b/src/docs/asciidoc/index.adoc
+@@ -135,6 +135,18 @@ A `DELETE` request is used to delete a group.
+ 
+ operation::deleteGroup[snippets='http-request,httpie-request,curl-request,http-response']
+ 
++==== Add a member to Group
++
++A `PUT` request is used to add a member to a group.
++
++operation::addMemberToGroup[snippets='http-request,httpie-request,curl-request,http-response']
++
++==== Remove a member from Group
++
++A `PUT` request is used to remove a member from a group.
++
++operation::addMemberToGroup[snippets='http-request,httpie-request,curl-request,http-response']
++
+ [[clients]]
+ === Registered Clients
+ 
+diff --git a/src/main/java/com/example/authorizationserver/scim/api/ScimGroupRestController.java b/src/main/java/com/example/authorizationserver/scim/api/ScimGroupRestController.java
+index 8007dfc..6e95b31 100644
+--- a/src/main/java/com/example/authorizationserver/scim/api/ScimGroupRestController.java
++++ b/src/main/java/com/example/authorizationserver/scim/api/ScimGroupRestController.java
+@@ -5,7 +5,9 @@ import com.example.authorizationserver.scim.api.resource.ScimGroupResource;
+ import com.example.authorizationserver.scim.api.resource.mapper.ScimGroupListResourceMapper;
+ import com.example.authorizationserver.scim.api.resource.mapper.ScimGroupResourceMapper;
+ import com.example.authorizationserver.scim.model.ScimGroupEntity;
++import com.example.authorizationserver.scim.model.ScimUserGroupEntity;
+ import com.example.authorizationserver.scim.service.ScimService;
++import org.springframework.http.HttpStatus;
+ import org.springframework.http.ResponseEntity;
+ import org.springframework.validation.annotation.Validated;
+ import org.springframework.web.bind.annotation.*;
+@@ -61,6 +63,26 @@ public class ScimGroupRestController {
+                 .orElse(ResponseEntity.notFound().build());
+     }
+ 
++    @PutMapping(GROUP_ENDPOINT + "/{groupId}/members/{userId}")
++    @ResponseStatus(NO_CONTENT)
++    public void addMemberToGroup(@PathVariable("groupId") UUID groupIdentifier, @PathVariable("userId") UUID userIdentifier) {
++        scimService.findGroupByIdentifier(groupIdentifier).map(ge -> {
++            scimService.addUserGroupMapping(userIdentifier, groupIdentifier);
++            URI location =
++                    ServletUriComponentsBuilder.fromCurrentContextPath()
++                            .path(GROUP_ENDPOINT + "/{groupId}")
++                            .buildAndExpand(ge.getIdentifier())
++                            .toUri();
++            return ResponseEntity.ok().location(location).body(
++                    scimGroupResourceMapper.mapEntityToResource(ge, location.toASCIIString()));});
++    }
++
++    @DeleteMapping(GROUP_ENDPOINT + "/{groupId}/members/{userId}")
++    @ResponseStatus(NO_CONTENT)
++    public void removeMemberFromGroup(@PathVariable("groupId") UUID groupIdentifier, @PathVariable("userId") UUID userIdentifier) {
++        scimService.removeUserGroupMapping(userIdentifier, groupIdentifier);
++    }
++
+     @PostMapping(GROUP_ENDPOINT)
+     public ResponseEntity<ScimGroupResource> createGroup(@Valid @RequestBody ScimGroupResource scimGroupResource) {
+         ScimGroupEntity scimGroupEntity = scimGroupResourceMapper.mapResourceToEntity(scimGroupResource);
+@@ -73,6 +95,18 @@ public class ScimGroupRestController {
+         return ResponseEntity.ok().location(location).body(scimGroupResourceMapper.mapEntityToResource(scimGroupEntity, location.toASCIIString()));
+     }
+ 
++    @PutMapping(GROUP_ENDPOINT+ "/{groupId}")
++    public ResponseEntity<ScimGroupResource> updateGroup(@Valid @RequestBody ScimGroupResource scimGroupResource) {
++        ScimGroupEntity scimGroupEntity = scimGroupResourceMapper.mapResourceToEntity(scimGroupResource);
++        scimGroupEntity = scimService.updateGroup(scimGroupEntity);
++        URI location =
++                ServletUriComponentsBuilder.fromCurrentContextPath()
++                        .path(GROUP_ENDPOINT + "/{userId}")
++                        .buildAndExpand(scimGroupEntity.getIdentifier())
++                        .toUri();
++        return ResponseEntity.ok().location(location).body(scimGroupResourceMapper.mapEntityToResource(scimGroupEntity, location.toASCIIString()));
++    }
++
+     @ResponseStatus(NO_CONTENT)
+     @DeleteMapping(GROUP_ENDPOINT + "/{groupId}")
+     public void deleteGroup(@PathVariable("groupId") UUID groupIdentifier) {
+diff --git a/src/main/java/com/example/authorizationserver/scim/service/ScimService.java b/src/main/java/com/example/authorizationserver/scim/service/ScimService.java
+index 0c5d0e9..3f970df 100644
+--- a/src/main/java/com/example/authorizationserver/scim/service/ScimService.java
++++ b/src/main/java/com/example/authorizationserver/scim/service/ScimService.java
+@@ -131,6 +131,8 @@ public class ScimService {
+         scimUserEntityRepository.deleteOneByIdentifier(userIdentifier);
+     }
+ 
++    @PreAuthorize("hasRole('ADMIN')")
++    @Transactional
+     public void addUserGroupMapping(UUID userIdentifier, UUID groupIdentifier) {
+         scimUserEntityRepository.findOneByIdentifier(userIdentifier).map(
+             user ->
+@@ -140,4 +142,19 @@ public class ScimService {
+ 
+         ).orElseThrow(() -> new ScimUserNotFoundException(userIdentifier));
+     }
++
++    @PreAuthorize("hasRole('ADMIN')")
++    @Transactional
++    public void removeUserGroupMapping(UUID userIdentifier, UUID groupIdentifier) {
++        scimGroupEntityRepository.findOneByIdentifier(groupIdentifier).map(
++                group ->
++                        group.getMembers()
++                                .stream()
++                                .filter(p ->
++                                        p.getUser().getIdentifier().equals(userIdentifier) && p.getGroup().getIdentifier().equals(groupIdentifier)
++                                ).findFirst().map(
++                                        uge -> group.getMembers().remove(uge)
++                        ).orElseThrow(() -> new ScimUserNotFoundException(userIdentifier))
++        ).orElseThrow(() -> new ScimUserNotFoundException(userIdentifier));
++    }
+ }

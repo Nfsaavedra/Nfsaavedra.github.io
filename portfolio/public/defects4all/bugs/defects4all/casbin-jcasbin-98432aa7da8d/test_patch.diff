@@ -1,0 +1,13 @@
+diff --git a/src/test/java/org/casbin/jcasbin/main/BuiltInFunctionsUnitTest.java b/src/test/java/org/casbin/jcasbin/main/BuiltInFunctionsUnitTest.java
+index 824b015..7678d82 100644
+--- a/src/test/java/org/casbin/jcasbin/main/BuiltInFunctionsUnitTest.java
++++ b/src/test/java/org/casbin/jcasbin/main/BuiltInFunctionsUnitTest.java
+@@ -68,6 +68,8 @@ public class BuiltInFunctionsUnitTest {
+         testKeyMatch2("/alice/all", "/:id", false);
+ 
+         testKeyMatch2("/alice/all", "/:/all", false);
++
++        testKeyMatch2("engines/engine1", "*", true);
+     }
+ 
+     @Test

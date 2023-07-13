@@ -1,0 +1,18 @@
+diff --git a/src/main/java/com/thoughtworks/qdox/model/impl/DefaultJavaField.java b/src/main/java/com/thoughtworks/qdox/model/impl/DefaultJavaField.java
+index c5ffb5f..85d308e 100644
+--- a/src/main/java/com/thoughtworks/qdox/model/impl/DefaultJavaField.java
++++ b/src/main/java/com/thoughtworks/qdox/model/impl/DefaultJavaField.java
+@@ -168,11 +168,11 @@ public class DefaultJavaField
+             return false;
+         }
+         JavaField fld = (JavaField) obj;
+-        if ( fld.getDeclaringClass().equals( this.getDeclaringClass() ) )
++        if ( !fld.getDeclaringClass().equals( this.getDeclaringClass() ) )
+         {
+             return false;
+         }
+-        if ( fld.isEnumConstant() == this.isEnumConstant() )
++        if ( !fld.isEnumConstant() == this.isEnumConstant() )
+         {
+             return false;
+         }

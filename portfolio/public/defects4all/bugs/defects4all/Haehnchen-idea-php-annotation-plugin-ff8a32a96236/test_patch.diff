@@ -1,0 +1,13 @@
+diff --git a/src/test/java/de/espend/idea/php/annotation/tests/inspection/DoctrineTypeDeprecatedInspectionTest.java b/src/test/java/de/espend/idea/php/annotation/tests/inspection/DoctrineTypeDeprecatedInspectionTest.java
+index 14dd46a..1be3652 100644
+--- a/src/test/java/de/espend/idea/php/annotation/tests/inspection/DoctrineTypeDeprecatedInspectionTest.java
++++ b/src/test/java/de/espend/idea/php/annotation/tests/inspection/DoctrineTypeDeprecatedInspectionTest.java
+@@ -25,7 +25,7 @@ public class DoctrineTypeDeprecatedInspectionTest extends AnnotationLightCodeIns
+                 "class Foo\n" +
+                 "{\n" +
+                 "}",
+-            "Deprecated: Use JsonType instead"
++            "[Annotations] Deprecated: Use JsonType instead"
+         );
+ 
+         assertLocalInspectionIsEmpty("test.php", "<?php\n" +

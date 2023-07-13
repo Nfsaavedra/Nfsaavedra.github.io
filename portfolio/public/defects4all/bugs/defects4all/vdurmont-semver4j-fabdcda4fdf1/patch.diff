@@ -1,0 +1,43 @@
+diff --git a/src/main/java/com/vdurmont/semver4j/Requirement.java b/src/main/java/com/vdurmont/semver4j/Requirement.java
+index f3843fb..ce4ed94 100644
+--- a/src/main/java/com/vdurmont/semver4j/Requirement.java
++++ b/src/main/java/com/vdurmont/semver4j/Requirement.java
+@@ -120,6 +120,8 @@ public class Requirement {
+ 
+         tokens = removeFalsePositiveVersionRanges(tokens);
+ 
++        tokens = addParentheses(tokens);
++
+         // Tranform the tokens list to a reverse polish notation list
+         List<Tokenizer.Token> rpn = toReversePolishNotation(tokens);
+ 
+@@ -186,6 +188,29 @@ public class Requirement {
+     }
+ 
+     /**
++     * Return parenthesized expression, giving lowest priority to OR operator
++     *
++     * @param tokens the tokens contained in the requirement string
++     *
++     * @return the tokens with parenthesis
++     */
++    private static List<Token> addParentheses(List<Token> tokens) {
++        List<Token> result = new ArrayList<Token>();
++        result.add(new Token(TokenType.OPENING, "("));
++        for (Token token : tokens) {
++            if (token.type == TokenType.OR) {
++                result.add(new Token(TokenType.CLOSING, ")"));
++                result.add(token);
++                result.add(new Token(TokenType.OPENING, "("));
++            } else {
++                result.add(token);
++            }
++        }
++        result.add(new Token(TokenType.CLOSING, ")"));
++        return result;
++    }
++
++    /**
+      * Some requirements may contain versions that look like version ranges. For example ' 0.0.1-SNASHOT ' could be
+      * interpreted incorrectly as a version range from 0.0.1 to SNAPSHOT. This method parses all tokens and looks for
+      * groups of three tokens that are respectively of type [VERSION, HYPHEN, VERSION] and validates that the token

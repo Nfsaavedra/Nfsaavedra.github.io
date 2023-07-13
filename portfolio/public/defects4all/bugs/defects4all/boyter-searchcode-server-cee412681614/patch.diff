@@ -1,0 +1,87 @@
+diff --git a/assets/sales/features.html b/assets/sales/features.html
+index 4ffd04b..ad54584 100644
+--- a/assets/sales/features.html
++++ b/assets/sales/features.html
+@@ -20,7 +20,7 @@
+             </p>
+             <p class="em">
+             <a href="/knowledge-base/how-to-install-searchcode-server.html">Learn how to install &rarr;</a><br />
+-            <a href="/knowledge-base/what-maintenance-for-searchcode-is-reccomended.html">Learn what maintenance is reccomended &rarr;</a></p>
++            <a href="/knowledge-base/what-maintenance-for-searchcode-is-reccomended.html">Learn what maintenance is recommended &rarr;</a></p>
+         </div>
+       </div>
+ 
+diff --git a/assets/sales/index.html b/assets/sales/index.html
+index 5e3847e..85bc749 100644
+--- a/assets/sales/index.html
++++ b/assets/sales/index.html
+@@ -3,9 +3,9 @@
+             <a href="/"><h1 style="color:white;"><img src="/images/searchcode_logo_white.png" height="40px" /></h1></a>
+           </div>
+           <div class="container">
+-            <a href="#" data-featherlight="/images/screenshot_main.png"><img class="img-float left" src="/images/screenshot_main.png" alt="Index page of searchcode server" /></a>
++            <a href="#" data-featherlight="/images/videos/searchcode_server_search.gif"><img class="img-float img-border left" src="/images/videos/searchcode_server_search.gif" alt="GIF Animation showing searchcode server search capabilities" /></a>
+             <h1 class="white">The best code search solution. Guaranteed.</h1>
+-            <p class="white em">The code search solution for companies that build or maintain software who want to improve productivity and shorten development time by getting value from their existing code.</p>
++            <p class="white em">The code search solution for companies that build or maintain software who want to improve productivity and shorten development time by getting value from their existing source code.</p>
+             <p><a class="btn btn-lg btn-warning" href="/pricing.html" role="button"><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span> Get started now</a></p>
+         </div>
+       </div>
+@@ -44,7 +44,7 @@
+       <div class="row grey-container top50">
+         <div class="container">
+ 
+-            <a href="#" data-featherlight="/images/videos/searchcode_server_search.gif"><img class="img-float img-border right" src="/images/videos/searchcode_server_search.gif" alt="GIF Animation showing searchcode server search capabilities" /></a>
++            <a href="#" data-featherlight="/images/screenshot_main.png"><img class="img-float right" src="/images/screenshot_main.png" alt="Index page of searchcode server" /></a>
+             <h2>Search as fast as you can type.</h2>
+ 
+             <blockquote><h4 class="lead">"Developer tools are the the foundation of the modern world"</h4></blockquote>
+diff --git a/assets/sales/knowledge-base/how-to-search-source-code-using-grep.html b/assets/sales/knowledge-base/how-to-search-source-code-using-grep.html
+index 45cf996..0ad1999 100644
+--- a/assets/sales/knowledge-base/how-to-search-source-code-using-grep.html
++++ b/assets/sales/knowledge-base/how-to-search-source-code-using-grep.html
+@@ -30,7 +30,7 @@ Venerable grep works on pretty much every operating system around and is include
+ 
+ <p class="em">Will search ignoring case (-i), printing line numbers (-n), ignoring binary files (-I), using posix regex (-E), recursively (-r), showing the context (-C1), only searching java files (-include) for "codre*" in the directory ./src/ This can be a bit of a handful to type out for every search. Another problem with grep is that it because it looks at every file and depending on your query every byte in every file it can take a very long time to search across large or multiple code bases.</p>
+ 
+-<p class="em">You should only be using grep if you are unable to use any other code search solution. It is reccomended to use <a href="/knowledge-base/how-to-search-source-code-using-ack.html">ack</a> in all situations where you would normally use grep.</p>
++<p class="em">You should only be using grep if you are unable to use any other code search solution. It is recommended to use <a href="/knowledge-base/how-to-search-source-code-using-ack.html">ack</a> in all situations where you would normally use grep.</p>
+ 
+         </div>
+       </div>
+\ No newline at end of file
+diff --git a/assets/sales/knowledge-base/index.html b/assets/sales/knowledge-base/index.html
+index a129297..a0295de 100644
+--- a/assets/sales/knowledge-base/index.html
++++ b/assets/sales/knowledge-base/index.html
+@@ -44,7 +44,7 @@
+               <p><a href="/knowledge-base/what-languages-does-searchcode-server-recognise.html">What languages does searchcode recognise?</a></p>
+             </div>
+             <div class="col-lg-6 searchable">
+-              <p><a href="/knowledge-base/what-maintenance-for-searchcode-is-reccomended.html">What maintenance for searchcode is reccomended?</a></p>
++              <p><a href="/knowledge-base/what-maintenance-for-searchcode-is-reccomended.html">What maintenance for searchcode is recommended?</a></p>
+             </div>
+             <div class="col-lg-6 searchable">
+               <p><a href="/knowledge-base/how-to-search-effectively-in-searchcode-server.html">How to search effectively in searchcode server</a></p>
+diff --git a/assets/sales/knowledge-base/what-maintenance-for-searchcode-is-reccomended.html b/assets/sales/knowledge-base/what-maintenance-for-searchcode-is-reccomended.html
+index 7bd002f..ba68b1f 100644
+--- a/assets/sales/knowledge-base/what-maintenance-for-searchcode-is-reccomended.html
++++ b/assets/sales/knowledge-base/what-maintenance-for-searchcode-is-reccomended.html
+@@ -3,7 +3,7 @@
+             <a href="/"><h1><img src="/images/searchcode_logo_white.png" height="40px" /></h1></a>
+           </div>
+           <div class="container">
+-            <h1 class="white">Reccomended maintenance for searchcode server</h1>
++            <h1 class="white">Recommended maintenance for searchcode server</h1>
+         </div>
+       </div>
+        <div class="row dark-blue-container">
+@@ -15,7 +15,7 @@
+        <div class="row top20">
+         <div class="container em">
+ 
+-<p class="em">Generally searchcode server once installed looks after itself. However a few things are reccomended to ensure that you can rebuild your deployement quickly and to identify any issues that may have cropped up.</p>
++<p class="em">Generally searchcode server once installed looks after itself. However a few things are recommended to ensure that you can rebuild your deployement quickly and to identify any issues that may have cropped up.</p>
+ 
+ <p class="em"><strong>1.</strong> Have an automated method of deploying searchcode server. Deployment as such can be done in an automated method using Puppet, Fabric, Chef, Ansible or otherwise. Keep an automated backup of the <code>searchcode.sqlite</code> and <code>searchcode.properties</code> files. When rebuilding searchcode copy both into the searchcode install directory and searchcode will analyse the code and rebuild the index. This process will take longer for setups that contain many or large repositories. If faster restores are required then you can restore the <code>index</code> and <code>repo</code> directories as well.</p>
+ 

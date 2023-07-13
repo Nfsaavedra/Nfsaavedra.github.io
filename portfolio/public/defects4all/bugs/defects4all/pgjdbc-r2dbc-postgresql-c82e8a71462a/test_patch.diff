@@ -1,0 +1,36 @@
+diff --git a/src/test/java/io/r2dbc/postgresql/PostgresqlBatchUnitTests.java b/src/test/java/io/r2dbc/postgresql/PostgresqlBatchUnitTests.java
+index 00f05d5..6b180bc 100644
+--- a/src/test/java/io/r2dbc/postgresql/PostgresqlBatchUnitTests.java
++++ b/src/test/java/io/r2dbc/postgresql/PostgresqlBatchUnitTests.java
+@@ -47,7 +47,7 @@ final class PostgresqlBatchUnitTests {
+             .add("test-query-2")
+             .execute()
+             .as(StepVerifier::create)
+-            .expectNextCount(1)
++            .expectNextCount(2)
+             .verifyComplete();
+     }
+ 
+diff --git a/src/test/java/io/r2dbc/postgresql/PostgresqlTestKit.java b/src/test/java/io/r2dbc/postgresql/PostgresqlTestKit.java
+index c259a11..53b12e1 100644
+--- a/src/test/java/io/r2dbc/postgresql/PostgresqlTestKit.java
++++ b/src/test/java/io/r2dbc/postgresql/PostgresqlTestKit.java
+@@ -21,8 +21,6 @@ import io.r2dbc.spi.ConnectionFactories;
+ import io.r2dbc.spi.ConnectionFactory;
+ import io.r2dbc.spi.ConnectionFactoryOptions;
+ import io.r2dbc.spi.test.TestKit;
+-import org.junit.jupiter.api.Disabled;
+-import org.junit.jupiter.api.Test;
+ import org.junit.jupiter.api.extension.RegisterExtension;
+ import org.springframework.jdbc.core.JdbcOperations;
+ 
+@@ -97,9 +95,4 @@ final class PostgresqlTestKit implements TestKit<String> {
+         return String.format("$%d", index + 1);
+     }
+ 
+-    @Test
+-    @Disabled("Disabled until we get a fixed windowUntil(…) or we have a better way to split result streams into multiple Result objects. https://github.com/pgjdbc/r2dbc-postgresql/issues/401")
+-    public void compoundStatement() {
+-    }
+-
+ }

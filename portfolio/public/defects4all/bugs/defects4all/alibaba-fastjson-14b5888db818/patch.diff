@@ -1,0 +1,25 @@
+diff --git a/src/main/java/com/alibaba/fastjson/parser/ParserConfig.java b/src/main/java/com/alibaba/fastjson/parser/ParserConfig.java
+index 5ec3aac..58bdb2f 100644
+--- a/src/main/java/com/alibaba/fastjson/parser/ParserConfig.java
++++ b/src/main/java/com/alibaba/fastjson/parser/ParserConfig.java
+@@ -786,6 +786,20 @@ public class ParserConfig {
+                 String fieldNameX = new String(chars);
+                 field = fieldCacheMap.get(fieldNameX);
+             }
++
++            if (fieldName.length() > 2) {
++                char c1 = fieldName.charAt(1);
++                if (fieldName.length() > 2
++                        && c0 >= 'a' && c0 <= 'z'
++                        && c1 >= 'A' && c1 <= 'Z') {
++                    for (Map.Entry<String, Field> entry : fieldCacheMap.entrySet()) {
++                        if (fieldName.equalsIgnoreCase(entry.getKey())) {
++                            field = entry.getValue();
++                            break;
++                        }
++                    }
++                }
++            }
+         }
+ 
+         return field;

@@ -1,0 +1,120 @@
+diff --git a/README.md b/README.md
+index db986a5..a4da6b5 100644
+--- a/README.md
++++ b/README.md
+@@ -76,9 +76,10 @@ History
+ 
+ Version 2.1 : not-yet-released
+ 
+-- upgrade JUnit to version 5;
+-- set plugin versions in `pom.xml`;
+-- fix various warnings/hints by IntelliJ IDEA.
++- bug fix - axis ranges not being updated correctly. See issue [#9](https://github.com/jfree/orson-charts/issues/9)
++- clean-up - fix numerous warnings/hints highlighted by IntelliJ IDEA.
++- project - upgraded JUnit to version 5;
++- project - set plugin versions in `pom.xml`.
+ 
+ Version 2.0 : 15-Mar-2020
+ 
+diff --git a/src/main/java/org/jfree/chart3d/axis/AbstractAxis3D.java b/src/main/java/org/jfree/chart3d/axis/AbstractAxis3D.java
+index 765de64..53d5752 100644
+--- a/src/main/java/org/jfree/chart3d/axis/AbstractAxis3D.java
++++ b/src/main/java/org/jfree/chart3d/axis/AbstractAxis3D.java
+@@ -73,7 +73,6 @@ import org.jfree.chart3d.plot.CategoryPlot3D;
+  * to change in future releases and should not be relied upon for persisting 
+  * instances of this class. 
+  */
+-@SuppressWarnings("serial")
+ public abstract class AbstractAxis3D implements Axis3D, MarkerChangeListener, 
+         Serializable {
+     
+@@ -604,7 +603,7 @@ public abstract class AbstractAxis3D implements Axis3D, MarkerChangeListener,
+     }
+   
+     /**
+-     * Deregisters a listener so that it will no longer receive axis
++     * Unregisters a listener so that it will no longer receive axis
+      * change events.
+      * 
+      * @param listener  the listener ({@code null} not permitted). 
+@@ -615,7 +614,7 @@ public abstract class AbstractAxis3D implements Axis3D, MarkerChangeListener,
+     }
+   
+     /**
+-     * Notifies all registered listeners that the plot has been modified.
++     * Notifies all registered listeners that the axis has been modified.
+      *
+      * @param event  information about the change event.
+      */
+@@ -631,7 +630,7 @@ public abstract class AbstractAxis3D implements Axis3D, MarkerChangeListener,
+     /**
+      * Sends an {@link Axis3DChangeEvent} to all registered listeners.
+      * 
+-     * @param requiresWorldUpdate   a flag indicating whether or not this change
++     * @param requiresWorldUpdate   a flag indicating whether this change
+      *     requires the 3D world to be updated.
+      */
+     protected void fireChangeEvent(boolean requiresWorldUpdate) {
+diff --git a/src/main/java/org/jfree/chart3d/axis/NumberAxis3D.java b/src/main/java/org/jfree/chart3d/axis/NumberAxis3D.java
+index 64148fb..d8db099 100644
+--- a/src/main/java/org/jfree/chart3d/axis/NumberAxis3D.java
++++ b/src/main/java/org/jfree/chart3d/axis/NumberAxis3D.java
+@@ -69,7 +69,6 @@ import org.jfree.chart3d.plot.XYZPlot;
+  * to change in future releases and should not be relied upon for persisting 
+  * instances of this class. 
+  */
+-@SuppressWarnings("serial")
+ public class NumberAxis3D extends AbstractValueAxis3D implements ValueAxis3D,
+         Serializable {
+ 
+@@ -263,6 +262,10 @@ public class NumberAxis3D extends AbstractValueAxis3D implements ValueAxis3D,
+         double um = range.getLength() * getUpperMargin();
+         double lowerBound = range.getMin() - lm;
+         double upperBound = range.getMax() + um;
++        if (this.autoRangeIncludesZero) {
++            lowerBound = Math.min(lowerBound, 0.0);
++            upperBound = Math.max(upperBound, 0.0);
++        }
+         // does zero fall in the margins?
+         if (this.autoRangeStickyZero) {
+             if (0.0 <= range.getMin() && 0.0 > lowerBound) {
+diff --git a/src/main/java/org/jfree/chart3d/axis/ValueAxis3D.java b/src/main/java/org/jfree/chart3d/axis/ValueAxis3D.java
+index b8de6d4..551000e 100644
+--- a/src/main/java/org/jfree/chart3d/axis/ValueAxis3D.java
++++ b/src/main/java/org/jfree/chart3d/axis/ValueAxis3D.java
+@@ -72,7 +72,7 @@ public interface ValueAxis3D extends Axis3D {
+     void configureAsXAxis(XYZPlot plot);
+ 
+     /**
+-     * Configure the axis as an y-axis for the specified plot.
++     * Configure the axis as a y-axis for the specified plot.
+      * 
+      * @param plot  the plot ({@code null} not permitted). 
+      */
+diff --git a/src/main/java/org/jfree/chart3d/plot/XYZPlot.java b/src/main/java/org/jfree/chart3d/plot/XYZPlot.java
+index 84bb712..4bde37d 100644
+--- a/src/main/java/org/jfree/chart3d/plot/XYZPlot.java
++++ b/src/main/java/org/jfree/chart3d/plot/XYZPlot.java
+@@ -76,7 +76,6 @@ import org.jfree.chart3d.renderer.xyz.XYZRenderer;
+  * to change in future releases and should not be relied upon for persisting 
+  * instances of this class. 
+  */
+-@SuppressWarnings("serial")
+ public class XYZPlot extends AbstractPlot3D implements Dataset3DChangeListener, 
+         Axis3DChangeListener, Renderer3DChangeListener, Serializable {
+ 
+@@ -680,7 +679,13 @@ public class XYZPlot extends AbstractPlot3D implements Dataset3DChangeListener,
+      */
+     @Override
+     public void axisChanged(Axis3DChangeEvent event) {
+-        this.yAxis.configureAsYAxis(this);
++        if (xAxis == event.getAxis()) {
++            xAxis.configureAsXAxis(this);
++        } else if (yAxis == event.getAxis()) {
++            yAxis.configureAsYAxis(this);
++        } else if (zAxis == event.getAxis()) {
++            zAxis.configureAsZAxis(this);
++        }
+         fireChangeEvent(event.requiresWorldUpdate());
+     }
+ 

@@ -1,0 +1,438 @@
+diff --git a/src/main/java/io/github/lukehutch/fastclasspathscanner/FastClasspathScanner.java b/src/main/java/io/github/lukehutch/fastclasspathscanner/FastClasspathScanner.java
+index 86fcf70..5fca6a6 100644
+--- a/src/main/java/io/github/lukehutch/fastclasspathscanner/FastClasspathScanner.java
++++ b/src/main/java/io/github/lukehutch/fastclasspathscanner/FastClasspathScanner.java
+@@ -1042,27 +1042,46 @@ public class FastClasspathScanner {
+     // -------------------------------------------------------------------------------------------------------------
+ 
+     /**
+-     * Using lambda MatchProcessors when FastClasspathScanner is called from a class initializer block causes a JVM
+-     * deadlock, because FastClasspathScanner is multithreaded -- see bug #103.
+-     */
+-    private static final void disallowRunningInClassInitializer() {
+-        try {
+-            throw new Exception();
+-        } catch (final Exception e) {
+-            final StackTraceElement[] elts = e.getStackTrace();
+-            for (final StackTraceElement elt : elts) {
+-                if ("<clinit>".equals(elt.getMethodName())) {
+-                    throw new RuntimeException(
+-                            "Cannot launch FastClasspathScanner during class initialization (for class "
+-                                    + elt.getClassName() + ") -- this can lead to a deadlock. See: "
+-                                    + "https://github.com/lukehutch/fast-classpath-scanner/issues/103");
++     * Asynchronously scans the classpath for matching files, and if runAsynchronously is true, also calls any
++     * MatchProcessors if a match is identified.
++     * 
++     * @param executorService
++     *            A custom ExecutorService to use for scheduling worker tasks.
++     * @param numParallelTasks
++     *            The number of parallel tasks to break the work into during the most CPU-intensive stage of
++     *            classpath scanning. Ideally the ExecutorService will have at least this many threads available.
++     * @param asyncMode
++     *            If true, run MatchProcessors asynchronously after obtaining the ScanResult.
++     * @return a Future<ScanResult> object, that when resolved using get() yields a new ScanResult object.
++     */
++    private Future<ScanResult> scanAsync(final ExecutorService executorService, final int numParallelTasks,
++            final boolean asyncMode) {
++        if (asyncMode) {
++            // Using MatchProcessors that refer to their containing class when FastClasspathScanner is called
++            // from a class initializer block of the containing class can cause a JVM deadlock, because
++            // FastClasspathScanner is multithreaded -- see bug #103.
++            try {
++                throw new Exception();
++            } catch (final Exception e) {
++                final StackTraceElement[] elts = e.getStackTrace();
++                for (final StackTraceElement elt : elts) {
++                    if ("<clinit>".equals(elt.getMethodName())) {
++                        throw new RuntimeException(
++                                "Cannot launch FastClasspathScanner asynchronously during class initialization "
++                                        + "(for class " + elt.getClassName()
++                                        + ") -- this can lead to a deadlock. See: "
++                                        + "https://github.com/lukehutch/fast-classpath-scanner/issues/103");
++                    }
+                 }
+             }
+         }
++        final ScanSpec scanSpec = getScanSpec();
++        return executorService.submit(
++                // Call MatchProcessors before returning if in async scanning mode
++                new Scanner(scanSpec, executorService, numParallelTasks, /* enableRecursiveScanning = */ true,
++                        scanSpec.removeTemporaryFilesAfterScan, /* callMatchProcessors = */ asyncMode, log));
+     }
+ 
+-    // -------------------------------------------------------------------------------------------------------------
+-
+     /**
+      * Asynchronously scans the classpath for matching files, and calls any MatchProcessors if a match is
+      * identified. Returns a Future object immediately after starting the scan. To block on scan completion, get the
+@@ -1089,10 +1108,7 @@ public class FastClasspathScanner {
+      *         classloading failed for some class, or a MatchProcessor threw an exception.
+      */
+     public Future<ScanResult> scanAsync(final ExecutorService executorService, final int numParallelTasks) {
+-        disallowRunningInClassInitializer();
+-        final ScanSpec scanSpec = getScanSpec();
+-        return executorService.submit(new Scanner(scanSpec, executorService, numParallelTasks,
+-                /* enableRecursiveScanning = */ true, scanSpec.removeTemporaryFilesAfterScan, log));
++        return scanAsync(executorService, numParallelTasks, /* asyncMode = */ true);
+     }
+ 
+     /**
+@@ -1125,18 +1141,41 @@ public class FastClasspathScanner {
+     public ScanResult scan(final ExecutorService executorService, final int numParallelTasks) {
+         try {
+             // Start the scan, and then wait for scan completion
+-            return scanAsync(executorService, numParallelTasks).get();
++            final ScanResult scanResult = scanAsync(executorService, numParallelTasks, /* asyncMode = */ false)
++                    .get();
++
++            // Call MatchProcessors in the same thread as the caller, to avoid deadlock (see bug #103)
++            getScanSpec().callMatchProcessors(scanResult, /* interruptionChecker = */ null, log);
++
++            // Return the scanResult after calling MatchProcessors
++            return scanResult;
++
+         } catch (final InterruptedException e) {
++            if (log != null) {
++                log.log("Scan interrupted");
++            }
+             throw new ScanInterruptedException();
+         } catch (final ExecutionException e) {
+             if (e.getCause() instanceof InterruptedException) {
++                if (log != null) {
++                    log.log("Scan interrupted");
++                }
+                 throw new ScanInterruptedException();
+             } else if (e.getCause() instanceof MatchProcessorException) {
++                if (log != null) {
++                    log.log("Exception during scan", e);
++                }
+                 throw (MatchProcessorException) e.getCause();
+             } else {
+-                // Unexpected exception
++                if (log != null) {
++                    log.log("Unexpected exception during scan", e);
++                }
+                 throw new RuntimeException(e.getCause());
+             }
++        } finally {
++            if (log != null) {
++                log.flush();
++            }
+         }
+     }
+ 
+@@ -1217,10 +1256,9 @@ public class FastClasspathScanner {
+      */
+     public Future<List<File>> getUniqueClasspathElementsAsync(final ExecutorService executorService,
+             final int numParallelTasks) {
+-        disallowRunningInClassInitializer();
+-        final Future<ScanResult> scanResult = executorService
+-                .submit(new Scanner(getScanSpec(), executorService, numParallelTasks,
+-                        /* enableRecursiveScanning = */ false, /* removeTemporaryFilesAfterScan = */ false,
++        final Future<ScanResult> scanResult = executorService.submit(
++                new Scanner(getScanSpec(), executorService, numParallelTasks, /* enableRecursiveScanning = */ false,
++                        /* removeTemporaryFilesAfterScan = */ false, /* callMatchProcessors = */ false,
+                         log == null ? null : log.log("Getting unique classpath elements")));
+         final Future<List<File>> future = executorService.submit(new Callable<List<File>>() {
+             @Override
+diff --git a/src/main/java/io/github/lukehutch/fastclasspathscanner/scanner/ClassGraphBuilder.java b/src/main/java/io/github/lukehutch/fastclasspathscanner/scanner/ClassGraphBuilder.java
+index 54af438..85c79dd 100644
+--- a/src/main/java/io/github/lukehutch/fastclasspathscanner/scanner/ClassGraphBuilder.java
++++ b/src/main/java/io/github/lukehutch/fastclasspathscanner/scanner/ClassGraphBuilder.java
+@@ -36,7 +36,7 @@ import java.util.Set;
+ 
+ /** Builds the class graph, and provides methods for querying it. */
+ class ClassGraphBuilder {
+-    private final Map<String, ClassInfo> classNameToClassInfo;
++    final Map<String, ClassInfo> classNameToClassInfo;
+     private final ScanSpec scanSpec;
+     private final Set<ClassInfo> allClassInfo;
+ 
+diff --git a/src/main/java/io/github/lukehutch/fastclasspathscanner/scanner/ScanResult.java b/src/main/java/io/github/lukehutch/fastclasspathscanner/scanner/ScanResult.java
+index 5f5524b..6bc0ae5 100644
+--- a/src/main/java/io/github/lukehutch/fastclasspathscanner/scanner/ScanResult.java
++++ b/src/main/java/io/github/lukehutch/fastclasspathscanner/scanner/ScanResult.java
+@@ -41,6 +41,9 @@ public class ScanResult {
+     /** The scan spec. */
+     private final ScanSpec scanSpec;
+ 
++    /** The order of unique classpath elements. */
++    final List<ClasspathElement> classpathOrder;
++
+     /** The list of File objects for unique classpath elements (directories or jarfiles). */
+     private final List<File> classpathElementOrderFiles;
+ 
+@@ -58,7 +61,7 @@ public class ScanResult {
+      * The class graph builder. May be null, if this ScanResult object is the result of a call to
+      * FastClasspathScanner#getUniqueClasspathElementsAsync().
+      */
+-    private final ClassGraphBuilder classGraphBuilder;
++    final ClassGraphBuilder classGraphBuilder;
+ 
+     /** Exceptions thrown while loading classes or while calling MatchProcessors on loaded classes. */
+     private final List<Throwable> matchProcessorExceptions = new ArrayList<>();
+@@ -66,12 +69,13 @@ public class ScanResult {
+     // -------------------------------------------------------------------------------------------------------------
+ 
+     /** The result of a scan. */
+-    ScanResult(final ScanSpec scanSpec, final List<ClasspathElement> classpathElementOrder,
++    ScanResult(final ScanSpec scanSpec, final List<ClasspathElement> classpathOrder,
+             final ClassGraphBuilder classGraphBuilder, final Map<File, Long> fileToLastModified) {
+         this.scanSpec = scanSpec;
++        this.classpathOrder = classpathOrder;
+         this.classpathElementOrderFiles = new ArrayList<>();
+         this.classpathElementOrderURLs = new ArrayList<>();
+-        for (final ClasspathElement classpathElement : classpathElementOrder) {
++        for (final ClasspathElement classpathElement : classpathOrder) {
+             classpathElementOrderFiles.add(classpathElement.classpathElementFile);
+             classpathElementOrderURLs.add(classpathElement.classpathElementURL);
+         }
+diff --git a/src/main/java/io/github/lukehutch/fastclasspathscanner/scanner/ScanSpec.java b/src/main/java/io/github/lukehutch/fastclasspathscanner/scanner/ScanSpec.java
+index f7a1591..1769025 100644
+--- a/src/main/java/io/github/lukehutch/fastclasspathscanner/scanner/ScanSpec.java
++++ b/src/main/java/io/github/lukehutch/fastclasspathscanner/scanner/ScanSpec.java
+@@ -38,7 +38,6 @@ import java.net.URLClassLoader;
+ import java.util.ArrayList;
+ import java.util.HashSet;
+ import java.util.List;
+-import java.util.Map;
+ import java.util.Map.Entry;
+ import java.util.Set;
+ import java.util.concurrent.ExecutionException;
+@@ -469,73 +468,96 @@ public class ScanSpec {
+     /**
+      * Run the MatchProcessors after a scan has completed.
+      */
+-    void callMatchProcessors(final ScanResult scanResult, final List<ClasspathElement> classpathOrder,
+-            final Map<String, ClassInfo> classNameToClassInfo, final InterruptionChecker interruptionChecker,
+-            final LogNode log) throws InterruptedException, ExecutionException {
+-
+-        // Call any FileMatchProcessors
+-        for (final ClasspathElement classpathElement : classpathOrder) {
+-            if (classpathElement.fileMatches != null && !classpathElement.fileMatches.isEmpty()) {
+-                classpathElement.callFileMatchProcessors(scanResult, //
+-                        log == null ? null
+-                                : log.log("Calling FileMatchProcessors for classpath element " + classpathElement));
++    public void callMatchProcessors(final ScanResult scanResult, final InterruptionChecker interruptionChecker,
++            final LogNode log) {
++        try {
++            // Call any FileMatchProcessors
++            for (final ClasspathElement classpathElement : scanResult.classpathOrder) {
++                if (classpathElement.fileMatches != null && !classpathElement.fileMatches.isEmpty()) {
++                    classpathElement.callFileMatchProcessors(scanResult, //
++                            log == null ? null
++                                    : log.log("Calling FileMatchProcessors for classpath element "
++                                            + classpathElement));
++                }
+             }
+-        }
+ 
+-        // Call any class, interface or annotation MatchProcessors
+-        if (classMatchers != null) {
+-            for (final ClassMatcher classMatcher : classMatchers) {
+-                classMatcher.lookForMatches(scanResult, //
+-                        log == null ? null : log.log("Calling ClassMatchProcessors"));
+-                interruptionChecker.check();
++            // Call any class, interface or annotation MatchProcessors
++            if (classMatchers != null) {
++                for (final ClassMatcher classMatcher : classMatchers) {
++                    classMatcher.lookForMatches(scanResult, //
++                            log == null ? null : log.log("Calling ClassMatchProcessors"));
++                    if (interruptionChecker != null) {
++                        interruptionChecker.check();
++                    }
++                }
+             }
+-        }
+ 
+-        // Call any static final field match processors
+-        if (fullyQualifiedFieldNameToStaticFinalFieldMatchProcessors != null) {
+-            for (final Entry<String, List<StaticFinalFieldMatchProcessor>> ent : //
+-            fullyQualifiedFieldNameToStaticFinalFieldMatchProcessors.getRawMap().entrySet()) {
+-                final String fullyQualifiedFieldName = ent.getKey();
+-                final int dotIdx = fullyQualifiedFieldName.lastIndexOf('.');
+-                final String className = fullyQualifiedFieldName.substring(0, dotIdx);
+-                final ClassInfo classInfo = classNameToClassInfo.get(className);
+-                if (classInfo != null) {
+-                    final String fieldName = fullyQualifiedFieldName.substring(dotIdx + 1);
+-                    final Object constValue = classInfo.getStaticFinalFieldConstantInitializerValue(fieldName);
+-                    if (constValue == null) {
+-                        if (log != null) {
+-                            log.log("No constant initializer value found for field " + className + "." + fieldName);
++            // Call any static final field match processors
++            if (fullyQualifiedFieldNameToStaticFinalFieldMatchProcessors != null) {
++                for (final Entry<String, List<StaticFinalFieldMatchProcessor>> ent : //
++                fullyQualifiedFieldNameToStaticFinalFieldMatchProcessors.getRawMap().entrySet()) {
++                    final String fullyQualifiedFieldName = ent.getKey();
++                    final int dotIdx = fullyQualifiedFieldName.lastIndexOf('.');
++                    final String className = fullyQualifiedFieldName.substring(0, dotIdx);
++                    final ClassInfo classInfo = scanResult.classGraphBuilder.classNameToClassInfo.get(className);
++                    if (classInfo != null) {
++                        final String fieldName = fullyQualifiedFieldName.substring(dotIdx + 1);
++                        final Object constValue = classInfo.getStaticFinalFieldConstantInitializerValue(fieldName);
++                        if (constValue == null) {
++                            if (log != null) {
++                                log.log("No constant initializer value found for field " + className + "."
++                                        + fieldName);
++                            }
++                        } else {
++                            final List<StaticFinalFieldMatchProcessor> staticFinalFieldMatchProcessors = ent
++                                    .getValue();
++                            if (log != null) {
++                                log.log("Calling MatchProcessor"
++                                        + (staticFinalFieldMatchProcessors.size() == 1 ? "" : "s")
++                                        + " for static final field " + className + "." + fieldName + " = "
++                                        + ((constValue instanceof Character)
++                                                ? '\'' + constValue.toString().replace("'", "\\'") + '\''
++                                                : (constValue instanceof String)
++                                                        ? '"' + constValue.toString().replace("\"", "\\\"") + '"'
++                                                        : constValue.toString()));
++                            }
++                            for (final StaticFinalFieldMatchProcessor staticFinalFieldMatchProcessor : ent
++                                    .getValue()) {
++                                try {
++                                    staticFinalFieldMatchProcessor.processMatch(className, fieldName, constValue);
++                                } catch (final Throwable e) {
++                                    if (log != null) {
++                                        log.log("Exception while calling StaticFinalFieldMatchProcessor: " + e);
++                                    }
++                                }
++                                if (interruptionChecker != null) {
++                                    interruptionChecker.check();
++                                }
++                            }
+                         }
+                     } else {
+-                        final List<StaticFinalFieldMatchProcessor> staticFinalFieldMatchProcessors = ent.getValue();
+                         if (log != null) {
+-                            log.log("Calling MatchProcessor"
+-                                    + (staticFinalFieldMatchProcessors.size() == 1 ? "" : "s")
+-                                    + " for static final field " + className + "." + fieldName + " = "
+-                                    + ((constValue instanceof Character)
+-                                            ? '\'' + constValue.toString().replace("'", "\\'") + '\''
+-                                            : (constValue instanceof String)
+-                                                    ? '"' + constValue.toString().replace("\"", "\\\"") + '"'
+-                                                    : constValue.toString()));
++                            log.log("No matching class found in scan results for static final field "
++                                    + fullyQualifiedFieldName);
+                         }
+-                        for (final StaticFinalFieldMatchProcessor staticFinalFieldMatchProcessor : ent.getValue()) {
+-                            try {
+-                                staticFinalFieldMatchProcessor.processMatch(className, fieldName, constValue);
+-                            } catch (final Throwable e) {
+-                                if (log != null) {
+-                                    log.log("Exception while calling StaticFinalFieldMatchProcessor: " + e);
+-                                }
+-                            }
+-                            interruptionChecker.check();
+-                        }
+-                    }
+-                } else {
+-                    if (log != null) {
+-                        log.log("No matching class found in scan results for static final field "
+-                                + fullyQualifiedFieldName);
+                     }
+                 }
+             }
++        } catch (InterruptedException | ExecutionException e) {
++            if (log != null) {
++                log.log("Exception while calling MatchProcessors", e);
++            }
++            throw MatchProcessorException.newInstance(e);
++        }
++        final List<Throwable> matchProcessorExceptions = scanResult.getMatchProcessorExceptions();
++        if (matchProcessorExceptions.size() > 0) {
++            // If one or more non-IO exceptions were thrown outside of FastClasspathScanner,
++            // throw MatchProcessorException
++            if (log != null) {
++                log.log("Number of exceptions raised during classloading and/or while calling "
++                        + "MatchProcessors: " + matchProcessorExceptions.size());
++            }
++            throw MatchProcessorException.newInstance(matchProcessorExceptions);
+         }
+     }
+ 
+diff --git a/src/main/java/io/github/lukehutch/fastclasspathscanner/scanner/Scanner.java b/src/main/java/io/github/lukehutch/fastclasspathscanner/scanner/Scanner.java
+index 9cce950..6a6b045 100644
+--- a/src/main/java/io/github/lukehutch/fastclasspathscanner/scanner/Scanner.java
++++ b/src/main/java/io/github/lukehutch/fastclasspathscanner/scanner/Scanner.java
+@@ -46,7 +46,6 @@ import java.util.concurrent.ConcurrentLinkedQueue;
+ import java.util.concurrent.ExecutionException;
+ import java.util.concurrent.ExecutorService;
+ 
+-import io.github.lukehutch.fastclasspathscanner.MatchProcessorException;
+ import io.github.lukehutch.fastclasspathscanner.utils.FastPathResolver;
+ import io.github.lukehutch.fastclasspathscanner.utils.InterruptionChecker;
+ import io.github.lukehutch.fastclasspathscanner.utils.JarUtils;
+@@ -64,6 +63,7 @@ public class Scanner implements Callable<ScanResult> {
+     private final int numParallelTasks;
+     private final boolean enableRecursiveScanning;
+     private final InterruptionChecker interruptionChecker = new InterruptionChecker();
++    private final boolean callMatchProcessors;
+     private final LogNode log;
+ 
+     /**
+@@ -75,12 +75,14 @@ public class Scanner implements Callable<ScanResult> {
+ 
+     /** The classpath scanner. */
+     public Scanner(final ScanSpec scanSpec, final ExecutorService executorService, final int numParallelTasks,
+-            final boolean enableRecursiveScanning, final boolean removeTemporaryFilesAfterScan, final LogNode log) {
++            final boolean enableRecursiveScanning, final boolean removeTemporaryFilesAfterScan,
++            final boolean callMatchProcessors, final LogNode log) {
+         this.removeTemporaryFilesAfterScan = removeTemporaryFilesAfterScan;
+         this.scanSpec = scanSpec;
+         this.executorService = executorService;
+         this.numParallelTasks = numParallelTasks;
+         this.enableRecursiveScanning = enableRecursiveScanning;
++        this.callMatchProcessors = callMatchProcessors;
+         this.log = log;
+     }
+ 
+@@ -400,9 +402,11 @@ public class Scanner implements Callable<ScanResult> {
+                 // Create ScanResult
+                 scanResult = new ScanResult(scanSpec, classpathOrder, classGraphBuilder, fileToLastModified);
+ 
+-                // Call MatchProcessors 
+-                scanSpec.callMatchProcessors(scanResult, classpathOrder, classNameToClassInfo, interruptionChecker,
+-                        log);
++                if (callMatchProcessors) {
++                    // Call MatchProcessors 
++                    scanSpec.callMatchProcessors(scanResult, interruptionChecker, log);
++                }
++
+             } else {
+                 // This is the result of a call to FastClasspathScanner#getUniqueClasspathElementsAsync(), so
+                 // just create placeholder ScanResult to contain classpathElementFilesOrdered.
+@@ -413,17 +417,6 @@ public class Scanner implements Callable<ScanResult> {
+                 log.log("Completed scan", System.nanoTime() - scanStart);
+             }
+ 
+-            final List<Throwable> matchProcessorExceptions = scanResult.getMatchProcessorExceptions();
+-            if (matchProcessorExceptions.size() > 0) {
+-                // If one or more non-IO exceptions were thrown outside of FastClasspathScanner,
+-                // throw MatchProcessorException
+-                if (log != null) {
+-                    log.log("Number of exceptions raised during classloading and/or while calling MatchProcessors: "
+-                            + matchProcessorExceptions.size());
+-                }
+-                throw MatchProcessorException.newInstance(matchProcessorExceptions);
+-            }
+-
+             // No exceptions were thrown -- return scan result
+             return scanResult;
+ 
+diff --git a/src/main/java/io/github/lukehutch/fastclasspathscanner/utils/LogNode.java b/src/main/java/io/github/lukehutch/fastclasspathscanner/utils/LogNode.java
+index 55187a0..a09b9f6 100644
+--- a/src/main/java/io/github/lukehutch/fastclasspathscanner/utils/LogNode.java
++++ b/src/main/java/io/github/lukehutch/fastclasspathscanner/utils/LogNode.java
+@@ -95,8 +95,8 @@ public class LogNode {
+ 
+     /** Create a toplevel log node. */
+     public LogNode() {
+-        this("", "FastClasspathScanner version " + FastClasspathScanner.getVersion(), /* elapsedTimeNanos = */ -1L,
+-                /* exception = */ null);
++        this("", "", /* elapsedTimeNanos = */ -1L, /* exception = */ null);
++        this.log("FastClasspathScanner version " + FastClasspathScanner.getVersion());
+         JarUtils.logJavaInfo(this);
+     }
+ 

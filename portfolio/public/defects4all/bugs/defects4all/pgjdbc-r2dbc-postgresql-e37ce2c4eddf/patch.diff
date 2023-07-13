@@ -1,0 +1,124 @@
+diff --git a/README.md b/README.md
+index cb4574a..eef1eed 100644
+--- a/README.md
++++ b/README.md
+@@ -278,8 +278,8 @@ This reference table shows the type mapping between [PostgreSQL][p] and Java dat
+ | [`text`][psql-text-ref]                         | [**`String`**][java-string-ref], `Clob`|
+ | [`time [without time zone]`][psql-time-ref]     | [`LocalTime`][java-lt-ref]|
+ | [`time [with time zone]`][psql-time-ref]        | Not yet supported.|
+-| [`timestamp [without time zone]`][psql-time-ref]|[**`LocalDateTime`**][java-ldt-ref], [`LocalTime`][java-lt-ref], [`LocalDate`][java-ld-ref]|
+-| [`timestamp [with time zone]`][psql-time-ref]   | [**`OffsetDatetime`**][java-odt-ref], [`ZonedDateTime`][java-zdt-ref]|
++| [`timestamp [without time zone]`][psql-time-ref]|[**`LocalDateTime`**][java-ldt-ref], [`LocalTime`][java-lt-ref], [`LocalDate`][java-ld-ref], [`java.util.Date`][java-legacy-date-ref]|
++| [`timestamp [with time zone]`][psql-time-ref]   | [**`OffsetDatetime`**][java-odt-ref], [`ZonedDateTime`][java-zdt-ref], [`Instant`][java-instant-ref]|
+ | [`tsquery`][psql-tsquery-ref]                   | Not yet supported.|
+ | [`tsvector`][psql-tsvector-ref]                 | Not yet supported.|
+ | [`txid_snapshot`][psql-txid_snapshot-ref]       | Not yet supported.|
+@@ -349,6 +349,7 @@ Support for the following single-dimensional arrays (read and write):
+ [java-ldt-ref]: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html
+ [java-ld-ref]: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
+ [java-lt-ref]: https://docs.oracle.com/javase/8/docs/api/java/time/LocalTime.html
++[java-legacy-date-ref]: https://docs.oracle.com/javase/8/docs/api/java/util/Date.html
+ [java-odt-ref]: https://docs.oracle.com/javase/8/docs/api/java/time/OffsetDateTime.html
+ [java-primitive-ref]: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html
+ [java-short-ref]: https://docs.oracle.com/javase/8/docs/api/java/lang/Short.html
+diff --git a/src/main/java/io/r2dbc/postgresql/codec/DateCodec.java b/src/main/java/io/r2dbc/postgresql/codec/DateCodec.java
+index 02bc91d..abcbdcd 100644
+--- a/src/main/java/io/r2dbc/postgresql/codec/DateCodec.java
++++ b/src/main/java/io/r2dbc/postgresql/codec/DateCodec.java
+@@ -24,18 +24,19 @@ import io.r2dbc.postgresql.type.PostgresqlObjectId;
+ import io.r2dbc.postgresql.util.Assert;
+ import reactor.util.annotation.Nullable;
+ 
+-import java.time.Instant;
++import java.time.LocalDateTime;
++import java.time.ZoneId;
+ import java.util.Date;
+ 
+ final class DateCodec extends AbstractCodec<Date> {
+ 
+-    private final InstantCodec delegate;
++    private final LocalDateTimeCodec delegate;
+ 
+     DateCodec(ByteBufAllocator byteBufAllocator) {
+         super(Date.class);
+ 
+         Assert.requireNonNull(byteBufAllocator, "byteBufAllocator must not be null");
+-        this.delegate = new InstantCodec(byteBufAllocator);
++        this.delegate = new LocalDateTimeCodec(byteBufAllocator);
+     }
+ 
+     @Override
+@@ -55,14 +56,15 @@ final class DateCodec extends AbstractCodec<Date> {
+     Date doDecode(ByteBuf buffer, PostgresqlObjectId dataType, @Nullable Format format, @Nullable Class<? extends Date> type) {
+         Assert.requireNonNull(buffer, "byteBuf must not be null");
+ 
+-        return Date.from(this.delegate.doDecode(buffer, dataType, format, Instant.class));
++        LocalDateTime intermediary = this.delegate.doDecode(buffer, dataType, format, LocalDateTime.class);
++        return Date.from(intermediary.atZone(ZoneId.systemDefault()).toInstant());
+     }
+ 
+     @Override
+     Parameter doEncode(Date value) {
+         Assert.requireNonNull(value, "value must not be null");
+ 
+-        return this.delegate.doEncode(value.toInstant());
++        return this.delegate.doEncode(value.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime());
+     }
+ 
+ }
+diff --git a/src/main/java/io/r2dbc/postgresql/codec/InstantCodec.java b/src/main/java/io/r2dbc/postgresql/codec/InstantCodec.java
+index 7812d09..133665d 100644
+--- a/src/main/java/io/r2dbc/postgresql/codec/InstantCodec.java
++++ b/src/main/java/io/r2dbc/postgresql/codec/InstantCodec.java
+@@ -32,7 +32,7 @@ import java.time.ZoneId;
+ import java.time.ZoneOffset;
+ 
+ import static io.r2dbc.postgresql.message.Format.FORMAT_TEXT;
+-import static io.r2dbc.postgresql.type.PostgresqlObjectId.TIMESTAMP;
++import static io.r2dbc.postgresql.type.PostgresqlObjectId.TIMESTAMPTZ;
+ 
+ final class InstantCodec extends AbstractTemporalCodec<Instant> {
+ 
+@@ -45,7 +45,7 @@ final class InstantCodec extends AbstractTemporalCodec<Instant> {
+ 
+     @Override
+     public Parameter encodeNull() {
+-        return createNull(TIMESTAMP, FORMAT_TEXT);
++        return createNull(TIMESTAMPTZ, FORMAT_TEXT);
+     }
+ 
+     @Override
+@@ -70,7 +70,7 @@ final class InstantCodec extends AbstractTemporalCodec<Instant> {
+     Parameter doEncode(Instant value) {
+         Assert.requireNonNull(value, "value must not be null");
+ 
+-        return create(TIMESTAMP, FORMAT_TEXT, () -> ByteBufUtils.encode(this.byteBufAllocator, value.toString()));
++        return create(TIMESTAMPTZ, FORMAT_TEXT, () -> ByteBufUtils.encode(this.byteBufAllocator, value.toString()));
+     }
+ 
+     @Override
+diff --git a/src/main/java/io/r2dbc/postgresql/codec/LocalDateTimeCodec.java b/src/main/java/io/r2dbc/postgresql/codec/LocalDateTimeCodec.java
+index fcaff4b..d9f9ca9 100644
+--- a/src/main/java/io/r2dbc/postgresql/codec/LocalDateTimeCodec.java
++++ b/src/main/java/io/r2dbc/postgresql/codec/LocalDateTimeCodec.java
+@@ -26,7 +26,9 @@ import io.r2dbc.postgresql.util.ByteBufUtils;
+ import reactor.util.annotation.Nullable;
+ 
+ import java.time.Instant;
++import java.time.LocalDate;
+ import java.time.LocalDateTime;
++import java.time.ZoneId;
+ import java.time.ZoneOffset;
+ 
+ import static io.r2dbc.postgresql.message.Format.FORMAT_TEXT;
+@@ -51,6 +53,10 @@ final class LocalDateTimeCodec extends AbstractTemporalCodec<LocalDateTime> {
+         Assert.requireNonNull(buffer, "byteBuf must not be null");
+ 
+         return decodeTemporal(buffer, dataType, format, LocalDateTime.class, temporal -> {
++            if (temporal instanceof LocalDate) {
++                return ((LocalDate) temporal).atStartOfDay(ZoneId.systemDefault()).toLocalDateTime();
++            }
++
+             return Instant.from(temporal).atOffset(ZoneOffset.UTC).toLocalDateTime();
+         });
+     }

@@ -1,0 +1,144 @@
+diff --git a/example/gridss_targeted.sh b/example/gridss_targeted.sh
+new file mode 100644
+index 0000000..6c11f58
+--- /dev/null
++++ b/example/gridss_targeted.sh
+@@ -0,0 +1,43 @@
++#!/bin/bash
++#
++# Runs GRIDSS on a set of targeted regions
++#
++# Note that to properly call compound breakpoints, this script should be run
++# twice: once for the intial GRIDSS calls, then again on the GRIDSS calls
++# This enables accurate calling of complex events for which only some of the
++# breakpoints involved fall within the initially targeted region
++#
++TARGETING_INPUT=regions_to_call.bed
++INPUT=chr12.1527326.DEL1024.bam
++REFERENCE=hg19.fa
++OUTPUT=${INPUT/.bam/.targeted.sv.vcf}
++ASSEMBLY=${OUTPUT/.sv.vcf/.targeted.gridss.assembly.bam}
++GRIDSS_JAR=../target/gridss-2.1.0-gridss-jar-with-dependencies.jar
++WORKING_DIR=./
++FLANKING_BASES=2000 # must be greater than 99.5% of fragments in the library
++
++if [[ "$TARGETING_INPUT" == *.bed ]] ; then
++	IN_BED=$1
++elif
++	# TODO VCF parsing
++	echo "$TARGETING_INPUT is not a bed file" 2>&1
++	exit 1
++fi
++
++JVM_ARGS="-ea \
++	-Dreference_fasta="$REFERENCE" \
++	-Dsamjdk.create_index=true \
++	-Dsamjdk.use_async_io_read_samtools=true \
++	-Dsamjdk.use_async_io_write_samtools=true \
++	-Dsamjdk.use_async_io_write_tribble=true \
++	-Dgridss.gridss.output_to_temp_file=true \
++	-cp $GRIDSS_JAR "
++
++IN_BED_SLOPPED=$IN_BED.slopped.bed
++
++bedtools slop -g ${REFERENCE}.fai -b $FLANKING_BASES -i - < $IN_BED
++bedtools sort -i - | \
++bedtools merge -d $((2 * FLANKING_BASES)) -i - > $IN_BED
++
++# for each input file
++java 
+diff --git a/pom.xml b/pom.xml
+index 93bd363..3f34483 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -21,6 +21,7 @@
+ 			<plugin>
+ 				<groupId>org.apache.maven.plugins</groupId>
+ 				<artifactId>maven-jar-plugin</artifactId>
++				<version>3.1.1</version>
+ 				<configuration>
+ 					<archive>
+ 						<manifest>
+@@ -40,26 +41,27 @@
+ 				</configuration>
+ 			</plugin>
+ 			<plugin>
+-				<artifactId>maven-assembly-plugin</artifactId>
+-				<configuration>
+-					<archive>
+-						<manifest>
+-							<mainClass>gridss.CallVariants</mainClass>
+-							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+-							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+-						</manifest>
+-					</archive>
+-					<descriptorRefs>
+-						<descriptorRef>jar-with-dependencies</descriptorRef>
+-					</descriptorRefs>
+-				</configuration>
++				<groupId>org.apache.maven.plugins</groupId>
++				<artifactId>maven-shade-plugin</artifactId>
++				<version>3.2.1</version>
+ 				<executions>
+ 					<execution>
+-						<id>make-assembly</id> <!-- this is used for inheritance merges -->
+-						<phase>package</phase> <!-- bind to the packaging phase -->
++						<phase>package</phase>
+ 						<goals>
+-							<goal>single</goal>
++							<goal>shade</goal>
+ 						</goals>
++						<configuration>
++							<finalName>${project.artifactId}-${project.version}-jar-with-dependencies</finalName>
++							<transformers>
++								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
++									<mainClass>>gridss.CallVariants</mainClass>
++								</transformer>
++							</transformers>
++							<artifactSet>
++								<excludes>
++								</excludes>
++							</artifactSet>
++						</configuration>
+ 					</execution>
+ 				</executions>
+ 			</plugin>
+diff --git a/src/main/java/au/edu/wehi/idsv/SAMEvidenceSource.java b/src/main/java/au/edu/wehi/idsv/SAMEvidenceSource.java
+index 1f1739d..19cdd1e 100644
+--- a/src/main/java/au/edu/wehi/idsv/SAMEvidenceSource.java
++++ b/src/main/java/au/edu/wehi/idsv/SAMEvidenceSource.java
+@@ -124,15 +124,15 @@ public class SAMEvidenceSource extends EvidenceSource {
+ 						"GRIDSS_PROGRAM=CollectTagMetrics",
+ 						"GRIDSS_PROGRAM=CollectIdsvMetrics",
+ 						"GRIDSS_PROGRAM=ReportThresholdCoverage",
+-						// The CollectMultipleMetrics super class complains if no PROGRAM set so
+-						// we'll just collect some stuff that is useful, but we don't actually
+-						// use yet
+-						"PROGRAM=null",
+-						"PROGRAM=CollectAlignmentSummaryMetrics",
+-						"PROGRAM=QualityScoreDistribution");
++						"PROGRAM=null");
+ 				if (!knownSingleEnded()) {
+ 					// Don't run CollectInsertSizeMetrics
+ 					args.add("PROGRAM=CollectInsertSizeMetrics");
++				} else {
++					// The CollectMultipleMetrics super class complains if no PROGRAM set so
++					// we'll just collect some stuff that is useful, but we don't actually
++					// use yet
++					args.add("PROGRAM=CollectAlignmentSummaryMetrics");
+ 				}
+ 				if (getContext().getCalculateMetricsRecordCount() < Integer.MAX_VALUE) {
+ 					args.add("STOP_AFTER=" + getContext().getCalculateMetricsRecordCount());
+diff --git a/src/main/java/picard/analysis/SinglePassSamProgram.java b/src/main/java/picard/analysis/SinglePassSamProgram.java
+index 2d6d7cf..bece8e7 100644
+--- a/src/main/java/picard/analysis/SinglePassSamProgram.java
++++ b/src/main/java/picard/analysis/SinglePassSamProgram.java
+@@ -72,7 +72,7 @@ public abstract class SinglePassSamProgram extends CommandLineProgram {
+ 
+     private static final Log log = Log.getInstance(SinglePassSamProgram.class);
+ 
+-    private static final int BATCH_SIZE = 64;
++    private static final int BATCH_SIZE = 512;
+     private static final int IN_FLIGHT_BATCHES = 2;
+     private static final Exception EOS_SENTINEL = new Exception();
+     private static final boolean USE_ASYNC_ITERATOR = true;

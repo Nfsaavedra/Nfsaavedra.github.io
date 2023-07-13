@@ -1,0 +1,30 @@
+diff --git a/src/test/java/com/headius/invokebinder/BinderTest.java b/src/test/java/com/headius/invokebinder/BinderTest.java
+index 94d8b5d..0d5f424 100644
+--- a/src/test/java/com/headius/invokebinder/BinderTest.java
++++ b/src/test/java/com/headius/invokebinder/BinderTest.java
+@@ -390,6 +390,13 @@ public class BinderTest {
+         assertEquals(2, ary.length);
+         assertEquals("two", ary[0]);
+         assertEquals("three", ary[1]);
++
++        // from #2
++        MethodHandle foo = Binder.from(MethodType.methodType(String.class, String.class))
++                .varargs(0, Object[].class)
++                .invokeStatic(MethodHandles.publicLookup(), getClass(), "varargs");
++
++        assertEquals(foo.invokeWithArguments("value"), "value");
+     }
+ 
+     @Test
+@@ -916,6 +923,11 @@ public class BinderTest {
+         return args;
+     }
+ 
++    public static String varargs(Object... args)
++    {
++        return (String) args[0];
++    }
++
+     public static String intLong(int a, long b) {
+         return "intLong ok";
+     }

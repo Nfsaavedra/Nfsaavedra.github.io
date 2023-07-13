@@ -1,0 +1,603 @@
+diff --git a/src/test/java/com/vdurmont/semver4j/NpmSemverTest.java b/src/test/java/com/vdurmont/semver4j/NpmSemverTest.java
+index 3a2a351..16ad6ad 100644
+--- a/src/test/java/com/vdurmont/semver4j/NpmSemverTest.java
++++ b/src/test/java/com/vdurmont/semver4j/NpmSemverTest.java
+@@ -27,218 +27,202 @@ public class NpmSemverTest {
+     @Parameters
+     public static Iterable<Object[]> getParameters() {
+         return Arrays.asList(new Object[][] {
+-            // Concrete versions:
+-            // (0)
++            // Fully-qualified versions:
+             { "1.2.3", "1.2.3", true, },
+-            // (1)
+             { "1.2.4", "1.2.3", false, },
+ 
+-            // Hyphen ranges:
++            // Minor versions:
++            { "1.2.3", "1.2", true, },
++            { "1.2.4", "1.3", false, },
++
++            // Major versions:
++            { "1.2.3", "1", true, },
++            { "1.2.4", "2", false, },
+ 
+-            // (2)
++            // Hyphen ranges:
+             { "1.2.4-beta+exp.sha.5114f85", "1.2.3 - 2.3.4", false, },
+-            // (3)
+             { "1.2.4", "1.2.3 - 2.3.4", true, },
+-            // (4)
+             { "1.2.3", "1.2.3 - 2.3.4", true, },
+-            // (5)
+             { "2.3.4", "1.2.3 - 2.3.4", true, },
+-            // (6)
+             { "2.3.0-alpha", "1.2.3 - 2.3.0-beta", true, },
+-            // (7)
+             { "2.3.4", "1.2.3 - 2.3", true, },
+-            // (8)
+             { "2.3.4", "1.2.3 - 2", true, },
+-            //
+             { "4.4", "3.X - 4.X", true, },
+-            // (9)
+             { "1.0.0", "1.2.3 - 2.3.4", false, },
+-            // (10)
+             { "3.0.0", "1.2.3 - 2.3.4", false, },
+-            // (11)
+             { "2.4.3", "1.2.3 - 2.3", false, },
+-            // (12)
+             { "2.3.0-rc1", "1.2.3 - 2.3.0-beta", false, },
+-            // (13)
+             { "3.0.0", "1.2.3 - 2", false, },
+ 
+-            // X ranges:
+-
+-            // (14)
++            // Wildcard ranges:
+             { "3.1.5", "", true, },
+-            // (15)
+             { "3.1.5", "*", true, },
+-            // (16)
+             { "0.0.0", "*", true, },
+-            // (17)
+             { "1.0.0-beta", "*", true, },
+-            // (18)
++            { "3.1.5-beta", "3.1.x", false, },
+             { "3.1.5-beta+exp.sha.5114f85", "3.1.x", false, },
+-            // (19)
++            { "3.1.5+exp.sha.5114f85", "3.1.x", true, },
+             { "3.1.5", "3.1.x", true, },
+-            // (20)
+             { "3.1.5", "3.1.X", true, },
+-            // (21)
+             { "3.1.5", "3.x", true, },
+-            // (22)
+             { "3.1.5", "3.*", true, },
+-            // (23)
+             { "3.1.5", "3.1", true, },
+-            // (24)
+             { "3.1.5", "3", true, },
+-            // (25)
+             { "3.2.5", "3.1.x", false, },
+-            // (26)
+             { "3.0.5", "3.1.x", false, },
+-            // (27)
+             { "4.0.0", "3.x", false, },
+-            // (28)
+             { "2.0.0", "3.x", false, },
+-            // (29)
+             { "3.2.5", "3.1", false, },
+-            // (30)
+             { "3.0.5", "3.1", false, },
+-            // (31)
+             { "4.0.0", "3", false, },
+-            // (32)
+             { "2.0.0", "3", false, },
+ 
+             // Tilde ranges:
+-
+-            // (33)
++            { "1.2.4-beta", "~1.2.3", false, },
+             { "1.2.4-beta+exp.sha.5114f85", "~1.2.3", false, },
+-            // (34)
+             { "1.2.3", "~1.2.3", true, },
+-            // (35)
+             { "1.2.7", "~1.2.3", true, },
+-            // (36)
+             { "1.2.2", "~1.2", true, },
+-            // (37)
+             { "1.2.0", "~1.2", true, },
+-            // (38)
+             { "1.3.0", "~1", true, },
+-            // (39)
+             { "1.0.0", "~1", true, },
+-            // (40)
+             { "1.2.3", "~1.2.3-beta.2", true, },
+-            // (41)
+             { "1.2.3-beta.4", "~1.2.3-beta.2", true, },
+-            // (42)
+             { "1.2.4", "~1.2.3-beta.2", true, },
+-            // (43)
+             { "1.3.0", "~1.2.3", false, },
+-            // (44)
+             { "1.2.2", "~1.2.3", false, },
+-            // (45)
+             { "1.1.0", "~1.2", false, },
+-            // (46)
+             { "1.3.0", "~1.2", false, },
+-            // (47)
+             { "2.0.0", "~1", false, },
+-            // (48)
+             { "0.0.0", "~1", false, },
+-            // (49)
+             { "1.2.3-beta.1", "~1.2.3-beta.2", false, },
+ 
+             // Caret ranges:
+-
+-            // (50)
+             { "1.2.3", "^1.2.3", true, },
+-            // (51)
+             { "1.2.4", "^1.2.3", true, },
+-            // (52)
+             { "1.3.0", "^1.2.3", true, },
+-            // (53)
+             { "0.2.3", "^0.2.3", true, },
+-            // (54)
+             { "0.2.4", "^0.2.3", true, },
+-            // (55)
+             { "0.0.3", "^0.0.3", true, },
+-            // (56)
+             { "0.0.3+exp.sha.5114f85", "^0.0.3", true, },
+-            // (57)
+             { "0.0.3", "^0.0.3-beta", true, },
+-            // (58)
+             { "0.0.3-pr.2", "^0.0.3-beta", true, },
+-            // (59)
+             { "1.2.2", "^1.2.3", false, },
+-            // (60)
+             { "2.0.0", "^1.2.3", false, },
+-            // (61)
+             { "0.2.2", "^0.2.3", false, },
+-            // (62)
+             { "0.3.0", "^0.2.3", false, },
+-            // (63)
+             { "0.0.4", "^0.0.3", false, },
+-            // (64)
+             { "0.0.3-alpha", "^0.0.3-beta", false, },
+-            // (65)
+             { "0.0.4", "^0.0.3-beta", false, },
+ 
+-            // Complex ranges:
+-            // TODO: Add more!
+-
+-            // (66)
+-             { "1.2.0", "1.2 <1.2.8 || >2.0.0", true, },
+-            // (67)
+-             { "1.2.7", "1.2 <1.2.8 || >2.0.0", true, },
+-            // (68)
+-             { "2.0.1", "1.2 <1.2.8 || >2.0.0", true, },
+-            // (69)
+-            { "1.1.0", "1.2 <1.2.8 || >2.0.0", false, },
+-            // (70)
+-            { "1.2.9", "1.2 <1.2.8 || >2.0.0", false, },
+-            // (71)
+-            { "2.0.0", "1.2 <1.2.8 || >2.0.0", false, },
++            // Comparators:
++            { "2.0.0", "=2.0.0", true, },
++            { "2.0.0", "=2.0", true, },
++            { "2.0.1", "=2.0", true, },
++            { "2.0.0", "=2", true, },
++            { "2.0.1", "=2", true, },
++            { "2.0.1", "=2.0.0", false, },
++            { "1.9.9", "=2.0.0", false, },
++            { "1.9.9", "=2.0", false, },
++            { "1.9.9", "=2", false, },
++
++            { "2.0.1", ">2.0.0", true, },
++            { "3.0.0", ">2.0.0", true, },
++            { "3.0.0", ">2.0", true, },
++            { "3.0.0", ">2", true, },
++            { "2.0.0", ">2.0.0", false, },
++            { "1.9.9", ">2.0.0", false, },
++            { "2.0.0", ">2.0", false, },
++            { "1.9.9", ">2.0", false, },
++            { "2.0.1", ">2", false, },
++            { "2.0.0", ">2", false, },
++            { "1.9.9", ">2", false, },
++
++            { "1.9.9", "<2.0.0", true, },
++            { "1.9.9", "<2.0", true, },
++            { "1.9.9", "<2", true, },
++            { "2.0.0", "<2.0.0", false, },
++            { "2.0.1", "<2.0.0", false, },
++            { "3.0.0", "<2.0.0", false, },
++            { "2.0.0", "<2.0", false, },
++            { "2.0.1", "<2.0", false, },
++            { "3.0.0", "<2.0", false, },
++            { "2.0.0", "<2", false, },
++            { "2.0.1", "<2", false, },
++            { "3.0.0", "<2", false, },
+ 
+-            // (72)
+-            { "1.2.3", "1.2.3 || 1.2.4", true, },
+-            // (73)
+-            { "1.2.4", "1.2.3 || 1.2.4", true, },
+-            // (74)
+-            { "1.2.5", "1.2.3 || 1.2.4", false, },
++            { "2.0.0", ">=2.0.0", true, },
++            { "2.0.1", ">=2.0.0", true, },
++            { "3.0.0", ">=2.0.0", true, },
++            { "2.0.0", ">=2.0", true, },
++            { "3.0.0", ">=2.0", true, },
++            { "2.0.0", ">=2", true, },
++            { "2.0.1", ">=2", true, },
++            { "3.0.0", ">=2", true, },
++            { "1.9.9", ">=2.0.0", false, },
++            { "1.9.9", ">=2.0", false, },
++            { "1.9.9", ">=2", false, },
++
++            { "1.9.9", "<=2.0.0", true, },
++            { "2.0.0", "<=2.0.0", true, },
++            { "1.9.9", "<=2.0", true, },
++            { "2.0.0", "<=2.0", true, },
++            { "2.0.1", "<=2.0", true, },
++            { "1.9.9", "<=2", true, },
++            { "2.0.0", "<=2", true, },
++            { "2.0.1", "<=2", true, },
++            { "2.0.1", "<=2.0.0", false, },
++            { "3.0.0", "<=2.0.0", false, },
++            { "3.0.0", "<=2.0", false, },
++            { "3.0.0", "<=2", false, },
++
++            // AND ranges:
++            { "2.0.1", ">2.0.0 <3.0.0", true, },
++            { "2.0.1", ">2.0 <3.0", false, },
+ 
+-            // (75)
+             { "1.2.0", "1.2 <1.2.8", true, },
+-            // (76)
+             { "1.2.7", "1.2 <1.2.8", true, },
+-            // (77)
+             { "1.1.9", "1.2 <1.2.8", false, },
+-            // (78)
+             { "1.2.9", "1.2 <1.2.8", false, },
+ 
+-            // Comparators:
++            // OR ranges:
++            { "1.2.3", "1.2.3 || 1.2.4", true, },
++            { "1.2.4", "1.2.3 || 1.2.4", true, },
++            { "1.2.5", "1.2.3 || 1.2.4", false, },
+ 
+-            //
+-            { "2.0.1", ">2.0 <3.0", true, },
+-            // (79)
+-            { "2.0.1", "> 2.0.0", true, },
+-            // (80)
+-            { "2.0.0", "= 2.0.0", true, },
+-            // (81)
+-            { "1.9.9", "< 2.0.0", true, },
+-            // (82)
+-            { "2.0.0", "<=2.0.0", true, },
+-            // (83)
+-            { "1.9.9", "<=2.0.0", true, },
+-            // (84)
+-            { "2.0.0", ">=2.0.0", true, },
+-            // (85)
+-            { "2.0.1", ">=2.0.0", true, },
+-            // (86)
+-            { "2.0.0", "> 2.0.0", false, },
+-            // (87)
+-            { "1.9.9", "> 2.0.0", false, },
+-            // (88)
+-            { "2.0.1", "= 2.0.0", false, },
+-            // (89)
+-            { "2.0.0", "< 2.0.0", false, },
+-            // (90)
+-            { "2.0.1", "< 2.0.0", false, },
+-            // (91)
+-            { "2.0.1", "<=2.0.0", false, },
+-            // (92)
+-            { "1.9.9", ">=2.0.0", false, }, });
++            // Complex ranges:
++            { "1.2.2", ">1.2.1 <1.2.8 || >2.0.0", true, },
++            { "1.2.7", ">1.2.1 <1.2.8 || >2.0.0", true, },
++            { "2.0.1", ">1.2.1 <1.2.8 || >2.0.0", true, },
++            { "1.2.1", ">1.2.1 <1.2.8 || >2.0.0", false, },
++            { "2.0.0", ">1.2.1 <1.2.8 || >2.0.0", false, },
++
++            { "1.2.2", ">1.2.1 <1.2.8 || >2.0.0 <3.0.0", true, },
++            { "1.2.7", ">1.2.1 <1.2.8 || >2.0.0 <3.0.0", true, },
++            { "2.0.1", ">1.2.1 <1.2.8 || >2.0.0 <3.0.0", true, },
++            { "2.5.0", ">1.2.1 <1.2.8 || >2.0.0 <3.0.0", true, },
++            { "1.2.1", ">1.2.1 <1.2.8 || >2.0.0 <3.0.0", false, },
++            { "1.2.8", ">1.2.1 <1.2.8 || >2.0.0 <3.0.0", false, },
++            { "2.0.0", ">1.2.1 <1.2.8 || >2.0.0 <3.0.0", false, },
++            { "3.0.0", ">1.2.1 <1.2.8 || >2.0.0 <3.0.0", false, },
++
++            { "1.2.2", "1.2.2 - 1.2.7 || 2.0.1 - 2.9.9", true, },
++            { "1.2.7", "1.2.2 - 1.2.7 || 2.0.1 - 2.9.9", true, },
++            { "2.0.1", "1.2.2 - 1.2.7 || 2.0.1 - 2.9.9", true, },
++            { "2.5.0", "1.2.2 - 1.2.7 || 2.0.1 - 2.9.9", true, },
++            { "1.2.1", "1.2.2 - 1.2.7 || 2.0.1 - 2.9.9", false, },
++            { "1.2.8", "1.2.2 - 1.2.7 || 2.0.1 - 2.9.9", false, },
++            { "2.0.0", "1.2.2 - 1.2.7 || 2.0.1 - 2.9.9", false, },
++            { "3.0.0", "1.2.2 - 1.2.7 || 2.0.1 - 2.9.9", false, },
++
++            { "1.2.0", "1.2 <1.2.8 || >2.0.0", true, },
++            { "1.2.7", "1.2 <1.2.8 || >2.0.0", true, },
++            { "1.2.7", "1.2 <1.2.8 || >2.0.0", true, },
++            { "2.0.1", "1.2 <1.2.8 || >2.0.0", true, },
++            { "1.1.0", "1.2 <1.2.8 || >2.0.0", false, },
++            { "1.2.9", "1.2 <1.2.8 || >2.0.0", false, },
++            { "2.0.0", "1.2 <1.2.8 || >2.0.0", false, },
++        });
+     }
+ 
+     @Test
+diff --git a/src/test/java/com/vdurmont/semver4j/RequirementTest.java b/src/test/java/com/vdurmont/semver4j/RequirementTest.java
+index da7f818..ba9b7e6 100644
+--- a/src/test/java/com/vdurmont/semver4j/RequirementTest.java
++++ b/src/test/java/com/vdurmont/semver4j/RequirementTest.java
+@@ -65,6 +65,43 @@ public class RequirementTest {
+         assertEquals("4.5.6", req2.range.version.getValue());
+     }
+ 
++    @Test public void buildNPM_with_OR_and_AND_operators() {
++        Requirement req = Requirement.buildNPM(">1.2.1 <1.2.8 || >2.0.0 <3.0.0");
++
++        assertNull(req.range);
++        assertEquals(Requirement.RequirementOperator.OR, req.op);
++
++        // >1.2.1 <1.2.8
++        Requirement req1 = req.req1;
++        assertNull(req1.range);
++        assertEquals(Requirement.RequirementOperator.AND, req1.op);
++
++        Requirement req1_1 = req1.req1;
++        assertNull(req1_1.op);
++        assertEquals(Range.RangeOperator.GT, req1_1.range.op);
++        assertEquals("1.2.1", req1_1.range.version.getValue());
++
++        Requirement req1_2 = req1.req2;
++        assertNull(req1_2.op);
++        assertEquals(Range.RangeOperator.LT, req1_2.range.op);
++        assertEquals("1.2.8", req1_2.range.version.getValue());
++
++        // >2.0.0 < 3.0.0
++        Requirement req2 = req.req2;
++        assertNull(req2.range);
++        assertEquals(Requirement.RequirementOperator.AND, req2.op);
++
++        Requirement req2_1 = req2.req1;
++        assertNull(req2_1.op);
++        assertEquals(Range.RangeOperator.GT, req2_1.range.op);
++        assertEquals("2.0.0", req2_1.range.version.getValue());
++
++        Requirement req2_2 = req2.req2;
++        assertNull(req2_2.op);
++        assertEquals(Range.RangeOperator.LT, req2_2.range.op);
++        assertEquals("3.0.0", req2_2.range.version.getValue());
++    }
++
+     @Test public void tildeRequirement_npm_full_version() {
+         // ~1.2.3 := >=1.2.3 <1.(2+1).0 := >=1.2.3 <1.3.0
+         tildeTest("1.2.3", "1.2.3", "1.3.0", Semver.SemverType.NPM);
+@@ -420,7 +457,7 @@ public class RequirementTest {
+         assertEquals(">=1.0.0", Requirement.buildNPM(">=1.0.0").toString());
+         assertEquals(">=1.0.0 <1.1.0", Requirement.buildNPM("~1.0.0").toString());
+         assertEquals(">=1.0.0 <2.0.0", Requirement.buildNPM("^1.0.0").toString());
+-        assertEquals(">=5.0.0 <=7.2.3 || >=1.0.0 <2.0.0 || >=2.5.0", Requirement.buildNPM("1.x || >=2.5.0 || 5.0.0 - 7.2.3").toString());
++        assertEquals(">=1.0.0 <2.0.0 || >=2.5.0 || >=5.0.0 <=7.2.3", Requirement.buildNPM("1.x || >=2.5.0 || 5.0.0 - 7.2.3").toString());
+ 
+         assertEquals(">=1.2.0 <1.3.0", Requirement.buildCocoapods("~>1.2.0").toString());
+ 
+diff --git a/src/test/java/com/vdurmont/semver4j/SemverTest.java b/src/test/java/com/vdurmont/semver4j/SemverTest.java
+index e5e1388..d0c0111 100644
+--- a/src/test/java/com/vdurmont/semver4j/SemverTest.java
++++ b/src/test/java/com/vdurmont/semver4j/SemverTest.java
+@@ -100,7 +100,7 @@ public class SemverTest {
+         Semver semver = new Semver(version, Semver.SemverType.LOOSE);
+         assertIsSemver(semver, version, 1, null, null, new String[]{"beta", "11"}, "sha.0nsfgkjkjsdf");
+     }
+-    
++
+     @Test public void default_constructor_test_myltiple_hyphen_signs() {
+         String version = "1.2.3-beta.1-1.ab-c+sha.0nsfgkjkjs-df";
+         Semver semver = new Semver(version);
+@@ -218,7 +218,7 @@ public class SemverTest {
+         Semver semver = new Semver("1.2.3-Beta.4+sha123456789");
+         semver.withClearedBuild().isEqualTo("1.2.3-Beta.4");
+     }
+-    
++
+     @Test public void withClearedBuild_test_multiple_hyphen_signs() {
+         Semver semver = new Semver("1.2.3-Beta.4-test+sha12345-6789");
+         semver.withClearedBuild().isEqualTo("1.2.3-Beta.4-test");
+@@ -228,35 +228,35 @@ public class SemverTest {
+         Semver semver = new Semver("1.2.3-Beta.4+SHA123456789");
+         semver.withClearedSuffixAndBuild().isEqualTo("1.2.3");
+     }
+-    
++
+     @Test public void withSuffix_test_change_suffix() {
+     	Semver semver = new Semver("1.2.3-Alpha.4+SHA123456789");
+     	Semver result = semver.withSuffix("Beta.1");
+-    	
++
+     	assertEquals("1.2.3-Beta.1+SHA123456789", result.toString());
+     	assertArrayEquals(new String[] { "Beta", "1" }, result.getSuffixTokens());
+     }
+-    
++
+     @Test public void withSuffix_test_add_suffix() {
+     	Semver semver = new Semver("1.2.3+SHA123456789");
+     	Semver result = semver.withSuffix("Beta.1");
+-    	
++
+     	assertEquals("1.2.3-Beta.1+SHA123456789", result.toString());
+     	assertArrayEquals(new String[] { "Beta", "1" }, result.getSuffixTokens());
+     }
+-    
++
+     @Test public void withBuild_test_change_build() {
+     	Semver semver = new Semver("1.2.3-Alpha.4+SHA123456789");
+     	Semver result = semver.withBuild("SHA987654321");
+-    	
++
+     	assertEquals("1.2.3-Alpha.4+SHA987654321", result.toString());
+     	assertEquals("SHA987654321", result.getBuild());
+     }
+-    
++
+     @Test public void withBuild_test_add_build() {
+     	Semver semver = new Semver("1.2.3-Alpha.4");
+     	Semver result = semver.withBuild("SHA987654321");
+-    	
++
+     	assertEquals("1.2.3-Alpha.4+SHA987654321", result.toString());
+     	assertEquals("SHA987654321", result.getBuild());
+     }
+diff --git a/src/test/java/com/vdurmont/semver4j/TokenizerTest.java b/src/test/java/com/vdurmont/semver4j/TokenizerTest.java
+index b6be3a2..2945b5b 100644
+--- a/src/test/java/com/vdurmont/semver4j/TokenizerTest.java
++++ b/src/test/java/com/vdurmont/semver4j/TokenizerTest.java
+@@ -44,6 +44,100 @@ public class TokenizerTest {
+         assertEquals("1.2.7", tokens.get(1).value);
+     }
+ 
++    @Test public void tokenize_NPM_lt() {
++        String requirement = "<1.2.7";
++        List<Tokenizer.Token> tokens = Tokenizer.tokenize(requirement, Semver.SemverType.NPM);
++        assertEquals(2, tokens.size());
++
++        assertEquals(Tokenizer.TokenType.LT, tokens.get(0).type);
++
++        assertEquals(Tokenizer.TokenType.VERSION, tokens.get(1).type);
++        assertEquals("1.2.7", tokens.get(1).value);
++    }
++
++    @Test public void tokenize_NPM_gte() {
++        String requirement = ">=1.2.7";
++        List<Tokenizer.Token> tokens = Tokenizer.tokenize(requirement, Semver.SemverType.NPM);
++        assertEquals(2, tokens.size());
++
++        assertEquals(Tokenizer.TokenType.GTE, tokens.get(0).type);
++
++        assertEquals(Tokenizer.TokenType.VERSION, tokens.get(1).type);
++        assertEquals("1.2.7", tokens.get(1).value);
++    }
++
++    @Test public void tokenize_NPM_gt() {
++        String requirement = ">1.2.7";
++        List<Tokenizer.Token> tokens = Tokenizer.tokenize(requirement, Semver.SemverType.NPM);
++        assertEquals(2, tokens.size());
++
++        assertEquals(Tokenizer.TokenType.GT, tokens.get(0).type);
++
++        assertEquals(Tokenizer.TokenType.VERSION, tokens.get(1).type);
++        assertEquals("1.2.7", tokens.get(1).value);
++    }
++
++    @Test public void tokenize_NPM_eq() {
++        String requirement = "=1.2.7";
++        List<Tokenizer.Token> tokens = Tokenizer.tokenize(requirement, Semver.SemverType.NPM);
++        assertEquals(2, tokens.size());
++
++        assertEquals(Tokenizer.TokenType.EQ, tokens.get(0).type);
++
++        assertEquals(Tokenizer.TokenType.VERSION, tokens.get(1).type);
++        assertEquals("1.2.7", tokens.get(1).value);
++    }
++
++    @Test public void tokenize_NPM_gte_major() {
++        String requirement = ">=1";
++        List<Tokenizer.Token> tokens = Tokenizer.tokenize(requirement, Semver.SemverType.NPM);
++        assertEquals(2, tokens.size());
++
++        assertEquals(Tokenizer.TokenType.GTE, tokens.get(0).type);
++
++        assertEquals(Tokenizer.TokenType.VERSION, tokens.get(1).type);
++        assertEquals("1", tokens.get(1).value);
++    }
++
++    @Test public void tokenize_NPM_suffix() {
++        String requirement = "1.2.7-rc.1";
++        List<Tokenizer.Token> tokens = Tokenizer.tokenize(requirement, Semver.SemverType.NPM);
++        assertEquals(3, tokens.size());
++
++        assertEquals(Tokenizer.TokenType.VERSION, tokens.get(0).type);
++        assertEquals("1.2.7", tokens.get(0).value);
++
++        // @TODO: Differentiate between hyphen for range vs. suffix
++        assertEquals(Tokenizer.TokenType.HYPHEN, tokens.get(1).type);
++
++        assertEquals(Tokenizer.TokenType.VERSION, tokens.get(2).type);
++        assertEquals("rc.1", tokens.get(2).value);
++    }
++
++    @Test public void tokenize_NPM_or_suffix() {
++        String requirement = "1.2.7-rc.1 || 1.2.7-rc.2";
++        List<Tokenizer.Token> tokens = Tokenizer.tokenize(requirement, Semver.SemverType.NPM);
++        assertEquals(7, tokens.size());
++
++        assertEquals(Tokenizer.TokenType.VERSION, tokens.get(0).type);
++        assertEquals("1.2.7", tokens.get(0).value);
++
++        assertEquals(Tokenizer.TokenType.HYPHEN, tokens.get(1).type);
++
++        assertEquals(Tokenizer.TokenType.VERSION, tokens.get(2).type);
++        assertEquals("rc.1", tokens.get(2).value);
++
++        assertEquals(Tokenizer.TokenType.OR, tokens.get(3).type);
++
++        assertEquals(Tokenizer.TokenType.VERSION, tokens.get(4).type);
++        assertEquals("1.2.7", tokens.get(4).value);
++
++        assertEquals(Tokenizer.TokenType.HYPHEN, tokens.get(5).type);
++
++        assertEquals(Tokenizer.TokenType.VERSION, tokens.get(6).type);
++        assertEquals("rc.2", tokens.get(6).value);
++    }
++
+     @Test public void tokenize_NPM_or_hyphen() {
+         String requirement = "1.2.7 || 1.2.9 - 2.0.0";
+         List<Tokenizer.Token> tokens = Tokenizer.tokenize(requirement, Semver.SemverType.NPM);
+@@ -88,6 +182,38 @@ public class TokenizerTest {
+         assertEquals(Tokenizer.TokenType.CLOSING, tokens.get(7).type);
+     }
+ 
++    @Test public void tokenize_NPM_or_and() {
++        String requirement = ">1.2.1 <1.2.8 || >2.0.0 <3.0.0";
++        List<Tokenizer.Token> tokens = Tokenizer.tokenize(requirement, Semver.SemverType.NPM);
++        assertEquals(11, tokens.size());
++
++        assertEquals(Tokenizer.TokenType.GT, tokens.get(0).type);
++
++        assertEquals(Tokenizer.TokenType.VERSION, tokens.get(1).type);
++        assertEquals("1.2.1", tokens.get(1).value);
++
++        assertEquals(Tokenizer.TokenType.AND, tokens.get(2).type);
++
++        assertEquals(Tokenizer.TokenType.LT, tokens.get(3).type);
++
++        assertEquals(Tokenizer.TokenType.VERSION, tokens.get(4).type);
++        assertEquals("1.2.8", tokens.get(4).value);
++
++        assertEquals(Tokenizer.TokenType.OR, tokens.get(5).type);
++
++        assertEquals(Tokenizer.TokenType.GT, tokens.get(6).type);
++
++        assertEquals(Tokenizer.TokenType.VERSION, tokens.get(7).type);
++        assertEquals("2.0.0", tokens.get(7).value);
++
++        assertEquals(Tokenizer.TokenType.AND, tokens.get(8).type);
++
++        assertEquals(Tokenizer.TokenType.LT, tokens.get(9).type);
++
++        assertEquals(Tokenizer.TokenType.VERSION, tokens.get(10).type);
++        assertEquals("3.0.0", tokens.get(10).value);
++    }
++
+     @Test public void tokenize_Cocoapods_tilde() {
+         String requirement = "~> 1.2.7";
+         List<Tokenizer.Token> tokens = Tokenizer.tokenize(requirement, Semver.SemverType.COCOAPODS);

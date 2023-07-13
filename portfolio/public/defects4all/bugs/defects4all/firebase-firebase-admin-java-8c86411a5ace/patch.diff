@@ -1,0 +1,35 @@
+diff --git a/.gitignore b/.gitignore
+index a869aa6..6e7d29c 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -10,3 +10,4 @@ target/
+ release.properties
+ integration_cert.json
+ integration_apikey.txt
++.DS_Store
+diff --git a/src/main/java/com/google/firebase/messaging/TopicManagementResponse.java b/src/main/java/com/google/firebase/messaging/TopicManagementResponse.java
+index b8f9257..bbf4c94 100644
+--- a/src/main/java/com/google/firebase/messaging/TopicManagementResponse.java
++++ b/src/main/java/com/google/firebase/messaging/TopicManagementResponse.java
+@@ -20,6 +20,7 @@ import static com.google.common.base.Preconditions.checkArgument;
+ import static com.google.common.base.Preconditions.checkState;
+ 
+ import com.google.api.client.json.GenericJson;
++import com.google.common.base.MoreObjects;
+ import com.google.common.collect.ImmutableList;
+ import com.google.common.collect.ImmutableMap;
+ import com.google.firebase.internal.NonNull;
+@@ -122,5 +123,13 @@ public class TopicManagementResponse {
+     public String getReason() {
+       return reason;
+     }
++
++    @Override
++    public String toString() {
++      return MoreObjects.toStringHelper(this)
++              .add("index", index)
++              .add("reason", reason)
++              .toString();
++    }
+   }
+ }

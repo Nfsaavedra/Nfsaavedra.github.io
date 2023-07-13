@@ -1,0 +1,107 @@
+diff --git a/README.md b/README.md
+index 74da69f..623aa75 100644
+--- a/README.md
++++ b/README.md
+@@ -32,7 +32,7 @@ Add dyn4j to your classpath by adding a Maven dependency from
+ <dependency>
+     <groupId>org.dyn4j</groupId>
+     <artifactId>dyn4j</artifactId>
+-    <version>4.1.3</version>
++    <version>4.1.4</version>
+ </dependency>
+ ```
+ 
+diff --git a/RELEASE-NOTES.md b/RELEASE-NOTES.md
+index 32403a1..05844d3 100644
+--- a/RELEASE-NOTES.md
++++ b/RELEASE-NOTES.md
+@@ -1,3 +1,13 @@
++## v4.1.4 - February 26th, 2021
++
++[Milestone](https://github.com/dyn4j/dyn4j/milestone/12?closed=1) |
++[Tag](https://github.com/dyn4j/dyn4j/tree/4.1.4) |
++[Maven Release](https://search.maven.org/artifact/org.dyn4j/dyn4j/4.1.4/bundle) |
++[GitHub Release](https://github.com/dyn4j/dyn4j/packages/93466?version=4.1.4)
++
++**Bug Fixes:**
++- [#186](https://github.com/dyn4j/dyn4j/issues/186) Fixed the removal of sensor fixtures so the atRest state of colliding bodies is unchanged
++
+ ## v4.1.3 - February 13th, 2021
+ 
+ [Milestone](https://github.com/dyn4j/dyn4j/milestone/11?closed=1) |
+diff --git a/pom.xml b/pom.xml
+index 6e24360..e3094dc 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -3,7 +3,7 @@
+ 
+   <groupId>org.dyn4j</groupId>
+   <artifactId>dyn4j</artifactId>
+-  <version>4.1.3</version>
++  <version>4.1.4</version>
+ 
+   <name>dyn4j</name>
+   <url>http://www.dyn4j.org</url>
+diff --git a/src/main/java/META-INF/MANIFEST.MF b/src/main/java/META-INF/MANIFEST.MF
+index b2ae41b..4d28848 100644
+--- a/src/main/java/META-INF/MANIFEST.MF
++++ b/src/main/java/META-INF/MANIFEST.MF
+@@ -2,5 +2,5 @@ Manifest-Version: 1.0
+ Main-Class: org.dyn4j.Version
+ Name: dyn4j
+ Implementation-Title: Java Collision Detection and Physics Engine
+-Implementation-Version: 4.1.3
++Implementation-Version: 4.1.4
+ Implementation-Vendor: dyn4j.org
+diff --git a/src/main/java/org/dyn4j/Version.java b/src/main/java/org/dyn4j/Version.java
+index d33677c..24aa0e5 100644
+--- a/src/main/java/org/dyn4j/Version.java
++++ b/src/main/java/org/dyn4j/Version.java
+@@ -27,7 +27,7 @@ package org.dyn4j;
+ /**
+  * The version of the engine.
+  * @author William Bittle
+- * @version 4.1.3
++ * @version 4.1.4
+  * @since 1.0.0
+  */
+ public final class Version {
+@@ -38,7 +38,7 @@ public final class Version {
+ 	private static final int MINOR = 1;
+ 	
+ 	/** The revision number; low impact changes; deprecating API changes, minor bug fixes, etc. */
+-	private static final int REVISION = 3;
++	private static final int REVISION = 4;
+ 	
+ 	/**
+ 	 * Hide the constructor.
+diff --git a/src/main/java/org/dyn4j/world/AbstractPhysicsWorld.java b/src/main/java/org/dyn4j/world/AbstractPhysicsWorld.java
+index f81c6de..4e4d755 100644
+--- a/src/main/java/org/dyn4j/world/AbstractPhysicsWorld.java
++++ b/src/main/java/org/dyn4j/world/AbstractPhysicsWorld.java
+@@ -89,7 +89,7 @@ import org.dyn4j.world.listener.TimeOfImpactListener;
+  * more than one world. Likewise, the {@link Joint#setOwner(Object)} method is used to handle
+  * joints being added to the world. Callers should <b>NOT</b> use the methods.
+  * @author William Bittle
+- * @version 4.1.1
++ * @version 4.1.4
+  * @since 4.0.0
+  * @param <T> the {@link PhysicsBody} type
+  * @param <V> the {@link ContactCollisionData} type
+@@ -520,9 +520,13 @@ public abstract class AbstractPhysicsWorld<T extends PhysicsBody, V extends Cont
+ 			}
+ 			
+ 			// get the other body involved
+-			T other = contactConstraint.getOtherBody(body);				
+-			// wake the other body
+-			other.setAtRest(false);
++			T other = contactConstraint.getOtherBody(body);
++			
++			// clear the at-rest state of the connected body if the constraint
++			// is NOT a sensor and is enabled
++			if (!contactConstraint.isSensor() && contactConstraint.isEnabled()) {
++				other.setAtRest(false);
++			}
+ 			
+ 			// remove the stored collision data
+ 			V data = this.collisionData.remove(contactConstraint.getCollisionPair());

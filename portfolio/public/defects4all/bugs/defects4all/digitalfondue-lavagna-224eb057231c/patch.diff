@@ -1,0 +1,15 @@
+diff --git a/src/main/java/io/lavagna/service/CardService.java b/src/main/java/io/lavagna/service/CardService.java
+index e6d53a9..6c030c9 100644
+--- a/src/main/java/io/lavagna/service/CardService.java
++++ b/src/main/java/io/lavagna/service/CardService.java
+@@ -157,7 +157,9 @@ public class CardService {
+ 
+         // Copy comments
+         for (CardDataFull cData : cardDataService.findAllCommentsByCardId(cardToCopyId)) {
+-            cardDataService.createComment(newCard.getId(), cData.getContent(), cData.getTime(), cData.getUserId());
++            if(cData.getEventType() == EventType.COMMENT_CREATE) {
++                cardDataService.createComment(newCard.getId(), cData.getContent(), cData.getTime(), cData.getUserId());
++            }
+         }
+ 
+         // Copy action lists

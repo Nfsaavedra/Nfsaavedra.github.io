@@ -1,0 +1,203 @@
+diff --git a/src/main/java/com/googlecode/aviator/AviatorEvaluatorInstance.java b/src/main/java/com/googlecode/aviator/AviatorEvaluatorInstance.java
+index 42f5136..5e93f6f 100644
+--- a/src/main/java/com/googlecode/aviator/AviatorEvaluatorInstance.java
++++ b/src/main/java/com/googlecode/aviator/AviatorEvaluatorInstance.java
+@@ -38,6 +38,7 @@ import java.util.HashMap;
+ import java.util.IdentityHashMap;
+ import java.util.List;
+ import java.util.Map;
++import java.util.Set;
+ import java.util.concurrent.Callable;
+ import java.util.concurrent.ConcurrentHashMap;
+ import java.util.concurrent.FutureTask;
+@@ -303,7 +304,7 @@ public final class AviatorEvaluatorInstance {
+     final Map<String, Object> module = exp.newEnv("exports", exports, "path", abPath);
+     Map<String, Object> env = exp.newEnv("__MODULE__", module, "exports", exports);
+     exp.execute(env);
+-    exports.setInstance(this);
++    exports.configure(this, exp);
+     return (Map<String, Object>) module.get("exports");
+   }
+ 
+@@ -623,6 +624,16 @@ public final class AviatorEvaluatorInstance {
+    */
+   public void enableFeature(final Feature feature) {
+     this.options.get(Options.FEATURE_SET).featureSet.add(feature);
++    this.options.get(Options.FEATURE_SET).featureSet.addAll(feature.getPrequires());
++  }
++
++  /**
++   * Returns current valid syntax feature set.
++   * 
++   * @return
++   */
++  public Set<Feature> getFeatures() {
++    return this.options.get(Options.FEATURE_SET).featureSet;
+   }
+ 
+   /**
+diff --git a/src/main/java/com/googlecode/aviator/BaseExpression.java b/src/main/java/com/googlecode/aviator/BaseExpression.java
+index 0644a63..ea700bc 100644
+--- a/src/main/java/com/googlecode/aviator/BaseExpression.java
++++ b/src/main/java/com/googlecode/aviator/BaseExpression.java
+@@ -14,7 +14,6 @@ import com.googlecode.aviator.AviatorEvaluatorInstance.StringSegments;
+ import com.googlecode.aviator.lexer.SymbolTable;
+ import com.googlecode.aviator.lexer.token.Variable;
+ import com.googlecode.aviator.runtime.FunctionArgument;
+-import com.googlecode.aviator.utils.Constants;
+ import com.googlecode.aviator.utils.Env;
+ import com.googlecode.aviator.utils.Reflector;
+ 
+@@ -147,6 +146,7 @@ public abstract class BaseExpression implements Expression {
+ 
+   public void setCompileEnv(final Env compileEnv) {
+     this.compileEnv = compileEnv;
++    this.compileEnv.setExpression(this);
+   }
+ 
+ 
+@@ -208,13 +208,13 @@ public abstract class BaseExpression implements Expression {
+     } else {
+       env = new Env(map);
+     }
+-    env.setInstance(this.instance);
++    env.configure(this.instance, this);
+     return env;
+   }
+ 
+   protected Env genTopEnv(final Map<String, Object> map) {
+     if (map instanceof Env) {
+-      ((Env) map).setInstance(this.instance);
++      ((Env) map).configure(this.instance, this);
+     }
+     Env env =
+         newEnv(map, this.instance.getOptionValue(Options.USE_USER_ENV_AS_TOP_ENV_DIRECTLY).bool);
+@@ -225,7 +225,6 @@ public abstract class BaseExpression implements Expression {
+     if (!this.funcsArgs.isEmpty()) {
+       env.override(FUNC_PARAMS_VAR, this.funcsArgs);
+     }
+-    env.override(Constants.EXP_VAR, this);
+     return env;
+   }
+ 
+diff --git a/src/main/java/com/googlecode/aviator/Feature.java b/src/main/java/com/googlecode/aviator/Feature.java
+index f06e15c..6c219e4 100644
+--- a/src/main/java/com/googlecode/aviator/Feature.java
++++ b/src/main/java/com/googlecode/aviator/Feature.java
+@@ -67,7 +67,7 @@ public enum Feature {
+    * String interpolation.For example, "a = 'aviator'; 'hello #{a}'" to generate a string 'hello
+    * aviator'
+    */
+-  StringInterpolation;
++  StringInterpolation(asSet(Feature.InternalVars));
+ 
+   /**
+    * Require feature sets for this feature.
+@@ -97,6 +97,11 @@ public enum Feature {
+     return set;
+   }
+ 
++  public Set<Feature> getPrequires() {
++    return this.prequires;
++  }
++
++
+   /**
+    * Returns the full feature set.
+    *
+diff --git a/src/main/java/com/googlecode/aviator/runtime/function/LambdaFunction.java b/src/main/java/com/googlecode/aviator/runtime/function/LambdaFunction.java
+index 55fe8c3..ad1d8b3 100644
+--- a/src/main/java/com/googlecode/aviator/runtime/function/LambdaFunction.java
++++ b/src/main/java/com/googlecode/aviator/runtime/function/LambdaFunction.java
+@@ -50,7 +50,7 @@ public abstract class LambdaFunction extends AbstractFunction {
+     Env env = null;
+     if (!this.inheritEnv) {
+       final Env contextEnv = new Env(parentEnv, this.context);
+-      contextEnv.setInstance(this.context.getInstance());
++      contextEnv.configure(this.context.getInstance(), this.expression);
+       env = new Env(contextEnv);
+       env.setInstance(this.context.getInstance());
+     } else {
+diff --git a/src/main/java/com/googlecode/aviator/script/AviatorBindings.java b/src/main/java/com/googlecode/aviator/script/AviatorBindings.java
+index 12a69d2..600af1d 100644
+--- a/src/main/java/com/googlecode/aviator/script/AviatorBindings.java
++++ b/src/main/java/com/googlecode/aviator/script/AviatorBindings.java
+@@ -5,6 +5,7 @@ import java.util.Map;
+ import java.util.Set;
+ import javax.script.Bindings;
+ import com.googlecode.aviator.AviatorEvaluatorInstance;
++import com.googlecode.aviator.Expression;
+ import com.googlecode.aviator.utils.Env;
+ 
+ /**
+@@ -43,6 +44,10 @@ public class AviatorBindings implements Bindings {
+     this.env.setInstance(instance);
+   }
+ 
++  public void setExpression(final Expression exp) {
++    this.env.setExpression(exp);
++  }
++
+   @Override
+   public void clear() {
+     this.env.clear();
+diff --git a/src/main/java/com/googlecode/aviator/utils/Env.java b/src/main/java/com/googlecode/aviator/utils/Env.java
+index 8cf3b77..c933394 100644
+--- a/src/main/java/com/googlecode/aviator/utils/Env.java
++++ b/src/main/java/com/googlecode/aviator/utils/Env.java
+@@ -31,6 +31,7 @@ import java.util.Iterator;
+ import java.util.Map;
+ import java.util.Set;
+ import com.googlecode.aviator.AviatorEvaluatorInstance;
++import com.googlecode.aviator.Expression;
+ import com.googlecode.aviator.Feature;
+ import com.googlecode.aviator.runtime.function.FunctionUtils;
+ import com.googlecode.aviator.runtime.type.Range;
+@@ -56,6 +57,16 @@ public class Env implements Map<String, Object> {
+   /** Override values map. */
+   private Map<String, Object> mOverrides;
+ 
++  private Expression expression;
++
++  public Expression getExpression() {
++    return this.expression;
++  }
++
++  public void setExpression(final Expression expression) {
++    this.expression = expression;
++  }
++
+   public Map<String, Object> getDefaults() {
+     return this.mDefaults;
+   }
+@@ -68,6 +79,11 @@ public class Env implements Map<String, Object> {
+     this.instance = instance;
+   }
+ 
++  public void configure(final AviatorEvaluatorInstance instance, final Expression exp) {
++    this.instance = instance;
++    this.expression = exp;
++  }
++
+   public static final Map<String, Object> EMPTY_ENV = Collections.emptyMap();
+ 
+   /**
+@@ -175,6 +191,10 @@ public class Env implements Map<String, Object> {
+       this.instance.ensureFeatureEnabled(Feature.InternalVars);
+       return this.instance;
+     }
++    if (Constants.EXP_VAR == key) {
++      this.instance.ensureFeatureEnabled(Feature.InternalVars);
++      return this.expression;
++    }
+ 
+     Map<String, Object> overrides = getmOverrides(true);
+     Object ret = null;
+@@ -329,6 +349,7 @@ public class Env implements Map<String, Object> {
+     StringBuffer buf = new StringBuffer(32 * size());
+     buf.append(super.toString()).append("{"). //
+         append(Constants.INSTANCE_VAR).append("=").append(this.instance).append(", ").//
++        append(Constants.EXP_VAR).append("=").append(this.expression).append(", ").//
+         append(Constants.ENV_VAR).append("=").append("<this>");
+ 
+     Iterator<String> it = keySet().iterator();

@@ -1,0 +1,62 @@
+diff --git a/src/main/java/com/vonage/client/insight/BasicInsightEndpoint.java b/src/main/java/com/vonage/client/insight/BasicInsightEndpoint.java
+index 2495a5c..9ce5bef 100644
+--- a/src/main/java/com/vonage/client/insight/BasicInsightEndpoint.java
++++ b/src/main/java/com/vonage/client/insight/BasicInsightEndpoint.java
+@@ -45,7 +45,6 @@ class BasicInsightEndpoint extends AbstractMethod<BasicInsightRequest, BasicInsi
+     public RequestBuilder makeRequest(BasicInsightRequest request) throws UnsupportedEncodingException {
+         String uri = httpWrapper.getHttpConfig().getApiBaseUri() + PATH;
+         RequestBuilder requestBuilder = RequestBuilder.post(uri)
+-                .setHeader("Content-Type", "application/json")
+                 .setHeader("Accept", "application/json")
+                 .addParameter("number", request.getNumber());
+ 
+diff --git a/src/main/java/com/vonage/client/insight/StandardInsightEndpoint.java b/src/main/java/com/vonage/client/insight/StandardInsightEndpoint.java
+index 2c65b0d..53b1f1d 100644
+--- a/src/main/java/com/vonage/client/insight/StandardInsightEndpoint.java
++++ b/src/main/java/com/vonage/client/insight/StandardInsightEndpoint.java
+@@ -44,7 +44,6 @@ class StandardInsightEndpoint extends AbstractMethod<StandardInsightRequest, Sta
+     public RequestBuilder makeRequest(StandardInsightRequest request) throws UnsupportedEncodingException {
+         String uri = httpWrapper.getHttpConfig().getApiBaseUri() + PATH;
+         RequestBuilder requestBuilder = RequestBuilder.post(uri)
+-                .setHeader("Content-Type", "application/json")
+                 .setHeader("Accept", "application/json")
+                 .addParameter("number", request.getNumber());
+ 
+diff --git a/src/main/java/com/vonage/client/numbers/UpdateNumberEndpoint.java b/src/main/java/com/vonage/client/numbers/UpdateNumberEndpoint.java
+index 68c5cf5..4055a8d 100644
+--- a/src/main/java/com/vonage/client/numbers/UpdateNumberEndpoint.java
++++ b/src/main/java/com/vonage/client/numbers/UpdateNumberEndpoint.java
+@@ -46,7 +46,8 @@ class UpdateNumberEndpoint extends AbstractMethod<UpdateNumberRequest, Void> {
+     public RequestBuilder makeRequest(UpdateNumberRequest request) throws UnsupportedEncodingException {
+         String uri = httpWrapper.getHttpConfig().getRestBaseUri() + PATH;
+         RequestBuilder requestBuilder = RequestBuilder.post(uri)
+-            .setHeader("Content-Type", "application/x-www-form-urlencoded");
++            .setHeader("Content-Type", "application/x-www-form-urlencoded")
++            .setHeader("Accept", "application/json");
+ 
+         request.addParams(requestBuilder);
+         return requestBuilder;
+diff --git a/src/main/java/com/vonage/client/redact/RedactMethod.java b/src/main/java/com/vonage/client/redact/RedactMethod.java
+index 6b19256..82421ac 100644
+--- a/src/main/java/com/vonage/client/redact/RedactMethod.java
++++ b/src/main/java/com/vonage/client/redact/RedactMethod.java
+@@ -55,7 +55,6 @@ class RedactMethod extends AbstractMethod<RedactRequest, Void> {
+         }
+ 
+         String uri = httpWrapper.getHttpConfig().getVersionedApiBaseUri("v1") + PATH;
+-
+         return RequestBuilder.post(uri)
+                 .setHeader("Content-Type", "application/json")
+                 .setEntity(new StringEntity(redactRequest.toJson(), ContentType.APPLICATION_JSON));
+diff --git a/src/main/java/com/vonage/client/voice/StopTalkMethod.java b/src/main/java/com/vonage/client/voice/StopTalkMethod.java
+index 7d54803..85afaf3 100644
+--- a/src/main/java/com/vonage/client/voice/StopTalkMethod.java
++++ b/src/main/java/com/vonage/client/voice/StopTalkMethod.java
+@@ -47,7 +47,6 @@ class StopTalkMethod extends AbstractMethod<String, TalkResponse> {
+     public RequestBuilder makeRequest(String uuid) throws UnsupportedEncodingException {
+         String uri = httpWrapper.getHttpConfig().getVersionedApiBaseUri("v1") + PATH + uuid + TALK_PATH;
+         return RequestBuilder.delete(uri)
+-                .setHeader("Content-Type", "application/json")
+                 .setHeader("Accept", "application/json");
+     }
+ 

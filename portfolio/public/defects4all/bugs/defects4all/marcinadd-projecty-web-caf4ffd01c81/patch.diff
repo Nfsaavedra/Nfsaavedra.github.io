@@ -1,0 +1,141 @@
+diff --git a/src/main/java/com/projecty/projectyweb/project/role/ProjectRoleController.java b/src/main/java/com/projecty/projectyweb/project/role/ProjectRoleController.java
+index b0618e1..ff67cff 100644
+--- a/src/main/java/com/projecty/projectyweb/project/role/ProjectRoleController.java
++++ b/src/main/java/com/projecty/projectyweb/project/role/ProjectRoleController.java
+@@ -7,7 +7,6 @@ import org.springframework.http.HttpStatus;
+ import org.springframework.web.bind.annotation.*;
+ import org.springframework.web.server.ResponseStatusException;
+ 
+-import java.util.Map;
+ import java.util.Optional;
+ 
+ @CrossOrigin()
+@@ -40,17 +39,14 @@ public class ProjectRoleController {
+ 
+     @PatchMapping("/{roleId}")
+     @EditPermission
+-    public void changeRolePost(
++    public ProjectRole changeRolePatch(
+             @PathVariable Long roleId,
+-            @RequestBody Map<String, String> fields
++            @RequestBody ProjectRole patchedProjectRole
+     ) {
+-        String newRoleName = fields.get("name");
+         Optional<ProjectRole> optionalRole = projectRoleRepository.findById(roleId);
+         User current = userService.getCurrentUser();
+         if (optionalRole.isPresent() && !optionalRole.get().getUser().equals(current)) {
+-            ProjectRole projectRole = optionalRole.get();
+-            projectRole.setName(ProjectRoles.valueOf(newRoleName));
+-            projectRoleRepository.save(projectRole);
++            return projectRoleService.patchProjectRole(optionalRole.get(), patchedProjectRole);
+         } else {
+             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+         }
+diff --git a/src/main/java/com/projecty/projectyweb/project/role/ProjectRoleService.java b/src/main/java/com/projecty/projectyweb/project/role/ProjectRoleService.java
+index c25c594..58a3fe2 100644
+--- a/src/main/java/com/projecty/projectyweb/project/role/ProjectRoleService.java
++++ b/src/main/java/com/projecty/projectyweb/project/role/ProjectRoleService.java
+@@ -96,4 +96,11 @@ public class ProjectRoleService {
+             }
+         }
+     }
++
++    public ProjectRole patchProjectRole(ProjectRole projectRole, ProjectRole patchedData) {
++        if (!projectRole.getName().equals(patchedData.getName())) {
++            projectRole.setName(patchedData.getName());
++        }
++        return projectRoleRepository.save(projectRole);
++    }
+ }
+diff --git a/src/main/java/com/projecty/projectyweb/task/TaskController.java b/src/main/java/com/projecty/projectyweb/task/TaskController.java
+index 2a366b0..0a87459 100644
+--- a/src/main/java/com/projecty/projectyweb/task/TaskController.java
++++ b/src/main/java/com/projecty/projectyweb/task/TaskController.java
+@@ -4,6 +4,7 @@ import com.projecty.projectyweb.configurations.EditPermission;
+ import com.projecty.projectyweb.project.Project;
+ import com.projecty.projectyweb.project.ProjectRepository;
+ import com.projecty.projectyweb.project.ProjectService;
++import com.projecty.projectyweb.user.User;
+ import org.springframework.context.MessageSource;
+ import org.springframework.http.HttpStatus;
+ import org.springframework.validation.BindException;
+@@ -68,12 +69,11 @@ public class TaskController {
+ 
+     @DeleteMapping("/{taskId}")
+     @EditPermission
+-    public void deleteTaskPost(
++    public void deleteTask(
+             @PathVariable Long taskId
+     ) {
+         Optional<Task> optionalTask = taskRepository.findById(taskId);
+-        Task task = optionalTask.get();
+-        taskRepository.delete(task);
++        taskService.deleteTask(optionalTask.get());
+     }
+ 
+     @GetMapping("/{taskId}")
+@@ -113,23 +113,22 @@ public class TaskController {
+ 
+     @PostMapping("/{taskId}/assign")
+     @EditPermission
+-    public void assignUserPost(
++    public User assignUserPost(
+             @PathVariable Long taskId,
+-            @RequestBody Map<String, String> fields
++            @RequestBody String username
+     ) {
+         Optional<Task> optionalTask = taskRepository.findById(taskId);
+         Task task = optionalTask.get();
+-        taskService.assignUserByUsername(task, fields.get("username"));
++        return taskService.assignUserByUsername(task, username);
+     }
+ 
+-    @DeleteMapping("/{taskId}/assign")
++    @DeleteMapping("/{taskId}/assign/{username}")
+     @EditPermission
+     public void removeAssignment(
+             @PathVariable Long taskId,
+-            @RequestBody Map<String, String> fields
++            @PathVariable String username
+     ) {
+         Optional<Task> optionalTask = taskRepository.findById(taskId);
+-        Task task = optionalTask.get();
+-        taskService.removeAssignmentByUsername(task, fields.get("username"));
++        taskService.removeAssignmentByUsername(optionalTask.get(), username);
+     }
+ }
+diff --git a/src/main/java/com/projecty/projectyweb/task/TaskService.java b/src/main/java/com/projecty/projectyweb/task/TaskService.java
+index d2c091e..a07bfbe 100644
+--- a/src/main/java/com/projecty/projectyweb/task/TaskService.java
++++ b/src/main/java/com/projecty/projectyweb/task/TaskService.java
+@@ -66,7 +66,7 @@ public class TaskService {
+         taskRepository.save(existingTask);
+     }
+ 
+-    public void assignUserByUsername(Task task, String username) {
++    public User assignUserByUsername(Task task, String username) {
+         Optional<User> optionalUser = userRepository.findByUsername(username);
+         if (optionalUser.isPresent() && hasUserAccessToTask(task, optionalUser.get())) {
+             User user = optionalUser.get();
+@@ -79,7 +79,9 @@ public class TaskService {
+                 task.getAssignedUsers().add(user);
+                 taskRepository.save(task);
+             }
++            return user;
+         }
++        return null;
+     }
+ 
+     public List<String> getNotAssignedUsernameListForTask(Task task) {
+@@ -142,5 +144,11 @@ public class TaskService {
+                 .project(project)
+                 .build();
+     }
++
++    public void deleteTask(Task task) {
++        Project project = task.getProject();
++        project.getTasks().remove(task);
++        projectService.save(project);
++    }
+ }
+ 

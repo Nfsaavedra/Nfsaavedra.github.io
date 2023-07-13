@@ -1,0 +1,49 @@
+diff --git a/pom.xml b/pom.xml
+index 6d5498b..1464e6e 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -14,10 +14,10 @@
+ 
+   <properties>
+     <assembly.skipAssembly>true</assembly.skipAssembly>
+-    <jitsi-desktop.version>2.13.232116b40</jitsi-desktop.version>
++    <jitsi-desktop.version>2.13.8258aa5ae</jitsi-desktop.version>
+     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+     <slf4j.version>1.7.26</slf4j.version>
+-    <smack.version>4.2.4-47d17fc</smack.version>
++    <smack.version>4.2.4-4fa73bd</smack.version>
+   </properties>
+ 
+   <dependencies>
+diff --git a/src/main/java/org/jitsi/jigasi/Main.java b/src/main/java/org/jitsi/jigasi/Main.java
+index b6e1998..87e8c84 100644
+--- a/src/main/java/org/jitsi/jigasi/Main.java
++++ b/src/main/java/org/jitsi/jigasi/Main.java
+@@ -169,6 +169,7 @@ public class Main
+             "org.jivesoftware.smackx.bytestreams",
+             "org.jivesoftware.smackx.filetransfer",
+             "org.jivesoftware.smackx.hoxt",
++            "org.jivesoftware.smackx.httpfileupload",
+             "org.jivesoftware.smackx.si",
+             "org.jivesoftware.smackx.vcardtemp",
+             "org.jivesoftware.smackx.xhtmlim",
+@@ -275,6 +276,9 @@ public class Main
+                 ".SKIP_REINVITE_ON_FOCUS_CHANGE_PROP",
+             "true");
+ 
++        // disable smack packages before loading smack
++        disableSmackProviders();
++
+         SmackConfiguration.setDefaultReplyTimeout(15000);
+ 
+         // Disable stream management as it could lead to unexpected behaviour,
+@@ -282,9 +286,6 @@ public class Main
+         XMPPTCPConnection.setUseStreamManagementDefault(false);
+         XMPPTCPConnection.setUseStreamManagementResumptionDefault(false);
+ 
+-        // disable smack packages before loading smack
+-        disableSmackProviders();
+-
+         ComponentMain main = new ComponentMain();
+ 
+         main.runMainProgramLoop(

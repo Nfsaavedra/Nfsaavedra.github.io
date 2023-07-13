@@ -1,0 +1,81 @@
+diff --git a/src/test/java/au/edu/wehi/idsv/debruijn/positional/KmerEvidenceTest.java b/src/test/java/au/edu/wehi/idsv/debruijn/positional/KmerEvidenceTest.java
+index d6f531e..d54078e 100644
+--- a/src/test/java/au/edu/wehi/idsv/debruijn/positional/KmerEvidenceTest.java
++++ b/src/test/java/au/edu/wehi/idsv/debruijn/positional/KmerEvidenceTest.java
+@@ -1,13 +1,8 @@
+ package au.edu.wehi.idsv.debruijn.positional;
+ 
+-import static org.junit.Assert.assertEquals;
+-import static org.junit.Assert.assertFalse;
+-import static org.junit.Assert.assertNotNull;
+-import static org.junit.Assert.assertNull;
+-import static org.junit.Assert.assertTrue;
+-
+ import java.util.stream.IntStream;
+ 
++import au.edu.wehi.idsv.NonReferenceReadPair;
+ import org.apache.commons.lang3.NotImplementedException;
+ import org.junit.Assert;
+ import org.junit.Ignore;
+@@ -17,6 +12,8 @@ import au.edu.wehi.idsv.SingleReadEvidence;
+ import au.edu.wehi.idsv.SoftClipEvidence;
+ import au.edu.wehi.idsv.TestHelper;
+ 
++import static org.junit.Assert.*;
++
+ 
+ public class KmerEvidenceTest extends TestHelper {
+ 	@Test
+@@ -342,4 +339,12 @@ public class KmerEvidenceTest extends TestHelper {
+ 		assertEquals(100, KmerEvidence.createAnchor(1, NRRP(SES(2, 10), OEA(0, 100, "1M", false)), 0, null).startPosition());
+ 		assertEquals(100, KmerEvidence.createAnchor(1, NRRP(SES(2, 10), OEA(0, 100, "1M", false)), 0, null).endPosition());
+ 	}
++	@Test
++	public void anchor_should_not_be_equal() {
++		NonReferenceReadPair rp = NRRP(SES(), OEA(0, 100, "1M2I3M", false));
++		KmerEvidence evidence = KmerEvidence.create(1, rp);
++		KmerEvidence anchor = KmerEvidence.createAnchor(1, rp, 0, null);
++		assertFalse(evidence.equals(anchor));
++		assertNotEquals(evidence.hashCode(), anchor.hashCode());
++	}
+ }
+diff --git a/src/test/java/au/edu/wehi/idsv/debruijn/positional/optimiseddatastructures/KmerEvidenceSetTest.java b/src/test/java/au/edu/wehi/idsv/debruijn/positional/optimiseddatastructures/KmerEvidenceSetTest.java
+deleted file mode 100644
+index 880b7e3..0000000
+--- a/src/test/java/au/edu/wehi/idsv/debruijn/positional/optimiseddatastructures/KmerEvidenceSetTest.java
++++ /dev/null
+@@ -1,33 +0,0 @@
+-package au.edu.wehi.idsv.debruijn.positional.optimiseddatastructures;
+-
+-import au.edu.wehi.idsv.SingleReadEvidence;
+-import au.edu.wehi.idsv.TestHelper;
+-import au.edu.wehi.idsv.debruijn.positional.KmerEvidence;
+-import htsjdk.samtools.SAMRecord;
+-import org.junit.Test;
+-
+-import java.util.List;
+-import java.util.stream.Collectors;
+-
+-import static org.junit.Assert.*;
+-
+-public class KmerEvidenceSetTest extends TestHelper {
+-    @Test
+-    public void test_operations() {
+-        MockSAMEvidenceSource ses = SES();
+-        SAMRecord r1 = Read(0, 1, "10M5D10M15S");
+-        int k = 2;
+-        List<KmerEvidence> list = SingleReadEvidence.createEvidence(SES(), 1, r1).stream()
+-                .map(sre -> KmerEvidence.create(k, sre))
+-                .collect(Collectors.toList());
+-        KmerEvidenceSet s = new KmerEvidenceSet();
+-        assertEquals(0, s.size());
+-        assertTrue(s.add(list.get(0)));
+-        assertEquals(1, s.size());
+-        assertTrue(s.contains(list.get(0)));
+-        assertFalse(s.contains(list.get(1)));
+-        assertFalse(s.add(list.get(0)));
+-        assertTrue(s.remove(list.get(0)));
+-        assertEquals(0, s.size());
+-    }
+-}
+\ No newline at end of file

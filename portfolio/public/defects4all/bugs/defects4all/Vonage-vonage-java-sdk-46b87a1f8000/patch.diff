@@ -1,0 +1,54 @@
+diff --git a/.DS_Store b/.DS_Store
+new file mode 100644
+index 0000000..1645ce2
+Binary files /dev/null and b/.DS_Store differ
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+index a28ea5e..0eeb571 100644
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -4,9 +4,13 @@ All notable changes to this project will be documented in this file.
+ The format is based on [Keep a Changelog](http://keepachangelog.com/)
+ and this project adheres to [Semantic Versioning](http://semver.org/).
+ 
++## [5.2.2]
++### Fixed
++- Improved error handling when there are apparent networking issues
++
+ ## [5.2.1]
+ ### Added
+-- Added Support for SMS and TTS only VerifyRequests
++- Added new workflows in `VerifyRequest`
+ 
+ ## [5.2.0]
+ ### Added
+@@ -341,4 +345,4 @@ telescoping is clunky. Added some static factory methods to these classes to all
+ ### Added
+ - Add support for nexmo SNS service
+ - Ams submission - report comms-failure as an error response, not as an exception
+-- Ams submission - add support for 'remainingBalance' in the api response
++- Ams submission - add support for 'remainingBalance' in the api response
+\ No newline at end of file
+diff --git a/src/main/java/com/nexmo/client/AbstractMethod.java b/src/main/java/com/nexmo/client/AbstractMethod.java
+index 480277c..1e7627d 100644
+--- a/src/main/java/com/nexmo/client/AbstractMethod.java
++++ b/src/main/java/com/nexmo/client/AbstractMethod.java
+@@ -100,11 +100,17 @@ public abstract class AbstractMethod<RequestT, ResultT> implements Method<Reques
+                 LOG.debug(EntityUtils.toString(enclosingRequest.getEntity()));
+             }
+             HttpResponse response = this.httpWrapper.getHttpClient().execute(httpRequest);
+-            return parseResponse(response);
++            try{
++                return parseResponse(response);
++            }
++            catch (IOException io){
++                throw new NexmoResponseParseException("Unable to parse response.", io);
++            }
+         } catch (UnsupportedEncodingException uee) {
+             throw new NexmoUnexpectedException("UTF-8 encoding is not supported by this JVM.", uee);
+         } catch (IOException io) {
+-            throw new NexmoResponseParseException("Unable to parse response.", io);
++            throw new NexmoMethodFailedException("Something went wrong while executing the HTTP request: " +
++                    io.getMessage() + ".", io);
+         }
+     }
+ 

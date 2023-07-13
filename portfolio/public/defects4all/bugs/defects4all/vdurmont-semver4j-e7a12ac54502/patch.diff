@@ -1,0 +1,132 @@
+diff --git a/.gitignore b/.gitignore
+index e5aa5b3..5b6f225 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -1,3 +1,7 @@
+ .idea
++.classpath
++.project
++.settings
++.vscode
+ *.iml
+ target
+\ No newline at end of file
+diff --git a/src/main/java/com/vdurmont/semver4j/Requirement.java b/src/main/java/com/vdurmont/semver4j/Requirement.java
+index 155d56c..5a813c4 100644
+--- a/src/main/java/com/vdurmont/semver4j/Requirement.java
++++ b/src/main/java/com/vdurmont/semver4j/Requirement.java
+@@ -280,22 +280,24 @@ public class Requirement {
+             Tokenizer.Token token = tokens.get(i);
+             switch (token.type) {
+                 case VERSION:
+-                    queue.add(token);
++                    queue.push(token);
+                     break;
+                 case CLOSING:
+                     while (stack.peek().type != Tokenizer.TokenType.OPENING) {
+-                        queue.add(stack.pop());
++                        queue.push(stack.pop());
+                     }
+                     stack.pop();
+                     if (stack.size() > 0 && stack.peek().type.isUnary()) {
+-                        queue.add(stack.pop());
++                        queue.push(stack.pop());
+                     }
+                     break;
+                 default:
+                     if (token.type.isUnary()) {
+-                        queue.push(token);
++                        // Push the operand first
+                         i++;
+                         queue.push(tokens.get(i));
++                        // Then the operator
++                        queue.push(token);
+                     } else {
+                         stack.push(token);
+                     }
+@@ -304,10 +306,9 @@ public class Requirement {
+         }
+ 
+         while (!stack.isEmpty()) {
+-            queue.add(stack.pop());
++            queue.push(stack.pop());
+         }
+ 
+-        Collections.reverse(queue);
+         return queue;
+     }
+ 
+@@ -366,8 +367,9 @@ public class Requirement {
+                 Range range = new Range(token2.value, rangeOp);
+                 return new Requirement(range, null, null, null);
+             } else {
+-                Requirement req1 = evaluateReversePolishNotation(iterator, type);
++                // They don't call it "reverse" for nothing
+                 Requirement req2 = evaluateReversePolishNotation(iterator, type);
++                Requirement req1 = evaluateReversePolishNotation(iterator, type);
+ 
+                 RequirementOperator requirementOp;
+                 switch (token.type) {
+diff --git a/src/main/java/com/vdurmont/semver4j/Semver.java b/src/main/java/com/vdurmont/semver4j/Semver.java
+index 067b7a9..1b72a34 100644
+--- a/src/main/java/com/vdurmont/semver4j/Semver.java
++++ b/src/main/java/com/vdurmont/semver4j/Semver.java
+@@ -201,10 +201,14 @@ public class Semver implements Comparable<Semver> {
+         if (this.getMajor() > version.getMajor()) return true;
+         else if (this.getMajor() < version.getMajor()) return false;
+ 
++        if (this.type == SemverType.NPM && version.getMinor() == null) return false;
++
+         int otherMinor = version.getMinor() != null ? version.getMinor() : 0;
+         if (this.getMinor() != null && this.getMinor() > otherMinor) return true;
+         else if (this.getMinor() != null && this.getMinor() < otherMinor) return false;
+ 
++        if (this.type == SemverType.NPM && version.getPatch() == null) return false;
++
+         int otherPatch = version.getPatch() != null ? version.getPatch() : 0;
+         if (this.getPatch() != null && this.getPatch() > otherPatch) return true;
+         else if (this.getPatch() != null && this.getPatch() < otherPatch) return false;
+@@ -350,6 +354,12 @@ public class Semver implements Comparable<Semver> {
+      * @return true if the current version equals the provided version
+      */
+     public boolean isEqualTo(Semver version) {
++        if (this.type == SemverType.NPM) {
++            if (this.getMajor() != version.getMajor()) return false;
++            if (version.getMinor() == null) return true;
++            if (version.getPatch() == null) return true;
++        }
++
+         return this.equals(version);
+     }
+ 
+@@ -456,11 +466,11 @@ public class Semver implements Comparable<Semver> {
+     public Semver withClearedSuffixAndBuild() {
+         return with(this.major, this.minor, this.patch, false, false);
+     }
+-    
++
+     public Semver withSuffix(String suffix) {
+     	return with(this.major, this.minor, this.patch, suffix.split("\\."), this.build);
+     }
+-    
++
+     public Semver withBuild(String build) {
+     	return with(this.major, this.minor, this.patch, this.suffixTokens, build);
+     }
+@@ -484,7 +494,7 @@ public class Semver implements Comparable<Semver> {
+         String[] suffixTokens = suffix ? this.suffixTokens : null;
+         return Semver.create(this.type, major, minor, patch, suffixTokens, buildStr);
+     }
+-    
++
+     private Semver with(int major, Integer minor, Integer patch, String[] suffixTokens, String build) {
+         minor = this.minor != null ? minor : null;
+         patch = this.patch != null ? patch : null;
+@@ -524,7 +534,6 @@ public class Semver implements Comparable<Semver> {
+         if (!(o instanceof Semver)) return false;
+         Semver version = (Semver) o;
+         return value.equals(version.value);
+-
+     }
+ 
+     @Override public int hashCode() {

@@ -1,0 +1,57 @@
+diff --git a/src/main/java/org/mvel2/compiler/AbstractParser.java b/src/main/java/org/mvel2/compiler/AbstractParser.java
+index 65b961d..0e8c02d 100644
+--- a/src/main/java/org/mvel2/compiler/AbstractParser.java
++++ b/src/main/java/org/mvel2/compiler/AbstractParser.java
+@@ -2430,7 +2430,7 @@ public class AbstractParser implements Parser, Serializable {
+              */
+             ASTNode nextToken = nextToken();
+             if (compileMode && !nextToken.isLiteral()) {
+-              splitAccumulator.push(previousToken, new OperatorNode(operator, expr, st, pCtx));
++              splitAccumulator.push(nextToken, new OperatorNode(operator2, expr, st, pCtx));
+               return OP_OVERFLOW;
+             }
+             dStack.push(operator = operator2, nextToken.getReducedValue(ctx, ctx, variableFactory));
+diff --git a/src/main/java/org/mvel2/compiler/ExpressionCompiler.java b/src/main/java/org/mvel2/compiler/ExpressionCompiler.java
+index 24ea1b7..340fcc8 100644
+--- a/src/main/java/org/mvel2/compiler/ExpressionCompiler.java
++++ b/src/main/java/org/mvel2/compiler/ExpressionCompiler.java
+@@ -123,7 +123,7 @@ public class ExpressionCompiler extends AbstractParser {
+ 
+       fields |= COMPILE_IMMEDIATE;
+ 
+-      while ((tk = nextToken()) != null) {
++      main_loop: while ((tk = nextToken()) != null) {
+         /**
+          * If this is a debug symbol, just add it and continue.
+          */
+@@ -199,7 +199,7 @@ public class ExpressionCompiler extends AbstractParser {
+                     stk.push(tkLA2.getLiteralValue(), op = tkOp2.getOperator());
+ 
+                     if (isArithmeticOperator(op)) {
+-                      compileReduce(op, astBuild);
++                      if (!compileReduce(op, astBuild)) continue main_loop;
+                     }
+                     else {
+                       reduce();
+@@ -353,7 +353,7 @@ public class ExpressionCompiler extends AbstractParser {
+         astBuild.addTokenNode(new LiteralNode(stk.pop(), pCtx), operator);
+         astBuild.addTokenNode(rightValue, (OperatorNode) splitAccumulator.pop());
+         astBuild.addTokenNode(verify(pCtx, (ASTNode) splitAccumulator.pop()));
+-        return true;
++        return false;
+       case OP_NOT_LITERAL:
+         ASTNode tkLA2 = (ASTNode) stk.pop();
+         Integer tkOp2 = (Integer) stk.pop();
+diff --git a/src/main/java/org/mvel2/util/CompilerTools.java b/src/main/java/org/mvel2/util/CompilerTools.java
+index 8a9e649..c246573 100644
+--- a/src/main/java/org/mvel2/util/CompilerTools.java
++++ b/src/main/java/org/mvel2/util/CompilerTools.java
+@@ -103,7 +103,7 @@ public class CompilerTools {
+             bo = null;
+ 
+             boolean inv = tkOp.isOperator(Operator.SUB);
+-            boolean reduc = isReductionOpportunity(tkOp, tk2);
++            boolean reduc = tk.isLiteral() && isReductionOpportunity(tkOp, tk2);
+             boolean p_inv = false;
+ 
+             while (reduc) {

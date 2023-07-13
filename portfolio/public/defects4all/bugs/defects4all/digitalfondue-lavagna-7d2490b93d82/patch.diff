@@ -1,0 +1,195 @@
+diff --git a/src/main/java/io/lavagna/config/DataSourceConfig.java b/src/main/java/io/lavagna/config/DataSourceConfig.java
+index e58ad17..ce1c97a 100644
+--- a/src/main/java/io/lavagna/config/DataSourceConfig.java
++++ b/src/main/java/io/lavagna/config/DataSourceConfig.java
+@@ -37,7 +37,7 @@ import ch.digitalfondue.npjt.QueryFactory;
+ 
+ public class DataSourceConfig {
+ 
+-	public static final MigrationVersion LATEST_STABLE_VERSION = MigrationVersion.fromVersion("5");
++	public static final MigrationVersion LATEST_STABLE_VERSION = MigrationVersion.fromVersion("7");
+ 
+ 	@Bean(destroyMethod = "close")
+ 	public DataSource getDataSource(Environment env) throws URISyntaxException {
+diff --git a/src/main/java/io/lavagna/model/Permission.java b/src/main/java/io/lavagna/model/Permission.java
+index e5e4278..6080287 100644
+--- a/src/main/java/io/lavagna/model/Permission.java
++++ b/src/main/java/io/lavagna/model/Permission.java
+@@ -29,18 +29,10 @@ public enum Permission {
+ 	/* role for admin project */
+ 	PROJECT_ADMINISTRATION(PermissionCategory.PROJECT),
+ 
+-	/* role for reading a project */
+-	CREATE_PROJECT(PermissionCategory.PROJECT, true),
+-
+ 	/* role for reading a board and related column/card/comments */
+ 	READ(PermissionCategory.BOARD),
+ 
+-	/* can create new board */
+-	CREATE_BOARD(PermissionCategory.BOARD), //
+-
+-	UPDATE_BOARD(PermissionCategory.BOARD), //
+-	DELETE_BOARD(PermissionCategory.BOARD), //
+-
++	
+ 	/* can create new column */
+ 	CREATE_COLUMN(PermissionCategory.COLUMN), //
+ 
+diff --git a/src/main/java/io/lavagna/web/api/BoardController.java b/src/main/java/io/lavagna/web/api/BoardController.java
+index 014b30b..f7f36e2 100644
+--- a/src/main/java/io/lavagna/web/api/BoardController.java
++++ b/src/main/java/io/lavagna/web/api/BoardController.java
+@@ -73,7 +73,7 @@ public class BoardController {
+ 		return ShortNameGenerator.isShortNameValid(name) && !boardRepository.existsWithShortName(name);
+ 	}
+ 
+-	@ExpectPermission(Permission.UPDATE_BOARD)
++	@ExpectPermission(Permission.PROJECT_ADMINISTRATION)
+ 	@RequestMapping(value = "/api/board/{shortName}", method = RequestMethod.POST)
+ 	public Board updateBoard(@PathVariable("shortName") String shortName, @RequestBody UpdateRequest updatedBoard) {
+ 		Board board = boardRepository.findBoardByShortName(shortName);
+diff --git a/src/main/java/io/lavagna/web/api/ProjectController.java b/src/main/java/io/lavagna/web/api/ProjectController.java
+index bc386e4..ef5e020 100644
+--- a/src/main/java/io/lavagna/web/api/ProjectController.java
++++ b/src/main/java/io/lavagna/web/api/ProjectController.java
+@@ -78,7 +78,7 @@ public class ProjectController {
+ 		return projectService.findAllForUserWithPermissionInProject(user);
+ 	}
+ 
+-	@ExpectPermission(Permission.CREATE_PROJECT)
++	@ExpectPermission(Permission.PROJECT_ADMINISTRATION)
+ 	@RequestMapping(value = "/api/project", method = RequestMethod.POST)
+ 	public void create(@RequestBody CreateRequest project) {
+ 		checkShortName(project.getShortName());
+@@ -86,13 +86,13 @@ public class ProjectController {
+ 		eventEmitter.emitCreateProject(project.getShortName());
+ 	}
+ 
+-	@ExpectPermission(Permission.CREATE_PROJECT)
++	@ExpectPermission(Permission.PROJECT_ADMINISTRATION)
+ 	@RequestMapping(value = "/api/suggest-project-short-name", method = RequestMethod.GET)
+ 	public Suggestion suggestProjectShortName(@RequestParam("name") String name) {
+ 		return new Suggestion(ShortNameGenerator.generateShortNameFrom(name));
+ 	}
+ 
+-	@ExpectPermission(Permission.CREATE_PROJECT)
++	@ExpectPermission(Permission.PROJECT_ADMINISTRATION)
+ 	@RequestMapping(value = "/api/check-project-short-name", method = RequestMethod.GET)
+ 	public boolean checkProjectShortName(@RequestParam("name") String name) {
+ 		return ShortNameGenerator.isShortNameValid(name) && !projectService.existsWithShortName(name);
+@@ -118,7 +118,7 @@ public class ProjectController {
+ 		return boardRepository.findBoardInfo(project.getId());
+ 	}
+ 
+-	@ExpectPermission(Permission.CREATE_BOARD)
++	@ExpectPermission(Permission.PROJECT_ADMINISTRATION)
+ 	@RequestMapping(value = "/api/project/{projectShortName}/board", method = RequestMethod.POST)
+ 	public void createBoard(@PathVariable("projectShortName") String shortName, @RequestBody CreateRequest board) {
+ 		checkShortName(board.getShortName());
+diff --git a/src/main/resources/io/lavagna/db/HSQLDB/V7__REMOVE_UNUSED_ROLES.sql b/src/main/resources/io/lavagna/db/HSQLDB/V7__REMOVE_UNUSED_ROLES.sql
+new file mode 100644
+index 0000000..ac95b9a
+--- /dev/null
++++ b/src/main/resources/io/lavagna/db/HSQLDB/V7__REMOVE_UNUSED_ROLES.sql
+@@ -0,0 +1,20 @@
++--
++-- This file is part of lavagna.
++--
++-- lavagna is free software: you can redistribute it and/or modify
++-- it under the terms of the GNU General Public License as published by
++-- the Free Software Foundation, either version 3 of the License, or
++-- (at your option) any later version.
++--
++-- lavagna is distributed in the hope that it will be useful,
++-- but WITHOUT ANY WARRANTY; without even the implied warranty of
++-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++-- GNU General Public License for more details.
++--
++-- You should have received a copy of the GNU General Public License
++-- along with lavagna.  If not, see <http://www.gnu.org/licenses/>.
++--
++
++DELETE FROM LA_ROLE_PERMISSION WHERE PERMISSION IN ('UPDATE_BOARD', 'DELETE_BOARD', 'CREATE_BOARD', 'CREATE_PROJECT');
++
++DELETE FROM LA_PROJECT_ROLE_PERMISSION WHERE PERMISSION IN ('UPDATE_BOARD', 'DELETE_BOARD', 'CREATE_BOARD', 'CREATE_PROJECT');
+\ No newline at end of file
+diff --git a/src/main/resources/io/lavagna/db/MYSQL/V7__REMOVE_UNUSED_ROLES.sql b/src/main/resources/io/lavagna/db/MYSQL/V7__REMOVE_UNUSED_ROLES.sql
+new file mode 100644
+index 0000000..ac95b9a
+--- /dev/null
++++ b/src/main/resources/io/lavagna/db/MYSQL/V7__REMOVE_UNUSED_ROLES.sql
+@@ -0,0 +1,20 @@
++--
++-- This file is part of lavagna.
++--
++-- lavagna is free software: you can redistribute it and/or modify
++-- it under the terms of the GNU General Public License as published by
++-- the Free Software Foundation, either version 3 of the License, or
++-- (at your option) any later version.
++--
++-- lavagna is distributed in the hope that it will be useful,
++-- but WITHOUT ANY WARRANTY; without even the implied warranty of
++-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++-- GNU General Public License for more details.
++--
++-- You should have received a copy of the GNU General Public License
++-- along with lavagna.  If not, see <http://www.gnu.org/licenses/>.
++--
++
++DELETE FROM LA_ROLE_PERMISSION WHERE PERMISSION IN ('UPDATE_BOARD', 'DELETE_BOARD', 'CREATE_BOARD', 'CREATE_PROJECT');
++
++DELETE FROM LA_PROJECT_ROLE_PERMISSION WHERE PERMISSION IN ('UPDATE_BOARD', 'DELETE_BOARD', 'CREATE_BOARD', 'CREATE_PROJECT');
+\ No newline at end of file
+diff --git a/src/main/resources/io/lavagna/db/PGSQL/V7__REMOVE_UNUSED_ROLES.sql b/src/main/resources/io/lavagna/db/PGSQL/V7__REMOVE_UNUSED_ROLES.sql
+new file mode 100644
+index 0000000..1b8a4a5
+--- /dev/null
++++ b/src/main/resources/io/lavagna/db/PGSQL/V7__REMOVE_UNUSED_ROLES.sql
+@@ -0,0 +1,21 @@
++--
++-- This file is part of lavagna.
++--
++-- lavagna is free software: you can redistribute it and/or modify
++-- it under the terms of the GNU General Public License as published by
++-- the Free Software Foundation, either version 3 of the License, or
++-- (at your option) any later version.
++--
++-- lavagna is distributed in the hope that it will be useful,
++-- but WITHOUT ANY WARRANTY; without even the implied warranty of
++-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++-- GNU General Public License for more details.
++--
++-- You should have received a copy of the GNU General Public License
++-- along with lavagna.  If not, see <http://www.gnu.org/licenses/>.
++--
++
++DELETE FROM LA_ROLE_PERMISSION WHERE PERMISSION IN ('UPDATE_BOARD', 'DELETE_BOARD', 'CREATE_BOARD', 'CREATE_PROJECT');
++
++DELETE FROM LA_PROJECT_ROLE_PERMISSION WHERE PERMISSION IN ('UPDATE_BOARD', 'DELETE_BOARD', 'CREATE_BOARD', 'CREATE_PROJECT');
++
+diff --git a/src/main/webapp/partials/home.html b/src/main/webapp/partials/home.html
+index 18de1bf..69c0656 100644
+--- a/src/main/webapp/partials/home.html
++++ b/src/main/webapp/partials/home.html
+@@ -4,7 +4,7 @@
+ 	<div class="row">
+ 		<div class="col-md-3" data-lvg-is-not-authenticated></div>
+ 		<div class="project-list col-md-6">
+-			<div data-lvg-has-permission="CREATE_PROJECT">
++			<div data-lvg-has-permission="ADMINISTRATION">
+ 				<button type="button" class="lvg-button lvg-button-submit" data-ng-click="createNewProject = true;" data-ng-hide="createNewProject">
+ 					<span class="fa fa-plus"></span>
+ 					<span data-translate>partials.home.createNewProject</span>
+diff --git a/src/main/webapp/partials/project/project.html b/src/main/webapp/partials/project/project.html
+index 0030ee0..225c738 100644
+--- a/src/main/webapp/partials/project/project.html
++++ b/src/main/webapp/partials/project/project.html
+@@ -7,7 +7,7 @@
+ 		<div class="col-md-3" data-lvg-is-not-authenticated></div>
+ 		<div class="board-list col-md-6">
+ 		
+-			<div data-lvg-has-permission="CREATE_BOARD">
++			<div data-lvg-has-permission="PROJECT_ADMINISTRATION">
+ 				<button type="button" class="lvg-button lvg-button-submit" data-ng-click="createNewBoard = true;" data-ng-hide="createNewBoard">
+ 					<span class="fa fa-plus"></span>
+ 					<span data-translate>partials.fragments.create-board-fragment.createNewBoard</span>

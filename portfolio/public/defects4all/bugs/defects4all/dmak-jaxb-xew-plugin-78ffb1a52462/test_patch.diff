@@ -1,0 +1,156 @@
+diff --git a/src/test/generated_resources/element_mixed/AnyText.java b/src/test/generated_resources/element_mixed/AnyText.java
+index f86fe2f..675a4f2 100644
+--- a/src/test/generated_resources/element_mixed/AnyText.java
++++ b/src/test/generated_resources/element_mixed/AnyText.java
+@@ -51,7 +51,7 @@ public class AnyText {
+     @XmlElements({
+         @XmlElement(name = "i", type = I.class, namespace = "http://foo.org/"),
+         @XmlElement(name = "b", type = B.class, namespace = "http://foo.org/"),
+-        @XmlElement(name = "br", type = Br.class, namespace = "http://foo.org/")
++        @XmlElement(name = "br", type = FormattedTextBr.class, namespace = "http://foo.org/")
+     })
+     protected List<Object> formattedText = new ArrayList<Object>();
+     @XmlElementWrapper(name = "fixed-text", required = true)
+diff --git a/src/test/generated_resources/element_mixed/Br.java b/src/test/generated_resources/element_mixed/Br.java
+index f03b03f..91d4c8f 100644
+--- a/src/test/generated_resources/element_mixed/Br.java
++++ b/src/test/generated_resources/element_mixed/Br.java
+@@ -3,6 +3,7 @@ package element_mixed;
+ 
+ import jakarta.xml.bind.annotation.XmlAccessType;
+ import jakarta.xml.bind.annotation.XmlAccessorType;
++import jakarta.xml.bind.annotation.XmlAttribute;
+ import jakarta.xml.bind.annotation.XmlType;
+ 
+ 
+@@ -15,6 +16,7 @@ import jakarta.xml.bind.annotation.XmlType;
+  * &lt;complexType name="br"&gt;
+  *   &lt;complexContent&gt;
+  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
++ *       &lt;attribute name="mode" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
+  *     &lt;/restriction&gt;
+  *   &lt;/complexContent&gt;
+  * &lt;/complexType&gt;
+@@ -26,5 +28,31 @@ import jakarta.xml.bind.annotation.XmlType;
+ @XmlType(name = "br")
+ public class Br {
+ 
++    @XmlAttribute(name = "mode")
++    protected String mode;
++
++    /**
++     * Gets the value of the mode property.
++     * 
++     * @return
++     *     possible object is
++     *     {@link String }
++     *     
++     */
++    public String getMode() {
++        return mode;
++    }
++
++    /**
++     * Sets the value of the mode property.
++     * 
++     * @param value
++     *     allowed object is
++     *     {@link String }
++     *     
++     */
++    public void setMode(String value) {
++        this.mode = value;
++    }
+ 
+ }
+diff --git a/src/test/generated_resources/element_mixed/ObjectFactory.java b/src/test/generated_resources/element_mixed/ObjectFactory.java
+index f3820fb..f55ff5d 100644
+--- a/src/test/generated_resources/element_mixed/ObjectFactory.java
++++ b/src/test/generated_resources/element_mixed/ObjectFactory.java
+@@ -71,6 +71,14 @@ public class ObjectFactory {
+     }
+ 
+     /**
++     * Create an instance of {@link FormattedTextBr }
++     * 
++     */
++    public FormattedTextBr createFormattedTextBr() {
++        return new FormattedTextBr();
++    }
++
++    /**
+      * Create an instance of {@link JAXBElement }{@code <}{@link B }{@code >}
+      * 
+      * @param value
+diff --git a/src/test/java/com/sun/tools/xjc/addon/xew/XmlElementWrapperPluginTest.java b/src/test/java/com/sun/tools/xjc/addon/xew/XmlElementWrapperPluginTest.java
+index 40ad136..05e6427 100644
+--- a/src/test/java/com/sun/tools/xjc/addon/xew/XmlElementWrapperPluginTest.java
++++ b/src/test/java/com/sun/tools/xjc/addon/xew/XmlElementWrapperPluginTest.java
+@@ -218,7 +218,7 @@ public class XmlElementWrapperPluginTest {
+ 	public void testElementMixed() throws Exception {
+ 		// Most classes cannot be tested for content
+ 		List<String> extraXewOptions = singletonList("-debug");
+-		List<String> classesToCheck = asList("B", "Br", "I", "AnyText", "package-info");
++		List<String> classesToCheck = asList("B", "Br", "FormattedTextBr", "I", "AnyText", "package-info");
+ 		runTest("element-mixed", extraXewOptions, false, classesToCheck);
+ 	}
+ 
+diff --git a/src/test/resources/com/sun/tools/xjc/addon/xew/element-mixed.xsd b/src/test/resources/com/sun/tools/xjc/addon/xew/element-mixed.xsd
+index 5a46972..df2ddb8 100644
+--- a/src/test/resources/com/sun/tools/xjc/addon/xew/element-mixed.xsd
++++ b/src/test/resources/com/sun/tools/xjc/addon/xew/element-mixed.xsd
+@@ -25,11 +25,9 @@
+ 			<xsd:element name="b" type="foo:b" />
+ 		</xsd:sequence>
+ 	</xsd:complexType>
+-
+-	<!--
+-		Example of element with no fields.
+-	-->
+-	<xsd:complexType name="br" />
++	<xsd:complexType name="br">
++		<xsd:attribute name="mode" type="xsd:string" />
++	</xsd:complexType>
+ 
+ 	<xsd:simpleType name="text">
+ 		<xsd:restriction base="xsd:string" />
+@@ -40,13 +38,18 @@
+ 	</xsd:simpleType>
+ 
+ 	<!--
+-		Example of "List<Object>" field + @XmlElements annotation.
++		Example of "List<Object>" field + @XmlElements annotation + inner element.
+ 	-->
+ 	<xsd:complexType name="formatted-text">
+ 		<xsd:choice maxOccurs="unbounded">
+ 			<xsd:element name="i" type="foo:i" />
+ 			<xsd:element name="b" type="foo:b" />
+-			<xsd:element name="br" type="foo:br" />
++			<!--
++				Example of element with no fields. Note that when moved one level up, it will collide with another element.
++			-->
++			<xsd:element name="br">
++				<xsd:complexType />
++			</xsd:element>
+ 		</xsd:choice>
+ 	</xsd:complexType>
+ 
+diff --git a/src/test/resources/com/sun/tools/xjc/addon/xew/element-name-collision.xml b/src/test/resources/com/sun/tools/xjc/addon/xew/element-name-collision.xml
+index 4e9c1d1..0c673a7 100644
+--- a/src/test/resources/com/sun/tools/xjc/addon/xew/element-name-collision.xml
++++ b/src/test/resources/com/sun/tools/xjc/addon/xew/element-name-collision.xml
+@@ -8,11 +8,11 @@
+ 	<action>
+ 		<add>
+ 			<item>
+-				<key>Mutant</key>
+-				<value>SpiderMan</value>
++				<key>rebellion</key>
++				<value>Han Solo</value>
+ 			</item>
+ 			<item>
+-				<key>Jedi</key>
++				<key>jedi</key>
+ 				<value>Luke Skywalker</value>
+ 			</item>
+ 			<item xsi:nil="true" />

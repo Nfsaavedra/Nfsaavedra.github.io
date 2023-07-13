@@ -1,0 +1,31 @@
+diff --git a/src/main/java/org/fusesource/jansi/Ansi.java b/src/main/java/org/fusesource/jansi/Ansi.java
+index 34c636d..8c04569 100644
+--- a/src/main/java/org/fusesource/jansi/Ansi.java
++++ b/src/main/java/org/fusesource/jansi/Ansi.java
+@@ -250,6 +250,26 @@ public class Ansi implements Appendable {
+         }
+ 
+         @Override
++        public Ansi fg(int color) {
++            return this;
++        }
++
++        @Override
++        public Ansi fgRgb(int r, int g, int b) {
++            return this;
++        }
++
++        @Override
++        public Ansi bg(int color) {
++            return this;
++        }
++
++        @Override
++        public Ansi bgRgb(int r, int g, int b) {
++            return this;
++        }
++
++        @Override
+         public Ansi a(Attribute attribute) {
+             return this;
+         }

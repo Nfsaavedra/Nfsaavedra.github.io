@@ -1,0 +1,181 @@
+diff --git a/README.md b/README.md
+index 38b74bc..cc3ff8c 100644
+--- a/README.md
++++ b/README.md
+@@ -276,9 +276,9 @@ Parameter | Type | User Property | Required | Description
+ `<registryConfig>` | string | helm.registryConfig | false | path to the registry config file
+ `<repositoryCache>` | string | helm.repositoryCache | false | path to the file containing cached repository indexes
+ `<repositoryConfig>` | string | helm.repositoryConfig | false | path to the file containing repository names and URLs
+-`<helmExtraRepos>` | list of [HelmRepository](./src/main/java/io/kokuwa/maven/helm/HelmRepository.java) | helm.extraRepos | false | adds extra repositories while init
+-`<uploadRepoStable>`| [HelmRepository](./src/main/java/io/kokuwa/maven/helm/HelmRepository.java) | helm.uploadRepo.stable | true | Upload repository for stable charts
+-`<uploadRepoSnapshot>`| [HelmRepository](./src/main/java/io/kokuwa/maven/helm/HelmRepository.java) | helm.uploadRepo.snapshot | false | Upload repository for snapshot charts (determined by version postfix 'SNAPSHOT')
++`<helmExtraRepos>` | list of [HelmRepository](./src/main/java/io/kokuwa/maven/helm/pojo/HelmRepository.java) | helm.extraRepos | false | adds extra repositories while init
++`<uploadRepoStable>`| [HelmRepository](./src/main/java/io/kokuwa/maven/helm/pojo/HelmRepository.java) | helm.uploadRepo.stable | true | Upload repository for stable charts
++`<uploadRepoSnapshot>`| [HelmRepository](./src/main/java/io/kokuwa/maven/helm/pojo/HelmRepository.java) | helm.uploadRepo.snapshot | false | Upload repository for snapshot charts (determined by version postfix 'SNAPSHOT')
+ `<lintStrict>` | boolean | helm.lint.strict | false | run lint command with strict option (fail on lint warnings)
+ `<addDefaultRepo>` | boolean | helm.init.add-default-repo | true | If true, stable repo (<https://charts.helm.sh/stable>) will be added
+ `<addUploadRepos>` | boolean | helm.init.add-upload-repos | false | If true, upload repos (uploadRepoStable, uploadRepoSnapshot) will be added, if configured
+@@ -295,7 +295,12 @@ Parameter | Type | User Property | Required | Description
+ `<keyring>` | string | helm.package.keyring | false | path to gpg secret keyring for signing
+ `<key>` | string  | helm.package.key | false | name of gpg key in keyring
+ `<passphrase>` | string | helm.package.passphrase | false | passphrase for gpg key (requires helm 3.4 or newer)
+-`<values>` | [ValueOverride](./src/main/java/io/kokuwa/maven/helm/ValueOverride.java) | helm.values | false | override some values for linting with helm.values.overrides (--set option), helm.values.stringOverrides (--set-string option), helm.values.fileOverrides (--set-file option) and last but not least helm.values.yamlFile (--values option)
++`<values>` | [ValueOverride](./src/main/java/io/kokuwa/maven/helm/pojo/ValueOverride.java) | helm.values | false | override some values for linting with helm.values.overrides (--set option), helm.values.stringOverrides (--set-string option), helm.values.fileOverrides (--set-file option) and last but not least helm.values.yamlFile (--values option)
++`<namespace>` | string | helm.namespace | false | namespace scope for helm command
++`<kubeApiServer>` | string | helm.kubeApiServer | false | the address and the port for the Kubernetes API server
++`<kubeAsUser>` | string | helm.kubeAsUser | false | username to impersonate for the operation
++`<kubeAsGroup>` | string | helm.kubeAsGroup | false | group to impersonate for the operation, this flag can be repeated to specify multiple groups
++`<kubeToken>` | string | helm.kubeToken | false | bearer token used for authentication
+ 
+ ## Packaging with the Helm Lifecycle
+ 
+diff --git a/src/main/java/io/kokuwa/maven/helm/AbstractHelmMojo.java b/src/main/java/io/kokuwa/maven/helm/AbstractHelmMojo.java
+index 2a0fb5f..cfea229 100644
+--- a/src/main/java/io/kokuwa/maven/helm/AbstractHelmMojo.java
++++ b/src/main/java/io/kokuwa/maven/helm/AbstractHelmMojo.java
+@@ -141,6 +141,21 @@ public abstract class AbstractHelmMojo extends AbstractMojo {
+ 	@Parameter(defaultValue = "${project.version}", readonly = true)
+ 	private String projectVersion;
+ 
++	@Parameter(property = "helm.namespace")
++	private String namespace;
++
++	@Parameter(property = "helm.kubeApiServer")
++	private String kubeApiServer;
++
++	@Parameter(property = "helm.kubeAsUser")
++	private String kubeAsUser;
++
++	@Parameter(property = "helm.kubeAsGroup")
++	private String kubeAsGroup;
++
++	@Parameter(property = "helm.kubeToken")
++	private String kubeToken;
++
+ 	private Clock clock = Clock.systemDefaultZone();
+ 
+ 	@Override
+@@ -195,7 +210,7 @@ public abstract class AbstractHelmMojo extends AbstractMojo {
+ 	}
+ 
+ 	void helm(String arguments, String errorMessage, String stdin) throws MojoExecutionException {
+-	
++
+ 		// get command
+ 
+ 		String command = getHelmExecuteablePath() + " " + arguments;
+@@ -211,12 +226,30 @@ public abstract class AbstractHelmMojo extends AbstractMojo {
+ 		if (StringUtils.isNotEmpty(repositoryCache)) {
+ 			command += " --repository-cache=" + repositoryCache;
+ 		}
++		if (StringUtils.isNotEmpty(namespace)) {
++			command += " --namespace=" + namespace;
++		}
++		if (StringUtils.isNotEmpty(kubeApiServer)) {
++			command += " --kube-apiserver=" + kubeApiServer;
++		}
++		if (StringUtils.isNotEmpty(kubeAsUser)) {
++			command += " --kube-as-user=" + kubeAsUser;
++		}
++		if (StringUtils.isNotEmpty(kubeAsGroup)) {
++			command += " --kube-as-group=" + kubeAsGroup;
++		}
++		if (StringUtils.isNotEmpty(kubeToken)) {
++			command += " --kube-token=" + kubeToken;
++		}
+ 
+ 		// execute helm
+ 
+ 		String commandWithK8sArgs = command + getK8SArgs();
+ 		getLog().debug(commandWithK8sArgs);
+ 
++		//TODO: Remove in next major release
++		warnOnMixOfK8sClusterAndGlobalFlags();
++
+ 		int exitValue;
+ 		try {
+ 			Process p = Runtime.getRuntime().exec(commandWithK8sArgs);
+@@ -266,20 +299,21 @@ public abstract class AbstractHelmMojo extends AbstractMojo {
+ 		StringBuilder k8sConfigArgs = new StringBuilder();
+ 		if (k8sCluster != null) {
+ 			if (StringUtils.isNotEmpty(k8sCluster.getApiUrl())) {
+-				k8sConfigArgs.append(" --kube-apiserver ").append(k8sCluster.getApiUrl());
++				k8sConfigArgs.append(" --kube-apiserver=").append(k8sCluster.getApiUrl());
+ 			}
+ 			if (StringUtils.isNotEmpty(k8sCluster.getNamespace())) {
+-				k8sConfigArgs.append(" --namespace ").append(k8sCluster.getNamespace());
++				k8sConfigArgs.append(" --namespace=").append(k8sCluster.getNamespace());
+ 			}
+ 			if (StringUtils.isNotEmpty(k8sCluster.getAsUser())) {
+-				k8sConfigArgs.append(" --kube-as-user ").append(k8sCluster.getAsUser());
++				k8sConfigArgs.append(" --kube-as-user=").append(k8sCluster.getAsUser());
+ 			}
+ 			if (StringUtils.isNotEmpty(k8sCluster.getAsGroup())) {
+-				k8sConfigArgs.append(" --kube-as-group ").append(k8sCluster.getAsGroup());
++				k8sConfigArgs.append(" --kube-as-group=").append(k8sCluster.getAsGroup());
+ 			}
+ 			if (StringUtils.isNotEmpty(k8sCluster.getToken())) {
+-				k8sConfigArgs.append(" --kube-token ").append(k8sCluster.getToken());
++				k8sConfigArgs.append(" --kube-token=").append(k8sCluster.getToken());
+ 			}
++			getLog().warn("NOTE: <k8sCluster> option will be removed in future major release.");
+ 		}
+ 		return k8sConfigArgs.toString();
+ 	}
+@@ -436,4 +470,31 @@ public abstract class AbstractHelmMojo extends AbstractMojo {
+ 		}
+ 		return chartVersion;
+ 	}
++
++	//TODO: Remove in next major release
++	private void warnOnMixOfK8sClusterAndGlobalFlags() {
++		StringBuilder warnMessage = new StringBuilder();
++		if (k8sCluster != null) {
++			if (StringUtils.isNotEmpty(k8sCluster.getApiUrl()) && StringUtils.isNotEmpty(kubeApiServer)) {
++				warnMessage.append("Both <kubeApiServer> and <k8sCluster><apiUrl/></k8sCluster> are set.\n");
++			}
++			if (StringUtils.isNotEmpty(k8sCluster.getNamespace()) && StringUtils.isNotEmpty(namespace)) {
++				warnMessage.append("Both <namespace> and <k8sCluster><namespace/></k8sCluster> are set.\n");
++			}
++			if (StringUtils.isNotEmpty(k8sCluster.getAsUser()) && StringUtils.isNotEmpty(kubeAsUser)) {
++				warnMessage.append("Both <kubeAsUser> and <k8sCluster><asUser/></k8sCluster> are set.\n");
++			}
++			if (StringUtils.isNotEmpty(k8sCluster.getAsGroup()) && StringUtils.isNotEmpty(kubeAsGroup)) {
++				warnMessage.append("Both <kubeAsGroup> and <k8sCluster><asGroup/></k8sCluster> are set.\n");
++			}
++			if (StringUtils.isNotEmpty(k8sCluster.getToken()) && StringUtils.isNotEmpty(kubeToken)) {
++				warnMessage.append("Both <kubeToken> and <k8sCluster><token/></k8sCluster> are set.\n");
++			}
++			warnMessage.append("As per current implementation - <k8sCluster><*></k8sCluster> options win.\n");
++			warnMessage.append("NOTE: <k8sCluster> option will be removed in future major release.");
++		}
++		if (warnMessage.length() > 0) {
++			getLog().warn(warnMessage.toString());
++		}
++	}
+ }
+diff --git a/src/main/java/io/kokuwa/maven/helm/StripSensitiveDataLog.java b/src/main/java/io/kokuwa/maven/helm/StripSensitiveDataLog.java
+index 24fb0b6..7bc82cf 100644
+--- a/src/main/java/io/kokuwa/maven/helm/StripSensitiveDataLog.java
++++ b/src/main/java/io/kokuwa/maven/helm/StripSensitiveDataLog.java
+@@ -15,7 +15,7 @@ import org.apache.maven.plugin.logging.Log;
+ public class StripSensitiveDataLog implements Log {
+ 
+ 	private static final Pattern HELM_PASSWORD = Pattern.compile("^.*--password=(?<secret>[^-\\s]+).*$");
+-	private static final Pattern KUBE_TOKEN = Pattern.compile("^.*--kube-token (?<secret>[^-\\s]+).*$");
++	private static final Pattern KUBE_TOKEN = Pattern.compile("^.*--kube-token=(?<secret>[^-\\s]+).*$");
+ 	private static final List<Pattern> PATTERNS = Arrays.asList(HELM_PASSWORD, KUBE_TOKEN);
+ 	private static final String REPLACEMENT = "*****";
+ 
+diff --git a/src/main/java/io/kokuwa/maven/helm/pojo/K8SCluster.java b/src/main/java/io/kokuwa/maven/helm/pojo/K8SCluster.java
+index 4b80f34..dfb5584 100644
+--- a/src/main/java/io/kokuwa/maven/helm/pojo/K8SCluster.java
++++ b/src/main/java/io/kokuwa/maven/helm/pojo/K8SCluster.java
+@@ -11,6 +11,7 @@ import lombok.ToString;
+  * @author Kirill Nazarov
+  * @since 29.12.21
+  */
++//TODO: Remove in next major release
+ @Data
+ public class K8SCluster {
+ 

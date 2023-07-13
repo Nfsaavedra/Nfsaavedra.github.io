@@ -1,0 +1,17 @@
+diff --git a/src/test/java/com/github/davidmoten/rx/jdbc/NamedParametersTest.java b/src/test/java/com/github/davidmoten/rx/jdbc/NamedParametersTest.java
+index b707479..8f0c07c 100644
+--- a/src/test/java/com/github/davidmoten/rx/jdbc/NamedParametersTest.java
++++ b/src/test/java/com/github/davidmoten/rx/jdbc/NamedParametersTest.java
+@@ -40,4 +40,12 @@ public class NamedParametersTest {
+         DatabaseCreator.db().select("select name from person where name = :name").count()
+                 .subscribe();
+     }
++
++    @Test
++    public void testDoubleColonCastNotProcessed() {
++        JdbcQuery r = NamedParameters.parse(
++                "select a::varchar, b from tbl where a.name=:name");
++        assertEquals("select a::varchar, b from tbl where a.name=?", r.sql());
++        assertEquals(Arrays.asList("name"), r.names());
++    }
+ }

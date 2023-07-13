@@ -1,0 +1,26 @@
+diff --git a/src/test/java/com/github/davidmoten/rtree/geometry/GeometriesTest.java b/src/test/java/com/github/davidmoten/rtree/geometry/GeometriesTest.java
+index c4e0f6b..4c65d2d 100644
+--- a/src/test/java/com/github/davidmoten/rtree/geometry/GeometriesTest.java
++++ b/src/test/java/com/github/davidmoten/rtree/geometry/GeometriesTest.java
+@@ -36,6 +36,21 @@ public class GeometriesTest {
+     }
+ 
+     @Test
++    public void testNormalizeLongitude3_2() {
++        assertEquals(-180, Geometries.normalizeLongitude(-180), PRECISION);
++    }
++
++    @Test
++    public void testNormalizeLongitude3_3() {
++        assertEquals(-179, Geometries.normalizeLongitude(-179), PRECISION);
++    }
++
++    @Test
++    public void testNormalizeLongitude3_4() {
++        assertEquals(179, Geometries.normalizeLongitude(-181), PRECISION);
++    }
++
++    @Test
+     public void testNormalizeLongitude4() {
+         assertEquals(-179, Geometries.normalizeLongitude(181), PRECISION);
+     }

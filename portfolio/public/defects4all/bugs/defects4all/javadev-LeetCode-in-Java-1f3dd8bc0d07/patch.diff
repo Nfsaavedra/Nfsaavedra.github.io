@@ -1,0 +1,24 @@
+diff --git a/src/main/java/s0019.remove.nth.node.from.end.of.list/ListNode.java b/src/main/java/s0019.remove.nth.node.from.end.of.list/ListNode.java
+index 8c98b9d..d73a37d 100644
+--- a/src/main/java/s0019.remove.nth.node.from.end.of.list/ListNode.java
++++ b/src/main/java/s0019.remove.nth.node.from.end.of.list/ListNode.java
+@@ -17,11 +17,15 @@ public class ListNode {
+ 
+     public String toString() {
+         String result = "";
+-        ListNode nextCopy = next;
+-        while (nextCopy.next != null) {
+-            result += ", " + nextCopy.val;
+-            nextCopy = nextCopy.next;
++        ListNode current = next;
++        while (current.next != null) {
++            result += current.val;
++            if (current.next != null) {
++                result += ", ";
++            }
++            current = current.next;
+         }
++        result += current.val;
+         return result;
+     }
+ }

@@ -1,0 +1,82 @@
+import os
+import json
+from unidiff import PatchSet
+
+benchmark = "defects4all"
+
+with open('../defects4all.json', 'w') as defects4all:
+    bugs_path = '../website/bugs'
+    bugs = {}
+
+    for bugs_file in os.listdir(bugs_path):
+        if not bugs_file.endswith('.json') or bugs_file == 'data.json':
+            continue
+        with open(os.path.join(bugs_path, bugs_file), 'r') as f:
+            lines = f.readlines()
+            for line in lines:
+                if line.strip() != "":
+                    bug = json.loads(line)
+                    final_bug = {
+                        'repo': bug['repository'],
+                        'previous_commit': bug['previous_commit_hash'][:12],
+                        'commit': bug['commit_hash'][:12],
+                        'strategy': bug['strategy'],
+                        'files_type': bug['bug_patch_files_type'],
+                        'commit_message': bug['commit_message'],
+                        'benchmark': benchmark,
+                        'language': bug['language'],
+                        'failed_tests': [],
+                        'files': {
+                            'added': [],
+                            'modified': [],
+                            'deleted': [],
+                        },
+                        'metrics': {
+                        }
+                    }
+
+                    patch = PatchSet(bug['bug_patch'])
+
+                    if bug['strategy'] == 'PASS_PASS':
+                        failed_run = bug['actions_runs'][1][0]
+                    elif bug['strategy'] == 'FAIL_PASS':
+                        failed_run = bug['actions_runs'][0][0]
+
+                    for test in failed_run['tests']:
+                        for result in test['results']:
+                            if result['result'] == 'Failure':
+                                final_bug['failed_tests'].append({
+                                    'classname': test['classname'],
+                                    'name': test['name'],
+                                    'message': result['message']
+                                })
+                                break
+
+                    for added_file in patch.added_files:
+                        final_bug['files']['added'].append(added_file.path)
+                    for modified_file in patch.modified_files:
+                        final_bug['files']['modified'].append(modified_file.path)
+                    for deleted_file in patch.removed_files:
+                        final_bug['files']['deleted'].append(deleted_file.path)
+
+                    final_bug['metrics']['addedLines'] = patch.added
+                    final_bug['metrics']['removedLines'] = patch.removed
+                    final_bug['metrics']['patchSize'] = patch.added + patch.removed
+
+                    id = bug['repository'].replace('/', '-') + '-' + final_bug['commit']
+                    final_bug['bugId'] = id
+                    bugs[id] = final_bug
+
+                    bug_path = os.path.join(f'../bugs/{benchmark}', id)
+                    if not os.path.exists(bug_path):
+                        os.makedirs(bug_path)
+
+                    with open(os.path.join(bug_path, 'patch.diff'), 'w') as patch_file:
+                        patch_file.write(str(patch))
+
+                    with open(os.path.join(bug_path, 'test_patch.diff'), 'w') as patch_file:
+                        patch_file.write(bug['test_patch'])
+
+    
+    defects4all.write(json.dumps(bugs))
+

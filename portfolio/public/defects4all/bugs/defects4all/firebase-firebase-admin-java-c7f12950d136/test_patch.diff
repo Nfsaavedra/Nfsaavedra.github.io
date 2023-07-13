@@ -1,0 +1,462 @@
+diff --git a/src/test/java/com/google/firebase/database/MapperTest.java b/src/test/java/com/google/firebase/database/MapperTest.java
+index e7398cf..941fbde 100644
+--- a/src/test/java/com/google/firebase/database/MapperTest.java
++++ b/src/test/java/com/google/firebase/database/MapperTest.java
+@@ -430,6 +430,16 @@ public class MapperTest {
+   }
+ 
+   @Test
++  public void serializeDoubleBeanAsLong() {
++    DoubleBean bean = new DoubleBean();
++    bean.value = 1234567890123L;
++    assertJson("{'value': 1234567890123}", serialize(bean));
++
++    bean.value = 1234567890123.0;
++    assertJson("{'value': 1234567890123}", serialize(bean));
++  }
++
++  @Test
+   public void serializeIntBean() {
+     IntBean bean = new IntBean();
+     bean.value = 1;
+diff --git a/src/test/java/com/google/firebase/database/integration/DataTestIT.java b/src/test/java/com/google/firebase/database/integration/DataTestIT.java
+index 7e9555f..2b2124a 100644
+--- a/src/test/java/com/google/firebase/database/integration/DataTestIT.java
++++ b/src/test/java/com/google/firebase/database/integration/DataTestIT.java
+@@ -905,6 +905,36 @@ public class DataTestIT {
+   }
+ 
+   @Test
++  public void testNormalizeDifferentIntegerAndDoubleValues()
++      throws DatabaseException, InterruptedException, TimeoutException, TestFailure {
++    final long intMaxPlusOne = 2147483648L;
++
++    DatabaseReference node = IntegrationTestUtils.getRandomNode(masterApp);
++    Object[] writtenValues = {
++        intMaxPlusOne,
++        (double) intMaxPlusOne,
++        -intMaxPlusOne,
++        (double) -intMaxPlusOne,
++        Integer.MAX_VALUE,
++        0L,
++        0.0,
++        -0.0f,
++        0
++    };
++
++    Object[] readValues = {intMaxPlusOne, -intMaxPlusOne, (long) Integer.MAX_VALUE, 0L};
++    ReadFuture readFuture = ReadFuture.untilCountAfterNull(node, readValues.length);
++    for (Object value : writtenValues) {
++      node.setValueAsync(value);
++    }
++
++    List<EventRecord> events = readFuture.timedGet();
++    for (int i = 0; i < readValues.length; ++i) {
++      assertEquals(readValues[i], events.get(i).getSnapshot().getValue());
++    }
++  }
++
++  @Test
+   public void testExportFormatIncludesPriorities()
+       throws TimeoutException, InterruptedException, TestFailure {
+     DatabaseReference ref = IntegrationTestUtils.getRandomNode(masterApp);
+@@ -1176,6 +1206,29 @@ public class DataTestIT {
+   }
+ 
+   @Test
++  public void invalidDoubleValues()
++      throws DatabaseException, TestFailure, TimeoutException, InterruptedException {
++    DatabaseReference node = IntegrationTestUtils.getRandomNode(masterApp);
++    Object[] invalidValues =
++        new Object[] {
++            Double.NEGATIVE_INFINITY,
++            Double.POSITIVE_INFINITY,
++            Double.NaN,
++            Float.NEGATIVE_INFINITY,
++            Float.POSITIVE_INFINITY,
++            Float.NaN
++        };
++    for (Object invalidValue : invalidValues) {
++      try {
++        node.setValueAsync(invalidValue);
++        fail("NaN or Inf are not allowed as values.");
++      } catch (DatabaseException expected) {
++        assertEquals("Invalid value: Value cannot be NaN, Inf or -Inf.", expected.getMessage());
++      }
++    }
++  }
++
++  @Test
+   @Ignore
+   // TODO: Stop ignoring this test once JSON parsing has been fixed.
+   public void testPathKeyLengthLimits() throws TestFailure, TimeoutException, InterruptedException {
+diff --git a/src/test/java/com/google/firebase/database/integration/EventHelper.java b/src/test/java/com/google/firebase/database/integration/EventHelper.java
+index 727a4a4..2dc20e3 100644
+--- a/src/test/java/com/google/firebase/database/integration/EventHelper.java
++++ b/src/test/java/com/google/firebase/database/integration/EventHelper.java
+@@ -71,6 +71,14 @@ class EventHelper {
+     return this;
+   }
+ 
++  public <T> EventHelper addValueExpectation(DatabaseReference ref, T expectedValue) {
++    if (!locations.contains(ref)) {
++      toListen.add(ref);
++    }
++    lookingFor.add(new ValueExpectation<T>(Event.EventType.VALUE, ref.toString(), expectedValue));
++    return this;
++  }
++
+   EventHelper addChildExpectation(
+       DatabaseReference ref, Event.EventType eventType, String childName) throws DatabaseException {
+     if (!locations.contains(ref)) {
+@@ -261,4 +269,20 @@ class EventHelper {
+       return this.eventType + " => " + this.location;
+     }
+   }
++
++  private static class ValueExpectation<T> extends Expectation {
++
++    private final T expectedValue;
++
++    private ValueExpectation(Event.EventType eventType, String location, T expectedValue) {
++      super(eventType, location);
++      this.expectedValue = expectedValue;
++    }
++
++    @Override
++    boolean matches(EventRecord record) {
++      return super.matches(record)
++          && record.getSnapshot().getValue(expectedValue.getClass()).equals(expectedValue);
++    }
++  }
+ }
+diff --git a/src/test/java/com/google/firebase/database/integration/EventTestIT.java b/src/test/java/com/google/firebase/database/integration/EventTestIT.java
+index 8a9b4af..7eb6fdd 100644
+--- a/src/test/java/com/google/firebase/database/integration/EventTestIT.java
++++ b/src/test/java/com/google/firebase/database/integration/EventTestIT.java
+@@ -78,9 +78,9 @@ public class EventTestIT {
+     DatabaseReference reader = refs.get(0);
+     DatabaseReference writer = refs.get(1);
+ 
+-    final EventHelper readerHelper = new EventHelper().addValueExpectation(reader)
++    final EventHelper readerHelper = new EventHelper().addValueExpectation(reader, 42)
+         .startListening(true);
+-    final EventHelper writerHelper = new EventHelper().addValueExpectation(writer)
++    final EventHelper writerHelper = new EventHelper().addValueExpectation(writer, 42)
+         .startListening(true);
+ 
+     ZombieVerifier.verifyRepoZombies(refs);
+@@ -118,26 +118,26 @@ public class EventTestIT {
+ 
+     final EventHelper readHelper =
+         new EventHelper()
+-            .addValueExpectation(reader.child("foo"))
++            .addValueExpectation(reader.child("foo"), 42)
+             .addChildExpectation(reader, Event.EventType.CHILD_ADDED, "foo")
+             .addValueExpectation(reader)
+-            .addValueExpectation(reader.child("bar"))
++            .addValueExpectation(reader.child("bar"), 24)
+             .addChildExpectation(reader, Event.EventType.CHILD_ADDED, "bar")
+             .addValueExpectation(reader)
+-            .addValueExpectation(reader.child("foo"))
++            .addValueExpectation(reader.child("foo"), 31415)
+             .addChildExpectation(reader, Event.EventType.CHILD_CHANGED, "foo")
+             .addValueExpectation(reader)
+             .startListening(true);
+ 
+     final EventHelper writeHelper =
+         new EventHelper()
+-            .addValueExpectation(writer.child("foo"))
++            .addValueExpectation(writer.child("foo"), 42)
+             .addChildExpectation(writer, Event.EventType.CHILD_ADDED, "foo")
+             .addValueExpectation(writer)
+-            .addValueExpectation(writer.child("bar"))
++            .addValueExpectation(writer.child("bar"), 24)
+             .addChildExpectation(writer, Event.EventType.CHILD_ADDED, "bar")
+             .addValueExpectation(writer)
+-            .addValueExpectation(writer.child("foo"))
++            .addValueExpectation(writer.child("foo"), 31415)
+             .addChildExpectation(writer, Event.EventType.CHILD_CHANGED, "foo")
+             .addValueExpectation(writer)
+             .startListening(true);
+@@ -157,18 +157,155 @@ public class EventTestIT {
+   }
+ 
+   @Test
++  public void testWriteFloatValueThenChangeToInteger() throws InterruptedException {
++    List<DatabaseReference> refs = IntegrationTestUtils.getRandomNode(masterApp, 1);
++    DatabaseReference node = refs.get(0);
++
++    final EventHelper readHelper =
++        new EventHelper()
++            .addValueExpectation(node, 1337)
++            .addValueExpectation(node, 1337.1)
++            .startListening(true);
++
++    ZombieVerifier.verifyRepoZombies(refs);
++
++    node.setValueAsync((float) 1337.0);
++    node.setValueAsync(1337); // This does not fire events.
++    node.setValueAsync((float) 1337.0); // This does not fire events.
++    node.setValueAsync(1337.1);
++
++    TestHelpers.waitForRoundtrip(node);
++    assertTrue(readHelper.waitForEvents());
++    ZombieVerifier.verifyRepoZombies(refs);
++    readHelper.cleanup();
++  }
++
++  @Test
++  public void testWriteDoubleValueThenChangeToInteger() throws InterruptedException {
++    List<DatabaseReference> refs = IntegrationTestUtils.getRandomNode(masterApp, 1);
++    DatabaseReference node = refs.get(0);
++
++    final EventHelper readHelper =
++        new EventHelper()
++            .addValueExpectation(node, 1337)
++            .addValueExpectation(node, 1337.1)
++            .startListening(true);
++
++    ZombieVerifier.verifyRepoZombies(refs);
++
++    node.setValueAsync(1337.0);
++    node.setValueAsync(1337); // This does not fire events.
++    node.setValueAsync(1337.1);
++
++    TestHelpers.waitForRoundtrip(node);
++    assertTrue(readHelper.waitForEvents());
++    ZombieVerifier.verifyRepoZombies(refs);
++    readHelper.cleanup();
++  }
++
++  @Test
++  public void testWriteDoubleValueThenChangeToIntegerWithDifferentPriority()
++      throws InterruptedException {
++    List<DatabaseReference> refs = IntegrationTestUtils.getRandomNode(masterApp, 1);
++    DatabaseReference node = refs.get(0);
++
++    final EventHelper readHelper =
++        new EventHelper()
++            .addValueExpectation(node, 1337)
++            .addValueExpectation(node, 1337)
++            .startListening(true);
++
++    ZombieVerifier.verifyRepoZombies(refs);
++
++    node.setValueAsync(1337.0);
++    node.setValueAsync(1337, 1337);
++
++    TestHelpers.waitForRoundtrip(node);
++    assertTrue(readHelper.waitForEvents());
++    ZombieVerifier.verifyRepoZombies(refs);
++    readHelper.cleanup();
++  }
++
++  @Test
++  public void testWriteIntegerValueThenChangeToDouble() throws InterruptedException {
++    List<DatabaseReference> refs = IntegrationTestUtils.getRandomNode(masterApp, 1);
++    DatabaseReference node = refs.get(0);
++
++    final EventHelper readHelper =
++        new EventHelper()
++            .addValueExpectation(node, 1337)
++            .addValueExpectation(node, 1337.1)
++            .startListening(true);
++
++    ZombieVerifier.verifyRepoZombies(refs);
++
++    node.setValueAsync(1337);
++    node.setValueAsync(1337.0); // This does not fire events.
++    node.setValueAsync(1337.1);
++
++    TestHelpers.waitForRoundtrip(node);
++    assertTrue(readHelper.waitForEvents());
++    ZombieVerifier.verifyRepoZombies(refs);
++    readHelper.cleanup();
++  }
++
++  @Test
++  public void testWriteIntegerValueThenChangeToDoubleWithDifferentPriority()
++      throws InterruptedException {
++    List<DatabaseReference> refs = IntegrationTestUtils.getRandomNode(masterApp, 1);
++    DatabaseReference node = refs.get(0);
++
++    final EventHelper readHelper =
++        new EventHelper()
++            .addValueExpectation(node, 1337)
++            .addValueExpectation(node, 1337)
++            .startListening(true);
++
++    ZombieVerifier.verifyRepoZombies(refs);
++
++    node.setValueAsync(1337);
++    node.setValueAsync(1337.0, 1337);
++
++    TestHelpers.waitForRoundtrip(node);
++    assertTrue(readHelper.waitForEvents());
++    ZombieVerifier.verifyRepoZombies(refs);
++    readHelper.cleanup();
++  }
++
++  @Test
++  public void testWriteLargeLongValueThenIncrement() throws InterruptedException {
++    List<DatabaseReference> refs = IntegrationTestUtils.getRandomNode(masterApp, 1);
++    DatabaseReference node = refs.get(0);
++
++    final EventHelper readHelper =
++        new EventHelper()
++            .addValueExpectation(node, Long.MAX_VALUE)
++            .addValueExpectation(node, Long.MAX_VALUE * 2.0)
++            .startListening(true);
++
++    ZombieVerifier.verifyRepoZombies(refs);
++    node.setValueAsync(Long.MAX_VALUE);
++    node.setValueAsync(Long.MAX_VALUE * 2.0);
++
++    TestHelpers.waitForRoundtrip(node);
++    assertTrue(readHelper.waitForEvents());
++    ZombieVerifier.verifyRepoZombies(refs);
++    readHelper.cleanup();
++  }
++
++  @Test
+   public void testSetMultipleEventListenersOnSameNode() throws InterruptedException {
+     List<DatabaseReference> refs = IntegrationTestUtils.getRandomNode(masterApp, 2);
+     DatabaseReference reader = refs.get(0);
+     DatabaseReference writer = refs.get(1);
+ 
+-    final EventHelper writeHelper = new EventHelper().addValueExpectation(writer)
++    final EventHelper writeHelper = new EventHelper().addValueExpectation(writer, 42)
+         .startListening(true);
+-    final EventHelper writeHelper2 = new EventHelper().addValueExpectation(writer)
++    final EventHelper writeHelper2 = new EventHelper().addValueExpectation(writer, 42)
+         .startListening(true);
+-    final EventHelper readHelper = new EventHelper().addValueExpectation(reader)
++    final EventHelper readHelper = new EventHelper().addValueExpectation(reader, 42)
+         .startListening(true);
+-    final EventHelper readHelper2 = new EventHelper().addValueExpectation(reader)
++    final EventHelper readHelper2 = new EventHelper().addValueExpectation(reader, 42)
+         .startListening(true);
+ 
+     ZombieVerifier.verifyRepoZombies(refs);
+@@ -948,10 +1085,10 @@ public class EventTestIT {
+ 
+     final EventHelper helper =
+         new EventHelper()
+-            .addValueExpectation(ref.child("bar"))
++            .addValueExpectation(ref.child("bar"), 42)
+             .addChildExpectation(ref, Event.EventType.CHILD_ADDED, "bar")
+             .addValueExpectation(ref)
+-            .addValueExpectation(ref.child("foo"))
++            .addValueExpectation(ref.child("foo"), 42)
+             .addChildExpectation(ref, Event.EventType.CHILD_ADDED, "foo")
+             .addValueExpectation(ref)
+             .startListening(true);
+@@ -962,7 +1099,7 @@ public class EventTestIT {
+ 
+     assertTrue(helper.waitForEvents());
+     helper
+-        .addValueExpectation(ref.child("bar"))
++        .addValueExpectation(ref.child("bar"), 42)
+         .addChildExpectation(ref, Event.EventType.CHILD_MOVED, "bar")
+         .addChildExpectation(ref, Event.EventType.CHILD_CHANGED, "bar")
+         .addValueExpectation(ref)
+@@ -981,8 +1118,8 @@ public class EventTestIT {
+ 
+     EventHelper helper =
+         new EventHelper()
+-            .addValueExpectation(ref.child("bar"))
+-            .addValueExpectation(ref.child("foo"))
++            .addValueExpectation(ref.child("bar"), 42)
++            .addValueExpectation(ref.child("foo"), 42)
+             .addChildExpectation(ref, Event.EventType.CHILD_ADDED, "bar")
+             .addChildExpectation(ref, Event.EventType.CHILD_ADDED, "foo")
+             .addValueExpectation(ref)
+@@ -995,7 +1132,7 @@ public class EventTestIT {
+             "foo", MapBuilder.of(".value", 42, ".priority", 20)));
+     assertTrue(helper.waitForEvents());
+     helper
+-        .addValueExpectation(ref.child("bar"))
++        .addValueExpectation(ref.child("bar"), 42)
+         .addChildExpectation(ref, Event.EventType.CHILD_MOVED, "bar")
+         .addChildExpectation(ref, Event.EventType.CHILD_CHANGED, "bar")
+         .addValueExpectation(ref)
+diff --git a/src/test/java/com/google/firebase/database/integration/TransactionTestIT.java b/src/test/java/com/google/firebase/database/integration/TransactionTestIT.java
+index db46d36..fe65d86 100644
+--- a/src/test/java/com/google/firebase/database/integration/TransactionTestIT.java
++++ b/src/test/java/com/google/firebase/database/integration/TransactionTestIT.java
+@@ -756,24 +756,35 @@ public class TransactionTestIT {
+ 
+     new WriteFuture(ref, 5).timedGet();
+ 
+-    ref.runTransaction(new Transaction.Handler() {
+-      @Override
+-      public Transaction.Result doTransaction(MutableData currentData) {
+-        assertNull(currentData.getValue());
+-        currentData.setValue(72);
+-        return Transaction.success(currentData);
+-      }
+-
+-      @Override
+-      public void onComplete(DatabaseError error, boolean committed, DataSnapshot currentData) {
+-        assertEquals(DatabaseError.OVERRIDDEN_BY_SET, error.getCode());
+-        assertFalse(committed);
+-        semaphore.release(1);
+-      }
+-    });
++    try {
++      ref.getRepo().setHijackHash(true);
++      ref.runTransaction(
++          new Transaction.Handler() {
++            @Override
++            public Transaction.Result doTransaction(MutableData currentData) {
++              assertNull(currentData.getValue());
++              currentData.setValue(72);
++              return Transaction.success(currentData);
++            }
+ 
+-    ref.setValueAsync(32);
+-    TestHelpers.waitFor(semaphore);
++            @Override
++            public void onComplete(DatabaseError error, boolean committed,
++                DataSnapshot currentData) {
++              assertEquals(DatabaseError.OVERRIDDEN_BY_SET, error.getCode());
++              assertFalse(committed);
++              semaphore.release(1);
++            }
++          });
++      ref.setValue(32, new CompletionListener() {
++        @Override
++        public void onComplete(DatabaseError error, DatabaseReference ref) {
++          ref.getRepo().setHijackHash(false);
++        }
++      });
++      TestHelpers.waitFor(semaphore);
++    } finally {
++      ref.getRepo().setHijackHash(false);
++    }
+   }
+ 
+   @Test
+diff --git a/src/test/java/com/google/firebase/database/utilities/ValidationTest.java b/src/test/java/com/google/firebase/database/utilities/ValidationTest.java
+index 6c9ba0b..b9e32a8 100644
+--- a/src/test/java/com/google/firebase/database/utilities/ValidationTest.java
++++ b/src/test/java/com/google/firebase/database/utilities/ValidationTest.java
+@@ -147,6 +147,7 @@ public class ValidationTest {
+     Map[] updates = new Map[]{
+         ImmutableMap.of("foo", "value"),
+         ImmutableMap.of("foo", ""),
++        ImmutableMap.of("foo", 10D),
+         ImmutableMap.of(".foo", "foo"),
+         ImmutableMap.of("foo", "value", "bar", "value"),
+     };
+@@ -163,6 +164,9 @@ public class ValidationTest {
+         ImmutableMap.of(".value", "foo"),
+         ImmutableMap.of(".priority", ImmutableMap.of("a", "b")),
+         ImmutableMap.of("foo", "value", "foo/bar", "value"),
++        ImmutableMap.of("foo", Double.POSITIVE_INFINITY),
++        ImmutableMap.of("foo", Double.NEGATIVE_INFINITY),
++        ImmutableMap.of("foo", Double.NaN),
+     };
+     Path path = new Path("path");
+     for (Map map : invalidUpdates) {

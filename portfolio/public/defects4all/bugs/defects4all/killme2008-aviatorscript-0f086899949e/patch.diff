@@ -1,0 +1,177 @@
+diff --git a/src/main/java/com/googlecode/aviator/BaseExpression.java b/src/main/java/com/googlecode/aviator/BaseExpression.java
+index f0f9d10..3e0ff54 100644
+--- a/src/main/java/com/googlecode/aviator/BaseExpression.java
++++ b/src/main/java/com/googlecode/aviator/BaseExpression.java
+@@ -72,7 +72,8 @@ public abstract class BaseExpression implements Expression {
+     }
+   }
+ 
+-  protected void afterPopulateFullNames(final Map<String, VariableMeta> fullNames) {
++  protected void afterPopulateFullNames(final Map<String, VariableMeta> fullNames,
++      final Set<String> parentVars) {
+ 
+   }
+ 
+@@ -100,12 +101,14 @@ public abstract class BaseExpression implements Expression {
+ 
+   public Map<String, VariableMeta> getFullNameMetas() {
+     Map<String, VariableMeta> fullNames = new LinkedHashMap<>(this.vars.size());
++    Set<String> parentVars = new HashSet<>(this.vars.size());
+     for (VariableMeta m : this.vars) {
+       if (!m.isInit() && m.getFirstIndex() >= 0) {
+         fullNames.put(m.getName(), m);
+       }
++      parentVars.add(m.getName());
+     }
+-    afterPopulateFullNames(fullNames);
++    afterPopulateFullNames(fullNames, parentVars);
+     return fullNames;
+   }
+ 
+diff --git a/src/main/java/com/googlecode/aviator/ClassExpression.java b/src/main/java/com/googlecode/aviator/ClassExpression.java
+index 19fd7b8..cccfde5 100644
+--- a/src/main/java/com/googlecode/aviator/ClassExpression.java
++++ b/src/main/java/com/googlecode/aviator/ClassExpression.java
+@@ -17,6 +17,7 @@ package com.googlecode.aviator;
+ 
+ import java.util.List;
+ import java.util.Map;
++import java.util.Set;
+ import com.googlecode.aviator.exception.ExpressionNotFoundException;
+ import com.googlecode.aviator.exception.ExpressionRuntimeException;
+ import com.googlecode.aviator.lexer.SymbolTable;
+@@ -76,13 +77,16 @@ public abstract class ClassExpression extends BaseExpression {
+   }
+ 
+   @Override
+-  protected void afterPopulateFullNames(final Map<String, VariableMeta> fullNames) {
++  protected void afterPopulateFullNames(final Map<String, VariableMeta> fullNames,
++      final Set<String> parentVars) {
+     if (this.lambdaBootstraps != null) {
+       for (LambdaFunctionBootstrap bootstrap : this.lambdaBootstraps.values()) {
+         for (VariableMeta meta : bootstrap.getClosureOverFullVarNames()) {
+           VariableMeta existsMeta = fullNames.get(meta.getName());
+           if (existsMeta == null) {
+-            fullNames.put(meta.getName(), meta);
++            if (!parentVars.contains(meta.getName())) {
++              fullNames.put(meta.getName(), meta);
++            }
+           } else {
+             // Appear first, update the meta
+             if (existsMeta.getFirstIndex() > meta.getFirstIndex()) {
+diff --git a/src/main/java/com/googlecode/aviator/lexer/SymbolTable.java b/src/main/java/com/googlecode/aviator/lexer/SymbolTable.java
+index 4ba0673..5a0d1bb 100644
+--- a/src/main/java/com/googlecode/aviator/lexer/SymbolTable.java
++++ b/src/main/java/com/googlecode/aviator/lexer/SymbolTable.java
+@@ -109,7 +109,12 @@ public class SymbolTable implements Serializable {
+   public Token<?> reserve(final Variable variable) {
+     String lexeme = variable.getLexeme();
+     if (isReserved(lexeme)) {
+-      return getVariable(lexeme);
++      Variable v = getVariable(lexeme);
++      if (v.getStartIndex() < 0) {
++        return v;
++      }
++      variable.setLexeme(v.getLexeme());
++      return variable;
+     } else {
+       final String name = lexeme;
+       this.table.put(name, variable);
+diff --git a/src/main/java/com/googlecode/aviator/lexer/token/AbstractToken.java b/src/main/java/com/googlecode/aviator/lexer/token/AbstractToken.java
+index 8a05806..9d695ec 100644
+--- a/src/main/java/com/googlecode/aviator/lexer/token/AbstractToken.java
++++ b/src/main/java/com/googlecode/aviator/lexer/token/AbstractToken.java
+@@ -41,7 +41,7 @@ public abstract class AbstractToken<T> implements Token<T>, Serializable {
+   }
+ 
+ 
+-  protected final String lexeme;
++  protected String lexeme;
+   private Map<String, Object> metaMap;
+ 
+ 
+diff --git a/src/main/java/com/googlecode/aviator/lexer/token/Variable.java b/src/main/java/com/googlecode/aviator/lexer/token/Variable.java
+index d03e385..8f38a5f 100644
+--- a/src/main/java/com/googlecode/aviator/lexer/token/Variable.java
++++ b/src/main/java/com/googlecode/aviator/lexer/token/Variable.java
+@@ -368,6 +368,9 @@ public class Variable extends AbstractToken<Object> {
+     }
+   }
+ 
++  public void setLexeme(final String lexeme) {
++    this.lexeme = lexeme;
++  }
+ 
+   public Variable(final String name, final int lineNo, final int startIndex) {
+     super(name, lineNo, startIndex);
+diff --git a/src/main/java/com/googlecode/aviator/parser/ExpressionParser.java b/src/main/java/com/googlecode/aviator/parser/ExpressionParser.java
+index bb329a4..d58ce28 100644
+--- a/src/main/java/com/googlecode/aviator/parser/ExpressionParser.java
++++ b/src/main/java/com/googlecode/aviator/parser/ExpressionParser.java
+@@ -365,8 +365,9 @@ public class ExpressionParser implements Parser {
+           // this.back();
+           // assignment
+ 
++          boolean isVar = false;
+           if (prevToken.getType() == TokenType.Variable) {
+-            prevToken.withMeta(Constants.INIT_META, true);
++            isVar = true;
+           } else if (prevToken.getType() == TokenType.Char
+               && ((CharToken) prevToken).getCh() == ']') {
+             int depth = 1;
+@@ -406,6 +407,12 @@ public class ExpressionParser implements Parser {
+           }
+ 
+           statement();
++
++          // try to find var(prevToken) in right statement, it's not initialized if presents.
++          if (isVar) {
++            checkVarIsInit(prevToken);
++          }
++
+           ensureFeatureEnabled(Feature.Assignment);
+           getCodeGeneratorWithTimes().onAssignment(opToken);
+         }
+@@ -425,6 +432,22 @@ public class ExpressionParser implements Parser {
+   }
+ 
+ 
++
++  private void checkVarIsInit(final Token<?> prevToken) {
++    boolean isInit = true;
++    for (Token<?> t : this.prevTokens) {
++      if (t == prevToken) {
++        break;
++      }
++      if (t.getType() == TokenType.Variable && t.getLexeme().equals(prevToken.getLexeme())) {
++        isInit = false;
++        break;
++      }
++    }
++    prevToken.withMeta(Constants.INIT_META, isInit);
++  }
++
++
+   public void rel() {
+     shift();
+     while (true) {
+@@ -1156,8 +1179,9 @@ public class ExpressionParser implements Parser {
+ 
+   private void letStatement() {
+     move(true);
+-    checkVariableName(this.lookhead);
+-    getCodeGenerator().onConstant(this.lookhead.withMeta(Constants.INIT_META, true));
++    Token<?> var = this.lookhead;
++    checkVariableName(var);
++    getCodeGenerator().onConstant(var);
+     move(true);
+     if (!expectChar('=')) {
+       reportSyntaxError("expect '='");
+@@ -1166,6 +1190,7 @@ public class ExpressionParser implements Parser {
+     if (statement() == StatementType.Empty) {
+       reportSyntaxError("invalid value to define");
+     }
++    checkVarIsInit(var);
+     ensureFeatureEnabled(Feature.Assignment);
+     getCodeGeneratorWithTimes().onAssignment(currentToken().withMeta(Constants.DEFINE_META, true));
+     if (!expectChar(';')) {

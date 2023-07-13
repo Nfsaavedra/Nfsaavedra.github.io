@@ -1,0 +1,80 @@
+diff --git a/src/main/java/com/worksap/nlp/sudachi/JapaneseDictionary.java b/src/main/java/com/worksap/nlp/sudachi/JapaneseDictionary.java
+index 37db0b1..cd3f5f1 100644
+--- a/src/main/java/com/worksap/nlp/sudachi/JapaneseDictionary.java
++++ b/src/main/java/com/worksap/nlp/sudachi/JapaneseDictionary.java
+@@ -76,7 +76,7 @@ public class JapaneseDictionary implements Dictionary, DictionaryAccess {
+         BinaryDictionary dictionary = BinaryDictionary.loadSystem(config.getSystemDictionary());
+         dictionaries.add(dictionary);
+         grammar = dictionary.getGrammar();
+-        lexicon = new LexiconSet(dictionary.getLexicon());
++        lexicon = new LexiconSet(dictionary.getLexicon(), grammar.getSystemPartOfSpeechSize());
+     }
+ 
+     void setupUserDictionaries(Config config) throws IOException {
+diff --git a/src/main/java/com/worksap/nlp/sudachi/dictionary/GrammarImpl.java b/src/main/java/com/worksap/nlp/sudachi/dictionary/GrammarImpl.java
+index 4a2f892..dfcfc50 100644
+--- a/src/main/java/com/worksap/nlp/sudachi/dictionary/GrammarImpl.java
++++ b/src/main/java/com/worksap/nlp/sudachi/dictionary/GrammarImpl.java
+@@ -28,6 +28,7 @@ public class GrammarImpl implements Grammar {
+ 
+     private final ByteBuffer bytes;
+     private final List<POS> posList;
++    private final short originalPosSize;
+     private boolean isCopiedConnectTable;
+     private Connection matrix;
+ 
+@@ -50,6 +51,7 @@ public class GrammarImpl implements Grammar {
+             }
+             posList.add(new POS(pos));
+         }
++        originalPosSize = (short) posList.size();
+         int leftIdSize = bytes.getShort(offset);
+         offset += 2;
+         int rightIdSize = bytes.getShort(offset);
+@@ -65,6 +67,7 @@ public class GrammarImpl implements Grammar {
+     public GrammarImpl() {
+         bytes = ByteBuffer.allocate(0);
+         posList = Collections.emptyList();
++        originalPosSize = 0;
+     }
+ 
+     public int storageSize() {
+@@ -80,6 +83,10 @@ public class GrammarImpl implements Grammar {
+         return posList.size();
+     }
+ 
++    public short getSystemPartOfSpeechSize() {
++        return originalPosSize;
++    }
++
+     @Override
+     public POS getPartOfSpeechString(short posId) {
+         return posList.get(posId);
+diff --git a/src/main/java/com/worksap/nlp/sudachi/dictionary/LexiconSet.java b/src/main/java/com/worksap/nlp/sudachi/dictionary/LexiconSet.java
+index 92a34d0..550be46 100644
+--- a/src/main/java/com/worksap/nlp/sudachi/dictionary/LexiconSet.java
++++ b/src/main/java/com/worksap/nlp/sudachi/dictionary/LexiconSet.java
+@@ -24,9 +24,11 @@ public class LexiconSet implements Lexicon {
+     static final int MAX_DICTIONARIES = 15;
+ 
+     List<DoubleArrayLexicon> lexicons = new ArrayList<>();
++    final short systemPartOfSpeechSize;
+     List<Short> posOffsets = new ArrayList<>();
+ 
+-    public LexiconSet(Lexicon systemLexicon) {
++    public LexiconSet(Lexicon systemLexicon, short systemPartOfSpeechSize) {
++        this.systemPartOfSpeechSize = systemPartOfSpeechSize;
+         add(systemLexicon, (short) 0);
+     }
+ 
+@@ -130,8 +132,8 @@ public class LexiconSet implements Lexicon {
+         int internalId = WordId.word(wordId);
+         WordInfo wordInfo = lexicons.get(dictionaryId).getWordInfo(internalId);
+         short posId = wordInfo.getPOSId();
+-        if (dictionaryId > 0 && posId >= posOffsets.get(1)) { // user defined part-of-speech
+-            wordInfo.setPOSId((short) (wordInfo.getPOSId() - posOffsets.get(1) + posOffsets.get(dictionaryId)));
++        if (dictionaryId > 0 && posId >= systemPartOfSpeechSize) { // user defined part-of-speech
++            wordInfo.setPOSId((short) (wordInfo.getPOSId() - systemPartOfSpeechSize + posOffsets.get(dictionaryId)));
+         }
+         convertSplit(wordInfo.getAunitSplit(), dictionaryId);
+         convertSplit(wordInfo.getBunitSplit(), dictionaryId);

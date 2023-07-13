@@ -1,0 +1,227 @@
+diff --git a/src/main/java/au/edu/wehi/idsv/GreedyVariantAllocationCache.java b/src/main/java/au/edu/wehi/idsv/GreedyVariantAllocationCache.java
+index f738607..14a9019 100644
+--- a/src/main/java/au/edu/wehi/idsv/GreedyVariantAllocationCache.java
++++ b/src/main/java/au/edu/wehi/idsv/GreedyVariantAllocationCache.java
+@@ -116,8 +116,8 @@ public class GreedyVariantAllocationCache {
+ 			// This is not the best breakpoint supported by this evidence
+ 			return false;
+ 		}
+-		if (evidence instanceof DiscordantReadPair) {
+-			DiscordantReadPair dp = (DiscordantReadPair)evidence;
++		if (evidence instanceof NonReferenceReadPair) {
++			NonReferenceReadPair dp = (NonReferenceReadPair)evidence;
+ 			String readpairid = dp.getLocalledMappedRead().getReadName();
+ 			String alignment = getReadPairAlignment(dp.getLocalledMappedRead());
+ 			return isBestAlignment(bestReadPairAlignment, readpairid, alignment);
+diff --git a/src/main/java/au/edu/wehi/idsv/metrics/IdsvSamFileMetrics.java b/src/main/java/au/edu/wehi/idsv/metrics/IdsvSamFileMetrics.java
+index 8377289..33e8bff 100644
+--- a/src/main/java/au/edu/wehi/idsv/metrics/IdsvSamFileMetrics.java
++++ b/src/main/java/au/edu/wehi/idsv/metrics/IdsvSamFileMetrics.java
+@@ -72,7 +72,7 @@ public class IdsvSamFileMetrics {
+ 			}
+ 		}
+ 		if (bestMetrics == null) {
+-			log.warn(String.format("No pair-end insert size metrics found in %s. Assuming this library contains single-end reads", insertSizeMetricsFile));
++			log.info(String.format("No pair-end insert size metrics found in %s. Assuming this library contains single-end reads", insertSizeMetricsFile));
+ 		}
+ 		return bestMetrics;
+ 	}
+diff --git a/src/main/java/gridss/CallVariants.java b/src/main/java/gridss/CallVariants.java
+index ba33234..dbf3d09 100644
+--- a/src/main/java/gridss/CallVariants.java
++++ b/src/main/java/gridss/CallVariants.java
+@@ -13,7 +13,6 @@ import com.google.common.collect.Lists;
+ 
+ import au.edu.wehi.idsv.AssemblyEvidenceSource;
+ import au.edu.wehi.idsv.SAMEvidenceSource;
+-import au.edu.wehi.idsv.VariantCaller;
+ import au.edu.wehi.idsv.util.FileHelper;
+ import gridss.cmdline.FullEvidenceCommandLineProgram;
+ import gridss.cmdline.MultipleSamFileCommandLineProgram;
+@@ -38,6 +37,9 @@ public class CallVariants extends FullEvidenceCommandLineProgram {
+ 	private static final Log log = Log.getInstance(CallVariants.class);
+ 	@Option(shortName=StandardOptionDefinitions.OUTPUT_SHORT_NAME, doc="VCF structural variation calls.")
+     public File OUTPUT;
++	public CallVariants() {
++		super(false);
++	}
+ 	private void extractEvidence(ExecutorService threadpool, List<SAMEvidenceSource> samEvidence) throws InterruptedException, ExecutionException {
+ 		log.info("Extracting evidence.");
+ 		for (Future<Void> future : threadpool.invokeAll(Lists.transform(samEvidence, new Function<SAMEvidenceSource, Callable<Void>>() {
+@@ -76,8 +78,10 @@ public class CallVariants extends FullEvidenceCommandLineProgram {
+ 		File rawCalls = getContext().getFileSystemContext().getBreakpointVcf(OUTPUT);
+ 		if (!OUTPUT.exists()) {
+ 			if (!rawCalls.exists()) {
+-				VariantCaller caller = new VariantCaller(getContext(), getSamEvidenceSources(), getAssemblySource());
+-				caller.callBreakends(rawCalls, threadpool);
++				IdentifyVariants iv = new IdentifyVariants();
++				copyInputs(iv);
++				iv.OUTPUT_VCF = rawCalls;
++				execute(iv, threadpool);
+ 			}
+ 			AnnotateVariants annVariants = new AnnotateVariants();
+ 			copyInputs(annVariants);
+@@ -93,16 +97,6 @@ public class CallVariants extends FullEvidenceCommandLineProgram {
+ 		int result = program.doWork(threadpool);
+ 		if (result != 0) throw new RuntimeException("Error executing " + program.getClass().getName() + " return status: " + Integer.toString(result));
+ 	}
+-	@Override
+-	protected String[] customCommandLineValidation() {
+-		if (REFERENCE_SEQUENCE == null) {
+-            return new String[]{"Must have a non-null REFERENCE_SEQUENCE"};
+-        }
+-		if (WORKER_THREADS < 1) {
+-			return new String[] { "WORKER_THREADS must be at least one." };
+-		}
+-		return super.customCommandLineValidation();
+-	}
+ 	public static void main(String[] argv) {
+         System.exit(new CallVariants().instanceMain(argv));
+     }
+@@ -110,9 +104,8 @@ public class CallVariants extends FullEvidenceCommandLineProgram {
+ 	public int doWork(ExecutorService threadpool) throws IOException, InterruptedException, ExecutionException {
+ 		IOUtil.assertFileIsWritable(OUTPUT);
+     	extractEvidence(threadpool, getSamEvidenceSources());
+-    	File assemblyFile = getContext().getFileSystemContext().getAssembly(OUTPUT);
+-    	AssemblyEvidenceSource assemblyEvidence = new AssemblyEvidenceSource(getContext(), getSamEvidenceSources(), assemblyFile);
+-    	if (!assemblyFile.exists()) {
++    	AssemblyEvidenceSource assemblyEvidence = new AssemblyEvidenceSource(getContext(), getSamEvidenceSources(), ASSEMBLY);
++    	if (!ASSEMBLY.exists()) {
+     		assemblyEvidence.assembleBreakends(threadpool);
+     	}
+     	// convert breakend assemblies into breakpoint via split read identification
+diff --git a/src/main/java/gridss/IdentifyVariants.java b/src/main/java/gridss/IdentifyVariants.java
+new file mode 100644
+index 0000000..1d1e21e
+--- /dev/null
++++ b/src/main/java/gridss/IdentifyVariants.java
+@@ -0,0 +1,39 @@
++package gridss;
++
++import java.io.File;
++import java.io.IOException;
++import java.util.concurrent.ExecutionException;
++import java.util.concurrent.ExecutorService;
++
++import au.edu.wehi.idsv.VariantCaller;
++import gridss.cmdline.FullEvidenceCommandLineProgram;
++import htsjdk.samtools.util.IOUtil;
++import htsjdk.samtools.util.Log;
++import picard.cmdline.CommandLineProgramProperties;
++import picard.cmdline.Option;
++import picard.cmdline.StandardOptionDefinitions;
++
++@CommandLineProgramProperties(
++        usage = "Identifies putative structural variants.",  
++        usageShort = "Identifies putative structural variants."
++)
++public class IdentifyVariants extends FullEvidenceCommandLineProgram {
++	@Option(shortName=StandardOptionDefinitions.OUTPUT_SHORT_NAME, doc="VCF structural variation calls.")
++    public File OUTPUT_VCF;
++	private void callVariants(ExecutorService threadpool) throws IOException, InterruptedException, ExecutionException {
++		File rawCalls = getContext().getFileSystemContext().getBreakpointVcf(OUTPUT_VCF);
++		if (!rawCalls.exists()) {
++			VariantCaller caller = new VariantCaller(getContext(), getSamEvidenceSources(), getAssemblySource());
++			caller.callBreakends(rawCalls, threadpool);
++		}
++	}
++	public static void main(String[] argv) {
++        System.exit(new IdentifyVariants().instanceMain(argv));
++    }
++	@Override
++	public int doWork(ExecutorService threadpool) throws IOException, InterruptedException, ExecutionException {
++		IOUtil.assertFileIsWritable(OUTPUT_VCF);
++    	callVariants(threadpool);
++		return 0;
++	}
++}
+diff --git a/src/main/java/gridss/cmdline/FullEvidenceCommandLineProgram.java b/src/main/java/gridss/cmdline/FullEvidenceCommandLineProgram.java
+index a41f81a..ba93067 100644
+--- a/src/main/java/gridss/cmdline/FullEvidenceCommandLineProgram.java
++++ b/src/main/java/gridss/cmdline/FullEvidenceCommandLineProgram.java
+@@ -17,8 +17,15 @@ import picard.cmdline.CommandLineProgram;
+ import picard.cmdline.Option;
+ 
+ public abstract class FullEvidenceCommandLineProgram extends MultipleSamFileCommandLineProgram {
+-	@Option(doc="Breakend assemblies which have undergone split read identification")
++	@Option(doc="Breakend assemblies which have undergone split read identification", optional=false)
+ 	public File ASSEMBLY;
++	private final boolean requireAssembly;
++	public FullEvidenceCommandLineProgram() {
++		this(true);
++	}
++	public FullEvidenceCommandLineProgram(boolean requireAssembly) {
++		this.requireAssembly = requireAssembly;
++	}
+ 	private AssemblyEvidenceSource assemblyEvidenceSource;
+ 	public AssemblyEvidenceSource getAssemblySource() {
+ 		if (assemblyEvidenceSource == null) {
+@@ -46,11 +53,16 @@ public abstract class FullEvidenceCommandLineProgram extends MultipleSamFileComm
+ 	}
+ 	@Override
+ 	protected String[] customCommandLineValidation() {
+-		if (ASSEMBLY == null || !ASSEMBLY.exists()) {
+-            return new String[]{"Missing ASSEMBLY file"};
+-        }
++		String[] val = assemblyCustomCommandLineValidation();
++		if (val != null) return val;
+ 		return super.customCommandLineValidation();
+ 	}
++	public String[] assemblyCustomCommandLineValidation() {
++		if (requireAssembly && ASSEMBLY != null && !ASSEMBLY.exists()) {
++			return new String[] { "Missing ASSEMBLY file" };
++		}
++    	return null;
++	}
+ 	@Override
+ 	public void copyInputs(CommandLineProgram cmd) {
+ 		super.copyInputs(cmd);
+diff --git a/src/main/java/gridss/cmdline/MultipleSamFileCommandLineProgram.java b/src/main/java/gridss/cmdline/MultipleSamFileCommandLineProgram.java
+index a07486d..d095614 100644
+--- a/src/main/java/gridss/cmdline/MultipleSamFileCommandLineProgram.java
++++ b/src/main/java/gridss/cmdline/MultipleSamFileCommandLineProgram.java
+@@ -252,9 +252,11 @@ public abstract class MultipleSamFileCommandLineProgram extends ReferenceCommand
+     }
+ 	@Override
+ 	protected String[] customCommandLineValidation() {
+-		if (REFERENCE_SEQUENCE == null) {
+-            return new String[]{"Must have a non-null REFERENCE_SEQUENCE"};
+-        }
++		String[] val = multiSamFileInputCustomCommandLineValidation();
++		if (val != null) return val;
++		return super.customCommandLineValidation();
++	}
++	public String[] multiSamFileInputCustomCommandLineValidation() {
+ 		if (WORKER_THREADS < 1) {
+ 			return new String[] { "WORKER_THREADS must be at least one." };
+ 		}
+@@ -270,7 +272,7 @@ public abstract class MultipleSamFileCommandLineProgram extends ReferenceCommand
+     	if (INPUT_CATEGORY != null && INPUT_CATEGORY.stream().anyMatch(x -> x <= 0)) {
+     		return new String[] { "INPUT_CATEGORY must be positive integers: negative or zero categories are not valid." };
+     	}
+-		return super.customCommandLineValidation();
++    	return null;
+ 	}
+ 	@Override
+ 	public void copyInputs(CommandLineProgram cmd) {
+diff --git a/src/main/java/gridss/cmdline/ReferenceCommandLineProgram.java b/src/main/java/gridss/cmdline/ReferenceCommandLineProgram.java
+index e316bc5..26afd44 100644
+--- a/src/main/java/gridss/cmdline/ReferenceCommandLineProgram.java
++++ b/src/main/java/gridss/cmdline/ReferenceCommandLineProgram.java
+@@ -30,10 +30,15 @@ public abstract class ReferenceCommandLineProgram extends CommandLineProgram {
+ 	}
+ 	@Override
+ 	protected String[] customCommandLineValidation() {
++		String[] val = referenceCustomCommandLineValidation();
++		if (val != null) return val;
++		return super.customCommandLineValidation();
++	}
++	public String[] referenceCustomCommandLineValidation() {
+ 		if (REFERENCE_SEQUENCE == null) {
+             return new String[]{"Must have a non-null REFERENCE_SEQUENCE"};
+         }
+-		return super.customCommandLineValidation();
++		return null;
+ 	}
+ 	/**
+ 	 * Copies the command line inputs to the given program
