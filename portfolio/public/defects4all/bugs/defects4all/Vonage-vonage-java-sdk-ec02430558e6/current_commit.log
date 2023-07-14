@@ -1,0 +1,236 @@
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build] 🚀  Start image=crawlergpt:latest
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   🐳  docker pull image=crawlergpt:latest platform= username= forcePull=false
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   🐳  docker create image=crawlergpt:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   🐳  docker run image=crawlergpt:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/ef67d097-b816-440f-8a80-5776bb649967] user=0 workdir=
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build] 🧪  Matrix: map[java:8 os:ubuntu-latest]
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build] ⭐ Run Main Checkout the repo
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   ✅  Success - Main Checkout the repo
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build] ⭐ Run Main Setup Java
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   🐳  docker cp src=/tmp/act-cache/a47a4d84-46e6-4846-81cf-25ee210bbb42/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v1/] user=0 workdir=
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/setup/index.js] user= workdir=
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   💬  ::debug::isExplicit: 
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   💬  ::debug::explicit? false
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   💬  ::debug::evaluating 0 versions
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   💬  ::debug::match not found
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   💬  ::debug::Downloading JDK from Azul
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   💬  ::debug::Searching for files with extension: -linux_x64.tar.gz
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   💬  ::debug::Downloading https://static.azul.com/zulu/bin/zulu8.70.0.23-ca-jdk8.0.372-linux_x64.tar.gz
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   💬  ::debug::Downloading /tmp/e9e7d867-a9ce-4b16-b5c3-e0fe79377bc9
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   💬  ::debug::download complete
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | [command]/usr/bin/tar --version
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | tar (GNU tar) 1.30
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | Copyright (C) 2017 Free Software Foundation, Inc.
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | This is free software: you are free to change and redistribute it.
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | There is NO WARRANTY, to the extent permitted by law.
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | 
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | Written by John Gilmore and Jay Fenlason.
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/temp_1903450996 -f /tmp/e9e7d867-a9ce-4b16-b5c3-e0fe79377bc9
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   💬  ::debug::jdk extracted to /tmp/temp_1903450996/zulu8.70.0.23-ca-jdk8.0.372-linux_x64
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   💬  ::debug::Caching tool jdk 8.0.372 x64
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   💬  ::debug::source dir: /tmp/temp_1903450996/zulu8.70.0.23-ca-jdk8.0.372-linux_x64
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   💬  ::debug::destination /opt/hostedtoolcache/jdk/8.0.372/x64
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   💬  ::debug::finished caching tool
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   ❓ add-matcher /run/act/actions/actions-setup-java@v1/.github/java.json
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | creating settings.xml with server-id: github; environment variables: username=$GITHUB_ACTOR, password=$GITHUB_TOKEN, and gpg-passphrase=null
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   💬  ::debug::created directory /home/runneradmin/.m2
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | writing /home/runneradmin/.m2/settings.xml
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   ✅  Success - Main Setup Java
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   ⚙  ::set-env:: JAVA_HOME_8.0.372_x64=/opt/hostedtoolcache/jdk/8.0.372/x64
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   ⚙  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/jdk/8.0.372/x64
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   ⚙  ::set-env:: JAVA_HOME_8_0_372_X64=/opt/hostedtoolcache/jdk/8.0.372/x64
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   ⚙  ::set-output:: path=/opt/hostedtoolcache/jdk/8.0.372/x64
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   ⚙  ::set-output:: version=8.0.372
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   ⚙  ::add-path:: /opt/hostedtoolcache/jdk/8.0.372/x64/bin
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build] ⭐ Run Main Grant execute permission for gradlew
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   ✅  Success - Main Grant execute permission for gradlew
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build] ⭐ Run Main Cache Gradle packages
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   🐳  docker cp src=/tmp/act-cache/a47a4d84-46e6-4846-81cf-25ee210bbb42/act/actions-cache@v2/ dst=/var/run/act/actions/actions-cache@v2/
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-cache@v2/] user=0 workdir=
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-cache@v2/dist/restore/index.js] user= workdir=
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   💬  ::debug::Resolved Keys:
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   💬  ::debug::["Linux-gradle-668ae909fda1bb469cf8d75be8c97147d5f449fc8453ceb7cd0686b76bf90587","Linux-gradle"]
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   💬  ::debug::Checking zstd --version
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   💬  ::debug::*** zstd command line interface 64-bits v1.5.0, by Yann Collet ***
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   💬  ::debug::getCacheEntry - Attempt 1 of 2 failed with error: Cache Service Url not found, unable to restore cache.
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   💬  ::debug::getCacheEntry - Attempt 2 of 2 failed with error: Cache Service Url not found, unable to restore cache.
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | [warning]getCacheEntry failed: Cache Service Url not found, unable to restore cache.
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   ✅  Success - Main Cache Gradle packages
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   ⚙  ::set-output:: cache-hit=false
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build] ⭐ Run Main Build with Gradle
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | Downloading https://services.gradle.org/distributions/gradle-4.10.2-bin.zip
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | ..........................................................................
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | 
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | Welcome to Gradle 4.10.2!
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | 
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | Here are the highlights of this release:
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |  - Incremental Java compilation by default
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |  - Periodic Gradle caches cleanup
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |  - Gradle Kotlin DSL 1.0-RC6
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |  - Nested included builds
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |  - SNAPSHOT plugin versions in the `plugins {}` block
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | 
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | For more details see https://docs.gradle.org/4.10.2/release-notes.html
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | 
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | Starting a Gradle Daemon (subsequent builds will be faster)
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | > Task :compileJava
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | > Task :processResources NO-SOURCE
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | > Task :classes
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | > Task :jar
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | 
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | > Task :javadoc
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | /tmp/ef67d097-b816-440f-8a80-5776bb649967/src/main/java/com/nexmo/client/numbers/NumbersClient.java:80: warning: no @param for country
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |     public SearchNumbersResponse searchNumbers(String country) throws NexmoResponseParseException, NexmoClientException {
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |                                  ^
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | /tmp/ef67d097-b816-440f-8a80-5776bb649967/src/main/java/com/nexmo/client/numbers/NumbersClient.java:80: warning: no @return
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |     public SearchNumbersResponse searchNumbers(String country) throws NexmoResponseParseException, NexmoClientException {
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |                                  ^
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | /tmp/ef67d097-b816-440f-8a80-5776bb649967/src/main/java/com/nexmo/client/numbers/NumbersClient.java:90: warning: no @param for filter
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |     public SearchNumbersResponse searchNumbers(SearchNumbersFilter filter) throws NexmoResponseParseException, NexmoClientException {
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |                                  ^
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | /tmp/ef67d097-b816-440f-8a80-5776bb649967/src/main/java/com/nexmo/client/numbers/NumbersClient.java:90: warning: no @return
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |     public SearchNumbersResponse searchNumbers(SearchNumbersFilter filter) throws NexmoResponseParseException, NexmoClientException {
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |                                  ^
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | /tmp/ef67d097-b816-440f-8a80-5776bb649967/src/main/java/com/nexmo/client/numbers/SearchNumbersFilter.java:104: warning: no description for @param
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |      * @param searchPattern
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |        ^
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | /tmp/ef67d097-b816-440f-8a80-5776bb649967/src/main/java/com/nexmo/client/numbers/SearchNumbersResponse.java:41: warning: no @return
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |     public int getCount() {
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |                ^
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | /tmp/ef67d097-b816-440f-8a80-5776bb649967/src/main/java/com/nexmo/client/numbers/SearchNumbersResponse.java:48: warning: no @return
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |     public AvailableNumber[] getNumbers() {
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |                              ^
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | /tmp/ef67d097-b816-440f-8a80-5776bb649967/src/main/java/com/nexmo/client/voice/ncco/InputAction.java:48: warning: no @param for builder
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |     public InputAction(Builder builder) {
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |            ^
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | /tmp/ef67d097-b816-440f-8a80-5776bb649967/src/main/java/com/nexmo/client/voice/ncco/RecordAction.java:52: warning: no @param for builder
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |     public RecordAction(Builder builder) {
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |            ^
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | /tmp/ef67d097-b816-440f-8a80-5776bb649967/src/main/java/com/nexmo/client/verify/VerifyClient.java:157: warning: no @param for request
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |     public VerifyResponse verify(VerifyRequest request) throws NexmoClientException, NexmoResponseParseException {
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |                           ^
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | /tmp/ef67d097-b816-440f-8a80-5776bb649967/src/main/java/com/nexmo/client/verify/VerifyClient.java:157: warning: no @return
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |     public VerifyResponse verify(VerifyRequest request) throws NexmoClientException, NexmoResponseParseException {
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |                           ^
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | /tmp/ef67d097-b816-440f-8a80-5776bb649967/src/main/java/com/nexmo/client/verify/VerifyRequest.java:210: warning: no @return
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |     public Integer getPinExpiry() {
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |                    ^
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | /tmp/ef67d097-b816-440f-8a80-5776bb649967/src/main/java/com/nexmo/client/verify/VerifyRequest.java:217: warning: no @param for pinExpiry
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |     public void setPinExpiry(Integer pinExpiry) {
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |                 ^
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | /tmp/ef67d097-b816-440f-8a80-5776bb649967/src/main/java/com/nexmo/client/sms/SmsClient.java:92: warning: no @param for request
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |     public SearchSmsResponse searchMessages(SearchSmsRequest request) throws NexmoResponseParseException, NexmoClientException {
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |                              ^
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | /tmp/ef67d097-b816-440f-8a80-5776bb649967/src/main/java/com/nexmo/client/sms/SmsClient.java:92: warning: no @return
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |     public SearchSmsResponse searchMessages(SearchSmsRequest request) throws NexmoResponseParseException, NexmoClientException {
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |                              ^
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | /tmp/ef67d097-b816-440f-8a80-5776bb649967/src/main/java/com/nexmo/client/sms/SmsClient.java:139: warning: no @param for request
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |     public SearchRejectedMessagesResponse searchRejectedMessages(SearchRejectedMessagesRequest request) throws NexmoResponseParseException, NexmoClientException {
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |                                           ^
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | /tmp/ef67d097-b816-440f-8a80-5776bb649967/src/main/java/com/nexmo/client/sms/SmsClient.java:50: warning: no @param for httpWrapper
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |     public SmsClient(HttpWrapper httpWrapper) {
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |            ^
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | /tmp/ef67d097-b816-440f-8a80-5776bb649967/src/main/java/com/nexmo/client/sms/messages/Message.java:159: warning: no @return
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |     public boolean getStatusReportRequired() {
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |                    ^
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | /tmp/ef67d097-b816-440f-8a80-5776bb649967/src/main/java/com/nexmo/client/sms/messages/Message.java:82: warning: no @param for statusReportRequired
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |     protected Message(final MessageType type,
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |               ^
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | /tmp/ef67d097-b816-440f-8a80-5776bb649967/src/main/java/com/nexmo/client/sms/messages/TextMessage.java:63: warning: no @param for unicode
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |     public TextMessage(final String from,
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |            ^
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | 20 warnings
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | 
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | > Task :javadocJar
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | > Task :sourcesJar
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | > Task :signArchives SKIPPED
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | > Task :assemble
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | > Task :compileTestJava
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | > Task :processTestResources UP-TO-DATE
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | > Task :testClasses
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | > Task :test
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | > Task :jacocoTestReport
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | > Task :check
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | > Task :build
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | 
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | Deprecated Gradle features were used in this build, making it incompatible with Gradle 5.0.
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | Use '--warning-mode all' to show the individual deprecation warnings.
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | See https://docs.gradle.org/4.10.2/userguide/command_line_interface.html#sec:command_line_warnings
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | 
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | BUILD SUCCESSFUL in 1m 17s
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | 9 actionable tasks: 8 executed, 1 up-to-date
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   ✅  Success - Main Build with Gradle
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build] ⭐ Run Main Run Codecov
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   🐳  docker cp src=/tmp/act-cache/a47a4d84-46e6-4846-81cf-25ee210bbb42/act/codecov-codecov-action@v1/ dst=/var/run/act/actions/codecov-codecov-action@v1/
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/codecov-codecov-action@v1/] user=0 workdir=
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   🐳  docker exec cmd=[node /var/run/act/actions/codecov-codecov-action@v1/dist/index.js] user= workdir=
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | [command]/usr/bin/bash codecov.sh -n  -F  -Q github-action-v1.5.2
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | 
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |   _____          _
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |  / ____|        | |
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | | |     ___   __| | ___  ___ _____   __
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | | |    / _ \ / _` |/ _ \/ __/ _ \ \ / /
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | | |___| (_) | (_| |  __/ (_| (_) \ V /
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |  \_____\___/ \__,_|\___|\___\___/ \_/
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |                               Bash-1.0.3
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | 
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | 
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | [0;36m==>[0m git version 2.33.0 found
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | [0;36m==>[0m curl 7.68.0 (x86_64-pc-linux-gnu) libcurl/7.68.0 OpenSSL/1.1.1f zlib/1.2.11 brotli/1.0.7 libidn2/2.2.0 libpsl/0.21.0 (+libidn2/2.2.0) libssh/0.9.3/openssl/zlib nghttp2/1.40.0 librtmp/2.3
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | Release-Date: 2020-01-08
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | Protocols: dict file ftp ftps gopher http https imap imaps ldap ldaps pop3 pop3s rtmp rtsp scp sftp smb smbs smtp smtps telnet tftp 
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | Features: AsynchDNS brotli GSS-API HTTP2 HTTPS-proxy IDN IPv6 Kerberos Largefile libz NTLM NTLM_WB PSL SPNEGO SSL TLS-SRP UnixSockets
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | [0;90m==>[0m GitHub Actions detected.
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |     Env vars used:
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |       -> GITHUB_ACTIONS:    true
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |       -> GITHUB_HEAD_REF:   
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |       -> GITHUB_REF:        refs/tags/5.4.0
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |       -> GITHUB_REPOSITORY: Vonage/vonage-java-sdk
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |       -> GITHUB_RUN_ID:     1
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |       -> GITHUB_SHA:        ec02430558e61eaaf4daa351b711d01dc90fd80c
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |       -> GITHUB_WORKFLOW:   8feaeb5d-9ac0-43d2-8667-c77456192674
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |     [0;90mproject root:[0m .
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |     [0;90mYaml found at:[0m codecov.yml
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | [0;90m==>[0m Running gcov in . [0;90m(disable via -X gcov)[0m
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | [0;90m==>[0m Python coveragepy not found
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | [0;90m==>[0m Searching for coverage reports in:
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |     [0;32m+[0m .
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |     [0;90m->[0m Found 1 reports
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | [0;90m==>[0m Detecting git/mercurial file structure
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | [0;90m==>[0m Reading reports
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |     [0;32m+[0m ./build/reports/jacoco/test/jacocoTestReport.xml [0;90mbytes=824111[0m
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | [0;90m==>[0m Appending adjustments
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |     [0;36mhttps://docs.codecov.io/docs/fixing-reports[0m
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |     [0;90m->[0m No adjustments found
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | [0;90m==>[0m Gzipping contents
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |         48K	/tmp/codecov.qWILOp.gz
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | [0;90m==>[0m Uploading reports
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |     [0;90murl:[0m https://codecov.io
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |     [0;90mquery:[0m branch=refs%2Ftags%2F5.4.0&commit=ec02430558e61eaaf4daa351b711d01dc90fd80c&build=1&build_url=http%3A%2F%2Fgithub.com%2FVonage%2Fvonage-java-sdk%2Factions%2Fruns%2F1&name=&tag=&slug=Vonage%2Fvonage-java-sdk&service=github-actions&flags=&pr=&job=8feaeb5d-9ac0-43d2-8667-c77456192674&cmd_args=n,F,Q
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | [0;90m->[0m  Pinging Codecov
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | https://codecov.io/upload/v4?package=github-action-v1.5.2-1.0.3&token=secret&branch=refs%2Ftags%2F5.4.0&commit=ec02430558e61eaaf4daa351b711d01dc90fd80c&build=1&build_url=http%3A%2F%2Fgithub.com%2FVonage%2Fvonage-java-sdk%2Factions%2Fruns%2F1&name=&tag=&slug=Vonage%2Fvonage-java-sdk&service=github-actions&flags=&pr=&job=8feaeb5d-9ac0-43d2-8667-c77456192674&cmd_args=n,F,Q
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | [0;31m{'detail': ErrorDetail(string='Unable to locate build via Github Actions API. Please upload with the Codecov repository upload token to resolve issue.', code='not_found')}
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | 404[0m
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | [0;90m==>[0m Uploading to Codecov
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |                                  Dload  Upload   Total   Spent    Left  Speed
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 46242    0     0  100 46242      0   212k --:--:-- --:--:-- --:--:--  211k100 46413  100   171  100 46242    570   150k --:--:-- --:--:-- --:--:--  150k
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   |     [0;32m{'detail': ErrorDetail(string='Unable to locate build via Github Actions API. Please upload with the Codecov repository upload token to resolve issue.', code='not_found')}[0m
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   ✅  Success - Main Run Codecov
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build] ⭐ Run Post Cache Gradle packages
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-cache@v2/dist/save/index.js] user= workdir=
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   💬  ::debug::Checking zstd --version
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   💬  ::debug::*** zstd command line interface 64-bits v1.5.0, by Yann Collet ***
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   💬  ::debug::Reserving Cache
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   💬  ::debug::reserveCache - Attempt 1 of 2 failed with error: Cache Service Url not found, unable to restore cache.
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   💬  ::debug::reserveCache - Attempt 2 of 2 failed with error: Cache Service Url not found, unable to restore cache.
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   | [warning]reserveCache failed: Cache Service Url not found, unable to restore cache.
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   ✅  Success - Post Cache Gradle packages
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build] ⭐ Run Post Setup Java
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build]   ✅  Success - Post Setup Java
+[8feaeb5d-9ac0-43d2-8667-c77456192674/build] 🏁  Job succeeded

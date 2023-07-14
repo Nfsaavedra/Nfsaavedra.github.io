@@ -1,0 +1,126 @@
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build] 🚀  Start image=crawlergpt:latest
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   🐳  docker pull image=crawlergpt:latest platform= username= forcePull=false
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   🐳  docker create image=crawlergpt:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   🐳  docker run image=crawlergpt:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/73991a40-30a5-4883-90e3-ecca038aaace] user=0 workdir=
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build] 🧪  Matrix: map[java:8 os:ubuntu-latest]
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build] ⭐ Run Main Checkout the repo
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   ✅  Success - Main Checkout the repo
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build] ⭐ Run Main Setup Java
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   🐳  docker cp src=/tmp/act-cache/82a436c9-176b-4f1f-a6bd-fafedad4f3a5/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v1/] user=0 workdir=
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/setup/index.js] user= workdir=
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   💬  ::debug::isExplicit: 
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   💬  ::debug::explicit? false
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   💬  ::debug::evaluating 0 versions
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   💬  ::debug::match not found
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   💬  ::debug::Downloading JDK from Azul
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   💬  ::debug::Searching for files with extension: -linux_x64.tar.gz
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   💬  ::debug::Downloading https://static.azul.com/zulu/bin/zulu8.70.0.23-ca-jdk8.0.372-linux_x64.tar.gz
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   💬  ::debug::Downloading /tmp/da61138f-229b-4805-a3dd-bc646a6578e8
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   💬  ::debug::download complete
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | [command]/usr/bin/tar --version
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | tar (GNU tar) 1.30
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | Copyright (C) 2017 Free Software Foundation, Inc.
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | This is free software: you are free to change and redistribute it.
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | There is NO WARRANTY, to the extent permitted by law.
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | 
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | Written by John Gilmore and Jay Fenlason.
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/temp_613720719 -f /tmp/da61138f-229b-4805-a3dd-bc646a6578e8
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   💬  ::debug::jdk extracted to /tmp/temp_613720719/zulu8.70.0.23-ca-jdk8.0.372-linux_x64
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   💬  ::debug::Caching tool jdk 8.0.372 x64
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   💬  ::debug::source dir: /tmp/temp_613720719/zulu8.70.0.23-ca-jdk8.0.372-linux_x64
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   💬  ::debug::destination /opt/hostedtoolcache/jdk/8.0.372/x64
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   💬  ::debug::finished caching tool
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   ❓ add-matcher /run/act/actions/actions-setup-java@v1/.github/java.json
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | creating settings.xml with server-id: github; environment variables: username=$GITHUB_ACTOR, password=$GITHUB_TOKEN, and gpg-passphrase=null
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   💬  ::debug::created directory /home/runneradmin/.m2
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | writing /home/runneradmin/.m2/settings.xml
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   ✅  Success - Main Setup Java
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   ⚙  ::set-env:: JAVA_HOME_8.0.372_x64=/opt/hostedtoolcache/jdk/8.0.372/x64
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   ⚙  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/jdk/8.0.372/x64
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   ⚙  ::set-env:: JAVA_HOME_8_0_372_X64=/opt/hostedtoolcache/jdk/8.0.372/x64
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   ⚙  ::set-output:: path=/opt/hostedtoolcache/jdk/8.0.372/x64
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   ⚙  ::set-output:: version=8.0.372
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   ⚙  ::add-path:: /opt/hostedtoolcache/jdk/8.0.372/x64/bin
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build] ⭐ Run Main Grant execute permission for gradlew
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   ✅  Success - Main Grant execute permission for gradlew
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build] ⭐ Run Main Cache Gradle packages
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   🐳  docker cp src=/tmp/act-cache/82a436c9-176b-4f1f-a6bd-fafedad4f3a5/act/actions-cache@v2/ dst=/var/run/act/actions/actions-cache@v2/
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-cache@v2/] user=0 workdir=
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-cache@v2/dist/restore/index.js] user= workdir=
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   💬  ::debug::Resolved Keys:
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   💬  ::debug::["Linux-gradle-7b0c96f21ac9f33b7731003fd5f1c7f4eecee81834f31138f2da48f5b628dfa2","Linux-gradle"]
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   💬  ::debug::Checking zstd --version
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   💬  ::debug::*** zstd command line interface 64-bits v1.5.0, by Yann Collet ***
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   💬  ::debug::getCacheEntry - Attempt 1 of 2 failed with error: Cache Service Url not found, unable to restore cache.
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   💬  ::debug::getCacheEntry - Attempt 2 of 2 failed with error: Cache Service Url not found, unable to restore cache.
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | [warning]getCacheEntry failed: Cache Service Url not found, unable to restore cache.
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   ✅  Success - Main Cache Gradle packages
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   ⚙  ::set-output:: cache-hit=false
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build] ⭐ Run Main Build with Gradle
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | Downloading https://services.gradle.org/distributions/gradle-4.10.2-bin.zip
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | ..........................................................................
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | 
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | Welcome to Gradle 4.10.2!
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | 
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | Here are the highlights of this release:
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   |  - Incremental Java compilation by default
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   |  - Periodic Gradle caches cleanup
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   |  - Gradle Kotlin DSL 1.0-RC6
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   |  - Nested included builds
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   |  - SNAPSHOT plugin versions in the `plugins {}` block
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | 
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | For more details see https://docs.gradle.org/4.10.2/release-notes.html
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | 
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | Starting a Gradle Daemon (subsequent builds will be faster)
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | > Task :compileJava
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | > Task :compileJava UP-TO-DATE
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | > Task :processResources NO-SOURCE
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | > Task :classes UP-TO-DATE
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | > Task :jar UP-TO-DATE
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | > Task :javadoc UP-TO-DATE
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | > Task :javadocJar UP-TO-DATE
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | > Task :sourcesJar UP-TO-DATE
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | > Task :signArchives SKIPPED
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | > Task :assemble UP-TO-DATE
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | > Task :compileTestJava
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | > Task :processTestResources UP-TO-DATE
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | > Task :testClasses
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | 
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | > Task :test
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | 
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | com.nexmo.client.redact.RedactMethodTest > testConstructParamsWithoutType FAILED
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   |     java.lang.NullPointerException
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   |         at com.nexmo.client.redact.RedactMethodTest.testConstructParamsWithoutType(RedactMethodTest.java:52)
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | 
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | 595 tests completed, 1 failed, 1 skipped
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | 
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | > Task :test FAILED
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | 
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | Deprecated Gradle features were used in this build, making it incompatible with Gradle 5.0.
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | Use '--warning-mode all' to show the individual deprecation warnings.
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | See https://docs.gradle.org/4.10.2/userguide/command_line_interface.html#sec:command_line_warnings
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | 8 actionable tasks: 2 executed, 6 up-to-date
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | 
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | FAILURE: Build failed with an exception.
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | 
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | * What went wrong:
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | Execution failed for task ':test'.
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | > There were failing tests. See the report at: file:///tmp/73991a40-30a5-4883-90e3-ecca038aaace/build/reports/tests/test/index.html
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | 
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | * Try:
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | 
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | * Get more help at https://help.gradle.org
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | 
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   | BUILD FAILED in 1m 17s
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   ❌  Failure - Main Build with Gradle
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build] exitcode '1': failure
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build] ⭐ Run Post Setup Java
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build]   ✅  Success - Post Setup Java
+[fd97a30d-f8a5-4461-8482-d7d32b0681bd/build] 🏁  Job failed

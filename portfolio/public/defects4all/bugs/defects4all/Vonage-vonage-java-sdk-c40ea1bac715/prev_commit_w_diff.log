@@ -1,0 +1,131 @@
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build] 🚀  Start image=crawlergpt:latest
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   🐳  docker pull image=crawlergpt:latest platform= username= forcePull=false
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   🐳  docker create image=crawlergpt:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   🐳  docker run image=crawlergpt:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/4dcb47bf-cf9c-44c3-ba78-2fe9f9379345] user=0 workdir=
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build] 🧪  Matrix: map[java:8 os:ubuntu-latest]
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build] ⭐ Run Main Checkout the repo
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   ✅  Success - Main Checkout the repo
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build] ⭐ Run Main Setup Java
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   🐳  docker cp src=/tmp/act-cache/ac2b90e7-1fd9-4808-8a76-f6cb0d4606b0/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v1/] user=0 workdir=
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/setup/index.js] user= workdir=
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   💬  ::debug::isExplicit: 
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   💬  ::debug::explicit? false
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   💬  ::debug::evaluating 0 versions
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   💬  ::debug::match not found
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   💬  ::debug::Downloading JDK from Azul
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   💬  ::debug::Searching for files with extension: -linux_x64.tar.gz
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   💬  ::debug::Downloading https://static.azul.com/zulu/bin/zulu8.70.0.23-ca-jdk8.0.372-linux_x64.tar.gz
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   💬  ::debug::Downloading /tmp/953af3c5-8184-46c6-9a71-e25ce5aa5915
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   💬  ::debug::download complete
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | [command]/usr/bin/tar --version
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | tar (GNU tar) 1.30
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | Copyright (C) 2017 Free Software Foundation, Inc.
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | This is free software: you are free to change and redistribute it.
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | There is NO WARRANTY, to the extent permitted by law.
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | 
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | Written by John Gilmore and Jay Fenlason.
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/temp_181429206 -f /tmp/953af3c5-8184-46c6-9a71-e25ce5aa5915
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   💬  ::debug::jdk extracted to /tmp/temp_181429206/zulu8.70.0.23-ca-jdk8.0.372-linux_x64
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   💬  ::debug::Caching tool jdk 8.0.372 x64
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   💬  ::debug::source dir: /tmp/temp_181429206/zulu8.70.0.23-ca-jdk8.0.372-linux_x64
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   💬  ::debug::destination /opt/hostedtoolcache/jdk/8.0.372/x64
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   💬  ::debug::finished caching tool
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   ❓ add-matcher /run/act/actions/actions-setup-java@v1/.github/java.json
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | creating settings.xml with server-id: github; environment variables: username=$GITHUB_ACTOR, password=$GITHUB_TOKEN, and gpg-passphrase=null
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   💬  ::debug::created directory /home/runneradmin/.m2
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | writing /home/runneradmin/.m2/settings.xml
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   ✅  Success - Main Setup Java
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   ⚙  ::set-env:: JAVA_HOME_8.0.372_x64=/opt/hostedtoolcache/jdk/8.0.372/x64
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   ⚙  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/jdk/8.0.372/x64
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   ⚙  ::set-env:: JAVA_HOME_8_0_372_X64=/opt/hostedtoolcache/jdk/8.0.372/x64
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   ⚙  ::set-output:: path=/opt/hostedtoolcache/jdk/8.0.372/x64
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   ⚙  ::set-output:: version=8.0.372
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   ⚙  ::add-path:: /opt/hostedtoolcache/jdk/8.0.372/x64/bin
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build] ⭐ Run Main Grant execute permission for gradlew
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   ✅  Success - Main Grant execute permission for gradlew
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build] ⭐ Run Main Cache Gradle packages
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   🐳  docker cp src=/tmp/act-cache/ac2b90e7-1fd9-4808-8a76-f6cb0d4606b0/act/actions-cache@v2/ dst=/var/run/act/actions/actions-cache@v2/
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-cache@v2/] user=0 workdir=
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-cache@v2/dist/restore/index.js] user= workdir=
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   💬  ::debug::Resolved Keys:
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   💬  ::debug::["Linux-gradle-095773f9e0a32aa124b520117e90d51a905fe935c052d25207cedaea2feaf221","Linux-gradle"]
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   💬  ::debug::Checking zstd --version
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   💬  ::debug::*** zstd command line interface 64-bits v1.5.0, by Yann Collet ***
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   💬  ::debug::getCacheEntry - Attempt 1 of 2 failed with error: Cache Service Url not found, unable to restore cache.
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   💬  ::debug::getCacheEntry - Attempt 2 of 2 failed with error: Cache Service Url not found, unable to restore cache.
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | [warning]getCacheEntry failed: Cache Service Url not found, unable to restore cache.
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   ✅  Success - Main Cache Gradle packages
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   ⚙  ::set-output:: cache-hit=false
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build] ⭐ Run Main Build with Gradle
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | Downloading https://services.gradle.org/distributions/gradle-4.10.2-bin.zip
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | ..........................................................................
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | 
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | Welcome to Gradle 4.10.2!
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | 
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | Here are the highlights of this release:
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   |  - Incremental Java compilation by default
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   |  - Periodic Gradle caches cleanup
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   |  - Gradle Kotlin DSL 1.0-RC6
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   |  - Nested included builds
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   |  - SNAPSHOT plugin versions in the `plugins {}` block
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | 
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | For more details see https://docs.gradle.org/4.10.2/release-notes.html
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | 
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | Starting a Gradle Daemon (subsequent builds will be faster)
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | > Task :compileJava UP-TO-DATE
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | > Task :processResources NO-SOURCE
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | > Task :classes UP-TO-DATE
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | > Task :jar UP-TO-DATE
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | > Task :javadoc UP-TO-DATE
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | > Task :javadocJar UP-TO-DATE
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | > Task :sourcesJar UP-TO-DATE
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | > Task :signArchives SKIPPED
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | > Task :assemble UP-TO-DATE
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | > Task :compileTestJava
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | > Task :processTestResources UP-TO-DATE
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | > Task :testClasses
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | 
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | > Task :test
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | 
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | com.nexmo.client.AbstractMethodTest > testFailedHttpExecute FAILED
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   |     com.nexmo.client.NexmoResponseParseException: Unable to parse response.
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   |         at com.nexmo.client.AbstractMethod.execute(AbstractMethod.java:107)
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   |         at com.nexmo.client.AbstractMethodTest.testFailedHttpExecute(AbstractMethodTest.java:210)
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | 
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   |         Caused by:
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   |         java.io.IOException: This is a test exception thrown from the HttpClient Execute method
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   |             at com.nexmo.client.AbstractMethod.execute(AbstractMethod.java:102)
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   |             ... 1 more
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | 
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | 638 tests completed, 1 failed, 1 skipped
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | 
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | > Task :test FAILED
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | 
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | FAILURE: Build failed with an exception.
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | 
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | * What went wrong:
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | Execution failed for task ':test'.
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | > There were failing tests. See the report at: file:///tmp/4dcb47bf-cf9c-44c3-ba78-2fe9f9379345/build/reports/tests/test/index.html
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | 
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | * Try:
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | 
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | * Get more help at https://help.gradle.org
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | 
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | Deprecated Gradle features were used in this build, making it incompatible with Gradle 5.0.
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | Use '--warning-mode all' to show the individual deprecation warnings.
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | See https://docs.gradle.org/4.10.2/userguide/command_line_interface.html#sec:command_line_warnings
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | 
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | BUILD FAILED in 41s
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   | 8 actionable tasks: 2 executed, 6 up-to-date
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   ❌  Failure - Main Build with Gradle
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build] exitcode '1': failure
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build] ⭐ Run Post Setup Java
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build]   ✅  Success - Post Setup Java
+[e1fcb62e-c646-4611-9de3-e70abbcdbac8/build] 🏁  Job failed

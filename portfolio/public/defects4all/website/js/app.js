@@ -172,12 +172,11 @@ angular.module('defects4j-website', ['ngRoute', 'ui.bootstrap', 'anguFixedHeader
             }
         }
         $ctrl.fixTimeLabels = ['<1h', '<6h', '<12h', '<24h', '<36h', '<48h', '<1w', '<1m', '>1m'];
-        $ctrl.failureTypeLabels = ['Test Failure', "Documentation", "Compilation", "Checkstyle", 'License', 'API Regression', 'Unable to clone', 'Missing library', 'Unknown']
-        $ctrl.series = ['Java', 'Python'];
+        $ctrl.series = ['java', 'python'];
 
 
         $ctrl.fixTimeStat = {
-            "Python": {
+            "python": {
                 3600: 0,
                 21600: 0,
                 43200: 0,
@@ -188,7 +187,7 @@ angular.module('defects4j-website', ['ngRoute', 'ui.bootstrap', 'anguFixedHeader
                 2592000: 0,
                 99999999999999: 0
             },
-            "Java": {
+            "java": {
                 3600: 0,
                 21600: 0,
                 43200: 0,
@@ -198,41 +197,16 @@ angular.module('defects4j-website', ['ngRoute', 'ui.bootstrap', 'anguFixedHeader
                 604800: 0,
                 2592000: 0,
                 99999999999999: 0
-            }
-        }
-
-        $ctrl.failureTypeStat = {
-            "Python": {
-                'Test': 0,
-                "Documentation": 0,
-                "Compilation": 0,
-                "Checkstyle": 0,
-                'License': 0,
-                'Compare  version': 0,
-                'Unable to clone': 0,
-                'Missing library': 0,
-                'Unknown': 0
-            },
-            "Java": {
-                'Test': 0,
-                "Documentation": 0,
-                "Compilation": 0,
-                "Checkstyle": 0,
-                'License': 0,
-                'Compare  version': 0,
-                'Unable to clone': 0,
-                'Missing library': 0,
-                'Unknown': 0
             }
         }
 
         $ctrl.fileStat = {
-            "Python": {
+            "python": {
                 'modified': 0,
                 "added": 0,
                 "deleted": 0
             },
-            "Java": {
+            "java": {
                 'modified': 0,
                 "added": 0,
                 "deleted": 0
@@ -240,62 +214,46 @@ angular.module('defects4j-website', ['ngRoute', 'ui.bootstrap', 'anguFixedHeader
         }
 
         $ctrl.patchSizeStat = {
-            "Python": {
+            "python": {
                 "added": 0,
                 "deleted": 0
             },
-            "Java": {
+            "java": {
                 "added": 0,
                 "deleted": 0
             }
-        }
-
-        $ctrl.sizeStat = {
-            "Python": 0,
-            "Java": 0
         }
 
 
         for (var bug of $ctrl.bugs) {
 
-            if ($ctrl.failureTypeStat[bug.lang][bug.failure_category] != null) {
-                $ctrl.failureTypeStat[bug.lang][bug.failure_category]++
-            }
-
-            $ctrl.fileStat[bug.lang].added += bug.files.added.length
-            $ctrl.fileStat[bug.lang].modified += bug.files.modified.length
-            $ctrl.fileStat[bug.lang].deleted += bug.files.deleted.length
+            $ctrl.fileStat[bug.language].added += bug.files.added.length
+            $ctrl.fileStat[bug.language].modified += bug.files.modified.length
+            $ctrl.fileStat[bug.language].deleted += bug.files.deleted.length
             if (bug.size) {
-                $ctrl.sizeStat[bug.lang] += bug.size
+                $ctrl.sizeStat[bug.language] += bug.size
             }
-            $ctrl.patchSizeStat[bug.lang].added += bug.metrics.addedLines
-            $ctrl.patchSizeStat[bug.lang].deleted += bug.metrics.removedLines
+            $ctrl.patchSizeStat[bug.language].added += bug.metrics.addedLines
+            $ctrl.patchSizeStat[bug.language].deleted += bug.metrics.removedLines
 
-            var failingCommitDate = Date.parse(bug.failed_job.committed_at)
-            var passedCommitDate = Date.parse(bug.passed_job.committed_at)
+            var failingCommitDate = Date.parse(bug.previous_commit_at)
+            var passedCommitDate = Date.parse(bug.committed_at)
             if (!failingCommitDate || !passedCommitDate) {
                 continue
             }
             var diff = (passedCommitDate - failingCommitDate) / 1000
-            for (var t in $ctrl.fixTimeStat[bug.lang]) {
+            for (var t in $ctrl.fixTimeStat[bug.language]) {
                 if (diff < t) {
-                    $ctrl.fixTimeStat[bug.lang][t]++
+                    $ctrl.fixTimeStat[bug.language][t]++
                     break
                 }
             }
         }
-        $ctrl.sizeStat.Java = Math.round($ctrl.sizeStat.Java)
-        $ctrl.sizeStat.Python = Math.round($ctrl.sizeStat.Python)
-        $ctrl.failureCategoryData = (function() {
-            return [
-                Object.values($ctrl.failureTypeStat.Java),
-                Object.values($ctrl.failureTypeStat.Python),
-            ]
-        })()
+
         $ctrl.fixTimeDate = (function() {
             return [
-                Object.values($ctrl.fixTimeStat.Java),
-                Object.values($ctrl.fixTimeStat.Python),
+                Object.values($ctrl.fixTimeStat.java),
+                Object.values($ctrl.fixTimeStat.python),
             ]
         })()
 
@@ -308,14 +266,6 @@ angular.module('defects4j-website', ['ngRoute', 'ui.bootstrap', 'anguFixedHeader
         $ctrl.bug = bug;
         $ctrl.size = 0
 
-        $http.get($ctrl.bug.benchmark + "/" + $ctrl.bug.bugId + "/" + "docker_manifest.json").then(response => {
-            for (var layer of response.data.layers) {
-                $ctrl.size += layer['size']
-            }
-            $ctrl.size /= 100000000.0
-            $ctrl.size = Math.round($ctrl.size) / 10.0
-        })
-
         $rootScope.$on('new_bug', function(e, bug) {
             $ctrl.bug = bug;
             $ctrl.size = 0
@@ -323,14 +273,6 @@ angular.module('defects4j-website', ['ngRoute', 'ui.bootstrap', 'anguFixedHeader
             for (var t of document.querySelectorAll('.log')) {
                 t.innerText = 'Click here to download the log...'
             }
-            $http.get($ctrl.bug.benchmark + "/" + $ctrl.bug.bugId + "/" + "docker_manifest.json").then(response => {
-
-                for (var layer of response.data.layers) {
-                    $ctrl.size += layer['size']
-                }
-                $ctrl.size /= 10737418.24
-                $ctrl.size = Math.round($ctrl.size) / 100.0
-            })
         });
 
         function cleanLog(log) {
@@ -341,15 +283,17 @@ angular.module('defects4j-website', ['ngRoute', 'ui.bootstrap', 'anguFixedHeader
             return log.trim().replace(new RegExp(pattern, 'g'), '')
         }
 
-        $ctrl.show_failing_log = function(e, bug) {
+        $ctrl.show_prev_commit_log = function(e, bug) {
             if (e.target.innerText == 'Loading...') {
                 return
             }
             e.target.innerText = 'Loading...'
-            $http.get($ctrl.bug.benchmark + "/" + $ctrl.bug.bugId + "/" + "failing.log").then(response => {
+            $http.get(base_url + "bugs/" + $ctrl.bug.benchmark + "/" + $ctrl.bug.bugId + "/" + "prev_commit.log").then(response => {
                 e.target.innerText = ''
+                console.log(response.data)
                 var term = new Terminal({
-                    cols: 120,
+                    cols: 140,
+                    convertEol: true,
                     theme: {
                         background: '#FFFFFF',
                         foreground: '#333'
@@ -360,15 +304,16 @@ angular.module('defects4j-website', ['ngRoute', 'ui.bootstrap', 'anguFixedHeader
             })
         }
 
-        $ctrl.show_passing_log = function(e, bug) {
+        $ctrl.show_prev_commit_w_diff_log = function(e, bug) {
             if (e.target.innerText == 'Loading...') {
                 return
             }
             e.target.innerText = 'Loading...'
-            $http.get($ctrl.bug.benchmark + "/" + $ctrl.bug.bugId + "/" + "passing.log").then(response => {
+            $http.get(base_url + "bugs/" + $ctrl.bug.benchmark + "/" + $ctrl.bug.bugId + "/" + "prev_commit_w_diff.log").then(response => {
                 e.target.innerText = ''
                 var term = new Terminal({
-                    cols: 120,
+                    cols: 140,
+                    convertEol: true,
                     theme: {
                         background: '#FFFFFF',
                         foreground: '#333'
@@ -379,29 +324,26 @@ angular.module('defects4j-website', ['ngRoute', 'ui.bootstrap', 'anguFixedHeader
             })
         }
 
-        // u
-        $scope.$on('keypress:85', function() {
-            $ctrl.changeCategory('unknown', $ctrl.nextPatch)
-        });
-        // b
-        $scope.$on('keypress:66', function() {
-            $ctrl.changeCategory('bug', $ctrl.nextPatch)
-        });
-        // n
-        $scope.$on('keypress:78', function() {
-            $ctrl.changeCategory('nobug', $ctrl.nextPatch)
-        });
-        $ctrl.changeCategory = function(category, callback) {
-            $http.post("/api/categories", {
-                bug_id: $ctrl.bug.bugId,
-                category: category
-            }).then(response => {
-                $ctrl.bug.failure_category = category
-                if (callback) {
-                    callback()
-                }
+        $ctrl.show_current_commit_log = function(e, bug) {
+            if (e.target.innerText == 'Loading...') {
+                return
+            }
+            e.target.innerText = 'Loading...'
+            $http.get(base_url + "bugs/" + $ctrl.bug.benchmark + "/" + $ctrl.bug.bugId + "/" + "current_commit.log").then(response => {
+                e.target.innerText = ''
+                var term = new Terminal({
+                    cols: 140,
+                    convertEol: true,
+                    theme: {
+                        background: '#FFFFFF',
+                        foreground: '#333'
+                    }
+                });
+                term.open(e.target);
+                term.write(response.data)
             })
         }
+
         $ctrl.ok = function() {
             $uibModalInstance.close();
         };
@@ -508,20 +450,12 @@ angular.module('defects4j-website', ['ngRoute', 'ui.bootstrap', 'anguFixedHeader
         $scope.filters = {
             'python': true,
             'java': true,
-            'changed_test': true,
-            'bug': true,
-            'nobug': true,
+            'pass_pass': true,
+            'fail_pass': true,
+            'source_only': true,
+            'non_source_only': true,
+            'mixed': true,
             'unknown': true,
-            'test_failure': true,
-            'clone': true,
-            'regression': true,
-            'main': true,
-            'Checkstyle': true,
-            'Compilation': true,
-            'License': true,
-            'Documentation': true,
-            'library': true,
-            'Unknown': true,
         };
         $scope.benchmarks = ["Defects4All"];
         $scope.tools = [];
@@ -615,124 +549,56 @@ angular.module('defects4j-website', ['ngRoute', 'ui.bootstrap', 'anguFixedHeader
             return naturalSort(a.value, b.value);
         }
 
-        $scope.bugsForAPR = function() {
-            $scope.filters.empty = true
-            $scope.filters.unique_diff = true
-            $scope.filters.test = true
-            $scope.filters.commit = true
-            $scope.filters.changed_test = false
-            $scope.filters.only_source = true
-            $scope.filters.image = true
-            $scope.filters.unknown = false
-            $scope.filters.nobug = false
-        }
-
         $scope.bugsFilter = function(bug, index, array) {
             if ($scope.search) {
                 var matchSearch =
-                    //bug.failed_job.message.indexOf($scope.search) != -1 ||
-                    bug.passed_job.message.indexOf($scope.search) != -1 ||
+                    bug.commit_message.indexOf($scope.search) != -1 ||
                     bug.repo.indexOf($scope.search) != -1
                 if (matchSearch === false) {
                     return false
                 }
             }
-            if ($scope.filters['empty'] === true) {
-                if (bug.metrics.nbFiles == 0) {
+            if ($scope.filters['source_only'] === false) {
+                if (bug.files_type === 'SOURCE_ONLY') {
                     return false
                 }
             }
-            if ($scope.filters['commit'] === true) {
-                if (bug.unique === false) {
+            if ($scope.filters['mixed'] === false) {
+                if (bug.files_type === 'MIXED') {
                     return false
                 }
             }
-            if ($scope.filters['unique_diff'] === true) {
-                if (bug.unique_diff === false) {
+            if ($scope.filters['non_source_only'] === false) {
+                if (bug.files_type === 'NON_SOURCE_ONLY') {
                     return false
                 }
             }
-            if ($scope.filters['test'] === true) {
-                if (bug.failed_job.failed_tests == "" || bug.files.added.length > 0 || bug.files.deleted.length > 0) {
+            if ($scope.filters['pass_pass'] === false) {
+                if (bug.strategy === 'PASS_PASS') {
                     return false
                 }
             }
-            if ($scope.filters['changed_test'] === false) {
-                if (bug.changed_test === true) {
-                    return false
-                }
-            }
-            if ($scope.filters['source'] === true) {
-                if (bug.has_source === false) {
-                    return false
-                }
-            }
-            if ($scope.filters['only_source'] === true) {
-                if (bug.only_source === false) {
-                    return false
-                }
-            }
-            if ($scope.filters.image === true) {
-                if (bug.available === false) {
-                    return false
-                }
-            }
-            if ($scope.filters['bug'] === false) {
-                if (bug.patch_category === 'bug') {
-                    return false
-                }
-            }
-            if ($scope.filters['nobug'] === false) {
-                if (bug.patch_category === 'nobug') {
+            if ($scope.filters['fail_pass'] === false) {
+                if (bug.strategy === 'FAIL_PASS') {
                     return false
                 }
             }
             if ($scope.filters['unknown'] === false) {
-                if (bug.patch_category === 'unknown' || bug.patch_category == null) {
+                if (bug.strategy === 'UNKNOWN' || bug.strategy == null) {
                     return false
                 }
             }
             if ($scope.filters['python'] === false) {
-                if (bug.lang === 'Python') {
+                if (bug.language === 'python') {
                     return false
                 }
             }
             if ($scope.filters['java'] === false) {
-                if (bug.lang === 'Java') {
+                if (bug.language === 'java') {
                     return false
                 }
             }
 
-            if ($scope.filters.test_failure === false && bug.failure_category === 'Test') {
-                return false
-            }
-            if ($scope.filters.clone === false && bug.failure_category === 'Unable to clone') {
-                return false
-            }
-            if ($scope.filters.regression === false && bug.failure_category === 'Compare  version') {
-                return false
-            }
-            if ($scope.filters.main === false && bug.failure_category === 'Execution') {
-                return false
-            }
-            if ($scope.filters.Checkstyle === false && bug.failure_category === 'Checkstyle') {
-                return false
-            }
-            if ($scope.filters.Compilation === false && bug.failure_category === 'Compilation') {
-                return false
-            }
-            if ($scope.filters.License === false && bug.failure_category === 'License') {
-                return false
-            }
-            if ($scope.filters.Documentation === false && bug.failure_category === 'Documentation') {
-                return false
-            }
-            if ($scope.filters.library === false && bug.failure_category === 'Missing library') {
-                return false
-            }
-            if ($scope.filters.Unknown === false && bug.failure_category === 'Unknown') {
-                return false
-            }
             return true
         };
     });

@@ -1,0 +1,163 @@
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] 🚀  Start image=crawlergpt:latest
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   🐳  docker pull image=crawlergpt:latest platform= username= forcePull=false
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   🐳  docker create image=crawlergpt:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   🐳  docker run image=crawlergpt:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/6aec03d0-764c-4512-be10-a841f48b0beb] user=0 workdir=
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] ⭐ Run Main actions/checkout@v1
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   ✅  Success - Main actions/checkout@v1
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] ⭐ Run Main Set up JDK 1.8
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   🐳  docker cp src=/tmp/act-cache/015e31a5-175a-4b38-bc80-b393485ecace/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v1/] user=0 workdir=
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/setup/index.js] user= workdir=
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   💬  ::debug::isExplicit: 
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   💬  ::debug::explicit? false
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   💬  ::debug::evaluating 0 versions
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   💬  ::debug::match not found
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   💬  ::debug::Downloading JDK from Azul
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   💬  ::debug::Searching for files with extension: -linux_x64.tar.gz
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   💬  ::debug::Downloading https://static.azul.com/zulu/bin/zulu8.70.0.23-ca-jdk8.0.372-linux_x64.tar.gz
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   💬  ::debug::Downloading /tmp/85c9ef45-cd7d-4734-9b33-fbbc0176af2c
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   💬  ::debug::download complete
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | [command]/usr/bin/tar --version
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | tar (GNU tar) 1.30
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | Copyright (C) 2017 Free Software Foundation, Inc.
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | This is free software: you are free to change and redistribute it.
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | There is NO WARRANTY, to the extent permitted by law.
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | Written by John Gilmore and Jay Fenlason.
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/temp_650360549 -f /tmp/85c9ef45-cd7d-4734-9b33-fbbc0176af2c
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   💬  ::debug::jdk extracted to /tmp/temp_650360549/zulu8.70.0.23-ca-jdk8.0.372-linux_x64
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   💬  ::debug::Caching tool jdk 8.0.372 x64
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   💬  ::debug::source dir: /tmp/temp_650360549/zulu8.70.0.23-ca-jdk8.0.372-linux_x64
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   💬  ::debug::destination /opt/hostedtoolcache/jdk/8.0.372/x64
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   💬  ::debug::finished caching tool
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   ❓ add-matcher /run/act/actions/actions-setup-java@v1/.github/java.json
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | creating settings.xml with server-id: github; environment variables: username=$GITHUB_ACTOR, password=$GITHUB_TOKEN, and gpg-passphrase=null
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   💬  ::debug::created directory /home/runneradmin/.m2
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | writing /home/runneradmin/.m2/settings.xml
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   ✅  Success - Main Set up JDK 1.8
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   ⚙  ::set-env:: JAVA_HOME_8.0.372_x64=/opt/hostedtoolcache/jdk/8.0.372/x64
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   ⚙  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/jdk/8.0.372/x64
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   ⚙  ::set-env:: JAVA_HOME_8_0_372_X64=/opt/hostedtoolcache/jdk/8.0.372/x64
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   ⚙  ::set-output:: path=/opt/hostedtoolcache/jdk/8.0.372/x64
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   ⚙  ::set-output:: version=8.0.372
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   ⚙  ::add-path:: /opt/hostedtoolcache/jdk/8.0.372/x64/bin
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] ⭐ Run Main Build with Gradle
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | Downloading https://services.gradle.org/distributions/gradle-5.2.1-all.zip
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | ..............................................................................................................................
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | Welcome to Gradle 5.2.1!
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | Here are the highlights of this release:
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   |  - Define sets of dependencies that work together with Java Platform plugin
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   |  - New C++ plugins with dependency management built-in
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   |  - New C++ project types for gradle init
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   |  - Service injection into plugins and project extensions
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | For more details see https://docs.gradle.org/5.2.1/release-notes.html
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | Starting a Gradle Daemon (subsequent builds will be faster)
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | > Task :compileJava
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | > Task :processResources
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | > Task :classes
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | > Task :bootJar
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | > Task :jar SKIPPED
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | > Task :assemble
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | > Task :compileTestJava
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | > Task :processTestResources
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | > Task :testClasses
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | > Task :test
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.504  INFO 582 --- [       Thread-6] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.505  INFO 582 --- [       Thread-9] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.507  INFO 582 --- [      Thread-22] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.513  INFO 582 --- [      Thread-14] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.515  INFO 582 --- [      Thread-27] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.515  INFO 582 --- [      Thread-24] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.515  INFO 582 --- [      Thread-18] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.516  INFO 582 --- [      Thread-11] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.526  INFO 582 --- [      Thread-14] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.526  INFO 582 --- [      Thread-14] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.531  INFO 582 --- [      Thread-27] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.533  INFO 582 --- [       Thread-9] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.533  INFO 582 --- [      Thread-27] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.533  INFO 582 --- [       Thread-9] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.534  INFO 582 --- [      Thread-18] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.535  INFO 582 --- [      Thread-18] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.536  INFO 582 --- [      Thread-22] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.536  INFO 582 --- [      Thread-22] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.536  INFO 582 --- [       Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.537  INFO 582 --- [       Thread-6] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.537  INFO 582 --- [      Thread-24] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.538  INFO 582 --- [      Thread-24] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.538  INFO 582 --- [      Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.539  INFO 582 --- [      Thread-11] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.546  INFO 582 --- [      Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.551  INFO 582 --- [      Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.636 ERROR 582 --- [      Thread-18] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table message_attachments if exists
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.636 ERROR 582 --- [       Thread-9] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table message if exists
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.638  INFO 582 --- [      Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.639 ERROR 582 --- [       Thread-6] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table project_role if exists
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.639 ERROR 582 --- [      Thread-24] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table project_role if exists
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.640  INFO 582 --- [       Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.640 ERROR 582 --- [      Thread-22] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table project_role if exists
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.640  INFO 582 --- [       Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.641  INFO 582 --- [      Thread-22] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.641 ERROR 582 --- [      Thread-14] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table team_projects if exists
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.643 ERROR 582 --- [      Thread-27] .SchemaDropperImpl$DelayedDropActionImpl : HHH000478: Unsuccessful: drop table team_projects if exists
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.645  INFO 582 --- [      Thread-24] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.646  INFO 582 --- [      Thread-14] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.647  INFO 582 --- [      Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.647  INFO 582 --- [       Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.647  INFO 582 --- [      Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.650  INFO 582 --- [      Thread-24] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.656  INFO 582 --- [      Thread-22] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.653  INFO 582 --- [       Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.665  INFO 582 --- [      Thread-14] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 2023-07-12 11:44:58.682  INFO 582 --- [      Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | > Task :check
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | > Task :build
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | BUILD SUCCESSFUL in 1m 34s
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   | 6 actionable tasks: 6 executed
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   ✅  Success - Main Build with Gradle
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] ⭐ Run Post Set up JDK 1.8
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build]   ✅  Success - Post Set up JDK 1.8
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] 🏁  Job succeeded
+[3898b95b-8972-47f8-9e7f-073fea8e41ad/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'

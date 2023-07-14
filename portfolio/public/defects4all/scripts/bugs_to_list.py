@@ -23,6 +23,9 @@ with open('../defects4all.json', 'w') as defects4all:
                         'strategy': bug['strategy'],
                         'files_type': bug['bug_patch_files_type'],
                         'commit_message': bug['commit_message'],
+                        'committed_at': bug['commit_timestamp'],
+                        'previous_commit_at': bug['previous_commit_timestamp'],
+                        'time_to_patch': bug['time_to_patch'],
                         'benchmark': benchmark,
                         'language': bug['language'],
                         'failed_tests': [],
@@ -74,8 +77,17 @@ with open('../defects4all.json', 'w') as defects4all:
                     with open(os.path.join(bug_path, 'patch.diff'), 'w') as patch_file:
                         patch_file.write(str(patch))
 
-                    with open(os.path.join(bug_path, 'test_patch.diff'), 'w') as patch_file:
-                        patch_file.write(bug['test_patch'])
+                    with open(os.path.join(bug_path, 'prev_commit.log'), 'w') as patch_file:
+                        patch_file.write(bug['actions_runs'][0][0]['stdout'])
+
+                    if bug['strategy'] == 'PASS_PASS':
+                        with open(os.path.join(bug_path, 'test_patch.diff'), 'w') as patch_file:
+                            patch_file.write(bug['test_patch'])
+                        with open(os.path.join(bug_path, 'prev_commit_w_diff.log'), 'w') as patch_file:
+                            patch_file.write(bug['actions_runs'][1][0]['stdout'])
+
+                    with open(os.path.join(bug_path, 'current_commit.log'), 'w') as patch_file:
+                        patch_file.write(bug['actions_runs'][2][0]['stdout'])
 
     
     defects4all.write(json.dumps(bugs))

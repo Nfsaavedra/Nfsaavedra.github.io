@@ -70,85 +70,28 @@
 									<i class="fa fa-fw fa-sliders"></i>Contains <i class="fa fa-fw fa-angle-down pull-right"></i></a>
 									<ul class="collapse" uib-collapse="submenu1">
 										<li>
-											<label for="commit" ng-class="{'actived': filters['commit']}"><input type="checkbox" id="commit" ng-model="filters['commit']" ng-click="clickFilter('commit')">Only unique commit</label>
+											<label for="source_only" ng-class="{'actived': filters['source_only']}"><input type="checkbox" id="source_only" ng-model="filters['source_only']" ng-click="clickFilter('source_only')">Only source code files</label>
 										</li>
 										<li>
-											<label for="unique_diff" ng-class="{'actived': filters['unique_diff']}"><input type="checkbox" id="unique_diff" ng-model="filters['unique_diff']" ng-click="clickFilter('unique_diff')">Only unique diff</label>
+											<label for="mixed" ng-class="{'actived': filters['mixed']}"><input type="checkbox" id="mixed" ng-model="filters['mixed']" ng-click="clickFilter('mixed')">Source and non-source code files</label>
 										</li>
 										<li>
-											<label for="empty" ng-class="{'actived': filters['empty']}"><input type="checkbox" id="empty" ng-model="filters['empty']" ng-click="clickFilter('empty')">Only not empty diff</label>
-										</li>
-										<li>
-											<label for="test" ng-class="{'actived': filters['test']}"><input type="checkbox" id="test" ng-model="filters['test']" ng-click="clickFilter('test')">Only failing tests</label>
-										</li>
-										<li>
-											<label for="changed_test" ng-class="{'actived': filters['changed_test']}"><input type="checkbox" id="changed_test" ng-model="filters['changed_test']" ng-click="clickFilter('changed_test')">Can contain changed test</label>
-										</li>
-										<li>
-											<label for="source" ng-class="{'actived': filters['source']}"><input type="checkbox" id="source" ng-model="filters['source']" ng-click="clickFilter('source')">With changed source files (.py or .java)</label>
-										</li>
-										<li>
-											<label for="only_source" ng-class="{'actived': filters['only_source']}"><input type="checkbox" id="only_source" ng-model="filters['only_source']" ng-click="clickFilter('only_source')">Only changes on source files (.py or .java)</label>
-										</li>
-										<li>
-											<label for="image" ng-class="{'actived': filters['image']}"><input type="checkbox" id="image" ng-model="filters['image']" ng-click="clickFilter('image')">Only with Docker image available</label>
+											<label for="non_source_only" ng-class="{'actived': filters['non_source_only']}"><input type="checkbox" id="non_source_only" ng-model="filters['non_source_only']" ng-click="clickFilter('non_source_only')">Only non-source code files</label>
 										</li>
 									</ul>
 								</li>
 								<li>
 									<a href="#" ng-click="submenuCategory = !submenuCategory">
-									<i class="fa fa-fw fa-database"></i>Patch Categories <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+									<i class="fa fa-fw fa-bullseye"></i>Strategy<i class="fa fa-fw fa-angle-down pull-right"></i></a>
 									<ul class="collapse" uib-collapse="submenuCategory">
 										<li>
-											<label for="bug" ng-class="{'actived': filters['bug']}"><input type="checkbox" id="bug" ng-model="filters['bug']" ng-click="clickFilter('bug')">Bug Patch</label>
+											<label for="pass_pass" ng-class="{'actived': filters['pass_pass']}"><input type="checkbox" id="pass_pass" ng-model="filters['pass_pass']" ng-click="clickFilter('pass_pass')">PASS_PASS</label>
 										</li>
 										<li>
-											<label for="nobug" ng-class="{'actived': filters['nobug']}"><input type="checkbox" id="nobug" ng-model="filters['nobug']" ng-click="clickFilter('nobug')">Non-Bug Patch</label>
+											<label for="fail_pass" ng-class="{'actived': filters['fail_pass']}"><input type="checkbox" id="fail_pass" ng-model="filters['fail_pass']" ng-click="clickFilter('fail_pass')">FAIL_PASS</label>
 										</li>
 										<li>
-											<label for="unknown" ng-class="{'actived': filters['unknown']}"><input type="checkbox" id="unknown" ng-model="filters['unknown']" ng-click="clickFilter('unknown')">Unknown Patch Type</label>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<button type="button" ng-click="bugsForAPR()">
-										<i class="fa fa-fw fa-filter"></i>
-										<span>Select builds for APR and FL</span>
-									</button>
-								</li>
-								<li>
-									<a href="#" ng-click="submenuFailureCategory = !submenuFailureCategory">
-									<i class="fa fa-fw fa-bug"></i>Failure Categories <i class="fa fa-fw fa-angle-down pull-right"></i></a>
-									<ul class="collapse" uib-collapse="submenuFailureCategory">
-										<li>
-											<label for="test_failure" ng-class="{'actived': filters['test_failure']}"><input type="checkbox" id="test_failure" ng-model="filters['test_failure']" ng-click="clickFilter('test_failure')">Test failure</label>
-										</li>
-										<li>
-											<label for="Documentation" ng-class="{'actived': filters['Documentation']}"><input type="checkbox" id="Documentation" ng-model="filters['Documentation']" ng-click="clickFilter('Documentation')">Documentation</label>
-										</li>
-										<li>
-											<label for="License" ng-class="{'actived': filters['License']}"><input type="checkbox" id="License" ng-model="filters['License']" ng-click="clickFilter('License')">License</label>
-										</li>
-										<li>
-											<label for="library" ng-class="{'actived': filters['library']}"><input type="checkbox" id="library" ng-model="filters['library']" ng-click="clickFilter('library')">Missing library</label>
-										</li>
-										<li>
-											<label for="Compilation" ng-class="{'actived': filters['Compilation']}"><input type="checkbox" id="Compilation" ng-model="filters['Compilation']" ng-click="clickFilter('Compilation')">Compilation</label>
-										</li>
-										<li>
-											<label for="Checkstyle" ng-class="{'actived': filters['Checkstyle']}"><input type="checkbox" id="Checkstyle" ng-model="filters['Checkstyle']" ng-click="clickFilter('Checkstyle')">Checkstyle</label>
-										</li>
-										<li>
-											<label for="clone" ng-class="{'actived': filters['clone']}"><input type="checkbox" id="clone" ng-model="filters['clone']" ng-click="clickFilter('clone')">Unable to clone</label>
-										</li>
-										<li>
-											<label for="regression" ng-class="{'actived': filters['regression']}"><input type="checkbox" id="regression" ng-model="filters['regression']" ng-click="clickFilter('regression')">Regression test</label>
-										</li>
-										<li>
-											<label for="main" ng-class="{'actived': filters['main']}"><input type="checkbox" id="main" ng-model="filters['main']" ng-click="clickFilter('main')">Missing main file</label>
-										</li>
-										<li>
-											<label for="Unknown" ng-class="{'actived': filters['Unknown']}"><input type="checkbox" id="Unknown" ng-model="filters['Unknown']" ng-click="clickFilter('Unknown')">Unknown Failure Type</label>
+											<label for="unknown" ng-class="{'actived': filters['unknown']}"><input type="checkbox" id="unknown" ng-model="filters['unknown']" ng-click="clickFilter('unknown')">UNKNOWN</label>
 										</li>
 									</ul>
 								</li>
@@ -264,7 +207,8 @@
 		<div class="modal-body" id="modal-body">
 			<p>
 				<h4>{{$ctrl.bug.commit_message}}</h4>
-				from <a href="https://github.com/{{$ctrl.bug.repo}}/compare/{{$ctrl.bug.previous_commit}}..{{$ctrl.bug.commit}}">{{$ctrl.bug.previous_commit.substring(0,8)}}..{{$ctrl.bug.commit.substring(0,8)}}</a> the {{$ctrl.bug.passed_job.committed_at | date}}
+				<h4><a href="https://github.com/{{$ctrl.bug.repo}}/compare/{{$ctrl.bug.previous_commit}}..{{$ctrl.bug.commit}}">{{$ctrl.bug.previous_commit.substring(0,8)}}..{{$ctrl.bug.commit.substring(0,8)}}</a> at {{$ctrl.bug.committed_at | date}}</h4>
+				<h4>Time to patch: {{$ctrl.bug.time_to_patch}}</h4>
 			</p>
 
 			<h3>Category</h3>
@@ -274,8 +218,10 @@
 			<h3>Human Patch</h3>
 			<div diff="$ctrl.bug"></div>
 
-			<h3>Test Patch</h3>
-			<div testdiff="$ctrl.bug"></div>
+			<div ng-if="$ctrl.bug.strategy == 'PASS_PASS'">
+				<h3>Test Patch</h3>
+				<div testdiff="$ctrl.bug"></div>
+			</div>
 
 			<h3>Failed tests</h3>
 			<div ng-repeat="test in $ctrl.bug.failed_tests">
@@ -287,11 +233,16 @@
 			</span>
 			</div>
 
-			<h3>Failing log</h3>
-			<div class="log" ng-click="$ctrl.show_failing_log($event, $ctrl.bug)">Click here to download the log...</div>
+			<h3>Previous commit log</h3>
+			<a class="log" ng-click="$ctrl.show_prev_commit_log($event, $ctrl.bug)">Click here to download the log...</a>
 
-			<h3>Passing log</h3>
-			<div class="log" ng-click="$ctrl.show_passing_log($event, $ctrl.bug)" >Click here to download the log...</div>
+			<div ng-if="$ctrl.bug.strategy == 'PASS_PASS'">
+				<h3>Previous commit w/test diff log</h3>
+				<a class="log" ng-click="$ctrl.show_prev_commit_w_diff_log($event, $ctrl.bug)">Click here to download the log...</a>
+			</div>
+
+			<h3>Current commit log</h3>
+			<a class="log" ng-click="$ctrl.show_current_commit_log($event, $ctrl.bug)" >Click here to download the log...</a>
 		</div>
 		
 		<div class="modal-footer">
@@ -322,45 +273,39 @@
 					<tbody>
 						<tr>
 							<th># Modified files</th>
-							<td>{{$ctrl.fileStat.Java.modified}}</td>
-							<td>{{$ctrl.fileStat.Python.modified}}</td>
-							<td>{{$ctrl.fileStat.Java.modified + $ctrl.fileStat.Python.modified}}</td>
+							<td>{{$ctrl.fileStat.java.modified}}</td>
+							<td>{{$ctrl.fileStat.python.modified}}</td>
+							<td>{{$ctrl.fileStat.java.modified + $ctrl.fileStat.python.modified}}</td>
 						</tr>
 						<tr>
 							<th># Added files</th>
-							<td>{{$ctrl.fileStat.Java.added}}</td>
-							<td>{{$ctrl.fileStat.Python.added}}</td>
-							<td>{{$ctrl.fileStat.Java.added + $ctrl.fileStat.Python.added}}</td>
+							<td>{{$ctrl.fileStat.java.added}}</td>
+							<td>{{$ctrl.fileStat.python.added}}</td>
+							<td>{{$ctrl.fileStat.java.added + $ctrl.fileStat.python.added}}</td>
 						</tr>
 						<tr>
 							<th># Deleted files</th>
-							<td>{{$ctrl.fileStat.Java.deleted}}</td>
-							<td>{{$ctrl.fileStat.Python.deleted}}</td>
-							<td>{{$ctrl.fileStat.Java.deleted + $ctrl.fileStat.Python.deleted}}</td>
+							<td>{{$ctrl.fileStat.java.deleted}}</td>
+							<td>{{$ctrl.fileStat.python.deleted}}</td>
+							<td>{{$ctrl.fileStat.java.deleted + $ctrl.fileStat.python.deleted}}</td>
 						</tr>
 						<tr>
 							<th># Added lines</th>
-							<td>{{$ctrl.patchSizeStat.Java.added}}</td>
-							<td>{{$ctrl.patchSizeStat.Python.added}}</td>
-							<td>{{$ctrl.patchSizeStat.Java.added + $ctrl.patchSizeStat.Python.added}}</td>
+							<td>{{$ctrl.patchSizeStat.java.added}}</td>
+							<td>{{$ctrl.patchSizeStat.python.added}}</td>
+							<td>{{$ctrl.patchSizeStat.java.added + $ctrl.patchSizeStat.python.added}}</td>
 						</tr>
 						<tr>
 							<th># Removed lines</th>
-							<td>{{$ctrl.patchSizeStat.Java.deleted}}</td>
-							<td>{{$ctrl.patchSizeStat.Python.deleted}}</td>
-							<td>{{$ctrl.patchSizeStat.Java.deleted + $ctrl.patchSizeStat.Python.deleted}}</td>
+							<td>{{$ctrl.patchSizeStat.java.deleted}}</td>
+							<td>{{$ctrl.patchSizeStat.python.deleted}}</td>
+							<td>{{$ctrl.patchSizeStat.java.deleted + $ctrl.patchSizeStat.python.deleted}}</td>
 						</tr>
 						<tr>
 							<th># Changed lines</th>
-							<td>{{$ctrl.patchSizeStat.Java.added + $ctrl.patchSizeStat.Java.deleted}}</td>
-							<td>{{$ctrl.patchSizeStat.Python.added + $ctrl.patchSizeStat.Python.deleted}}</td>
-							<td>{{$ctrl.patchSizeStat.Java.added + $ctrl.patchSizeStat.Python.added + $ctrl.patchSizeStat.Java.deleted + $ctrl.patchSizeStat.Python.deleted}}</td>
-						</tr>
-						<tr>
-							<th>Size in GB</th>
-							<td>{{$ctrl.sizeStat.Java}}</td>
-							<td>{{$ctrl.sizeStat.Python}}</td>
-							<td>{{$ctrl.sizeStat.Java + $ctrl.sizeStat.Python}}</td>
+							<td>{{$ctrl.patchSizeStat.java.added + $ctrl.patchSizeStat.java.deleted}}</td>
+							<td>{{$ctrl.patchSizeStat.python.added + $ctrl.patchSizeStat.python.deleted}}</td>
+							<td>{{$ctrl.patchSizeStat.java.added + $ctrl.patchSizeStat.python.added + $ctrl.patchSizeStat.java.deleted + $ctrl.patchSizeStat.python.deleted}}</td>
 						</tr>
 					</tbody>
 				</table>

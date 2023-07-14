@@ -1,9 +1,12 @@
 h2 {
 	margin-top: 5px; 
 }
+
 a {
 	color: #f18f01;
+    cursor: pointer;
 }
+
 #wrapper {
     padding-left: 0;    
 }
@@ -59,10 +62,12 @@ a {
         border-left-color: #f5d9b1;
     }
 }
+
 input.search {
     width: 100%;
     padding: 3px 4px;
 }
+
 .side-nav button {
     background: #f18f01;
     border: 2px solid #333;
@@ -71,6 +76,7 @@ input.search {
     margin: 2px 10px;
     padding: 7px 8px;
 }
+
 .side-nav>li ul {
     padding: 0;
 }
@@ -78,12 +84,15 @@ input.search {
 .side-nav, .side-nav a {
 	color: #444444;
 }
+
 .side-nav a {
     background-color: #cccaca!important;
 }
+
 .side-nav li {
 	float: none;
 }
+
 .navbar-header {
 	position: absolute;
 	display: block;
@@ -121,10 +130,10 @@ input.search {
   top: 10px;
 }
 
-
 .filters {
 	margin-bottom: 5px;
 }
+
 .filters .filter, .category {
 	background: #f18f01;
 	color: #f5f5f5;
@@ -132,20 +141,26 @@ input.search {
 	padding: 5px;
 	margin-right: 4px;
 }
+
 .category.active {
     background: #0d1c2d;
 }
+
 .modal-dialog{
 	width:80%;
 }
+
 .modal-content {
 	border-radius: 0;
 	border: 0;
+    height: 90vh;
+    overflow-y: scroll;
 }
 
 .table {
 	margin-bottom: 0px;
 }
+
 table {
 	border: 0;
 }

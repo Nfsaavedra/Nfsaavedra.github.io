@@ -1,0 +1,336 @@
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build] 🚀  Start image=crawlergpt:latest
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   🐳  docker pull image=crawlergpt:latest platform= username= forcePull=false
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   🐳  docker create image=crawlergpt:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   🐳  docker run image=crawlergpt:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/73991a40-30a5-4883-90e3-ecca038aaace] user=0 workdir=
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build] 🧪  Matrix: map[java:8 os:ubuntu-latest]
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build] ⭐ Run Main Checkout the repo
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   ✅  Success - Main Checkout the repo
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build] ⭐ Run Main Setup Java
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   🐳  docker cp src=/tmp/act-cache/82a436c9-176b-4f1f-a6bd-fafedad4f3a5/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v1/] user=0 workdir=
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/setup/index.js] user= workdir=
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   💬  ::debug::isExplicit: 
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   💬  ::debug::explicit? false
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   💬  ::debug::evaluating 0 versions
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   💬  ::debug::match not found
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   💬  ::debug::Downloading JDK from Azul
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   💬  ::debug::Searching for files with extension: -linux_x64.tar.gz
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   💬  ::debug::Downloading https://static.azul.com/zulu/bin/zulu8.70.0.23-ca-jdk8.0.372-linux_x64.tar.gz
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   💬  ::debug::Downloading /tmp/169d769e-2800-47e1-9ccc-1fae8ab44016
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   💬  ::debug::download complete
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | [command]/usr/bin/tar --version
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | tar (GNU tar) 1.30
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | Copyright (C) 2017 Free Software Foundation, Inc.
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | This is free software: you are free to change and redistribute it.
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | There is NO WARRANTY, to the extent permitted by law.
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | 
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | Written by John Gilmore and Jay Fenlason.
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/temp_871935442 -f /tmp/169d769e-2800-47e1-9ccc-1fae8ab44016
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   💬  ::debug::jdk extracted to /tmp/temp_871935442/zulu8.70.0.23-ca-jdk8.0.372-linux_x64
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   💬  ::debug::Caching tool jdk 8.0.372 x64
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   💬  ::debug::source dir: /tmp/temp_871935442/zulu8.70.0.23-ca-jdk8.0.372-linux_x64
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   💬  ::debug::destination /opt/hostedtoolcache/jdk/8.0.372/x64
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   💬  ::debug::finished caching tool
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   ❓ add-matcher /run/act/actions/actions-setup-java@v1/.github/java.json
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | creating settings.xml with server-id: github; environment variables: username=$GITHUB_ACTOR, password=$GITHUB_TOKEN, and gpg-passphrase=null
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   💬  ::debug::created directory /home/runneradmin/.m2
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | writing /home/runneradmin/.m2/settings.xml
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   ✅  Success - Main Setup Java
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   ⚙  ::set-env:: JAVA_HOME_8.0.372_x64=/opt/hostedtoolcache/jdk/8.0.372/x64
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   ⚙  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/jdk/8.0.372/x64
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   ⚙  ::set-env:: JAVA_HOME_8_0_372_X64=/opt/hostedtoolcache/jdk/8.0.372/x64
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   ⚙  ::set-output:: path=/opt/hostedtoolcache/jdk/8.0.372/x64
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   ⚙  ::set-output:: version=8.0.372
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   ⚙  ::add-path:: /opt/hostedtoolcache/jdk/8.0.372/x64/bin
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build] ⭐ Run Main Grant execute permission for gradlew
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   ✅  Success - Main Grant execute permission for gradlew
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build] ⭐ Run Main Cache Gradle packages
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   🐳  docker cp src=/tmp/act-cache/82a436c9-176b-4f1f-a6bd-fafedad4f3a5/act/actions-cache@v2/ dst=/var/run/act/actions/actions-cache@v2/
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-cache@v2/] user=0 workdir=
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-cache@v2/dist/restore/index.js] user= workdir=
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   💬  ::debug::Resolved Keys:
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   💬  ::debug::["Linux-gradle-c32c8046191354bef10ca82472f3ffe732f6971268fa54e42f405c452f3e2f63","Linux-gradle"]
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   💬  ::debug::Checking zstd --version
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   💬  ::debug::*** zstd command line interface 64-bits v1.5.0, by Yann Collet ***
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   💬  ::debug::getCacheEntry - Attempt 1 of 2 failed with error: Cache Service Url not found, unable to restore cache.
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   💬  ::debug::getCacheEntry - Attempt 2 of 2 failed with error: Cache Service Url not found, unable to restore cache.
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | [warning]getCacheEntry failed: Cache Service Url not found, unable to restore cache.
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   ✅  Success - Main Cache Gradle packages
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   ⚙  ::set-output:: cache-hit=false
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build] ⭐ Run Main Build with Gradle
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | Downloading https://services.gradle.org/distributions/gradle-4.10.2-bin.zip
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | ..........................................................................
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | 
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | Welcome to Gradle 4.10.2!
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | 
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | Here are the highlights of this release:
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |  - Incremental Java compilation by default
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |  - Periodic Gradle caches cleanup
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |  - Gradle Kotlin DSL 1.0-RC6
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |  - Nested included builds
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |  - SNAPSHOT plugin versions in the `plugins {}` block
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | 
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | For more details see https://docs.gradle.org/4.10.2/release-notes.html
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | 
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | Starting a Gradle Daemon (subsequent builds will be faster)
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/auth/AuthCollection.java:75: warning: [unchecked] unchecked cast
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                 return (T) availableAuthMethod;
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                            ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |   required: T
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |   found:    AuthMethod
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |   where T is a type-variable:
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     T extends AuthMethod declared in method <T>getAuth(Class<T>)
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | 
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | > Task :compileJava
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | Note: /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/voice/CallsFilter.java uses or overrides a deprecated API.
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | Note: Recompile with -Xlint:deprecation for details.
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | 1 warning
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | 
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | > Task :processResources NO-SOURCE
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | > Task :classes
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | > Task :jar
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/numbers/NumbersClient.java:78: warning: no @param for country
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public SearchNumbersResponse searchNumbers(String country) throws IOException, NexmoClientException {
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                                  ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | > Task :javadoc
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | 
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/numbers/NumbersClient.java:78: warning: no @return
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public SearchNumbersResponse searchNumbers(String country) throws IOException, NexmoClientException {
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                                  ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/numbers/NumbersClient.java:88: warning: no @param for filter
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public SearchNumbersResponse searchNumbers(SearchNumbersFilter filter) throws IOException, NexmoClientException {
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                                  ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/numbers/NumbersClient.java:88: warning: no @return
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public SearchNumbersResponse searchNumbers(SearchNumbersFilter filter) throws IOException, NexmoClientException {
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                                  ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/numbers/SearchNumbersFilter.java:95: warning: no description for @param
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |      * @param searchPattern
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |        ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/numbers/SearchNumbersResponse.java:41: warning: no @return
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public int getCount() {
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/numbers/SearchNumbersResponse.java:48: warning: no @return
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public AvailableNumber[] getNumbers() {
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                              ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/applications/ApplicationClient.java:55: warning: no @throws for java.io.IOException
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public ApplicationDetails createApplication(CreateApplicationRequest request)
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                               ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/applications/ApplicationClient.java:55: warning: no @throws for com.nexmo.client.NexmoClientException
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public ApplicationDetails createApplication(CreateApplicationRequest request)
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                               ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/applications/ApplicationClient.java:66: warning: no @throws for java.io.IOException
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public ApplicationDetails updateApplication(UpdateApplicationRequest request)
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                               ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/applications/ApplicationClient.java:66: warning: no @throws for com.nexmo.client.NexmoClientException
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public ApplicationDetails updateApplication(UpdateApplicationRequest request)
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                               ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/applications/ApplicationClient.java:78: warning: no @throws for java.io.IOException
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public ListApplicationsResponse listApplications(ListApplicationsRequest request)
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                                     ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/applications/ApplicationClient.java:78: warning: no @throws for com.nexmo.client.NexmoClientException
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public ListApplicationsResponse listApplications(ListApplicationsRequest request)
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                                     ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/applications/ApplicationClient.java:89: warning: no @throws for java.io.IOException
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public ApplicationDetails getApplication(String applicationId)
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                               ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/applications/ApplicationClient.java:89: warning: no @throws for com.nexmo.client.NexmoClientException
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public ApplicationDetails getApplication(String applicationId)
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                               ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/applications/ApplicationClient.java:99: warning: no @throws for java.io.IOException
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public void deleteApplication(String applicationId)
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                 ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/applications/ApplicationClient.java:99: warning: no @throws for com.nexmo.client.NexmoClientException
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public void deleteApplication(String applicationId)
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                 ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/verify/VerifyClient.java:153: warning: no @param for request
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public VerifyResponse verify(VerifyRequest request) throws IOException, NexmoClientException {
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                           ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/verify/VerifyClient.java:153: warning: no @return
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public VerifyResponse verify(VerifyRequest request) throws IOException, NexmoClientException {
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                           ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/verify/VerifyClient.java:153: warning: no @throws for java.io.IOException
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public VerifyResponse verify(VerifyRequest request) throws IOException, NexmoClientException {
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                           ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/verify/VerifyClient.java:153: warning: no @throws for com.nexmo.client.NexmoClientException
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public VerifyResponse verify(VerifyRequest request) throws IOException, NexmoClientException {
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                           ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/verify/VerifyRequest.java:207: warning: no @return
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public Integer getPinExpiry() {
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                    ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/verify/VerifyRequest.java:214: warning: no @param for pinExpiry
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public void setPinExpiry(Integer pinExpiry) {
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                 ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/AbstractMethod.java:175: warning: no @throws for com.nexmo.client.NexmoClientException
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public abstract ResultT parseResponse(HttpResponse response) throws IOException, NexmoClientException;
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                             ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/sms/SmsClient.java:77: warning: no @throws for com.nexmo.client.NexmoClientException
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public SmsSubmissionResponse submitMessage(Message message) throws IOException, NexmoClientException {
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                                  ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/sms/SmsClient.java:87: warning: no @param for request
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public SearchSmsResponse searchMessages(SearchSmsRequest request) throws IOException, NexmoClientException {
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                              ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/sms/SmsClient.java:87: warning: no @return
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public SearchSmsResponse searchMessages(SearchSmsRequest request) throws IOException, NexmoClientException {
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                              ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/sms/SmsClient.java:87: warning: no @throws for java.io.IOException
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public SearchSmsResponse searchMessages(SearchSmsRequest request) throws IOException, NexmoClientException {
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                              ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/sms/SmsClient.java:87: warning: no @throws for com.nexmo.client.NexmoClientException
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public SearchSmsResponse searchMessages(SearchSmsRequest request) throws IOException, NexmoClientException {
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                              ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/sms/SmsClient.java:99: warning: no @throws for java.io.IOException
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public SearchSmsResponse searchMessages(String id, String... ids) throws IOException, NexmoClientException {
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                              ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/sms/SmsClient.java:99: warning: no @throws for com.nexmo.client.NexmoClientException
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public SearchSmsResponse searchMessages(String id, String... ids) throws IOException, NexmoClientException {
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                              ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/sms/SmsClient.java:114: warning: no @throws for java.io.IOException
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public SearchSmsResponse searchMessages(Date date, String to) throws IOException, NexmoClientException {
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                              ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/sms/SmsClient.java:114: warning: no @throws for com.nexmo.client.NexmoClientException
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public SearchSmsResponse searchMessages(Date date, String to) throws IOException, NexmoClientException {
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                              ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/sms/SmsClient.java:125: warning: no @param for request
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public SearchRejectedMessagesResponse searchRejectedMessages(SearchRejectedMessagesRequest request) throws IOException, NexmoClientException {
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                                           ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/sms/SmsClient.java:125: warning: no @throws for java.io.IOException
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public SearchRejectedMessagesResponse searchRejectedMessages(SearchRejectedMessagesRequest request) throws IOException, NexmoClientException {
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                                           ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/sms/SmsClient.java:125: warning: no @throws for com.nexmo.client.NexmoClientException
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public SearchRejectedMessagesResponse searchRejectedMessages(SearchRejectedMessagesRequest request) throws IOException, NexmoClientException {
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                                           ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/sms/SmsClient.java:137: warning: no @throws for java.io.IOException
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public SearchRejectedMessagesResponse searchRejectedMessages(Date date, String to) throws IOException, NexmoClientException {
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                                           ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/sms/SmsClient.java:137: warning: no @throws for com.nexmo.client.NexmoClientException
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public SearchRejectedMessagesResponse searchRejectedMessages(Date date, String to) throws IOException, NexmoClientException {
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                                           ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/sms/SmsClient.java:151: warning: no @throws for com.nexmo.client.NexmoClientException
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public SmsSingleSearchResponse getSms(String id) throws IOException, NexmoClientException {
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                                    ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/sms/SmsClient.java:51: warning: no @param for httpWrapper
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public SmsClient(HttpWrapper httpWrapper) {
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |            ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/sms/messages/Message.java:159: warning: no @return
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public boolean getStatusReportRequired() {
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                    ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/sms/messages/Message.java:82: warning: no @param for statusReportRequired
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     protected Message(final MessageType type,
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |               ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/sms/messages/TextMessage.java:63: warning: no @param for unicode
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public TextMessage(final String from,
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |            ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/NexmoClient.java:255: warning: no @throws for java.io.IOException
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |         public Builder privateKeyPath(Path privateKeyPath) throws IOException {
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                        ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/NexmoClient.java:266: warning: no @throws for java.io.IOException
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |         public Builder privateKeyPath(String privateKeyPath) throws IOException {
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                        ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | /tmp/73991a40-30a5-4883-90e3-ecca038aaace/src/main/java/com/nexmo/client/voice/VoiceClient.java:342: warning: no @throws for com.nexmo.client.NexmoClientException
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     public Recording downloadRecording(String recordingUrl) throws IOException, NexmoClientException {
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                      ^
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | 46 warnings
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | 
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | > Task :javadocJar
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | > Task :sourcesJar
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | > Task :signArchives SKIPPED
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | > Task :assemble
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | 
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | > Task :compileTestJava
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | Note: Some input files use or override a deprecated API.
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | Note: Recompile with -Xlint:deprecation for details.
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | 
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | > Task :processTestResources
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | > Task :testClasses
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | > Task :test
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | > Task :jacocoTestReport
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | > Task :check
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | > Task :build
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | 
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | Deprecated Gradle features were used in this build, making it incompatible with Gradle 5.0.
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | Use '--warning-mode all' to show the individual deprecation warnings.
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | See https://docs.gradle.org/4.10.2/userguide/command_line_interface.html#sec:command_line_warnings
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | 
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | BUILD SUCCESSFUL in 1m 42s
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | 9 actionable tasks: 9 executed
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   ✅  Success - Main Build with Gradle
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build] ⭐ Run Main Run Codecov
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   🐳  docker cp src=/tmp/act-cache/82a436c9-176b-4f1f-a6bd-fafedad4f3a5/act/codecov-codecov-action@v1/ dst=/var/run/act/actions/codecov-codecov-action@v1/
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/codecov-codecov-action@v1/] user=0 workdir=
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   🐳  docker exec cmd=[node /var/run/act/actions/codecov-codecov-action@v1/dist/index.js] user= workdir=
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | [command]/usr/bin/bash codecov.sh -n  -F  -Q github-action-v1.5.2
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | 
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |   _____          _
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |  / ____|        | |
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | | |     ___   __| | ___  ___ _____   __
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | | |    / _ \ / _` |/ _ \/ __/ _ \ \ / /
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | | |___| (_) | (_| |  __/ (_| (_) \ V /
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |  \_____\___/ \__,_|\___|\___\___/ \_/
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                               Bash-1.0.3
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | 
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | 
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | [0;36m==>[0m git version 2.33.0 found
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | [0;36m==>[0m curl 7.68.0 (x86_64-pc-linux-gnu) libcurl/7.68.0 OpenSSL/1.1.1f zlib/1.2.11 brotli/1.0.7 libidn2/2.2.0 libpsl/0.21.0 (+libidn2/2.2.0) libssh/0.9.3/openssl/zlib nghttp2/1.40.0 librtmp/2.3
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | Release-Date: 2020-01-08
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | Protocols: dict file ftp ftps gopher http https imap imaps ldap ldaps pop3 pop3s rtmp rtsp scp sftp smb smbs smtp smtps telnet tftp 
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | Features: AsynchDNS brotli GSS-API HTTP2 HTTPS-proxy IDN IPv6 Kerberos Largefile libz NTLM NTLM_WB PSL SPNEGO SSL TLS-SRP UnixSockets
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | [0;90m==>[0m GitHub Actions detected.
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     Env vars used:
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |       -> GITHUB_ACTIONS:    true
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |       -> GITHUB_HEAD_REF:   
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |       -> GITHUB_REF:        refs/tags/v4.2.1
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |       -> GITHUB_REPOSITORY: Vonage/vonage-java-sdk
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |       -> GITHUB_RUN_ID:     1
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |       -> GITHUB_SHA:        19017212ec735e0ff55e04080ff73962fb5997f3
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |       -> GITHUB_WORKFLOW:   4b0867f0-e197-4ce7-ab32-412502a555fe
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     [0;90mproject root:[0m .
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     [0;90mYaml found at:[0m codecov.yml
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | [0;90m==>[0m Running gcov in . [0;90m(disable via -X gcov)[0m
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | [0;90m==>[0m Python coveragepy not found
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | [0;90m==>[0m Searching for coverage reports in:
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     [0;32m+[0m .
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     [0;90m->[0m Found 1 reports
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | [0;90m==>[0m Detecting git/mercurial file structure
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | [0;90m==>[0m Reading reports
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     [0;32m+[0m ./build/reports/jacoco/test/jacocoTestReport.xml [0;90mbytes=770491[0m
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | [0;90m==>[0m Appending adjustments
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     [0;36mhttps://docs.codecov.io/docs/fixing-reports[0m
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     [0;90m->[0m No adjustments found
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | [0;90m==>[0m Gzipping contents
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |         44K	/tmp/codecov.tY1kDU.gz
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | [0;90m==>[0m Uploading reports
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     [0;90murl:[0m https://codecov.io
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     [0;90mquery:[0m branch=refs%2Ftags%2Fv4.2.1&commit=19017212ec735e0ff55e04080ff73962fb5997f3&build=1&build_url=http%3A%2F%2Fgithub.com%2FVonage%2Fvonage-java-sdk%2Factions%2Fruns%2F1&name=&tag=&slug=Vonage%2Fvonage-java-sdk&service=github-actions&flags=&pr=&job=4b0867f0-e197-4ce7-ab32-412502a555fe&cmd_args=n,F,Q
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | [0;90m->[0m  Pinging Codecov
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | https://codecov.io/upload/v4?package=github-action-v1.5.2-1.0.3&token=secret&branch=refs%2Ftags%2Fv4.2.1&commit=19017212ec735e0ff55e04080ff73962fb5997f3&build=1&build_url=http%3A%2F%2Fgithub.com%2FVonage%2Fvonage-java-sdk%2Factions%2Fruns%2F1&name=&tag=&slug=Vonage%2Fvonage-java-sdk&service=github-actions&flags=&pr=&job=4b0867f0-e197-4ce7-ab32-412502a555fe&cmd_args=n,F,Q
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | [0;31m{'detail': ErrorDetail(string='Unable to locate build via Github Actions API. Please upload with the Codecov repository upload token to resolve issue.', code='not_found')}
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | 404[0m
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | [0;90m==>[0m Uploading to Codecov
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |                                  Dload  Upload   Total   Spent    Left  Speed
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | curl: (28) Resolving timed out after 2001 milliseconds
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | Warning: Transient problem: timeout Will retry in 2 seconds. 5 retries left.
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | curl: (28) Resolving timed out after 2000 milliseconds
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | Warning: Transient problem: timeout Will retry in 2 seconds. 4 retries left.
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 42774    0     0  100 42774      0   197k --:--:-- --:--:-- --:--:--  196k100 42945  100   171  100 42774    557   136k --:--:-- --:--:-- --:--:--  136k
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   |     [0;32m{'detail': ErrorDetail(string='Unable to locate build via Github Actions API. Please upload with the Codecov repository upload token to resolve issue.', code='not_found')}[0m
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   ✅  Success - Main Run Codecov
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build] ⭐ Run Post Cache Gradle packages
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-cache@v2/dist/save/index.js] user= workdir=
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   💬  ::debug::Checking zstd --version
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   💬  ::debug::*** zstd command line interface 64-bits v1.5.0, by Yann Collet ***
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   💬  ::debug::Reserving Cache
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   💬  ::debug::reserveCache - Attempt 1 of 2 failed with error: Cache Service Url not found, unable to restore cache.
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   💬  ::debug::reserveCache - Attempt 2 of 2 failed with error: Cache Service Url not found, unable to restore cache.
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   | [warning]reserveCache failed: Cache Service Url not found, unable to restore cache.
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   ✅  Success - Post Cache Gradle packages
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build] ⭐ Run Post Setup Java
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build]   ✅  Success - Post Setup Java
+[4b0867f0-e197-4ce7-ab32-412502a555fe/build] 🏁  Job succeeded

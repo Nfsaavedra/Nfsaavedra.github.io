@@ -1,0 +1,118 @@
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests] 🚀  Start image=crawlergpt:latest
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   🐳  docker pull image=crawlergpt:latest platform= username= forcePull=false
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   🐳  docker create image=crawlergpt:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   🐳  docker run image=crawlergpt:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/20685686-637e-47b7-ba90-224d38c6b204] user=0 workdir=
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests] ⭐ Run Main Checkout Code
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   ✅  Success - Main Checkout Code
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests] ⭐ Run Main Set up JDK
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   🐳  docker cp src=/tmp/act-cache/bdba00d8-ef82-4ce3-a739-41fa915fe3da/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v1/] user=0 workdir=
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/setup/index.js] user= workdir=
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   💬  ::debug::isExplicit: 
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   💬  ::debug::explicit? false
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   💬  ::debug::evaluating 0 versions
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   💬  ::debug::match not found
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   💬  ::debug::Downloading JDK from Azul
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   💬  ::debug::Searching for files with extension: -linux_x64.tar.gz
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   💬  ::debug::Downloading https://static.azul.com/zulu/bin/zulu11.64.19-ca-jdk11.0.19-linux_x64.tar.gz
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   💬  ::debug::Downloading /tmp/3eccba77-b6f3-4aab-8cc9-b7baef20f98e
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   💬  ::debug::download complete
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | [command]/usr/bin/tar --version
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | tar (GNU tar) 1.30
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | Copyright (C) 2017 Free Software Foundation, Inc.
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | This is free software: you are free to change and redistribute it.
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | There is NO WARRANTY, to the extent permitted by law.
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | 
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | Written by John Gilmore and Jay Fenlason.
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/temp_553008355 -f /tmp/3eccba77-b6f3-4aab-8cc9-b7baef20f98e
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   💬  ::debug::jdk extracted to /tmp/temp_553008355/zulu11.64.19-ca-jdk11.0.19-linux_x64
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   💬  ::debug::Caching tool jdk 11.0.19 x64
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   💬  ::debug::source dir: /tmp/temp_553008355/zulu11.64.19-ca-jdk11.0.19-linux_x64
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   💬  ::debug::destination /opt/hostedtoolcache/jdk/11.0.19/x64
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   💬  ::debug::finished caching tool
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   ❓ add-matcher /run/act/actions/actions-setup-java@v1/.github/java.json
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | creating settings.xml with server-id: github; environment variables: username=$GITHUB_ACTOR, password=$GITHUB_TOKEN, and gpg-passphrase=null
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   💬  ::debug::created directory /home/runneradmin/.m2
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | writing /home/runneradmin/.m2/settings.xml
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   ✅  Success - Main Set up JDK
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   ⚙  ::set-env:: JAVA_HOME_11.0.19_x64=/opt/hostedtoolcache/jdk/11.0.19/x64
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   ⚙  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/jdk/11.0.19/x64
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   ⚙  ::set-env:: JAVA_HOME_11_0_19_X64=/opt/hostedtoolcache/jdk/11.0.19/x64
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   ⚙  ::set-output:: path=/opt/hostedtoolcache/jdk/11.0.19/x64
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   ⚙  ::set-output:: version=11.0.19
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   ⚙  ::add-path:: /opt/hostedtoolcache/jdk/11.0.19/x64/bin
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests] ⭐ Run Main Grant execute permission for gradlew
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   ✅  Success - Main Grant execute permission for gradlew
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests] ⭐ Run Main Run Tests with Gradle
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | Downloading https://services.gradle.org/distributions/gradle-6.8-bin.zip
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | ..........10%..........20%..........30%...........40%..........50%..........60%..........70%...........80%..........90%..........100%
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | 
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | Welcome to Gradle 6.8!
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | 
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | Here are the highlights of this release:
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   |  - Faster Kotlin DSL script compilation
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   |  - Vendor selection for Java toolchains
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   |  - Convenient execution of tasks in composite builds
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   |  - Consistent dependency resolution
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | 
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | For more details see https://docs.gradle.org/6.8/release-notes.html
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | 
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | Starting a Gradle Daemon (subsequent builds will be faster)
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | [gradle-intellij-plugin :yii2support] Cannot read builtin registry cache. Run with --debug option to get more log output.
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | [gradle-intellij-plugin :yii2support] Cannot create plugin from file (/home/runneradmin/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIU/2021.2/31f9496f635cec87427837101e04cbcddfb544d7/ideaIU-2021.2/plugins/JavaScriptLanguage): Invalid plugin descriptor 'plugin.xml': failed to resolve <xi:include>. Not found document 'intellij.javascript.web.xml' referenced in <xi:include href="intellij.javascript.web.xml", xpointer="xpointer(/idea-plugin/*)"/>. <xi:fallback> element is not provided. (at plugin.xml)
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | 
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | > Task :compileJava
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | Note: Some input files use or override a deprecated API.
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | Note: Recompile with -Xlint:deprecation for details.
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | 
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | > Task :patchPluginXml
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | > Task :processResources
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | > Task :classes
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | > Task :instrumentCode
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | > Task :postInstrumentCode
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | > Task :compileTestJava
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | > Task :processTestResources NO-SOURCE
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | > Task :testClasses
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | > Task :instrumentTestCode
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | > Task :postInstrumentTestCode
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | > Task :jar
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | > Task :prepareTestingSandbox
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | 
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | > Task :test
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | WARNING: An illegal reflective access operation has occurred
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | WARNING: Illegal reflective access by com.intellij.util.ReflectionUtil (file:/home/runneradmin/.gradle/caches/modules-2/files-2.1/com.jetbrains.intellij.idea/ideaIU/2021.2/31f9496f635cec87427837101e04cbcddfb544d7/ideaIU-2021.2/lib/util.jar) to field java.io.DeleteOnExitHook.files
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | WARNING: Please consider reporting this to the maintainers of com.intellij.util.ReflectionUtil
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | WARNING: All illegal access operations will be denied in a future release
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | 
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | BUILD SUCCESSFUL in 5m 4s
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | 11 actionable tasks: 11 executed
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   ✅  Success - Main Run Tests with Gradle
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests] ⭐ Run Main Publish Test Report
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   🐳  docker cp src=/tmp/act-cache/bdba00d8-ef82-4ce3-a739-41fa915fe3da/act/mikepenz-action-junit-report@v1/ dst=/var/run/act/actions/mikepenz-action-junit-report@v1/
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/mikepenz-action-junit-report@v1/] user=0 workdir=
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   🐳  docker exec cmd=[node /var/run/act/actions/mikepenz-action-junit-report@v1/dist/index.js] user= workdir=
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | Going to parse results form **/build/test-results/test/TEST-*.xml
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   💬  ::debug::followSymbolicLinks 'false'
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   💬  ::debug::followSymbolicLinks 'false'
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   💬  ::debug::implicitDescendants 'true'
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   💬  ::debug::omitBrokenSymbolicLinks 'true'
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   💬  ::debug::Search path '/tmp/20685686-637e-47b7-ba90-224d38c6b204'
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   💬  ::debug::Parsing file /tmp/20685686-637e-47b7-ba90-224d38c6b204/build/test-results/test/TEST-com.nvlad.yii2support.common.StringUtilsTest.xml
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   💬  ::debug::Parsing file /tmp/20685686-637e-47b7-ba90-224d38c6b204/build/test-results/test/TEST-com.nvlad.yii2support.objectfactory.ObjectFactoryTests.xml
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   💬  ::debug::Parsing file /tmp/20685686-637e-47b7-ba90-224d38c6b204/build/test-results/test/TEST-com.nvlad.yii2support.url.UrlTests.xml
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   💬  ::debug::Parsing file /tmp/20685686-637e-47b7-ba90-224d38c6b204/build/test-results/test/TEST-com.nvlad.yii2support.validation.ValidationTests.xml
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | Result: 22 tests run, 0 skipped, 0 failed.
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   | Posting status 'completed' with conclusion 'success' to refs/heads/master (sha: 47aceca6b3e952a36ab2993ab922fa8c4c50bb2b)
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   💬  ::debug::{%0A  "owner": "nvlad",%0A  "repo": "yii2support",%0A  "name": "Test Report",%0A  "head_sha": "47aceca6b3e952a36ab2993ab922fa8c4c50bb2b",%0A  "status": "completed",%0A  "conclusion": "success",%0A  "output": {%0A    "title": "22 tests run, 0 skipped, 0 failed.",%0A    "summary": "",%0A    "annotations": []%0A  }%0A}
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   ❗  ::error::Failed to create checks using the provided token. (HttpError: Resource not accessible by personal access token)
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   🚧  ::warning::This usually indicates insufficient permissions. More details: https://github.com/mikepenz/action-junit-report/issues/32
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   ✅  Success - Main Publish Test Report
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests] ⭐ Run Post Set up JDK
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests]   ✅  Success - Post Set up JDK
+[1502b7ff-b69e-488d-bb3b-5c69a390faab/Run Unit Tests] 🏁  Job succeeded

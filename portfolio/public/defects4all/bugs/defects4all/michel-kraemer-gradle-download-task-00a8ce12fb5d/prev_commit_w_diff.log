@@ -1,0 +1,537 @@
+[c37ed758-2bfd-45db-929b-0f173855881d/build] 🚀  Start image=crawlergpt:latest
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   🐳  docker pull image=crawlergpt:latest platform= username= forcePull=false
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   🐳  docker create image=crawlergpt:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   🐳  docker run image=crawlergpt:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/7a60f59f-5f2b-474f-a777-41125ec6a8fa] user=0 workdir=
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] ⭐ Run Main actions/checkout@v1
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   ✅  Success - Main actions/checkout@v1
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] ⭐ Run Main Set up JDK 1.8
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   🐳  docker cp src=/tmp/act-cache/2cb5a85c-2d27-44ac-afb1-e13c9f5673f1/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v1/] user=0 workdir=
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/setup/index.js] user= workdir=
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   💬  ::debug::isExplicit: 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   💬  ::debug::explicit? false
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   💬  ::debug::evaluating 0 versions
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   💬  ::debug::match not found
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   💬  ::debug::Downloading JDK from Azul
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   💬  ::debug::Searching for files with extension: -linux_x64.tar.gz
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   💬  ::debug::Downloading https://static.azul.com/zulu/bin/zulu8.70.0.23-ca-jdk8.0.372-linux_x64.tar.gz
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   💬  ::debug::Downloading /tmp/38bc3516-755a-423e-99ca-5d2a24d2a519
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   💬  ::debug::download complete
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | [command]/usr/bin/tar --version
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | tar (GNU tar) 1.30
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | Copyright (C) 2017 Free Software Foundation, Inc.
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | This is free software: you are free to change and redistribute it.
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | There is NO WARRANTY, to the extent permitted by law.
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | Written by John Gilmore and Jay Fenlason.
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/temp_1479021181 -f /tmp/38bc3516-755a-423e-99ca-5d2a24d2a519
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   💬  ::debug::jdk extracted to /tmp/temp_1479021181/zulu8.70.0.23-ca-jdk8.0.372-linux_x64
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   💬  ::debug::Caching tool jdk 8.0.372 x64
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   💬  ::debug::source dir: /tmp/temp_1479021181/zulu8.70.0.23-ca-jdk8.0.372-linux_x64
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   💬  ::debug::destination /opt/hostedtoolcache/jdk/8.0.372/x64
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   💬  ::debug::finished caching tool
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   ❓ add-matcher /run/act/actions/actions-setup-java@v1/.github/java.json
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | creating settings.xml with server-id: github; environment variables: username=$GITHUB_ACTOR, password=$GITHUB_TOKEN, and gpg-passphrase=null
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   💬  ::debug::created directory /home/runneradmin/.m2
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | writing /home/runneradmin/.m2/settings.xml
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   ✅  Success - Main Set up JDK 1.8
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   ⚙  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/jdk/8.0.372/x64
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   ⚙  ::set-env:: JAVA_HOME_8_0_372_X64=/opt/hostedtoolcache/jdk/8.0.372/x64
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   ⚙  ::set-env:: JAVA_HOME_8.0.372_x64=/opt/hostedtoolcache/jdk/8.0.372/x64
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   ⚙  ::set-output:: path=/opt/hostedtoolcache/jdk/8.0.372/x64
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   ⚙  ::set-output:: version=8.0.372
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   ⚙  ::add-path:: /opt/hostedtoolcache/jdk/8.0.372/x64/bin
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] ⭐ Run Main Build and install
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | Downloading https://services.gradle.org/distributions/gradle-4.10.2-bin.zip
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | ..........................................................................
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | Welcome to Gradle 4.10.2!
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | Here are the highlights of this release:
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   |  - Incremental Java compilation by default
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   |  - Periodic Gradle caches cleanup
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   |  - Gradle Kotlin DSL 1.0-RC6
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   |  - Nested included builds
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   |  - SNAPSHOT plugin versions in the `plugins {}` block
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | For more details see https://docs.gradle.org/4.10.2/release-notes.html
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | Starting a Gradle Daemon (subsequent builds will be faster)
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | > Task :apache-httpclient-relocated:compileJava NO-SOURCE
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | > Task :apache-httpclient-relocated:processResources NO-SOURCE
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | > Task :apache-httpclient-relocated:classes UP-TO-DATE
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | > Task :apache-httpclient-relocated:shadowJar UP-TO-DATE
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | > Task :compileJava UP-TO-DATE
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | > Task :pluginDescriptors UP-TO-DATE
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | > Task :processResources UP-TO-DATE
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | > Task :classes UP-TO-DATE
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | > Task :jar UP-TO-DATE
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | > Task :javadoc UP-TO-DATE
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | > Task :packageJavadoc UP-TO-DATE
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | > Task :packageSources UP-TO-DATE
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | > Task :signArchives SKIPPED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | > Task :install
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | BUILD SUCCESSFUL in 54s
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 9 actionable tasks: 1 executed, 8 up-to-date
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   ✅  Success - Main Build and install
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] ⭐ Run Main Run unit tests
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | > Task :apache-httpclient-relocated:compileJava NO-SOURCE
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | > Task :apache-httpclient-relocated:processResources NO-SOURCE
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | > Task :apache-httpclient-relocated:classes UP-TO-DATE
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | > Task :apache-httpclient-relocated:shadowJar UP-TO-DATE
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | > Task :compileJava UP-TO-DATE
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | > Task :pluginDescriptors UP-TO-DATE
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | > Task :processResources UP-TO-DATE
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | > Task :classes UP-TO-DATE
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | > Task :pluginUnderTestMetadata UP-TO-DATE
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | > Task :compileTestJava
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | warning: [options] bootstrap class path not set in conjunction with -source 1.7
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 1 warning
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | > Task :processTestResources UP-TO-DATE
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | > Task :testClasses
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | > Task :test
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.DownloadExtensionTest > downloadSingleFile PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.DownloadExtensionTest > downloadSingleFileError PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.OnlyIfModifiedTest > dontDownloadIfEqual PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.OnlyIfModifiedTest > dontDownloadIfOlder PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.OnlyIfModifiedTest > setFileLastModified PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.OnlyIfModifiedTest > alias PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.OnlyIfModifiedTest > missingLastModified PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.OnlyIfModifiedTest > incorrectLastModified PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.OnlyIfModifiedTest > newerDownload PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.VerifyTest > testExecuteEmptyAlgorithm PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.VerifyTest > verifyMD5 PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.VerifyTest > verifyWrongMD5 PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.VerifyTest > testExecuteEmptySrc PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.VerifyTest > testExecuteEmptyChecksum PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.VerifyTest > lazySrc PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.VerifyTest > testInvalidSrc PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.VerifyTest > providerSrc FAILED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   |     java.lang.IllegalArgumentException at VerifyTest.java:240
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.TimeoutTest > readTimeout PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.TimeoutTest > connectTimeout PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.VerifyExtensionTest > verifyFileChecksumError PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.VerifyExtensionTest > verifyFile PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.VerifyExtensionTest > verifyFileError PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.ContentEncodingTest > contentEncodingNone PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.TempAndMoveTest > tempAndMoveOverwrite PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.TempAndMoveTest > tempAndMove PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.CompressionTest > compressed PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.CompressionTest > uncompressed PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadOnlyIfNewer[Gradle 2.14.1] STANDARD_OUT
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   |     Downloading https://services.gradle.org/distributions/gradle-2.14.1-bin.zip
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   |     ..........................................
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadOnlyIfNewer[Gradle 2.14.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadMultipleFiles[Gradle 2.14.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadSingleFile[Gradle 2.14.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadOnlyIfNewerReDownloadIfFileExists[Gradle 2.14.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadFileURLOnlyIfNewer[Gradle 2.14.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > fileDependenciesTriggersDownloadTask[Gradle 2.14.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadSingleFileWithoutCompress[Gradle 2.14.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadSingleFileTwiceWithOfflineMode[Gradle 2.14.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadUseETag[Gradle 2.14.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadSingleFileWithQuietMode[Gradle 2.14.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadSingleFileTwiceWithOverwriteExecutesTwice[Gradle 2.14.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadSingleFileTwiceMarksTaskAsUpToDate[Gradle 2.14.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadOnlyIfNewerRedownloadsIfFileHasBeenUpdated[Gradle 2.14.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > fileDependenciesWithMultipleSourcesTriggersDownloadTask[Gradle 2.14.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest STANDARD_OUT
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   |     Killing Gradle process 1144
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadOnlyIfNewer[Gradle 3.5.1] STANDARD_OUT
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   |     Downloading https://services.gradle.org/distributions/gradle-3.5.1-bin.zip
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   |     .....................................................................
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadOnlyIfNewer[Gradle 3.5.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadMultipleFiles[Gradle 3.5.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadSingleFile[Gradle 3.5.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadOnlyIfNewerReDownloadIfFileExists[Gradle 3.5.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadFileURLOnlyIfNewer[Gradle 3.5.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > fileDependenciesTriggersDownloadTask[Gradle 3.5.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadSingleFileWithoutCompress[Gradle 3.5.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadSingleFileTwiceWithOfflineMode[Gradle 3.5.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadUseETag[Gradle 3.5.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadSingleFileWithQuietMode[Gradle 3.5.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadSingleFileTwiceWithOverwriteExecutesTwice[Gradle 3.5.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadSingleFileTwiceMarksTaskAsUpToDate[Gradle 3.5.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadOnlyIfNewerRedownloadsIfFileHasBeenUpdated[Gradle 3.5.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > fileDependenciesWithMultipleSourcesTriggersDownloadTask[Gradle 3.5.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest STANDARD_OUT
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   |     Killing Gradle process 1435
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadOnlyIfNewer[Gradle 4.10.3] STANDARD_OUT
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   |     Downloading https://services.gradle.org/distributions/gradle-4.10.3-bin.zip
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   |     ..........................................................................
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadOnlyIfNewer[Gradle 4.10.3] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadMultipleFiles[Gradle 4.10.3] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadSingleFile[Gradle 4.10.3] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadOnlyIfNewerReDownloadIfFileExists[Gradle 4.10.3] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadFileURLOnlyIfNewer[Gradle 4.10.3] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > fileDependenciesTriggersDownloadTask[Gradle 4.10.3] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadSingleFileWithoutCompress[Gradle 4.10.3] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadSingleFileTwiceWithOfflineMode[Gradle 4.10.3] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadUseETag[Gradle 4.10.3] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadSingleFileWithQuietMode[Gradle 4.10.3] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadSingleFileTwiceWithOverwriteExecutesTwice[Gradle 4.10.3] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadSingleFileTwiceMarksTaskAsUpToDate[Gradle 4.10.3] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadOnlyIfNewerRedownloadsIfFileHasBeenUpdated[Gradle 4.10.3] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > fileDependenciesWithMultipleSourcesTriggersDownloadTask[Gradle 4.10.3] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest STANDARD_OUT
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   |     Killing Gradle process 1748
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadOnlyIfNewer[Gradle 5.6.4] STANDARD_OUT
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   |     Downloading https://services.gradle.org/distributions/gradle-5.6.4-bin.zip
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   |     .........................................................................................
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadOnlyIfNewer[Gradle 5.6.4] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadMultipleFiles[Gradle 5.6.4] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadSingleFile[Gradle 5.6.4] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadOnlyIfNewerReDownloadIfFileExists[Gradle 5.6.4] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadFileURLOnlyIfNewer[Gradle 5.6.4] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > fileDependenciesTriggersDownloadTask[Gradle 5.6.4] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadSingleFileWithoutCompress[Gradle 5.6.4] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadSingleFileTwiceWithOfflineMode[Gradle 5.6.4] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadUseETag[Gradle 5.6.4] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadSingleFileWithQuietMode[Gradle 5.6.4] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadSingleFileTwiceWithOverwriteExecutesTwice[Gradle 5.6.4] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadSingleFileTwiceMarksTaskAsUpToDate[Gradle 5.6.4] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadOnlyIfNewerRedownloadsIfFileHasBeenUpdated[Gradle 5.6.4] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > fileDependenciesWithMultipleSourcesTriggersDownloadTask[Gradle 5.6.4] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest STANDARD_OUT
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   |     Killing Gradle process 4297
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadOnlyIfNewer[Gradle 6.0.1] STANDARD_OUT
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   |     Downloading https://services.gradle.org/distributions/gradle-6.0.1-bin.zip
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   |     ..........................................................................................
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadOnlyIfNewer[Gradle 6.0.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadMultipleFiles[Gradle 6.0.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadSingleFile[Gradle 6.0.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadOnlyIfNewerReDownloadIfFileExists[Gradle 6.0.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadFileURLOnlyIfNewer[Gradle 6.0.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > fileDependenciesTriggersDownloadTask[Gradle 6.0.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadSingleFileWithoutCompress[Gradle 6.0.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadSingleFileTwiceWithOfflineMode[Gradle 6.0.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadUseETag[Gradle 6.0.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadSingleFileWithQuietMode[Gradle 6.0.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadSingleFileTwiceWithOverwriteExecutesTwice[Gradle 6.0.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadSingleFileTwiceMarksTaskAsUpToDate[Gradle 6.0.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > downloadOnlyIfNewerRedownloadsIfFileHasBeenUpdated[Gradle 6.0.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.FunctionalDownloadTest > fileDependenciesWithMultipleSourcesTriggersDownloadTask[Gradle 6.0.1] PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.ETagTest > forceDownloadIfDestNotExists PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.ETagTest > storeStrongOnly PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.ETagTest > dontDownloadIfEqual PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.ETagTest > storeWeakETagIssueWarning STANDARD_OUT
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   |     Weak entity tag (ETag) encountered. Please make sure you want to compare resources based on weak ETags. If yes, set the 'useETag' flag to "all", otherwise set it to "strongOnly".
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.ETagTest > storeWeakETagIssueWarning PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.ETagTest > storeMultipleETags PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.ETagTest > modifiedDownload PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.ETagTest > storeAllETags PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.ETagTest > invalidUseETagFlag PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.ETagTest > missingETag STANDARD_OUT
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   |     Server response does not include an entity tag (ETag).
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.ETagTest > missingETag PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.ETagTest > configureCachedETagsFile PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.ETagTest > storeETag PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.ETagTest > configureDownloadTaskDir PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.ETagTest > incorrectETag PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.SslTest > acceptAnyCertificate PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.SslTest > unknownCertificate PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.OfflineTest > offlineFail PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.OfflineTest > offlineSkip PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.DownloadTest > downloadMultipleFiles PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.DownloadTest > downloadMultipleFilesCreatesDestDirAutomatically PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.DownloadTest > testInvalidDest PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.DownloadTest > downloadSingleFile PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.DownloadTest > testExecuteEmptyDest PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.DownloadTest > testArraySrc PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.DownloadTest > downloadMultipleFilesToFile PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.DownloadTest > providerSrcAndDest PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.DownloadTest > testExecuteEmptySrc PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.DownloadTest > downloadSingleFileToRelativePath PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.DownloadTest > downloadSingleURL PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.DownloadTest > downloadSingleFileToDir PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.DownloadTest > testFileDownloadURL PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.DownloadTest > skipExisting PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.DownloadTest > lazySrcAndDest PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.DownloadTest > testFileDownloadURLOverwriteTrue PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.DownloadTest > testInvalidSrc PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.RetryTest > retryUpToThree PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.RetryTest > retryThree PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.RetryTest > retryDefault PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.RetryTest > retryOnce PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.RetryTest > inifinite PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.RetryTest > retryTwo PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.HeadersTest > downloadWithHeaders PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.HeadersTest > downloadWithHeadersMap PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.HeadersTest > downloadWithNoHeaders PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.AuthenticationTest > invalidAuthSchemeString PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.AuthenticationTest > invalidCredentials PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.AuthenticationTest > noDefaultAuthScheme PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.AuthenticationTest > validUserAndPass PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.AuthenticationTest > noAuthorization PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.AuthenticationTest > validDigest PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.ProxyTest > nonProxyHosts PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.ProxyTest > normalProxy PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.ProxyTest > authenticationProxy PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.OutputsTest > singleOutputFileWithDestinationFile PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.OutputsTest > emptyOutputs PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.OutputsTest > singleOutputFileWithDestinationDirectory PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.OutputsTest > multipleOutputFiles PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.ContentLengthTest > missingContentLength PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.ContentLengthTest > tooLargeContentLength PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.ContentLengthTest > correctContentLength PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.RedirectTest > circularRedirect PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.RedirectTest > oneRedirect PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.RedirectTest > tooManyRedirects PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | de.undercouch.gradle.tasks.download.RedirectTest > tenRedirect PASSED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 160 tests completed, 1 failed
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | > Task :test FAILED
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | FAILURE: Build failed with an exception.
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | * What went wrong:
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | Execution failed for task ':test'.
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | > There were failing tests. See the report at: file:///tmp/7a60f59f-5f2b-474f-a777-41125ec6a8fa/build/reports/tests/test/index.html
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | * Try:
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | * Get more help at https://help.gradle.org
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | BUILD FAILED in 3m 38s
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   | 8 actionable tasks: 2 executed, 6 up-to-date
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   ❌  Failure - Main Run unit tests
+[c37ed758-2bfd-45db-929b-0f173855881d/build] exitcode '1': failure
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'
+[c37ed758-2bfd-45db-929b-0f173855881d/build] ⭐ Run Post Set up JDK 1.8
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=
+[c37ed758-2bfd-45db-929b-0f173855881d/build]   ✅  Success - Post Set up JDK 1.8
+[c37ed758-2bfd-45db-929b-0f173855881d/build] 🏁  Job failed
+[c37ed758-2bfd-45db-929b-0f173855881d/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '36cf9d5ae51c19fc50f3fbaa9d95e5a96d11d415'

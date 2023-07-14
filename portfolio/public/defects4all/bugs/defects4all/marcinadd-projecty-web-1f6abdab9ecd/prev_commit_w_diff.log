@@ -1,0 +1,175 @@
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] 🚀  Start image=crawlergpt:latest
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   🐳  docker pull image=crawlergpt:latest platform= username= forcePull=false
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   🐳  docker create image=crawlergpt:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   🐳  docker run image=crawlergpt:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/6aec03d0-764c-4512-be10-a841f48b0beb] user=0 workdir=
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] ⭐ Run Main actions/checkout@v1
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   ✅  Success - Main actions/checkout@v1
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] ⭐ Run Main Set up JDK 1.8
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   🐳  docker cp src=/tmp/act-cache/015e31a5-175a-4b38-bc80-b393485ecace/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v1/] user=0 workdir=
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/setup/index.js] user= workdir=
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   💬  ::debug::isExplicit: 
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   💬  ::debug::explicit? false
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   💬  ::debug::evaluating 0 versions
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   💬  ::debug::match not found
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   💬  ::debug::Downloading JDK from Azul
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   💬  ::debug::Searching for files with extension: -linux_x64.tar.gz
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   💬  ::debug::Downloading https://static.azul.com/zulu/bin/zulu8.70.0.23-ca-jdk8.0.372-linux_x64.tar.gz
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   💬  ::debug::Downloading /tmp/5e1b4f7f-41db-4549-9fd2-f2c91e38a0ba
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   💬  ::debug::download complete
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | [command]/usr/bin/tar --version
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | tar (GNU tar) 1.30
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | Copyright (C) 2017 Free Software Foundation, Inc.
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | This is free software: you are free to change and redistribute it.
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | There is NO WARRANTY, to the extent permitted by law.
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | Written by John Gilmore and Jay Fenlason.
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/temp_1145160690 -f /tmp/5e1b4f7f-41db-4549-9fd2-f2c91e38a0ba
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   💬  ::debug::jdk extracted to /tmp/temp_1145160690/zulu8.70.0.23-ca-jdk8.0.372-linux_x64
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   💬  ::debug::Caching tool jdk 8.0.372 x64
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   💬  ::debug::source dir: /tmp/temp_1145160690/zulu8.70.0.23-ca-jdk8.0.372-linux_x64
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   💬  ::debug::destination /opt/hostedtoolcache/jdk/8.0.372/x64
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   💬  ::debug::finished caching tool
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   ❓ add-matcher /run/act/actions/actions-setup-java@v1/.github/java.json
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | creating settings.xml with server-id: github; environment variables: username=$GITHUB_ACTOR, password=$GITHUB_TOKEN, and gpg-passphrase=null
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   💬  ::debug::created directory /home/runneradmin/.m2
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | writing /home/runneradmin/.m2/settings.xml
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   ✅  Success - Main Set up JDK 1.8
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   ⚙  ::set-env:: JAVA_HOME_8.0.372_x64=/opt/hostedtoolcache/jdk/8.0.372/x64
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   ⚙  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/jdk/8.0.372/x64
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   ⚙  ::set-env:: JAVA_HOME_8_0_372_X64=/opt/hostedtoolcache/jdk/8.0.372/x64
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   ⚙  ::set-output:: path=/opt/hostedtoolcache/jdk/8.0.372/x64
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   ⚙  ::set-output:: version=8.0.372
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   ⚙  ::add-path:: /opt/hostedtoolcache/jdk/8.0.372/x64/bin
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] ⭐ Run Main Build with Gradle
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | Downloading https://services.gradle.org/distributions/gradle-5.2.1-all.zip
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | ..............................................................................................................................
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | Welcome to Gradle 5.2.1!
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | Here are the highlights of this release:
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   |  - Define sets of dependencies that work together with Java Platform plugin
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   |  - New C++ plugins with dependency management built-in
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   |  - New C++ project types for gradle init
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   |  - Service injection into plugins and project extensions
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | For more details see https://docs.gradle.org/5.2.1/release-notes.html
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | Starting a Gradle Daemon (subsequent builds will be faster)
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | > Task :compileJava UP-TO-DATE
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | > Task :processResources UP-TO-DATE
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | > Task :classes UP-TO-DATE
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | > Task :bootJar UP-TO-DATE
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | > Task :jar SKIPPED
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | > Task :assemble UP-TO-DATE
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | > Task :compileTestJava
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | > Task :processTestResources UP-TO-DATE
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | > Task :testClasses
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | > Task :test
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | com.projecty.projectyweb.message.MessageControllerTests > givenRequestOnReplyToYourself_shouldReturnBadRequest FAILED
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   |     java.lang.AssertionError at MessageControllerTests.java:224
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | com.projecty.projectyweb.message.MessageControllerTests > givenRequestOnReply_shouldReturnOk FAILED
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   |     java.lang.AssertionError at MessageControllerTests.java:236
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.616  INFO 582 --- [       Thread-9] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.621  INFO 582 --- [      Thread-27] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.622  INFO 582 --- [      Thread-11] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.623  INFO 582 --- [      Thread-18] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.625  INFO 582 --- [       Thread-6] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.632  INFO 582 --- [      Thread-14] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.632  INFO 582 --- [      Thread-22] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.633  INFO 582 --- [       Thread-9] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.633  INFO 582 --- [       Thread-9] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.633  INFO 582 --- [      Thread-24] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.639  INFO 582 --- [      Thread-18] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.639  INFO 582 --- [      Thread-27] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.639  INFO 582 --- [      Thread-18] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.640  INFO 582 --- [      Thread-27] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.642  INFO 582 --- [      Thread-14] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.642  INFO 582 --- [      Thread-14] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.646  INFO 582 --- [       Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.646  INFO 582 --- [       Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.646  INFO 582 --- [      Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.646  INFO 582 --- [       Thread-6] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.646  INFO 582 --- [      Thread-14] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.646  INFO 582 --- [      Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.647  INFO 582 --- [      Thread-22] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.647  INFO 582 --- [      Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.647  INFO 582 --- [      Thread-22] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.647  INFO 582 --- [      Thread-11] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.647  INFO 582 --- [      Thread-24] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.647  INFO 582 --- [      Thread-24] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.650  INFO 582 --- [      Thread-24] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.650  INFO 582 --- [       Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.650  INFO 582 --- [      Thread-22] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.654  INFO 582 --- [      Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.657  INFO 582 --- [      Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.657  INFO 582 --- [       Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.656  INFO 582 --- [       Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.658  INFO 582 --- [      Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.658  INFO 582 --- [      Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.658  INFO 582 --- [      Thread-14] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.658  INFO 582 --- [      Thread-22] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 2023-07-12 11:47:47.658  INFO 582 --- [      Thread-24] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 82 tests completed, 2 failed
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | > Task :test FAILED
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | FAILURE: Build failed with an exception.
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | * What went wrong:
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | Execution failed for task ':test'.
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | > There were failing tests. See the report at: file:///tmp/6aec03d0-764c-4512-be10-a841f48b0beb/build/reports/tests/test/index.html
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | * Try:
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | Run with --stacktrace6 actionable tasks: 2 executed, 4 up-to-date
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   |  option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | * Get more help at https://help.gradle.org
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | 
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   | BUILD FAILED in 1m 44s
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   ❌  Failure - Main Build with Gradle
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] exitcode '1': failure
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] ⭐ Run Post Set up JDK 1.8
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=
+[5965b5cf-1a4a-4086-b899-547370f644bb/build]   ✅  Success - Post Set up JDK 1.8
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] 🏁  Job failed
+[5965b5cf-1a4a-4086-b899-547370f644bb/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b5711f37b288b0007946cc5179b5e8bb53a54df1'

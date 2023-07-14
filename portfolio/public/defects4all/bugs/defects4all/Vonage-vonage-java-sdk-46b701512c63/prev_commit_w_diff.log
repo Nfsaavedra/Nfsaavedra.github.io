@@ -1,0 +1,131 @@
+[b9c73520-f4ae-4133-8007-338b96318251/build] 🚀  Start image=crawlergpt:latest
+[b9c73520-f4ae-4133-8007-338b96318251/build]   🐳  docker pull image=crawlergpt:latest platform= username= forcePull=false
+[b9c73520-f4ae-4133-8007-338b96318251/build]   🐳  docker create image=crawlergpt:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[b9c73520-f4ae-4133-8007-338b96318251/build]   🐳  docker run image=crawlergpt:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[b9c73520-f4ae-4133-8007-338b96318251/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/ab2ed543-2974-4655-8b0a-e66d0c946f73] user=0 workdir=
+[b9c73520-f4ae-4133-8007-338b96318251/build] 🧪  Matrix: map[java:8 os:ubuntu-latest]
+[b9c73520-f4ae-4133-8007-338b96318251/build] ⭐ Run Main Checkout the repo
+[b9c73520-f4ae-4133-8007-338b96318251/build]   ✅  Success - Main Checkout the repo
+[b9c73520-f4ae-4133-8007-338b96318251/build] ⭐ Run Main Setup Java
+[b9c73520-f4ae-4133-8007-338b96318251/build]   🐳  docker cp src=/tmp/act-cache/bc2f0fed-c927-4073-a547-cb4c156d6609/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/
+[b9c73520-f4ae-4133-8007-338b96318251/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=
+[b9c73520-f4ae-4133-8007-338b96318251/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=
+[b9c73520-f4ae-4133-8007-338b96318251/build]   ❓  ::group::Installed distributions
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | Trying to resolve the latest version from remote
+[b9c73520-f4ae-4133-8007-338b96318251/build]   💬  ::debug::Gathering available versions from 'https://api.azul.com/zulu/download/community/v1.0/bundles/?os=linux&ext=tar.gz&bundle_type=jdk&javafx=false&arch=x86&hw_bitness=64&release_status=ga'
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | Resolved latest version as 8.0.372+7
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | Trying to download...
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | Downloading Java 8.0.372+7 (Zulu) from https://cdn.azul.com/zulu/bin/zulu8.70.0.23-ca-jdk8.0.372-linux_x64.tar.gz ...
+[b9c73520-f4ae-4133-8007-338b96318251/build]   💬  ::debug::Downloading https://cdn.azul.com/zulu/bin/zulu8.70.0.23-ca-jdk8.0.372-linux_x64.tar.gz
+[b9c73520-f4ae-4133-8007-338b96318251/build]   💬  ::debug::Destination /tmp/7a044bde-9dbf-45fd-95e0-4caffbca118e
+[b9c73520-f4ae-4133-8007-338b96318251/build]   💬  ::debug::download complete
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | Extracting Java archive...
+[b9c73520-f4ae-4133-8007-338b96318251/build]   💬  ::debug::Checking tar --version
+[b9c73520-f4ae-4133-8007-338b96318251/build]   💬  ::debug::tar (GNU tar) 1.30%0ACopyright (C) 2017 Free Software Foundation, Inc.%0ALicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.%0AThis is free software: you are free to change and redistribute it.%0AThere is NO WARRANTY, to the extent permitted by law.%0A%0AWritten by John Gilmore and Jay Fenlason.
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/d1899a2a-479f-4d14-adef-d60f194ae8e0 -f /tmp/7a044bde-9dbf-45fd-95e0-4caffbca118e
+[b9c73520-f4ae-4133-8007-338b96318251/build]   💬  ::debug::Caching tool Java_Zulu_jdk 8.0.372-7 x64
+[b9c73520-f4ae-4133-8007-338b96318251/build]   💬  ::debug::source dir: /tmp/d1899a2a-479f-4d14-adef-d60f194ae8e0/zulu8.70.0.23-ca-jdk8.0.372-linux_x64
+[b9c73520-f4ae-4133-8007-338b96318251/build]   💬  ::debug::destination /opt/hostedtoolcache/Java_Zulu_jdk/8.0.372-7/x64
+[b9c73520-f4ae-4133-8007-338b96318251/build]   💬  ::debug::finished caching tool
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | Java 8.0.372+7 was downloaded
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | Setting Java 8.0.372+7 as the default
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | Creating toolchains.xml for JDK version 8 from zulu
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | Writing to /home/runneradmin/.m2/toolchains.xml
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | 
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | Java configuration:
+[b9c73520-f4ae-4133-8007-338b96318251/build]   |   Distribution: zulu
+[b9c73520-f4ae-4133-8007-338b96318251/build]   |   Version: 8.0.372+7
+[b9c73520-f4ae-4133-8007-338b96318251/build]   |   Path: /opt/hostedtoolcache/Java_Zulu_jdk/8.0.372-7/x64
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | 
+[b9c73520-f4ae-4133-8007-338b96318251/build]   ❓  ::endgroup::
+[b9c73520-f4ae-4133-8007-338b96318251/build]   ❓ add-matcher /run/act/actions/actions-setup-java@v3/.github/java.json
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | Creating settings.xml with server-id: github
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | Writing to /home/runneradmin/.m2/settings.xml
+[b9c73520-f4ae-4133-8007-338b96318251/build]   ✅  Success - Main Setup Java
+[b9c73520-f4ae-4133-8007-338b96318251/build]   ⚙  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Zulu_jdk/8.0.372-7/x64
+[b9c73520-f4ae-4133-8007-338b96318251/build]   ⚙  ::set-env:: JAVA_HOME_8_X64=/opt/hostedtoolcache/Java_Zulu_jdk/8.0.372-7/x64
+[b9c73520-f4ae-4133-8007-338b96318251/build]   ⚙  ::set-output:: distribution=Zulu
+[b9c73520-f4ae-4133-8007-338b96318251/build]   ⚙  ::set-output:: path=/opt/hostedtoolcache/Java_Zulu_jdk/8.0.372-7/x64
+[b9c73520-f4ae-4133-8007-338b96318251/build]   ⚙  ::set-output:: version=8.0.372+7
+[b9c73520-f4ae-4133-8007-338b96318251/build]   ⚙  ::add-path:: /opt/hostedtoolcache/Java_Zulu_jdk/8.0.372-7/x64/bin
+[b9c73520-f4ae-4133-8007-338b96318251/build] ⭐ Run Main Grant execute permission for gradlew
+[b9c73520-f4ae-4133-8007-338b96318251/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=
+[b9c73520-f4ae-4133-8007-338b96318251/build]   ✅  Success - Main Grant execute permission for gradlew
+[b9c73520-f4ae-4133-8007-338b96318251/build] ⭐ Run Main Cache Gradle packages
+[b9c73520-f4ae-4133-8007-338b96318251/build]   🐳  docker cp src=/tmp/act-cache/bc2f0fed-c927-4073-a547-cb4c156d6609/act/actions-cache@v3/ dst=/var/run/act/actions/actions-cache@v3/
+[b9c73520-f4ae-4133-8007-338b96318251/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-cache@v3/] user=0 workdir=
+[b9c73520-f4ae-4133-8007-338b96318251/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-cache@v3/dist/restore/index.js] user= workdir=
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | [warning]An internal error has occurred in cache backend. Please check https://www.githubstatus.com/ for any ongoing issue in actions.
+[b9c73520-f4ae-4133-8007-338b96318251/build]   ✅  Success - Main Cache Gradle packages
+[b9c73520-f4ae-4133-8007-338b96318251/build]   ⚙  ::set-output:: cache-hit=false
+[b9c73520-f4ae-4133-8007-338b96318251/build] ⭐ Run Main Build with Gradle
+[b9c73520-f4ae-4133-8007-338b96318251/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | Downloading https://services.gradle.org/distributions/gradle-7.4.2-all.zip
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | ...............10%...............20%...............30%...............40%...............50%................60%...............70%...............80%...............90%...............100%
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | 
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | Welcome to Gradle 7.4.2!
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | 
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | Here are the highlights of this release:
+[b9c73520-f4ae-4133-8007-338b96318251/build]   |  - Aggregated test and JaCoCo reports
+[b9c73520-f4ae-4133-8007-338b96318251/build]   |  - Marking additional test source directories as tests in IntelliJ
+[b9c73520-f4ae-4133-8007-338b96318251/build]   |  - Support for Adoptium JDKs in Java toolchains
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | 
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | For more details see https://docs.gradle.org/7.4.2/release-notes.html
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | 
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | Starting a Gradle Daemon (subsequent builds will be faster)
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | > Task :compileJava UP-TO-DATE
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | > Task :processResources NO-SOURCE
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | > Task :classes UP-TO-DATE
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | > Task :jar UP-TO-DATE
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | > Task :javadoc UP-TO-DATE
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | > Task :javadocJar UP-TO-DATE
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | > Task :sourcesJar UP-TO-DATE
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | > Task :assemble UP-TO-DATE
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | > Task :compileTestJava
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | > Task :processTestResources UP-TO-DATE
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | > Task :testClasses
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | 
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | > Task :test
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | 
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | com.vonage.client.messages.SendMessageEndpointTest > testParseResponseNoBody FAILED
+[b9c73520-f4ae-4133-8007-338b96318251/build]   |     com.vonage.client.VonageUnexpectedException: Failed to produce MessageResponseException from json.
+[b9c73520-f4ae-4133-8007-338b96318251/build]   |         at com.vonage.client.messages.MessageResponseException.fromJson(MessageResponseException.java:134)
+[b9c73520-f4ae-4133-8007-338b96318251/build]   |         at com.vonage.client.messages.SendMessageEndpoint.parseResponse(SendMessageEndpoint.java:64)
+[b9c73520-f4ae-4133-8007-338b96318251/build]   |         at com.vonage.client.messages.SendMessageEndpointTest.testParseResponseNoBody(SendMessageEndpointTest.java:87)
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | 
+[b9c73520-f4ae-4133-8007-338b96318251/build]   |         Caused by:
+[b9c73520-f4ae-4133-8007-338b96318251/build]   |         com.fasterxml.jackson.databind.exc.MismatchedInputException: No content to map due to end-of-input
+[b9c73520-f4ae-4133-8007-338b96318251/build]   |          at [Source: (String)""; line: 1, column: 0]
+[b9c73520-f4ae-4133-8007-338b96318251/build]   |             at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:59)
+[b9c73520-f4ae-4133-8007-338b96318251/build]   |             at com.fasterxml.jackson.databind.ObjectMapper._initForReading(ObjectMapper.java:4765)
+[b9c73520-f4ae-4133-8007-338b96318251/build]   |             at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4667)
+[b9c73520-f4ae-4133-8007-338b96318251/build]   |             at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3629)
+[b9c73520-f4ae-4133-8007-338b96318251/build]   |             at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3597)
+[b9c73520-f4ae-4133-8007-338b96318251/build]   |             at com.vonage.client.messages.MessageResponseException.fromJson(MessageResponseException.java:131)
+[b9c73520-f4ae-4133-8007-338b96318251/build]   |             ... 2 more
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | 
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | 811 tests completed, 1 failed
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | 
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | > Task :test FAILED
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | 8 actionable tasks: 2 executed, 6 up-to-date
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | 
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | FAILURE: Build failed with an exception.
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | 
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | * What went wrong:
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | Execution failed for task ':test'.
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | > There were failing tests. See the report at: file:///tmp/ab2ed543-2974-4655-8b0a-e66d0c946f73/build/reports/tests/test/index.html
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | 
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | * Try:
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | > Run with --stacktrace option to get the stack trace.
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | > Run with --info or --debug option to get more log output.
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | > Run with --scan to get full insights.
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | 
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | * Get more help at https://help.gradle.org
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | 
+[b9c73520-f4ae-4133-8007-338b96318251/build]   | BUILD FAILED in 1m 25s
+[b9c73520-f4ae-4133-8007-338b96318251/build]   ❌  Failure - Main Build with Gradle
+[b9c73520-f4ae-4133-8007-338b96318251/build] exitcode '1': failure
+[b9c73520-f4ae-4133-8007-338b96318251/build] ⭐ Run Post Setup Java
+[b9c73520-f4ae-4133-8007-338b96318251/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=
+[b9c73520-f4ae-4133-8007-338b96318251/build]   ✅  Success - Post Setup Java
+[b9c73520-f4ae-4133-8007-338b96318251/build] 🏁  Job failed

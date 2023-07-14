@@ -1,0 +1,189 @@
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] 🚀  Start image=crawlergpt:latest
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   🐳  docker pull image=crawlergpt:latest platform= username= forcePull=false
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   🐳  docker create image=crawlergpt:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   🐳  docker run image=crawlergpt:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/3e0bc18f-2f76-48e4-9fb8-3bcd381718b8] user=0 workdir=
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] ⭐ Run Main actions/checkout@v2
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   ✅  Success - Main actions/checkout@v2
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] ⭐ Run Main actions/setup-java@v1
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   🐳  docker cp src=/tmp/act-cache/cd6893a3-9612-4ff7-bdcd-5067f17d07c4/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v1/] user=0 workdir=
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/setup/index.js] user= workdir=
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   💬  ::debug::isExplicit: 
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   💬  ::debug::explicit? false
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   💬  ::debug::evaluating 0 versions
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   💬  ::debug::match not found
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   💬  ::debug::Downloading JDK from Azul
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   💬  ::debug::Searching for files with extension: -linux_x64.tar.gz
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   💬  ::debug::Downloading https://static.azul.com/zulu/bin/zulu8.70.0.23-ca-jdk8.0.372-linux_x64.tar.gz
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   💬  ::debug::Downloading /tmp/2ec935c1-e26d-4f70-b090-3738c3f62021
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   💬  ::debug::download complete
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | [command]/usr/bin/tar --version
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | tar (GNU tar) 1.30
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | Copyright (C) 2017 Free Software Foundation, Inc.
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | This is free software: you are free to change and redistribute it.
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | There is NO WARRANTY, to the extent permitted by law.
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | 
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | Written by John Gilmore and Jay Fenlason.
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/temp_723643980 -f /tmp/2ec935c1-e26d-4f70-b090-3738c3f62021
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   💬  ::debug::jdk extracted to /tmp/temp_723643980/zulu8.70.0.23-ca-jdk8.0.372-linux_x64
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   💬  ::debug::Caching tool jdk 8.0.372 x64
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   💬  ::debug::source dir: /tmp/temp_723643980/zulu8.70.0.23-ca-jdk8.0.372-linux_x64
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   💬  ::debug::destination /opt/hostedtoolcache/jdk/8.0.372/x64
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   💬  ::debug::finished caching tool
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   ❓ add-matcher /run/act/actions/actions-setup-java@v1/.github/java.json
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | creating settings.xml with server-id: github; environment variables: username=$GITHUB_ACTOR, password=$GITHUB_TOKEN, and gpg-passphrase=null
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   💬  ::debug::created directory /home/runneradmin/.m2
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | writing /home/runneradmin/.m2/settings.xml
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   ✅  Success - Main actions/setup-java@v1
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   ⚙  ::set-env:: JAVA_HOME_8.0.372_x64=/opt/hostedtoolcache/jdk/8.0.372/x64
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   ⚙  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/jdk/8.0.372/x64
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   ⚙  ::set-env:: JAVA_HOME_8_0_372_X64=/opt/hostedtoolcache/jdk/8.0.372/x64
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   ⚙  ::set-output:: path=/opt/hostedtoolcache/jdk/8.0.372/x64
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   ⚙  ::set-output:: version=8.0.372
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   ⚙  ::add-path:: /opt/hostedtoolcache/jdk/8.0.372/x64/bin
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] ⭐ Run Main Build
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | Downloading https://services.gradle.org/distributions/gradle-6.8.3-bin.zip
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | ......................................................................................................
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | 
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | Welcome to Gradle 6.8.3!
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | 
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | Here are the highlights of this release:
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   |  - Faster Kotlin DSL script compilation
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   |  - Vendor selection for Java toolchains
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   |  - Convenient execution of tasks in composite builds
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   |  - Consistent dependency resolution
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | 
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | For more details see https://docs.gradle.org/6.8.3/release-notes.html
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | 
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | Starting a Gradle Daemon (subsequent builds will be faster)
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | 
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | > Task :compileJava
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | Note: Some input files use or override a deprecated API.
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | Note: Recompile with -Xlint:deprecation for details.
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | 
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | > Task :processResources NO-SOURCE
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | > Task :classes
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | > Task :jar
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | > Task :assemble
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | 
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | > Task :compileTestJava
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | Note: Some input files use or override a deprecated API.
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | Note: Recompile with -Xlint:deprecation for details.
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | 
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | > Task :processTestResources NO-SOURCE
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | > Task :testClasses
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | > Task :test
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | > Task :jacocoTestReport
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | > Task :spotlessJava
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | > Task :spotlessJavaCheck
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | > Task :spotlessCheck
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | > Task :check
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | > Task :build
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | 
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | BUILD SUCCESSFUL in 1m 45s
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | 7 actionable tasks: 7 executed
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   ✅  Success - Main Build
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] ⭐ Run Main Coverage
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | 
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   |   _____          _
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   |  / ____|        | |
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | | |     ___   __| | ___  ___ _____   __
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | | |    / _ \ / _` |/ _ \/ __/ _ \ \ / /
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | | |___| (_) | (_| |  __/ (_| (_) \ V /
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   |  \_____\___/ \__,_|\___|\___\___/ \_/
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   |                               Bash-1.0.6
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | 
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | 
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | [0;36m==>[0m git version 2.33.0 found
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | [0;36m==>[0m curl 7.68.0 (x86_64-pc-linux-gnu) libcurl/7.68.0 OpenSSL/1.1.1f zlib/1.2.11 brotli/1.0.7 libidn2/2.2.0 libpsl/0.21.0 (+libidn2/2.2.0) libssh/0.9.3/openssl/zlib nghttp2/1.40.0 librtmp/2.3
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | Release-Date: 2020-01-08
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | Protocols: dict file ftp ftps gopher http https imap imaps ldap ldaps pop3 pop3s rtmp rtsp scp sftp smb smbs smtp smtps telnet tftp 
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | Features: AsynchDNS brotli GSS-API HTTP2 HTTPS-proxy IDN IPv6 Kerberos Largefile libz NTLM NTLM_WB PSL SPNEGO SSL TLS-SRP UnixSockets
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | [0;90m==>[0m GitHub Actions detected.
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   |     Env vars used:
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   |       -> GITHUB_ACTIONS:    true
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   |       -> GITHUB_HEAD_REF:   
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   |       -> GITHUB_REF:        refs/heads/master
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   |       -> GITHUB_REPOSITORY: sizovs/PipelinR
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   |       -> GITHUB_RUN_ID:     1
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   |       -> GITHUB_SHA:        35b9371be5c858f68eb80da37f3a34872119d860
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   |       -> GITHUB_WORKFLOW:   3e219fb9-f6dd-46a8-ad7a-16dd463202cc
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   |     [0;90mcurrent dir: [0m /tmp/3e0bc18f-2f76-48e4-9fb8-3bcd381718b8
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   |     [0;90mproject root:[0m .
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   |     [0;32mYaml not found, that's ok! Learn more at[0m [0;36mhttp://docs.codecov.io/docs/codecov-yaml[0m
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | [0;90m==>[0m Running gcov in . [0;90m(disable via -X gcov)[0m
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | [0;90m==>[0m Python coveragepy not found
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | [0;90m==>[0m Searching for coverage reports in:
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   |     [0;32m+[0m .
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   |     [0;90m->[0m Found 1 reports
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | [0;90m==>[0m Detecting git/mercurial file structure
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | [0;90m==>[0m Reading reports
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   |     [0;32m+[0m ./build/reports/jacoco/test/jacocoTestReport.xml [0;90mbytes=46576[0m
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | [0;90m==>[0m Appending adjustments
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   |     [0;36mhttps://docs.codecov.io/docs/fixing-reports[0m
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   |     [0;90m->[0m No adjustments found
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | [0;90m==>[0m Gzipping contents
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   |         4.0K	/tmp/codecov.XErCMW.gz
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | [0;90m==>[0m Uploading reports
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   |     [0;90murl:[0m https://codecov.io
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   |     [0;90mquery:[0m branch=master&commit=35b9371be5c858f68eb80da37f3a34872119d860&build=1&build_url=https%3A%2F%2Fgithub.com%2Fsizovs%2FPipelinR%2Factions%2Fruns%2F1&name=&tag=&slug=sizovs%2FPipelinR&service=github-actions&flags=&pr=&job=3e219fb9-f6dd-46a8-ad7a-16dd463202cc&cmd_args=
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | [0;90m->[0m  Pinging Codecov
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | https://codecov.io/upload/v4?package=bash-1.0.6&token=<hidden>&package=bash-1.0.6&token=&branch=master&commit=35b9371be5c858f68eb80da37f3a34872119d860&build=1&build_url=https%3A%2F%2Fgithub.com%2Fsizovs%2FPipelinR%2Factions%2Fruns%2F1&name=&tag=&slug=sizovs%2FPipelinR&service=github-actions&flags=&pr=&job=3e219fb9-f6dd-46a8-ad7a-16dd463202cc&cmd_args=
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | [0;31m{'detail': ErrorDetail(string='Unable to locate build via Github Actions API. Please upload with the Codecov repository upload token to resolve issue.', code='not_found')}
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | 404[0m
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   | [0;90m==>[0m Uploading to Codecov
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   |   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   |                                  Dload  Upload   Total   Spent    Left  Speed
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   |   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  3657  100   171  100  3486    571  11658 --:--:-- --:--:-- --:--:-- 12313
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   |     [0;32m{'detail': ErrorDetail(string='Unable to locate build via Github Actions API. Please upload with the Codecov repository upload token to resolve issue.', code='not_found')}[0m
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   ✅  Success - Main Coverage
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] ⭐ Run Post actions/setup-java@v1
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build]   ✅  Success - Post actions/setup-java@v1
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] 🏁  Job succeeded
+[3e219fb9-f6dd-46a8-ad7a-16dd463202cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '35b9371be5c858f68eb80da37f3a34872119d860'
