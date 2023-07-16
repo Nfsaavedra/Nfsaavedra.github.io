@@ -44,14 +44,12 @@ angular.module('defects4j-website', ['ngRoute', 'ui.bootstrap', 'anguFixedHeader
                             }
                             diff = diff.replace(/\\"/g, '"').replace(/\\n/g, "\n").replace(/\\t/g, "\t")
                         }
-                        var diff2htmlUi = new Diff2HtmlUI({
-                            diff: diff
-                        });
-                        diff2htmlUi.draw($(elem), {
+                        var diff2htmlUi = new Diff2HtmlUI($(elem)[0], diff, {
                             showFiles: false,
                             matching: 'none'
                         });
-                        diff2htmlUi.highlightCode($(elem));
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();
                     }
                 }
 
@@ -102,14 +100,12 @@ angular.module('defects4j-website', ['ngRoute', 'ui.bootstrap', 'anguFixedHeader
                             }
                             diff = diff.replace(/\\"/g, '"').replace(/\\n/g, "\n").replace(/\\t/g, "\t")
                         }
-                        var diff2htmlUi = new Diff2HtmlUI({
-                            diff: diff
-                        });
-                        diff2htmlUi.draw($(elem), {
+                        var diff2htmlUi = new Diff2HtmlUI($(elem)[0], diff, {
                             showFiles: false,
                             matching: 'none'
                         });
-                        diff2htmlUi.highlightCode($(elem));
+                        diff2htmlUi.draw();
+                        diff2htmlUi.highlightCode();
                     }
                 }
 
