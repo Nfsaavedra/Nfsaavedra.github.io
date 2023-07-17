@@ -51,7 +51,8 @@ with open('../defects4all.json', 'w') as defects4all:
                                 final_bug['failed_tests'].append({
                                     'classname': test['classname'],
                                     'name': test['name'],
-                                    'message': result['message']
+                                    'message': result['message'],
+                                    'type': result['type']
                                 })
                                 break
 
