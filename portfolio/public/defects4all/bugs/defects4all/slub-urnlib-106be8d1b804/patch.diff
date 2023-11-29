@@ -1,0 +1,42 @@
+diff --git a/src/main/java/de/slub/urn/RQF_RFC8141.java b/src/main/java/de/slub/urn/RQF_RFC8141.java
+index 02a0df4..0915cea 100644
+--- a/src/main/java/de/slub/urn/RQF_RFC8141.java
++++ b/src/main/java/de/slub/urn/RQF_RFC8141.java
+@@ -17,11 +17,13 @@
+ 
+ package de.slub.urn;
+ 
++import static java.util.Collections.EMPTY_MAP;
++
++import java.util.ArrayList;
+ import java.util.Collections;
++import java.util.List;
+ import java.util.Map;
+ 
+-import static java.util.Collections.EMPTY_MAP;
+-
+ /**
+  * Class for representing and parsing optional resolution, query and fragment components
+  * and making them accessible via unmodifiable maps.
+@@ -92,15 +94,19 @@ public final class RQF_RFC8141 {
+         StringBuilder sb = new StringBuilder();
+         if (!resolutionParameters.isEmpty()) {
+             sb.append("?+");
++            final List<String> acc = new ArrayList<>();
+             for (Map.Entry<String, String> kv : resolutionParameters.entrySet()) {
+-                sb.append(kv.getKey()).append('=').append(kv.getValue());
++                acc.add(kv.getKey() + "=" + kv.getValue());
+             }
++            sb.append(String.join("&", acc));
+         }
+         if (!queryParameters.isEmpty()) {
+             sb.append("?=");
++            final List<String> acc = new ArrayList<>();
+             for (Map.Entry<String, String> kv : queryParameters.entrySet()) {
+-                sb.append(kv.getKey()).append('=').append(kv.getValue());
++            	acc.add(kv.getKey() + "=" + kv.getValue());
+             }
++            sb.append(String.join("&", acc));
+         }
+         if (!fragment.isEmpty()) {
+             sb.append('#').append(fragment);

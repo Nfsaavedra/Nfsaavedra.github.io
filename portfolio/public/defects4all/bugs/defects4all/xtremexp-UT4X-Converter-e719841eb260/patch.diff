@@ -1,0 +1,23 @@
+diff --git a/src/main/java/org/xtx/ut4converter/t3d/T3DActor.java b/src/main/java/org/xtx/ut4converter/t3d/T3DActor.java
+index faed09b..e7fcd71 100644
+--- a/src/main/java/org/xtx/ut4converter/t3d/T3DActor.java
++++ b/src/main/java/org/xtx/ut4converter/t3d/T3DActor.java
+@@ -779,7 +779,17 @@ public abstract class T3DActor extends T3DObject {
+ 		this.convert();
+ 		this.scale(scaleFactor);
+ 
+-		return "Begin Map\nBegin Level\n" + toT3d() + "End Level\nEnd Map";
++		String convT3d = toT3d();
++
++		if (convT3d == null) {
++			convT3d = "";
++
++			for (T3DActor repActor : this.children) {
++				convT3d += repActor.toT3d();
++			}
++		}
++
++		return "Begin Map\nBegin Level\n" + convT3d + "End Level\nEnd Map";
+ 	}
+ 
+ 	protected void addComponent(final Component... components){

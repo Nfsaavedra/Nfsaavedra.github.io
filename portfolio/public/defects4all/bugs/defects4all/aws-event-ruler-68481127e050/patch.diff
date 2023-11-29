@@ -1,0 +1,66 @@
+diff --git a/src/main/software/amazon/event/ruler/JsonRuleCompiler.java b/src/main/software/amazon/event/ruler/JsonRuleCompiler.java
+index c6157f0..d76e22a 100644
+--- a/src/main/software/amazon/event/ruler/JsonRuleCompiler.java
++++ b/src/main/software/amazon/event/ruler/JsonRuleCompiler.java
+@@ -4,6 +4,8 @@ import com.fasterxml.jackson.core.JsonFactory;
+ import com.fasterxml.jackson.core.JsonParseException;
+ import com.fasterxml.jackson.core.JsonParser;
+ import com.fasterxml.jackson.core.JsonToken;
++import software.amazon.event.ruler.input.ParseException;
++
+ import java.io.IOException;
+ import java.io.InputStream;
+ import java.io.Reader;
+@@ -15,6 +17,8 @@ import java.util.Map;
+ import java.util.Set;
+ import java.util.stream.Collectors;
+ 
++import static software.amazon.event.ruler.input.DefaultParser.getParser;
++
+ /**
+  * Represents a updated compiler comparing to RuleCompiler class, it parses a rule described by a JSON string into
+  * a list of Map which is composed of field Patterns, each Map represents one dedicated match branch in the rule.
+@@ -494,7 +498,13 @@ public class JsonRuleCompiler {
+                 barf(parser, "wildcard match pattern must be a string");
+             }
+             final String parserText = parser.getText();
+-            final Patterns pattern = Patterns.wildcardMatch('"' + parserText + '"');
++            String value = '"' + parserText + '"';
++            try {
++                getParser().parse(MatchType.WILDCARD, value);
++            } catch (ParseException e) {
++                barf(parser, e.getLocalizedMessage());
++            }
++            final Patterns pattern = Patterns.wildcardMatch(value);
+             if (parser.nextToken() != JsonToken.END_OBJECT) {
+                 barf(parser, "Only one key allowed in match expression");
+             }
+diff --git a/src/main/software/amazon/event/ruler/RuleCompiler.java b/src/main/software/amazon/event/ruler/RuleCompiler.java
+index 872303d..01cce52 100644
+--- a/src/main/software/amazon/event/ruler/RuleCompiler.java
++++ b/src/main/software/amazon/event/ruler/RuleCompiler.java
+@@ -16,6 +16,9 @@ import com.fasterxml.jackson.core.JsonFactory;
+ import com.fasterxml.jackson.core.JsonParseException;
+ import com.fasterxml.jackson.core.JsonParser;
+ import com.fasterxml.jackson.core.JsonToken;
++import software.amazon.event.ruler.input.ParseException;
++
++import static software.amazon.event.ruler.input.DefaultParser.getParser;
+ 
+ /**
+  * Compiles Rules, expressed in JSON, for use in Ruler.
+@@ -393,7 +396,13 @@ public final class RuleCompiler {
+                 barf(parser, "wildcard match pattern must be a string");
+             }
+             final String parserText = parser.getText();
+-            final Patterns pattern = Patterns.wildcardMatch('"' + parserText + '"');
++            String value = '"' + parserText + '"';
++            try {
++                getParser().parse(MatchType.WILDCARD, value);
++            } catch (ParseException e) {
++                barf(parser, e.getLocalizedMessage());
++            }
++            final Patterns pattern = Patterns.wildcardMatch(value);
+             if (parser.nextToken() != JsonToken.END_OBJECT) {
+                 barf(parser, "Only one key allowed in match expression");
+             }

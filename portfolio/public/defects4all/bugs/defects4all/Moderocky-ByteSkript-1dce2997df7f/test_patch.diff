@@ -1,0 +1,22 @@
+diff --git a/src/test/java/org/byteskript/skript/test/SyntaxTreeTest.java b/src/test/java/org/byteskript/skript/test/SyntaxTreeTest.java
+index a882c7d..9da5a76 100644
+--- a/src/test/java/org/byteskript/skript/test/SyntaxTreeTest.java
++++ b/src/test/java/org/byteskript/skript/test/SyntaxTreeTest.java
+@@ -47,7 +47,6 @@ public class SyntaxTreeTest extends SkriptTest {
+             """, new Type("test"));
+         assert stream.toString().equals("""
+             
+-            
+             --test
+             
+             MemberDictionary():
+@@ -68,7 +67,8 @@ public class SyntaxTreeTest extends SkriptTest {
+               
+             EventLoad():
+             	EntryTriggerSection():
+-            		EffectPrint(StringLiteral("Foo"))""") : '"' + stream.toString() + '"';
++            		EffectPrint(StringLiteral("Foo"))
++            """) : '"' + stream.toString() + '"';
+     }
+     
+ }

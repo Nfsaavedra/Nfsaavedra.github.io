@@ -1,0 +1,16 @@
+diff --git a/src/main/java/org/traccar/protocol/Gt06ProtocolDecoder.java b/src/main/java/org/traccar/protocol/Gt06ProtocolDecoder.java
+index 5db06fc..383d4cb 100644
+--- a/src/main/java/org/traccar/protocol/Gt06ProtocolDecoder.java
++++ b/src/main/java/org/traccar/protocol/Gt06ProtocolDecoder.java
+@@ -828,7 +828,10 @@ public class Gt06ProtocolDecoder extends BaseProtocolDecoder {
+                 } else {
+                     position.set(Position.KEY_BATTERY_LEVEL, buf.readUnsignedByte() * 100 / 6);
+                     position.set(Position.KEY_RSSI, buf.readUnsignedByte());
+-                    position.set(Position.KEY_ALARM, decodeAlarm(buf.readUnsignedByte()));
++                    short alarmExtension = buf.readUnsignedByte();
++                    if (variant != Variant.VXT01) {
++                        position.set(Position.KEY_ALARM, decodeAlarm(alarmExtension));
++                    }
+                 }
+             }
+ 

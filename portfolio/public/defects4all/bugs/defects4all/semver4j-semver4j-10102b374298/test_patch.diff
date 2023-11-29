@@ -1,0 +1,18 @@
+diff --git a/src/test/java/org/semver4j/RangesListTest.java b/src/test/java/org/semver4j/RangesListTest.java
+index 1ad2197..c036232 100644
+--- a/src/test/java/org/semver4j/RangesListTest.java
++++ b/src/test/java/org/semver4j/RangesListTest.java
+@@ -13,4 +13,13 @@ public class RangesListTest {
+         //when/then
+         assertThat(rangesList.toString()).isEqualTo("<=2.6.8 or (>=3.0.0 and <=3.0.1)");
+     }
++
++    @Test
++    void shouldOmitOuterParentheses() {
++        //given
++        RangesList rangesList = RangesListFactory.create(">=3.0.0 <=3.0.1");
++
++        //when/then
++        assertThat(rangesList.toString()).isEqualTo(">=3.0.0 and <=3.0.1");
++    }
+ }

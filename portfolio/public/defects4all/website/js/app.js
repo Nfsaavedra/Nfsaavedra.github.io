@@ -167,9 +167,37 @@ angular.module('defects4j-website', ['ngRoute', 'ui.bootstrap', 'anguFixedHeader
                 }]
             }
         }
+        $ctrl.optionsHunks = {
+            title: {
+                display: true,
+                text: 'Number of Hunks'
+            },
+            tooltips: {
+                mode: 'index',
+                intersect: false
+            },
+            responsive: true,
+            scales: {
+                xAxes: [{
+                    stacked: true,
+                }],
+                yAxes: [{
+                    stacked: true
+                }]
+            }
+        }
         $ctrl.fixTimeLabels = ['<1h', '<6h', '<12h', '<24h', '<36h', '<48h', '<1w', '<1m', '>1m'];
+        $ctrl.hunksLabels = ['1', '2', '3', '4', '5', '>5'];
         $ctrl.series = ['java', 'python'];
 
+        $ctrl.hunksStats = {
+            '1': 0,
+            '2': 0,
+            '3': 0,
+            '4': 0,
+            '5': 0,
+            '>5': 0
+        }
 
         $ctrl.fixTimeStat = {
             "python": {
@@ -222,6 +250,11 @@ angular.module('defects4j-website', ['ngRoute', 'ui.bootstrap', 'anguFixedHeader
 
 
         for (var bug of $ctrl.bugs) {
+            if (bug.metrics.hunks > 5) {
+                $ctrl.hunksStats['>5']++
+            } else {
+                $ctrl.hunksStats[bug.metrics.hunks]++
+            }
 
             $ctrl.fileStat[bug.language].added += bug.files.added.length
             $ctrl.fileStat[bug.language].modified += bug.files.modified.length
@@ -247,10 +280,11 @@ angular.module('defects4j-website', ['ngRoute', 'ui.bootstrap', 'anguFixedHeader
         }
 
         $ctrl.fixTimeDate = (function() {
-            return [
-                Object.values($ctrl.fixTimeStat.java),
-                Object.values($ctrl.fixTimeStat.python),
-            ]
+            return Object.values($ctrl.fixTimeStat.java);
+        })()
+
+        $ctrl.hunks = (function() {
+            return Object.values($ctrl.hunksStats);
         })()
 
         this.ok = function() {
@@ -555,17 +589,17 @@ angular.module('defects4j-website', ['ngRoute', 'ui.bootstrap', 'anguFixedHeader
                 }
             }
             if ($scope.filters['source_only'] === false) {
-                if (bug.files_type === 'SOURCE_ONLY') {
+                if (bug.change_type === 'SOURCE_ONLY') {
                     return false
                 }
             }
             if ($scope.filters['mixed'] === false) {
-                if (bug.files_type === 'MIXED') {
+                if (bug.change_type === 'MIXED') {
                     return false
                 }
             }
             if ($scope.filters['non_source_only'] === false) {
-                if (bug.files_type === 'NON_SOURCE_ONLY') {
+                if (bug.change_type === 'NON_SOURCE_ONLY') {
                     return false
                 }
             }

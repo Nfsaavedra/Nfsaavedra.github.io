@@ -1,0 +1,996 @@
+[cfb92075-9f75-4118-afbe-d767424d6596/build] 🚀  Start image=gitbugactions:latest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   🐳  docker pull image=gitbugactions:latest platform= username= forcePull=false
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   🐳  docker create image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   🐳  docker run image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/7c89ba32-9821-4414-b02d-b9cbb015ffa7] user=0 workdir=
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build] ⭐ Run Main Checkout code
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   🐳  docker cp src=/tmp/7c89ba32-9821-4414-b02d-b9cbb015ffa7/. dst=/tmp/7c89ba32-9821-4414-b02d-b9cbb015ffa7
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/7c89ba32-9821-4414-b02d-b9cbb015ffa7] user=0 workdir=
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   ✅  Success - Main Checkout code
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build] ⭐ Run Main Set up JDK
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   🐳  docker cp src=/tmp/act-cache/e4b04cf7-4a55-49de-a912-145f3d16b8ca/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   ❓  ::group::Installed distributions
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   💬  ::debug::isExplicit: 11.0.20-1
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   💬  ::debug::explicit? true
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   💬  ::debug::isExplicit: 17.0.8-1
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   💬  ::debug::explicit? true
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   💬  ::debug::isExplicit: 21.0.0-35
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   💬  ::debug::explicit? true
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   💬  ::debug::isExplicit: 8.0.382-5
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   💬  ::debug::explicit? true
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | Resolved Java 17.0.8+1 from tool-cache
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | Setting Java 17.0.8+1 as the default
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | Creating toolchains.xml for JDK version 17 from temurin
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | Writing to /home/runner/.m2/toolchains.xml
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | 
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | Java configuration:
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   |   Distribution: temurin
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   |   Version: 17.0.8+1
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   |   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.8-1/x64
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | 
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   ❓  ::endgroup::
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   ❓ add-matcher /run/act/actions/actions-setup-java@v3/.github/java.json
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | Creating settings.xml with server-id: github
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | Writing to /home/runner/.m2/settings.xml
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   ✅  Success - Main Set up JDK
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   ⚙  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.8-1/x64
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   ⚙  ::set-env:: JAVA_HOME_17_X64=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.8-1/x64
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   ⚙  ::set-output:: version=17.0.8+1
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   ⚙  ::set-output:: distribution=Temurin-Hotspot
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   ⚙  ::set-output:: path=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.8-1/x64
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   ⚙  ::add-path:: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.8-1/x64/bin
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build] ⭐ Run Main Build with Maven
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Scanning for projects...
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] 
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] ----------< com.studyalgorithms.javasolutions:java-solutions >----------
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Building java-solutions 1.0-SNAPSHOT
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO]   from pom.xml
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] --------------------------------[ jar ]---------------------------------
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/3.0.2/maven-resources-plugin-3.0.2.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/3.0.2/maven-resources-plugin-3.0.2.pom (7.1 kB at 23 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/30/maven-plugins-30.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/30/maven-plugins-30.pom (10 kB at 261 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/30/maven-parent-30.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/30/maven-parent-30.pom (41 kB at 677 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/18/apache-18.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/18/apache-18.pom (16 kB at 206 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/3.0.2/maven-resources-plugin-3.0.2.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/3.0.2/maven-resources-plugin-3.0.2.jar (32 kB at 352 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.8.0/maven-compiler-plugin-3.8.0.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.8.0/maven-compiler-plugin-3.8.0.pom (12 kB at 186 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/32/maven-plugins-32.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/32/maven-plugins-32.pom (11 kB at 184 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/32/maven-parent-32.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/32/maven-parent-32.pom (43 kB at 802 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/20/apache-20.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/20/apache-20.pom (16 kB at 260 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.8.0/maven-compiler-plugin-3.8.0.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.8.0/maven-compiler-plugin-3.8.0.jar (62 kB at 872 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.22.1/maven-surefire-plugin-2.22.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.22.1/maven-surefire-plugin-2.22.1.pom (5.0 kB at 85 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire/2.22.1/surefire-2.22.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire/2.22.1/surefire-2.22.1.pom (26 kB at 679 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/33/maven-parent-33.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/33/maven-parent-33.pom (44 kB at 736 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/21/apache-21.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/21/apache-21.pom (17 kB at 323 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.22.1/maven-surefire-plugin-2.22.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.22.1/maven-surefire-plugin-2.22.1.jar (41 kB at 713 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/3.0.2/maven-jar-plugin-3.0.2.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/3.0.2/maven-jar-plugin-3.0.2.pom (6.2 kB at 154 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/3.0.2/maven-jar-plugin-3.0.2.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/3.0.2/maven-jar-plugin-3.0.2.jar (27 kB at 551 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/30.1.1-jre/guava-30.1.1-jre.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/30.1.1-jre/guava-30.1.1-jre.pom (12 kB at 222 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/30.1.1-jre/guava-parent-30.1.1-jre.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/30.1.1-jre/guava-parent-30.1.1-jre.pom (14 kB at 264 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.pom (2.4 kB at 47 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/26.0-android/guava-parent-26.0-android.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/26.0-android/guava-parent-26.0-android.pom (10 kB at 268 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/9/oss-parent-9.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/9/oss-parent-9.pom (6.6 kB at 146 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.pom (2.3 kB at 71 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.pom (4.3 kB at 110 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/7/oss-parent-7.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/7/oss-parent-7.pom (4.8 kB at 186 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/3.8.0/checker-qual-3.8.0.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/3.8.0/checker-qual-3.8.0.pom (2.2 kB at 72 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.5.1/error_prone_annotations-2.5.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.5.1/error_prone_annotations-2.5.1.pom (2.1 kB at 26 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_parent/2.5.1/error_prone_parent-2.5.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_parent/2.5.1/error_prone_parent-2.5.1.pom (7.0 kB at 73 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.pom (2.8 kB at 66 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.1.0/junit-jupiter-engine-5.1.0.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.1.0/junit-jupiter-engine-5.1.0.pom (2.4 kB at 35 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.pom (1.2 kB at 31 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.1.0/junit-platform-engine-1.1.0.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.1.0/junit-platform-engine-1.1.0.pom (2.4 kB at 52 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.1.0/junit-platform-commons-1.1.0.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.1.0/junit-platform-commons-1.1.0.pom (2.0 kB at 36 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.0.0/opentest4j-1.0.0.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.0.0/opentest4j-1.0.0.pom (1.7 kB at 35 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/5.1.0/junit-jupiter-api-5.1.0.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/5.1.0/junit-jupiter-api-5.1.0.pom (2.4 kB at 42 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/30.1.1-jre/guava-30.1.1-jre.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/3.8.0/checker-qual-3.8.0.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar (4.6 kB at 87 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.5.1/error_prone_annotations-2.5.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar (2.2 kB at 24 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar (20 kB at 178 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.1.0/junit-jupiter-engine-5.1.0.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/1.3/j2objc-annotations-1.3.jar (8.8 kB at 65 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.5.1/error_prone_annotations-2.5.1.jar (14 kB at 98 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/3.8.0/checker-qual-3.8.0.jar (231 kB at 1.6 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.1.0/junit-platform-engine-1.1.0.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.1.0/junit-platform-commons-1.1.0.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar (2.2 kB at 11 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.0.0/opentest4j-1.0.0.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.1.0/junit-jupiter-engine-5.1.0.jar (142 kB at 688 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/5.1.0/junit-jupiter-api-5.1.0.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.1.0/junit-platform-commons-1.1.0.jar (77 kB at 371 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.1.0/junit-platform-engine-1.1.0.jar (90 kB at 434 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.0.0/opentest4j-1.0.0.jar (6.6 kB at 27 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/5.1.0/junit-jupiter-api-5.1.0.jar (106 kB at 374 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/30.1.1-jre/guava-30.1.1-jre.jar (2.9 MB at 1.9 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] 
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ java-solutions ---
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.pom (2.3 kB at 64 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.0/maven-3.0.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.0/maven-3.0.pom (22 kB at 684 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/15/maven-parent-15.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/15/maven-parent-15.pom (24 kB at 857 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/6/apache-6.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/6/apache-6.pom (13 kB at 427 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.pom (3.9 kB at 144 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.4/plexus-utils-2.0.4.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.4/plexus-utils-2.0.4.pom (3.3 kB at 111 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.6/plexus-2.0.6.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.6/plexus-2.0.6.pom (17 kB at 524 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.0/maven-artifact-3.0.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.0/maven-artifact-3.0.pom (1.9 kB at 74 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.pom (5.4 kB at 99 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/1.4.2/guice-plexus-1.4.2.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-plexus/1.4.2/guice-plexus-1.4.2.pom (3.1 kB at 112 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/1.4.2/guice-bean-1.4.2.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-bean/1.4.2/guice-bean-1.4.2.pom (2.6 kB at 104 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/1.4.2/sisu-inject-1.4.2.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject/1.4.2/sisu-inject-1.4.2.pom (1.2 kB at 43 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/1.4.2/sisu-parent-1.4.2.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-parent/1.4.2/sisu-parent-1.4.2.pom (7.8 kB at 324 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/6/forge-parent-6.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/6/forge-parent-6.pom (11 kB at 414 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.pom (748 B at 33 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.6/plexus-containers-1.6.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.6/plexus-containers-1.6.pom (3.8 kB at 157 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.3.2/plexus-3.3.2.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.3.2/plexus-3.3.2.pom (22 kB at 936 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/17/spice-parent-17.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/17/spice-parent-17.pom (6.8 kB at 676 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/10/forge-parent-10.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/10/forge-parent-10.pom (14 kB at 798 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.pom (4.0 kB at 154 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.pom (3.3 kB at 370 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.pom (5.5 kB at 105 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7.pom (11 kB at 263 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.pom (6.6 kB at 110 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.pom (1.9 kB at 52 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.pom (2.2 kB at 47 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.pom (910 B at 20 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.18/plexus-components-1.1.18.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.18/plexus-components-1.1.18.pom (5.4 kB at 137 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.7/plexus-2.0.7.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.7/plexus-2.0.7.pom (17 kB at 333 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.pom (3.0 kB at 80 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/12/spice-parent-12.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/12/spice-parent-12.pom (6.8 kB at 148 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/4/forge-parent-4.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/4/forge-parent-4.pom (8.4 kB at 271 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.5/plexus-utils-1.5.5.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.5/plexus-utils-1.5.5.pom (5.1 kB at 156 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.11/plexus-1.0.11.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.11/plexus-1.0.11.pom (9.0 kB at 214 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.pom (2.1 kB at 42 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.pom (1.9 kB at 67 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.pom (2.2 kB at 83 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.pom (2.5 kB at 49 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.pom (1.7 kB at 42 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-parent/1.7/aether-parent-1.7.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-parent/1.7/aether-parent-1.7.pom (7.7 kB at 309 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.pom (2.1 kB at 71 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.pom (3.7 kB at 231 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom (1.7 kB at 62 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.pom (4.1 kB at 125 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/4.0/plexus-4.0.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/4.0/plexus-4.0.pom (22 kB at 524 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/3.1.1/maven-filtering-3.1.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/3.1.1/maven-filtering-3.1.1.pom (5.7 kB at 210 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/30/maven-shared-components-30.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/30/maven-shared-components-30.pom (4.6 kB at 270 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.0/maven-shared-utils-3.0.0.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.0/maven-shared-utils-3.0.0.pom (5.6 kB at 294 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/21/maven-shared-components-21.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/21/maven-shared-components-21.pom (5.1 kB at 146 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/25/maven-parent-25.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/25/maven-parent-25.pom (37 kB at 1.8 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/15/apache-15.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/15/apache-15.pom (15 kB at 693 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.4/commons-io-2.4.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.4/commons-io-2.4.pom (10 kB at 339 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/25/commons-parent-25.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/25/commons-parent-25.pom (48 kB at 1.4 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/9/apache-9.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/9/apache-9.pom (15 kB at 798 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.pom (965 B at 64 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.22/plexus-interpolation-1.22.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.22/plexus-interpolation-1.22.pom (1.5 kB at 86 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.3.1/plexus-components-1.3.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.3.1/plexus-components-1.3.1.pom (3.1 kB at 170 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.3.1/plexus-3.3.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.3.1/plexus-3.3.1.pom (20 kB at 757 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.7/plexus-build-api-0.0.7.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.7/plexus-build-api-0.0.7.pom (3.2 kB at 160 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/15/spice-parent-15.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/15/spice-parent-15.pom (8.4 kB at 522 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/5/forge-parent-5.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/5/forge-parent-5.pom (8.4 kB at 279 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.8/plexus-utils-1.5.8.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.8/plexus-utils-1.5.8.pom (8.1 kB at 384 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.2/plexus-2.0.2.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.2/plexus-2.0.2.pom (12 kB at 505 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.5/commons-io-2.5.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.5/commons-io-2.5.pom (13 kB at 429 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/39/commons-parent-39.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/39/commons-parent-39.pom (62 kB at 2.2 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/16/apache-16.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/16/apache-16.pom (15 kB at 669 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.24/plexus-interpolation-1.24.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.24/plexus-interpolation-1.24.pom (2.6 kB at 154 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.0/maven-artifact-3.0.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.jar (49 kB at 1.7 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar (202 kB at 6.7 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.0/maven-artifact-3.0.jar (52 kB at 1.7 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar (153 kB at 4.6 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar (472 kB at 11 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.jar (38 kB at 727 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.0/maven-settings-3.0.jar (47 kB at 897 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.jar (30 kB at 501 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.0/maven-core-3.0.jar (527 kB at 8.8 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.jar (148 kB at 2.0 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.jar (51 kB at 701 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.jar (106 kB at 1.4 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-api/1.7/aether-api-1.7.jar (74 kB at 927 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.jar (14 kB at 169 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.jar (46 kB at 431 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.jar (4.3 kB at 39 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.jar (13 kB at 122 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/aether/aether-util/1.7/aether-util-1.7.jar (108 kB at 973 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/3.1.1/maven-filtering-3.1.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.0/maven-shared-utils-3.0.0.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.jar (29 kB at 253 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/3.1.1/maven-filtering-3.1.1.jar (51 kB at 374 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.7/plexus-build-api-0.0.7.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.0/maven-shared-utils-3.0.0.jar (155 kB at 1.1 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.5/commons-io-2.5.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.jar (32 kB at 224 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.jar (247 kB at 1.7 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.24/plexus-interpolation-1.24.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.7/plexus-build-api-0.0.7.jar (8.5 kB at 55 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.5/commons-io-2.5.jar (209 kB at 1.3 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.24/plexus-interpolation-1.24.jar (79 kB at 475 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.0/maven-model-3.0.jar (165 kB at 876 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] skip non existing resourceDirectory /tmp/7c89ba32-9821-4414-b02d-b9cbb015ffa7/src/main/resources
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] 
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ java-solutions ---
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.7.1/plexus-component-annotations-1.7.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.7.1/plexus-component-annotations-1.7.1.pom (770 B at 23 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.7.1/plexus-containers-1.7.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.7.1/plexus-containers-1.7.1.pom (5.0 kB at 219 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.2.1/maven-shared-utils-3.2.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.2.1/maven-shared-utils-3.2.1.pom (5.6 kB at 245 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.pom (4.7 kB at 250 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/19/maven-shared-components-19.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/19/maven-shared-components-19.pom (6.4 kB at 254 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/23/maven-parent-23.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/23/maven-parent-23.pom (33 kB at 1.4 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/13/apache-13.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/13/apache-13.pom (14 kB at 665 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.2.1/maven-plugin-api-2.2.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.2.1/maven-plugin-api-2.2.1.pom (1.5 kB at 77 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.2.1/maven-2.2.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.2.1/maven-2.2.1.pom (22 kB at 606 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/11/maven-parent-11.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/11/maven-parent-11.pom (32 kB at 900 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/5/apache-5.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/5/apache-5.pom (4.1 kB at 98 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.2.1/maven-core-2.2.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.2.1/maven-core-2.2.1.pom (12 kB at 447 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.2.1/maven-settings-2.2.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.2.1/maven-settings-2.2.1.pom (2.2 kB at 64 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.2.1/maven-model-2.2.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.2.1/maven-model-2.2.1.pom (3.2 kB at 105 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.pom (6.8 kB at 146 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.11/plexus-interpolation-1.11.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.11/plexus-interpolation-1.11.pom (889 B at 39 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.14/plexus-components-1.1.14.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.14/plexus-components-1.1.14.pom (5.8 kB at 136 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.2.1/maven-plugin-parameter-documenter-2.2.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.2.1/maven-plugin-parameter-documenter-2.2.1.pom (2.0 kB at 49 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-jdk14/1.5.6/slf4j-jdk14-1.5.6.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-jdk14/1.5.6/slf4j-jdk14-1.5.6.pom (1.9 kB at 28 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.5.6/slf4j-parent-1.5.6.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-parent/1.5.6/slf4j-parent-1.5.6.pom (7.9 kB at 113 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.5.6/slf4j-api-1.5.6.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.5.6/slf4j-api-1.5.6.pom (3.0 kB at 60 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/1.5.6/jcl-over-slf4j-1.5.6.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/1.5.6/jcl-over-slf4j-1.5.6.pom (2.2 kB at 30 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.2.1/maven-profile-2.2.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.2.1/maven-profile-2.2.1.pom (2.2 kB at 53 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.2.1/maven-artifact-2.2.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.2.1/maven-artifact-2.2.1.pom (1.6 kB at 37 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.2.1/maven-repository-metadata-2.2.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.2.1/maven-repository-metadata-2.2.1.pom (1.9 kB at 62 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.2.1/maven-error-diagnostics-2.2.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.2.1/maven-error-diagnostics-2.2.1.pom (1.7 kB at 49 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.2.1/maven-project-2.2.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.2.1/maven-project-2.2.1.pom (2.8 kB at 111 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.2.1/maven-artifact-manager-2.2.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.2.1/maven-artifact-manager-2.2.1.pom (3.1 kB at 119 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/backport-util-concurrent/backport-util-concurrent/3.1/backport-util-concurrent-3.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/backport-util-concurrent/backport-util-concurrent/3.1/backport-util-concurrent-3.1.pom (880 B at 29 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.2.1/maven-plugin-registry-2.2.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.2.1/maven-plugin-registry-2.2.1.pom (1.9 kB at 55 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.2.1/maven-plugin-descriptor-2.2.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.2.1/maven-plugin-descriptor-2.2.1.pom (2.1 kB at 159 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.2.1/maven-monitor-2.2.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.2.1/maven-monitor-2.2.1.pom (1.3 kB at 66 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.1/maven-shared-utils-0.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/0.1/maven-shared-utils-0.1.pom (4.0 kB at 131 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/18/maven-shared-components-18.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/18/maven-shared-components-18.pom (4.9 kB at 170 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/22/maven-parent-22.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/22/maven-parent-22.pom (30 kB at 1.1 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/11/apache-11.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/11/apache-11.pom (15 kB at 511 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-java/0.9.10/plexus-java-0.9.10.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-java/0.9.10/plexus-java-0.9.10.pom (5.1 kB at 155 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-languages/0.9.10/plexus-languages-0.9.10.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-languages/0.9.10/plexus-languages-0.9.10.pom (4.1 kB at 159 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/6.2/asm-6.2.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/6.2/asm-6.2.pom (2.9 kB at 101 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/ow2/1.5/ow2-1.5.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/ow2/1.5/ow2-1.5.pom (11 kB at 591 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0-M9/qdox-2.0-M9.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0-M9/qdox-2.0-M9.pom (16 kB at 528 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.8.4/plexus-compiler-api-2.8.4.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.8.4/plexus-compiler-api-2.8.4.pom (867 B at 26 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/2.8.4/plexus-compiler-2.8.4.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/2.8.4/plexus-compiler-2.8.4.pom (6.0 kB at 208 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/4.0/plexus-components-4.0.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/4.0/plexus-components-4.0.pom (2.7 kB at 51 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.pom (3.8 kB at 83 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.8.4/plexus-compiler-manager-2.8.4.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.8.4/plexus-compiler-manager-2.8.4.pom (692 B at 15 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.8.4/plexus-compiler-javac-2.8.4.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.8.4/plexus-compiler-javac-2.8.4.pom (771 B at 20 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/2.8.4/plexus-compilers-2.8.4.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/2.8.4/plexus-compilers-2.8.4.pom (1.3 kB at 43 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.4/plexus-utils-2.0.4.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.7.1/plexus-component-annotations-1.7.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.2.1/maven-shared-utils-3.2.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.jar (14 kB at 288 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.jar (61 kB at 1.3 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.7.1/plexus-component-annotations-1.7.1.jar (4.3 kB at 91 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/6.2/asm-6.2.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-java/0.9.10/plexus-java-0.9.10.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0-M9/qdox-2.0-M9.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.2.1/maven-shared-utils-3.2.1.jar (167 kB at 3.3 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.8.4/plexus-compiler-api-2.8.4.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.4/plexus-utils-2.0.4.jar (222 kB at 3.9 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.8.4/plexus-compiler-manager-2.8.4.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-java/0.9.10/plexus-java-0.9.10.jar (39 kB at 499 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.8.4/plexus-compiler-javac-2.8.4.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/6.2/asm-6.2.jar (111 kB at 1.4 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.8.4/plexus-compiler-api-2.8.4.jar (27 kB at 330 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.8.4/plexus-compiler-manager-2.8.4.jar (4.7 kB at 57 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0-M9/qdox-2.0-M9.jar (317 kB at 3.4 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.8.4/plexus-compiler-javac-2.8.4.jar (21 kB at 187 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Changes detected - recompiling the module!
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Compiling 274 source files to /tmp/7c89ba32-9821-4414-b02d-b9cbb015ffa7/target/classes
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] /tmp/7c89ba32-9821-4414-b02d-b9cbb015ffa7/src/main/java/hackerrank/expedia/ReachableEmployees.java: Some input files use unchecked or unsafe operations.
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] /tmp/7c89ba32-9821-4414-b02d-b9cbb015ffa7/src/main/java/hackerrank/expedia/ReachableEmployees.java: Recompile with -Xlint:unchecked for details.
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] 
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ java-solutions ---
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] skip non existing resourceDirectory /tmp/7c89ba32-9821-4414-b02d-b9cbb015ffa7/src/test/resources
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] 
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] --- maven-compiler-plugin:3.8.0:testCompile (default-testCompile) @ java-solutions ---
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Changes detected - recompiling the module!
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Compiling 144 source files to /tmp/7c89ba32-9821-4414-b02d-b9cbb015ffa7/target/test-classes
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] 
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] --- maven-surefire-plugin:2.22.1:test (default-test) @ java-solutions ---
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.22.1/maven-surefire-common-2.22.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.22.1/maven-surefire-common-2.22.1.pom (11 kB at 1.3 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.5.2/maven-plugin-annotations-3.5.2.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.5.2/maven-plugin-annotations-3.5.2.pom (1.6 kB at 233 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools/3.5.2/maven-plugin-tools-3.5.2.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-tools/3.5.2/maven-plugin-tools-3.5.2.pom (15 kB at 2.2 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/31/maven-parent-31.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/31/maven-parent-31.pom (43 kB at 6.2 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/19/apache-19.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/19/apache-19.pom (15 kB at 2.2 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.22.1/surefire-api-2.22.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.22.1/surefire-api-2.22.1.pom (3.5 kB at 590 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-logger-api/2.22.1/surefire-logger-api-2.22.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-logger-api/2.22.1/surefire-logger-api-2.22.1.pom (2.0 kB at 196 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.22.1/surefire-booter-2.22.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.22.1/surefire-booter-2.22.1.pom (7.5 kB at 1.1 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.pom (3.9 kB at 152 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.0.3/plexus-containers-1.0.3.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.0.3/plexus-containers-1.0.3.pom (492 B at 49 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.4/plexus-1.0.4.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.4/plexus-1.0.4.pom (5.7 kB at 820 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/4.12/junit-4.12.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/4.12/junit-4.12.pom (24 kB at 3.9 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.pom (766 B at 128 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-parent/1.3/hamcrest-parent-1.3.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-parent/1.3/hamcrest-parent-1.3.pom (2.0 kB at 282 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.0.4/plexus-utils-1.0.4.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.0.4/plexus-utils-1.0.4.pom (6.9 kB at 1.4 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.pom (3.1 kB at 626 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.pom (2.4 kB at 339 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/15/maven-shared-components-15.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/15/maven-shared-components-15.pom (9.3 kB at 1.6 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/16/maven-parent-16.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/16/maven-parent-16.pom (23 kB at 3.9 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/7/apache-7.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/7/apache-7.pom (14 kB at 1.6 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/classworlds/classworlds/1.1/classworlds-1.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/classworlds/classworlds/1.1/classworlds-1.1.pom (3.3 kB at 475 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/2.2.1/maven-toolchain-2.2.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/2.2.1/maven-toolchain-2.2.1.pom (3.3 kB at 418 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0-M8/qdox-2.0-M8.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0-M8/qdox-2.0-M8.pom (16 kB at 2.3 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.22.1/maven-surefire-common-2.22.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.2.1/maven-plugin-api-2.2.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.5.2/maven-plugin-annotations-3.5.2.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.22.1/surefire-api-2.22.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-logger-api/2.22.1/surefire-logger-api-2.22.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.2.1/maven-plugin-api-2.2.1.jar (12 kB at 1.4 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.22.1/surefire-booter-2.22.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-logger-api/2.22.1/surefire-logger-api-2.22.1.jar (13 kB at 668 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.2.1/maven-artifact-2.2.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugin-tools/maven-plugin-annotations/3.5.2/maven-plugin-annotations-3.5.2.jar (14 kB at 620 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/2.22.1/surefire-api-2.22.1.jar (186 kB at 8.1 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.2.1/maven-plugin-descriptor-2.2.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/2.22.1/maven-surefire-common-2.22.1.jar (528 kB at 20 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/2.22.1/surefire-booter-2.22.1.jar (274 kB at 11 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.2.1/maven-plugin-descriptor-2.2.1.jar (39 kB at 1.5 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/4.12/junit-4.12.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.2.1/maven-artifact-2.2.1.jar (80 kB at 2.9 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.2.1/maven-project-2.2.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar (45 kB at 1.3 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.2.1/maven-settings-2.2.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/4.12/junit-4.12.jar (315 kB at 8.1 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.2.1/maven-profile-2.2.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.jar (194 kB at 5.0 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.2.1/maven-artifact-manager-2.2.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.2.1/maven-project-2.2.1.jar (156 kB at 3.7 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/backport-util-concurrent/backport-util-concurrent/3.1/backport-util-concurrent-3.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.jar (228 kB at 5.4 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.2.1/maven-plugin-registry-2.2.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.2.1/maven-profile-2.2.1.jar (35 kB at 804 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.11/plexus-interpolation-1.11.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.2.1/maven-artifact-manager-2.2.1.jar (68 kB at 1.4 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.2.1/maven-model-2.2.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.2.1/maven-settings-2.2.1.jar (49 kB at 1.0 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.2.1/maven-core-2.2.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.2.1/maven-plugin-registry-2.2.1.jar (30 kB at 606 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.2.1/maven-plugin-parameter-documenter-2.2.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.2.1/maven-plugin-parameter-documenter-2.2.1.jar (22 kB at 403 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-jdk14/1.5.6/slf4j-jdk14-1.5.6.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.11/plexus-interpolation-1.11.jar (51 kB at 910 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.5.6/slf4j-api-1.5.6.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.2.1/maven-core-2.2.1.jar (178 kB at 3.0 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/1.5.6/jcl-over-slf4j-1.5.6.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/backport-util-concurrent/backport-util-concurrent/3.1/backport-util-concurrent-3.1.jar (332 kB at 5.5 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-jdk14/1.5.6/slf4j-jdk14-1.5.6.jar (8.8 kB at 145 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.2.1/maven-repository-metadata-2.2.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api/1.5.6/slf4j-api-1.5.6.jar (22 kB at 355 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.2.1/maven-error-diagnostics-2.2.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/slf4j/jcl-over-slf4j/1.5.6/jcl-over-slf4j-1.5.6.jar (17 kB at 253 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.2.1/maven-monitor-2.2.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.jar (11 kB at 166 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/classworlds/classworlds/1.1/classworlds-1.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.2.1/maven-error-diagnostics-2.2.1.jar (13 kB at 189 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/2.2.1/maven-toolchain-2.2.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.2.1/maven-repository-metadata-2.2.1.jar (26 kB at 367 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/classworlds/classworlds/1.1/classworlds-1.1.jar (38 kB at 498 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.2.1/maven-model-2.2.1.jar (88 kB at 1.1 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.2.1/maven-monitor-2.2.1.jar (10 kB at 134 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0-M8/qdox-2.0-M8.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-toolchain/2.2.1/maven-toolchain-2.2.1.jar (38 kB at 437 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0-M8/qdox-2.0-M8.jar (316 kB at 3.0 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/2.22.1/surefire-junit-platform-2.22.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/2.22.1/surefire-junit-platform-2.22.1.pom (7.0 kB at 129 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.22.1/surefire-providers-2.22.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/2.22.1/surefire-providers-2.22.1.pom (2.5 kB at 191 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.3.1/junit-platform-launcher-1.3.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.3.1/junit-platform-launcher-1.3.1.pom (2.2 kB at 246 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.3.1/junit-platform-engine-1.3.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.3.1/junit-platform-engine-1.3.1.pom (2.4 kB at 299 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.3.1/junit-platform-commons-1.3.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.3.1/junit-platform-commons-1.3.1.pom (2.0 kB at 225 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1.pom (1.7 kB at 187 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/2.22.1/surefire-junit-platform-2.22.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.3.1/junit-platform-engine-1.3.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.3.1/junit-platform-commons-1.3.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.3.1/junit-platform-launcher-1.3.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1.jar (7.1 kB at 324 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.3.1/junit-platform-commons-1.3.1.jar (78 kB at 1.9 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/2.22.1/surefire-junit-platform-2.22.1.jar (66 kB at 1.3 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.3.1/junit-platform-launcher-1.3.1.jar (95 kB at 1.7 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.3.1/junit-platform-engine-1.3.1.jar (135 kB at 1.5 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] 
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] -------------------------------------------------------
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO]  T E S T S
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] -------------------------------------------------------
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running codility.ambitious.IdenticalPairOfIndicesTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s - in codility.ambitious.IdenticalPairOfIndicesTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running codility.painless.BinaryGapTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in codility.painless.BinaryGapTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running util.BinarySearchTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in util.BinarySearchTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running util.BucketSortTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in util.BucketSortTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running util.MergeSortTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in util.MergeSortTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running util.QuickSortTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in util.QuickSortTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running util.RadixSortTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in util.RadixSortTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running util.CountingSortTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in util.CountingSortTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running util.LinearSearchTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in util.LinearSearchTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running hackerrank.datastructures.arrays.LeftRotationTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in hackerrank.datastructures.arrays.LeftRotationTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running hackerrank.datastructures.queues.QueueUsingTwoStacksTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in hackerrank.datastructures.queues.QueueUsingTwoStacksTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running hackerrank.datastructures.trees.IsBinarySearchTreeTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in hackerrank.datastructures.trees.IsBinarySearchTreeTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running hackerrank.datastructures.trees.HeightOfABinaryTreeTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in hackerrank.datastructures.trees.HeightOfABinaryTreeTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running hackerrank.datastructures.stacks.BalancedBracketsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in hackerrank.datastructures.stacks.BalancedBracketsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running hackerrank.datastructures.stacks.GameOfTwoStacksTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in hackerrank.datastructures.stacks.GameOfTwoStacksTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running hackerrank.datastructures.stacks.EqualStacksTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in hackerrank.datastructures.stacks.EqualStacksTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running hackerrank.datastructures.linkedlists.PrintInReverseTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | 16
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | 15
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | 8
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | 4
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | 15
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | 8
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | 4
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in hackerrank.datastructures.linkedlists.PrintInReverseTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running hackerrank.datastructures.linkedlists.ReverseALinkedListTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in hackerrank.datastructures.linkedlists.ReverseALinkedListTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running hackerrank.datastructures.linkedlists.RemoveDuplicatesTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in hackerrank.datastructures.linkedlists.RemoveDuplicatesTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running hackerrank.datastructures.linkedlists.CycleDetectionTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in hackerrank.datastructures.linkedlists.CycleDetectionTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running hackerrank.algorithms.dynamicprogramming.EqualTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in hackerrank.algorithms.dynamicprogramming.EqualTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running hackerrank.algorithms.implementation.NumberLineJumpsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in hackerrank.algorithms.implementation.NumberLineJumpsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running hackerrank.algorithms.implementation.RepeatedStringTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in hackerrank.algorithms.implementation.RepeatedStringTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running hackerrank.algorithms.implementation.BetweenTwoSetsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in hackerrank.algorithms.implementation.BetweenTwoSetsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running hackerrank.algorithms.warmup.BirthdayCakeCandlesTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in hackerrank.algorithms.warmup.BirthdayCakeCandlesTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running hackerrank.algorithms.search.MissingNumbersTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in hackerrank.algorithms.search.MissingNumbersTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running hackerrank.algorithms.search.PairsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in hackerrank.algorithms.search.PairsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running hackerrank.algorithms.search.MinimumLossTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in hackerrank.algorithms.search.MinimumLossTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running hackerrank.algorithms.strings.TwoStringsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in hackerrank.algorithms.strings.TwoStringsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running hackerrank.algorithms.strings.MakeAnagramsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in hackerrank.algorithms.strings.MakeAnagramsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running hackerrank.algorithms.strings.SherlockAndTheValidStringTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in hackerrank.algorithms.strings.SherlockAndTheValidStringTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running hackerrank.algorithms.strings.CamelCaseTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in hackerrank.algorithms.strings.CamelCaseTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running hackerrank.algorithms.strings.TwoCharactersTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in hackerrank.algorithms.strings.TwoCharactersTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running hackerrank.algorithms.strings.SuperReducedStringTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in hackerrank.algorithms.strings.SuperReducedStringTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running hackerrank.algorithms.strings.BetterCompressionTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in hackerrank.algorithms.strings.BetterCompressionTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.MissingNumberTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in leetcode.MissingNumberTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.SameTreeTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in leetcode.easy.SameTreeTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.NextGreaterElementITest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in leetcode.easy.NextGreaterElementITest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.ReorderDataInLogFilesTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in leetcode.easy.ReorderDataInLogFilesTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.ReverseWordsInAString3Test
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.easy.ReverseWordsInAString3Test
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.UglyNumberTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.easy.UglyNumberTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.BackspaceStringCompareTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in leetcode.easy.BackspaceStringCompareTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.MaximumSubarrayTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in leetcode.easy.MaximumSubarrayTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.MajorityElementTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in leetcode.easy.MajorityElementTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.MergeTwoSortedListsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in leetcode.easy.MergeTwoSortedListsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.PascalsTriangleTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in leetcode.easy.PascalsTriangleTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.PalindromeLinkedListTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in leetcode.easy.PalindromeLinkedListTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.IntersectionOfTwoArraysIITest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in leetcode.easy.IntersectionOfTwoArraysIITest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.SortingTheSentenceTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.easy.SortingTheSentenceTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.BestTimeToBuyAndSellAStockTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in leetcode.easy.BestTimeToBuyAndSellAStockTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.JewelsAndStonesTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in leetcode.easy.JewelsAndStonesTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.MiddleOfTheLinkedListTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.easy.MiddleOfTheLinkedListTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.SingleNumberTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in leetcode.easy.SingleNumberTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.TwoSumTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in leetcode.easy.TwoSumTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.MoveZeroesTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in leetcode.easy.MoveZeroesTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.ValidAnagramTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in leetcode.easy.ValidAnagramTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.LengthOfLastWordTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in leetcode.easy.LengthOfLastWordTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.InvertTreeTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in leetcode.easy.InvertTreeTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.PathSumTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in leetcode.easy.PathSumTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.HappyNumberTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.easy.HappyNumberTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.ClimbingStairsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.easy.ClimbingStairsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.NumberOf1BitsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.easy.NumberOf1BitsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.BestTimeToBuyAndSellAStockIITest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.easy.BestTimeToBuyAndSellAStockIITest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.ShuffleStringTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in leetcode.easy.ShuffleStringTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.FirstUniqueCharacterInAStringTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.easy.FirstUniqueCharacterInAStringTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.MaximumDepthOfABinaryTreeTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.easy.MaximumDepthOfABinaryTreeTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.ContainsDuplicateIITest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s - in leetcode.easy.ContainsDuplicateIITest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.NumberOfGoodPairsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.easy.NumberOfGoodPairsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.SquaresOfSortedArrayTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in leetcode.easy.SquaresOfSortedArrayTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.RemoveLinkedListElementsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in leetcode.easy.RemoveLinkedListElementsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.RangeSumOfBSTTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in leetcode.easy.RangeSumOfBSTTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.IntersectionOfTwoLinkedListsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.easy.IntersectionOfTwoLinkedListsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.ContainsDuplicateTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.easy.ContainsDuplicateTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.AverageOfLevelsInBinaryTreeTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in leetcode.easy.AverageOfLevelsInBinaryTreeTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.SymmetricTreeTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in leetcode.easy.SymmetricTreeTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.MinimumDepthBinaryTreeTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in leetcode.easy.MinimumDepthBinaryTreeTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.CheckIfPangramTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.easy.CheckIfPangramTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.DiameterOfABinaryTreeTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in leetcode.easy.DiameterOfABinaryTreeTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.FindAllNumbersDisappearedInAnArrayTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in leetcode.easy.FindAllNumbersDisappearedInAnArrayTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.SearchInsertPositionTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in leetcode.easy.SearchInsertPositionTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.LongestCommonPrefixTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in leetcode.easy.LongestCommonPrefixTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.NumbersSmallerThanTheCurrentNumberTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in leetcode.easy.NumbersSmallerThanTheCurrentNumberTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.easy.FindCommonCharactersTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in leetcode.easy.FindCommonCharactersTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.hard.SerializeAndDeserializeABinaryTreeTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in leetcode.hard.SerializeAndDeserializeABinaryTreeTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.hard.TrappingRainWaterIITest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in leetcode.hard.TrappingRainWaterIITest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.hard.TrappingRainWaterTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in leetcode.hard.TrappingRainWaterTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.hard.MedianOfTwoSortedArraysTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in leetcode.hard.MedianOfTwoSortedArraysTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.hard.LongestValidParenthesesTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.hard.LongestValidParenthesesTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.hard.MinimumWindowSubstringTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.hard.MinimumWindowSubstringTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.SwapNodesInPairsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in leetcode.medium.SwapNodesInPairsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.PartitionLabelsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.PartitionLabelsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.PermutationsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.PermutationsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.BinaryTreeZigzagLevelOrderTraversalTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.BinaryTreeZigzagLevelOrderTraversalTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.SortColorsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.SortColorsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.LongestConsecutiveSequenceTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.LongestConsecutiveSequenceTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.ThreeSumClosestTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in leetcode.medium.ThreeSumClosestTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.LRUCacheTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in leetcode.medium.LRUCacheTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.IsomorphicStringsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in leetcode.medium.IsomorphicStringsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.ValidTicTacToeStateTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in leetcode.medium.ValidTicTacToeStateTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.FindTheDuplicateNumberTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in leetcode.medium.FindTheDuplicateNumberTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.SubsetsIITest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.SubsetsIITest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.SearchA2DMatrixTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.SearchA2DMatrixTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.TopKFrequentWordsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in leetcode.medium.TopKFrequentWordsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.LongestPalindromicSubstringTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.LongestPalindromicSubstringTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.GenerateParanthesesTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.GenerateParanthesesTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.HouseRobberIIITest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.HouseRobberIIITest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.LongestCommonSubsequenceTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in leetcode.medium.LongestCommonSubsequenceTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.PermutationsIITest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [1, 1, 2]
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [1, 2, 1]
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [2, 1, 1]
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.PermutationsIITest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.MinimumDominoRotationsForEqualRowTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.MinimumDominoRotationsForEqualRowTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.BinaryTreeFromPreorderInOrderTraversalTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.BinaryTreeFromPreorderInOrderTraversalTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.RotateImageTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in leetcode.medium.RotateImageTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.FindAllDuplicatesInAnArrayTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.FindAllDuplicatesInAnArrayTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.OnlineStockSpanTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in leetcode.medium.OnlineStockSpanTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.ThreeSumTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in leetcode.medium.ThreeSumTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.HouseRobberTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.HouseRobberTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.ProductOfArrayExceptSelfTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in leetcode.medium.ProductOfArrayExceptSelfTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.LongestSubstringWithoutRepeatingCharactersTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.LongestSubstringWithoutRepeatingCharactersTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.CountServersThatCommunicateTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.CountServersThatCommunicateTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.SearchInRotatedSortedArrayTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.SearchInRotatedSortedArrayTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.FirstAndLastPositionOfElementInSortedArrayTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.FirstAndLastPositionOfElementInSortedArrayTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.SubsetsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.SubsetsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.ValidSudokuTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.ValidSudokuTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.ContainerWithMostWaterTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.ContainerWithMostWaterTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.AddTwoNumbersTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in leetcode.medium.AddTwoNumbersTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.AddTwoNumbersIITest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in leetcode.medium.AddTwoNumbersIITest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.DailyTemperaturesTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.DailyTemperaturesTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.EditDistanceTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.EditDistanceTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.TriangleTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.TriangleTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.TopKFrequentElementsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.TopKFrequentElementsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.LowestCommonAncestorOfBinaryTreeTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.LowestCommonAncestorOfBinaryTreeTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.CoinChangeTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.CoinChangeTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.DecodeStringTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.DecodeStringTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.OddEvenLinkedListTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.OddEvenLinkedListTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.SetMatrixZeroesTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.SetMatrixZeroesTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.MaximumBinaryTreeTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.MaximumBinaryTreeTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.MergeIntervalsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in leetcode.medium.MergeIntervalsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.GroupAnagramsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in leetcode.medium.GroupAnagramsTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.ReorganizeStringTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in leetcode.medium.ReorganizeStringTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.MaximumProductSubarrayTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in leetcode.medium.MaximumProductSubarrayTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.ReverseWordsInAStringTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in leetcode.medium.ReverseWordsInAStringTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.SpiralMatrixTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in leetcode.medium.SpiralMatrixTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.SubtreeOfAnotherTreeTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in leetcode.medium.SubtreeOfAnotherTreeTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.TicTacToeTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in leetcode.medium.TicTacToeTest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Running leetcode.medium.HouseRobberIITest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in leetcode.medium.HouseRobberIITest
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] 
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Results:
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] 
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Tests run: 410, Failures: 0, Errors: 0, Skipped: 0
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] 
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] 
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ java-solutions ---
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.1.1/maven-archiver-3.1.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.1.1/maven-archiver-3.1.1.pom (4.3 kB at 189 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.1/maven-shared-utils-3.0.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.1/maven-shared-utils-3.0.1.pom (4.6 kB at 199 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.3/plexus-archiver-3.3.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.3/plexus-archiver-3.3.pom (5.3 kB at 184 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.2/plexus-3.2.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.2/plexus-3.2.pom (19 kB at 694 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.7.1/plexus-io-2.7.1.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.7.1/plexus-io-2.7.1.pom (4.9 kB at 246 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.2/commons-io-2.2.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.2/commons-io-2.2.pom (11 kB at 581 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/24/commons-parent-24.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/24/commons-parent-24.pom (47 kB at 1.4 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.11/commons-compress-1.11.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.11/commons-compress-1.11.pom (13 kB at 523 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.pom (15 kB at 559 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.5/xz-1.5.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.5/xz-1.5.pom (1.9 kB at 91 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.4/plexus-archiver-3.4.pom
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.4/plexus-archiver-3.4.pom (5.3 kB at 254 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.1.1/maven-archiver-3.1.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.1/maven-shared-utils-3.0.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.4/plexus-archiver-3.4.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.7.1/plexus-io-2.7.1.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.11/commons-compress-1.11.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.7.1/plexus-io-2.7.1.jar (86 kB at 3.1 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/3.1.1/maven-archiver-3.1.1.jar (24 kB at 538 kB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.5/xz-1.5.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/iq80/snappy/snappy/0.4/snappy-0.4.jar (58 kB at 1.1 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.11/commons-compress-1.11.jar (426 kB at 5.3 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/tukaani/xz/1.5/xz-1.5.jar (100 kB at 1.1 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/3.4/plexus-archiver-3.4.jar (187 kB at 1.7 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.0.1/maven-shared-utils-3.0.1.jar (154 kB at 1.2 MB/s)
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Building jar: /tmp/7c89ba32-9821-4414-b02d-b9cbb015ffa7/target/java-solutions-1.0-SNAPSHOT.jar
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] ------------------------------------------------------------------------
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] BUILD SUCCESS
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] ------------------------------------------------------------------------
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Total time:  16.706 s
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] Finished at: 2023-11-23T17:25:05Z
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   | [INFO] ------------------------------------------------------------------------
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   ✅  Success - Main Build with Maven
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'
+[cfb92075-9f75-4118-afbe-d767424d6596/build] ⭐ Run Post Set up JDK
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=
+[cfb92075-9f75-4118-afbe-d767424d6596/build]   ✅  Success - Post Set up JDK
+[cfb92075-9f75-4118-afbe-d767424d6596/build] 🏁  Job succeeded
+[cfb92075-9f75-4118-afbe-d767424d6596/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '8d81307ea1651f3dffe2d9d620378c08f04463ee'

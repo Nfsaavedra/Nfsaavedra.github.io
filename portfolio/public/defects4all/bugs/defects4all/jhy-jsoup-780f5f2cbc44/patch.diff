@@ -1,0 +1,67 @@
+diff --git a/src/main/java/org/jsoup/Connection.java b/src/main/java/org/jsoup/Connection.java
+index c6afd7f..4e279a9 100644
+--- a/src/main/java/org/jsoup/Connection.java
++++ b/src/main/java/org/jsoup/Connection.java
+@@ -8,6 +8,7 @@ import javax.net.ssl.SSLSocketFactory;
+ import java.io.BufferedInputStream;
+ import java.io.IOException;
+ import java.io.InputStream;
++import java.io.UncheckedIOException;
+ import java.net.CookieStore;
+ import java.net.Proxy;
+ import java.net.URL;
+diff --git a/src/main/java/org/jsoup/UncheckedIOException.java b/src/main/java/org/jsoup/UncheckedIOException.java
+index e7a9cc3..65d878f 100644
+--- a/src/main/java/org/jsoup/UncheckedIOException.java
++++ b/src/main/java/org/jsoup/UncheckedIOException.java
+@@ -2,7 +2,12 @@ package org.jsoup;
+ 
+ import java.io.IOException;
+ 
+-public class UncheckedIOException extends RuntimeException {
++/**
++ * @deprecated Use {@link java.io.UncheckedIOException} instead. This class acted as a compatibility shim for Java
++ * versions prior to 1.8.
++ */
++// todo annotate @Deprecated in next release (after previous @Deprecations clear)
++public class UncheckedIOException extends java.io.UncheckedIOException {
+     public UncheckedIOException(IOException cause) {
+         super(cause);
+     }
+diff --git a/src/main/java/org/jsoup/helper/DataUtil.java b/src/main/java/org/jsoup/helper/DataUtil.java
+index 3f34450..69e1f29 100644
+--- a/src/main/java/org/jsoup/helper/DataUtil.java
++++ b/src/main/java/org/jsoup/helper/DataUtil.java
+@@ -1,6 +1,5 @@
+ package org.jsoup.helper;
+ 
+-import org.jsoup.UncheckedIOException;
+ import org.jsoup.internal.ConstrainableInputStream;
+ import org.jsoup.internal.Normalizer;
+ import org.jsoup.internal.StringUtil;
+@@ -23,6 +22,7 @@ import java.io.IOException;
+ import java.io.InputStream;
+ import java.io.InputStreamReader;
+ import java.io.OutputStream;
++import java.io.UncheckedIOException;
+ import java.nio.Buffer;
+ import java.nio.ByteBuffer;
+ import java.nio.CharBuffer;
+@@ -163,7 +163,7 @@ public final class DataUtil {
+                     else
+                         doc = parser.parseInput(defaultDecoded.toString(), baseUri);
+                 } catch (UncheckedIOException e) {
+-                    throw e.ioException();
++                    throw e.getCause();
+                 }
+ 
+                 // look for <meta http-equiv="Content-Type" content="text/html;charset=gb2312"> or HTML5 <meta charset="gb2312">
+@@ -218,7 +218,7 @@ public final class DataUtil {
+                         doc = parser.parseInput(reader, baseUri);
+                     } catch (UncheckedIOException e) {
+                         // io exception when parsing (not seen before because reading the stream as we go)
+-                        throw e.ioException();
++                        throw e.getCause();
+                     }
+                     Charset charset = charsetName.equals(defaultCharsetName) ? UTF_8 : Charset.forName(charsetName);
+                     doc.outputSettings().charset(charset);

@@ -1,0 +1,18 @@
+diff --git a/src/test/java/org/jsoup/helper/HttpConnectionTest.java b/src/test/java/org/jsoup/helper/HttpConnectionTest.java
+index d776588..9444c2d 100644
+--- a/src/test/java/org/jsoup/helper/HttpConnectionTest.java
++++ b/src/test/java/org/jsoup/helper/HttpConnectionTest.java
+@@ -358,4 +358,13 @@ public class HttpConnectionTest {
+         }
+         assertTrue(threw);
+     }
++
++    @Test void setHeaderWithUnicodeValue() {
++        Connection connect = Jsoup.connect("https://example.com");
++        String value = "/foo/我的";
++        connect.header("Key", value);
++
++        String actual = connect.request().header("Key");
++        assertEquals(value, actual);
++    }
+ }

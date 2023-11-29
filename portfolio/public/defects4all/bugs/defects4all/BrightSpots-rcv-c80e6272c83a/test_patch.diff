@@ -1,0 +1,1283 @@
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/2013_minneapolis_mayor/2013_minneapolis_mayor_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/2013_minneapolis_mayor/2013_minneapolis_mayor_expected_summary.csv
+index b377ba1..9694ce8 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/2013_minneapolis_mayor/2013_minneapolis_mayor_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/2013_minneapolis_mayor/2013_minneapolis_mayor_expected_summary.csv
+@@ -56,8 +56,8 @@ JOHN CHARLES WILSON,37,0.04%,1,38,0.04%,-38,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,
+ Undeclared Write-ins,117,0.14%,-117,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,79312,,,79275,,,79269,,,79264,,,79253,,,79243,,,79226,,,79214,,,79197,,,79164,,,79135,,,79102,,,79065,,,79043,,,79003,,,78952,,,78923,,,78898,,,78826,,,78772,,,78716,,,78617,,,78493,,,78223,,,78081,,,77960,,,77451,,,77081,,,76623,,,76323,,,75590,,,73619,,,63794,,
+ Current Round Threshold,39657,,,39638,,,39635,,,39633,,,39627,,,39622,,,39614,,,39608,,,39599,,,39583,,,39568,,,39552,,,39533,,,39522,,,39502,,,39477,,,39462,,,39450,,,39414,,,39387,,,39359,,,39309,,,39247,,,39112,,,39041,,,38981,,,38726,,,38541,,,38312,,,38162,,,37796,,,36810,,,31898,,
+-Inactive Ballots by by Overvotes,103,1,,104,0,,104,0,,104,0,,104,0,,104,0,,104,0,,104,0,,104,1,,105,1,,106,1,,107,0,,107,0,,107,0,,107,0,,107,0,,107,0,,107,0,,107,0,,107,0,,107,1,,108,1,,109,1,,110,0,,110,0,,110,1,,111,1,,112,2,,114,1,,115,2,,117,6,,123,17,,140,0,
+-Inactive Ballots by by Skipped Rankings,47,0,,47,0,,47,0,,47,0,,47,0,,47,0,,47,0,,47,0,,47,0,,47,0,,47,0,,47,0,,47,0,,47,0,,47,0,,47,0,,47,0,,47,0,,47,0,,47,0,,47,0,,47,0,,47,0,,47,0,,47,0,,47,0,,47,0,,47,0,,47,0,,47,0,,47,0,,47,0,,47,0,
+-Inactive Ballots by by Exhausted Choices,0,18,,18,0,,18,1,,19,1,,20,4,,24,5,,29,5,,34,2,,36,15,,51,14,,65,15,,80,11,,91,16,,107,27,,134,21,,155,21,,176,19,,195,28,,223,47,,270,46,,316,89,,405,101,,506,161,,667,100,,767,95,,862,306,,1168,336,,1504,261,,1765,236,,2001,535,,2536,1406,,3942,7827,,11769,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,150,37,,187,6,,193,5,,198,11,,209,10,,219,17,,236,12,,248,17,,265,33,,298,29,,327,33,,360,37,,397,22,,419,40,,459,51,,510,29,,539,25,,564,72,,636,54,,690,56,,746,99,,845,124,,969,270,,1239,142,,1381,121,,1502,509,,2011,370,,2381,458,,2839,300,,3139,733,,3872,1971,,5843,9825,,15668,0,
++Inactive Ballots by Overvotes,103,,1,104,,0,104,,0,104,,0,104,,0,104,,0,104,,0,104,,0,104,,1,105,,1,106,,1,107,,0,107,,0,107,,0,107,,0,107,,0,107,,0,107,,0,107,,0,107,,0,107,,1,108,,1,109,,1,110,,0,110,,0,110,,1,111,,1,112,,2,114,,1,115,,2,117,,6,123,,17,140,,0
++Inactive Ballots by Skipped Rankings,47,,0,47,,0,47,,0,47,,0,47,,0,47,,0,47,,0,47,,0,47,,0,47,,0,47,,0,47,,0,47,,0,47,,0,47,,0,47,,0,47,,0,47,,0,47,,0,47,,0,47,,0,47,,0,47,,0,47,,0,47,,0,47,,0,47,,0,47,,0,47,,0,47,,0,47,,0,47,,0,47,,0
++Inactive Ballots by Exhausted Choices,0,,18,18,,0,18,,1,19,,1,20,,4,24,,5,29,,5,34,,2,36,,15,51,,14,65,,15,80,,11,91,,16,107,,27,134,,21,155,,21,176,,19,195,,28,223,,47,270,,46,316,,89,405,,101,506,,161,667,,100,767,,95,862,,306,1168,,336,1504,,261,1765,,236,2001,,535,2536,,1406,3942,,7827,11769,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,150,,37,187,,6,193,,5,198,,11,209,,10,219,,17,236,,12,248,,17,265,,33,298,,29,327,,33,360,,37,397,,22,419,,40,459,,51,510,,29,539,,25,564,,72,636,,54,690,,56,746,,99,845,,124,969,,270,1239,,142,1381,,121,1502,,509,2011,,370,2381,,458,2839,,300,3139,,733,3872,,1971,5843,,9825,15668,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/2013_minneapolis_mayor_scale/2013_minneapolis_mayor_scale_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/2013_minneapolis_mayor_scale/2013_minneapolis_mayor_scale_expected_summary.csv
+index 17f95ef..6b2a87d 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/2013_minneapolis_mayor_scale/2013_minneapolis_mayor_scale_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/2013_minneapolis_mayor_scale/2013_minneapolis_mayor_scale_expected_summary.csv
+@@ -56,8 +56,8 @@ JOHN CHARLES WILSON,481,0.04%,13,494,0.04%,-494,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0
+ Undeclared Write-ins,1521,0.14%,-1521,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,1031056,,,1030575,,,1030497,,,1030432,,,1030289,,,1030159,,,1029938,,,1029782,,,1029561,,,1029132,,,1028755,,,1028326,,,1027845,,,1027559,,,1027039,,,1026376,,,1025999,,,1025674,,,1024738,,,1024036,,,1023308,,,1022021,,,1020409,,,1016899,,,1015053,,,1013480,,,1006863,,,1002053,,,996099,,,992199,,,982670,,,957047,,,829322,,
+ Current Round Threshold,515529,,,515288,,,515249,,,515217,,,515145,,,515080,,,514970,,,514892,,,514781,,,514567,,,514378,,,514164,,,513923,,,513780,,,513520,,,513189,,,513000,,,512838,,,512370,,,512019,,,511655,,,511011,,,510205,,,508450,,,507527,,,506741,,,503432,,,501027,,,498050,,,496100,,,491336,,,478524,,,414662,,
+-Inactive Ballots by by Overvotes,1339,13,,1352,0,,1352,0,,1352,0,,1352,0,,1352,0,,1352,0,,1352,0,,1352,13,,1365,13,,1378,13,,1391,0,,1391,0,,1391,0,,1391,0,,1391,0,,1391,0,,1391,0,,1391,0,,1391,0,,1391,13,,1404,13,,1417,13,,1430,0,,1430,0,,1430,13,,1443,13,,1456,26,,1482,13,,1495,26,,1521,78,,1599,221,,1820,0,
+-Inactive Ballots by by Skipped Rankings,611,0,,611,0,,611,0,,611,0,,611,0,,611,0,,611,0,,611,0,,611,0,,611,0,,611,0,,611,0,,611,0,,611,0,,611,0,,611,0,,611,0,,611,0,,611,0,,611,0,,611,0,,611,0,,611,0,,611,0,,611,0,,611,0,,611,0,,611,0,,611,0,,611,0,,611,0,,611,0,,611,0,
+-Inactive Ballots by by Exhausted Choices,0,234,,234,0,,234,13,,247,13,,260,52,,312,65,,377,65,,442,26,,468,195,,663,182,,845,195,,1040,143,,1183,208,,1391,351,,1742,273,,2015,273,,2288,247,,2535,364,,2899,611,,3510,598,,4108,1157,,5265,1313,,6578,2093,,8671,1300,,9971,1235,,11206,3978,,15184,4368,,19552,3393,,22945,3068,,26013,6955,,32968,18278,,51246,101751,,152997,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,1950,481,,2431,78,,2509,65,,2574,143,,2717,130,,2847,221,,3068,156,,3224,221,,3445,429,,3874,377,,4251,429,,4680,481,,5161,286,,5447,520,,5967,663,,6630,377,,7007,325,,7332,936,,8268,702,,8970,728,,9698,1287,,10985,1612,,12597,3510,,16107,1846,,17953,1573,,19526,6617,,26143,4810,,30953,5954,,36907,3900,,40807,9529,,50336,25623,,75959,127725,,203684,0,
++Inactive Ballots by Overvotes,1339,,13,1352,,0,1352,,0,1352,,0,1352,,0,1352,,0,1352,,0,1352,,0,1352,,13,1365,,13,1378,,13,1391,,0,1391,,0,1391,,0,1391,,0,1391,,0,1391,,0,1391,,0,1391,,0,1391,,0,1391,,13,1404,,13,1417,,13,1430,,0,1430,,0,1430,,13,1443,,13,1456,,26,1482,,13,1495,,26,1521,,78,1599,,221,1820,,0
++Inactive Ballots by Skipped Rankings,611,,0,611,,0,611,,0,611,,0,611,,0,611,,0,611,,0,611,,0,611,,0,611,,0,611,,0,611,,0,611,,0,611,,0,611,,0,611,,0,611,,0,611,,0,611,,0,611,,0,611,,0,611,,0,611,,0,611,,0,611,,0,611,,0,611,,0,611,,0,611,,0,611,,0,611,,0,611,,0,611,,0
++Inactive Ballots by Exhausted Choices,0,,234,234,,0,234,,13,247,,13,260,,52,312,,65,377,,65,442,,26,468,,195,663,,182,845,,195,1040,,143,1183,,208,1391,,351,1742,,273,2015,,273,2288,,247,2535,,364,2899,,611,3510,,598,4108,,1157,5265,,1313,6578,,2093,8671,,1300,9971,,1235,11206,,3978,15184,,4368,19552,,3393,22945,,3068,26013,,6955,32968,,18278,51246,,101751,152997,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,1950,,481,2431,,78,2509,,65,2574,,143,2717,,130,2847,,221,3068,,156,3224,,221,3445,,429,3874,,377,4251,,429,4680,,481,5161,,286,5447,,520,5967,,663,6630,,377,7007,,325,7332,,936,8268,,702,8970,,728,9698,,1287,10985,,1612,12597,,3510,16107,,1846,17953,,1573,19526,,6617,26143,,4810,30953,,5954,36907,,3900,40807,,9529,50336,,25623,75959,,127725,203684,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/2013_minneapolis_park/2013_minneapolis_park_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/2013_minneapolis_park/2013_minneapolis_park_expected_summary.csv
+index e493140..53359ed 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/2013_minneapolis_park/2013_minneapolis_park_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/2013_minneapolis_park/2013_minneapolis_park_expected_summary.csv
+@@ -31,9 +31,9 @@ CASPER HILL,1280,2.15%,4,1284,2.16%,-1284,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,
+ Undeclared Write-ins,342,0.57%,-342,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,,0
+ Active Ballots,59463,,,59174,,,58876,,,44010.0000,,,42995.0000,,,41914.0000,,,40009.0000,,,36612.0000,,,33552.0000,,,27289.0000,,,0,,
+ Current Round Threshold,14866,,,14866,,,14866,,,14866,,,14866,,,14866,,,14866,,,14866,,,14866,,,14866,,,14866,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,67,289,,356,298,,654,0.0000,,654.0000,1015.0000,,1669.0000,1081.0000,,2750.0000,1905.0000,,4655.0000,3397.0000,,8052.0000,3060.0000,,11112.0000,6263.0000,,17375.0000,177.5192,,17552.5192,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,67,289,,356,298,,654,0.0000,,654.0000,1015.0000,,1669.0000,1081.0000,,2750.0000,1905.0000,,4655.0000,3397.0000,,8052.0000,3060.0000,,11112.0000,6263.0000,,17375.0000,177.5192,,17552.5192,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,67,,289,356,,298,654,,0.0000,654.0000,,1015.0000,1669.0000,,1081.0000,2750.0000,,1905.0000,4655.0000,,3397.0000,8052.0000,,3060.0000,11112.0000,,6263.0000,17375.0000,,177.5192,17552.5192,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,67,,289,356,,298,654,,0.0000,654.0000,,1015.0000,1669.0000,,1081.0000,2750.0000,,1905.0000,4655.0000,,3397.0000,8052.0000,,3060.0000,11112.0000,,6263.0000,17375.0000,,177.5192,17552.5192,,0
+ Residual surplus,0,,,0,,,0,,,0,,,0,,,0,,,0,,,0,,,0,,,0,,,0.4808,,
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/2013_minneapolis_park_bottoms_up/2013_minneapolis_park_bottoms_up_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/2013_minneapolis_park_bottoms_up/2013_minneapolis_park_bottoms_up_expected_summary.csv
+index 1e80c15..fb7389c 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/2013_minneapolis_park_bottoms_up/2013_minneapolis_park_bottoms_up_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/2013_minneapolis_park_bottoms_up/2013_minneapolis_park_bottoms_up_expected_summary.csv
+@@ -31,8 +31,8 @@ CASPER HILL,1280,2.15%,4,1284,2.16%,-1284,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,
+ Undeclared Write-ins,342,0.57%,-342,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,59463,,,59174,,,58876,,,57926,,,56924,,,55274,,,52027,,,49968,,,47268,,
+ Current Round Threshold,14866,,,14866,,,14866,,,14866,,,14866,,,14866,,,14866,,,14866,,,14866,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,67,289,,356,298,,654,950,,1604,1002,,2606,1650,,4256,3247,,7503,2059,,9562,2700,,12262,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,67,289,,356,298,,654,950,,1604,1002,,2606,1650,,4256,3247,,7503,2059,,9562,2700,,12262,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,67,,289,356,,298,654,,950,1604,,1002,2606,,1650,4256,,3247,7503,,2059,9562,,2700,12262,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,67,,289,356,,298,654,,950,1604,,1002,2606,,1650,4256,,3247,7503,,2059,9562,,2700,12262,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/2013_minneapolis_park_hare/2013_minneapolis_park_hare_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/2013_minneapolis_park_hare/2013_minneapolis_park_hare_expected_summary.csv
+index 9ff5bb1..5f64d3c 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/2013_minneapolis_park_hare/2013_minneapolis_park_hare_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/2013_minneapolis_park_hare/2013_minneapolis_park_hare_expected_summary.csv
+@@ -31,9 +31,9 @@ CASPER HILL,1280,2.15%,4,1284,2.16%,-1284,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,
+ Undeclared Write-ins,342,0.57%,-342,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,,0
+ Active Ballots,59463,,,59174,,,58876,,,57926,,,56924,,,55274,,,52027,,,49968,,,47268,,,0,,
+ Current Round Threshold,19821,,,19821,,,19821,,,19821,,,19821,,,19821,,,19821,,,19821,,,19821,,,19821,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,67,289,,356,298,,654,950,,1604,1002,,2606,1650,,4256,3247,,7503,2059,,9562,2700,,12262,1827.2600,,14089.2600,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,67,289,,356,298,,654,950,,1604,1002,,2606,1650,,4256,3247,,7503,2059,,9562,2700,,12262,1827.2600,,14089.2600,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,67,,289,356,,298,654,,950,1604,,1002,2606,,1650,4256,,3247,7503,,2059,9562,,2700,12262,,1827.2600,14089.2600,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,67,,289,356,,298,654,,950,1604,,1002,2606,,1650,4256,,3247,7503,,2059,9562,,2700,12262,,1827.2600,14089.2600,,0
+ Residual surplus,0,,,0,,,0,,,0,,,0,,,0,,,0,,,0,,,0,,,1.7400,,
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/2013_minneapolis_park_sequential/2013_minneapolis_park_sequential_1_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/2013_minneapolis_park_sequential/2013_minneapolis_park_sequential_1_expected_summary.csv
+index d838abe..54d4748 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/2013_minneapolis_park_sequential/2013_minneapolis_park_sequential_1_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/2013_minneapolis_park_sequential/2013_minneapolis_park_sequential_1_expected_summary.csv
+@@ -31,8 +31,8 @@ CASPER HILL,1280,2.15%,4,1284,2.16%,-1284,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,
+ Undeclared Write-ins,342,0.57%,-342,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,59463,,,59174,,,58876,,,57926,,,56924,,,55274,,,52027,,,49968,,,47268,,,40324,,
+ Current Round Threshold,29732,,,29588,,,29439,,,28964,,,28463,,,27638,,,26014,,,24985,,,23635,,,20163,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,67,289,,356,298,,654,950,,1604,1002,,2606,1650,,4256,3247,,7503,2059,,9562,2700,,12262,6944,,19206,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,67,289,,356,298,,654,950,,1604,1002,,2606,1650,,4256,3247,,7503,2059,,9562,2700,,12262,6944,,19206,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,67,,289,356,,298,654,,950,1604,,1002,2606,,1650,4256,,3247,7503,,2059,9562,,2700,12262,,6944,19206,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,67,,289,356,,298,654,,950,1604,,1002,2606,,1650,4256,,3247,7503,,2059,9562,,2700,12262,,6944,19206,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/2013_minneapolis_park_sequential/2013_minneapolis_park_sequential_2_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/2013_minneapolis_park_sequential/2013_minneapolis_park_sequential_2_expected_summary.csv
+index cef639d..5c91b61 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/2013_minneapolis_park_sequential/2013_minneapolis_park_sequential_2_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/2013_minneapolis_park_sequential/2013_minneapolis_park_sequential_2_expected_summary.csv
+@@ -30,8 +30,8 @@ CASPER HILL,1586,2.76%,4,1590,2.78%,-1590,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,
+ Undeclared Write-ins,356,0.62%,-356,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,57401,,,57101,,,56735,,,55688,,,54392,,,52274,,,48689,,,44478,,,36914,,
+ Current Round Threshold,28701,,,28551,,,28368,,,27845,,,27197,,,26138,,,24345,,,22240,,,18458,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,2129,300,,2429,366,,2795,1047,,3842,1296,,5138,2118,,7256,3585,,10841,4211,,15052,7564,,22616,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,2129,300,,2429,366,,2795,1047,,3842,1296,,5138,2118,,7256,3585,,10841,4211,,15052,7564,,22616,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,2129,,300,2429,,366,2795,,1047,3842,,1296,5138,,2118,7256,,3585,10841,,4211,15052,,7564,22616,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,2129,,300,2429,,366,2795,,1047,3842,,1296,5138,,2118,7256,,3585,10841,,4211,15052,,7564,22616,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/2013_minneapolis_park_sequential/2013_minneapolis_park_sequential_3_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/2013_minneapolis_park_sequential/2013_minneapolis_park_sequential_3_expected_summary.csv
+index b4e6948..d7d09aa 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/2013_minneapolis_park_sequential/2013_minneapolis_park_sequential_3_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/2013_minneapolis_park_sequential/2013_minneapolis_park_sequential_3_expected_summary.csv
+@@ -29,8 +29,8 @@ CASPER HILL,1903,3.48%,5,1908,3.51%,-1908,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,
+ Undeclared Write-ins,381,0.69%,-381,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,54598,,,54272,,,53599,,,50679,,,48433,,,46013,,,41986,,,31348,,
+ Current Round Threshold,27300,,,27137,,,26800,,,25340,,,24217,,,23007,,,20994,,,15675,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,4932,326,,5258,673,,5931,2920,,8851,2246,,11097,2420,,13517,4027,,17544,10638,,28182,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,4932,326,,5258,673,,5931,2920,,8851,2246,,11097,2420,,13517,4027,,17544,10638,,28182,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,4932,,326,5258,,673,5931,,2920,8851,,2246,11097,,2420,13517,,4027,17544,,10638,28182,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,4932,,326,5258,,673,5931,,2920,8851,,2246,11097,,2420,13517,,4027,17544,,10638,28182,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/2015_portland_mayor/2015_portland_mayor_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/2015_portland_mayor/2015_portland_mayor_expected_summary.csv
+index fc7e3dd..40ca5f3 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/2015_portland_mayor/2015_portland_mayor_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/2015_portland_mayor/2015_portland_mayor_expected_summary.csv
+@@ -36,8 +36,8 @@ Elected,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"Mavodones, Nicholas M. Jr.",,
+ Undeclared Write-ins,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,98,,,98,,,98,,,98,,,98,,,98,,,98,,,97,,,97,,,97,,,97,,,97,,,97,,,94,,
+ Current Round Threshold,50,,,50,,,50,,,50,,,50,,,50,,,50,,,49,,,49,,,49,,,49,,,49,,,49,,,48,,
+-Inactive Ballots by by Overvotes,1,0,,1,0,,1,0,,1,0,,1,0,,1,0,,1,0,,1,0,,1,0,,1,0,,1,0,,1,0,,1,2,,3,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,1,,1,0,,1,0,,1,0,,1,0,,1,0,,1,0,,1,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,1,0,,1,0,,1,0,,1,0,,1,0,,1,0,,1,1,,2,0,,2,0,,2,0,,2,0,,2,0,,2,3,,5,0,
++Inactive Ballots by Overvotes,1,,0,1,,0,1,,0,1,,0,1,,0,1,,0,1,,0,1,,0,1,,0,1,,0,1,,0,1,,0,1,,2,3,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,1,1,,0,1,,0,1,,0,1,,0,1,,0,1,,0,1,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,1,,0,1,,0,1,,0,1,,0,1,,0,1,,0,1,,1,2,,0,2,,0,2,,0,2,,0,2,,0,2,,3,5,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/2015_portland_mayor_codes/2015_portland_mayor_codes_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/2015_portland_mayor_codes/2015_portland_mayor_codes_expected_summary.csv
+index fc7e3dd..40ca5f3 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/2015_portland_mayor_codes/2015_portland_mayor_codes_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/2015_portland_mayor_codes/2015_portland_mayor_codes_expected_summary.csv
+@@ -36,8 +36,8 @@ Elected,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"Mavodones, Nicholas M. Jr.",,
+ Undeclared Write-ins,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,98,,,98,,,98,,,98,,,98,,,98,,,98,,,97,,,97,,,97,,,97,,,97,,,97,,,94,,
+ Current Round Threshold,50,,,50,,,50,,,50,,,50,,,50,,,50,,,49,,,49,,,49,,,49,,,49,,,49,,,48,,
+-Inactive Ballots by by Overvotes,1,0,,1,0,,1,0,,1,0,,1,0,,1,0,,1,0,,1,0,,1,0,,1,0,,1,0,,1,0,,1,2,,3,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,1,,1,0,,1,0,,1,0,,1,0,,1,0,,1,0,,1,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,1,0,,1,0,,1,0,,1,0,,1,0,,1,0,,1,1,,2,0,,2,0,,2,0,,2,0,,2,0,,2,3,,5,0,
++Inactive Ballots by Overvotes,1,,0,1,,0,1,,0,1,,0,1,,0,1,,0,1,,0,1,,0,1,,0,1,,0,1,,0,1,,0,1,,2,3,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,1,1,,0,1,,0,1,,0,1,,0,1,,0,1,,0,1,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,1,,0,1,,0,1,,0,1,,0,1,,0,1,,0,1,,1,2,,0,2,,0,2,,0,2,,0,2,,0,2,,3,5,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/2017_minneapolis_mayor/2017_minneapolis_mayor_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/2017_minneapolis_mayor/2017_minneapolis_mayor_expected_summary.csv
+index b3ab213..7beb403 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/2017_minneapolis_mayor/2017_minneapolis_mayor_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/2017_minneapolis_mayor/2017_minneapolis_mayor_expected_summary.csv
+@@ -39,8 +39,8 @@ Theron Preston Washington,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Undeclared Write-ins,137,0.13%,-137,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,104484,,,104398,,,101865,,,99747,,,93578,,,81674,,
+ Current Round Threshold,52243,,,52200,,,50933,,,49874,,,46790,,,40838,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,38,0,,38,0,,38,0,,38,0,,38,0,,38,0,
+-Inactive Ballots by by Exhausted Choices,37,37,,74,1534,,1608,1291,,2899,3596,,6495,9273,,15768,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,75,86,,161,2533,,2694,2118,,4812,6169,,10981,11904,,22885,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,38,,0,38,,0,38,,0,38,,0,38,,0,38,,0
++Inactive Ballots by Exhausted Choices,37,,37,74,,1534,1608,,1291,2899,,3596,6495,,9273,15768,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,75,,86,161,,2533,2694,,2118,4812,,6169,10981,,11904,22885,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/2018_maine_governor_primary/2018_maine_governor_primary_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/2018_maine_governor_primary/2018_maine_governor_primary_expected_summary.csv
+index 1864895..3bee248 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/2018_maine_governor_primary/2018_maine_governor_primary_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/2018_maine_governor_primary/2018_maine_governor_primary_expected_summary.csv
+@@ -28,8 +28,8 @@ Elected,,,,,,,,,,"Mills, Janet T.",,
+ Write-in,748,0.59%,-748,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,126139,,,124093,,,122512,,,117253,,
+ Current Round Threshold,63070,,,62047,,,61257,,,58627,,
+-Inactive Ballots by by Overvotes,430,42,,472,35,,507,73,,580,0,
+-Inactive Ballots by by Skipped Rankings,146,45,,191,28,,219,78,,297,0,
+-Inactive Ballots by by Exhausted Choices,0,119,,119,61,,180,92,,272,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,576,2046,,2622,1581,,4203,5259,,9462,0,
++Inactive Ballots by Overvotes,430,,42,472,,35,507,,73,580,,0
++Inactive Ballots by Skipped Rankings,146,,45,191,,28,219,,78,297,,0
++Inactive Ballots by Exhausted Choices,0,,119,119,,61,180,,92,272,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,576,,2046,2622,,1581,4203,,5259,9462,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/aliases_cdf_json/aliases_cdf_json_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/aliases_cdf_json/aliases_cdf_json_expected_summary.csv
+index 669d2dc..bef1462 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/aliases_cdf_json/aliases_cdf_json_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/aliases_cdf_json/aliases_cdf_json_expected_summary.csv
+@@ -24,8 +24,8 @@ Candidate C Name File 1,6,20.0%,2,8,26.66%,-8,0,0.0%,0
+ Candidate D Name File 1,4,13.33%,-4,0,0.0%,0,0,0.0%,0
+ Active Ballots,30,,,30,,,30,,
+ Current Round Threshold,16,,,16,,,16,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,
+-Inactive Ballots Total,0,0,,0,0,,0,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,0,0,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/aliases_ess_xlsx/aliases_ess_xlsx_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/aliases_ess_xlsx/aliases_ess_xlsx_expected_summary.csv
+index 43b2d1c..4401427 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/aliases_ess_xlsx/aliases_ess_xlsx_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/aliases_ess_xlsx/aliases_ess_xlsx_expected_summary.csv
+@@ -24,8 +24,8 @@ C,2,22.22%,0,2,25.0%,-2,0,0.0%,0
+ D,1,11.11%,-1,0,0.0%,0,0,0.0%,0
+ Active Ballots,9,,,8,,,8,,
+ Current Round Threshold,5,,,5,,,5,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,
+-Inactive Ballots Total,0,1,,1,0,,1,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,1,1,,0,1,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/clear_ballot_kansas_primary/clear_ballot_kansas_primary_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/clear_ballot_kansas_primary/clear_ballot_kansas_primary_expected_summary.csv
+index 538919b..a595669 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/clear_ballot_kansas_primary/clear_ballot_kansas_primary_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/clear_ballot_kansas_primary/clear_ballot_kansas_primary_expected_summary.csv
+@@ -31,8 +31,8 @@ Steven Bullock,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Undeclared Write-ins,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,50,,,50,,,50,,,50,,
+ Current Round Threshold,26,,,26,,,26,,,26,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,0,0,,0,0,,0,0,,0,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,0,0,,0,0,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/continue_tabulation_test/continue_tabulation_test_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/continue_tabulation_test/continue_tabulation_test_expected_summary.csv
+index 15f7127..13e0b7b 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/continue_tabulation_test/continue_tabulation_test_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/continue_tabulation_test/continue_tabulation_test_expected_summary.csv
+@@ -23,8 +23,8 @@ Elected,"Vail, Christopher L.",,,,,,,,
+ "Haadoow, Hamza A.",3,16.66%,0,3,16.66%,-3,0,0.0%,0
+ Active Ballots,18,,,18,,,18,,
+ Current Round Threshold,10,,,10,,,10,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,
+-Inactive Ballots Total,0,0,,0,0,,0,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,0,0,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/continue_until_two_with_batch_elimination_test/continue_until_two_with_batch_elimination_test_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/continue_until_two_with_batch_elimination_test/continue_until_two_with_batch_elimination_test_expected_summary.csv
+index 435d0a1..4ec1b30 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/continue_until_two_with_batch_elimination_test/continue_until_two_with_batch_elimination_test_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/continue_until_two_with_batch_elimination_test/continue_until_two_with_batch_elimination_test_expected_summary.csv
+@@ -27,8 +27,8 @@ F,1,1.0%,0,1,1.0%,-1,0,0.0%,0,0,0.0%,0
+ G,1,1.0%,0,1,1.0%,-1,0,0.0%,0,0,0.0%,0
+ Active Ballots,100,,,100,,,91,,,76,,
+ Current Round Threshold,51,,,51,,,46,,,39,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,0,0,,0,9,,9,15,,24,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,9,9,,15,24,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/dominion_alaska/dominion_alaska_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/dominion_alaska/dominion_alaska_expected_summary.csv
+index 3600416..ea46fae 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/dominion_alaska/dominion_alaska_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/dominion_alaska/dominion_alaska_expected_summary.csv
+@@ -29,8 +29,8 @@ Elizabeth Warren,96,10.18%,15,111,11.77%,8,119,12.61%,-119,0,0.0%,0,0,0.0%,0,0,0
+ Undeclared Write-ins,104,11.02%,-104,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,943,,,943,,,943,,,943,,,942,,,938,,,894,,,793,,
+ Current Round Threshold,472,,,472,,,472,,,472,,,472,,,470,,,448,,,397,,
+-Inactive Ballots by by Overvotes,2,0,,2,0,,2,0,,2,1,,3,2,,5,1,,6,1,,7,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,2,0,,2,0,,2,0,,2,1,,3,4,,7,44,,51,101,,152,0,
++Inactive Ballots by Overvotes,2,,0,2,,0,2,,0,2,,1,3,,2,5,,1,6,,1,7,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,2,,0,2,,0,2,,0,2,,1,3,,4,7,,44,51,,101,152,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/dominion_kansas/dominion_kansas_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/dominion_kansas/dominion_kansas_expected_summary.csv
+index e40ebf3..12e72a4 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/dominion_kansas/dominion_kansas_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/dominion_kansas/dominion_kansas_expected_summary.csv
+@@ -29,8 +29,8 @@ Joseph R. Biden,496,10.55%,63,559,11.9%,-559,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Undeclared Write-ins,513,10.92%,-513,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,4697,,,4696,,,4695,,,4694,,,4688,,,4648,,,4446,,,3923,,
+ Current Round Threshold,2349,,,2349,,,2348,,,2348,,,2345,,,2325,,,2224,,,1962,,
+-Inactive Ballots by by Overvotes,13,1,,14,1,,15,1,,16,6,,22,1,,23,5,,28,5,,33,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,13,1,,14,1,,15,1,,16,6,,22,40,,62,202,,264,523,,787,0,
++Inactive Ballots by Overvotes,13,,1,14,,1,15,,1,16,,6,22,,1,23,,5,28,,5,33,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,13,,1,14,,1,15,,1,16,,6,22,,40,62,,202,264,,523,787,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/dominion_multi_file/dominion_multi_file_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/dominion_multi_file/dominion_multi_file_expected_summary.csv
+index 02fa87a..abde13a 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/dominion_multi_file/dominion_multi_file_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/dominion_multi_file/dominion_multi_file_expected_summary.csv
+@@ -25,8 +25,8 @@ Spencer Simonson,1,5.88%,0
+ Undeclared Write-ins,0,0.0%,0
+ Active Ballots,17,,
+ Current Round Threshold,9,,
+-Inactive Ballots by by Overvotes,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,
+-Inactive Ballots Total,0,0,
++Inactive Ballots by Overvotes,0,,0
++Inactive Ballots by Skipped Rankings,0,,0
++Inactive Ballots by Exhausted Choices,0,,0
++Inactive Ballots by Repeated Rankings,0,,0
++Inactive Ballots Total,0,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/dominion_no_precinct_data/dominion_no_precinct_data_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/dominion_no_precinct_data/dominion_no_precinct_data_expected_summary.csv
+index 0475cd0..d4a37a1 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/dominion_no_precinct_data/dominion_no_precinct_data_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/dominion_no_precinct_data/dominion_no_precinct_data_expected_summary.csv
+@@ -29,8 +29,8 @@ Tulsi Gabbard,89,9.47%,19,108,11.5%,22,130,13.84%,19,149,15.86%,26,175,18.63%,-1
+ Undeclared Write-ins,117,12.46%,-117,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,939,,,939,,,939,,,939,,,939,,,935,,,903,,,795,,
+ Current Round Threshold,470,,,470,,,470,,,470,,,470,,,468,,,452,,,398,,
+-Inactive Ballots by by Overvotes,4,0,,4,0,,4,0,,4,0,,4,1,,5,1,,6,1,,7,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,4,0,,4,0,,4,0,,4,0,,4,4,,8,32,,40,108,,148,0,
++Inactive Ballots by Overvotes,4,,0,4,,0,4,,0,4,,0,4,,1,5,,1,6,,1,7,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,4,,0,4,,0,4,,0,4,,0,4,,4,8,,32,40,,108,148,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/dominion_wyoming/dominion_wyoming_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/dominion_wyoming/dominion_wyoming_expected_summary.csv
+index 0475cd0..d4a37a1 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/dominion_wyoming/dominion_wyoming_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/dominion_wyoming/dominion_wyoming_expected_summary.csv
+@@ -29,8 +29,8 @@ Tulsi Gabbard,89,9.47%,19,108,11.5%,22,130,13.84%,19,149,15.86%,26,175,18.63%,-1
+ Undeclared Write-ins,117,12.46%,-117,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,939,,,939,,,939,,,939,,,939,,,935,,,903,,,795,,
+ Current Round Threshold,470,,,470,,,470,,,470,,,470,,,468,,,452,,,398,,
+-Inactive Ballots by by Overvotes,4,0,,4,0,,4,0,,4,0,,4,1,,5,1,,6,1,,7,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,4,0,,4,0,,4,0,,4,0,,4,4,,8,32,,40,108,,148,0,
++Inactive Ballots by Overvotes,4,,0,4,,0,4,,0,4,,0,4,,1,5,,1,6,,1,7,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,4,,0,4,,0,4,,0,4,,0,4,,4,8,,32,40,,108,148,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/duplicate_test/duplicate_test_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/duplicate_test/duplicate_test_expected_summary.csv
+index 6c302e7..18ea81d 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/duplicate_test/duplicate_test_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/duplicate_test/duplicate_test_expected_summary.csv
+@@ -23,8 +23,8 @@ Banana,4,36.36%,0,4,44.44%,0
+ Durian,3,27.27%,-3,0,0.0%,0
+ Active Ballots,11,,,9,,
+ Current Round Threshold,6,,,5,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,2,,2,0,
+-Inactive Ballots Total,0,2,,2,0,
++Inactive Ballots by Overvotes,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,2,2,,0
++Inactive Ballots Total,0,,2,2,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/excluded_test/excluded_test_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/excluded_test/excluded_test_expected_summary.csv
+index c2fd679..dc8a0b2 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/excluded_test/excluded_test_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/excluded_test/excluded_test_expected_summary.csv
+@@ -21,8 +21,8 @@ Elected,George Gervin,,
+ George Gervin,3,100.0%,0
+ Active Ballots,3,,
+ Current Round Threshold,2,,
+-Inactive Ballots by by Overvotes,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,
+-Inactive Ballots Total,0,0,
++Inactive Ballots by Overvotes,0,,0
++Inactive Ballots by Skipped Rankings,0,,0
++Inactive Ballots by Exhausted Choices,0,,0
++Inactive Ballots by Repeated Rankings,0,,0
++Inactive Ballots Total,0,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/exhaust_if_multiple_continuing/exhaust_if_multiple_continuing_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/exhaust_if_multiple_continuing/exhaust_if_multiple_continuing_expected_summary.csv
+index 6bc431b..412f814 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/exhaust_if_multiple_continuing/exhaust_if_multiple_continuing_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/exhaust_if_multiple_continuing/exhaust_if_multiple_continuing_expected_summary.csv
+@@ -24,8 +24,8 @@ D,1,16.66%,0,1,16.66%,-1,0,0.0%,0
+ A,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,6,,,6,,,5,,
+ Current Round Threshold,4,,,4,,,3,,
+-Inactive Ballots by by Overvotes,3,0,,3,0,,3,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,
+-Inactive Ballots Total,3,0,,3,1,,4,0,
++Inactive Ballots by Overvotes,3,,0,3,,0,3,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0
++Inactive Ballots Total,3,,0,3,,1,4,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/first_round_determines_threshold_test/first_round_determines_threshold_test_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/first_round_determines_threshold_test/first_round_determines_threshold_test_expected_summary.csv
+index 4aab123..e656961 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/first_round_determines_threshold_test/first_round_determines_threshold_test_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/first_round_determines_threshold_test/first_round_determines_threshold_test_expected_summary.csv
+@@ -23,8 +23,8 @@ Elected,,,,"Vail, Christopher L.",,
+ "Carmona, Ralph C.",5,31.25%,0,5,45.45%,0
+ Active Ballots,16,,,11,,
+ Current Round Threshold,9,,,9,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,
+-Inactive Ballots Total,0,5,,5,0,
++Inactive Ballots by Overvotes,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0
++Inactive Ballots Total,0,,5,5,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/first_round_determines_threshold_tiebreaker_test/first_round_determines_threshold_tiebreaker_test_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/first_round_determines_threshold_tiebreaker_test/first_round_determines_threshold_tiebreaker_test_expected_summary.csv
+index a7eaec3..48b1745 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/first_round_determines_threshold_tiebreaker_test/first_round_determines_threshold_tiebreaker_test_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/first_round_determines_threshold_tiebreaker_test/first_round_determines_threshold_tiebreaker_test_expected_summary.csv
+@@ -23,8 +23,8 @@ Elected,,,,"Vail, Christopher L.",,
+ "Haadoow, Hamza A.",5,29.41%,-5,0,0.0%,0
+ Active Ballots,17,,,12,,
+ Current Round Threshold,9,,,9,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,
+-Inactive Ballots Total,0,5,,5,0,
++Inactive Ballots by Overvotes,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0
++Inactive Ballots Total,0,,5,5,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/generic_csv_test/generic_csv_test_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/generic_csv_test/generic_csv_test_expected_summary.csv
+index a3599f2..924d258 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/generic_csv_test/generic_csv_test_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/generic_csv_test/generic_csv_test_expected_summary.csv
+@@ -25,8 +25,8 @@ Broccoli,3,11.53%,1,4,15.38%,-4,0,0.0%,0,0,0.0%,0
+ Undeclared Write-ins,6,23.07%,-6,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,26,,,26,,,26,,,26,,
+ Current Round Threshold,14,,,14,,,14,,,14,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,0,0,,0,0,,0,0,,0,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,0,0,,0,0,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/hart_cedar_park_school_board/hart_cedar_park_school_board_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/hart_cedar_park_school_board/hart_cedar_park_school_board_expected_summary.csv
+index ffdd0ce..54c3749 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/hart_cedar_park_school_board/hart_cedar_park_school_board_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/hart_cedar_park_school_board/hart_cedar_park_school_board_expected_summary.csv
+@@ -28,8 +28,8 @@ Betty McCollum,0,0.0%,0
+ Undeclared Write-ins,0,0.0%,0
+ Active Ballots,7,,
+ Current Round Threshold,4,,
+-Inactive Ballots by by Overvotes,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,
+-Inactive Ballots Total,0,0,
++Inactive Ballots by Overvotes,0,,0
++Inactive Ballots by Skipped Rankings,0,,0
++Inactive Ballots by Exhausted Choices,0,,0
++Inactive Ballots by Repeated Rankings,0,,0
++Inactive Ballots Total,0,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/hart_travis_county_officers/hart_travis_county_officers_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/hart_travis_county_officers/hart_travis_county_officers_expected_summary.csv
+index 19f3b4b..71e35c7 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/hart_travis_county_officers/hart_travis_county_officers_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/hart_travis_county_officers/hart_travis_county_officers_expected_summary.csv
+@@ -25,8 +25,8 @@ Jim Sylvester,0,0.0%,0
+ Bruce Elfant,0,0.0%,0
+ Active Ballots,1,,
+ Current Round Threshold,1,,
+-Inactive Ballots by by Overvotes,6,0,
+-Inactive Ballots by by Skipped Rankings,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,
+-Inactive Ballots Total,6,0,
++Inactive Ballots by Overvotes,6,,0
++Inactive Ballots by Skipped Rankings,0,,0
++Inactive Ballots by Exhausted Choices,0,,0
++Inactive Ballots by Repeated Rankings,0,,0
++Inactive Ballots Total,6,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/minimum_threshold_test/minimum_threshold_test_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/minimum_threshold_test/minimum_threshold_test_expected_summary.csv
+index ef1ca4c..59df4c1 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/minimum_threshold_test/minimum_threshold_test_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/minimum_threshold_test/minimum_threshold_test_expected_summary.csv
+@@ -25,8 +25,8 @@ Garfield,1,10.0%,-1,0,0.0%,0
+ Odie,0,0.0%,0,0,0.0%,0
+ Active Ballots,10,,,10,,
+ Current Round Threshold,6,,,6,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,
+-Inactive Ballots Total,0,0,,0,0,
++Inactive Ballots by Overvotes,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/minneapolis_multi_seat_threshold/minneapolis_multi_seat_threshold_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/minneapolis_multi_seat_threshold/minneapolis_multi_seat_threshold_expected_summary.csv
+index f090c25..7badfe8 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/minneapolis_multi_seat_threshold/minneapolis_multi_seat_threshold_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/minneapolis_multi_seat_threshold/minneapolis_multi_seat_threshold_expected_summary.csv
+@@ -26,8 +26,8 @@ F,3,10.34%,0,3,10.71%,0.0000,3.0000,15.0%,-3.0000,0,0.0%,0,0,0.0%,0,0,,0
+ D,2,6.89%,-2,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,,0
+ Active Ballots,29,,,28,,,20.0000,,,20.0000,,,20.0000,,,0,,
+ Current Round Threshold,8,,,8,,,8,,,8,,,8,,,8,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,1,1,,2,0,,2,0,,2,0.0000,,2.0000,0.6000,,2.6000,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,,0,0,,0,2.6000,,2.6000,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,1,1,,2,0,,2,0,,2,0.0000,,2.0000,4.0000,,6.0000,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,1,,1,2,,0,2,,0,2,,0.0000,2.0000,,0.6000,2.6000,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,0,0,,2.6000,2.6000,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,1,,1,2,,0,2,,0,2,,0.0000,2.0000,,4.0000,6.0000,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/missing_precinct_example/missing_precinct_example_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/missing_precinct_example/missing_precinct_example_expected_summary.csv
+index fbcd3e0..2bc4497 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/missing_precinct_example/missing_precinct_example_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/missing_precinct_example/missing_precinct_example_expected_summary.csv
+@@ -39,8 +39,8 @@ Al Flowers,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Undeclared Write-ins,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,4,,,4,,,4,,,4,,,2,,
+ Current Round Threshold,3,,,3,,,3,,,3,,,2,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,,0,2,,2,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,0,0,,0,0,,0,0,,0,2,,2,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,2,2,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,0,0,,0,0,,2,2,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/multi_seat_bottoms_up_with_threshold/multi_seat_bottoms_up_with_threshold_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/multi_seat_bottoms_up_with_threshold/multi_seat_bottoms_up_with_threshold_expected_summary.csv
+index 4cc0a7b..d0e9835 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/multi_seat_bottoms_up_with_threshold/multi_seat_bottoms_up_with_threshold_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/multi_seat_bottoms_up_with_threshold/multi_seat_bottoms_up_with_threshold_expected_summary.csv
+@@ -28,8 +28,8 @@ E,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ F,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,21,,,21,,,21,,,21,,,21,,
+ Current Round Threshold,3.1500,,,3.1500,,,3.1500,,,3.1500,,,3.1500,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,0,0,,0,0,,0,0,,0,0,,0,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,0,0,,0,0,,0,0,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/multi_seat_uwi_test/multi_seat_uwi_test_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/multi_seat_uwi_test/multi_seat_uwi_test_expected_summary.csv
+index d996084..eb2a4ba 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/multi_seat_uwi_test/multi_seat_uwi_test_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/multi_seat_uwi_test/multi_seat_uwi_test_expected_summary.csv
+@@ -24,8 +24,8 @@ C,2,13.33%,0,2,22.22%,0,2,40.0%,-2,0,0.0%,0,0,,0
+ Undeclared Write-ins,4,26.66%,0,4,44.44%,-4,0,0.0%,0,0,0.0%,0,0,,0
+ Active Ballots,15,,,9,,,5,,,3,,,0,,
+ Current Round Threshold,6,,,6,,,6,,,6,,,6,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,0,0.0000,,0.0000,4.0000,,4.0000,2.0000,,6.0000,0.0000,,6.0000,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0.0000,0.0000,,4.0000,4.0000,,2.0000,6.0000,,0.0000,6.0000,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/nist_xml_cdf_2/nist_xml_cdf_2_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/nist_xml_cdf_2/nist_xml_cdf_2_expected_summary.csv
+index e07d1e9..d93f9ce 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/nist_xml_cdf_2/nist_xml_cdf_2_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/nist_xml_cdf_2/nist_xml_cdf_2_expected_summary.csv
+@@ -23,8 +23,8 @@ John Kasich and Mary Taylor,0,,0,0,,0,0,,0
+ Anita Rios and Bob Fitrakis,0,,0,0,,0,0,,0
+ Active Ballots,0,,,0,,,0,,
+ Current Round Threshold,1,,,1,,,1,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,
+-Inactive Ballots Total,0,0,,0,0,,0,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,0,0,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/precinct_example/precinct_example_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/precinct_example/precinct_example_expected_summary.csv
+index ebe4a07..a9a2d89 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/precinct_example/precinct_example_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/precinct_example/precinct_example_expected_summary.csv
+@@ -39,8 +39,8 @@ Troy Benjegerdes,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Undeclared Write-ins,1,1.01%,-1,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,99,,,98,,,96,,,90,,,83,,
+ Current Round Threshold,50,,,50,,,49,,,46,,,42,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,1,,1,2,,3,7,,10,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,0,1,,1,2,,3,6,,9,7,,16,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,1,1,,2,3,,7,10,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,1,1,,2,3,,6,9,,7,16,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/sequential_with_batch/sequential_with_batch_1_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/sequential_with_batch/sequential_with_batch_1_expected_summary.csv
+index b5a47d7..8ff734e 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/sequential_with_batch/sequential_with_batch_1_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/sequential_with_batch/sequential_with_batch_1_expected_summary.csv
+@@ -26,8 +26,8 @@ E,0,0.0%,0
+ F,0,0.0%,0
+ Active Ballots,9,,
+ Current Round Threshold,5,,
+-Inactive Ballots by by Overvotes,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,
+-Inactive Ballots Total,0,0,
++Inactive Ballots by Overvotes,0,,0
++Inactive Ballots by Skipped Rankings,0,,0
++Inactive Ballots by Exhausted Choices,0,,0
++Inactive Ballots by Repeated Rankings,0,,0
++Inactive Ballots Total,0,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/sequential_with_batch/sequential_with_batch_2_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/sequential_with_batch/sequential_with_batch_2_expected_summary.csv
+index 973fe4c..1bc914c 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/sequential_with_batch/sequential_with_batch_2_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/sequential_with_batch/sequential_with_batch_2_expected_summary.csv
+@@ -25,8 +25,8 @@ E,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ F,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,5,,,4,,,2,,
+ Current Round Threshold,3,,,3,,,2,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,4,1,,5,2,,7,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,
+-Inactive Ballots Total,4,1,,5,2,,7,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,4,,1,5,,2,7,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0
++Inactive Ballots Total,4,,1,5,,2,7,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/sequential_with_batch/sequential_with_batch_3_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/sequential_with_batch/sequential_with_batch_3_expected_summary.csv
+index 64f0d90..3496873 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/sequential_with_batch/sequential_with_batch_3_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/sequential_with_batch/sequential_with_batch_3_expected_summary.csv
+@@ -24,8 +24,8 @@ E,0,0.0%,0
+ F,0,0.0%,0
+ Active Ballots,3,,
+ Current Round Threshold,2,,
+-Inactive Ballots by by Overvotes,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,
+-Inactive Ballots by by Exhausted Choices,6,0,
+-Inactive Ballots by by Repeated Rankings,0,0,
+-Inactive Ballots Total,6,0,
++Inactive Ballots by Overvotes,0,,0
++Inactive Ballots by Skipped Rankings,0,,0
++Inactive Ballots by Exhausted Choices,6,,0
++Inactive Ballots by Repeated Rankings,0,,0
++Inactive Ballots Total,6,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/sequential_with_continue_until_two/sequential_with_continue_until_two_1_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/sequential_with_continue_until_two/sequential_with_continue_until_two_1_expected_summary.csv
+index b78732f..22ce501 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/sequential_with_continue_until_two/sequential_with_continue_until_two_1_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/sequential_with_continue_until_two/sequential_with_continue_until_two_1_expected_summary.csv
+@@ -26,8 +26,8 @@ E,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ F,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,9,,,9,,,9,,,9,,,8,,,7,,
+ Current Round Threshold,5,,,5,,,5,,,5,,,5,,,4,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,,0,1,,1,1,,2,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,0,0,,0,0,,0,0,,0,1,,1,1,,2,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,1,1,,1,2,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,0,0,,0,0,,1,1,,1,2,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/sequential_with_continue_until_two/sequential_with_continue_until_two_2_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/sequential_with_continue_until_two/sequential_with_continue_until_two_2_expected_summary.csv
+index 2d04fd0..205bd26 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/sequential_with_continue_until_two/sequential_with_continue_until_two_2_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/sequential_with_continue_until_two/sequential_with_continue_until_two_2_expected_summary.csv
+@@ -25,8 +25,8 @@ E,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ F,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,5,,,5,,,5,,,4,,,2,,
+ Current Round Threshold,3,,,3,,,3,,,3,,,2,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,4,0,,4,0,,4,1,,5,2,,7,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,4,0,,4,0,,4,1,,5,2,,7,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,4,,0,4,,0,4,,1,5,,2,7,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,4,,0,4,,0,4,,1,5,,2,7,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/sequential_with_continue_until_two/sequential_with_continue_until_two_3_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/sequential_with_continue_until_two/sequential_with_continue_until_two_3_expected_summary.csv
+index 072549c..36ada71 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/sequential_with_continue_until_two/sequential_with_continue_until_two_3_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/sequential_with_continue_until_two/sequential_with_continue_until_two_3_expected_summary.csv
+@@ -24,8 +24,8 @@ E,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ F,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,3,,,3,,,3,,,3,,
+ Current Round Threshold,2,,,2,,,2,,,2,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,6,0,,6,0,,6,0,,6,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,6,0,,6,0,,6,0,,6,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,6,,0,6,,0,6,,0,6,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,6,,0,6,,0,6,,0,6,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/skip_to_next_test/skip_to_next_test_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/skip_to_next_test/skip_to_next_test_expected_summary.csv
+index a8eace8..51e012c 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/skip_to_next_test/skip_to_next_test_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/skip_to_next_test/skip_to_next_test_expected_summary.csv
+@@ -24,8 +24,8 @@ C,3,20.0%,1,4,26.66%,-4,0,0.0%,0
+ D,1,6.66%,-1,0,0.0%,0,0,0.0%,0
+ Active Ballots,15,,,15,,,14,,
+ Current Round Threshold,8,,,8,,,8,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,1,,1,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,
+-Inactive Ballots Total,0,0,,0,1,,1,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,1,1,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,1,1,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/stop_tabulation_early_test/stop_tabulation_early_test_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/stop_tabulation_early_test/stop_tabulation_early_test_expected_summary.csv
+index 6ee06c8..f1e7343 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/stop_tabulation_early_test/stop_tabulation_early_test_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/stop_tabulation_early_test/stop_tabulation_early_test_expected_summary.csv
+@@ -23,8 +23,8 @@ George Gervin,3,33.33%,0,3,50.0%,0
+ Mookie Blaylock,3,33.33%,0,3,50.0%,0
+ Active Ballots,9,,,6,,
+ Current Round Threshold,5,,,4,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,
+-Inactive Ballots Total,0,3,,3,0,
++Inactive Ballots by Overvotes,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0
++Inactive Ballots Total,0,,3,3,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/test_set_0_skipped_first_choice/test_set_0_skipped_first_choice_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/test_set_0_skipped_first_choice/test_set_0_skipped_first_choice_expected_summary.csv
+index e71f364..990b989 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/test_set_0_skipped_first_choice/test_set_0_skipped_first_choice_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/test_set_0_skipped_first_choice/test_set_0_skipped_first_choice_expected_summary.csv
+@@ -24,8 +24,8 @@ Candidate C Name,3,25.0%,0,3,25.0%,-3,0,0.0%,0
+ Candidate D Name,1,8.33%,-1,0,0.0%,0,0,0.0%,0
+ Active Ballots,12,,,12,,,11,,
+ Current Round Threshold,7,,,7,,,6,,
+-Inactive Ballots by by Overvotes,0,0,,0,1,,1,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,
+-Inactive Ballots Total,0,0,,0,1,,1,0,
++Inactive Ballots by Overvotes,0,,0,0,,1,1,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,1,1,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/test_set_1_exhaust_at_overvote/test_set_1_exhaust_at_overvote_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/test_set_1_exhaust_at_overvote/test_set_1_exhaust_at_overvote_expected_summary.csv
+index 68a8659..cae33a8 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/test_set_1_exhaust_at_overvote/test_set_1_exhaust_at_overvote_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/test_set_1_exhaust_at_overvote/test_set_1_exhaust_at_overvote_expected_summary.csv
+@@ -24,8 +24,8 @@ Candidate C Name,2,14.28%,1,3,21.42%,-3,0,0.0%,0
+ Candidate D Name,1,7.14%,-1,0,0.0%,0,0,0.0%,0
+ Active Ballots,14,,,14,,,13,,
+ Current Round Threshold,8,,,8,,,7,,
+-Inactive Ballots by by Overvotes,1,0,,1,1,,2,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,
+-Inactive Ballots Total,1,0,,1,1,,2,0,
++Inactive Ballots by Overvotes,1,,0,1,,1,2,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0
++Inactive Ballots Total,1,,0,1,,1,2,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/test_set_2_overvote_skip_to_next/test_set_2_overvote_skip_to_next_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/test_set_2_overvote_skip_to_next/test_set_2_overvote_skip_to_next_expected_summary.csv
+index 12a118d..d1d494c 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/test_set_2_overvote_skip_to_next/test_set_2_overvote_skip_to_next_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/test_set_2_overvote_skip_to_next/test_set_2_overvote_skip_to_next_expected_summary.csv
+@@ -24,8 +24,8 @@ Candidate C Name,2,14.28%,1,3,21.42%,-3,0,0.0%,0
+ Candidate D Name,1,7.14%,-1,0,0.0%,0,0,0.0%,0
+ Active Ballots,14,,,14,,,13,,
+ Current Round Threshold,8,,,8,,,7,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,1,0,,1,1,,2,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,
+-Inactive Ballots Total,1,0,,1,1,,2,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,1,,0,1,,1,2,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0
++Inactive Ballots Total,1,,0,1,,1,2,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/test_set_3_skipped_choice_exhaust/test_set_3_skipped_choice_exhaust_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/test_set_3_skipped_choice_exhaust/test_set_3_skipped_choice_exhaust_expected_summary.csv
+index b89e8d8..18e03f8 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/test_set_3_skipped_choice_exhaust/test_set_3_skipped_choice_exhaust_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/test_set_3_skipped_choice_exhaust/test_set_3_skipped_choice_exhaust_expected_summary.csv
+@@ -24,8 +24,8 @@ Candidate C Name,2,14.28%,1,3,21.42%,-3,0,0.0%,0
+ Candidate D Name,1,7.14%,-1,0,0.0%,0,0,0.0%,0
+ Active Ballots,14,,,14,,,12,,
+ Current Round Threshold,8,,,8,,,7,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,1,0,,1,2,,3,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,
+-Inactive Ballots Total,1,0,,1,2,,3,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,1,,0,1,,2,3,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0
++Inactive Ballots Total,1,,0,1,,2,3,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/test_set_4_skipped_choice_next/test_set_4_skipped_choice_next_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/test_set_4_skipped_choice_next/test_set_4_skipped_choice_next_expected_summary.csv
+index 6909da9..3c64158 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/test_set_4_skipped_choice_next/test_set_4_skipped_choice_next_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/test_set_4_skipped_choice_next/test_set_4_skipped_choice_next_expected_summary.csv
+@@ -24,8 +24,8 @@ Candidate C Name,2,13.33%,1,3,20.0%,-3,0,0.0%,0
+ Candidate D Name,1,6.66%,-1,0,0.0%,0,0,0.0%,0
+ Active Ballots,15,,,15,,,15,,
+ Current Round Threshold,8,,,8,,,8,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,
+-Inactive Ballots Total,0,0,,0,0,,0,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,0,0,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/test_set_5_two_skipped_choice_exhaust/test_set_5_two_skipped_choice_exhaust_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/test_set_5_two_skipped_choice_exhaust/test_set_5_two_skipped_choice_exhaust_expected_summary.csv
+index e31f7e4..a3e65b5 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/test_set_5_two_skipped_choice_exhaust/test_set_5_two_skipped_choice_exhaust_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/test_set_5_two_skipped_choice_exhaust/test_set_5_two_skipped_choice_exhaust_expected_summary.csv
+@@ -24,8 +24,8 @@ Candidate C Name,2,13.33%,1,3,20.0%,-3,0,0.0%,0
+ Candidate D Name,1,6.66%,-1,0,0.0%,0,0,0.0%,0
+ Active Ballots,15,,,15,,,14,,
+ Current Round Threshold,8,,,8,,,8,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,1,,1,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,
+-Inactive Ballots Total,0,0,,0,1,,1,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,1,1,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,1,1,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/test_set_6_duplicate_exhaust/test_set_6_duplicate_exhaust_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/test_set_6_duplicate_exhaust/test_set_6_duplicate_exhaust_expected_summary.csv
+index 7055664..a5bd13a 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/test_set_6_duplicate_exhaust/test_set_6_duplicate_exhaust_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/test_set_6_duplicate_exhaust/test_set_6_duplicate_exhaust_expected_summary.csv
+@@ -24,8 +24,8 @@ Candidate B Name,4,26.66%,1,5,35.71%,2,7,58.33%,0
+ Candidate D Name,2,13.33%,-2,0,0.0%,0,0,0.0%,0
+ Active Ballots,15,,,14,,,12,,
+ Current Round Threshold,8,,,8,,,7,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,1,,1,2,,3,0,
+-Inactive Ballots Total,0,1,,1,2,,3,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,1,1,,2,3,,0
++Inactive Ballots Total,0,,1,1,,2,3,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/test_set_7_duplicate_skip_to_next/test_set_7_duplicate_skip_to_next_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/test_set_7_duplicate_skip_to_next/test_set_7_duplicate_skip_to_next_expected_summary.csv
+index 51367f3..4beaf90 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/test_set_7_duplicate_skip_to_next/test_set_7_duplicate_skip_to_next_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/test_set_7_duplicate_skip_to_next/test_set_7_duplicate_skip_to_next_expected_summary.csv
+@@ -24,8 +24,8 @@ Candidate C Name,3,20.0%,1,4,26.66%,-4,0,0.0%,0
+ Candidate D Name,2,13.33%,-2,0,0.0%,0,0,0.0%,0
+ Active Ballots,15,,,15,,,15,,
+ Current Round Threshold,8,,,8,,,8,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,
+-Inactive Ballots Total,0,0,,0,0,,0,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,0,0,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/test_set_8_multi_cdf/test_set_8_multi_cdf_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/test_set_8_multi_cdf/test_set_8_multi_cdf_expected_summary.csv
+index ed0dcb8..c94a2e8 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/test_set_8_multi_cdf/test_set_8_multi_cdf_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/test_set_8_multi_cdf/test_set_8_multi_cdf_expected_summary.csv
+@@ -24,8 +24,8 @@ Candidate C Name,6,25.0%,0,6,25.0%,-6,0,0.0%,0
+ Candidate D Name,2,8.33%,-2,0,0.0%,0,0,0.0%,0
+ Active Ballots,24,,,24,,,22,,
+ Current Round Threshold,13,,,13,,,12,,
+-Inactive Ballots by by Overvotes,0,0,,0,2,,2,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,
+-Inactive Ballots Total,0,0,,0,2,,2,0,
++Inactive Ballots by Overvotes,0,,0,0,,2,2,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,2,2,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/test_set_allow_only_one_winner_per_round/test_set_allow_only_one_winner_per_round_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/test_set_allow_only_one_winner_per_round/test_set_allow_only_one_winner_per_round_expected_summary.csv
+index f3c383a..f977f04 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/test_set_allow_only_one_winner_per_round/test_set_allow_only_one_winner_per_round_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/test_set_allow_only_one_winner_per_round/test_set_allow_only_one_winner_per_round_expected_summary.csv
+@@ -24,9 +24,9 @@ C,3,33.33%,0,3,44.44%,1.4994,4.4994,100.0%,-2.2493,2.2501,107.17%,0
+ D,0,0.0%,0,0,0.0%,0,0,0.0%,2.0994,2.0994,100.0%,0
+ Active Ballots,9,,,6.7497,,,4.4994,,,2.0994,,
+ Current Round Threshold,2.2501,,,2.2501,,,2.2501,,,2.2501,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0.1497,,0.1497,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,0,0,,0,0,,0,0.1497,,0.1497,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0.1497,0.1497,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,0,0,,0.1497,0.1497,,0
+ Residual surplus,0,,,0.0002,,,0.0004,,,0.0006,,
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/test_set_multi_winner_fractional_threshold/test_set_multi_winner_fractional_threshold_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/test_set_multi_winner_fractional_threshold/test_set_multi_winner_fractional_threshold_expected_summary.csv
+index f5f717b..f023e28 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/test_set_multi_winner_fractional_threshold/test_set_multi_winner_fractional_threshold_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/test_set_multi_winner_fractional_threshold/test_set_multi_winner_fractional_threshold_expected_summary.csv
+@@ -26,9 +26,9 @@ Candidate F Name,3,10.34%,0,3,10.71%,0.0937,3.0937,14.9%,-3.0937,0,0.0%,0,0,0.0%
+ Candidate D Name,2,6.89%,-2,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,,0
+ Active Ballots,29,,,28,,,20.7496,,,20.7496,,,20.3748,,,0,,
+ Current Round Threshold,7.2501,,,7.2501,,,7.2501,,,7.2501,,,7.2501,,,7.2501,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,1,1,,2,0,,2,0,,2,0.1874,,2.1874,0.8582,,3.0456,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,,0,0,,0,3.8760,,3.8760,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,1,1,,2,0,,2,0,,2,0.3748,,2.3748,5.8741,,8.2489,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,1,,1,2,,0,2,,0,2,,0.1874,2.1874,,0.8582,3.0456,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,0,0,,3.8760,3.8760,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,1,,1,2,,0,2,,0,2,,0.3748,2.3748,,5.8741,8.2489,,0
+ Residual surplus,0,,,0,,,0.0003,,,0.0003,,,0.0003,,,0.0008,,
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/test_set_multi_winner_whole_threshold/test_set_multi_winner_whole_threshold_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/test_set_multi_winner_whole_threshold/test_set_multi_winner_whole_threshold_expected_summary.csv
+index 1437d4c..1cc6431 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/test_set_multi_winner_whole_threshold/test_set_multi_winner_whole_threshold_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/test_set_multi_winner_whole_threshold/test_set_multi_winner_whole_threshold_expected_summary.csv
+@@ -26,9 +26,9 @@ Candidate F Name,3,10.34%,0.1111,3.1111,14.81%,0.1111,3.2222,16.11%,-3.2222,0,0.
+ Candidate D Name,2,6.89%,0.1111,2.1111,10.05%,-2.1111,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,,0
+ Active Ballots,29,,,20.9999,,,19.9999,,,19.9999,,,19.5555,,,0,,
+ Current Round Threshold,8,,,8,,,8,,,8,,,8,,,8,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,1,0,,1,1,,2,0,,2,0.2222,,2.2222,0.4908,,2.7130,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,,0,0,,0,2.4408,,2.4408,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,1,0,,1,1,,2,0,,2,0.4444,,2.4444,3.5549,,5.9993,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,1,,0,1,,1,2,,0,2,,0.2222,2.2222,,0.4908,2.7130,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,0,0,,2.4408,2.4408,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,1,,0,1,,1,2,,0,2,,0.4444,2.4444,,3.5549,5.9993,,0
+ Residual surplus,0,,,0.0001,,,0.0001,,,0.0001,,,0.0001,,,0.0007,,
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/test_set_overvote_delimiter/test_set_overvote_delimiter_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/test_set_overvote_delimiter/test_set_overvote_delimiter_expected_summary.csv
+index 63810e3..8155f2e 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/test_set_overvote_delimiter/test_set_overvote_delimiter_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/test_set_overvote_delimiter/test_set_overvote_delimiter_expected_summary.csv
+@@ -24,8 +24,8 @@ C,2,22.22%,0,2,25.0%,-2,0,0.0%,0
+ D,1,11.11%,-1,0,0.0%,0,0,0.0%,0
+ Active Ballots,9,,,8,,,8,,
+ Current Round Threshold,5,,,5,,,5,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,
+-Inactive Ballots Total,0,1,,1,0,,1,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,1,1,,0,1,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/test_set_treat_blank_as_undeclared_write_in/test_set_treat_blank_as_undeclared_write_in_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/test_set_treat_blank_as_undeclared_write_in/test_set_treat_blank_as_undeclared_write_in_expected_summary.csv
+index b6afcf8..7da15b2 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/test_set_treat_blank_as_undeclared_write_in/test_set_treat_blank_as_undeclared_write_in_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/test_set_treat_blank_as_undeclared_write_in/test_set_treat_blank_as_undeclared_write_in_expected_summary.csv
+@@ -25,8 +25,8 @@ D,1,8.33%,0,1,8.33%,-1,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Undeclared Write-ins,5,41.66%,-5,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,12,,,12,,,12,,,12,,,9,,
+ Current Round Threshold,7,,,7,,,7,,,7,,,5,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,,0,1,,1,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,,0,2,,2,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,0,0,,0,0,,0,0,,0,3,,3,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,1,1,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,2,2,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,0,0,,0,0,,3,3,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/tiebreak_generate_permutation_test/tiebreak_generate_permutation_test_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/tiebreak_generate_permutation_test/tiebreak_generate_permutation_test_expected_summary.csv
+index e1ab234..f44c2a8 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/tiebreak_generate_permutation_test/tiebreak_generate_permutation_test_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/tiebreak_generate_permutation_test/tiebreak_generate_permutation_test_expected_summary.csv
+@@ -24,8 +24,8 @@ George Gervin,2,25.0%,0,2,33.33%,0,2,50.0%,0,2,100.0%,0
+ Mookie Blaylock,2,25.0%,-2,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,8,,,6,,,4,,,2,,
+ Current Round Threshold,5,,,4,,,3,,,2,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,2,,2,2,,4,2,,6,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,0,2,,2,2,,4,2,,6,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,2,2,,2,4,,2,6,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,2,2,,2,4,,2,6,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/tiebreak_previous_round_counts_then_random_test/tiebreak_previous_round_counts_then_random_test_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/tiebreak_previous_round_counts_then_random_test/tiebreak_previous_round_counts_then_random_test_expected_summary.csv
+index 282007c..c4fb5ce 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/tiebreak_previous_round_counts_then_random_test/tiebreak_previous_round_counts_then_random_test_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/tiebreak_previous_round_counts_then_random_test/tiebreak_previous_round_counts_then_random_test_expected_summary.csv
+@@ -24,8 +24,8 @@ Grumpy,2,22.22%,1,3,33.33%,-3,0,0.0%,0,0,0.0%,0
+ Happy,1,11.11%,-1,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,9,,,9,,,6,,,3,,
+ Current Round Threshold,5,,,5,,,4,,,2,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,0,0,,0,3,,3,3,,6,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,3,3,,3,6,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/tiebreak_seed_test/tiebreak_seed_test_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/tiebreak_seed_test/tiebreak_seed_test_expected_summary.csv
+index ab75854..0063996 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/tiebreak_seed_test/tiebreak_seed_test_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/tiebreak_seed_test/tiebreak_seed_test_expected_summary.csv
+@@ -23,8 +23,8 @@ George Gervin,3,33.33%,0,3,50.0%,-3,0,0.0%,0
+ Mookie Blaylock,3,33.33%,0,3,50.0%,0,3,100.0%,0
+ Active Ballots,9,,,6,,,3,,
+ Current Round Threshold,5,,,4,,,2,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,
+-Inactive Ballots Total,0,3,,3,3,,6,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,3,3,,3,6,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/tiebreak_use_permutation_in_config_test/tiebreak_use_permutation_in_config_test_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/tiebreak_use_permutation_in_config_test/tiebreak_use_permutation_in_config_test_expected_summary.csv
+index c5da731..de8b753 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/tiebreak_use_permutation_in_config_test/tiebreak_use_permutation_in_config_test_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/tiebreak_use_permutation_in_config_test/tiebreak_use_permutation_in_config_test_expected_summary.csv
+@@ -24,8 +24,8 @@ George Gervin,2,20.0%,1,3,30.0%,-3,0,0.0%,0,0,0.0%,0
+ Sedale Threatt,1,10.0%,-1,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,10,,,10,,,8,,,4,,
+ Current Round Threshold,6,,,6,,,5,,,3,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,0,0,,0,2,,2,4,,6,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,2,2,,4,6,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_city_chief_of_police/unisyn_xml_cdf_city_chief_of_police_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_city_chief_of_police/unisyn_xml_cdf_city_chief_of_police_expected_summary.csv
+index 77fa139..74c755c 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_city_chief_of_police/unisyn_xml_cdf_city_chief_of_police_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_city_chief_of_police/unisyn_xml_cdf_city_chief_of_police_expected_summary.csv
+@@ -28,8 +28,8 @@ Emily Stevens,3,10.34%,0,3,10.34%,0,3,10.34%,-3,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0
+ Undeclared Write-ins,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,29,,,29,,,29,,,29,,,29,,,29,,,25,,
+ Current Round Threshold,15,,,15,,,15,,,15,,,15,,,15,,,13,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,,0,0,,0,0,,0,4,,4,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,0,0,,0,0,,0,0,,0,0,,0,0,,0,4,,4,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,0,0,,0,0,,4,4,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,0,0,,0,0,,0,0,,0,0,,4,4,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_city_coroner/unisyn_xml_cdf_city_coroner_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_city_coroner/unisyn_xml_cdf_city_coroner_expected_summary.csv
+index d6cadca..5e2fed2 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_city_coroner/unisyn_xml_cdf_city_coroner_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_city_coroner/unisyn_xml_cdf_city_coroner_expected_summary.csv
+@@ -27,8 +27,8 @@ Emily Van Zandt,3,10.34%,0,3,10.34%,0,3,10.34%,-3,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Undeclared Write-ins,1,3.44%,-1,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,29,,,29,,,29,,,29,,,28,,,24,,
+ Current Round Threshold,15,,,15,,,15,,,15,,,15,,,13,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,,0,1,,1,4,,5,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,0,0,,0,0,,0,0,,0,1,,1,4,,5,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,1,1,,4,5,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,0,0,,0,0,,1,1,,4,5,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_city_council_member/unisyn_xml_cdf_city_council_member_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_city_council_member/unisyn_xml_cdf_city_council_member_expected_summary.csv
+index 7026e2c..c85b2c1 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_city_council_member/unisyn_xml_cdf_city_council_member_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_city_council_member/unisyn_xml_cdf_city_council_member_expected_summary.csv
+@@ -29,8 +29,8 @@ Sylvia Vaugn,2,6.89%,0,2,6.89%,-2,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0
+ Undeclared Write-ins,1,3.44%,-1,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,29,,,29,,,29,,,29,,,29,,,29,,,27,,,20,,,12,,
+ Current Round Threshold,15,,,15,,,15,,,15,,,15,,,15,,,14,,,11,,,7,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,,0,0,,0,0,,0,2,,2,7,,9,8,,17,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,0,0,,0,0,,0,0,,0,0,,0,0,,0,2,,2,7,,9,8,,17,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,0,0,,0,0,,2,2,,7,9,,8,17,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,0,0,,0,0,,0,0,,0,0,,2,2,,7,9,,8,17,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_city_mayor/unisyn_xml_cdf_city_mayor_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_city_mayor/unisyn_xml_cdf_city_mayor_expected_summary.csv
+index 3ff0909..ba2dc82 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_city_mayor/unisyn_xml_cdf_city_mayor_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_city_mayor/unisyn_xml_cdf_city_mayor_expected_summary.csv
+@@ -33,8 +33,8 @@ Carrol Wilson,1,3.44%,0,1,3.44%,0,1,3.44%,-1,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Undeclared Write-ins,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,29,,,29,,,29,,,29,,,29,,,29,,,29,,,29,,,27,,,24,,,21,,,16,,
+ Current Round Threshold,15,,,15,,,15,,,15,,,15,,,15,,,15,,,15,,,14,,,13,,,11,,,9,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,2,,2,3,,5,3,,8,5,,13,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,2,,2,3,,5,3,,8,5,,13,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,2,2,,3,5,,3,8,,5,13,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,2,2,,3,5,,3,8,,5,13,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_city_tax_collector/unisyn_xml_cdf_city_tax_collector_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_city_tax_collector/unisyn_xml_cdf_city_tax_collector_expected_summary.csv
+index 65dc432..42e27ed 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_city_tax_collector/unisyn_xml_cdf_city_tax_collector_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_city_tax_collector/unisyn_xml_cdf_city_tax_collector_expected_summary.csv
+@@ -29,8 +29,8 @@ Brady Gordon,2,6.89%,1,3,10.34%,0,3,10.34%,0,3,10.34%,-3,0,0.0%,0,0,0.0%,0,0,0.0
+ Undeclared Write-ins,1,3.44%,-1,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,29,,,29,,,29,,,29,,,29,,,29,,,28,,,25,,
+ Current Round Threshold,15,,,15,,,15,,,15,,,15,,,15,,,15,,,13,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,,0,0,,0,0,,0,1,,1,3,,4,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,0,0,,0,0,,0,0,,0,0,,0,0,,0,1,,1,3,,4,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,0,0,,0,0,,1,1,,3,4,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,0,0,,0,0,,0,0,,0,0,,1,1,,3,4,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_county_coroner/unisyn_xml_cdf_county_coroner_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_county_coroner/unisyn_xml_cdf_county_coroner_expected_summary.csv
+index 697d206..495c196 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_county_coroner/unisyn_xml_cdf_county_coroner_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_county_coroner/unisyn_xml_cdf_county_coroner_expected_summary.csv
+@@ -29,8 +29,8 @@ Walter Gerber,3,10.34%,0,3,10.34%,1,4,13.79%,0,4,13.79%,0,4,13.79%,-4,0,0.0%,0,0
+ Undeclared Write-ins,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,29,,,29,,,29,,,29,,,29,,,25,,,24,,,18,,,9,,
+ Current Round Threshold,15,,,15,,,15,,,15,,,15,,,13,,,13,,,10,,,5,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,,0,0,,0,4,,4,1,,5,6,,11,9,,20,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,0,0,,0,0,,0,0,,0,0,,0,4,,4,1,,5,6,,11,9,,20,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,0,0,,4,4,,1,5,,6,11,,9,20,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,0,0,,0,0,,0,0,,4,4,,1,5,,6,11,,9,20,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_county_sheriff/unisyn_xml_cdf_county_sheriff_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_county_sheriff/unisyn_xml_cdf_county_sheriff_expected_summary.csv
+index 8a4b629..a05d552 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_county_sheriff/unisyn_xml_cdf_county_sheriff_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_county_sheriff/unisyn_xml_cdf_county_sheriff_expected_summary.csv
+@@ -28,8 +28,8 @@ Beth Small,2,6.89%,0,2,6.89%,-2,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0
+ Undeclared Write-ins,2,6.89%,-2,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+ Active Ballots,29,,,29,,,29,,,29,,,29,,,29,,,24,,,17,,
+ Current Round Threshold,15,,,15,,,15,,,15,,,15,,,15,,,13,,,9,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,0,,0,0,,0,0,,0,0,,0,0,,0,5,,5,7,,12,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,
+-Inactive Ballots Total,0,0,,0,0,,0,0,,0,0,,0,0,,0,5,,5,7,,12,0,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,0,0,,0,0,,5,5,,7,12,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,0,0,,0,0,,0,0,,0,0,,5,5,,7,12,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/uwi_cannot_win_test/uwi_cannot_win_test_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/uwi_cannot_win_test/uwi_cannot_win_test_expected_summary.csv
+index d883ef1..42f603b 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/uwi_cannot_win_test/uwi_cannot_win_test_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/uwi_cannot_win_test/uwi_cannot_win_test_expected_summary.csv
+@@ -23,8 +23,8 @@ B,1,11.11%,0,1,25.0%,0
+ Undeclared Write-ins,5,55.55%,-5,0,0.0%,0
+ Active Ballots,9,,,4,,
+ Current Round Threshold,5,,,3,,
+-Inactive Ballots by by Overvotes,0,0,,0,0,
+-Inactive Ballots by by Skipped Rankings,0,0,,0,0,
+-Inactive Ballots by by Exhausted Choices,0,5,,5,0,
+-Inactive Ballots by by Repeated Rankings,0,0,,0,0,
+-Inactive Ballots Total,0,5,,5,0,
++Inactive Ballots by Overvotes,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,5,5,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0
++Inactive Ballots Total,0,,5,5,,0

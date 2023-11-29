@@ -1,0 +1,38 @@
+diff --git a/src/test/java/org/jsoup/integration/SessionIT.java b/src/test/java/org/jsoup/integration/SessionIT.java
+index 0bcdb17..4ee30f8 100644
+--- a/src/test/java/org/jsoup/integration/SessionIT.java
++++ b/src/test/java/org/jsoup/integration/SessionIT.java
+@@ -2,7 +2,6 @@ package org.jsoup.integration;
+ 
+ import org.jsoup.Connection;
+ import org.jsoup.Jsoup;
+-import org.jsoup.UncheckedIOException;
+ import org.jsoup.integration.servlets.FileServlet;
+ import org.jsoup.integration.servlets.SlowRider;
+ import org.jsoup.nodes.Document;
+@@ -10,6 +9,7 @@ import org.junit.jupiter.api.BeforeAll;
+ import org.junit.jupiter.api.Test;
+ 
+ import java.io.IOException;
++import java.io.UncheckedIOException;
+ import java.util.concurrent.atomic.AtomicInteger;
+ 
+ import static org.junit.jupiter.api.Assertions.assertEquals;
+diff --git a/src/test/java/org/jsoup/parser/CharacterReaderTest.java b/src/test/java/org/jsoup/parser/CharacterReaderTest.java
+index 37d7494..5aa9a58 100644
+--- a/src/test/java/org/jsoup/parser/CharacterReaderTest.java
++++ b/src/test/java/org/jsoup/parser/CharacterReaderTest.java
+@@ -1,12 +1,12 @@
+ package org.jsoup.parser;
+ 
+-import org.jsoup.UncheckedIOException;
+ import org.jsoup.integration.ParseTest;
+ import org.junit.jupiter.api.Test;
+ 
+ import java.io.BufferedReader;
+ import java.io.IOException;
+ import java.io.StringReader;
++import java.io.UncheckedIOException;
+ 
+ import static org.junit.jupiter.api.Assertions.*;
+ 

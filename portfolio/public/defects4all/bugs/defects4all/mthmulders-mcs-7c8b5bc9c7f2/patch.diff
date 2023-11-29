@@ -1,0 +1,149 @@
+diff --git a/src/main/java/it/mulders/mcs/search/printer/BuildrOutput.java b/src/main/java/it/mulders/mcs/search/printer/BuildrOutput.java
+index 81299ac..74c7ddc 100644
+--- a/src/main/java/it/mulders/mcs/search/printer/BuildrOutput.java
++++ b/src/main/java/it/mulders/mcs/search/printer/BuildrOutput.java
+@@ -3,7 +3,7 @@ package it.mulders.mcs.search.printer;
+ public final class BuildrOutput implements CoordinatePrinter {
+ 
+     @Override
+-    public String provideCoordinates(final String group, final String artifact, final String version) {
++    public String provideCoordinates(final String group, final String artifact, final String version, String packaging) {
+         return "'%s:%s:jar:%s'".formatted(group, artifact, version);
+     }
+ }
+diff --git a/src/main/java/it/mulders/mcs/search/printer/CoordinatePrinter.java b/src/main/java/it/mulders/mcs/search/printer/CoordinatePrinter.java
+index fb98f4c..9e27fb9 100644
+--- a/src/main/java/it/mulders/mcs/search/printer/CoordinatePrinter.java
++++ b/src/main/java/it/mulders/mcs/search/printer/CoordinatePrinter.java
+@@ -9,7 +9,7 @@ public sealed interface CoordinatePrinter extends OutputPrinter
+         permits BuildrOutput, GradleGroovyOutput, GradleGroovyShortOutput, GradleKotlinOutput, GrapeOutput,
+         IvyXmlOutput, LeiningenOutput, PomXmlOutput, SbtOutput {
+ 
+-    String provideCoordinates(final String group, final String artifact, final String version);
++    String provideCoordinates(final String group, final String artifact, final String version, final String packaging);
+ 
+     @Override
+     default void print(final SearchQuery query, final SearchResponse.Response response, final PrintStream stream) {
+@@ -19,7 +19,7 @@ public sealed interface CoordinatePrinter extends OutputPrinter
+ 
+         var doc = response.docs()[0];
+         stream.println();
+-        stream.println(provideCoordinates(doc.g(), doc.a(), first(doc.v(), doc.latestVersion())));
++        stream.println(provideCoordinates(doc.g(), doc.a(), first(doc.v(), doc.latestVersion()), doc.p()));
+         stream.println();
+     }
+ 
+diff --git a/src/main/java/it/mulders/mcs/search/printer/GradleGroovyOutput.java b/src/main/java/it/mulders/mcs/search/printer/GradleGroovyOutput.java
+index 653ddaf..21edd9f 100644
+--- a/src/main/java/it/mulders/mcs/search/printer/GradleGroovyOutput.java
++++ b/src/main/java/it/mulders/mcs/search/printer/GradleGroovyOutput.java
+@@ -3,7 +3,7 @@ package it.mulders.mcs.search.printer;
+ public final class GradleGroovyOutput implements CoordinatePrinter {
+ 
+     @Override
+-    public String provideCoordinates(final String group, final String artifact, final String version) {
++    public String provideCoordinates(final String group, final String artifact, final String version, String packaging) {
+         return "implementation group: '%s', name: '%s', version: '%s'".formatted(group, artifact, version);
+     }
+ }
+diff --git a/src/main/java/it/mulders/mcs/search/printer/GradleGroovyShortOutput.java b/src/main/java/it/mulders/mcs/search/printer/GradleGroovyShortOutput.java
+index dd74a11..041b066 100644
+--- a/src/main/java/it/mulders/mcs/search/printer/GradleGroovyShortOutput.java
++++ b/src/main/java/it/mulders/mcs/search/printer/GradleGroovyShortOutput.java
+@@ -3,7 +3,7 @@ package it.mulders.mcs.search.printer;
+ public final class GradleGroovyShortOutput implements CoordinatePrinter {
+ 
+     @Override
+-    public String provideCoordinates(final String group, final String artifact, final String version) {
++    public String provideCoordinates(final String group, final String artifact, final String version, String packaging) {
+         return "implementation '%s:%s:%s'".formatted(group, artifact, version);
+     }
+ }
+diff --git a/src/main/java/it/mulders/mcs/search/printer/GradleKotlinOutput.java b/src/main/java/it/mulders/mcs/search/printer/GradleKotlinOutput.java
+index 0dede3a..5db3031 100644
+--- a/src/main/java/it/mulders/mcs/search/printer/GradleKotlinOutput.java
++++ b/src/main/java/it/mulders/mcs/search/printer/GradleKotlinOutput.java
+@@ -3,7 +3,7 @@ package it.mulders.mcs.search.printer;
+ public final class GradleKotlinOutput implements CoordinatePrinter {
+ 
+     @Override
+-    public String provideCoordinates(final String group, final String artifact, final String version) {
++    public String provideCoordinates(final String group, final String artifact, final String version, String packaging) {
+         return "implementation(\"%s:%s:%s\")".formatted(group, artifact, version);
+     }
+ }
+diff --git a/src/main/java/it/mulders/mcs/search/printer/GrapeOutput.java b/src/main/java/it/mulders/mcs/search/printer/GrapeOutput.java
+index cbea0d4..692fa7f 100644
+--- a/src/main/java/it/mulders/mcs/search/printer/GrapeOutput.java
++++ b/src/main/java/it/mulders/mcs/search/printer/GrapeOutput.java
+@@ -3,7 +3,7 @@ package it.mulders.mcs.search.printer;
+ public final class GrapeOutput implements CoordinatePrinter {
+ 
+     @Override
+-    public String provideCoordinates(final String group, final String artifact, final String version) {
++    public String provideCoordinates(final String group, final String artifact, final String version, String packaging) {
+         return """
+                 @Grapes(
+                     @Grab(group='%s', module='%s', version='%s')
+diff --git a/src/main/java/it/mulders/mcs/search/printer/IvyXmlOutput.java b/src/main/java/it/mulders/mcs/search/printer/IvyXmlOutput.java
+index 995c15d..4ade67d 100644
+--- a/src/main/java/it/mulders/mcs/search/printer/IvyXmlOutput.java
++++ b/src/main/java/it/mulders/mcs/search/printer/IvyXmlOutput.java
+@@ -3,7 +3,7 @@ package it.mulders.mcs.search.printer;
+ public final class IvyXmlOutput implements CoordinatePrinter {
+ 
+     @Override
+-    public String provideCoordinates(final String group, final String artifact, final String version) {
++    public String provideCoordinates(final String group, final String artifact, final String version, String packaging) {
+         return """
+                 <dependency org="%s" name="%s" rev="%s"/>
+                 """.formatted(group, artifact, version);
+diff --git a/src/main/java/it/mulders/mcs/search/printer/LeiningenOutput.java b/src/main/java/it/mulders/mcs/search/printer/LeiningenOutput.java
+index 2f150cf..b3bdcfa 100644
+--- a/src/main/java/it/mulders/mcs/search/printer/LeiningenOutput.java
++++ b/src/main/java/it/mulders/mcs/search/printer/LeiningenOutput.java
+@@ -3,7 +3,7 @@ package it.mulders.mcs.search.printer;
+ public final class LeiningenOutput implements CoordinatePrinter {
+ 
+     @Override
+-    public String provideCoordinates(final String group, final String artifact, final String version) {
++    public String provideCoordinates(final String group, final String artifact, final String version, String packaging) {
+         return "[%s/%s \"%s\"]".formatted(group, artifact, version);
+     }
+ }
+diff --git a/src/main/java/it/mulders/mcs/search/printer/PomXmlOutput.java b/src/main/java/it/mulders/mcs/search/printer/PomXmlOutput.java
+index 68474f7..f34c46c 100644
+--- a/src/main/java/it/mulders/mcs/search/printer/PomXmlOutput.java
++++ b/src/main/java/it/mulders/mcs/search/printer/PomXmlOutput.java
+@@ -3,13 +3,14 @@ package it.mulders.mcs.search.printer;
+ public final class PomXmlOutput implements CoordinatePrinter {
+ 
+     @Override
+-    public String provideCoordinates(final String group, final String artifact, final String version) {
++    public String provideCoordinates(final String group, final String artifact, final String version, String packaging) {
++        String element = "maven-plugin".equals(packaging) ? "plugin" : "dependency";
+         return """
+-                    <dependency>
++                    <%4$s>
+                         <groupId>%s</groupId>
+                         <artifactId>%s</artifactId>
+                         <version>%s</version>
+-                    </dependency>
+-                """.formatted(group, artifact, version);
++                    </%4$s>
++                """.formatted(group, artifact, version, element);
+     }
+ }
+diff --git a/src/main/java/it/mulders/mcs/search/printer/SbtOutput.java b/src/main/java/it/mulders/mcs/search/printer/SbtOutput.java
+index f4c57e8..9ff8894 100644
+--- a/src/main/java/it/mulders/mcs/search/printer/SbtOutput.java
++++ b/src/main/java/it/mulders/mcs/search/printer/SbtOutput.java
+@@ -3,7 +3,7 @@ package it.mulders.mcs.search.printer;
+ public final class SbtOutput implements CoordinatePrinter {
+ 
+     @Override
+-    public String provideCoordinates(final String group, final String artifact, final String version) {
++    public String provideCoordinates(final String group, final String artifact, final String version, String packaging) {
+         return """
+                 libraryDependencies += "%s" %% "%s" %% "%s"
+                 """.formatted(group, artifact, version);

@@ -1,0 +1,27 @@
+diff --git a/src/main/java/org/traccar/protocol/HuabaoProtocolDecoder.java b/src/main/java/org/traccar/protocol/HuabaoProtocolDecoder.java
+index d6deafe..d3336b6 100644
+--- a/src/main/java/org/traccar/protocol/HuabaoProtocolDecoder.java
++++ b/src/main/java/org/traccar/protocol/HuabaoProtocolDecoder.java
+@@ -753,6 +753,22 @@ public class HuabaoProtocolDecoder extends BaseProtocolDecoder {
+ 
+         position.set(Position.KEY_STATUS, status);
+ 
++        while (buf.readableBytes() > 2) {
++            int id = buf.readUnsignedByte();
++            int length = buf.readUnsignedByte();
++            switch (id) {
++                case 0x02:
++                    position.setAltitude(buf.readShort());
++                    break;
++                case 0x0C:
++                    position.set("gyro", ByteBufUtil.hexDump(buf.readSlice(6)));
++                    break;
++                default:
++                    buf.skipBytes(length);
++                    break;
++            }
++        }
++
+         return position;
+     }
+ 

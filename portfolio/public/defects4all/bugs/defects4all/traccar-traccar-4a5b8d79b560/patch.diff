@@ -1,0 +1,12 @@
+diff --git a/src/main/java/org/traccar/protocol/StarcomProtocolDecoder.java b/src/main/java/org/traccar/protocol/StarcomProtocolDecoder.java
+index e758a8b..36d6693 100644
+--- a/src/main/java/org/traccar/protocol/StarcomProtocolDecoder.java
++++ b/src/main/java/org/traccar/protocol/StarcomProtocolDecoder.java
+@@ -76,6 +76,7 @@ public class StarcomProtocolDecoder extends BaseProtocolDecoder {
+                     position.set(Position.KEY_EVENT, Integer.parseInt(value));
+                     break;
+                 case "mileage":
++                case "odometer":
+                     position.set(Position.KEY_ODOMETER, (long) (Double.parseDouble(value) * 1000));
+                     break;
+                 case "satellites":

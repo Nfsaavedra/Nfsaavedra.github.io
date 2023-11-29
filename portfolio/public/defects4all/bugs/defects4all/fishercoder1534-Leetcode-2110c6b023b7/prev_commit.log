@@ -1,0 +1,163 @@
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] 🚀  Start image=gitbugactions:latest
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   🐳  docker pull image=gitbugactions:latest platform= username= forcePull=false
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   🐳  docker create image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   🐳  docker run image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/a562528d-f2c2-461b-834c-543d1aa9636d] user=0 workdir=
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] ⭐ Run Main actions/checkout@v3
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   🐳  docker cp src=/tmp/a562528d-f2c2-461b-834c-543d1aa9636d/. dst=/tmp/a562528d-f2c2-461b-834c-543d1aa9636d
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/a562528d-f2c2-461b-834c-543d1aa9636d] user=0 workdir=
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   ✅  Success - Main actions/checkout@v3
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] ⭐ Run Main Set up JDK 11
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   🐳  docker cp src=/tmp/act-cache/250f79b4-5b59-4472-b60c-d3be4ebede96/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   ❓  ::group::Installed distributions
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   💬  ::debug::isExplicit: 11.0.20-1
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   💬  ::debug::explicit? true
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   💬  ::debug::isExplicit: 17.0.8-1
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   💬  ::debug::explicit? true
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   💬  ::debug::isExplicit: 21.0.0-35
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   💬  ::debug::explicit? true
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   💬  ::debug::isExplicit: 8.0.382-5
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   💬  ::debug::explicit? true
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Resolved Java 11.0.20+1 from tool-cache
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Setting Java 11.0.20+1 as the default
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Creating toolchains.xml for JDK version 11 from temurin
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Writing to /home/runner/.m2/toolchains.xml
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | 
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Java configuration:
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   |   Distribution: temurin
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   |   Version: 11.0.20+1
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   |   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/11.0.20-1/x64
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | 
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   ❓  ::endgroup::
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   ❓ add-matcher /run/act/actions/actions-setup-java@v3/.github/java.json
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Creating settings.xml with server-id: github
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Writing to /home/runner/.m2/settings.xml
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   ✅  Success - Main Set up JDK 11
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   ⚙  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/11.0.20-1/x64
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   ⚙  ::set-env:: JAVA_HOME_11_X64=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/11.0.20-1/x64
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   ⚙  ::set-output:: distribution=Temurin-Hotspot
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   ⚙  ::set-output:: path=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/11.0.20-1/x64
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   ⚙  ::set-output:: version=11.0.20+1
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   ⚙  ::add-path:: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/11.0.20-1/x64/bin
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] ⭐ Run Main Build with Gradle
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Downloading https://services.gradle.org/distributions/gradle-4.8.1-bin.zip
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | ........................................................................
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | 
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Welcome to Gradle 4.8.1!
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | 
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Here are the highlights of this release:
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   |  - Dependency locking
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   |  - Maven Publish and Ivy Publish plugins improved and marked stable
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   |  - Incremental annotation processing enhancements
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   |  - APIs to configure tasks at creation time
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | 
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | For more details see https://docs.gradle.org/4.8.1/release-notes.html
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | 
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Starting a Gradle Daemon (subsequent builds will be faster)
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/junit/junit/4.13/junit-4.13.pom
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.8.0/gson-2.8.0.pom
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/org/projectlombok/lombok/1.18.12/lombok-1.18.12.pom
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/org/apache/commons/commons-collections4/4.0/commons-collections4-4.0.pom
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/32/commons-parent-32.pom
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/com/google/code/gson/gson-parent/2.8.0/gson-parent-2.8.0.pom
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/7/oss-parent-7.pom
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/org/apache/apache/13/apache-13.pom
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.pom
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-parent/1.3/hamcrest-parent-1.3.pom
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.8.0/gson-2.8.0.jar
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/junit/junit/4.13/junit-4.13.jar
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/org/projectlombok/lombok/1.18.12/lombok-1.18.12.jar
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/org/apache/commons/commons-collections4/4.0/commons-collections4-4.0.jar
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | 
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | > Task :compileJava
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Note: Some input files use unchecked or unsafe operations.
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Note: Recompile with -Xlint:unchecked for details.
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | 
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | > Task :processResources NO-SOURCE
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | > Task :classes
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | > Task :jar
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | > Task :assemble
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.11.1/assertj-core-3.11.1.pom
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/org/assertj/assertj-parent-pom/2.2.1/assertj-parent-pom-2.2.1.pom
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.2.0/junit-bom-5.2.0.pom
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/org/assertj/assertj-core/3.11.1/assertj-core-3.11.1.jar
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | 
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | > Task :compileTestJava
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Note: Some input files use or override a deprecated API.
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Note: Recompile with -Xlint:deprecation for details.
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Note: Some input files use unchecked or unsafe operations.
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Note: Recompile with -Xlint:unchecked for details.
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | 
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | > Task :processTestResources
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | > Task :testClasses
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/com/puppycrawl/tools/checkstyle/6.19/checkstyle-6.19.pom
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/9/oss-parent-9.pom
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/antlr/antlr/2.7.7/antlr-2.7.7.pom
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.pom
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/commons-beanutils/commons-beanutils/1.9.2/commons-beanutils-1.9.2.pom
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/com/google/guava/guava/19.0/guava-19.0.pom
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/org/antlr/antlr4-runtime/4.5.3/antlr4-runtime-4.5.3.pom
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.3.1/commons-cli-1.3.1.pom
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/39/commons-parent-39.pom
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/org/antlr/antlr4-master/4.5.3/antlr4-master-4.5.3.pom
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/19.0/guava-parent-19.0.pom
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/37/commons-parent-37.pom
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/33/commons-parent-33.pom
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/org/apache/apache/16/apache-16.pom
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/com/puppycrawl/tools/checkstyle/6.19/checkstyle-6.19.jar
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.3.1/commons-cli-1.3.1.jar
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/commons-beanutils/commons-beanutils/1.9.2/commons-beanutils-1.9.2.jar
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/antlr/antlr/2.7.7/antlr-2.7.7.jar
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/com/google/guava/guava/19.0/guava-19.0.jar
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | Download https://repo.maven.apache.org/maven2/org/antlr/antlr4-runtime/4.5.3/antlr4-runtime-4.5.3.jar
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | > Task :checkstyleTest
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | > Task :test
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | > Task :check
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | > Task :build
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | 
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | BUILD SUCCESSFUL in 2m 48s
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   | 6 actionable tasks: 6 executed
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   ✅  Success - Main Build with Gradle
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] ⭐ Run Post Set up JDK 11
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux]   ✅  Success - Post Set up JDK 11
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] 🏁  Job succeeded
+[d56bc5c7-69cc-4d8b-b53f-a9cd355b7701/build-linux] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '24b7a6aecc4e431640a2b82a562199008a8bb896'

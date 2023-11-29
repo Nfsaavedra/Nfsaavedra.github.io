@@ -1,0 +1,928 @@
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] 🚀  Start image=gitbugactions:latest
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   🐳  docker pull image=gitbugactions:latest platform= username= forcePull=false
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   🐳  docker create image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   🐳  docker run image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/b27d3e94-8342-4ce0-a325-bdd68d2aec88] user=0 workdir=
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] ⭐ Run Main actions/checkout@v3
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   🐳  docker cp src=/tmp/b27d3e94-8342-4ce0-a325-bdd68d2aec88/. dst=/tmp/b27d3e94-8342-4ce0-a325-bdd68d2aec88
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/b27d3e94-8342-4ce0-a325-bdd68d2aec88] user=0 workdir=
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   ✅  Success - Main actions/checkout@v3
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] ⭐ Run Main Set up JDK 17
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   🐳  docker cp src=/tmp/act-cache/279a65d3-a090-4e2c-aa88-00b40ef5dc4d/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   ❓  ::group::Installed distributions
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   💬  ::debug::isExplicit: 11.0.20-1
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   💬  ::debug::explicit? true
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   💬  ::debug::isExplicit: 17.0.8-1
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   💬  ::debug::explicit? true
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   💬  ::debug::isExplicit: 21.0.0-35
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   💬  ::debug::explicit? true
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   💬  ::debug::isExplicit: 8.0.382-5
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   💬  ::debug::explicit? true
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | Resolved Java 17.0.8+1 from tool-cache
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | Setting Java 17.0.8+1 as the default
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | Creating toolchains.xml for JDK version 17 from temurin
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | Writing to /home/runner/.m2/toolchains.xml
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | 
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | Java configuration:
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   |   Distribution: temurin
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   |   Version: 17.0.8+1
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   |   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.8-1/x64
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | 
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   ❓  ::endgroup::
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   ❓ add-matcher /run/act/actions/actions-setup-java@v3/.github/java.json
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | Creating settings.xml with server-id: github
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | Writing to /home/runner/.m2/settings.xml
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   ✅  Success - Main Set up JDK 17
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   ⚙  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.8-1/x64
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   ⚙  ::set-env:: JAVA_HOME_17_X64=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.8-1/x64
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   ⚙  ::set-output:: distribution=Temurin-Hotspot
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   ⚙  ::set-output:: path=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.8-1/x64
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   ⚙  ::set-output:: version=17.0.8+1
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   ⚙  ::add-path:: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.8-1/x64/bin
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] ⭐ Run Main Build with Maven
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Scanning for projects...
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] 
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] ------------< com.whatsapp.api:whatsapp-business-java-api >-------------
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Building whatsapp-business-sdk v0.2.0
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO]   from pom.xml
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] --------------------------------[ jar ]---------------------------------
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jacoco/jacoco-maven-plugin/0.8.8/jacoco-maven-plugin-0.8.8.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jacoco/jacoco-maven-plugin/0.8.8/jacoco-maven-plugin-0.8.8.pom (3.8 kB at 13 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.build/0.8.8/org.jacoco.build-0.8.8.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.build/0.8.8/org.jacoco.build-0.8.8.pom (44 kB at 660 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jacoco/jacoco-maven-plugin/0.8.8/jacoco-maven-plugin-0.8.8.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jacoco/jacoco-maven-plugin/0.8.8/jacoco-maven-plugin-0.8.8.jar (56 kB at 2.1 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.pom (8.1 kB at 541 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/23/maven-plugins-23.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/23/maven-plugins-23.pom (9.2 kB at 297 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/22/maven-parent-22.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/22/maven-parent-22.pom (30 kB at 1.3 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/11/apache-11.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/11/apache-11.pom (15 kB at 926 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.jar (30 kB at 1.1 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.11.0/maven-compiler-plugin-3.11.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.11.0/maven-compiler-plugin-3.11.0.pom (9.8 kB at 351 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/39/maven-plugins-39.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/39/maven-plugins-39.pom (8.1 kB at 270 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/39/maven-parent-39.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/39/maven-parent-39.pom (48 kB at 979 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/29/apache-29.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/29/apache-29.pom (21 kB at 797 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.11.0/maven-compiler-plugin-3.11.0.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.11.0/maven-compiler-plugin-3.11.0.jar (66 kB at 1.9 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/3.0.0/maven-surefire-plugin-3.0.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/3.0.0/maven-surefire-plugin-3.0.0.pom (5.9 kB at 156 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire/3.0.0/surefire-3.0.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire/3.0.0/surefire-3.0.0.pom (22 kB at 519 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/3.0.0/maven-surefire-plugin-3.0.0.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/3.0.0/maven-surefire-plugin-3.0.0.jar (43 kB at 1.3 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.4/maven-jar-plugin-2.4.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.4/maven-jar-plugin-2.4.pom (5.8 kB at 208 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/22/maven-plugins-22.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/22/maven-plugins-22.pom (13 kB at 686 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/21/maven-parent-21.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/21/maven-parent-21.pom (26 kB at 1.6 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/10/apache-10.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/10/apache-10.pom (15 kB at 643 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.4/maven-jar-plugin-2.4.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.4/maven-jar-plugin-2.4.jar (34 kB at 1.3 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/squareup/retrofit2/retrofit/2.9.0/retrofit-2.9.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/squareup/retrofit2/retrofit/2.9.0/retrofit-2.9.0.pom (2.6 kB at 123 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp/3.14.9/okhttp-3.14.9.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp/3.14.9/okhttp-3.14.9.pom (2.5 kB at 62 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/squareup/okhttp3/parent/3.14.9/parent-3.14.9.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/squareup/okhttp3/parent/3.14.9/parent-3.14.9.pom (21 kB at 457 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/7/oss-parent-7.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/7/oss-parent-7.pom (4.8 kB at 156 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/squareup/okio/okio/1.17.2/okio-1.17.2.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/squareup/okio/okio/1.17.2/okio-1.17.2.pom (2.0 kB at 60 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/squareup/okio/okio-parent/1.17.2/okio-parent-1.17.2.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/squareup/okio/okio-parent/1.17.2/okio-parent-1.17.2.pom (4.9 kB at 97 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/squareup/retrofit2/converter-jackson/2.9.0/converter-jackson-2.9.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/squareup/retrofit2/converter-jackson/2.9.0/converter-jackson-2.9.0.pom (2.1 kB at 55 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.10.1/jackson-databind-2.10.1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.10.1/jackson-databind-2.10.1.pom (6.9 kB at 265 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-base/2.10.1/jackson-base-2.10.1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-base/2.10.1/jackson-base-2.10.1.pom (7.2 kB at 301 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.10.1/jackson-bom-2.10.1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-bom/2.10.1/jackson-bom-2.10.1.pom (13 kB at 834 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-parent/2.10/jackson-parent-2.10.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-parent/2.10/jackson-parent-2.10.pom (8.3 kB at 458 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/oss-parent/38/oss-parent-38.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/oss-parent/38/oss-parent-38.pom (23 kB at 2.6 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.10.1/jackson-annotations-2.10.1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.10.1/jackson-annotations-2.10.1.pom (3.4 kB at 202 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.10.1/jackson-core-2.10.1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.10.1/jackson-core-2.10.1.pom (4.6 kB at 309 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp/5.0.0-alpha.11/okhttp-5.0.0-alpha.11.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp/5.0.0-alpha.11/okhttp-5.0.0-alpha.11.pom (1.7 kB at 106 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp-jvm/5.0.0-alpha.11/okhttp-jvm-5.0.0-alpha.11.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp-jvm/5.0.0-alpha.11/okhttp-jvm-5.0.0-alpha.11.pom (2.1 kB at 137 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/squareup/okio/okio-jvm/3.2.0/okio-jvm-3.2.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/squareup/okio/okio-jvm/3.2.0/okio-jvm-3.2.0.pom (1.9 kB at 143 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.6.20/kotlin-stdlib-jdk8-1.6.20.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.6.20/kotlin-stdlib-jdk8-1.6.20.pom (1.6 kB at 198 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/1.6.20/kotlin-stdlib-1.6.20.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/1.6.20/kotlin-stdlib-1.6.20.pom (1.6 kB at 155 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-common/1.6.20/kotlin-stdlib-common-1.6.20.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-common/1.6.20/kotlin-stdlib-common-1.6.20.pom (1.2 kB at 89 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jetbrains/annotations/13.0/annotations-13.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jetbrains/annotations/13.0/annotations-13.0.pom (4.9 kB at 448 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.6.20/kotlin-stdlib-jdk7-1.6.20.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.6.20/kotlin-stdlib-jdk7-1.6.20.pom (1.4 kB at 99 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/1.7.10/kotlin-stdlib-1.7.10.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/1.7.10/kotlin-stdlib-1.7.10.pom (1.6 kB at 222 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-common/1.7.10/kotlin-stdlib-common-1.7.10.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-common/1.7.10/kotlin-stdlib-common-1.7.10.pom (1.2 kB at 83 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/5.9.2/junit-jupiter-api-5.9.2.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/5.9.2/junit-jupiter-api-5.9.2.pom (3.2 kB at 398 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.9.2/junit-bom-5.9.2.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.9.2/junit-bom-5.9.2.pom (5.6 kB at 626 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.pom (1.7 kB at 187 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.9.2/junit-platform-commons-1.9.2.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.9.2/junit-platform-commons-1.9.2.pom (2.8 kB at 202 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.pom (1.5 kB at 102 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.9.2/junit-jupiter-engine-5.9.2.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.9.2/junit-jupiter-engine-5.9.2.pom (3.2 kB at 246 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.9.2/junit-platform-engine-1.9.2.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.9.2/junit-platform-engine-1.9.2.pom (3.2 kB at 320 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.2.0/mockito-junit-jupiter-5.2.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.2.0/mockito-junit-jupiter-5.2.0.pom (2.3 kB at 192 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/5.2.0/mockito-core-5.2.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/5.2.0/mockito-core-5.2.0.pom (2.5 kB at 250 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.14.1/byte-buddy-1.14.1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.14.1/byte-buddy-1.14.1.pom (16 kB at 990 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-parent/1.14.1/byte-buddy-parent-1.14.1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-parent/1.14.1/byte-buddy-parent-1.14.1.pom (58 kB at 3.1 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/1.14.1/byte-buddy-agent-1.14.1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/1.14.1/byte-buddy-agent-1.14.1.pom (10 kB at 549 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/3.3/objenesis-3.3.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/3.3/objenesis-3.3.pom (3.0 kB at 68 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis-parent/3.3/objenesis-parent-3.3.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis-parent/3.3/objenesis-parent-3.3.pom (19 kB at 912 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-inline/5.2.0/mockito-inline-5.2.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-inline/5.2.0/mockito-inline-5.2.0.pom (2.2 kB at 116 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/squareup/okhttp3/mockwebserver3/5.0.0-alpha.11/mockwebserver3-5.0.0-alpha.11.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/squareup/okhttp3/mockwebserver3/5.0.0-alpha.11/mockwebserver3-5.0.0-alpha.11.pom (1.9 kB at 127 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.7.10/kotlin-stdlib-jdk8-1.7.10.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.7.10/kotlin-stdlib-jdk8-1.7.10.pom (1.6 kB at 72 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.7.10/kotlin-stdlib-jdk7-1.7.10.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.7.10/kotlin-stdlib-jdk7-1.7.10.pom (1.4 kB at 35 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/skyscreamer/jsonassert/1.5.1/jsonassert-1.5.1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/skyscreamer/jsonassert/1.5.1/jsonassert-1.5.1.pom (5.2 kB at 144 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.pom (2.8 kB at 121 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/squareup/retrofit2/retrofit/2.9.0/retrofit-2.9.0.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/squareup/retrofit2/converter-jackson/2.9.0/converter-jackson-2.9.0.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.10.1/jackson-databind-2.10.1.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.10.1/jackson-annotations-2.10.1.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.10.1/jackson-core-2.10.1.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/squareup/retrofit2/retrofit/2.9.0/retrofit-2.9.0.jar (125 kB at 2.4 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp/5.0.0-alpha.11/okhttp-5.0.0-alpha.11.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.10.1/jackson-annotations-2.10.1.jar (68 kB at 2.8 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp-jvm/5.0.0-alpha.11/okhttp-jvm-5.0.0-alpha.11.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/squareup/retrofit2/converter-jackson/2.9.0/converter-jackson-2.9.0.jar (4.1 kB at 157 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/squareup/okio/okio-jvm/3.2.0/okio-jvm-3.2.0.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp/5.0.0-alpha.11/okhttp-5.0.0-alpha.11.jar (13 kB at 515 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/1.7.10/kotlin-stdlib-1.7.10.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.10.1/jackson-core-2.10.1.jar (349 kB at 6.0 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jetbrains/annotations/13.0/annotations-13.0.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.10.1/jackson-databind-2.10.1.jar (1.4 MB at 22 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-common/1.7.10/kotlin-stdlib-common-1.7.10.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/squareup/okio/okio-jvm/3.2.0/okio-jvm-3.2.0.jar (345 kB at 5.2 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/5.9.2/junit-jupiter-api-5.9.2.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jetbrains/annotations/13.0/annotations-13.0.jar (18 kB at 247 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/squareup/okhttp3/okhttp-jvm/5.0.0-alpha.11/okhttp-jvm-5.0.0-alpha.11.jar (854 kB at 10 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.9.2/junit-platform-commons-1.9.2.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/5.9.2/junit-jupiter-api-5.9.2.jar (208 kB at 2.4 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-common/1.7.10/kotlin-stdlib-common-1.7.10.jar (199 kB at 2.3 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.9.2/junit-jupiter-engine-5.9.2.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/1.7.10/kotlin-stdlib-1.7.10.jar (1.5 MB at 18 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.9.2/junit-platform-engine-1.9.2.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar (7.7 kB at 88 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.2.0/mockito-junit-jupiter-5.2.0.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar (6.8 kB at 71 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/5.2.0/mockito-core-5.2.0.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.9.2/junit-platform-commons-1.9.2.jar (103 kB at 1.0 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.14.1/byte-buddy-1.14.1.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/5.2.0/mockito-junit-jupiter-5.2.0.jar (5.5 kB at 52 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/1.14.1/byte-buddy-agent-1.14.1.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.9.2/junit-platform-engine-1.9.2.jar (189 kB at 1.7 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/3.3/objenesis-3.3.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.9.2/junit-jupiter-engine-5.9.2.jar (247 kB at 2.1 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-inline/5.2.0/mockito-inline-5.2.0.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/5.2.0/mockito-core-5.2.0.jar (687 kB at 5.7 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/squareup/okhttp3/mockwebserver3/5.0.0-alpha.11/mockwebserver3-5.0.0-alpha.11.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/1.14.1/byte-buddy-agent-1.14.1.jar (257 kB at 2.1 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.7.10/kotlin-stdlib-jdk8-1.7.10.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-inline/5.2.0/mockito-inline-5.2.0.jar (1.5 kB at 12 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.7.10/kotlin-stdlib-jdk7-1.7.10.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/squareup/okhttp3/mockwebserver3/5.0.0-alpha.11/mockwebserver3-5.0.0-alpha.11.jar (74 kB at 566 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/skyscreamer/jsonassert/1.5.1/jsonassert-1.5.1.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.7.10/kotlin-stdlib-jdk7-1.7.10.jar (24 kB at 182 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.7.10/kotlin-stdlib-jdk8-1.7.10.jar (20 kB at 151 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/3.3/objenesis-3.3.jar (49 kB at 372 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/skyscreamer/jsonassert/1.5.1/jsonassert-1.5.1.jar (31 kB at 217 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar (18 kB at 125 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.14.1/byte-buddy-1.14.1.jar (4.2 MB at 23 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] 
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] --- jacoco-maven-plugin:0.8.8:prepare-agent (default) @ whatsapp-business-java-api ---
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.pom (3.8 kB at 547 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.3.1/plexus-3.3.1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.3.1/plexus-3.3.1.pom (20 kB at 2.0 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/17/spice-parent-17.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/17/spice-parent-17.pom (6.8 kB at 614 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/10/forge-parent-10.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/10/forge-parent-10.pom (14 kB at 2.3 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/1.2.1/file-management-1.2.1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/1.2.1/file-management-1.2.1.pom (3.9 kB at 647 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/10/maven-shared-components-10.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/10/maven-shared-components-10.pom (8.4 kB at 1.2 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/9/maven-parent-9.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/9/maven-parent-9.pom (33 kB at 4.7 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/4/apache-4.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/4/apache-4.pom (4.5 kB at 642 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.6/maven-plugin-api-2.0.6.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.6/maven-plugin-api-2.0.6.pom (1.5 kB at 208 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.6/maven-2.0.6.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.6/maven-2.0.6.pom (9.0 kB at 1.5 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/5/maven-parent-5.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/5/maven-parent-5.pom (15 kB at 2.2 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/3/apache-3.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/3/apache-3.pom (3.4 kB at 572 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-io/1.1/maven-shared-io-1.1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-io/1.1/maven-shared-io-1.1.pom (4.1 kB at 677 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/8/maven-shared-components-8.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/8/maven-shared-components-8.pom (2.7 kB at 382 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/7/maven-parent-7.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/7/maven-parent-7.pom (21 kB at 2.7 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.2/maven-artifact-2.0.2.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.2/maven-artifact-2.0.2.pom (765 B at 45 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.2/maven-2.0.2.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.2/maven-2.0.2.pom (13 kB at 1.0 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.1/plexus-utils-1.1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.1/plexus-utils-1.1.pom (767 B at 43 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.4/plexus-1.0.4.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.4/plexus-1.0.4.pom (5.7 kB at 249 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.2/maven-artifact-manager-2.0.2.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.2/maven-artifact-manager-2.0.2.pom (1.4 kB at 100 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.2/maven-repository-metadata-2.0.2.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.2/maven-repository-metadata-2.0.2.pom (1.3 kB at 109 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9/plexus-container-default-1.0-alpha-9.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9/plexus-container-default-1.0-alpha-9.pom (1.2 kB at 46 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.0.3/plexus-containers-1.0.3.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.0.3/plexus-containers-1.0.3.pom (492 B at 22 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/4.13.1/junit-4.13.1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/4.13.1/junit-4.13.1.pom (25 kB at 2.1 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.pom (766 B at 96 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-parent/1.3/hamcrest-parent-1.3.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-parent/1.3/hamcrest-parent-1.3.pom (2.0 kB at 219 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.0.4/plexus-utils-1.0.4.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.0.4/plexus-utils-1.0.4.pom (6.9 kB at 857 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.pom (3.1 kB at 391 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-alpha-6/wagon-provider-api-1.0-alpha-6.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-alpha-6/wagon-provider-api-1.0-alpha-6.pom (588 B at 45 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0-alpha-6/wagon-1.0-alpha-6.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0-alpha-6/wagon-1.0-alpha-6.pom (6.4 kB at 457 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.6/plexus-utils-1.4.6.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.6/plexus-utils-1.4.6.pom (2.3 kB at 78 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.11/plexus-1.0.11.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.11/plexus-1.0.11.pom (9.0 kB at 408 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.6/plexus-utils-1.5.6.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.6/plexus-utils-1.5.6.pom (5.3 kB at 331 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.12/plexus-1.0.12.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.12/plexus-1.0.12.pom (9.8 kB at 1.2 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.pom (2.4 kB at 148 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/15/maven-shared-components-15.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/15/maven-shared-components-15.pom (9.3 kB at 389 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/16/maven-parent-16.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/16/maven-parent-16.pom (23 kB at 665 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/7/apache-7.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/7/apache-7.pom (14 kB at 465 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0/doxia-sink-api-1.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0/doxia-sink-api-1.0.pom (1.4 kB at 55 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.0/doxia-1.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.0/doxia-1.0.pom (9.6 kB at 402 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/10/maven-parent-10.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/10/maven-parent-10.pom (32 kB at 904 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8.pom (3.5 kB at 90 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.core/0.8.8/org.jacoco.core-0.8.8.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.core/0.8.8/org.jacoco.core-0.8.8.pom (2.1 kB at 60 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.2/asm-9.2.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.2/asm-9.2.pom (2.4 kB at 125 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/ow2/1.5/ow2-1.5.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/ow2/1.5/ow2-1.5.pom (11 kB at 864 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/9.2/asm-commons-9.2.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/9.2/asm-commons-9.2.pom (3.0 kB at 185 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/9.2/asm-tree-9.2.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/9.2/asm-tree-9.2.pom (2.6 kB at 86 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/9.2/asm-analysis-9.2.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/9.2/asm-analysis-9.2.pom (2.6 kB at 119 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.report/0.8.8/org.jacoco.report-0.8.8.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.report/0.8.8/org.jacoco.report-0.8.8.pom (1.9 kB at 72 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/1.2.1/file-management-1.2.1.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.6/maven-plugin-api-2.0.6.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-io/1.1/maven-shared-io-1.1.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.2/maven-artifact-2.0.2.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.6/maven-plugin-api-2.0.6.jar (13 kB at 443 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.2/maven-artifact-manager-2.0.2.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-io/1.1/maven-shared-io-1.1.jar (39 kB at 1.2 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.2/maven-repository-metadata-2.0.2.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/1.2.1/file-management-1.2.1.jar (38 kB at 1.1 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-alpha-6/wagon-provider-api-1.0-alpha-6.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.2/maven-artifact-2.0.2.jar (78 kB at 2.2 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.jar (245 kB at 3.9 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9/plexus-container-default-1.0-alpha-9.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/4.13.1/junit-4.13.1.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.2/maven-artifact-manager-2.0.2.jar (49 kB at 910 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-alpha-6/wagon-provider-api-1.0-alpha-6.jar (43 kB at 737 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.2/maven-repository-metadata-2.0.2.jar (20 kB at 328 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar (45 kB at 577 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9/plexus-container-default-1.0-alpha-9.jar (195 kB at 2.5 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/4.13.1/junit-4.13.1.jar (383 kB at 4.9 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0/doxia-sink-api-1.0.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.core/0.8.8/org.jacoco.core-0.8.8.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar (38 kB at 481 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.2/asm-9.2.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.jar (11 kB at 137 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/9.2/asm-commons-9.2.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.2/asm-9.2.jar (122 kB at 1.2 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/9.2/asm-analysis-9.2.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0/doxia-sink-api-1.0.jar (10 kB at 92 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/9.2/asm-tree-9.2.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar (293 kB at 2.3 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/9.2/asm-commons-9.2.jar (73 kB at 581 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.report/0.8.8/org.jacoco.report-0.8.8.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.core/0.8.8/org.jacoco.core-0.8.8.jar (203 kB at 1.5 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/9.2/asm-analysis-9.2.jar (34 kB at 243 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/9.2/asm-tree-9.2.jar (53 kB at 373 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.report/0.8.8/org.jacoco.report-0.8.8.jar (129 kB at 697 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] argLine set to -javaagent:/home/runner/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/tmp/b27d3e94-8342-4ce0-a325-bdd68d2aec88/target/jacoco.exec
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] 
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ whatsapp-business-java-api ---
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.6/maven-project-2.0.6.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.6/maven-project-2.0.6.pom (2.6 kB at 264 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.6/maven-settings-2.0.6.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.6/maven-settings-2.0.6.pom (2.0 kB at 77 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.6/maven-model-2.0.6.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.6/maven-model-2.0.6.pom (3.0 kB at 127 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.1/plexus-utils-1.4.1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.1/plexus-utils-1.4.1.pom (1.9 kB at 56 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.pom (3.9 kB at 99 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/3.8.1/junit-3.8.1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/3.8.1/junit-3.8.1.pom (998 B at 20 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.6/maven-profile-2.0.6.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.6/maven-profile-2.0.6.pom (2.0 kB at 79 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.6/maven-artifact-manager-2.0.6.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.6/maven-artifact-manager-2.0.6.pom (2.6 kB at 109 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.6/maven-repository-metadata-2.0.6.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.6/maven-repository-metadata-2.0.6.pom (1.9 kB at 84 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.6/maven-artifact-2.0.6.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.6/maven-artifact-2.0.6.pom (1.6 kB at 75 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.6/maven-plugin-registry-2.0.6.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.6/maven-plugin-registry-2.0.6.pom (1.9 kB at 85 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.6/maven-core-2.0.6.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.6/maven-core-2.0.6.pom (6.7 kB at 479 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.6/maven-plugin-parameter-documenter-2.0.6.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.6/maven-plugin-parameter-documenter-2.0.6.pom (1.9 kB at 136 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.pom (1.8 kB at 50 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting/2.0.6/maven-reporting-2.0.6.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting/2.0.6/maven-reporting-2.0.6.pom (1.4 kB at 36 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-7/doxia-sink-api-1.0-alpha-7.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-7/doxia-sink-api-1.0-alpha-7.pom (424 B at 19 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.0-alpha-7/doxia-1.0-alpha-7.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.0-alpha-7/doxia-1.0-alpha-7.pom (3.9 kB at 178 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.6/maven-error-diagnostics-2.0.6.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.6/maven-error-diagnostics-2.0.6.pom (1.7 kB at 59 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.0/commons-cli-1.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.0/commons-cli-1.0.pom (2.1 kB at 45 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.6/maven-plugin-descriptor-2.0.6.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.6/maven-plugin-descriptor-2.0.6.pom (2.0 kB at 106 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.pom (7.1 kB at 236 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.6/maven-monitor-2.0.6.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.6/maven-monitor-2.0.6.pom (1.3 kB at 57 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/classworlds/classworlds/1.1/classworlds-1.1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/classworlds/classworlds/1.1/classworlds-1.1.pom (3.3 kB at 151 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.pom (3.3 kB at 145 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.6/plexus-2.0.6.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.6/plexus-2.0.6.pom (17 kB at 218 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.1/maven-filtering-1.1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.1/maven-filtering-1.1.pom (5.8 kB at 138 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/17/maven-shared-components-17.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/17/maven-shared-components-17.pom (8.7 kB at 153 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.pom (6.8 kB at 285 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.2/plexus-2.0.2.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.2/plexus-2.0.2.pom (12 kB at 893 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.12/plexus-interpolation-1.12.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.12/plexus-interpolation-1.12.pom (889 B at 64 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.14/plexus-components-1.1.14.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.14/plexus-components-1.1.14.pom (5.8 kB at 487 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.pom (2.9 kB at 204 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/10/spice-parent-10.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/10/spice-parent-10.pom (3.0 kB at 232 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/3/forge-parent-3.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/3/forge-parent-3.pom (5.0 kB at 387 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.8/plexus-utils-1.5.8.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.8/plexus-utils-1.5.8.pom (8.1 kB at 278 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.13/plexus-interpolation-1.13.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.13/plexus-interpolation-1.13.pom (890 B at 111 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.15/plexus-components-1.1.15.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.15/plexus-components-1.1.15.pom (2.8 kB at 259 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.3/plexus-2.0.3.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.3/plexus-2.0.3.pom (15 kB at 2.2 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.6/maven-project-2.0.6.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.6/maven-profile-2.0.6.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.6/maven-artifact-manager-2.0.6.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.6/maven-plugin-registry-2.0.6.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.6/maven-core-2.0.6.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.6/maven-artifact-manager-2.0.6.jar (57 kB at 6.3 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.6/maven-plugin-parameter-documenter-2.0.6.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.6/maven-plugin-registry-2.0.6.jar (29 kB at 3.2 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.6/maven-core-2.0.6.jar (152 kB at 12 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-7/doxia-sink-api-1.0-alpha-7.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.6/maven-profile-2.0.6.jar (35 kB at 2.2 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.6/maven-repository-metadata-2.0.6.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.6/maven-plugin-parameter-documenter-2.0.6.jar (21 kB at 1.3 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.6/maven-error-diagnostics-2.0.6.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.jar (9.9 kB at 552 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.0/commons-cli-1.0.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.6/maven-repository-metadata-2.0.6.jar (24 kB at 1.1 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.6/maven-plugin-descriptor-2.0.6.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.0/commons-cli-1.0.jar (30 kB at 1.1 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.6/maven-project-2.0.6.jar (116 kB at 2.3 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/classworlds/classworlds/1.1/classworlds-1.1.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.6/maven-error-diagnostics-2.0.6.jar (14 kB at 425 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.6/maven-artifact-2.0.6.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-7/doxia-sink-api-1.0-alpha-7.jar (5.9 kB at 180 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.6/maven-settings-2.0.6.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.jar (13 kB at 394 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.6/maven-model-2.0.6.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/classworlds/classworlds/1.1/classworlds-1.1.jar (38 kB at 1.1 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.6/maven-monitor-2.0.6.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.6/maven-settings-2.0.6.jar (49 kB at 1.1 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.6/maven-artifact-2.0.6.jar (87 kB at 1.9 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.6/maven-plugin-descriptor-2.0.6.jar (37 kB at 785 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/3.8.1/junit-3.8.1.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.6/maven-monitor-2.0.6.jar (10 kB at 209 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.1/maven-filtering-1.1.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.6/maven-model-2.0.6.jar (86 kB at 1.4 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/3.8.1/junit-3.8.1.jar (121 kB at 2.0 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.13/plexus-interpolation-1.13.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.jar (194 kB at 3.2 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.1/maven-filtering-1.1.jar (43 kB at 718 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.jar (223 kB at 3.6 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.jar (6.8 kB at 105 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.13/plexus-interpolation-1.13.jar (61 kB at 814 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] skip non existing resourceDirectory /tmp/b27d3e94-8342-4ce0-a325-bdd68d2aec88/src/main/resources
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] 
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] --- maven-compiler-plugin:3.11.0:compile (default-compile) @ whatsapp-business-java-api ---
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.3.4/maven-shared-utils-3.3.4.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.3.4/maven-shared-utils-3.3.4.pom (5.8 kB at 833 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/34/maven-shared-components-34.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/34/maven-shared-components-34.pom (5.1 kB at 728 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/34/maven-parent-34.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/34/maven-parent-34.pom (43 kB at 6.1 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/23/apache-23.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/23/apache-23.pom (18 kB at 3.1 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.6/commons-io-2.6.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.6/commons-io-2.6.pom (14 kB at 1.1 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/42/commons-parent-42.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/42/commons-parent-42.pom (68 kB at 4.5 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/18/apache-18.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/18/apache-18.pom (16 kB at 712 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.pom (4.7 kB at 226 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/19/maven-shared-components-19.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/19/maven-shared-components-19.pom (6.4 kB at 303 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/23/maven-parent-23.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/23/maven-parent-23.pom (33 kB at 2.0 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/13/apache-13.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/13/apache-13.pom (14 kB at 1.2 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.pom (815 B at 39 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.5.5/plexus-containers-1.5.5.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.5.5/plexus-containers-1.5.5.pom (4.2 kB at 193 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.7/plexus-2.0.7.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.7/plexus-2.0.7.pom (17 kB at 1.4 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-java/1.1.2/plexus-java-1.1.2.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-java/1.1.2/plexus-java-1.1.2.pom (5.0 kB at 382 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-languages/1.1.2/plexus-languages-1.1.2.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-languages/1.1.2/plexus-languages-1.1.2.pom (4.1 kB at 67 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/10/plexus-10.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/10/plexus-10.pom (25 kB at 1.1 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.4/asm-9.4.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.4/asm-9.4.pom (2.4 kB at 113 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/ow2/1.5.1/ow2-1.5.1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/ow2/1.5.1/ow2-1.5.1.pom (11 kB at 491 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0.3/qdox-2.0.3.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0.3/qdox-2.0.3.pom (17 kB at 749 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/9/oss-parent-9.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/9/oss-parent-9.pom (6.6 kB at 286 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.13.0/plexus-compiler-api-2.13.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.13.0/plexus-compiler-api-2.13.0.pom (1.1 kB at 46 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/2.13.0/plexus-compiler-2.13.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/2.13.0/plexus-compiler-2.13.0.pom (8.4 kB at 142 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/10.0/plexus-components-10.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/10.0/plexus-components-10.0.pom (2.7 kB at 46 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.9.1/junit-bom-5.9.1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.9.1/junit-bom-5.9.1.pom (5.6 kB at 80 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.5.0/plexus-utils-3.5.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.5.0/plexus-utils-3.5.0.pom (8.0 kB at 217 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.13.0/plexus-compiler-manager-2.13.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.13.0/plexus-compiler-manager-2.13.0.pom (1.1 kB at 44 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/2.1.1/plexus-component-annotations-2.1.1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/2.1.1/plexus-component-annotations-2.1.1.pom (770 B at 24 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/2.1.1/plexus-containers-2.1.1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/2.1.1/plexus-containers-2.1.1.pom (6.0 kB at 232 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/6.5/plexus-6.5.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/6.5/plexus-6.5.pom (26 kB at 918 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.13.0/plexus-compiler-javac-2.13.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.13.0/plexus-compiler-javac-2.13.0.pom (1.2 kB at 46 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/2.13.0/plexus-compilers-2.13.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/2.13.0/plexus-compilers-2.13.0.pom (1.3 kB at 53 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.3.4/maven-shared-utils-3.3.4.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.6/commons-io-2.6.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-java/1.1.2/plexus-java-1.1.2.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.jar (4.2 kB at 168 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.4/asm-9.4.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.jar (14 kB at 451 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0.3/qdox-2.0.3.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.6/commons-io-2.6.jar (215 kB at 3.8 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.13.0/plexus-compiler-api-2.13.0.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-java/1.1.2/plexus-java-1.1.2.jar (55 kB at 780 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.5.0/plexus-utils-3.5.0.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0.3/qdox-2.0.3.jar (334 kB at 3.5 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.13.0/plexus-compiler-manager-2.13.0.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.4/asm-9.4.jar (122 kB at 1.2 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.13.0/plexus-compiler-javac-2.13.0.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.13.0/plexus-compiler-api-2.13.0.jar (27 kB at 239 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.13.0/plexus-compiler-manager-2.13.0.jar (4.7 kB at 39 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.13.0/plexus-compiler-javac-2.13.0.jar (23 kB at 184 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.3.4/maven-shared-utils-3.3.4.jar (153 kB at 672 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.5.0/plexus-utils-3.5.0.jar (267 kB at 944 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Changes detected - recompiling the module! :dependency
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Compiling 156 source files with javac [debug release 17] to target/classes
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] 
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ whatsapp-business-java-api ---
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Copying 61 resources
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] 
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] --- maven-compiler-plugin:3.11.0:testCompile (default-testCompile) @ whatsapp-business-java-api ---
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Changes detected - recompiling the module! :dependency
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Compiling 48 source files with javac [debug release 17] to target/test-classes
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [WARNING] /tmp/b27d3e94-8342-4ce0-a325-bdd68d2aec88/src/test/java/com/whatsapp/api/examples/SendContactMessageExample.java:[34,41] addPhones(com.whatsapp.api.domain.messages.Phone) in com.whatsapp.api.domain.messages.Contact has been deprecated and marked for removal
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [WARNING] /tmp/b27d3e94-8342-4ce0-a325-bdd68d2aec88/src/test/java/com/whatsapp/api/examples/SendContactMessageExample.java:[44,41] addEmails(com.whatsapp.api.domain.messages.Email) in com.whatsapp.api.domain.messages.Contact has been deprecated and marked for removal
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [WARNING] /tmp/b27d3e94-8342-4ce0-a325-bdd68d2aec88/src/test/java/com/whatsapp/api/examples/SendContactMessageExample.java:[48,41] addAddresses(com.whatsapp.api.domain.messages.Address) in com.whatsapp.api.domain.messages.Contact has been deprecated and marked for removal
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [WARNING] /tmp/b27d3e94-8342-4ce0-a325-bdd68d2aec88/src/test/java/com/whatsapp/api/examples/SendContactMessageExample.java:[58,41] addUrls(com.whatsapp.api.domain.messages.Url) in com.whatsapp.api.domain.messages.Contact has been deprecated and marked for removal
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [WARNING] /tmp/b27d3e94-8342-4ce0-a325-bdd68d2aec88/src/test/java/com/whatsapp/api/exception/utils/FormatterTest.java:[13,32] com.whatsapp.api.exception.utils.Formatter in com.whatsapp.api.exception.utils has been deprecated and marked for removal
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [WARNING] /tmp/b27d3e94-8342-4ce0-a325-bdd68d2aec88/src/test/java/com/whatsapp/api/exception/utils/FormatterTest.java:[21,32] com.whatsapp.api.exception.utils.Formatter in com.whatsapp.api.exception.utils has been deprecated and marked for removal
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [WARNING] /tmp/b27d3e94-8342-4ce0-a325-bdd68d2aec88/src/test/java/com/whatsapp/api/exception/utils/FormatterTest.java:[29,32] com.whatsapp.api.exception.utils.Formatter in com.whatsapp.api.exception.utils has been deprecated and marked for removal
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [WARNING] /tmp/b27d3e94-8342-4ce0-a325-bdd68d2aec88/src/test/java/com/whatsapp/api/exception/utils/FormatterTest.java:[37,36] com.whatsapp.api.exception.utils.Formatter in com.whatsapp.api.exception.utils has been deprecated and marked for removal
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [WARNING] /tmp/b27d3e94-8342-4ce0-a325-bdd68d2aec88/src/test/java/com/whatsapp/api/impl/WhatsappBusinessCloudApiTest.java:[166,33] addPhones(com.whatsapp.api.domain.messages.Phone) in com.whatsapp.api.domain.messages.Contact has been deprecated and marked for removal
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [WARNING] /tmp/b27d3e94-8342-4ce0-a325-bdd68d2aec88/src/test/java/com/whatsapp/api/impl/WhatsappBusinessCloudApiTest.java:[176,33] addEmails(com.whatsapp.api.domain.messages.Email) in com.whatsapp.api.domain.messages.Contact has been deprecated and marked for removal
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [WARNING] /tmp/b27d3e94-8342-4ce0-a325-bdd68d2aec88/src/test/java/com/whatsapp/api/impl/WhatsappBusinessCloudApiTest.java:[179,34] addAddresses(com.whatsapp.api.domain.messages.Address) in com.whatsapp.api.domain.messages.Contact has been deprecated and marked for removal
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [WARNING] /tmp/b27d3e94-8342-4ce0-a325-bdd68d2aec88/src/test/java/com/whatsapp/api/impl/WhatsappBusinessCloudApiTest.java:[187,60] addUrls(com.whatsapp.api.domain.messages.Url) in com.whatsapp.api.domain.messages.Contact has been deprecated and marked for removal
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] /tmp/b27d3e94-8342-4ce0-a325-bdd68d2aec88/src/test/java/com/whatsapp/api/impl/WhatsappBusinessManagementApiTest.java: Some input files use or override a deprecated API.
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] /tmp/b27d3e94-8342-4ce0-a325-bdd68d2aec88/src/test/java/com/whatsapp/api/impl/WhatsappBusinessManagementApiTest.java: Recompile with -Xlint:deprecation for details.
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] 
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] --- maven-surefire-plugin:3.0.0:test (default-test) @ whatsapp-business-java-api ---
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/3.0.0/maven-surefire-common-3.0.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/3.0.0/maven-surefire-common-3.0.0.pom (5.9 kB at 592 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/3.0.0/surefire-api-3.0.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/3.0.0/surefire-api-3.0.0.pom (3.4 kB at 429 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-logger-api/3.0.0/surefire-logger-api-3.0.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-logger-api/3.0.0/surefire-logger-api-3.0.0.pom (3.2 kB at 226 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-shared-utils/3.0.0/surefire-shared-utils-3.0.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-shared-utils/3.0.0/surefire-shared-utils-3.0.0.pom (4.1 kB at 214 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-extensions-api/3.0.0/surefire-extensions-api-3.0.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-extensions-api/3.0.0/surefire-extensions-api-3.0.0.pom (3.2 kB at 201 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/3.0.0/surefire-booter-3.0.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/3.0.0/surefire-booter-3.0.0.pom (4.3 kB at 361 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-extensions-spi/3.0.0/surefire-extensions-spi-3.0.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-extensions-spi/3.0.0/surefire-extensions-spi-3.0.0.pom (1.7 kB at 86 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/1.0.0.v20140518/aether-util-1.0.0.v20140518.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/1.0.0.v20140518/aether-util-1.0.0.v20140518.pom (2.2 kB at 122 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether/1.0.0.v20140518/aether-1.0.0.v20140518.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether/1.0.0.v20140518/aether-1.0.0.v20140518.pom (30 kB at 1.1 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/1.0.0.v20140518/aether-api-1.0.0.v20140518.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/1.0.0.v20140518/aether-api-1.0.0.v20140518.pom (1.9 kB at 271 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.1.1/maven-common-artifact-filters-3.1.1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.1.1/maven-common-artifact-filters-3.1.1.pom (5.8 kB at 966 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.2.5/maven-artifact-3.2.5.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.2.5/maven-artifact-3.2.5.pom (2.3 kB at 235 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.2.5/maven-3.2.5.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.2.5/maven-3.2.5.pom (22 kB at 1.9 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/25/maven-parent-25.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/25/maven-parent-25.pom (37 kB at 3.1 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/15/apache-15.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/15/apache-15.pom (15 kB at 2.2 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.2.5/maven-core-3.2.5.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.2.5/maven-core-3.2.5.pom (8.1 kB at 576 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.2.5/maven-settings-3.2.5.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.2.5/maven-settings-3.2.5.pom (2.2 kB at 271 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.2.5/maven-settings-builder-3.2.5.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.2.5/maven-settings-builder-3.2.5.pom (2.6 kB at 324 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.21/plexus-interpolation-1.21.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.21/plexus-interpolation-1.21.pom (1.5 kB at 220 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.3.1/plexus-components-1.3.1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.3.1/plexus-components-1.3.1.pom (3.1 kB at 102 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.pom (3.0 kB at 90 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/12/spice-parent-12.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/12/spice-parent-12.pom (6.8 kB at 850 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/4/forge-parent-4.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/4/forge-parent-4.pom (8.4 kB at 1.0 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.pom (2.1 kB at 295 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.2.5/maven-repository-metadata-3.2.5.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.2.5/maven-repository-metadata-3.2.5.pom (2.2 kB at 446 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.2.5/maven-plugin-api-3.2.5.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.2.5/maven-plugin-api-3.2.5.pom (3.0 kB at 504 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.3.5/org.eclipse.sisu.plexus-0.3.5.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.3.5/org.eclipse.sisu.plexus-0.3.5.pom (4.3 kB at 857 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-plexus/0.3.5/sisu-plexus-0.3.5.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-plexus/0.3.5/sisu-plexus-0.3.5.pom (14 kB at 2.3 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.pom (13 kB at 1.9 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/net/java/jvnet-parent/3/jvnet-parent-3.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/net/java/jvnet-parent/3/jvnet-parent-3.pom (4.8 kB at 479 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/javax/enterprise/cdi-api/1.2/cdi-api-1.2.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/javax/enterprise/cdi-api/1.2/cdi-api-1.2.pom (6.3 kB at 1.0 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/weld/weld-parent/26/weld-parent-26.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/weld/weld-parent/26/weld-parent-26.pom (32 kB at 2.2 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/javax/inject/javax.inject/1/javax.inject-1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/javax/inject/javax.inject/1/javax.inject-1.pom (612 B at 102 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.3.5/org.eclipse.sisu.inject-0.3.5.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.3.5/org.eclipse.sisu.inject-0.3.5.pom (2.6 kB at 375 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-inject/0.3.5/sisu-inject-0.3.5.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-inject/0.3.5/sisu-inject-0.3.5.pom (14 kB at 2.1 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.5.2/plexus-classworlds-2.5.2.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.5.2/plexus-classworlds-2.5.2.pom (7.3 kB at 1.2 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.2.5/maven-model-builder-3.2.5.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.2.5/maven-model-builder-3.2.5.pom (3.0 kB at 299 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.2.5/maven-aether-provider-3.2.5.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.2.5/maven-aether-provider-3.2.5.pom (4.2 kB at 472 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/1.0.0.v20140518/aether-spi-1.0.0.v20140518.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/1.0.0.v20140518/aether-spi-1.0.0.v20140518.pom (2.1 kB at 205 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/1.0.0.v20140518/aether-impl-1.0.0.v20140518.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/1.0.0.v20140518/aether-impl-1.0.0.v20140518.pom (3.5 kB at 579 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.2.3/sisu-guice-3.2.3.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.2.3/sisu-guice-3.2.3.pom (11 kB at 911 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-parent/3.2.3/guice-parent-3.2.3.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-parent/3.2.3/guice-parent-3.2.3.pom (13 kB at 1.9 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/38/forge-parent-38.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/38/forge-parent-38.pom (19 kB at 3.1 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.pom (363 B at 60 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/16.0.1/guava-16.0.1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/16.0.1/guava-16.0.1.pom (6.1 kB at 1.0 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/16.0.1/guava-parent-16.0.1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/16.0.1/guava-parent-16.0.1.pom (7.3 kB at 1.2 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.11.0/commons-io-2.11.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.11.0/commons-io-2.11.0.pom (20 kB at 2.0 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/52/commons-parent-52.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/52/commons-parent-52.pom (79 kB at 5.7 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.7.2/junit-bom-5.7.2.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.7.2/junit-bom-5.7.2.pom (5.1 kB at 850 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/3.0.0/maven-surefire-common-3.0.0.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/3.0.0/surefire-api-3.0.0.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-logger-api/3.0.0/surefire-logger-api-3.0.0.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-extensions-api/3.0.0/surefire-extensions-api-3.0.0.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/3.0.0/surefire-booter-3.0.0.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/3.0.0/surefire-booter-3.0.0.jar (118 kB at 4.6 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-extensions-spi/3.0.0/surefire-extensions-spi-3.0.0.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-extensions-api/3.0.0/surefire-extensions-api-3.0.0.jar (26 kB at 984 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/1.0.0.v20140518/aether-util-1.0.0.v20140518.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/3.0.0/maven-surefire-common-3.0.0.jar (308 kB at 11 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/1.0.0.v20140518/aether-api-1.0.0.v20140518.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-logger-api/3.0.0/surefire-logger-api-3.0.0.jar (14 kB at 452 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.1.1/maven-common-artifact-filters-3.1.1.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-extensions-spi/3.0.0/surefire-extensions-spi-3.0.0.jar (8.2 kB at 227 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/1.0.0.v20140518/aether-api-1.0.0.v20140518.jar (136 kB at 3.7 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-shared-utils/3.0.0/surefire-shared-utils-3.0.0.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.1.1/maven-common-artifact-filters-3.1.1.jar (61 kB at 1.4 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar (327 kB at 6.1 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/1.0.0.v20140518/aether-util-1.0.0.v20140518.jar (146 kB at 2.5 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/3.0.0/surefire-api-3.0.0.jar (171 kB at 2.8 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-shared-utils/3.0.0/surefire-shared-utils-3.0.0.jar (2.1 MB at 26 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.0.0/surefire-junit-platform-3.0.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.0.0/surefire-junit-platform-3.0.0.pom (4.5 kB at 754 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/3.0.0/surefire-providers-3.0.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/3.0.0/surefire-providers-3.0.0.pom (2.5 kB at 363 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.0.0/common-java5-3.0.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.0.0/common-java5-3.0.0.pom (2.7 kB at 391 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.3.2/junit-platform-launcher-1.3.2.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.3.2/junit-platform-launcher-1.3.2.pom (2.2 kB at 317 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.pom (1.2 kB at 146 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.3.2/junit-platform-engine-1.3.2.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.3.2/junit-platform-engine-1.3.2.pom (2.4 kB at 184 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.3.2/junit-platform-commons-1.3.2.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.3.2/junit-platform-commons-1.3.2.pom (2.0 kB at 337 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1.pom (1.7 kB at 210 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.0.0/surefire-junit-platform-3.0.0.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.0.0/common-java5-3.0.0.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.3.2/junit-platform-launcher-1.3.2.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.3.2/junit-platform-engine-1.3.2.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/1.0.0/apiguardian-api-1.0.0.jar (2.2 kB at 216 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.3.2/junit-platform-commons-1.3.2.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.0.0/common-java5-3.0.0.jar (18 kB at 1.6 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.0.0/surefire-junit-platform-3.0.0.jar (27 kB at 2.1 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.3.2/junit-platform-engine-1.3.2.jar (138 kB at 8.7 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.1.1/opentest4j-1.1.1.jar (7.1 kB at 445 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.3.2/junit-platform-commons-1.3.2.jar (78 kB at 4.9 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.3.2/junit-platform-launcher-1.3.2.jar (95 kB at 5.3 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.9.2/junit-platform-launcher-1.9.2.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.9.2/junit-platform-launcher-1.9.2.pom (3.0 kB at 432 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.9.2/junit-platform-launcher-1.9.2.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.9.2/junit-platform-launcher-1.9.2.jar (169 kB at 9.4 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] 
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] -------------------------------------------------------
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO]  T E S T S
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] -------------------------------------------------------
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Running com.whatsapp.api.WhatsappApiFactoryTest
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.859 s - in com.whatsapp.api.WhatsappApiFactoryTest
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Running com.whatsapp.api.utils.FormatterTest
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 s - in com.whatsapp.api.utils.FormatterTest
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Running com.whatsapp.api.interceptor.AuthenticationInterceptorTest
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in com.whatsapp.api.interceptor.AuthenticationInterceptorTest
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Running com.whatsapp.api.domain.webhook.WebHookPayloadTest
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.403 s - in com.whatsapp.api.domain.webhook.WebHookPayloadTest
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Running com.whatsapp.api.exception.WhatsappApiExceptionTest
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s - in com.whatsapp.api.exception.WhatsappApiExceptionTest
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Running com.whatsapp.api.exception.utils.FormatterTest
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s - in com.whatsapp.api.exception.utils.FormatterTest
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Running com.whatsapp.api.impl.WhatsappBusinessCloudApiTest
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Tests run: 27, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.915 s - in com.whatsapp.api.impl.WhatsappBusinessCloudApiTest
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Running com.whatsapp.api.impl.WhatsappBusinessManagementApiTest
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.377 s - in com.whatsapp.api.impl.WhatsappBusinessManagementApiTest
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] 
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Results:
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] 
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Tests run: 88, Failures: 0, Errors: 0, Skipped: 0
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] 
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] 
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] --- jacoco-maven-plugin:0.8.8:report (report) @ whatsapp-business-java-api ---
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Loading execution data file /tmp/b27d3e94-8342-4ce0-a325-bdd68d2aec88/target/jacoco.exec
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Analyzed bundle 'whatsapp-business-sdk' with 154 classes
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] 
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ whatsapp-business-java-api ---
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.5/maven-archiver-2.5.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.5/maven-archiver-2.5.pom (4.5 kB at 189 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1/plexus-archiver-2.1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1/plexus-archiver-2.1.pom (2.8 kB at 85 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0/plexus-utils-3.0.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0/plexus-utils-3.0.pom (4.1 kB at 131 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/16/spice-parent-16.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/16/spice-parent-16.pom (8.4 kB at 334 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/5/forge-parent-5.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/5/forge-parent-5.pom (8.4 kB at 322 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.2/plexus-io-2.0.2.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.2/plexus-io-2.0.2.pom (1.7 kB at 72 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.19/plexus-components-1.1.19.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.19/plexus-components-1.1.19.pom (2.7 kB at 112 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.0.1/plexus-3.0.1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.0.1/plexus-3.0.1.pom (19 kB at 503 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.15/plexus-interpolation-1.15.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.15/plexus-interpolation-1.15.pom (1.0 kB at 60 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.1/commons-lang-2.1.pom
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.1/commons-lang-2.1.pom (9.9 kB at 993 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.5/maven-archiver-2.5.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.15/plexus-interpolation-1.15.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1/plexus-archiver-2.1.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.2/plexus-io-2.0.2.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.1/commons-lang-2.1.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/2.0.2/plexus-io-2.0.2.jar (58 kB at 2.8 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0/plexus-utils-3.0.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-archiver/2.1/plexus-archiver-2.1.jar (184 kB at 7.7 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-archiver/2.5/maven-archiver-2.5.jar (22 kB at 873 kB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.15/plexus-interpolation-1.15.jar (60 kB at 2.2 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-lang/commons-lang/2.1/commons-lang-2.1.jar (208 kB at 6.5 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0/plexus-utils-3.0.jar (226 kB at 4.5 MB/s)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Building jar: /tmp/b27d3e94-8342-4ce0-a325-bdd68d2aec88/target/whatsapp-business-java-api.jar
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] ------------------------------------------------------------------------
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] BUILD SUCCESS
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] ------------------------------------------------------------------------
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Total time:  21.195 s
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] Finished at: 2023-11-24T16:26:09Z
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [INFO] ------------------------------------------------------------------------
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   ✅  Success - Main Build with Maven
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] ⭐ Run Main Upload coverage reports to Codecov
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   🐳  docker cp src=/tmp/act-cache/279a65d3-a090-4e2c-aa88-00b40ef5dc4d/act/codecov-codecov-action@v3/ dst=/var/run/act/actions/codecov-codecov-action@v3/
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/codecov-codecov-action@v3/] user=0 workdir=
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   🐳  docker exec cmd=[node /var/run/act/actions/codecov-codecov-action@v3/dist/index.js] user= workdir=
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | ==> linux OS detected
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | https://uploader.codecov.io/latest/linux/codecov.SHA256SUM
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | ==> SHASUM file signed by key id 806bb28aed779869
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | ==> Uploader SHASUM verified (b9282b8b43eef83f722646d8992c4dd36563046afe0806722184e7e9923a6d7b  codecov)
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | ==> Running version latest
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | ==> Running version v0.7.1
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [command]/run/act/actions/codecov-codecov-action@v3/dist/codecov -n  -Q github-action-3.1.4
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [2023-11-24T16:26:14.527Z] ['info'] 
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   |      _____          _
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   |     / ____|        | |
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   |    | |     ___   __| | ___  ___ _____   __
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   |    | |    / _ \ / _` |/ _ \/ __/ _ \ \ / /
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   |    | |___| (_) | (_| |  __/ (_| (_) \ V /
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   |     \_____\___/ \__,_|\___|\___\___/ \_/
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | 
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   |   Codecov report uploader 0.7.1
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [2023-11-24T16:26:14.570Z] ['info'] => Project root located at: /tmp/b27d3e94-8342-4ce0-a325-bdd68d2aec88
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [2023-11-24T16:26:14.573Z] ['info'] -> No token specified or token is empty
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [2023-11-24T16:26:14.590Z] ['info'] Searching for coverage files...
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [2023-11-24T16:26:14.683Z] ['info'] Warning: Some files located via search were excluded from upload.
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [2023-11-24T16:26:14.684Z] ['info'] If Codecov did not locate your files, please review https://docs.codecov.com/docs/supported-report-formats
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [2023-11-24T16:26:14.684Z] ['info'] => Found 1 possible coverage files:
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   |   target/site/jacoco/jacoco.xml
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [2023-11-24T16:26:14.684Z] ['info'] Processing /tmp/b27d3e94-8342-4ce0-a325-bdd68d2aec88/target/site/jacoco/jacoco.xml...
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [2023-11-24T16:26:14.700Z] ['info'] Detected GitHub Actions as the CI provider.
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [2023-11-24T16:26:14.879Z] ['info'] Pinging Codecov: https://codecov.io/upload/v4?package=github-action-3.1.4-uploader-0.7.1&token=*******&branch=master&build=1&build_url=https%3A%2F%2Fgithub.com%2FBindambc%2Fwhatsapp-business-java-api%2Factions%2Fruns%2F1&commit=b6e5f7d58726e61a80751cc4bdf984239c5c498d&job=4bd425bd-7d17-485c-9430-d22820c690b8&pr=&service=github-actions&slug=Bindambc%2Fwhatsapp-business-java-api&name=&tag=&flags=&parent=
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   | [2023-11-24T16:26:15.184Z] ['error'] There was an error running the uploader: Error uploading to https://codecov.io: Error: There was an error fetching the storage URL during POST: 404 - {'detail': ErrorDetail(string='Unable to locate build via Github Actions API. Please upload with the Codecov repository upload token to resolve issue.', code='not_found')}
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   ✅  Success - Main Upload coverage reports to Codecov
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] ⭐ Run Post Set up JDK 17
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=
+[4bd425bd-7d17-485c-9430-d22820c690b8/build]   ✅  Success - Post Set up JDK 17
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] 🏁  Job succeeded
+[4bd425bd-7d17-485c-9430-d22820c690b8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'b6e5f7d58726e61a80751cc4bdf984239c5c498d'

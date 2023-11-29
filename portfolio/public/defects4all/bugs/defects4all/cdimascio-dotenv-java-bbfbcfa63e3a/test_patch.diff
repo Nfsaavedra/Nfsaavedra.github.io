@@ -1,0 +1,36 @@
+diff --git a/src/test/java/tests/BasicTests.java b/src/test/java/tests/BasicTests.java
+index c15cfd7..502e6ed 100644
+--- a/src/test/java/tests/BasicTests.java
++++ b/src/test/java/tests/BasicTests.java
+@@ -16,6 +16,7 @@ public class BasicTests {
+         put("WITHOUT_VALUE", "");
+         put("MULTI_LINE", "hello\\nworld");
+         put("TRAILING_COMMENT", "value");
++        put("QUOTED_VALUE", "iH4>hb_d0#_GN8d]6");
+     }};
+ 
+     @Test(expected = DotenvException.class)
+diff --git a/src/test/resources/.env b/src/test/resources/.env
+index 2c940e0..d0ccf01 100644
+--- a/src/test/resources/.env
++++ b/src/test/resources/.env
+@@ -4,6 +4,7 @@ MY_TEST_EV2=my test ev 2
+ WITHOUT_VALUE=
+ MULTI_LINE=hello\nworld
+ TRAILING_COMMENT=value # comment
++QUOTED_VALUE="iH4>hb_d0#_GN8d]6" # comment "test"
+ 
+ ## Malformed EV!
+ MY_TEST_EV3
+diff --git a/src/test/resources/env b/src/test/resources/env
+index 8aaf95f..d01afb9 100644
+--- a/src/test/resources/env
++++ b/src/test/resources/env
+@@ -4,6 +4,7 @@ MY_TEST_EV2=my test ev 2
+ WITHOUT_VALUE=
+ MULTI_LINE=hello\nworld
+ TRAILING_COMMENT=value # comment
++QUOTED_VALUE="iH4>hb_d0#_GN8d]6" # comment "test"
+ 
+ ## Malformed EV!
+ MY_TEST_EV3

@@ -1,0 +1,28 @@
+diff --git a/src/main/java/org/traccar/protocol/HuabaoProtocolDecoder.java b/src/main/java/org/traccar/protocol/HuabaoProtocolDecoder.java
+index fcbb550..05e2fb8 100644
+--- a/src/main/java/org/traccar/protocol/HuabaoProtocolDecoder.java
++++ b/src/main/java/org/traccar/protocol/HuabaoProtocolDecoder.java
+@@ -913,6 +913,7 @@ public class HuabaoProtocolDecoder extends BaseProtocolDecoder {
+                     }
+                     getLastLocation(position, time);
+                     decodeCoordinates(position, buf);
++                    position.setTime(time);
+                     break;
+                 case 0x02:
+                     count = buf.readUnsignedByte();
+@@ -925,6 +926,7 @@ public class HuabaoProtocolDecoder extends BaseProtocolDecoder {
+                     }
+                     getLastLocation(position, time);
+                     decodeCoordinates(position, buf);
++                    position.setTime(time);
+                     break;
+                 case 0x03:
+                     count = buf.readUnsignedByte();
+@@ -956,6 +958,7 @@ public class HuabaoProtocolDecoder extends BaseProtocolDecoder {
+                     }
+                     getLastLocation(position, time);
+                     decodeCoordinates(position, buf);
++                    position.setTime(time);
+                     break;
+                 case 0x0B:
+                     if (buf.readUnsignedByte() > 0) {

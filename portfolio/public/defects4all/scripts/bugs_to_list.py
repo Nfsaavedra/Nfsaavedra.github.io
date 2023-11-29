@@ -21,7 +21,7 @@ with open('../defects4all.json', 'w') as defects4all:
                         'previous_commit': bug['previous_commit_hash'][:12],
                         'commit': bug['commit_hash'][:12],
                         'strategy': bug['strategy'],
-                        'files_type': bug['bug_patch_files_type'],
+                        'change_type': bug['change_type'],
                         'commit_message': bug['commit_message'],
                         'committed_at': bug['commit_timestamp'],
                         'previous_commit_at': bug['previous_commit_timestamp'],
@@ -66,6 +66,7 @@ with open('../defects4all.json', 'w') as defects4all:
                     final_bug['metrics']['addedLines'] = patch.added
                     final_bug['metrics']['removedLines'] = patch.removed
                     final_bug['metrics']['patchSize'] = patch.added + patch.removed
+                    final_bug['metrics']['hunks'] = sum([len(file) for file in patch]) 
 
                     id = bug['repository'].replace('/', '-') + '-' + final_bug['commit']
                     final_bug['bugId'] = id

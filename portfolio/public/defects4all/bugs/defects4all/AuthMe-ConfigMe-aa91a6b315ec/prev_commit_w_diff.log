@@ -1,0 +1,954 @@
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] 🚀  Start image=gitbugactions:latest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   🐳  docker pull image=gitbugactions:latest platform= username= forcePull=false
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   🐳  docker create image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   🐳  docker run image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/431117c4-a8a4-462d-b4ef-9b283d6b2f87] user=0 workdir=
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] ⭐ Run Main actions/checkout@v3
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   🐳  docker cp src=/tmp/431117c4-a8a4-462d-b4ef-9b283d6b2f87/. dst=/tmp/431117c4-a8a4-462d-b4ef-9b283d6b2f87
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/431117c4-a8a4-462d-b4ef-9b283d6b2f87] user=0 workdir=
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   ✅  Success - Main actions/checkout@v3
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] ⭐ Run Main Set up JDK 11
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   🐳  docker cp src=/tmp/act-cache/e7b2b621-0841-42ea-9255-a102420e2b97/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   ❓  ::group::Installed distributions
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | Trying to resolve the latest version from remote
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | Resolved latest version as 11.0.21+9
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | Trying to download...
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | Downloading Java 11.0.21+9 (Adopt-Hotspot) from https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.21%2B9/OpenJDK11U-jdk_x64_linux_hotspot_11.0.21_9.tar.gz ...
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   💬  ::debug::Downloading https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.21%252B9/OpenJDK11U-jdk_x64_linux_hotspot_11.0.21_9.tar.gz
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   💬  ::debug::Destination /tmp/36a75ed8-62f7-4a91-9722-53805fdebdcf
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   💬  ::debug::download complete
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | Extracting Java archive...
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   💬  ::debug::Checking tar --version
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   💬  ::debug::tar (GNU tar) 1.34%0ACopyright (C) 2021 Free Software Foundation, Inc.%0ALicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.%0AThis is free software: you are free to change and redistribute it.%0AThere is NO WARRANTY, to the extent permitted by law.%0A%0AWritten by John Gilmore and Jay Fenlason.
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/6107f838-7fb2-46c7-b412-a48bb38649da -f /tmp/36a75ed8-62f7-4a91-9722-53805fdebdcf
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   💬  ::debug::Caching tool Java_Adopt_jdk 11.0.21-9 x64
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   💬  ::debug::source dir: /tmp/6107f838-7fb2-46c7-b412-a48bb38649da/jdk-11.0.21+9
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   💬  ::debug::destination /opt/hostedtoolcache/Java_Adopt_jdk/11.0.21-9/x64
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   💬  ::debug::finished caching tool
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | Java 11.0.21+9 was downloaded
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | Setting Java 11.0.21+9 as the default
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | Creating toolchains.xml for JDK version 11 from adopt
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | Writing to /home/runner/.m2/toolchains.xml
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | 
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | Java configuration:
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   |   Distribution: adopt
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   |   Version: 11.0.21+9
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   |   Path: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.21-9/x64
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | 
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   ❓  ::endgroup::
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   ❓ add-matcher /run/act/actions/actions-setup-java@v3/.github/java.json
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | Creating settings.xml with server-id: github
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | Writing to /home/runner/.m2/settings.xml
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   ✅  Success - Main Set up JDK 11
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   ⚙  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Adopt_jdk/11.0.21-9/x64
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   ⚙  ::set-env:: JAVA_HOME_11_X64=/opt/hostedtoolcache/Java_Adopt_jdk/11.0.21-9/x64
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   ⚙  ::set-output:: distribution=Adopt-Hotspot
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   ⚙  ::set-output:: path=/opt/hostedtoolcache/Java_Adopt_jdk/11.0.21-9/x64
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   ⚙  ::set-output:: version=11.0.21+9
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   ⚙  ::add-path:: /opt/hostedtoolcache/Java_Adopt_jdk/11.0.21-9/x64/bin
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] ⭐ Run Main Build with Maven
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Scanning for projects...
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] 
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] --------------------------< ch.jalu:configme >--------------------------
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Building ConfigMe 2.0.0-SNAPSHOT
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO]   from pom.xml
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] --------------------------------[ jar ]---------------------------------
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jacoco/jacoco-maven-plugin/0.8.10/jacoco-maven-plugin-0.8.10.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jacoco/jacoco-maven-plugin/0.8.10/jacoco-maven-plugin-0.8.10.pom (3.8 kB at 9.2 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.build/0.8.10/org.jacoco.build-0.8.10.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.build/0.8.10/org.jacoco.build-0.8.10.pom (44 kB at 437 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-bom/9.5/asm-bom-9.5.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-bom/9.5/asm-bom-9.5.pom (3.2 kB at 22 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/ow2/1.5.1/ow2-1.5.1.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/ow2/1.5.1/ow2-1.5.1.pom (11 kB at 131 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jacoco/jacoco-maven-plugin/0.8.10/jacoco-maven-plugin-0.8.10.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jacoco/jacoco-maven-plugin/0.8.10/jacoco-maven-plugin-0.8.10.jar (56 kB at 617 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.pom (8.1 kB at 100 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/23/maven-plugins-23.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/23/maven-plugins-23.pom (9.2 kB at 102 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/22/maven-parent-22.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/22/maven-parent-22.pom (30 kB at 115 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/11/apache-11.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/11/apache-11.pom (15 kB at 168 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-resources-plugin/2.6/maven-resources-plugin-2.6.jar (30 kB at 261 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.11.0/maven-compiler-plugin-3.11.0.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.11.0/maven-compiler-plugin-3.11.0.pom (9.8 kB at 103 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/39/maven-plugins-39.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/39/maven-plugins-39.pom (8.1 kB at 106 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/39/maven-parent-39.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/39/maven-parent-39.pom (48 kB at 521 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/29/apache-29.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/29/apache-29.pom (21 kB at 205 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.11.0/maven-compiler-plugin-3.11.0.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-compiler-plugin/3.11.0/maven-compiler-plugin-3.11.0.jar (66 kB at 722 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/3.1.2/maven-surefire-plugin-3.1.2.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/3.1.2/maven-surefire-plugin-3.1.2.pom (5.5 kB at 57 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire/3.1.2/surefire-3.1.2.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire/3.1.2/surefire-3.1.2.pom (22 kB at 237 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/3.1.2/maven-surefire-plugin-3.1.2.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/3.1.2/maven-surefire-plugin-3.1.2.jar (43 kB at 476 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.4/maven-jar-plugin-2.4.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.4/maven-jar-plugin-2.4.pom (5.8 kB at 59 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/22/maven-plugins-22.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-plugins/22/maven-plugins-22.pom (13 kB at 113 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/21/maven-parent-21.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/21/maven-parent-21.pom (26 kB at 272 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/10/apache-10.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/10/apache-10.pom (15 kB at 218 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.4/maven-jar-plugin-2.4.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/2.4/maven-jar-plugin-2.4.jar (34 kB at 431 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/2.2/snakeyaml-2.2.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/2.2/snakeyaml-2.2.pom (21 kB at 210 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/ch/jalu/typeresolver/0.1.0/typeresolver-0.1.0.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/ch/jalu/typeresolver/0.1.0/typeresolver-0.1.0.pom (7.1 kB at 67 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jetbrains/annotations/24.0.1/annotations-24.0.1.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jetbrains/annotations/24.0.1/annotations-24.0.1.pom (1.3 kB at 13 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.10.0/junit-jupiter-engine-5.10.0.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.10.0/junit-jupiter-engine-5.10.0.pom (3.2 kB at 33 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.10.0/junit-bom-5.10.0.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.10.0/junit-bom-5.10.0.pom (5.6 kB at 63 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.10.0/junit-platform-engine-1.10.0.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.10.0/junit-platform-engine-1.10.0.pom (3.2 kB at 37 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.pom (2.0 kB at 25 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.10.0/junit-platform-commons-1.10.0.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.10.0/junit-platform-commons-1.10.0.pom (2.8 kB at 34 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.pom (1.5 kB at 16 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/5.10.0/junit-jupiter-api-5.10.0.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/5.10.0/junit-jupiter-api-5.10.0.pom (3.2 kB at 36 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-params/5.10.0/junit-jupiter-params-5.10.0.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-params/5.10.0/junit-jupiter-params-5.10.0.pom (3.0 kB at 34 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/java-hamcrest/2.0.0.0/java-hamcrest-2.0.0.0.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/java-hamcrest/2.0.0.0/java-hamcrest-2.0.0.0.pom (1.3 kB at 13 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/4.11.0/mockito-core-4.11.0.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/4.11.0/mockito-core-4.11.0.pom (2.5 kB at 25 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.12.19/byte-buddy-1.12.19.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.12.19/byte-buddy-1.12.19.pom (16 kB at 193 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-parent/1.12.19/byte-buddy-parent-1.12.19.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-parent/1.12.19/byte-buddy-parent-1.12.19.pom (58 kB at 679 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/1.12.19/byte-buddy-agent-1.12.19.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/1.12.19/byte-buddy-agent-1.12.19.pom (10 kB at 117 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/3.3/objenesis-3.3.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/3.3/objenesis-3.3.pom (3.0 kB at 35 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis-parent/3.3/objenesis-parent-3.3.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis-parent/3.3/objenesis-parent-3.3.pom (19 kB at 242 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.11.0/mockito-junit-jupiter-4.11.0.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.11.0/mockito-junit-jupiter-4.11.0.pom (2.3 kB at 13 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/5.9.1/junit-jupiter-api-5.9.1.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/5.9.1/junit-jupiter-api-5.9.1.pom (3.2 kB at 47 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.9.1/junit-bom-5.9.1.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.9.1/junit-bom-5.9.1.pom (5.6 kB at 59 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.pom (1.7 kB at 21 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.9.1/junit-platform-commons-1.9.1.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.9.1/junit-platform-commons-1.9.1.pom (2.8 kB at 42 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/ch/jalu/typeresolver/0.1.0/typeresolver-0.1.0.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jetbrains/annotations/24.0.1/annotations-24.0.1.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.10.0/junit-jupiter-engine-5.10.0.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.10.0/junit-platform-engine-1.10.0.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/ch/jalu/typeresolver/0.1.0/typeresolver-0.1.0.jar (76 kB at 829 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jetbrains/annotations/24.0.1/annotations-24.0.1.jar (31 kB at 295 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.10.0/junit-platform-commons-1.10.0.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-engine/5.10.0/junit-jupiter-engine-5.10.0.jar (244 kB at 2.2 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/5.10.0/junit-jupiter-api-5.10.0.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.10.0/junit-platform-engine-1.10.0.jar (205 kB at 1.7 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar (334 kB at 2.5 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-params/5.10.0/junit-jupiter-params-5.10.0.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar (14 kB at 82 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/java-hamcrest/2.0.0.0/java-hamcrest-2.0.0.0.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.10.0/junit-platform-commons-1.10.0.jar (106 kB at 559 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/4.11.0/mockito-core-4.11.0.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-api/5.10.0/junit-jupiter-api-5.10.0.jar (211 kB at 1.1 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.12.19/byte-buddy-1.12.19.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar (6.8 kB at 32 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/1.12.19/byte-buddy-agent-1.12.19.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/jupiter/junit-jupiter-params/5.10.0/junit-jupiter-params-5.10.0.jar (586 kB at 2.5 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/3.3/objenesis-3.3.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/java-hamcrest/2.0.0.0/java-hamcrest-2.0.0.0.jar (113 kB at 446 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.11.0/mockito-junit-jupiter-4.11.0.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-core/4.11.0/mockito-core-4.11.0.jar (685 kB at 2.5 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-agent/1.12.19/byte-buddy-agent-1.12.19.jar (256 kB at 909 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/objenesis/objenesis/3.3/objenesis-3.3.jar (49 kB at 158 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/mockito/mockito-junit-jupiter/4.11.0/mockito-junit-jupiter-4.11.0.jar (5.4 kB at 16 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.12.19/byte-buddy-1.12.19.jar (4.0 MB at 9.4 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] 
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] --- jacoco-maven-plugin:0.8.10:prepare-agent (prepare-agent) @ configme ---
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.pom (4.1 kB at 62 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/4.0/plexus-4.0.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/4.0/plexus-4.0.pom (22 kB at 326 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/10/forge-parent-10.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/10/forge-parent-10.pom (14 kB at 90 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/1.2.1/file-management-1.2.1.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/1.2.1/file-management-1.2.1.pom (3.9 kB at 42 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/10/maven-shared-components-10.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/10/maven-shared-components-10.pom (8.4 kB at 136 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/9/maven-parent-9.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/9/maven-parent-9.pom (33 kB at 547 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/4/apache-4.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/4/apache-4.pom (4.5 kB at 82 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.6/maven-plugin-api-2.0.6.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.6/maven-plugin-api-2.0.6.pom (1.5 kB at 22 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.6/maven-2.0.6.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.6/maven-2.0.6.pom (9.0 kB at 127 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/5/maven-parent-5.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/5/maven-parent-5.pom (15 kB at 212 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/3/apache-3.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/3/apache-3.pom (3.4 kB at 56 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-io/1.1/maven-shared-io-1.1.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-io/1.1/maven-shared-io-1.1.pom (4.1 kB at 59 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/8/maven-shared-components-8.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/8/maven-shared-components-8.pom (2.7 kB at 46 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/7/maven-parent-7.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/7/maven-parent-7.pom (21 kB at 343 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.2/maven-artifact-2.0.2.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.2/maven-artifact-2.0.2.pom (765 B at 12 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.2/maven-2.0.2.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven/2.0.2/maven-2.0.2.pom (13 kB at 161 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.1/plexus-utils-1.1.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.1/plexus-utils-1.1.pom (767 B at 12 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.4/plexus-1.0.4.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.4/plexus-1.0.4.pom (5.7 kB at 106 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.2/maven-artifact-manager-2.0.2.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.2/maven-artifact-manager-2.0.2.pom (1.4 kB at 30 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.2/maven-repository-metadata-2.0.2.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.2/maven-repository-metadata-2.0.2.pom (1.3 kB at 23 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9/plexus-container-default-1.0-alpha-9.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9/plexus-container-default-1.0-alpha-9.pom (1.2 kB at 26 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.0.3/plexus-containers-1.0.3.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.0.3/plexus-containers-1.0.3.pom (492 B at 8.9 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/4.13.1/junit-4.13.1.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/4.13.1/junit-4.13.1.pom (25 kB at 204 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.pom (766 B at 18 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-parent/1.3/hamcrest-parent-1.3.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-parent/1.3/hamcrest-parent-1.3.pom (2.0 kB at 38 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.0.4/plexus-utils-1.0.4.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.0.4/plexus-utils-1.0.4.pom (6.9 kB at 159 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.pom (3.1 kB at 78 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-alpha-6/wagon-provider-api-1.0-alpha-6.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-alpha-6/wagon-provider-api-1.0-alpha-6.pom (588 B at 18 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0-alpha-6/wagon-1.0-alpha-6.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon/1.0-alpha-6/wagon-1.0-alpha-6.pom (6.4 kB at 149 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.6/plexus-utils-1.4.6.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.6/plexus-utils-1.4.6.pom (2.3 kB at 60 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.11/plexus-1.0.11.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.11/plexus-1.0.11.pom (9.0 kB at 155 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.6/plexus-utils-1.5.6.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.6/plexus-utils-1.5.6.pom (5.3 kB at 54 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.12/plexus-1.0.12.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/1.0.12/plexus-1.0.12.pom (9.8 kB at 142 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.pom (2.4 kB at 38 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/15/maven-shared-components-15.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/15/maven-shared-components-15.pom (9.3 kB at 267 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/16/maven-parent-16.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/16/maven-parent-16.pom (23 kB at 485 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/7/apache-7.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/7/apache-7.pom (14 kB at 361 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0/doxia-sink-api-1.0.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0/doxia-sink-api-1.0.pom (1.4 kB at 23 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.0/doxia-1.0.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.0/doxia-1.0.pom (9.6 kB at 175 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/10/maven-parent-10.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/10/maven-parent-10.pom (32 kB at 719 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.agent/0.8.10/org.jacoco.agent-0.8.10.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.agent/0.8.10/org.jacoco.agent-0.8.10.pom (3.5 kB at 61 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.core/0.8.10/org.jacoco.core-0.8.10.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.core/0.8.10/org.jacoco.core-0.8.10.pom (2.1 kB at 39 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.5/asm-9.5.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.5/asm-9.5.pom (2.4 kB at 41 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/9.5/asm-commons-9.5.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/9.5/asm-commons-9.5.pom (2.8 kB at 45 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/9.5/asm-tree-9.5.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/9.5/asm-tree-9.5.pom (2.6 kB at 50 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.report/0.8.10/org.jacoco.report-0.8.10.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.report/0.8.10/org.jacoco.report-0.8.10.pom (1.9 kB at 28 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/1.2.1/file-management-1.2.1.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.6/maven-plugin-api-2.0.6.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-io/1.1/maven-shared-io-1.1.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.2/maven-artifact-2.0.2.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/file-management/1.2.1/file-management-1.2.1.jar (38 kB at 648 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.2/maven-artifact-manager-2.0.2.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/2.0.6/maven-plugin-api-2.0.6.jar (13 kB at 186 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.2/maven-repository-metadata-2.0.2.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-io/1.1/maven-shared-io-1.1.jar (39 kB at 572 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-alpha-6/wagon-provider-api-1.0-alpha-6.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.jar (247 kB at 3.4 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9/plexus-container-default-1.0-alpha-9.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.2/maven-artifact-2.0.2.jar (78 kB at 1.1 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/4.13.1/junit-4.13.1.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.2/maven-artifact-manager-2.0.2.jar (49 kB at 447 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.2/maven-repository-metadata-2.0.2.jar (20 kB at 166 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-alpha-6/wagon-provider-api-1.0-alpha-6.jar (43 kB at 339 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9/plexus-container-default-1.0-alpha-9.jar (195 kB at 1.6 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0/doxia-sink-api-1.0.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/4.13.1/junit-4.13.1.jar (383 kB at 2.9 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.agent/0.8.10/org.jacoco.agent-0.8.10-runtime.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar (45 kB at 287 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.core/0.8.10/org.jacoco.core-0.8.10.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.jar (38 kB at 216 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.jar (11 kB at 63 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/9.5/asm-commons-9.5.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.5/asm-9.5.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0/doxia-sink-api-1.0.jar (10 kB at 58 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/9.5/asm-tree-9.5.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.agent/0.8.10/org.jacoco.agent-0.8.10-runtime.jar (299 kB at 1.6 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.report/0.8.10/org.jacoco.report-0.8.10.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.core/0.8.10/org.jacoco.core-0.8.10.jar (204 kB at 968 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/9.5/asm-commons-9.5.jar (72 kB at 334 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/9.5/asm-tree-9.5.jar (52 kB at 235 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.5/asm-9.5.jar (122 kB at 539 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jacoco/org.jacoco.report/0.8.10/org.jacoco.report-0.8.10.jar (131 kB at 565 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] argLine set to -javaagent:/home/runner/.m2/repository/org/jacoco/org.jacoco.agent/0.8.10/org.jacoco.agent-0.8.10-runtime.jar=destfile=/tmp/431117c4-a8a4-462d-b4ef-9b283d6b2f87/target/jacoco.exec
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] 
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ configme ---
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.6/maven-project-2.0.6.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.6/maven-project-2.0.6.pom (2.6 kB at 40 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.6/maven-settings-2.0.6.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.6/maven-settings-2.0.6.pom (2.0 kB at 39 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.6/maven-model-2.0.6.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.6/maven-model-2.0.6.pom (3.0 kB at 59 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.1/plexus-utils-1.4.1.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4.1/plexus-utils-1.4.1.pom (1.9 kB at 20 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.pom (3.9 kB at 110 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/3.8.1/junit-3.8.1.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/3.8.1/junit-3.8.1.pom (998 B at 20 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.6/maven-profile-2.0.6.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.6/maven-profile-2.0.6.pom (2.0 kB at 42 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.6/maven-artifact-manager-2.0.6.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.6/maven-artifact-manager-2.0.6.pom (2.6 kB at 51 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.6/maven-repository-metadata-2.0.6.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.6/maven-repository-metadata-2.0.6.pom (1.9 kB at 33 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.6/maven-artifact-2.0.6.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.6/maven-artifact-2.0.6.pom (1.6 kB at 30 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.6/maven-plugin-registry-2.0.6.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.6/maven-plugin-registry-2.0.6.pom (1.9 kB at 56 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.6/maven-core-2.0.6.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.6/maven-core-2.0.6.pom (6.7 kB at 137 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.6/maven-plugin-parameter-documenter-2.0.6.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.6/maven-plugin-parameter-documenter-2.0.6.pom (1.9 kB at 31 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.pom (1.8 kB at 37 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting/2.0.6/maven-reporting-2.0.6.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting/2.0.6/maven-reporting-2.0.6.pom (1.4 kB at 26 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-7/doxia-sink-api-1.0-alpha-7.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-7/doxia-sink-api-1.0-alpha-7.pom (424 B at 7.7 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.0-alpha-7/doxia-1.0-alpha-7.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia/1.0-alpha-7/doxia-1.0-alpha-7.pom (3.9 kB at 112 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.6/maven-error-diagnostics-2.0.6.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.6/maven-error-diagnostics-2.0.6.pom (1.7 kB at 39 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.0/commons-cli-1.0.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.0/commons-cli-1.0.pom (2.1 kB at 58 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.6/maven-plugin-descriptor-2.0.6.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.6/maven-plugin-descriptor-2.0.6.pom (2.0 kB at 56 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.pom (7.1 kB at 177 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.6/maven-monitor-2.0.6.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.6/maven-monitor-2.0.6.pom (1.3 kB at 31 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/classworlds/classworlds/1.1/classworlds-1.1.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/classworlds/classworlds/1.1/classworlds-1.1.pom (3.3 kB at 74 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.pom (3.3 kB at 104 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.6/plexus-2.0.6.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.6/plexus-2.0.6.pom (17 kB at 399 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.1/maven-filtering-1.1.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.1/maven-filtering-1.1.pom (5.8 kB at 175 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/17/maven-shared-components-17.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/17/maven-shared-components-17.pom (8.7 kB at 322 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.pom (6.8 kB at 171 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.2/plexus-2.0.2.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.2/plexus-2.0.2.pom (12 kB at 332 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.12/plexus-interpolation-1.12.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.12/plexus-interpolation-1.12.pom (889 B at 14 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.14/plexus-components-1.1.14.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.14/plexus-components-1.1.14.pom (5.8 kB at 162 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.pom (2.9 kB at 130 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/10/spice-parent-10.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/10/spice-parent-10.pom (3.0 kB at 112 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/3/forge-parent-3.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/3/forge-parent-3.pom (5.0 kB at 194 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.8/plexus-utils-1.5.8.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.5.8/plexus-utils-1.5.8.pom (8.1 kB at 278 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.13/plexus-interpolation-1.13.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.13/plexus-interpolation-1.13.pom (890 B at 37 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.15/plexus-components-1.1.15.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.1.15/plexus-components-1.1.15.pom (2.8 kB at 136 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.3/plexus-2.0.3.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.3/plexus-2.0.3.pom (15 kB at 351 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.6/maven-project-2.0.6.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.6/maven-profile-2.0.6.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.6/maven-artifact-manager-2.0.6.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.6/maven-plugin-registry-2.0.6.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.6/maven-core-2.0.6.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-registry/2.0.6/maven-plugin-registry-2.0.6.jar (29 kB at 803 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.6/maven-plugin-parameter-documenter-2.0.6.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-project/2.0.6/maven-project-2.0.6.jar (116 kB at 3.2 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-profile/2.0.6/maven-profile-2.0.6.jar (35 kB at 979 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-7/doxia-sink-api-1.0-alpha-7.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact-manager/2.0.6/maven-artifact-manager-2.0.6.jar (57 kB at 1.3 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/2.0.6/maven-core-2.0.6.jar (152 kB at 3.5 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.6/maven-repository-metadata-2.0.6.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.6/maven-error-diagnostics-2.0.6.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/reporting/maven-reporting-api/2.0.6/maven-reporting-api-2.0.6.jar (9.9 kB at 163 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.0/commons-cli-1.0.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-parameter-documenter/2.0.6/maven-plugin-parameter-documenter-2.0.6.jar (21 kB at 277 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.6/maven-plugin-descriptor-2.0.6.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-error-diagnostics/2.0.6/maven-error-diagnostics-2.0.6.jar (14 kB at 177 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/2.0.6/maven-repository-metadata-2.0.6.jar (24 kB at 318 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-sink-api/1.0-alpha-7/doxia-sink-api-1.0-alpha-7.jar (5.9 kB at 77 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/classworlds/classworlds/1.1/classworlds-1.1.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.6/maven-artifact-2.0.6.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.0/commons-cli-1.0.jar (30 kB at 314 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.6/maven-settings-2.0.6.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.jar (13 kB at 128 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.6/maven-model-2.0.6.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/classworlds/classworlds/1.1/classworlds-1.1.jar (38 kB at 361 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-descriptor/2.0.6/maven-plugin-descriptor-2.0.6.jar (37 kB at 351 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.6/maven-monitor-2.0.6.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/2.0.6/maven-artifact-2.0.6.jar (87 kB at 787 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/junit/junit/3.8.1/junit-3.8.1.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/2.0.6/maven-settings-2.0.6.jar (49 kB at 399 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/2.0.6/maven-model-2.0.6.jar (86 kB at 640 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.1/maven-filtering-1.1.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.jar (194 kB at 1.4 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-monitor/2.0.6/maven-monitor-2.0.6.jar (10 kB at 75 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.13/plexus-interpolation-1.13.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/junit/junit/3.8.1/junit-3.8.1.jar (121 kB at 859 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-filtering/1.1/maven-filtering-1.1.jar (43 kB at 263 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.jar (223 kB at 1.4 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.13/plexus-interpolation-1.13.jar (61 kB at 368 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-build-api/0.0.4/plexus-build-api-0.0.4.jar (6.8 kB at 41 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] skip non existing resourceDirectory /tmp/431117c4-a8a4-462d-b4ef-9b283d6b2f87/src/main/resources
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] 
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] --- maven-compiler-plugin:3.11.0:compile (default-compile) @ configme ---
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.3.4/maven-shared-utils-3.3.4.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.3.4/maven-shared-utils-3.3.4.pom (5.8 kB at 167 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/34/maven-shared-components-34.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/34/maven-shared-components-34.pom (5.1 kB at 170 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/34/maven-parent-34.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/34/maven-parent-34.pom (43 kB at 1.4 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/23/apache-23.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/23/apache-23.pom (18 kB at 512 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.6/commons-io-2.6.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.6/commons-io-2.6.pom (14 kB at 492 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/42/commons-parent-42.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/42/commons-parent-42.pom (68 kB at 3.4 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/18/apache-18.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/18/apache-18.pom (16 kB at 783 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.pom (4.7 kB at 144 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/19/maven-shared-components-19.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-components/19/maven-shared-components-19.pom (6.4 kB at 227 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/23/maven-parent-23.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/23/maven-parent-23.pom (33 kB at 1.1 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/13/apache-13.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/13/apache-13.pom (14 kB at 699 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.pom (815 B at 31 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.5.5/plexus-containers-1.5.5.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/1.5.5/plexus-containers-1.5.5.pom (4.2 kB at 223 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.7/plexus-2.0.7.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/2.0.7/plexus-2.0.7.pom (17 kB at 752 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-java/1.1.2/plexus-java-1.1.2.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-java/1.1.2/plexus-java-1.1.2.pom (5.0 kB at 262 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-languages/1.1.2/plexus-languages-1.1.2.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-languages/1.1.2/plexus-languages-1.1.2.pom (4.1 kB at 296 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/10/plexus-10.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/10/plexus-10.pom (25 kB at 1.7 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.4/asm-9.4.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.4/asm-9.4.pom (2.4 kB at 158 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0.3/qdox-2.0.3.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0.3/qdox-2.0.3.pom (17 kB at 784 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/9/oss-parent-9.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/9/oss-parent-9.pom (6.6 kB at 411 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.13.0/plexus-compiler-api-2.13.0.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.13.0/plexus-compiler-api-2.13.0.pom (1.1 kB at 48 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/2.13.0/plexus-compiler-2.13.0.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler/2.13.0/plexus-compiler-2.13.0.pom (8.4 kB at 762 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/10.0/plexus-components-10.0.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/10.0/plexus-components-10.0.pom (2.7 kB at 116 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.5.0/plexus-utils-3.5.0.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.5.0/plexus-utils-3.5.0.pom (8.0 kB at 422 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.13.0/plexus-compiler-manager-2.13.0.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.13.0/plexus-compiler-manager-2.13.0.pom (1.1 kB at 47 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/2.1.1/plexus-component-annotations-2.1.1.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/2.1.1/plexus-component-annotations-2.1.1.pom (770 B at 59 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/2.1.1/plexus-containers-2.1.1.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-containers/2.1.1/plexus-containers-2.1.1.pom (6.0 kB at 503 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/6.5/plexus-6.5.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/6.5/plexus-6.5.pom (26 kB at 1.3 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.13.0/plexus-compiler-javac-2.13.0.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.13.0/plexus-compiler-javac-2.13.0.pom (1.2 kB at 93 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/2.13.0/plexus-compilers-2.13.0.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compilers/2.13.0/plexus-compilers-2.13.0.pom (1.3 kB at 83 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.3.4/maven-shared-utils-3.3.4.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.6/commons-io-2.6.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-java/1.1.2/plexus-java-1.1.2.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.3.4/maven-shared-utils-3.3.4.jar (153 kB at 7.3 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.4/asm-9.4.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-incremental/1.1/maven-shared-incremental-1.1.jar (14 kB at 615 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0.3/qdox-2.0.3.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.jar (4.2 kB at 191 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.13.0/plexus-compiler-api-2.13.0.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.6/commons-io-2.6.jar (215 kB at 8.3 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.5.0/plexus-utils-3.5.0.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-java/1.1.2/plexus-java-1.1.2.jar (55 kB at 2.1 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.13.0/plexus-compiler-manager-2.13.0.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.4/asm-9.4.jar (122 kB at 4.1 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.13.0/plexus-compiler-javac-2.13.0.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.13.0/plexus-compiler-api-2.13.0.jar (27 kB at 628 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.13.0/plexus-compiler-manager-2.13.0.jar (4.7 kB at 108 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.0.3/qdox-2.0.3.jar (334 kB at 7.6 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.13.0/plexus-compiler-javac-2.13.0.jar (23 kB at 485 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.5.0/plexus-utils-3.5.0.jar (267 kB at 5.2 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Changes detected - recompiling the module! :dependency
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Compiling 86 source files with javac [debug target 1.8] to target/classes
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [WARNING] bootstrap class path not set in conjunction with -source 8
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] /tmp/431117c4-a8a4-462d-b4ef-9b283d6b2f87/src/main/java/ch/jalu/configme/resource/MapNormalizer.java: Some input files use unchecked or unsafe operations.
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] /tmp/431117c4-a8a4-462d-b4ef-9b283d6b2f87/src/main/java/ch/jalu/configme/resource/MapNormalizer.java: Recompile with -Xlint:unchecked for details.
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] 
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ configme ---
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Copying 23 resources
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] 
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] --- maven-compiler-plugin:3.11.0:testCompile (default-testCompile) @ configme ---
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Changes detected - recompiling the module! :dependency
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Compiling 132 source files with javac [debug target 1.8] to target/test-classes
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [WARNING] bootstrap class path not set in conjunction with -source 8
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] /tmp/431117c4-a8a4-462d-b4ef-9b283d6b2f87/src/test/java/ch/jalu/configme/resource/YamlFileReaderTest.java: /tmp/431117c4-a8a4-462d-b4ef-9b283d6b2f87/src/test/java/ch/jalu/configme/resource/YamlFileReaderTest.java uses or overrides a deprecated API.
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] /tmp/431117c4-a8a4-462d-b4ef-9b283d6b2f87/src/test/java/ch/jalu/configme/resource/YamlFileReaderTest.java: Recompile with -Xlint:deprecation for details.
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] /tmp/431117c4-a8a4-462d-b4ef-9b283d6b2f87/src/test/java/ch/jalu/configme/migration/PlainMigrationServiceTest.java: Some input files use unchecked or unsafe operations.
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] /tmp/431117c4-a8a4-462d-b4ef-9b283d6b2f87/src/test/java/ch/jalu/configme/migration/PlainMigrationServiceTest.java: Recompile with -Xlint:unchecked for details.
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] 
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] --- maven-surefire-plugin:3.1.2:test (default-test) @ configme ---
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/3.1.2/maven-surefire-common-3.1.2.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/3.1.2/maven-surefire-common-3.1.2.pom (6.1 kB at 358 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/3.1.2/surefire-api-3.1.2.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/3.1.2/surefire-api-3.1.2.pom (3.5 kB at 168 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-logger-api/3.1.2/surefire-logger-api-3.1.2.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-logger-api/3.1.2/surefire-logger-api-3.1.2.pom (3.3 kB at 326 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-shared-utils/3.1.2/surefire-shared-utils-3.1.2.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-shared-utils/3.1.2/surefire-shared-utils-3.1.2.pom (4.1 kB at 580 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-extensions-api/3.1.2/surefire-extensions-api-3.1.2.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-extensions-api/3.1.2/surefire-extensions-api-3.1.2.pom (3.3 kB at 413 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/3.1.2/surefire-booter-3.1.2.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/3.1.2/surefire-booter-3.1.2.pom (4.5 kB at 495 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-extensions-spi/3.1.2/surefire-extensions-spi-3.1.2.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-extensions-spi/3.1.2/surefire-extensions-spi-3.1.2.pom (1.8 kB at 220 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/1.0.0.v20140518/aether-util-1.0.0.v20140518.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/1.0.0.v20140518/aether-util-1.0.0.v20140518.pom (2.2 kB at 183 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether/1.0.0.v20140518/aether-1.0.0.v20140518.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether/1.0.0.v20140518/aether-1.0.0.v20140518.pom (30 kB at 3.4 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/1.0.0.v20140518/aether-api-1.0.0.v20140518.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/1.0.0.v20140518/aether-api-1.0.0.v20140518.pom (1.9 kB at 172 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.1.1/maven-common-artifact-filters-3.1.1.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.1.1/maven-common-artifact-filters-3.1.1.pom (5.8 kB at 414 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.2.5/maven-artifact-3.2.5.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-artifact/3.2.5/maven-artifact-3.2.5.pom (2.3 kB at 335 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.2.5/maven-3.2.5.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven/3.2.5/maven-3.2.5.pom (22 kB at 1.7 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/25/maven-parent-25.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-parent/25/maven-parent-25.pom (37 kB at 4.7 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/15/apache-15.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/15/apache-15.pom (15 kB at 2.5 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.2.5/maven-core-3.2.5.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-core/3.2.5/maven-core-3.2.5.pom (8.1 kB at 1.3 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.2.5/maven-settings-3.2.5.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings/3.2.5/maven-settings-3.2.5.pom (2.2 kB at 362 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.2.5/maven-settings-builder-3.2.5.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-settings-builder/3.2.5/maven-settings-builder-3.2.5.pom (2.6 kB at 100 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.21/plexus-interpolation-1.21.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.21/plexus-interpolation-1.21.pom (1.5 kB at 128 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.3.1/plexus-components-1.3.1.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-components/1.3.1/plexus-components-1.3.1.pom (3.1 kB at 438 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.3.1/plexus-3.3.1.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/3.3.1/plexus-3.3.1.pom (20 kB at 2.0 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/17/spice-parent-17.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/17/spice-parent-17.pom (6.8 kB at 1.1 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.pom (3.0 kB at 228 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/12/spice-parent-12.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/spice/spice-parent/12/spice-parent-12.pom (6.8 kB at 618 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/4/forge-parent-4.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/4/forge-parent-4.pom (8.4 kB at 420 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.pom (2.1 kB at 148 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.2.5/maven-repository-metadata-3.2.5.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-repository-metadata/3.2.5/maven-repository-metadata-3.2.5.pom (2.2 kB at 80 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.2.5/maven-plugin-api-3.2.5.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-plugin-api/3.2.5/maven-plugin-api-3.2.5.pom (3.0 kB at 216 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.3.5/org.eclipse.sisu.plexus-0.3.5.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.plexus/0.3.5/org.eclipse.sisu.plexus-0.3.5.pom (4.3 kB at 428 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-plexus/0.3.5/sisu-plexus-0.3.5.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-plexus/0.3.5/sisu-plexus-0.3.5.pom (14 kB at 2.0 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.pom (13 kB at 1.2 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/net/java/jvnet-parent/3/jvnet-parent-3.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/net/java/jvnet-parent/3/jvnet-parent-3.pom (4.8 kB at 228 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/javax/enterprise/cdi-api/1.2/cdi-api-1.2.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/javax/enterprise/cdi-api/1.2/cdi-api-1.2.pom (6.3 kB at 448 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/jboss/weld/weld-parent/26/weld-parent-26.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/jboss/weld/weld-parent/26/weld-parent-26.pom (32 kB at 2.9 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/javax/inject/javax.inject/1/javax.inject-1.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/javax/inject/javax.inject/1/javax.inject-1.pom (612 B at 21 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.3.5/org.eclipse.sisu.inject-0.3.5.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/org.eclipse.sisu.inject/0.3.5/org.eclipse.sisu.inject-0.3.5.pom (2.6 kB at 125 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-inject/0.3.5/sisu-inject-0.3.5.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/sisu/sisu-inject/0.3.5/sisu-inject-0.3.5.pom (14 kB at 1.0 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.5.2/plexus-classworlds-2.5.2.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-classworlds/2.5.2/plexus-classworlds-2.5.2.pom (7.3 kB at 318 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.2.5/maven-model-builder-3.2.5.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model-builder/3.2.5/maven-model-builder-3.2.5.pom (3.0 kB at 115 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.2.5/maven-aether-provider-3.2.5.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/3.2.5/maven-aether-provider-3.2.5.pom (4.2 kB at 185 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/1.0.0.v20140518/aether-spi-1.0.0.v20140518.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-spi/1.0.0.v20140518/aether-spi-1.0.0.v20140518.pom (2.1 kB at 86 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/1.0.0.v20140518/aether-impl-1.0.0.v20140518.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-impl/1.0.0.v20140518/aether-impl-1.0.0.v20140518.pom (3.5 kB at 94 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.2.3/sisu-guice-3.2.3.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/sisu-guice/3.2.3/sisu-guice-3.2.3.pom (11 kB at 243 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-parent/3.2.3/guice-parent-3.2.3.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/sisu/inject/guice-parent/3.2.3/guice-parent-3.2.3.pom (13 kB at 642 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/38/forge-parent-38.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/forge/forge-parent/38/forge-parent-38.pom (19 kB at 1.1 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.pom (363 B at 7.7 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/16.0.1/guava-16.0.1.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava/16.0.1/guava-16.0.1.pom (6.1 kB at 265 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/16.0.1/guava-parent-16.0.1.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/16.0.1/guava-parent-16.0.1.pom (7.3 kB at 1.2 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/7/oss-parent-7.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/7/oss-parent-7.pom (4.8 kB at 371 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.12.0/commons-io-2.12.0.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.12.0/commons-io-2.12.0.pom (20 kB at 1.4 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/57/commons-parent-57.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/57/commons-parent-57.pom (83 kB at 3.1 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.9.2/junit-bom-5.9.2.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/junit-bom/5.9.2/junit-bom-5.9.2.pom (5.6 kB at 296 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/3.1.2/maven-surefire-common-3.1.2.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/3.1.2/surefire-api-3.1.2.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-logger-api/3.1.2/surefire-logger-api-3.1.2.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-extensions-api/3.1.2/surefire-extensions-api-3.1.2.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/3.1.2/surefire-booter-3.1.2.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/maven-surefire-common/3.1.2/maven-surefire-common-3.1.2.jar (306 kB at 12 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-extensions-spi/3.1.2/surefire-extensions-spi-3.1.2.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-extensions-api/3.1.2/surefire-extensions-api-3.1.2.jar (26 kB at 1.4 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/1.0.0.v20140518/aether-util-1.0.0.v20140518.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-logger-api/3.1.2/surefire-logger-api-3.1.2.jar (14 kB at 523 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/1.0.0.v20140518/aether-api-1.0.0.v20140518.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-extensions-spi/3.1.2/surefire-extensions-spi-3.1.2.jar (8.2 kB at 255 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.1.1/maven-common-artifact-filters-3.1.1.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-booter/3.1.2/surefire-booter-3.1.2.jar (118 kB at 3.4 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.12.0/commons-io-2.12.0.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-api/1.0.0.v20140518/aether-api-1.0.0.v20140518.jar (136 kB at 2.8 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-api/3.1.2/surefire-api-3.1.2.jar (171 kB at 2.8 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-shared-utils/3.1.2/surefire-shared-utils-3.1.2.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/aether/aether-util/1.0.0.v20140518/aether-util-1.0.0.v20140518.jar (146 kB at 3.0 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-common-artifact-filters/3.1.1/maven-common-artifact-filters-3.1.1.jar (61 kB at 770 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/commons-io/commons-io/2.12.0/commons-io-2.12.0.jar (474 kB at 5.2 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-shared-utils/3.1.2/surefire-shared-utils-3.1.2.jar (2.3 MB at 18 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.1.2/surefire-junit-platform-3.1.2.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.1.2/surefire-junit-platform-3.1.2.pom (4.7 kB at 583 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/3.1.2/surefire-providers-3.1.2.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-providers/3.1.2/surefire-providers-3.1.2.pom (2.6 kB at 435 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.1.2/common-java5-3.1.2.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.1.2/common-java5-3.1.2.pom (2.8 kB at 402 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.9.2/junit-platform-launcher-1.9.2.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.9.2/junit-platform-launcher-1.9.2.pom (3.0 kB at 168 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.9.2/junit-platform-engine-1.9.2.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.9.2/junit-platform-engine-1.9.2.pom (3.2 kB at 457 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.9.2/junit-platform-commons-1.9.2.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.9.2/junit-platform-commons-1.9.2.pom (2.8 kB at 354 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.1.2/surefire-junit-platform-3.1.2.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.1.2/common-java5-3.1.2.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.9.2/junit-platform-launcher-1.9.2.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.9.2/junit-platform-engine-1.9.2.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/surefire-junit-platform/3.1.2/surefire-junit-platform-3.1.2.jar (27 kB at 2.1 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.9.2/junit-platform-commons-1.9.2.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/surefire/common-java5/3.1.2/common-java5-3.1.2.jar (18 kB at 878 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-engine/1.9.2/junit-platform-engine-1.9.2.jar (189 kB at 9.5 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-commons/1.9.2/junit-platform-commons-1.9.2.jar (103 kB at 7.9 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar (7.7 kB at 283 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.9.2/junit-platform-launcher-1.9.2.jar (169 kB at 4.5 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.10.0/junit-platform-launcher-1.10.0.pom
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.10.0/junit-platform-launcher-1.10.0.pom (3.0 kB at 505 kB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.10.0/junit-platform-launcher-1.10.0.jar
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/junit/platform/junit-platform-launcher/1.10.0/junit-platform-launcher-1.10.0.jar (184 kB at 13 MB/s)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] 
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] -------------------------------------------------------
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO]  T E S T S
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] -------------------------------------------------------
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.BeanDemoTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.379 s -- in ch.jalu.configme.BeanDemoTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.ConfigDemoTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in ch.jalu.configme.ConfigDemoTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.SettingsManagerBuilderTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.390 s -- in ch.jalu.configme.SettingsManagerBuilderTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.SettingsManagerImplTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.168 s -- in ch.jalu.configme.SettingsManagerImplTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.configurationdata.PropertyValueTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in ch.jalu.configme.configurationdata.PropertyValueTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.configurationdata.ConfigurationDataBuilderTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [WARNING] Tests run: 8, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.031 s -- in ch.jalu.configme.configurationdata.ConfigurationDataBuilderTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.configurationdata.CommentsConfigurationTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [ERROR] Tests run: 4, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.029 s <<< FAILURE! -- in ch.jalu.configme.configurationdata.CommentsConfigurationTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [ERROR] ch.jalu.configme.configurationdata.CommentsConfigurationTest.shouldOverrideExistingComment -- Time elapsed: 0.013 s <<< FAILURE!
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | org.opentest4j.AssertionFailedError: Expected java.lang.IllegalStateException to be thrown, but nothing was thrown.
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | 	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3111)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | 	at ch.jalu.configme.configurationdata.CommentsConfigurationTest.shouldOverrideExistingComment(CommentsConfigurationTest.java:45)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | 
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [ERROR] ch.jalu.configme.configurationdata.CommentsConfigurationTest.shouldThrowForExistingPath -- Time elapsed: 0.002 s <<< FAILURE!
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | org.opentest4j.AssertionFailedError: Expected java.lang.IllegalStateException to be thrown, but nothing was thrown.
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | 	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | 	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3111)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | 	at ch.jalu.configme.configurationdata.CommentsConfigurationTest.shouldThrowForExistingPath(CommentsConfigurationTest.java:29)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | 	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | 
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.configurationdata.ConfigurationDataImplTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s -- in ch.jalu.configme.configurationdata.ConfigurationDataImplTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.configurationdata.PropertyListBuilderTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.092 s -- in ch.jalu.configme.configurationdata.PropertyListBuilderTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.utils.MigrationUtilsTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s -- in ch.jalu.configme.utils.MigrationUtilsTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.utils.SettingsHolderClassValidatorTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.193 s -- in ch.jalu.configme.utils.SettingsHolderClassValidatorTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.utils.PathUtilsTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in ch.jalu.configme.utils.PathUtilsTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.utils.UtilsTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.287 s -- in ch.jalu.configme.utils.UtilsTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.utils.StreamUtilsTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in ch.jalu.configme.utils.StreamUtilsTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.migration.version.VersionMigrationServiceTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.052 s -- in ch.jalu.configme.migration.version.VersionMigrationServiceTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.migration.PlainMigrationServiceTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.186 s -- in ch.jalu.configme.migration.PlainMigrationServiceTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.beanmapper.MappingContextImplTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 s -- in ch.jalu.configme.beanmapper.MappingContextImplTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.beanmapper.MapperExportValueTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in ch.jalu.configme.beanmapper.MapperExportValueTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.beanmapper.BeanWithCollectionOfBeanTypeTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 s -- in ch.jalu.configme.beanmapper.BeanWithCollectionOfBeanTypeTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.beanmapper.BeanWithCustomLeafTypeTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in ch.jalu.configme.beanmapper.BeanWithCustomLeafTypeTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.beanmapper.NestedMapPropertyDemoTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in ch.jalu.configme.beanmapper.NestedMapPropertyDemoTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.beanmapper.leafvaluehandler.LeafValueHandlerImplTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.048 s -- in ch.jalu.configme.beanmapper.leafvaluehandler.LeafValueHandlerImplTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.beanmapper.leafvaluehandler.EnumLeafTypeTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in ch.jalu.configme.beanmapper.leafvaluehandler.EnumLeafTypeTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.beanmapper.propertydescription.BeanDescriptionFactoryImplTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.060 s -- in ch.jalu.configme.beanmapper.propertydescription.BeanDescriptionFactoryImplTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.beanmapper.propertydescription.BeanPropertyDescriptionImplTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in ch.jalu.configme.beanmapper.propertydescription.BeanPropertyDescriptionImplTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.beanmapper.BeanMapOnRootLevelTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.064 s -- in ch.jalu.configme.beanmapper.BeanMapOnRootLevelTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.beanmapper.MapperTypeInfoWithNoClassEquivTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in ch.jalu.configme.beanmapper.MapperTypeInfoWithNoClassEquivTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.beanmapper.migratingbeanmapper.BeanExtensionTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in ch.jalu.configme.beanmapper.migratingbeanmapper.BeanExtensionTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.beanmapper.MapperImplCommentRepetitionTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in ch.jalu.configme.beanmapper.MapperImplCommentRepetitionTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.beanmapper.MapperImplTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.131 s -- in ch.jalu.configme.beanmapper.MapperImplTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.beanmapper.DefaultMapperTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in ch.jalu.configme.beanmapper.DefaultMapperTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.beanmapper.context.ExportContextTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in ch.jalu.configme.beanmapper.context.ExportContextTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.resource.YamlFileReaderTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.100 s -- in ch.jalu.configme.resource.YamlFileReaderTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.resource.YamlFileResourceOptionalInBeanPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s -- in ch.jalu.configme.resource.YamlFileResourceOptionalInBeanPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.resource.UniqueCommentTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 s -- in ch.jalu.configme.resource.UniqueCommentTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.resource.YamlFileResourceTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.116 s -- in ch.jalu.configme.resource.YamlFileResourceTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.resource.YamlFileResourceCommentsExportTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in ch.jalu.configme.resource.YamlFileResourceCommentsExportTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.resource.YamlFileResourceOptionsTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in ch.jalu.configme.resource.YamlFileResourceOptionsTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.resource.yaml.SnakeYamlNodeContainerImplTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in ch.jalu.configme.resource.yaml.SnakeYamlNodeContainerImplTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.resource.yaml.SnakeYamlNodeBuilderImplTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 s -- in ch.jalu.configme.resource.yaml.SnakeYamlNodeBuilderImplTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.resource.PropertyPathTraverserTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in ch.jalu.configme.resource.PropertyPathTraverserTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.resource.YamlFileReaderPathsWithNumberTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in ch.jalu.configme.resource.YamlFileReaderPathsWithNumberTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.resource.YamlFileResourceNewLineTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s -- in ch.jalu.configme.resource.YamlFileResourceNewLineTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.resource.YamlFileResourceNoSplitPathsTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in ch.jalu.configme.resource.YamlFileResourceNoSplitPathsTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.resource.YamlFileResourceEscapingTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in ch.jalu.configme.resource.YamlFileResourceEscapingTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.resource.YamlFileResourceTopCommentTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in ch.jalu.configme.resource.YamlFileResourceTopCommentTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.resource.YamlSetPropertyExportTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in ch.jalu.configme.resource.YamlSetPropertyExportTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.resource.MapNormalizerTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in ch.jalu.configme.resource.MapNormalizerTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.properties.StringPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in ch.jalu.configme.properties.StringPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.properties.OptionalPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.056 s -- in ch.jalu.configme.properties.OptionalPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.properties.ListPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in ch.jalu.configme.properties.ListPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.properties.InlineArrayPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in ch.jalu.configme.properties.InlineArrayPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.properties.LongPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in ch.jalu.configme.properties.LongPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.properties.MapPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in ch.jalu.configme.properties.MapPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.properties.TypeBasedPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in ch.jalu.configme.properties.TypeBasedPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.properties.LowercaseStringSetPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in ch.jalu.configme.properties.LowercaseStringSetPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.properties.RegexPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s -- in ch.jalu.configme.properties.RegexPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.properties.convertresult.ValueWithCommentsTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in ch.jalu.configme.properties.convertresult.ValueWithCommentsTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.properties.EnumPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in ch.jalu.configme.properties.EnumPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.properties.StringListPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in ch.jalu.configme.properties.StringListPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.properties.BasePropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in ch.jalu.configme.properties.BasePropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.properties.PropertyBuilderTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in ch.jalu.configme.properties.PropertyBuilderTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.properties.ArrayPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in ch.jalu.configme.properties.ArrayPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.properties.StringSetPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in ch.jalu.configme.properties.StringSetPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.properties.SetPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in ch.jalu.configme.properties.SetPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.properties.BeanPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 s -- in ch.jalu.configme.properties.BeanPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.properties.FloatPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in ch.jalu.configme.properties.FloatPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.properties.BooleanPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in ch.jalu.configme.properties.BooleanPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.properties.PropertyInitializerTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in ch.jalu.configme.properties.PropertyInitializerTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.properties.IntegerPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in ch.jalu.configme.properties.IntegerPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.properties.DoublePropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in ch.jalu.configme.properties.DoublePropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.properties.inlinearray.StandardInlineArrayConvertersTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 40, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 s -- in ch.jalu.configme.properties.inlinearray.StandardInlineArrayConvertersTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.properties.ShortPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in ch.jalu.configme.properties.ShortPropertyTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.properties.types.StringTypeTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in ch.jalu.configme.properties.types.StringTypeTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.properties.types.RegexTypeTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in ch.jalu.configme.properties.types.RegexTypeTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.properties.types.NumberTypeTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 67, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.075 s -- in ch.jalu.configme.properties.types.NumberTypeTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.properties.types.BooleanTypeTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in ch.jalu.configme.properties.types.BooleanTypeTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.properties.type.BeanPropertyTypeTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in ch.jalu.configme.properties.type.BeanPropertyTypeTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Running ch.jalu.configme.properties.type.EnumPropertyTypeTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in ch.jalu.configme.properties.type.EnumPropertyTypeTest
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] 
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Results:
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] 
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [ERROR] Failures: 
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [ERROR]   CommentsConfigurationTest.shouldOverrideExistingComment:45 Expected java.lang.IllegalStateException to be thrown, but nothing was thrown.
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [ERROR]   CommentsConfigurationTest.shouldThrowForExistingPath:29 Expected java.lang.IllegalStateException to be thrown, but nothing was thrown.
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] 
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [ERROR] Tests run: 513, Failures: 2, Errors: 0, Skipped: 1
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] 
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] ------------------------------------------------------------------------
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] BUILD FAILURE
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] ------------------------------------------------------------------------
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Total time:  30.347 s
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] Finished at: 2023-11-24T10:45:48Z
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [INFO] ------------------------------------------------------------------------
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.1.2:test (default-test) on project configme: There are test failures.
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [ERROR] 
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [ERROR] Please refer to /tmp/431117c4-a8a4-462d-b4ef-9b283d6b2f87/target/surefire-reports for the individual test results.
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [ERROR] -> [Help 1]
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [ERROR] 
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [ERROR] 
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [ERROR] For more information about the errors and possible solutions, please read the following articles:
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   | [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   ❌  Failure - Main Build with Maven
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] exitcode '1': failure
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] ⭐ Run Post Set up JDK 11
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build]   ✅  Success - Post Set up JDK 11
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] 🏁  Job failed
+[b4b60172-013f-4ef1-8e3e-04e28d0dd23e/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '7449db4901c1464177fc2835ad543abb51a0b7ad'

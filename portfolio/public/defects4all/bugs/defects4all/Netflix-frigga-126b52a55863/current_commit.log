@@ -1,0 +1,559 @@
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8] 🚀  Start image=gitbugactions:latest
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   🐳  docker pull image=gitbugactions:latest platform= username= forcePull=false
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   🐳  docker create image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   🐳  docker run image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5] user=0 workdir=
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8] 🧪  Matrix: map[java:8]
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8] ⭐ Run Main actions/checkout@v1
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   🐳  docker cp src=/tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5/. dst=/tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5] user=0 workdir=
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   ✅  Success - Main actions/checkout@v1
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8] ⭐ Run Main Setup jdk
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   🐳  docker cp src=/tmp/act-cache/06808cf2-d56a-420e-96a1-16d880d4a01b/act/actions-setup-java@v1/ dst=/var/run/act/actions/actions-setup-java@v1/
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v1/] user=0 workdir=
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/setup/index.js] user= workdir=
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   💬  ::debug::isExplicit: 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   💬  ::debug::explicit? false
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   💬  ::debug::evaluating 0 versions
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   💬  ::debug::match not found
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   💬  ::debug::Downloading JDK from Azul
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   💬  ::debug::Searching for files with extension: -linux_x64.tar.gz
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   💬  ::debug::Downloading https://static.azul.com/zulu/bin/zulu8.74.0.17-ca-jdk8.0.392-linux_x64.tar.gz
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   💬  ::debug::Downloading /tmp/dd05f1b2-fbc8-453b-9fa2-657c3396b899
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   💬  ::debug::download complete
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | [command]/usr/bin/tar --version
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | tar (GNU tar) 1.34
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Copyright (C) 2021 Free Software Foundation, Inc.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | This is free software: you are free to change and redistribute it.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | There is NO WARRANTY, to the extent permitted by law.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Written by John Gilmore and Jay Fenlason.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/temp_1180345148 -f /tmp/dd05f1b2-fbc8-453b-9fa2-657c3396b899
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   💬  ::debug::jdk extracted to /tmp/temp_1180345148/zulu8.74.0.17-ca-jdk8.0.392-linux_x64
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   💬  ::debug::Caching tool jdk 8.0.392 x64
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   💬  ::debug::source dir: /tmp/temp_1180345148/zulu8.74.0.17-ca-jdk8.0.392-linux_x64
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   💬  ::debug::destination /opt/hostedtoolcache/jdk/8.0.392/x64
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   💬  ::debug::finished caching tool
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   ❓ add-matcher /run/act/actions/actions-setup-java@v1/.github/java.json
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | creating settings.xml with server-id: github; environment variables: username=$GITHUB_ACTOR, password=$GITHUB_TOKEN, and gpg-passphrase=null
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   💬  ::debug::created directory /home/runner/.m2
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | writing /home/runner/.m2/settings.xml
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   ✅  Success - Main Setup jdk
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   ⚙  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/jdk/8.0.392/x64
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   ⚙  ::set-env:: JAVA_HOME_8_0_392_X64=/opt/hostedtoolcache/jdk/8.0.392/x64
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   ⚙  ::set-env:: JAVA_HOME_8.0.392_x64=/opt/hostedtoolcache/jdk/8.0.392/x64
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   ⚙  ::set-output:: path=/opt/hostedtoolcache/jdk/8.0.392/x64
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   ⚙  ::set-output:: version=8.0.392
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   ⚙  ::add-path:: /opt/hostedtoolcache/jdk/8.0.392/x64/bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8] ⭐ Run Main Build with Gradle
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://services.gradle.org/distributions/gradle-7.6-bin.zip
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | ...........10%............20%...........30%............40%............50%...........60%............70%............80%...........90%............100%
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Initialized native services in: /home/runner/.gradle/native
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Initialized jansi services in: /home/runner/.gradle/native
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Welcome to Gradle 7.6!
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Here are the highlights of this release:
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |  - Added support for Java 19.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |  - Introduced `--rerun` flag for individual task rerun.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |  - Improved dependency block for test suites to be strongly typed.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |  - Added a pluggable system for Java toolchains provisioning.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | For more details see https://docs.gradle.org/7.6/release-notes.html
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Received JVM installation metadata from '/opt/hostedtoolcache/jdk/8.0.392/x64': {JAVA_HOME=/opt/hostedtoolcache/jdk/8.0.392/x64/jre, JAVA_VERSION=1.8.0_392, JAVA_VENDOR=Azul Systems, Inc., RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=1.8.0_392-b08, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=25.392-b08, VM_VENDOR=Azul Systems, Inc., OS_ARCH=amd64}
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Removing 0 daemon stop events from registry
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Starting a Gradle Daemon (subsequent builds will be faster)
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Starting process 'Gradle build daemon'. Working directory: /home/runner/.gradle/daemon/7.6 Command: /opt/hostedtoolcache/jdk/8.0.392/x64/bin/java -XX:MaxMetaspaceSize=256m -XX:+HeapDumpOnOutOfMemoryError -Xms256m -Xmx512m -Dfile.encoding=UTF-8 -Duser.country -Duser.language=en -Duser.variant -cp /home/runner/.gradle/wrapper/dists/gradle-7.6-bin/9l9tetv7ltxvx3i8an4pb86ye/gradle-7.6/lib/gradle-launcher-7.6.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 7.6
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Successfully started process 'Gradle build daemon'
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | An attempt to start the daemon took 1.432 secs.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | The client will now receive all logging from the daemon (pid: 193). The daemon log file: /home/runner/.gradle/daemon/7.6/daemon-193.out.log
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Starting build in new daemon [memory: 455.5 MiB]
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Closing daemon's stdin at end of input.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | The daemon will no longer process any standard input.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Using 128 worker leases.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Received JVM installation metadata from '/opt/hostedtoolcache/jdk/8.0.392/x64': {JAVA_HOME=/opt/hostedtoolcache/jdk/8.0.392/x64/jre, JAVA_VERSION=1.8.0_392, JAVA_VENDOR=Azul Systems, Inc., RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=1.8.0_392-b08, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=25.392-b08, VM_VENDOR=Azul Systems, Inc., OS_ARCH=amd64}
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Watching the file system is configured to be enabled if available
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Not watching /tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5 since the file system is not supported
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | File system watching is active
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Starting Build
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Compiling settings file '/tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5/settings.gradle' using SubsetScriptTransformer.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Compiling settings file '/tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5/settings.gradle' using BuildScriptTransformer.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Settings evaluated using settings file '/tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5/settings.gradle'.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Projects loaded. Root project using build file '/tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5/build.gradle'.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Included projects: [root project 'frigga']
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | > Configure project :
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Evaluating root project 'frigga' using build file '/tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5/build.gradle'.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Compiling build file '/tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5/build.gradle' using SubsetScriptTransformer.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/nebula/netflixoss/nebula.netflixoss.gradle.plugin/11.1.1/nebula.netflixoss.gradle.plugin-11.1.1.pom to /home/runner/.gradle/.tmp/gradle_download2816734323308829977bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/gradle-netflixoss-project-plugin/11.1.1/gradle-netflixoss-project-plugin-11.1.1.pom to /home/runner/.gradle/.tmp/gradle_download2573180521999939487bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/gradle-netflixoss-project-plugin/11.1.1/gradle-netflixoss-project-plugin-11.1.1.module to /home/runner/.gradle/.tmp/gradle_download1915961730608147888bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/nebula-release-plugin/17.1.0/nebula-release-plugin-17.1.0.pom to /home/runner/.gradle/.tmp/gradle_download2527573019355743325bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/nebula-project-plugin/10.0.1/nebula-project-plugin-10.0.1.pom to /home/runner/.gradle/.tmp/gradle_download707973861328890291bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/jackson-bom/2.11.0/jackson-bom-2.11.0.pom to /home/runner/.gradle/.tmp/gradle_download6034558455169145461bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/jackson-parent/2.11/jackson-parent-2.11.pom to /home/runner/.gradle/.tmp/gradle_download5104043649029334241bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/fasterxml/oss-parent/38/oss-parent-38.pom to /home/runner/.gradle/.tmp/gradle_download5640765265043471325bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/nebula-project-plugin/10.0.1/nebula-project-plugin-10.0.1.module to /home/runner/.gradle/.tmp/gradle_download2735598574049767668bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/gradle/plugin/com/hierynomus/gradle/plugins/license-gradle-plugin/0.16.1/license-gradle-plugin-0.16.1.pom to /home/runner/.gradle/.tmp/gradle_download6501735582296779569bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/gradle-contacts-plugin/7.0.0/gradle-contacts-plugin-7.0.0.pom to /home/runner/.gradle/.tmp/gradle_download4852581753285167430bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/gradle-info-plugin/12.0.0/gradle-info-plugin-12.0.0.pom to /home/runner/.gradle/.tmp/gradle_download6375562570912657823bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/nebula-publishing-plugin/19.0.0/nebula-publishing-plugin-19.0.0.pom to /home/runner/.gradle/.tmp/gradle_download549695180583353122bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/gradle-java-cross-compile-plugin/7.0.0/gradle-java-cross-compile-plugin-7.0.0.pom to /home/runner/.gradle/.tmp/gradle_download2683010336059031640bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/gradle-dependency-lock-plugin/13.0.0/gradle-dependency-lock-plugin-13.0.0.pom to /home/runner/.gradle/.tmp/gradle_download3295973464307995546bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/nebula-oss-publishing-plugin/3.1.0/nebula-oss-publishing-plugin-3.1.0.pom to /home/runner/.gradle/.tmp/gradle_download5363149699783397875bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/jackson-bom/2.9.10.20210106/jackson-bom-2.9.10.20210106.pom to /home/runner/.gradle/.tmp/gradle_download1360962550512672110bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/jackson-parent/2.9.1.2/jackson-parent-2.9.1.2.pom to /home/runner/.gradle/.tmp/gradle_download2739892295725410792bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/gradle-info-plugin/12.0.0/gradle-info-plugin-12.0.0.module to /home/runner/.gradle/.tmp/gradle_download6511447503660519598bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/gradle-contacts-plugin/7.0.0/gradle-contacts-plugin-7.0.0.module to /home/runner/.gradle/.tmp/gradle_download4345562186074627754bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/fasterxml/oss-parent/34/oss-parent-34.pom to /home/runner/.gradle/.tmp/gradle_download4462614193588440098bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/nebula-release-plugin/17.1.0/nebula-release-plugin-17.1.0.module to /home/runner/.gradle/.tmp/gradle_download1172243567713921022bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/gradle-java-cross-compile-plugin/7.0.0/gradle-java-cross-compile-plugin-7.0.0.module to /home/runner/.gradle/.tmp/gradle_download8380823135613506043bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/nebula-publishing-plugin/19.0.0/nebula-publishing-plugin-19.0.0.module to /home/runner/.gradle/.tmp/gradle_download306636198830089278bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/gradle-dependency-lock-plugin/13.0.0/gradle-dependency-lock-plugin-13.0.0.module to /home/runner/.gradle/.tmp/gradle_download1269094860783911746bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/nebula-oss-publishing-plugin/3.1.0/nebula-oss-publishing-plugin-3.1.0.module to /home/runner/.gradle/.tmp/gradle_download4329644957015038790bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/apache/maven/maven-model/3.6.2/maven-model-3.6.2.pom to /home/runner/.gradle/.tmp/gradle_download1012143106732633829bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/apache/maven/maven/3.6.2/maven-3.6.2.pom to /home/runner/.gradle/.tmp/gradle_download8780322054161677420bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/apache/maven/maven-parent/33/maven-parent-33.pom to /home/runner/.gradle/.tmp/gradle_download3526595460534112879bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/io/github/gradle-nexus/publish-plugin/1.0.0/publish-plugin-1.0.0.pom to /home/runner/.gradle/.tmp/gradle_download868758824168264353bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/apache/apache/21/apache-21.pom to /home/runner/.gradle/.tmp/gradle_download3351402809688854300bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Resource missing. [HTTP GET: https://jcenter.bintray.com/io/github/gradle-nexus/publish-plugin/1.0.0/publish-plugin-1.0.0.module]
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/joda-time/joda-time/2.10/joda-time-2.10.pom to /home/runner/.gradle/.tmp/gradle_download1358535252356406888bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/nebula-gradle-interop/2.0.0/nebula-gradle-interop-2.0.0.pom to /home/runner/.gradle/.tmp/gradle_download4961264699931538613bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/nebula-dependencies-comparison/0.2.1/nebula-dependencies-comparison-0.2.1.pom to /home/runner/.gradle/.tmp/gradle_download1182003502932078274bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.7.20/kotlin-stdlib-jdk8-1.7.20.pom to /home/runner/.gradle/.tmp/gradle_download7945798369843595208bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/squareup/moshi/moshi/1.12.0/moshi-1.12.0.pom to /home/runner/.gradle/.tmp/gradle_download5442751701046188862bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/nebula-gradle-interop/2.0.0/nebula-gradle-interop-2.0.0.module to /home/runner/.gradle/.tmp/gradle_download2269144413969510993bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/nebula-dependencies-comparison/0.2.1/nebula-dependencies-comparison-0.2.1.module to /home/runner/.gradle/.tmp/gradle_download7924504031303668184bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/squareup/moshi/moshi/1.12.0/moshi-1.12.0.module to /home/runner/.gradle/.tmp/gradle_download3230285665663164297bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/gradle-scm-plugin/7.0.0/gradle-scm-plugin-7.0.0.pom to /home/runner/.gradle/.tmp/gradle_download3208176901560418735bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/gradle-scm-plugin/7.0.0/gradle-scm-plugin-7.0.0.module to /home/runner/.gradle/.tmp/gradle_download1925321574164940328bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/eclipse/jgit/org.eclipse.jgit/5.13.0.202109080827-r/org.eclipse.jgit-5.13.0.202109080827-r.pom to /home/runner/.gradle/.tmp/gradle_download1958335793709363533bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/perforce/p4java/2015.2.1365273/p4java-2015.2.1365273.pom to /home/runner/.gradle/.tmp/gradle_download4886980577090726701bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/tmatesoft/svnkit/svnkit/1.8.12/svnkit-1.8.12.pom to /home/runner/.gradle/.tmp/gradle_download1804816704889362024bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/net/java/dev/jna/jna-platform/5.7.0/jna-platform-5.7.0.pom to /home/runner/.gradle/.tmp/gradle_download7666203562916502036bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/eclipse/jgit/org.eclipse.jgit-parent/5.13.0.202109080827-r/org.eclipse.jgit-parent-5.13.0.202109080827-r.pom to /home/runner/.gradle/.tmp/gradle_download4788005894464445383bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/github/zafarkhaja/java-semver/0.9.0/java-semver-0.9.0.pom to /home/runner/.gradle/.tmp/gradle_download1977695058071424996bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/ajoberstar/grgit/grgit-core/4.1.1/grgit-core-4.1.1.pom to /home/runner/.gradle/.tmp/gradle_download7133096015411987838bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/sonatype/oss/oss-parent/9/oss-parent-9.pom to /home/runner/.gradle/.tmp/gradle_download8025582294313544751bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/ajoberstar/grgit/grgit-core/4.1.1/grgit-core-4.1.1.module to /home/runner/.gradle/.tmp/gradle_download5259034327377805967bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/mycila/xmltool/xmltool/3.3/xmltool-3.3.pom to /home/runner/.gradle/.tmp/gradle_download1215867586453920493bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.pom to /home/runner/.gradle/.tmp/gradle_download8098385733293392084bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/mycila/license-maven-plugin/3.0/license-maven-plugin-3.0.pom to /home/runner/.gradle/.tmp/gradle_download4138827440812874320bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/mycila/license-maven-plugin-parent/3.0/license-maven-plugin-parent-3.0.pom to /home/runner/.gradle/.tmp/gradle_download6804884635341036706bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/codehaus/plexus/plexus/2.0.6/plexus-2.0.6.pom to /home/runner/.gradle/.tmp/gradle_download1402912797182126232bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/mycila/mycila-pom/3/mycila-pom-3.pom to /home/runner/.gradle/.tmp/gradle_download284011200911077027bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/codehaus/plexus/plexus-utils/3.2.1/plexus-utils-3.2.1.pom to /home/runner/.gradle/.tmp/gradle_download8714981623088394111bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/codehaus/plexus/plexus/5.1/plexus-5.1.pom to /home/runner/.gradle/.tmp/gradle_download435205982020385321bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/jetbrains/kotlin/kotlin-stdlib/1.4.31/kotlin-stdlib-1.4.31.pom to /home/runner/.gradle/.tmp/gradle_download3759597026919381512bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/squareup/okio/okio/2.10.0/okio-2.10.0.pom to /home/runner/.gradle/.tmp/gradle_download79553572494748191bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/squareup/okio/okio/2.10.0/okio-2.10.0.module to /home/runner/.gradle/.tmp/gradle_download1306082170648313096bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/jetbrains/kotlin/kotlin-stdlib/1.7.20/kotlin-stdlib-1.7.20.pom to /home/runner/.gradle/.tmp/gradle_download684400897401605679bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.7.20/kotlin-stdlib-jdk7-1.7.20.pom to /home/runner/.gradle/.tmp/gradle_download186869859037245955bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/jcraft/jzlib/1.1.2/jzlib-1.1.2.pom to /home/runner/.gradle/.tmp/gradle_download5804108034846580812bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/sonatype/oss/oss-parent/6/oss-parent-6.pom to /home/runner/.gradle/.tmp/gradle_download1157132756873961205bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.pom to /home/runner/.gradle/.tmp/gradle_download829526988983357624bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/googlecode/javaewah/JavaEWAH/1.1.12/JavaEWAH-1.1.12.pom to /home/runner/.gradle/.tmp/gradle_download1741316555536663406bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/slf4j/slf4j-parent/1.7.30/slf4j-parent-1.7.30.pom to /home/runner/.gradle/.tmp/gradle_download4427432605756621768bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/sonatype/oss/oss-parent/5/oss-parent-5.pom to /home/runner/.gradle/.tmp/gradle_download417860640024466412bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/de/regnis/q/sequence/sequence-library/1.0.3/sequence-library-1.0.3.pom to /home/runner/.gradle/.tmp/gradle_download1033924472468238853bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/jcraft/jsch.agentproxy.svnkit-trilead-ssh2/0.0.7/jsch.agentproxy.svnkit-trilead-ssh2-0.0.7.pom to /home/runner/.gradle/.tmp/gradle_download4527876660865118356bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/tmatesoft/sqljet/sqljet/1.1.10/sqljet-1.1.10.pom to /home/runner/.gradle/.tmp/gradle_download1744674267466053164bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/jcraft/jsch.agentproxy.connector-factory/0.0.7/jsch.agentproxy.connector-factory-0.0.7.pom to /home/runner/.gradle/.tmp/gradle_download7020695405786226893bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/trilead/trilead-ssh2/1.0.0-build220/trilead-ssh2-1.0.0-build220.pom to /home/runner/.gradle/.tmp/gradle_download861357145329838606bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/net/java/dev/jna/jna/4.1.0/jna-4.1.0.pom to /home/runner/.gradle/.tmp/gradle_download3668910140876840679bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/jcraft/jsch.agentproxy/0.0.7/jsch.agentproxy-0.0.7.pom to /home/runner/.gradle/.tmp/gradle_download8776232998216229547bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/net/java/dev/jna/jna/5.7.0/jna-5.7.0.pom to /home/runner/.gradle/.tmp/gradle_download4134549570821505463bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/mycila/mycila-xmltool/4.4.ga/mycila-xmltool-4.4.ga.pom to /home/runner/.gradle/.tmp/gradle_download3337055909163560624bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/springframework/spring-core/3.1.3.RELEASE/spring-core-3.1.3.RELEASE.pom to /home/runner/.gradle/.tmp/gradle_download214530003643468749bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/apache/maven/maven-settings/3.0.4/maven-settings-3.0.4.pom to /home/runner/.gradle/.tmp/gradle_download1910001666259020263bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/apache/maven/maven-settings-builder/3.0.4/maven-settings-builder-3.0.4.pom to /home/runner/.gradle/.tmp/gradle_download661362977087723729bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/springframework/spring-parent/3.1.3.RELEASE/spring-parent-3.1.3.RELEASE.pom to /home/runner/.gradle/.tmp/gradle_download8801205437611550278bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/apache/maven/maven/3.0.4/maven-3.0.4.pom to /home/runner/.gradle/.tmp/gradle_download4209936119699604277bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/apache/maven/maven-parent/21/maven-parent-21.pom to /home/runner/.gradle/.tmp/gradle_download1808437632566147625bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/apache/apache/10/apache-10.pom to /home/runner/.gradle/.tmp/gradle_download56038202709786493bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/jetbrains/kotlin/kotlin-stdlib-common/1.4.20/kotlin-stdlib-common-1.4.20.pom to /home/runner/.gradle/.tmp/gradle_download1572852572210369233bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/jetbrains/kotlin/kotlin-stdlib-common/1.7.20/kotlin-stdlib-common-1.7.20.pom to /home/runner/.gradle/.tmp/gradle_download6437308561723023203bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/jetbrains/annotations/13.0/annotations-13.0.pom to /home/runner/.gradle/.tmp/gradle_download7835133349138077111bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/jcraft/jsch.agentproxy.core/0.0.7/jsch.agentproxy.core-0.0.7.pom to /home/runner/.gradle/.tmp/gradle_download6980164396324459527bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/jcraft/jsch.agentproxy.pageant/0.0.7/jsch.agentproxy.pageant-0.0.7.pom to /home/runner/.gradle/.tmp/gradle_download2108490819804427199bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/jcraft/jsch.agentproxy.sshagent/0.0.7/jsch.agentproxy.sshagent-0.0.7.pom to /home/runner/.gradle/.tmp/gradle_download1763704628870620044bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/jcraft/jsch.agentproxy.usocket-nc/0.0.7/jsch.agentproxy.usocket-nc-0.0.7.pom to /home/runner/.gradle/.tmp/gradle_download7175130190291982446bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/jcraft/jsch.agentproxy.usocket-jna/0.0.7/jsch.agentproxy.usocket-jna-0.0.7.pom to /home/runner/.gradle/.tmp/gradle_download7234016802953662727bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/antlr/antlr-runtime/3.4/antlr-runtime-3.4.pom to /home/runner/.gradle/.tmp/gradle_download7996441529923524944bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/antlr/antlr-master/3.4/antlr-master-3.4.pom to /home/runner/.gradle/.tmp/gradle_download3454254953290290458bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/sonatype/oss/oss-parent/7/oss-parent-7.pom to /home/runner/.gradle/.tmp/gradle_download2045551992142561541bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.pom to /home/runner/.gradle/.tmp/gradle_download4379288379895261546bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.pom to /home/runner/.gradle/.tmp/gradle_download252548930014610268bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.pom to /home/runner/.gradle/.tmp/gradle_download4666765147672085319bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/codehaus/plexus/plexus-containers/1.5.5/plexus-containers-1.5.5.pom to /home/runner/.gradle/.tmp/gradle_download1496583386423574401bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/codehaus/plexus/plexus-components/1.1.18/plexus-components-1.1.18.pom to /home/runner/.gradle/.tmp/gradle_download4902226776686224954bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/sonatype/spice/spice-parent/12/spice-parent-12.pom to /home/runner/.gradle/.tmp/gradle_download215201819513175021bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/codehaus/plexus/plexus/2.0.7/plexus-2.0.7.pom to /home/runner/.gradle/.tmp/gradle_download681750781706958961bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/sonatype/forge/forge-parent/4/forge-parent-4.pom to /home/runner/.gradle/.tmp/gradle_download1608194758297951781bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/springframework/spring-asm/3.1.3.RELEASE/spring-asm-3.1.3.RELEASE.pom to /home/runner/.gradle/.tmp/gradle_download843107175483486611bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.pom to /home/runner/.gradle/.tmp/gradle_download6748430501423516352bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/apache/commons/commons-parent/5/commons-parent-5.pom to /home/runner/.gradle/.tmp/gradle_download1798332002763075155bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/apache/apache/4/apache-4.pom to /home/runner/.gradle/.tmp/gradle_download9172703085498212101bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/apache/commons/commons-pool2/2.2/commons-pool2-2.2.pom to /home/runner/.gradle/.tmp/gradle_download625074254463477691bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/apache/commons/commons-parent/33/commons-parent-33.pom to /home/runner/.gradle/.tmp/gradle_download4334474929934375771bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/apache/apache/13/apache-13.pom to /home/runner/.gradle/.tmp/gradle_download3084737904253765210bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/net/java/dev/jna/platform/3.4.0/platform-3.4.0.pom to /home/runner/.gradle/.tmp/gradle_download8012332284898215690bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.pom to /home/runner/.gradle/.tmp/gradle_download5830528770174138269bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Resource missing. [HTTP HEAD: https://plugins.gradle.org/m2/nebula/netflixoss/nebula.netflixoss.gradle.plugin/11.1.1/nebula.netflixoss.gradle.plugin-11.1.1.jar]
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/gradle-netflixoss-project-plugin/11.1.1/gradle-netflixoss-project-plugin-11.1.1.jar to /home/runner/.gradle/.tmp/gradle_download492459952107614915bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/gradle-info-plugin/12.0.0/gradle-info-plugin-12.0.0.jar to /home/runner/.gradle/.tmp/gradle_download2209921079677526075bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.7.20/kotlin-stdlib-jdk8-1.7.20.jar to /home/runner/.gradle/.tmp/gradle_download1371109868814928297bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/nebula-oss-publishing-plugin/3.1.0/nebula-oss-publishing-plugin-3.1.0.jar to /home/runner/.gradle/.tmp/gradle_download373385518038695030bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/gradle-contacts-plugin/7.0.0/gradle-contacts-plugin-7.0.0.jar to /home/runner/.gradle/.tmp/gradle_download1066712079885839550bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/gradle-scm-plugin/7.0.0/gradle-scm-plugin-7.0.0.jar to /home/runner/.gradle/.tmp/gradle_download8415634456472646579bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/nebula-release-plugin/17.1.0/nebula-release-plugin-17.1.0.jar to /home/runner/.gradle/.tmp/gradle_download4322667460065818622bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/nebula-publishing-plugin/19.0.0/nebula-publishing-plugin-19.0.0.jar to /home/runner/.gradle/.tmp/gradle_download2587110348923386850bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/joda-time/joda-time/2.10/joda-time-2.10.jar to /home/runner/.gradle/.tmp/gradle_download5828315046249375588bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/nebula-project-plugin/10.0.1/nebula-project-plugin-10.0.1.jar to /home/runner/.gradle/.tmp/gradle_download6478137275325653446bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/gradle-dependency-lock-plugin/13.0.0/gradle-dependency-lock-plugin-13.0.0.jar to /home/runner/.gradle/.tmp/gradle_download8197477345889681615bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/tmatesoft/svnkit/svnkit/1.8.12/svnkit-1.8.12.jar to /home/runner/.gradle/.tmp/gradle_download1295225427250764894bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/nebula-dependencies-comparison/0.2.1/nebula-dependencies-comparison-0.2.1.jar to /home/runner/.gradle/.tmp/gradle_download2470692449856128146bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/perforce/p4java/2015.2.1365273/p4java-2015.2.1365273.jar to /home/runner/.gradle/.tmp/gradle_download3209970924840306513bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/gradle-java-cross-compile-plugin/7.0.0/gradle-java-cross-compile-plugin-7.0.0.jar to /home/runner/.gradle/.tmp/gradle_download7965356469371856951bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/mycila/mycila-xmltool/4.4.ga/mycila-xmltool-4.4.ga.jar to /home/runner/.gradle/.tmp/gradle_download3281081050211574817bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/mycila/license-maven-plugin/3.0/license-maven-plugin-3.0.jar to /home/runner/.gradle/.tmp/gradle_download1535524023899253772bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/jetbrains/kotlin/kotlin-stdlib-common/1.7.20/kotlin-stdlib-common-1.7.20.jar to /home/runner/.gradle/.tmp/gradle_download6562466092749787924bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/apache/maven/maven-settings-builder/3.0.4/maven-settings-builder-3.0.4.jar to /home/runner/.gradle/.tmp/gradle_download5169220052459083063bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/net/java/dev/jna/jna/5.7.0/jna-5.7.0.jar to /home/runner/.gradle/.tmp/gradle_download3642053978053343265bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/jcraft/jsch.agentproxy.core/0.0.7/jsch.agentproxy.core-0.0.7.jar to /home/runner/.gradle/.tmp/gradle_download5675185183278057098bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/net/java/dev/jna/jna-platform/5.7.0/jna-platform-5.7.0.jar to /home/runner/.gradle/.tmp/gradle_download1452911716596151846bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/jcraft/jsch.agentproxy.usocket-jna/0.0.7/jsch.agentproxy.usocket-jna-0.0.7.jar to /home/runner/.gradle/.tmp/gradle_download1213185233000624476bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/antlr/antlr-runtime/3.4/antlr-runtime-3.4.jar to /home/runner/.gradle/.tmp/gradle_download7947667467344694903bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/ajoberstar/grgit/grgit-core/4.1.1/grgit-core-4.1.1.jar to /home/runner/.gradle/.tmp/gradle_download919070694230486068bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.7.20/kotlin-stdlib-jdk7-1.7.20.jar to /home/runner/.gradle/.tmp/gradle_download2971057897794116461bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/jcraft/jsch.agentproxy.pageant/0.0.7/jsch.agentproxy.pageant-0.0.7.jar to /home/runner/.gradle/.tmp/gradle_download4938434799135662520bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/gradle/plugin/com/hierynomus/gradle/plugins/license-gradle-plugin/0.16.1/license-gradle-plugin-0.16.1.jar to /home/runner/.gradle/.tmp/gradle_download3175718645972893018bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/netflix/nebula/nebula-gradle-interop/2.0.0/nebula-gradle-interop-2.0.0.jar to /home/runner/.gradle/.tmp/gradle_download7410984545199259445bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/github/zafarkhaja/java-semver/0.9.0/java-semver-0.9.0.jar to /home/runner/.gradle/.tmp/gradle_download8905418178932549686bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/squareup/okio/okio/2.10.0/okio-2.10.0.jar to /home/runner/.gradle/.tmp/gradle_download6638275244289200700bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar to /home/runner/.gradle/.tmp/gradle_download2660774881810227505bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/jetbrains/kotlin/kotlin-stdlib/1.7.20/kotlin-stdlib-1.7.20.jar to /home/runner/.gradle/.tmp/gradle_download5920782153811055757bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/apache/maven/maven-model/3.6.2/maven-model-3.6.2.jar to /home/runner/.gradle/.tmp/gradle_download4730816048877161609bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/jetbrains/annotations/13.0/annotations-13.0.jar to /home/runner/.gradle/.tmp/gradle_download2044165842096302268bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/de/regnis/q/sequence/sequence-library/1.0.3/sequence-library-1.0.3.jar to /home/runner/.gradle/.tmp/gradle_download4838639685470377755bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.jar to /home/runner/.gradle/.tmp/gradle_download3069127853597189347bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/squareup/moshi/moshi/1.12.0/moshi-1.12.0.jar to /home/runner/.gradle/.tmp/gradle_download9113708935435794797bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/io/github/gradle-nexus/publish-plugin/1.0.0/publish-plugin-1.0.0.jar to /home/runner/.gradle/.tmp/gradle_download173115272080835801bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/mycila/xmltool/xmltool/3.3/xmltool-3.3.jar to /home/runner/.gradle/.tmp/gradle_download2590496315973318289bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar to /home/runner/.gradle/.tmp/gradle_download9070049164280325271bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/tmatesoft/sqljet/sqljet/1.1.10/sqljet-1.1.10.jar to /home/runner/.gradle/.tmp/gradle_download4090025046260495409bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/jcraft/jsch.agentproxy.connector-factory/0.0.7/jsch.agentproxy.connector-factory-0.0.7.jar to /home/runner/.gradle/.tmp/gradle_download5589730552756177011bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/springframework/spring-core/3.1.3.RELEASE/spring-core-3.1.3.RELEASE.jar to /home/runner/.gradle/.tmp/gradle_download2482432941323281401bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/jcraft/jzlib/1.1.2/jzlib-1.1.2.jar to /home/runner/.gradle/.tmp/gradle_download6285968607909320872bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/googlecode/javaewah/JavaEWAH/1.1.12/JavaEWAH-1.1.12.jar to /home/runner/.gradle/.tmp/gradle_download4219645142126441648bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/jcraft/jsch.agentproxy.usocket-nc/0.0.7/jsch.agentproxy.usocket-nc-0.0.7.jar to /home/runner/.gradle/.tmp/gradle_download1352733712020124868bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.jar to /home/runner/.gradle/.tmp/gradle_download7414218995650442953bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/trilead/trilead-ssh2/1.0.0-build220/trilead-ssh2-1.0.0-build220.jar to /home/runner/.gradle/.tmp/gradle_download324329827483940911bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/jcraft/jsch.agentproxy.sshagent/0.0.7/jsch.agentproxy.sshagent-0.0.7.jar to /home/runner/.gradle/.tmp/gradle_download3276857339754541332bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/apache/commons/commons-pool2/2.2/commons-pool2-2.2.jar to /home/runner/.gradle/.tmp/gradle_download2235636537237895687bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.jar to /home/runner/.gradle/.tmp/gradle_download8279159665340751957bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/codehaus/plexus/plexus-utils/3.2.1/plexus-utils-3.2.1.jar to /home/runner/.gradle/.tmp/gradle_download7706140708457594129bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.jar to /home/runner/.gradle/.tmp/gradle_download1236853550072125624bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/com/jcraft/jsch.agentproxy.svnkit-trilead-ssh2/0.0.7/jsch.agentproxy.svnkit-trilead-ssh2-0.0.7.jar to /home/runner/.gradle/.tmp/gradle_download5232942949597578455bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/net/java/dev/jna/platform/3.4.0/platform-3.4.0.jar to /home/runner/.gradle/.tmp/gradle_download1468651901294677380bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/eclipse/jgit/org.eclipse.jgit/5.13.0.202109080827-r/org.eclipse.jgit-5.13.0.202109080827-r.jar to /home/runner/.gradle/.tmp/gradle_download2808609702059578069bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/springframework/spring-asm/3.1.3.RELEASE/spring-asm-3.1.3.RELEASE.jar to /home/runner/.gradle/.tmp/gradle_download2213368466735326943bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://plugins.gradle.org/m2/org/apache/maven/maven-settings/3.0.4/maven-settings-3.0.4.jar to /home/runner/.gradle/.tmp/gradle_download1933176163276191177bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Delaying dependency lock apply until beforeResolve (dependencyLock.lockAfterEvaluating set to true)
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Adding license extension
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Adding download licenses extension
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Applying defaults to download task: :downloadLicenses
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Skipping snapshot strategy because stage (null) is not one of: [SNAPSHOT]
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Skipping immutable_snapshot strategy because stage (null) is not one of: [snapshot]
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Skipping development strategy because stage (null) is not one of: [dev]
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Skipping pre-release strategy because stage (null) is not one of: [milestone, rc]
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Skipping final strategy because stage (null) is not one of: [final]
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Using snapshot default strategy because repo is dirty and no stage defined
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Falling back to default strategy: snapshot
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Beginning version inference using snapshot strategy and input scope (null) and stage (SNAPSHOT)
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Inferred project: frigga, version: 0.27.0-SNAPSHOT
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Adding licenseMain task for sourceSet main
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Applying license defaults to task: :licenseMain
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Applying license defaults to task: :licenseFormatMain
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Adding licenseTest task for sourceSet test
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Applying license defaults to task: :licenseTest
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Applying license defaults to task: :licenseFormatTest
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Compiling build file '/tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5/build.gradle' using BuildScriptTransformer.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | signNebulaPublication was not configured: signingKey and/or signingPassword were not provided
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Starting process 'command '/usr/lib/jvm/temurin-11-jdk-amd64/bin/java''. Working directory: /home/runner/.gradle/.tmp/tmp-jvm9113438328198715707probe Command: /usr/lib/jvm/temurin-11-jdk-amd64/bin/java -cp . JavaProbe
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Successfully started process 'command '/usr/lib/jvm/temurin-11-jdk-amd64/bin/java''
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Received JVM installation metadata from '/usr/lib/jvm/temurin-11-jdk-amd64': {JAVA_HOME=/usr/lib/jvm/temurin-11-jdk-amd64, JAVA_VERSION=11.0.20.1, JAVA_VENDOR=Eclipse Adoptium, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=11.0.20.1+1, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=11.0.20.1+1, VM_VENDOR=Eclipse Adoptium, OS_ARCH=amd64}
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Starting process 'command '/usr/lib/jvm/temurin-17-jdk-amd64/bin/java''. Working directory: /home/runner/.gradle/.tmp/tmp-jvm5096803970167010166probe Command: /usr/lib/jvm/temurin-17-jdk-amd64/bin/java -cp . JavaProbe
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Successfully started process 'command '/usr/lib/jvm/temurin-17-jdk-amd64/bin/java''
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Received JVM installation metadata from '/usr/lib/jvm/temurin-17-jdk-amd64': {JAVA_HOME=/usr/lib/jvm/temurin-17-jdk-amd64, JAVA_VERSION=17.0.8.1, JAVA_VENDOR=Eclipse Adoptium, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=17.0.8.1+1, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=17.0.8.1+1, VM_VENDOR=Eclipse Adoptium, OS_ARCH=amd64}
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Starting process 'command '/usr/lib/jvm/temurin-21-jdk-amd64/bin/java''. Working directory: /home/runner/.gradle/.tmp/tmp-jvm1664082681065713623probe Command: /usr/lib/jvm/temurin-21-jdk-amd64/bin/java -cp . JavaProbe
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Successfully started process 'command '/usr/lib/jvm/temurin-21-jdk-amd64/bin/java''
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Received JVM installation metadata from '/usr/lib/jvm/temurin-21-jdk-amd64': {JAVA_HOME=/usr/lib/jvm/temurin-21-jdk-amd64, JAVA_VERSION=21, JAVA_VENDOR=Eclipse Adoptium, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=21+35-LTS, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=21+35-LTS, VM_VENDOR=Eclipse Adoptium, OS_ARCH=amd64}
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Starting process 'command '/usr/lib/jvm/temurin-8-jdk-amd64/bin/java''. Working directory: /home/runner/.gradle/.tmp/tmp-jvm5237769202001436950probe Command: /usr/lib/jvm/temurin-8-jdk-amd64/bin/java -cp . JavaProbe
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Successfully started process 'command '/usr/lib/jvm/temurin-8-jdk-amd64/bin/java''
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Received JVM installation metadata from '/usr/lib/jvm/temurin-8-jdk-amd64': {JAVA_HOME=/usr/lib/jvm/temurin-8-jdk-amd64/jre, JAVA_VERSION=1.8.0_382, JAVA_VENDOR=Temurin, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=1.8.0_382-b05, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=25.382-b05, VM_VENDOR=Temurin, OS_ARCH=amd64}
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | All projects evaluated.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Task name matched 'build'
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Selected primary task 'build' from project :
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Tasks to be executed: [task ':compileJava', task ':compileGroovy', task ':processResources', task ':classes', task ':createPropertiesFileForJar', task ':writeManifestProperties', task ':jar', task ':javadoc', task ':javadocJar', task ':sourceJar', task ':assemble', task ':writeLicenseHeader', task ':licenseMain', task ':licenseTest', task ':license', task ':compileTestJava', task ':compileTestGroovy', task ':processTestResources', task ':testClasses', task ':test', task ':check', task ':collectNetflixOSS', task ':build']
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Tasks that were excluded: []
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Resolve mutations for :compileJava (Thread[Execution worker,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | :compileJava (Thread[Execution worker,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | > Task :compileJava
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Caching disabled for task ':compileJava' because:
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |   Build cache is disabled
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Task ':compileJava' is not up-to-date because:
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |   No history is available.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | The input changes require a full rebuild for incremental task ':compileJava'.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Full recompilation is required because no incremental change information is available. This is usually caused by clean builds or changing compiler arguments.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Compiling with toolchain '/opt/hostedtoolcache/jdk/8.0.392/x64'.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Compiling with JDK Java compiler API.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Class dependency analysis for incremental compilation took 0.122 secs.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Created classpath snapshot for incremental compilation in 0.003 secs.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Resolve mutations for :compileGroovy (Thread[Execution worker,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | :compileGroovy (Thread[Execution worker,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | > Task :compileGroovy SKIPPED
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Skipping task ':compileGroovy' as task onlyIf 'Task is enabled' is false.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Resolve mutations for :processResources (Thread[Execution worker,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | :processResources (Thread[Execution worker,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | > Task :processResources NO-SOURCE
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Skipping task ':processResources' as it has no source files and no previous output files.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Resolve mutations for :classes (Thread[Execution worker,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | :classes (Thread[Execution worker,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | > Task :classes
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Skipping task ':classes' as it has no actions.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Resolve mutations for :createPropertiesFileForJar (Thread[Execution worker,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | :createPropertiesFileForJar (Thread[Execution worker,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | > Task :createPropertiesFileForJar
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Caching disabled for task ':createPropertiesFileForJar' because:
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |   Build cache is disabled
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Task ':createPropertiesFileForJar' is not up-to-date because:
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |   No history is available.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Resolve mutations for :writeManifestProperties (Thread[Execution worker,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | :writeManifestProperties (Thread[Execution worker,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | > Task :writeManifestProperties
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Caching disabled for task ':writeManifestProperties' because:
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |   Build cache is disabled
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Task ':writeManifestProperties' is not up-to-date because:
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |   No history is available.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Resolve mutations for :jar (Thread[Execution worker,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | :jar (Thread[Execution worker,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | > Task :jar
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Caching disabled for task ':jar' because:
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |   Build cache is disabled
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Task ':jar' is not up-to-date because:
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |   No history is available.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | file or directory '/tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5/build/classes/groovy/main', not found
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | file or directory '/tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5/build/resources/main', not found
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Resolve mutations for :javadoc (Thread[Execution worker,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | :javadoc (Thread[Execution worker,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | > Task :javadoc
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Caching disabled for task ':javadoc' because:
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |   Build cache is disabled
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Task ':javadoc' is not up-to-date because:
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |   No history is available.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | file or directory '/tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5/src/main/groovy', not found
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Starting process 'command '/opt/hostedtoolcache/jdk/8.0.392/x64/bin/javadoc''. Working directory: /tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5 Command: /opt/hostedtoolcache/jdk/8.0.392/x64/bin/javadoc @/tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5/build/tmp/javadoc/javadoc.options
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Successfully started process 'command '/opt/hostedtoolcache/jdk/8.0.392/x64/bin/javadoc''
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | /tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5/src/main/java/com/netflix/frigga/ami/AppVersion.java:121: warning: no @return
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |     public static Pattern getAppVersionPattern() {
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |                           ^
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | /tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5/src/main/java/com/netflix/frigga/ami/AppVersion.java:128: warning: no @return
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |     public String getPackageName() {
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |                   ^
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | /tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5/src/main/java/com/netflix/frigga/ami/AppVersion.java:135: warning: no @return
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |     public String getVersion() {
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |                   ^
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | /tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5/src/main/java/com/netflix/frigga/ami/AppVersion.java:142: warning: no @return
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |     public String getBuildJobName() {
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |                   ^
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | /tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5/src/main/java/com/netflix/frigga/ami/AppVersion.java:149: warning: no @return
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |     public String getBuildNumber() {
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |                   ^
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | /tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5/src/main/java/com/netflix/frigga/ami/AppVersion.java:157: warning: no @return
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |     public String getCommit() {
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |                   ^
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | /tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5/src/main/java/com/netflix/frigga/ami/AppVersion.java:165: warning: no @return
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |     public String getChangelist() {
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |                   ^
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | /tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5/src/main/java/com/netflix/frigga/ami/AppVersion.java:165: warning - Tag @link: missing '#': "getCommit()"
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 8 warnings
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Resolve mutations for :javadocJar (Thread[Execution worker,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | :javadocJar (Thread[Execution worker Thread 108,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | > Task :javadocJar
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Caching disabled for task ':javadocJar' because:
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |   Build cache is disabled
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Task ':javadocJar' is not up-to-date because:
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |   No history is available.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Resolve mutations for :sourceJar (Thread[Execution worker Thread 108,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | :sourceJar (Thread[Execution worker Thread 108,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | > Task :sourceJar
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Caching disabled for task ':sourceJar' because:
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |   Build cache is disabled
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Task ':sourceJar' is not up-to-date because:
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |   No history is available.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | file or directory '/tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5/src/main/resources', not found
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | file or directory '/tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5/src/main/groovy', not found
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Resolve mutations for :assemble (Thread[Execution worker Thread 108,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | :assemble (Thread[Execution worker Thread 108,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | > Task :assemble
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Skipping task ':assemble' as it has no actions.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Resolve mutations for :writeLicenseHeader (Thread[Execution worker Thread 108,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | :writeLicenseHeader (Thread[Execution worker Thread 108,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | > Task :writeLicenseHeader
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Caching disabled for task ':writeLicenseHeader' because:
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |   Build cache is disabled
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Task ':writeLicenseHeader' is not up-to-date because:
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |   Task has not declared any outputs despite executing actions.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Resolve mutations for :licenseMain (Thread[Execution worker Thread 108,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | :licenseMain (Thread[Execution worker Thread 21,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Ignoring header in: src/main/java/com/netflix/frigga/Names.java
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Ignoring header in: src/main/java/com/netflix/frigga/conventions/sharding/Shard.java
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Ignoring header in: src/main/java/com/netflix/frigga/NameConstants.java
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Ignoring header in: src/main/java/com/netflix/frigga/conventions/sharding/ShardingNamingConvention.java
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Ignoring header in: src/main/java/com/netflix/frigga/cluster/ClusterGrouper.java
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Ignoring header in: src/main/java/com/netflix/frigga/extensions/NamingResult.java
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Ignoring header in: src/main/java/com/netflix/frigga/cluster/AsgNameProvider.java
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Ignoring header in: src/main/java/com/netflix/frigga/conventions/labeledvariables/LabeledVariablesNamingConvention.java
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Ignoring header in: src/main/java/com/netflix/frigga/NameValidation.java
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Ignoring header in: src/main/java/com/netflix/frigga/autoscaling/AutoScalingGroupNameBuilder.java
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Ignoring header in: src/main/java/com/netflix/frigga/elb/LoadBalancerNameBuilder.java
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Ignoring header in: src/main/java/com/netflix/frigga/NameBuilder.java
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Ignoring header in: src/main/java/com/netflix/frigga/extensions/NamingConvention.java
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Ignoring header in: src/main/java/com/netflix/frigga/conventions/labeledvariables/LabeledVariables.java
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Ignoring header in: src/main/java/com/netflix/frigga/ami/AppVersion.java
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Ignoring header in: src/main/java/com/netflix/frigga/conventions/sharding/ShardingNamingResult.java
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Ignoring header in: src/main/java/com/netflix/frigga/ami/BaseAmiInfo.java
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Ignoring header in: src/main/java/com/netflix/frigga/conventions/labeledvariables/LabeledVariablesNamingResult.java
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | > Task :licenseMain UP-TO-DATE
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Caching disabled for task ':licenseMain' because:
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |   Build cache is disabled
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Task ':licenseMain' is not up-to-date because:
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |   No history is available.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | file or directory '/tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5/src/main/resources', not found
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | file or directory '/tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5/src/main/groovy', not found
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Resolve mutations for :licenseTest (Thread[Execution worker Thread 22,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | :licenseTest (Thread[Execution worker Thread 22,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Ignoring header in: src/test/groovy/com/netflix/frigga/conventions/sharding/ShardingNamingConventionSpec.groovy
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Ignoring header in: src/test/groovy/com/netflix/frigga/conventions/labeledvariables/LabeledVariablesNamingConventionSpec.groovy
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Ignoring header in: src/test/groovy/com/netflix/frigga/autoscaling/AutoScalingGroupNameBuilderSpec.groovy
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Ignoring header in: src/test/groovy/com/netflix/frigga/cluster/ClusterGrouperSpec.groovy
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Ignoring header in: src/test/groovy/com/netflix/frigga/ami/BaseAmiInfoSpec.groovy
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Ignoring header in: src/test/groovy/com/netflix/frigga/NamesSpec.groovy
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Ignoring header in: src/test/groovy/com/netflix/frigga/NameValidationSpec.groovy
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Ignoring header in: src/test/groovy/com/netflix/frigga/ami/AppVersionTest.groovy
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | > Task :licenseTest UP-TO-DATE
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Caching disabled for task ':licenseTest' because:
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |   Build cache is disabled
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Task ':licenseTest' is not up-to-date because:
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |   No history is available.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | file or directory '/tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5/src/test/resources', not found
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | file or directory '/tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5/src/test/java', not found
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Resolve mutations for :license (Thread[Execution worker Thread 22,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | :license (Thread[Execution worker Thread 26,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | > Task :license UP-TO-DATE
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Skipping task ':license' as it has no actions.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Resolve mutations for :compileTestJava (Thread[Execution worker Thread 26,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | :compileTestJava (Thread[Execution worker Thread 27,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | > Task :compileTestJava NO-SOURCE
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Skipping task ':compileTestJava' as it has no source files and no previous output files.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Resolve mutations for :compileTestGroovy (Thread[Execution worker Thread 27,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | :compileTestGroovy (Thread[Execution worker Thread 27,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | > Task :compileTestGroovy
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy-all/2.4.6/groovy-all-2.4.6.pom to /home/runner/.gradle/.tmp/gradle_download851066743095201095bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://repo.maven.apache.org/maven2/org/spockframework/spock-core/1.0-groovy-2.4/spock-core-1.0-groovy-2.4.pom to /home/runner/.gradle/.tmp/gradle_download5403841490559684600bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://repo.maven.apache.org/maven2/junit/junit/4.12/junit-4.12.pom to /home/runner/.gradle/.tmp/gradle_download4424281286109344315bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.pom to /home/runner/.gradle/.tmp/gradle_download4185474230538228067bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-parent/1.3/hamcrest-parent-1.3.pom to /home/runner/.gradle/.tmp/gradle_download821256506237725466bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy-all/2.4.6/groovy-all-2.4.6.jar to /home/runner/.gradle/.tmp/gradle_download2696563418540624473bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://repo.maven.apache.org/maven2/junit/junit/4.12/junit-4.12.jar to /home/runner/.gradle/.tmp/gradle_download5654737936009100215bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://repo.maven.apache.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar to /home/runner/.gradle/.tmp/gradle_download8605787072459028490bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Downloading https://repo.maven.apache.org/maven2/org/spockframework/spock-core/1.0-groovy-2.4/spock-core-1.0-groovy-2.4.jar to /home/runner/.gradle/.tmp/gradle_download3508058451355078020bin
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Caching disabled for task ':compileTestGroovy' because:
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |   Build cache is disabled
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Task ':compileTestGroovy' is not up-to-date because:
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |   No history is available.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | The input changes require a full rebuild for incremental task ':compileTestGroovy'.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Starting process 'Gradle Worker Daemon 1'. Working directory: /home/runner/.gradle/workers Command: /opt/hostedtoolcache/jdk/8.0.392/x64/bin/java -Djava.security.manager=worker.org.gradle.process.internal.worker.child.BootstrapSecurityManager -Xmx512m -Dfile.encoding=UTF-8 -Duser.country -Duser.language=en -Duser.variant -cp /home/runner/.gradle/caches/7.6/workerMain/gradle-worker.jar worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Worker Daemon 1'
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Successfully started process 'Gradle Worker Daemon 1'
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Started Gradle worker daemon (0.796 secs) with fork options DaemonForkOptions{executable=/opt/hostedtoolcache/jdk/8.0.392/x64/bin/java, minHeapSize=null, maxHeapSize=null, jvmArgs=[], keepAliveMode=SESSION}.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | This JVM does not support getting OS memory, so no OS memory status updates will be broadcast
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | > Task :compileTestGroovy
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Created user preferences directory.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Resolve mutations for :processTestResources (Thread[Execution worker Thread 106,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | :processTestResources (Thread[Execution worker Thread 106,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | > Task :processTestResources NO-SOURCE
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Skipping task ':processTestResources' as it has no source files and no previous output files.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Resolve mutations for :testClasses (Thread[Execution worker Thread 106,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | :testClasses (Thread[Execution worker Thread 106,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | > Task :testClasses
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Skipping task ':testClasses' as it has no actions.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Resolve mutations for :test (Thread[Execution worker Thread 106,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | producer locations for task group 0 (Thread[Execution worker Thread 106,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | :test (Thread[Execution worker Thread 50,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Gradle Test Executor 2 started executing tests.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Gradle Test Executor 2 finished executing tests.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | > Task :test
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Caching disabled for task ':test' because:
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |   Build cache is disabled
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Task ':test' is not up-to-date because:
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |   No history is available.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | file or directory '/tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5/build/classes/java/test', not found
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Starting process 'Gradle Test Executor 2'. Working directory: /tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5 Command: /opt/hostedtoolcache/jdk/8.0.392/x64/bin/java -Djava.security.manager=worker.org.gradle.process.internal.worker.child.BootstrapSecurityManager -Dorg.gradle.internal.worker.tmpdir=/tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5/build/tmp/test/work -Dorg.gradle.native=false -Xmx512m -Dfile.encoding=UTF-8 -Duser.country -Duser.language=en -Duser.variant -ea -cp /home/runner/.gradle/caches/7.6/workerMain/gradle-worker.jar worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 2'
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Successfully started process 'Gradle Test Executor 2'
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Finished generating test XML results (0.08 secs) into: /tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5/build/test-results/test
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Generating HTML test report...
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Finished generating test html results (0.095 secs) into: /tmp/462ef5e9-bc18-46c6-94ba-f8165ac687e5/build/reports/tests/test
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Resolve mutations for :check (Thread[Execution worker Thread 68,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | :check (Thread[Execution worker Thread 68,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | > Task :check
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Skipping task ':check' as it has no actions.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Resolve mutations for :collectNetflixOSS (Thread[Execution worker Thread 68,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | :collectNetflixOSS (Thread[Execution worker Thread 68,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | > Task :collectNetflixOSS
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Caching disabled for task ':collectNetflixOSS' because:
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |   Build cache is disabled
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Task ':collectNetflixOSS' is not up-to-date because:
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   |   Task has not declared any outputs despite executing actions.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Resolve mutations for :build (Thread[Execution worker Thread 69,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | :build (Thread[Execution worker Thread 70,5,main]) started.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | > Task :build
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Skipping task ':build' as it has no actions.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | BUILD SUCCESSFUL in 51s
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | 13 actionable tasks: 11 executed, 2 up-to-date
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Some of the file system contents retained in the virtual file system are on file systems that Gradle doesn't support watching. The relevant state was discarded to ensure changes to these locations are properly detected. You can override this by explicitly enabling file system watching.
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   | Stopped 1 worker daemon(s).
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   ✅  Success - Main Build with Gradle
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8] ⭐ Run Post Setup jdk
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v1/dist/cleanup/index.js] user= workdir=
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8]   ✅  Success - Post Setup jdk
+[ee550fc2-e7f4-45bd-8c01-ac3654aa52cd/CI with Java 8] 🏁  Job succeeded

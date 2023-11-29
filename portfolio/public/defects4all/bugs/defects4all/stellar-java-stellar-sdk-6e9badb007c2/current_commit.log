@@ -1,0 +1,126 @@
+[10457ead-6910-4128-9758-d7c8029bff01/test] 🚀  Start image=gitbugactions:latest
+[10457ead-6910-4128-9758-d7c8029bff01/test]   🐳  docker pull image=gitbugactions:latest platform= username= forcePull=false
+[10457ead-6910-4128-9758-d7c8029bff01/test]   🐳  docker create image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[10457ead-6910-4128-9758-d7c8029bff01/test]   🐳  docker run image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[10457ead-6910-4128-9758-d7c8029bff01/test]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/48755ed3-09c2-4845-9527-c781f74e4619] user=0 workdir=
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test] ⭐ Run Main Checkout code
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test]   🐳  docker cp src=/tmp/48755ed3-09c2-4845-9527-c781f74e4619/. dst=/tmp/48755ed3-09c2-4845-9527-c781f74e4619
+[10457ead-6910-4128-9758-d7c8029bff01/test]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/48755ed3-09c2-4845-9527-c781f74e4619] user=0 workdir=
+[10457ead-6910-4128-9758-d7c8029bff01/test]   ✅  Success - Main Checkout code
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test] ⭐ Run Main Set up JDK
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test]   🐳  docker cp src=/tmp/act-cache/9c81282b-6748-4dd6-9c58-11697630aa29/act/actions-setup-java@v2/ dst=/var/run/act/actions/actions-setup-java@v2/
+[10457ead-6910-4128-9758-d7c8029bff01/test]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v2/] user=0 workdir=
+[10457ead-6910-4128-9758-d7c8029bff01/test]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/setup/index.js] user= workdir=
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | Trying to resolve the latest version from remote
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | Resolved latest version as 11.0.13
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | Trying to download...
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | Downloading Java 11.0.13 (Microsoft) from https://aka.ms/download-jdk/microsoft-jdk-11.0.13.8.1-linux-x64.tar.gz ...
+[10457ead-6910-4128-9758-d7c8029bff01/test]   💬  ::debug::Downloading https://aka.ms/download-jdk/microsoft-jdk-11.0.13.8.1-linux-x64.tar.gz
+[10457ead-6910-4128-9758-d7c8029bff01/test]   💬  ::debug::Destination /tmp/cbc7bc9a-0722-47c6-be46-9d343c6e5a00
+[10457ead-6910-4128-9758-d7c8029bff01/test]   💬  ::debug::download complete
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | Extracting Java archive...
+[10457ead-6910-4128-9758-d7c8029bff01/test]   💬  ::debug::Checking tar --version
+[10457ead-6910-4128-9758-d7c8029bff01/test]   💬  ::debug::tar (GNU tar) 1.34%0ACopyright (C) 2021 Free Software Foundation, Inc.%0ALicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.%0AThis is free software: you are free to change and redistribute it.%0AThere is NO WARRANTY, to the extent permitted by law.%0A%0AWritten by John Gilmore and Jay Fenlason.
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/63707193-132e-4979-ab38-0c5e4a0c8bac -f /tmp/cbc7bc9a-0722-47c6-be46-9d343c6e5a00
+[10457ead-6910-4128-9758-d7c8029bff01/test]   💬  ::debug::Caching tool Java_Microsoft_jdk 11.0.13 x64
+[10457ead-6910-4128-9758-d7c8029bff01/test]   💬  ::debug::source dir: /tmp/63707193-132e-4979-ab38-0c5e4a0c8bac/jdk-11.0.13+8
+[10457ead-6910-4128-9758-d7c8029bff01/test]   💬  ::debug::destination /opt/hostedtoolcache/Java_Microsoft_jdk/11.0.13/x64
+[10457ead-6910-4128-9758-d7c8029bff01/test]   💬  ::debug::finished caching tool
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | Java 11.0.13 was downloaded
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | Setting Java 11.0.13 as the default
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | 
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | Java configuration:
+[10457ead-6910-4128-9758-d7c8029bff01/test]   |   Distribution: microsoft
+[10457ead-6910-4128-9758-d7c8029bff01/test]   |   Version: 11.0.13
+[10457ead-6910-4128-9758-d7c8029bff01/test]   |   Path: /opt/hostedtoolcache/Java_Microsoft_jdk/11.0.13/x64
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | 
+[10457ead-6910-4128-9758-d7c8029bff01/test]   ❓ add-matcher /run/act/actions/actions-setup-java@v2/.github/java.json
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | Creating settings.xml with server-id: github
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | Writing to /home/runner/.m2/settings.xml
+[10457ead-6910-4128-9758-d7c8029bff01/test]   ✅  Success - Main Set up JDK
+[10457ead-6910-4128-9758-d7c8029bff01/test]   ⚙  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Microsoft_jdk/11.0.13/x64
+[10457ead-6910-4128-9758-d7c8029bff01/test]   ⚙  ::set-output:: distribution=Microsoft
+[10457ead-6910-4128-9758-d7c8029bff01/test]   ⚙  ::set-output:: path=/opt/hostedtoolcache/Java_Microsoft_jdk/11.0.13/x64
+[10457ead-6910-4128-9758-d7c8029bff01/test]   ⚙  ::set-output:: version=11.0.13
+[10457ead-6910-4128-9758-d7c8029bff01/test]   ⚙  ::add-path:: /opt/hostedtoolcache/Java_Microsoft_jdk/11.0.13/x64/bin
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test] ⭐ Run Main Test
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | Downloading https://services.gradle.org/distributions/gradle-7.4.1-bin.zip
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | ...........10%...........20%...........30%...........40%...........50%...........60%...........70%...........80%...........90%...........100%
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | 
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | Welcome to Gradle 7.4.1!
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | 
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | Here are the highlights of this release:
+[10457ead-6910-4128-9758-d7c8029bff01/test]   |  - Aggregated test and JaCoCo reports
+[10457ead-6910-4128-9758-d7c8029bff01/test]   |  - Marking additional test source directories as tests in IntelliJ
+[10457ead-6910-4128-9758-d7c8029bff01/test]   |  - Support for Adoptium JDKs in Java toolchains
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | 
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | For more details see https://docs.gradle.org/7.4.1/release-notes.html
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | 
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | Starting a Gradle Daemon (subsequent builds will be faster)
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | > Task :spotlessInternalRegisterDependencies
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | > Task :spotlessJava
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | > Task :spotlessJavaCheck
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | > Task :spotlessCheck
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | > Task :generateEffectiveLombokConfig
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | 
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | > Task :compileJava
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | Note: Some input files use or override a deprecated API.
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | Note: Recompile with -Xlint:deprecation for details.
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | Note: Some input files use unchecked or unsafe operations.
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | Note: Recompile with -Xlint:unchecked for details.
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | 
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | > Task :processResources NO-SOURCE
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | > Task :classes
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | > Task :generateTestEffectiveLombokConfig
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | 
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | > Task :compileTestJava
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | Note: Some input files use or override a deprecated API.
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | Note: Recompile with -Xlint:deprecation for details.
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | 
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | > Task :processTestResources NO-SOURCE
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | > Task :testClasses
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | > Task :test
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | > Task :check
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | 
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | BUILD SUCCESSFUL in 1m 3s
+[10457ead-6910-4128-9758-d7c8029bff01/test]   | 8 actionable tasks: 8 executed
+[10457ead-6910-4128-9758-d7c8029bff01/test]   ✅  Success - Main Test
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'
+[10457ead-6910-4128-9758-d7c8029bff01/test] ⭐ Run Post Set up JDK
+[10457ead-6910-4128-9758-d7c8029bff01/test]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/cleanup/index.js] user= workdir=
+[10457ead-6910-4128-9758-d7c8029bff01/test]   ✅  Success - Post Set up JDK
+[10457ead-6910-4128-9758-d7c8029bff01/test] 🏁  Job succeeded
+[10457ead-6910-4128-9758-d7c8029bff01/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6e9badb007c247eebe52d564049464fb57ab3701'

@@ -1,0 +1,317 @@
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] 🚀  Start image=gitbugactions:latest
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   🐳  docker pull image=gitbugactions:latest platform= username= forcePull=false
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   🐳  docker create image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   🐳  docker run image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/6b48cf36-3376-4b38-88ca-9aa4c5574e1c] user=0 workdir=
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] ⭐ Run Main actions/checkout@v2
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   🐳  docker cp src=/tmp/6b48cf36-3376-4b38-88ca-9aa4c5574e1c/. dst=/tmp/6b48cf36-3376-4b38-88ca-9aa4c5574e1c
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/6b48cf36-3376-4b38-88ca-9aa4c5574e1c] user=0 workdir=
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   ✅  Success - Main actions/checkout@v2
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] ⭐ Run Main Set up JDK 20.0.1
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   🐳  docker cp src=/tmp/act-cache/e4b04cf7-4a55-49de-a912-145f3d16b8ca/act/actions-setup-java@v2/ dst=/var/run/act/actions/actions-setup-java@v2/
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v2/] user=0 workdir=
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/setup/index.js] user= workdir=
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   💬  ::debug::isExplicit: 11.0.20-1
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   💬  ::debug::explicit? true
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   💬  ::debug::isExplicit: 17.0.8-1
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   💬  ::debug::explicit? true
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   💬  ::debug::isExplicit: 21.0.0-35
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   💬  ::debug::explicit? true
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   💬  ::debug::isExplicit: 8.0.382-5
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   💬  ::debug::explicit? true
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | Trying to resolve the latest version from remote
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | Resolved latest version as 20.0.1+9
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | Trying to download...
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | Downloading Java 20.0.1+9 (Temurin-Hotspot) from https://github.com/adoptium/temurin20-binaries/releases/download/jdk-20.0.1%2B9/OpenJDK20U-jdk_x64_linux_hotspot_20.0.1_9.tar.gz ...
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   💬  ::debug::Downloading https://github.com/adoptium/temurin20-binaries/releases/download/jdk-20.0.1%252B9/OpenJDK20U-jdk_x64_linux_hotspot_20.0.1_9.tar.gz
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   💬  ::debug::Destination /tmp/3d17ecd8-c1f2-49bd-94a3-9c0583deffa5
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   💬  ::debug::download complete
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | Extracting Java archive...
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   💬  ::debug::Checking tar --version
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   💬  ::debug::tar (GNU tar) 1.34%0ACopyright (C) 2021 Free Software Foundation, Inc.%0ALicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.%0AThis is free software: you are free to change and redistribute it.%0AThere is NO WARRANTY, to the extent permitted by law.%0A%0AWritten by John Gilmore and Jay Fenlason.
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/b4483962-952d-4e81-a1cd-583f6350471e -f /tmp/3d17ecd8-c1f2-49bd-94a3-9c0583deffa5
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   💬  ::debug::Caching tool Java_Temurin-Hotspot_jdk 20.0.1-9 x64
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   💬  ::debug::source dir: /tmp/b4483962-952d-4e81-a1cd-583f6350471e/jdk-20.0.1+9
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   💬  ::debug::destination /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/20.0.1-9/x64
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   💬  ::debug::finished caching tool
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | Java 20.0.1+9 was downloaded
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | Setting Java 20.0.1+9 as the default
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | Java configuration:
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   |   Distribution: temurin
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   |   Version: 20.0.1+9
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   |   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/20.0.1-9/x64
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   ❓ add-matcher /run/act/actions/actions-setup-java@v2/.github/java.json
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | Creating settings.xml with server-id: github
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | Writing to /home/runner/.m2/settings.xml
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   ✅  Success - Main Set up JDK 20.0.1
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   ⚙  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/20.0.1-9/x64
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   ⚙  ::set-output:: distribution=Temurin-Hotspot
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   ⚙  ::set-output:: path=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/20.0.1-9/x64
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   ⚙  ::set-output:: version=20.0.1+9
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   ⚙  ::add-path:: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/20.0.1-9/x64/bin
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] ⭐ Run Main Test with Gradle
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | Downloading https://services.gradle.org/distributions/gradle-8.1.1-bin.zip
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | ...........10%............20%............30%............40%............50%............60%............70%............80%...........90%............100%
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | Welcome to Gradle 8.1.1!
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | Here are the highlights of this release:
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   |  - Stable configuration cache
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   |  - Experimental Kotlin DSL assignment syntax
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   |  - Building with Java 20
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | For more details see https://docs.gradle.org/8.1.1/release-notes.html
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | Starting a Gradle Daemon (subsequent builds will be faster)
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | > Configure project :
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | Project : => 'network.brightspots.rcv' Java module
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | The AbstractCompile.destinationDir property has been deprecated. This is scheduled to be removed in Gradle 9.0. Please use the destinationDirectory property instead. Consult the upgrading guide for further information: https://docs.gradle.org/8.1.1/userguide/upgrading_version_7.html#compile_task_wiring
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | > Task :compileJava
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | Note: Some input files use unchecked or unsafe operations.
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | Note: Recompile with -Xlint:unchecked for details.
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | > Task :processResources
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | > Task :classes
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | > Task :compileTestJava
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | The apiCopy configuration has been deprecated for resolution. This will fail with an error in Gradle 9.0. Please resolve another configuration instead. Consult the upgrading guide for further information: https://docs.gradle.org/8.1.1/userguide/upgrading_version_5.html#dependencies_should_no_longer_be_declared_using_the_compile_and_runtime_configurations
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | The compileClasspathCopy configuration has been deprecated for dependency declaration. This will fail with an error in Gradle 9.0. Please use another configuration instead. Consult the upgrading guide for further information: https://docs.gradle.org/8.1.1/userguide/upgrading_version_5.html#dependencies_should_no_longer_be_declared_using_the_compile_and_runtime_configurations
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | The compileOnlyCopy configuration has been deprecated for resolution. This will fail with an error in Gradle 9.0. Please resolve another configuration instead. Consult the upgrading guide for further information: https://docs.gradle.org/8.1.1/userguide/upgrading_version_5.html#dependencies_should_no_longer_be_declared_using_the_compile_and_runtime_configurations
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | The implementationCopy configuration has been deprecated for resolution. This will fail with an error in Gradle 9.0. Please resolve another configuration instead. Consult the upgrading guide for further information: https://docs.gradle.org/8.1.1/userguide/upgrading_version_5.html#dependencies_should_no_longer_be_declared_using_the_compile_and_runtime_configurations
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | The runtimeClasspathCopy configuration has been deprecated for dependency declaration. This will fail with an error in Gradle 9.0. Please use another configuration instead. Consult the upgrading guide for further information: https://docs.gradle.org/8.1.1/userguide/upgrading_version_5.html#dependencies_should_no_longer_be_declared_using_the_compile_and_runtime_configurations
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | The runtimeOnlyCopy configuration has been deprecated for resolution. This will fail with an error in Gradle 9.0. Please resolve another configuration instead. Consult the upgrading guide for further information: https://docs.gradle.org/8.1.1/userguide/upgrading_version_5.html#dependencies_should_no_longer_be_declared_using_the_compile_and_runtime_configurations
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | The testCompileClasspathCopy configuration has been deprecated for dependency declaration. This will fail with an error in Gradle 9.0. Please use another configuration instead. Consult the upgrading guide for further information: https://docs.gradle.org/8.1.1/userguide/upgrading_version_5.html#dependencies_should_no_longer_be_declared_using_the_compile_and_runtime_configurations
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | The testCompileOnlyCopy configuration has been deprecated for resolution. This will fail with an error in Gradle 9.0. Please resolve another configuration instead. Consult the upgrading guide for further information: https://docs.gradle.org/8.1.1/userguide/upgrading_version_5.html#dependencies_should_no_longer_be_declared_using_the_compile_and_runtime_configurations
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | The testImplementationCopy configuration has been deprecated for resolution. This will fail with an error in Gradle 9.0. Please resolve another configuration instead. Consult the upgrading guide for further information: https://docs.gradle.org/8.1.1/userguide/upgrading_version_5.html#dependencies_should_no_longer_be_declared_using_the_compile_and_runtime_configurations
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | The testRuntimeClasspathCopy configuration has been deprecated for dependency declaration. This will fail with an error in Gradle 9.0. Please use another configuration instead. Consult the upgrading guide for further information: https://docs.gradle.org/8.1.1/userguide/upgrading_version_5.html#dependencies_should_no_longer_be_declared_using_the_compile_and_runtime_configurations
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | The testRuntimeOnlyCopy configuration has been deprecated for resolution. This will fail with an error in Gradle 9.0. Please resolve another configuration instead. Consult the upgrading guide for further information: https://docs.gradle.org/8.1.1/userguide/upgrading_version_5.html#dependencies_should_no_longer_be_declared_using_the_compile_and_runtime_configurations
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | Note: /tmp/6b48cf36-3376-4b38-88ca-9aa4c5574e1c/src/test/java/network/brightspots/rcv/TabulatorTests.java uses unchecked or unsafe operations.
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | Note: Recompile with -Xlint:unchecked for details.
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | > Task :processTestResources
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | > Task :testClasses
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | > Task :mergeClasses SKIPPED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | > Task :test
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | The apiCopy2 configuration has been deprecated for resolution. This will fail with an error in Gradle 9.0. Please resolve another configuration instead. Consult the upgrading guide for further information: https://docs.gradle.org/8.1.1/userguide/upgrading_version_5.html#dependencies_should_no_longer_be_declared_using_the_compile_and_runtime_configurations
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | The compileClasspathCopy2 configuration has been deprecated for dependency declaration. This will fail with an error in Gradle 9.0. Please use another configuration instead. Consult the upgrading guide for further information: https://docs.gradle.org/8.1.1/userguide/upgrading_version_5.html#dependencies_should_no_longer_be_declared_using_the_compile_and_runtime_configurations
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | The compileOnlyCopy2 configuration has been deprecated for resolution. This will fail with an error in Gradle 9.0. Please resolve another configuration instead. Consult the upgrading guide for further information: https://docs.gradle.org/8.1.1/userguide/upgrading_version_5.html#dependencies_should_no_longer_be_declared_using_the_compile_and_runtime_configurations
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | The implementationCopy2 configuration has been deprecated for resolution. This will fail with an error in Gradle 9.0. Please resolve another configuration instead. Consult the upgrading guide for further information: https://docs.gradle.org/8.1.1/userguide/upgrading_version_5.html#dependencies_should_no_longer_be_declared_using_the_compile_and_runtime_configurations
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | The runtimeClasspathCopy2 configuration has been deprecated for dependency declaration. This will fail with an error in Gradle 9.0. Please use another configuration instead. Consult the upgrading guide for further information: https://docs.gradle.org/8.1.1/userguide/upgrading_version_5.html#dependencies_should_no_longer_be_declared_using_the_compile_and_runtime_configurations
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | The runtimeOnlyCopy2 configuration has been deprecated for resolution. This will fail with an error in Gradle 9.0. Please resolve another configuration instead. Consult the upgrading guide for further information: https://docs.gradle.org/8.1.1/userguide/upgrading_version_5.html#dependencies_should_no_longer_be_declared_using_the_compile_and_runtime_configurations
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | The testCompileClasspathCopy2 configuration has been deprecated for dependency declaration. This will fail with an error in Gradle 9.0. Please use another configuration instead. Consult the upgrading guide for further information: https://docs.gradle.org/8.1.1/userguide/upgrading_version_5.html#dependencies_should_no_longer_be_declared_using_the_compile_and_runtime_configurations
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | The testCompileOnlyCopy2 configuration has been deprecated for resolution. This will fail with an error in Gradle 9.0. Please resolve another configuration instead. Consult the upgrading guide for further information: https://docs.gradle.org/8.1.1/userguide/upgrading_version_5.html#dependencies_should_no_longer_be_declared_using_the_compile_and_runtime_configurations
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | The testImplementationCopy2 configuration has been deprecated for resolution. This will fail with an error in Gradle 9.0. Please resolve another configuration instead. Consult the upgrading guide for further information: https://docs.gradle.org/8.1.1/userguide/upgrading_version_5.html#dependencies_should_no_longer_be_declared_using_the_compile_and_runtime_configurations
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | The testRuntimeClasspathCopy2 configuration has been deprecated for dependency declaration. This will fail with an error in Gradle 9.0. Please use another configuration instead. Consult the upgrading guide for further information: https://docs.gradle.org/8.1.1/userguide/upgrading_version_5.html#dependencies_should_no_longer_be_declared_using_the_compile_and_runtime_configurations
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | The testRuntimeOnlyCopy2 configuration has been deprecated for resolution. This will fail with an error in Gradle 9.0. Please resolve another configuration instead. Consult the upgrading guide for further information: https://docs.gradle.org/8.1.1/userguide/upgrading_version_5.html#dependencies_should_no_longer_be_declared_using_the_compile_and_runtime_configurations
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | ContestConfigTests > test isVersionNewer PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > multi-seat fractional number threshold PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > unisyn_xml_cdf_city_council_member PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | > Task :checkstyleTest
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | > Task :spotbugsTest
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | > Task :checkstyleMain
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | > Task :test
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > 2017 Minneapolis Mayor PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > unisyn_xml_cdf_county_sheriff PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > test invalid params in config file PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > overvote delimiter test PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > multi-cvr file dominion test PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > treat blank as undeclared write-in PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > Dominion test - Wyoming test data PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | > Task :spotbugsMain
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | > Task :test
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > test sequential multi-seat logic PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > Dominion - No Precinct Data PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > unisyn_xml_cdf_city_coroner PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > 2013 Minneapolis Mayor Scale PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > tiebreak using previousRoundCountsThenRandom PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > unisyn_xml_cdf_city_chief_of_police PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > Dominion test - Alaska test data PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > tiebreak using permutation in config PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > test tiebreak seed PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > test allow only one winner per round logic PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > Continue Until Two Candidates Remain PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > Dominion test - Kansas test data PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > NIST XML CDF 2 PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > test invalid source files PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > test excluding candidates in config file PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > Hart - Travis County Officers PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > undeclared write-in (UWI) cannot win test PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > sequential with continue until two test PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > skipped first choice PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > exhaust at overvote rule PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > overvote skips to next rank PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > skipped choice exhausts option PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > skipped choice next option PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > two skipped ranks exhausts option PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > duplicate rank exhausts PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > duplicate rank skips to next option PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > multi-cdf tabulation PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > test skipping to next candidate after overvote PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > multi-seat UWI test PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > test bottoms-up multi-seat with threshold logic PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > test minimum vote threshold setting PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > 2018 Maine Governor Democratic Primary PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > test Hare quota PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > Continue Until Two Candidates Remain with Batch Elimination PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > sequential with batch elimination test PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > first round determine threshold test PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > Test Convert to CDF works for Dominion PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > Test Convert to CDF works for CDF PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > Test Convert to CDF works for ES&S PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > multi-seat whole number threshold PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > tiebreak using generated permutation PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > aliases (CDF JSON format) PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > aliases (ES&S XLSX format) PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > no one meets minimum test PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > missing precinct example PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > test bottoms-up multi-seat logic PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > Test Convert to CSV works for Dominion PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > unisyn_xml_cdf_city_tax_collector PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > 2013 Minneapolis Mayor PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > Test Convert to CSV works for CDF PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > Test Convert to CSV works for ES&S PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > unisyn_xml_cdf_county_coroner PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > testMinneapolisMultiSeatThreshold PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > overvote exhaust if multiple continuing test PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > first round determine threshold and tiebreaker runs test PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > 2015 Portland Mayor Candidate Codes PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > gracefully fail when tabulate-by-precinct option set without any precincts in CVR PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > Clear Ballot - Kansas Primary PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > unisyn_xml_cdf_city_mayor PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > Hart - Cedar Park School Board PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > 2013 Minneapolis Park PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > generic CSV test PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > test for overvotes PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > 2015 Portland Mayor PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > test stopping tabulation early PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | TabulatorTests > precinct example PASSED
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | > Task :check
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | BUILD SUCCESSFUL in 2m 53s
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   | 9 actionable tasks: 9 executed
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   ✅  Success - Main Test with Gradle
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] ⭐ Run Post Set up JDK 20.0.1
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/cleanup/index.js] user= workdir=
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build]   ✅  Success - Post Set up JDK 20.0.1
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] 🏁  Job succeeded
+[e396c11a-6d26-4397-8b3e-0722f683e8e8/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'cd6ca49d8e58642c3142e1c4ee40a78e6c9060e5'

@@ -1,0 +1,56 @@
+diff --git a/src/test/java/org/jsoup/helper/W3CDomTest.java b/src/test/java/org/jsoup/helper/W3CDomTest.java
+index c1daeb5..d79a2b6 100644
+--- a/src/test/java/org/jsoup/helper/W3CDomTest.java
++++ b/src/test/java/org/jsoup/helper/W3CDomTest.java
+@@ -345,5 +345,18 @@ public class W3CDomTest {
+         org.jsoup.nodes.TextNode jText = (TextNode) jDiv.childNode(0).childNode(0);
+         assertEquals(jText, textNode.getUserData(W3CDom.SourceProperty));
+     }
++    
++    @Test public void canXmlParseCdataNodes() throws XPathExpressionException {
++        String html = "<p><script>1 && 2</script><style>3 && 4</style> 5 &amp;&amp; 6</p>";
++        org.jsoup.nodes.Document jdoc = Jsoup.parse(html);
++        jdoc.outputSettings().syntax(org.jsoup.nodes.Document.OutputSettings.Syntax.xml);
++        String xml = jdoc.body().html();
++        assertTrue(xml.contains("<script><![CDATA[")); // as asserted in ElementTest
++        Document doc = parseXml(xml, false);
++        NodeList list = xpath(doc, "//script");
++        assertEquals(1, list.getLength());
++        Node script = list.item(0); // will be the cdata node
++        assertEquals("1 && 2", script.getTextContent());
++    }
+ 
+ }
+diff --git a/src/test/java/org/jsoup/nodes/ElementTest.java b/src/test/java/org/jsoup/nodes/ElementTest.java
+index bba0940..549a224 100644
+--- a/src/test/java/org/jsoup/nodes/ElementTest.java
++++ b/src/test/java/org/jsoup/nodes/ElementTest.java
+@@ -2733,6 +2733,28 @@ public class ElementTest {
+         assertEquals("Hello", parse.data());
+     }
+ 
++    @Test void datanodesOutputCdataInXhtml() {
++        String html = "<p><script>1 && 2</script><style>3 && 4</style> 5 &amp;&amp; 6</p>";
++        Document doc = Jsoup.parse(html); // parsed as HTML
++        String out = TextUtil.normalizeSpaces(doc.body().html());
++        assertEquals(html, out);
++        Element scriptEl = doc.expectFirst("script");
++        DataNode scriptDataNode = (DataNode) scriptEl.childNode(0);
++        assertEquals("1 && 2", scriptDataNode.getWholeData());
++
++        doc.outputSettings().syntax(Document.OutputSettings.Syntax.xml);
++        String xml = doc.body().html();
++        assertEquals(
++            "<p><script><![CDATA[1 && 2]]></script><style><![CDATA[3 && 4]]></style> 5 &amp;&amp; 6</p>",
++            TextUtil.normalizeSpaces(xml));
++
++        Document xmlDoc = Jsoup.parse(xml, Parser.xmlParser());
++        assertEquals(xml, xmlDoc.html());
++        Element scriptXmlEl = xmlDoc.expectFirst("script");
++        CDataNode scriptCdata = (CDataNode) scriptXmlEl.childNode(0);
++        assertEquals(scriptCdata.text(), scriptDataNode.getWholeData());
++    }
++
+     @Test void outerHtmlAppendable() {
+         // tests not string builder flow
+         Document doc = Jsoup.parse("<div>One</div>");

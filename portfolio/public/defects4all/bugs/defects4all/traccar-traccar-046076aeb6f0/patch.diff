@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/traccar/protocol/Gt06ProtocolDecoder.java b/src/main/java/org/traccar/protocol/Gt06ProtocolDecoder.java
+index 15588c8..ef09677 100644
+--- a/src/main/java/org/traccar/protocol/Gt06ProtocolDecoder.java
++++ b/src/main/java/org/traccar/protocol/Gt06ProtocolDecoder.java
+@@ -803,7 +803,7 @@ public class Gt06ProtocolDecoder extends BaseProtocolDecoder {
+                 getLastLocation(position, null);
+             }
+ 
+-            if (hasLbs(type)) {
++            if (hasLbs(type) && buf.readableBytes() > 6) {
+                 decodeLbs(position, buf, type, hasStatus(type) && type != MSG_LBS_ALARM);
+             }
+ 

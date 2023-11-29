@@ -1,0 +1,12 @@
+diff --git a/src/main/java/it/mulders/mcs/search/printer/TabularOutputPrinter.java b/src/main/java/it/mulders/mcs/search/printer/TabularOutputPrinter.java
+index c36b641..58022f5 100644
+--- a/src/main/java/it/mulders/mcs/search/printer/TabularOutputPrinter.java
++++ b/src/main/java/it/mulders/mcs/search/printer/TabularOutputPrinter.java
+@@ -61,6 +61,6 @@ public class TabularOutputPrinter implements OutputPrinter {
+                 Instant.ofEpochMilli(doc.timestamp()).atZone(ZoneId.systemDefault())
+         );
+ 
+-        table.addRowValues(doc.id(), lastUpdated);
++        table.addRowValues(doc.id() + ":" + doc.latestVersion(), lastUpdated);
+     }
+ }

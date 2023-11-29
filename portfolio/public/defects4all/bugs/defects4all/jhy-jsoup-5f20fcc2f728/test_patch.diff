@@ -1,0 +1,40 @@
+diff --git a/src/test/java/org/jsoup/safety/SafelistTest.java b/src/test/java/org/jsoup/safety/SafelistTest.java
+index 8b1c1ff..796ddc7 100644
+--- a/src/test/java/org/jsoup/safety/SafelistTest.java
++++ b/src/test/java/org/jsoup/safety/SafelistTest.java
+@@ -1,13 +1,13 @@
+ package org.jsoup.safety;
+ 
++import org.jsoup.helper.ValidationException;
+ import org.jsoup.nodes.Attribute;
+ import org.jsoup.nodes.Attributes;
+ import org.jsoup.nodes.Element;
+ import org.jsoup.parser.Tag;
+ import org.junit.jupiter.api.Test;
+ 
+-import static org.junit.jupiter.api.Assertions.assertFalse;
+-import static org.junit.jupiter.api.Assertions.assertNotEquals;
++import static org.junit.jupiter.api.Assertions.*;
+ 
+ public class SafelistTest {
+     private static final String TEST_TAG = "testTag";
+@@ -61,5 +61,19 @@ public class SafelistTest {
+         assertFalse(safelist2.isSafeAttribute(TEST_TAG, invalidElement, invalidAttribute));
+     }
+ 
++    @Test
++    void noscriptIsBlocked() {
++        boolean threw = false;
++        Safelist safelist = null;
++        try {
++            safelist = Safelist.none().addTags("NOSCRIPT");
++        } catch (ValidationException validationException) {
++            threw = true;
++            assertTrue(validationException.getMessage().contains("unsupported"));
++        }
++        assertTrue(threw);
++        assertNull(safelist);
++    }
++
+ 
+ }

@@ -1,0 +1,53 @@
+diff --git a/src/main/java/org/jsoup/nodes/Comment.java b/src/main/java/org/jsoup/nodes/Comment.java
+index 8ac8f70..f7fc9f3 100644
+--- a/src/main/java/org/jsoup/nodes/Comment.java
++++ b/src/main/java/org/jsoup/nodes/Comment.java
+@@ -38,7 +38,7 @@ public class Comment extends LeafNode {
+ 
+     @Override
+ 	void outerHtmlHead(Appendable accum, int depth, Document.OutputSettings out) throws IOException {
+-        if (out.prettyPrint() && ((siblingIndex() == 0 && parentNode instanceof Element && ((Element) parentNode).tag().formatAsBlock()) || (out.outline() )))
++        if (out.prettyPrint() && ((isEffectivelyFirst() && parentNode instanceof Element && ((Element) parentNode).tag().formatAsBlock()) || (out.outline() )))
+             indent(accum, depth, out);
+         accum
+                 .append("<!--")
+diff --git a/src/main/java/org/jsoup/nodes/Element.java b/src/main/java/org/jsoup/nodes/Element.java
+index 2432fef..ab1b748 100644
+--- a/src/main/java/org/jsoup/nodes/Element.java
++++ b/src/main/java/org/jsoup/nodes/Element.java
+@@ -1849,13 +1849,8 @@ public class Element extends Node {
+     private boolean isInlineable(Document.OutputSettings out) {
+         if (!tag.isInline())
+             return false;
+-
+-        final Node prev = previousSibling();
+-        boolean isFirst = siblingIndex == 0;
+-        if (siblingIndex == 1 && prev instanceof TextNode && (((TextNode) prev).isBlank()))
+-            isFirst = true;
+         return (parent() == null || parent().isBlock())
+-            && !isFirst
++            && !isEffectivelyFirst()
+             && !out.outline();
+     }
+ }
+diff --git a/src/main/java/org/jsoup/nodes/Node.java b/src/main/java/org/jsoup/nodes/Node.java
+index fc5ac3b..851bd8a 100644
+--- a/src/main/java/org/jsoup/nodes/Node.java
++++ b/src/main/java/org/jsoup/nodes/Node.java
+@@ -762,6 +762,16 @@ public abstract class Node implements Cloneable {
+         return normalName().equals(normalName);
+     }
+ 
++    /** Test if this node is the first child, or first following blank text. */
++    final boolean isEffectivelyFirst() {
++        if (siblingIndex == 0) return true;
++        if (siblingIndex == 1) {
++            final Node prev = previousSibling();
++            return prev instanceof TextNode && (((TextNode) prev).isBlank());
++        }
++        return false;
++    }
++
+     /**
+      * Gets this node's outer HTML.
+      * @return outer HTML.

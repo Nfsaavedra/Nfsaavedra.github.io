@@ -1,0 +1,19 @@
+diff --git a/src/test/java/leetcode/medium/OnlineStockSpanTest.java b/src/test/java/leetcode/medium/OnlineStockSpanTest.java
+index f362e4d..d87ed2b 100644
+--- a/src/test/java/leetcode/medium/OnlineStockSpanTest.java
++++ b/src/test/java/leetcode/medium/OnlineStockSpanTest.java
+@@ -56,4 +56,13 @@ class OnlineStockSpanTest {
+     int[] actualSpans = onlineStockSpan.calculateSpans(prices);
+     assertArrayEquals(spans, actualSpans);
+   }
++
++  @Test
++  void testCalculateSpans6() {
++    int[] prices = {10, 10, 10, 10};
++    int[] spans = {1, 1, 1, 1};
++
++    int[] actualSpans = onlineStockSpan.calculateSpans(prices);
++    assertArrayEquals(spans, actualSpans);
++  }
+ }
+\ No newline at end of file

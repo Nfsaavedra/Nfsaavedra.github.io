@@ -1,0 +1,54 @@
+diff --git a/src/test/java/com/reason/ide/structure/StructureOCLTest.java b/src/test/java/com/reason/ide/structure/StructureOCLTest.java
+index fc13ac3..2f40a00 100644
+--- a/src/test/java/com/reason/ide/structure/StructureOCLTest.java
++++ b/src/test/java/com/reason/ide/structure/StructureOCLTest.java
+@@ -153,6 +153,23 @@ public class StructureOCLTest extends ORBasePlatformTestCase {
+         assertPresentation("x", null, ORIcons.LET, fn1.getPresentation());
+     }
+ 
++    // https://github.com/giraud/reasonml-idea-plugin/issues/429
++    @Test
++    public void test_GH_429() {
++        FileBase e = configureCode("A.mli", """
++                module X : sig
++                    type t
++                end
++                """);
++
++        StructureViewModel model = new ORStructureViewModel(e);
++
++        TreeElement x = model.getRoot().getChildren()[0];
++        assertPresentation("X", "A.X", ORIcons.INNER_MODULE_INTF, x.getPresentation());
++        TreeElement xt = x.getChildren()[0];
++        assertPresentation("t", null, ORIcons.TYPE, xt.getPresentation());
++
++    }
+     private void assertPresentation(String name, String location, @Nullable Icon icon, @NotNull ItemPresentation pres) {
+         assertEquals("Incorrect name", name, pres.getPresentableText());
+         assertEquals("Incorrect location", location, pres.getLocationString());
+diff --git a/src/test/java/com/reason/lang/ocaml/ModuleParsingTest.java b/src/test/java/com/reason/lang/ocaml/ModuleParsingTest.java
+index 5968227..b86fb0b 100644
+--- a/src/test/java/com/reason/lang/ocaml/ModuleParsingTest.java
++++ b/src/test/java/com/reason/lang/ocaml/ModuleParsingTest.java
+@@ -106,12 +106,17 @@ public class ModuleParsingTest extends OclParsingTestCase {
+ 
+     @Test
+     public void test_rec_signature() {
+-        PsiFile file = parseCode("module rec A : sig type output = (Constr.constr * UState.t) option type task end = struct end");
++        RPsiInnerModule e = firstOfType(parseCode("""
++                module rec A : sig
++                  type output = (Constr.constr * UState.t) option
++                  type task
++                end = struct end
++                """), RPsiInnerModule.class);
+ 
+-        assertEquals(1, expressions(file).size());
+-        RPsiInnerModule e = first(moduleExpressions(file));
+         assertEquals("A", e.getName());
+-        assertEquals("sig type output = (Constr.constr * UState.t) option type task end", e.getModuleSignature().getText());
++        RPsiModuleSignature es = e.getModuleSignature();
++        assertNull(PsiTreeUtil.findChildOfType(es, RPsiSignature.class));
++        assertEquals("sig\n  type output = (Constr.constr * UState.t) option\n  type task\nend", es.getText());
+         assertEquals("struct end", e.getBody().getText());
+     }
+ 

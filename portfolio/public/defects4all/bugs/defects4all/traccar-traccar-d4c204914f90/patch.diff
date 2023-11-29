@@ -1,0 +1,25 @@
+diff --git a/src/main/java/org/traccar/protocol/Gt06ProtocolDecoder.java b/src/main/java/org/traccar/protocol/Gt06ProtocolDecoder.java
+index 7013533..38c2219 100644
+--- a/src/main/java/org/traccar/protocol/Gt06ProtocolDecoder.java
++++ b/src/main/java/org/traccar/protocol/Gt06ProtocolDecoder.java
+@@ -828,6 +828,11 @@ public class Gt06ProtocolDecoder extends BaseProtocolDecoder {
+                 }
+             }
+ 
++            if (type == MSG_STATUS && variant == Variant.VXT01) {
++                position.set(Position.KEY_POWER, buf.readUnsignedShort() * 0.01);
++                position.set(Position.KEY_RSSI, buf.readUnsignedByte());
++            }
++
+             if (type == MSG_GPS_LBS_1) {
+                 if (variant == Variant.GT06E_CARD) {
+                     position.set(Position.KEY_ODOMETER, buf.readUnsignedInt());
+@@ -1408,6 +1413,8 @@ public class Gt06ProtocolDecoder extends BaseProtocolDecoder {
+             variant = Variant.VXT01;
+         } else if (header == 0x7878 && type == MSG_GPS_LBS_STATUS_1 && length == 0x24) {
+             variant = Variant.VXT01;
++        } else if (header == 0x7878 && type == MSG_STATUS && length == 0x0a) {
++            variant = Variant.VXT01;
+         } else if (header == 0x7878 && type == MSG_LBS_MULTIPLE_3 && length == 0x31) {
+             variant = Variant.WANWAY_S20;
+         } else if (header == 0x7878 && type == MSG_LBS_MULTIPLE_3 && length == 0x2e) {

@@ -73,9 +73,6 @@
 										<li>
 											<label for="mixed" ng-class="{'actived': filters['mixed']}"><input type="checkbox" id="mixed" ng-model="filters['mixed']" ng-click="clickFilter('mixed')">Source and non-source code files</label>
 										</li>
-										<li>
-											<label for="non_source_only" ng-class="{'actived': filters['non_source_only']}"><input type="checkbox" id="non_source_only" ng-model="filters['non_source_only']" ng-click="clickFilter('non_source_only')">Only non-source code files</label>
-										</li>
 									</ul>
 								</li>
 								<li>
@@ -97,9 +94,6 @@
 									<a href="#" ng-click="submenuLang = !submenuLang">
 									<i class="fa fa-fw fa-search"></i>Languages <i class="fa fa-fw fa-angle-down pull-right"></i></a>
 									<ul class="collapse" uib-collapse="submenuLang">
-										<li>
-											<label for="python" ng-class="{'actived': filters['python']}"><input type="checkbox" id="python" ng-model="filters['python']" ng-click="clickFilter('python')">Python</label>
-										</li>
 										<li>
 											<label for="java" ng-class="{'actived': filters['java']}"><input type="checkbox" id="java" ng-model="filters['java']" ng-click="clickFilter('java')">Java</label>
 										</li>
@@ -154,6 +148,13 @@
 										</a>
 									</th>
 									<th>	
+										<a href="#" ng-click="sort('metrics.hunks')">
+											# Hunks
+											<span ng-show="sortType == 'metrics.hunks' && sortReverse" class="fa fa fa-sort-amount-desc"></span>
+											<span ng-show="sortType == 'metrics.hunks' && !sortReverse" class="fa fa fa-sort-amount-asc"></span>
+										</a>
+									</th>
+									<th>	
 										<a href="#" ng-click="sort('metrics.patchSize')">
 											# Lines
 											<span ng-show="sortType == 'metrics.patchSize' && sortReverse" class="fa fa fa-sort-amount-desc"></span>
@@ -183,6 +184,7 @@
 									<td>{{ bug.files.added.length }}</td>
 									<td>{{ bug.files.deleted.length }}</td>
 									<td>{{ bug.files.modified.length }}</td>
+									<td>{{ bug.metrics.hunks }}</td>
 									<td>{{ bug.metrics.patchSize }}</td>
 									<td>{{ bug.metrics.addedLines }}</td>
 									<td>{{ bug.metrics.removedLines}}</td>
@@ -211,7 +213,7 @@
 
 			<h3>Category</h3>
 			Strategy: <span class="category">{{$ctrl.bug.strategy || "Unknown"}}</span>
-			Files Type: <span class="category">{{$ctrl.bug.files_type || "Unknown"}}</span>
+			Change Type: <span class="category">{{$ctrl.bug.change_type || "Unknown"}}</span>
 
 			<h3>Human Patch</h3>
 			<div diff="$ctrl.bug"></div>
@@ -258,10 +260,10 @@
 		<div class="modal-body" id="modal-body">
 			<section>
 				<canvas class="chart chart-bar"
-					chart-options="$ctrl.options" chart-data="$ctrl.failureCategoryData" chart-labels="$ctrl.failureTypeLabels" chart-series="$ctrl.series" height="100">
+					chart-options="$ctrl.optionsHunks" chart-data="$ctrl.hunks" chart-labels="$ctrl.hunksLabels" height="100">
 				</canvas>
 				<canvas class="chart chart-bar"
-					chart-options="$ctrl.options" chart-data="$ctrl.fixTimeDate" chart-labels="$ctrl.fixTimeLabels" chart-series="$ctrl.series" height="100">
+					chart-options="$ctrl.options" chart-data="$ctrl.fixTimeDate" chart-labels="$ctrl.fixTimeLabels" height="100">
 				</canvas>
 				<table class="table table-striped">
 					<thead>

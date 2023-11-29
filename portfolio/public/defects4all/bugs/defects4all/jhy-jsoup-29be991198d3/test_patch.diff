@@ -1,0 +1,72 @@
+diff --git a/src/test/java/org/jsoup/nodes/ElementTest.java b/src/test/java/org/jsoup/nodes/ElementTest.java
+index 0f51dc3..a0551f0 100644
+--- a/src/test/java/org/jsoup/nodes/ElementTest.java
++++ b/src/test/java/org/jsoup/nodes/ElementTest.java
+@@ -2213,6 +2213,7 @@ public class ElementTest {
+         // testcase for https://github.com/jhy/jsoup/issues/1437
+         String html = "<p>Hello<br>World</p>";
+         Document doc = Jsoup.parse(html);
++        doc.outputSettings().prettyPrint(false); // otherwise html serializes as Hello<br>\n World.
+         Element p = doc.select("p").first();
+         assertNotNull(p);
+         assertEquals(html, p.outerHtml());
+@@ -2220,6 +2221,13 @@ public class ElementTest {
+         assertEquals("Hello\nWorld", p.wholeText());
+     }
+ 
++    @Test void wrapTextAfterBr() {
++        // https://github.com/jhy/jsoup/issues/1858
++        String html = "<p>Hello<br>there<br>now.</p>";
++        Document doc = Jsoup.parse(html);
++        assertEquals("<p>Hello<br>\n there<br>\n now.</p>", doc.body().html());
++    }
++
+     @Test void preformatFlowsToChildTextNodes() {
+         // https://github.com/jhy/jsoup/issues/1776
+         String html = "<div><pre>One\n<span>\nTwo</span>\n <span>  \nThree</span>\n <span>Four <span>Five</span>\n  Six\n</pre>";
+diff --git a/src/test/java/org/jsoup/parser/HtmlParserTest.java b/src/test/java/org/jsoup/parser/HtmlParserTest.java
+index 5601d3a..eba7744 100644
+--- a/src/test/java/org/jsoup/parser/HtmlParserTest.java
++++ b/src/test/java/org/jsoup/parser/HtmlParserTest.java
+@@ -1192,7 +1192,7 @@ public class HtmlParserTest {
+ 
+         assertTrue(Jsoup.isValid(html, Safelist.basic()));
+         String clean = Jsoup.clean(html, Safelist.basic());
+-        assertEquals("<p>test<br>test<br></p>", clean);
++        assertEquals("<p>test<br>\n test<br></p>", clean);
+     }
+ 
+     @Test public void selfClosingOnNonvoidIsError() {
+diff --git a/src/test/java/org/jsoup/parser/XmlTreeBuilderTest.java b/src/test/java/org/jsoup/parser/XmlTreeBuilderTest.java
+index 98196a0..227dd09 100644
+--- a/src/test/java/org/jsoup/parser/XmlTreeBuilderTest.java
++++ b/src/test/java/org/jsoup/parser/XmlTreeBuilderTest.java
+@@ -94,7 +94,7 @@ public class XmlTreeBuilderTest {
+     public void testDoesNotForceSelfClosingKnownTags() {
+         // html will force "<br>one</br>" to logically "<br />One<br />". XML should be stay "<br>one</br> -- don't recognise tag.
+         Document htmlDoc = Jsoup.parse("<br>one</br>");
+-        assertEquals("<br>one<br>", htmlDoc.body().html());
++        assertEquals("<br>\none<br>", htmlDoc.body().html());
+ 
+         Document xmlDoc = Jsoup.parse("<br>one</br>", "", Parser.xmlParser());
+         assertEquals("<br>one</br>", xmlDoc.html());
+diff --git a/src/test/java/org/jsoup/select/SelectorTest.java b/src/test/java/org/jsoup/select/SelectorTest.java
+index b3780ac..fd74487 100644
+--- a/src/test/java/org/jsoup/select/SelectorTest.java
++++ b/src/test/java/org/jsoup/select/SelectorTest.java
+@@ -2,6 +2,7 @@ package org.jsoup.select;
+ 
+ import org.jsoup.Jsoup;
+ import org.jsoup.MultiLocaleExtension.MultiLocaleTest;
++import org.jsoup.TextUtil;
+ import org.jsoup.nodes.Document;
+ import org.jsoup.nodes.Element;
+ import org.jsoup.parser.Parser;
+@@ -907,6 +908,7 @@ public class SelectorTest {
+     @Test public void matchText() {
+         String html = "<p>One<br>Two</p>";
+         Document doc = Jsoup.parse(html);
++        doc.outputSettings().prettyPrint(false);
+         String origHtml = doc.html();
+ 
+         Elements one = doc.select("p:matchText:first-child");

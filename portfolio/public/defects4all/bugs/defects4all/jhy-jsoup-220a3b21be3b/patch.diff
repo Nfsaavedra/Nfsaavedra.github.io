@@ -1,0 +1,60 @@
+diff --git a/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java b/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java
+index 7a9c0be..715a995 100644
+--- a/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java
++++ b/src/main/java/org/jsoup/parser/HtmlTreeBuilder.java
+@@ -838,6 +838,7 @@ public class HtmlTreeBuilder extends TreeBuilder {
+         return onStack(formattingElements, el);
+     }
+ 
++    @Nullable
+     Element getActiveFormattingElement(String nodeName) {
+         for (int pos = formattingElements.size() -1; pos >= 0; pos--) {
+             Element next = formattingElements.get(pos);
+diff --git a/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java b/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java
+index 354b217..1ab9f7a 100644
+--- a/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java
++++ b/src/main/java/org/jsoup/parser/HtmlTreeBuilderState.java
+@@ -611,7 +611,7 @@ enum HtmlTreeBuilderState {
+                     }
+                     tb.insert(startTag);
+                     break;
+-                // static final String[] InBodyStartOptions = new String[]{"optgroup", "option"};
++
+                 case "optgroup":
+                 case "option":
+                     if (tb.currentElementIs("option"))
+@@ -619,19 +619,27 @@ enum HtmlTreeBuilderState {
+                     tb.reconstructFormattingElements();
+                     tb.insert(startTag);
+                     break;
+-                // static final String[] InBodyStartRuby = new String[]{"rp", "rt"};
++
++                case "rb":
++                case "rtc":
++                    if (tb.onStack("ruby")) {
++                        tb.generateImpliedEndTags();
++                        if (!tb.currentElementIs("ruby"))
++                            tb.error(this);
++                    }
++                    tb.insert(startTag);
++                    break;
++
+                 case "rp":
+                 case "rt":
+                     if (tb.inScope("ruby")) {
+-                        tb.generateImpliedEndTags();
+-                        if (!tb.currentElementIs("ruby")) {
++                        tb.generateImpliedEndTags("rtc");
++                        if (!tb.currentElementIs("rtc") && !tb.currentElementIs("ruby"))
+                             tb.error(this);
+-                            tb.popStackToBefore("ruby"); // i.e. close up to but not include name
+-                        }
+-                        tb.insert(startTag);
+                     }
+-                    // todo - is this right? drops rp, rt if ruby not in scope?
++                    tb.insert(startTag);
+                     break;
++
+                 // InBodyStartEmptyFormatters:
+                 case "area":
+                 case "br":

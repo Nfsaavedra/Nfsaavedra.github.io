@@ -1,0 +1,25 @@
+diff --git a/src/main/java/org/traccar/protocol/Minifinder2ProtocolDecoder.java b/src/main/java/org/traccar/protocol/Minifinder2ProtocolDecoder.java
+index 37e86e2..f660f2e 100644
+--- a/src/main/java/org/traccar/protocol/Minifinder2ProtocolDecoder.java
++++ b/src/main/java/org/traccar/protocol/Minifinder2ProtocolDecoder.java
+@@ -48,6 +48,8 @@ public class Minifinder2ProtocolDecoder extends BaseProtocolDecoder {
+     public static final int MSG_DATA = 0x01;
+     public static final int MSG_CONFIGURATION = 0x02;
+     public static final int MSG_SERVICES = 0x03;
++    public static final int MSG_SYSTEM_CONTROL = 0x04;
++    public static final int MSG_FIRMWARE = 0x7E;
+     public static final int MSG_RESPONSE = 0x7F;
+ 
+     private String decodeAlarm(long code) {
+diff --git a/src/main/java/org/traccar/protocol/Minifinder2ProtocolEncoder.java b/src/main/java/org/traccar/protocol/Minifinder2ProtocolEncoder.java
+index ce7de6d..fab3c3a 100644
+--- a/src/main/java/org/traccar/protocol/Minifinder2ProtocolEncoder.java
++++ b/src/main/java/org/traccar/protocol/Minifinder2ProtocolEncoder.java
+@@ -53,6 +53,7 @@ public class Minifinder2ProtocolEncoder extends BaseProtocolEncoder {
+             ByteBuf content = Unpooled.buffer();
+             if (command.getType().equals(Command.TYPE_FIRMWARE_UPDATE)) {
+                 String url = command.getString(Command.KEY_DATA);
++                content.writeByte(Minifinder2ProtocolDecoder.MSG_SYSTEM_CONTROL);
+                 content.writeByte(1 + url.length());
+                 content.writeByte(0x30); // type
+                 content.writeCharSequence(url, StandardCharsets.US_ASCII);

@@ -1,0 +1,22 @@
+diff --git a/src/main/java/org/traccar/protocol/Gt06ProtocolDecoder.java b/src/main/java/org/traccar/protocol/Gt06ProtocolDecoder.java
+index e9bdaf1..f676e73 100644
+--- a/src/main/java/org/traccar/protocol/Gt06ProtocolDecoder.java
++++ b/src/main/java/org/traccar/protocol/Gt06ProtocolDecoder.java
+@@ -358,7 +358,7 @@ public class Gt06ProtocolDecoder extends BaseProtocolDecoder {
+         long cid;
+         if (type == MSG_LBS_ALARM || type == MSG_GPS_LBS_7) {
+             cid = buf.readLong();
+-        } else if (type == MSG_GPS_LBS_6) {
++        } else if (type == MSG_GPS_LBS_6 || variant == Variant.SEEWORLD) {
+             cid = buf.readUnsignedInt();
+         } else {
+             cid = buf.readUnsignedMedium();
+@@ -1485,6 +1485,8 @@ public class Gt06ProtocolDecoder extends BaseProtocolDecoder {
+             variant = Variant.SL4X;
+         } else if (header == 0x7878 && type == MSG_GPS_LBS_2 && length == 0x2f) {
+             variant = Variant.SEEWORLD;
++        } else if (header == 0x7878 && type == MSG_GPS_LBS_STATUS_1 && length == 0x26) {
++            variant = Variant.SEEWORLD;
+         } else {
+             variant = Variant.STANDARD;
+         }

@@ -1,0 +1,25 @@
+diff --git a/src/main/java/com/whatsapp/api/domain/templates/QuickReplyButton.java b/src/main/java/com/whatsapp/api/domain/templates/QuickReplyButton.java
+index f7a21a9..4ad1003 100644
+--- a/src/main/java/com/whatsapp/api/domain/templates/QuickReplyButton.java
++++ b/src/main/java/com/whatsapp/api/domain/templates/QuickReplyButton.java
+@@ -12,7 +12,7 @@ public class QuickReplyButton extends Button {
+      * Instantiates a new Quick reply button.
+      */
+     protected QuickReplyButton() {
+-
++        super(ButtonType.QUICK_REPLY);
+     }
+ 
+     /**
+diff --git a/src/main/java/com/whatsapp/api/domain/templates/UrlButton.java b/src/main/java/com/whatsapp/api/domain/templates/UrlButton.java
+index c8fa0ac..402e75a 100644
+--- a/src/main/java/com/whatsapp/api/domain/templates/UrlButton.java
++++ b/src/main/java/com/whatsapp/api/domain/templates/UrlButton.java
+@@ -21,6 +21,7 @@ public class UrlButton extends Button {
+      * Instantiates a new Url button.
+      */
+     protected UrlButton() {
++        super(ButtonType.URL);
+     }
+ 
+     /**

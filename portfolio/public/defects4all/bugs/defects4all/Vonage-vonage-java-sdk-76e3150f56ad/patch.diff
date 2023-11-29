@@ -1,0 +1,273 @@
+diff --git a/src/main/java/com/vonage/client/meetings/CreateRoomEndpoint.java b/src/main/java/com/vonage/client/meetings/CreateRoomEndpoint.java
+index 1e205a4..91bfa9d 100644
+--- a/src/main/java/com/vonage/client/meetings/CreateRoomEndpoint.java
++++ b/src/main/java/com/vonage/client/meetings/CreateRoomEndpoint.java
+@@ -26,7 +26,7 @@ import java.io.IOException;
+ 
+ class CreateRoomEndpoint extends AbstractMethod<MeetingRoom, MeetingRoom> {
+ 	private static final Class<?>[] ALLOWED_AUTH_METHODS = {JWTAuthMethod.class};
+-	private static final String PATH = "/meetings/rooms";
++	private static final String PATH = "/v1/meetings/rooms";
+ 	private MeetingRoom cachedRoom;
+ 
+ 	CreateRoomEndpoint(HttpWrapper httpWrapper) {
+diff --git a/src/main/java/com/vonage/client/meetings/CreateThemeEndpoint.java b/src/main/java/com/vonage/client/meetings/CreateThemeEndpoint.java
+index 7319f4e..cd0e387 100644
+--- a/src/main/java/com/vonage/client/meetings/CreateThemeEndpoint.java
++++ b/src/main/java/com/vonage/client/meetings/CreateThemeEndpoint.java
+@@ -26,7 +26,7 @@ import java.io.IOException;
+ 
+ class CreateThemeEndpoint extends AbstractMethod<Theme, Theme> {
+ 	private static final Class<?>[] ALLOWED_AUTH_METHODS = {JWTAuthMethod.class};
+-	private static final String PATH = "/meetings/themes";
++	private static final String PATH = "/v1/meetings/themes";
+ 	private Theme cachedTheme;
+ 
+ 	CreateThemeEndpoint(HttpWrapper httpWrapper) {
+diff --git a/src/main/java/com/vonage/client/meetings/DeleteRecordingEndpoint.java b/src/main/java/com/vonage/client/meetings/DeleteRecordingEndpoint.java
+index 392e74c..873b674 100644
+--- a/src/main/java/com/vonage/client/meetings/DeleteRecordingEndpoint.java
++++ b/src/main/java/com/vonage/client/meetings/DeleteRecordingEndpoint.java
+@@ -25,7 +25,7 @@ import java.util.UUID;
+ 
+ class DeleteRecordingEndpoint extends AbstractMethod<UUID, Void> {
+ 	private static final Class<?>[] ALLOWED_AUTH_METHODS = {JWTAuthMethod.class};
+-	private static final String PATH = "/meetings/recordings/%s";
++	private static final String PATH = "/v1/meetings/recordings/%s";
+ 
+ 	DeleteRecordingEndpoint(HttpWrapper httpWrapper) {
+ 		super(httpWrapper);
+diff --git a/src/main/java/com/vonage/client/meetings/DeleteThemeEndpoint.java b/src/main/java/com/vonage/client/meetings/DeleteThemeEndpoint.java
+index d2ddec5..5329f15 100644
+--- a/src/main/java/com/vonage/client/meetings/DeleteThemeEndpoint.java
++++ b/src/main/java/com/vonage/client/meetings/DeleteThemeEndpoint.java
+@@ -24,7 +24,7 @@ import java.io.IOException;
+ 
+ class DeleteThemeEndpoint extends AbstractMethod<DeleteThemeRequest, Void> {
+ 	private static final Class<?>[] ALLOWED_AUTH_METHODS = {JWTAuthMethod.class};
+-	private static final String PATH = "/meetings/themes/%s";
++	private static final String PATH = "/v1/meetings/themes/%s";
+ 
+ 	DeleteThemeEndpoint(HttpWrapper httpWrapper) {
+ 		super(httpWrapper);
+diff --git a/src/main/java/com/vonage/client/meetings/FinalizeLogosEndpoint.java b/src/main/java/com/vonage/client/meetings/FinalizeLogosEndpoint.java
+index 2fc529e..47b5947 100644
+--- a/src/main/java/com/vonage/client/meetings/FinalizeLogosEndpoint.java
++++ b/src/main/java/com/vonage/client/meetings/FinalizeLogosEndpoint.java
+@@ -26,7 +26,7 @@ import java.io.IOException;
+ 
+ class FinalizeLogosEndpoint extends AbstractMethod<FinalizeLogosRequest, Void> {
+ 	private static final Class<?>[] ALLOWED_AUTH_METHODS = {JWTAuthMethod.class};
+-	private static final String PATH = "/meetings/themes/%s/finalizeLogos";
++	private static final String PATH = "/v1/meetings/themes/%s/finalizeLogos";
+ 
+ 	FinalizeLogosEndpoint(HttpWrapper httpWrapper) {
+ 		super(httpWrapper);
+diff --git a/src/main/java/com/vonage/client/meetings/GetLogoUploadUrlsEndpoint.java b/src/main/java/com/vonage/client/meetings/GetLogoUploadUrlsEndpoint.java
+index b04a810..360d769 100644
+--- a/src/main/java/com/vonage/client/meetings/GetLogoUploadUrlsEndpoint.java
++++ b/src/main/java/com/vonage/client/meetings/GetLogoUploadUrlsEndpoint.java
+@@ -29,7 +29,7 @@ import java.util.List;
+ 
+ class GetLogoUploadUrlsEndpoint extends AbstractMethod<Void, List<LogoUploadsUrlResponse>> {
+ 	private static final Class<?>[] ALLOWED_AUTH_METHODS = {JWTAuthMethod.class};
+-	private static final String PATH = "/meetings/themes/logos-upload-urls";
++	private static final String PATH = "/v1/meetings/themes/logos-upload-urls";
+ 
+ 	GetLogoUploadUrlsEndpoint(HttpWrapper httpWrapper) {
+ 		super(httpWrapper);
+diff --git a/src/main/java/com/vonage/client/meetings/GetRecordingEndpoint.java b/src/main/java/com/vonage/client/meetings/GetRecordingEndpoint.java
+index 49e7531..149c344 100644
+--- a/src/main/java/com/vonage/client/meetings/GetRecordingEndpoint.java
++++ b/src/main/java/com/vonage/client/meetings/GetRecordingEndpoint.java
+@@ -25,7 +25,7 @@ import java.util.UUID;
+ 
+ class GetRecordingEndpoint extends AbstractMethod<UUID, Recording> {
+ 	private static final Class<?>[] ALLOWED_AUTH_METHODS = {JWTAuthMethod.class};
+-	private static final String PATH = "/meetings/recordings/%s";
++	private static final String PATH = "/v1/meetings/recordings/%s";
+ 
+ 	GetRecordingEndpoint(HttpWrapper httpWrapper) {
+ 		super(httpWrapper);
+diff --git a/src/main/java/com/vonage/client/meetings/GetRoomEndpoint.java b/src/main/java/com/vonage/client/meetings/GetRoomEndpoint.java
+index 79cdaee..7839a96 100644
+--- a/src/main/java/com/vonage/client/meetings/GetRoomEndpoint.java
++++ b/src/main/java/com/vonage/client/meetings/GetRoomEndpoint.java
+@@ -25,7 +25,7 @@ import java.util.UUID;
+ 
+ class GetRoomEndpoint extends AbstractMethod<UUID, MeetingRoom> {
+ 	private static final Class<?>[] ALLOWED_AUTH_METHODS = {JWTAuthMethod.class};
+-	private static final String PATH = "/meetings/rooms/%s";
++	private static final String PATH = "/v1/meetings/rooms/%s";
+ 
+ 	GetRoomEndpoint(HttpWrapper httpWrapper) {
+ 		super(httpWrapper);
+diff --git a/src/main/java/com/vonage/client/meetings/GetThemeEndpoint.java b/src/main/java/com/vonage/client/meetings/GetThemeEndpoint.java
+index 8fca419..7a6e06d 100644
+--- a/src/main/java/com/vonage/client/meetings/GetThemeEndpoint.java
++++ b/src/main/java/com/vonage/client/meetings/GetThemeEndpoint.java
+@@ -25,7 +25,7 @@ import java.util.UUID;
+ 
+ class GetThemeEndpoint extends AbstractMethod<UUID, Theme> {
+ 	private static final Class<?>[] ALLOWED_AUTH_METHODS = {JWTAuthMethod.class};
+-	private static final String PATH = "/meetings/themes/%s";
++	private static final String PATH = "/v1/meetings/themes/%s";
+ 
+ 	GetThemeEndpoint(HttpWrapper httpWrapper) {
+ 		super(httpWrapper);
+diff --git a/src/main/java/com/vonage/client/meetings/ListDialNumbersEndpoint.java b/src/main/java/com/vonage/client/meetings/ListDialNumbersEndpoint.java
+index d1e907a..99d27f9 100644
+--- a/src/main/java/com/vonage/client/meetings/ListDialNumbersEndpoint.java
++++ b/src/main/java/com/vonage/client/meetings/ListDialNumbersEndpoint.java
+@@ -27,7 +27,7 @@ import java.util.List;
+ 
+ class ListDialNumbersEndpoint extends AbstractMethod<Void, List<DialInNumber>> {
+ 	private static final Class<?>[] ALLOWED_AUTH_METHODS = {JWTAuthMethod.class};
+-	private static final String PATH = "/meetings/dial-in-numbers";
++	private static final String PATH = "/v1/meetings/dial-in-numbers";
+ 
+ 	ListDialNumbersEndpoint(HttpWrapper httpWrapper) {
+ 		super(httpWrapper);
+diff --git a/src/main/java/com/vonage/client/meetings/ListRecordingsEndpoint.java b/src/main/java/com/vonage/client/meetings/ListRecordingsEndpoint.java
+index 14a1bcd..07ecbcd 100644
+--- a/src/main/java/com/vonage/client/meetings/ListRecordingsEndpoint.java
++++ b/src/main/java/com/vonage/client/meetings/ListRecordingsEndpoint.java
+@@ -24,7 +24,7 @@ import java.io.IOException;
+ 
+ class ListRecordingsEndpoint extends AbstractMethod<String, ListRecordingsResponse> {
+ 	private static final Class<?>[] ALLOWED_AUTH_METHODS = {JWTAuthMethod.class};
+-	private static final String PATH = "/meetings/sessions/%s/recordings";
++	private static final String PATH = "/v1/meetings/sessions/%s/recordings";
+ 
+ 	ListRecordingsEndpoint(HttpWrapper httpWrapper) {
+ 		super(httpWrapper);
+diff --git a/src/main/java/com/vonage/client/meetings/ListRoomsEndpoint.java b/src/main/java/com/vonage/client/meetings/ListRoomsEndpoint.java
+index 59e71d1..2b99d32 100644
+--- a/src/main/java/com/vonage/client/meetings/ListRoomsEndpoint.java
++++ b/src/main/java/com/vonage/client/meetings/ListRoomsEndpoint.java
+@@ -24,7 +24,7 @@ import java.io.IOException;
+ 
+ class ListRoomsEndpoint extends AbstractMethod<ListRoomsRequest, ListRoomsResponse> {
+ 	private static final Class<?>[] ALLOWED_AUTH_METHODS = {JWTAuthMethod.class};
+-	private static final String PATH = "/meetings/rooms";
++	private static final String PATH = "/v1/meetings/rooms";
+ 
+ 	ListRoomsEndpoint(HttpWrapper httpWrapper) {
+ 		super(httpWrapper);
+diff --git a/src/main/java/com/vonage/client/meetings/ListThemesEndpoint.java b/src/main/java/com/vonage/client/meetings/ListThemesEndpoint.java
+index 7100f98..637001e 100644
+--- a/src/main/java/com/vonage/client/meetings/ListThemesEndpoint.java
++++ b/src/main/java/com/vonage/client/meetings/ListThemesEndpoint.java
+@@ -28,7 +28,7 @@ import java.util.List;
+ 
+ class ListThemesEndpoint extends AbstractMethod<Void, List<Theme>> {
+ 	private static final Class<?>[] ALLOWED_AUTH_METHODS = {JWTAuthMethod.class};
+-	private static final String PATH = "/meetings/themes";
++	private static final String PATH = "/v1/meetings/themes";
+ 
+ 	ListThemesEndpoint(HttpWrapper httpWrapper) {
+ 		super(httpWrapper);
+diff --git a/src/main/java/com/vonage/client/meetings/MeetingsClient.java b/src/main/java/com/vonage/client/meetings/MeetingsClient.java
+index 1495618..372594d 100644
+--- a/src/main/java/com/vonage/client/meetings/MeetingsClient.java
++++ b/src/main/java/com/vonage/client/meetings/MeetingsClient.java
+@@ -32,23 +32,21 @@ import java.util.*;
+ 
+ public class MeetingsClient {
+ 	HttpClient httpClient;
+-	final ListRoomsEndpoint listRooms;
+-	final GetRoomEndpoint getRoom;
+-	final CreateRoomEndpoint createRoom;
+-	final UpdateRoomEndpoint updateRoom;
+-	final SearchThemeRoomsEndpoint searchThemeRooms;
+-	final ListThemesEndpoint listThemes;
+-	final GetThemeEndpoint getTheme;
+-	final CreateThemeEndpoint createTheme;
+-	final UpdateThemeEndpoint updateTheme;
+-	final DeleteThemeEndpoint deleteTheme;
+-	final ListRecordingsEndpoint listRecordings;
+-	final GetRecordingEndpoint getRecording;
+-	final DeleteRecordingEndpoint deleteRecording;
+-	final ListDialNumbersEndpoint listDialNumbers;
+-	final UpdateApplicationEndpoint updateApplication;
+-	final FinalizeLogosEndpoint finalizeLogos;
+-	final GetLogoUploadUrlsEndpoint getLogoUploadUrls;
++	final RestEndpoint<ListRoomsRequest, ListRoomsResponse> listRooms, searchThemeRooms;
++	final RestEndpoint<UUID, MeetingRoom> getRoom;
++	final RestEndpoint<MeetingRoom, MeetingRoom> createRoom;
++	final RestEndpoint<UpdateRoomRequest, MeetingRoom> updateRoom;
++	final RestEndpoint<Void, List<Theme>> listThemes;
++	final RestEndpoint<UUID, Theme> getTheme;
++	final RestEndpoint<Theme, Theme> createTheme, updateTheme;
++	final RestEndpoint<DeleteThemeRequest, Void> deleteTheme;
++	final RestEndpoint<String, ListRecordingsResponse> listRecordings;
++	final RestEndpoint<UUID, Recording> getRecording;
++	final RestEndpoint<UUID, Void> deleteRecording;
++	final RestEndpoint<Void, List<DialInNumber>> listDialNumbers;
++	final RestEndpoint<UpdateApplicationRequest, Application> updateApplication;
++	final RestEndpoint<FinalizeLogosRequest, Void> finalizeLogos;
++	final RestEndpoint<Void, List<LogoUploadsUrlResponse>> getLogoUploadUrls;
+ 
+ 	/**
+ 	 * Constructor.
+@@ -105,7 +103,7 @@ public class MeetingsClient {
+ 	}
+ 
+ 	private List<MeetingRoom> getAllRoomsFromResponseRecursively(
+-			AbstractMethod<ListRoomsRequest, ListRoomsResponse> endpoint, ListRoomsRequest initialRequest) {
++			RestEndpoint<ListRoomsRequest, ListRoomsResponse> endpoint, ListRoomsRequest initialRequest) {
+ 
+ 		final int initialPageSize = initialRequest.pageSize != null ? initialRequest.pageSize : 1000;
+ 		ListRoomsRequest request = new ListRoomsRequest(
+diff --git a/src/main/java/com/vonage/client/meetings/SearchThemeRoomsEndpoint.java b/src/main/java/com/vonage/client/meetings/SearchThemeRoomsEndpoint.java
+index bd729b3..d60b3fe 100644
+--- a/src/main/java/com/vonage/client/meetings/SearchThemeRoomsEndpoint.java
++++ b/src/main/java/com/vonage/client/meetings/SearchThemeRoomsEndpoint.java
+@@ -24,7 +24,7 @@ import java.io.IOException;
+ 
+ class SearchThemeRoomsEndpoint extends AbstractMethod<ListRoomsRequest, ListRoomsResponse> {
+ 	private static final Class<?>[] ALLOWED_AUTH_METHODS = {JWTAuthMethod.class};
+-	private static final String PATH = "/meetings/themes/%s/rooms";
++	private static final String PATH = "/v1/meetings/themes/%s/rooms";
+ 
+ 	SearchThemeRoomsEndpoint(HttpWrapper httpWrapper) {
+ 		super(httpWrapper);
+diff --git a/src/main/java/com/vonage/client/meetings/UpdateApplicationEndpoint.java b/src/main/java/com/vonage/client/meetings/UpdateApplicationEndpoint.java
+index 72bc79c..f5f2146 100644
+--- a/src/main/java/com/vonage/client/meetings/UpdateApplicationEndpoint.java
++++ b/src/main/java/com/vonage/client/meetings/UpdateApplicationEndpoint.java
+@@ -26,7 +26,7 @@ import java.io.IOException;
+ 
+ class UpdateApplicationEndpoint extends AbstractMethod<UpdateApplicationRequest, Application> {
+ 	private static final Class<?>[] ALLOWED_AUTH_METHODS = {JWTAuthMethod.class};
+-	private static final String PATH = "/meetings/applications";
++	private static final String PATH = "/v1/meetings/applications";
+ 
+ 	UpdateApplicationEndpoint(HttpWrapper httpWrapper) {
+ 		super(httpWrapper);
+diff --git a/src/main/java/com/vonage/client/meetings/UpdateRoomEndpoint.java b/src/main/java/com/vonage/client/meetings/UpdateRoomEndpoint.java
+index f64fb12..35883f1 100644
+--- a/src/main/java/com/vonage/client/meetings/UpdateRoomEndpoint.java
++++ b/src/main/java/com/vonage/client/meetings/UpdateRoomEndpoint.java
+@@ -26,7 +26,7 @@ import java.io.IOException;
+ 
+ class UpdateRoomEndpoint extends AbstractMethod<UpdateRoomRequest, MeetingRoom> {
+ 	private static final Class<?>[] ALLOWED_AUTH_METHODS = {JWTAuthMethod.class};
+-	private static final String PATH = "/meetings/rooms/%s";
++	private static final String PATH = "/v1/meetings/rooms/%s";
+ 
+ 	UpdateRoomEndpoint(HttpWrapper httpWrapper) {
+ 		super(httpWrapper);
+diff --git a/src/main/java/com/vonage/client/meetings/UpdateThemeEndpoint.java b/src/main/java/com/vonage/client/meetings/UpdateThemeEndpoint.java
+index 207e37a..05f3085 100644
+--- a/src/main/java/com/vonage/client/meetings/UpdateThemeEndpoint.java
++++ b/src/main/java/com/vonage/client/meetings/UpdateThemeEndpoint.java
+@@ -26,7 +26,7 @@ import java.io.IOException;
+ 
+ class UpdateThemeEndpoint extends AbstractMethod<Theme, Theme> {
+ 	private static final Class<?>[] ALLOWED_AUTH_METHODS = {JWTAuthMethod.class};
+-	private static final String PATH = "/meetings/themes/%s";
++	private static final String PATH = "/v1/meetings/themes/%s";
+ 	private Theme cachedTheme;
+ 
+ 	UpdateThemeEndpoint(HttpWrapper httpWrapper) {

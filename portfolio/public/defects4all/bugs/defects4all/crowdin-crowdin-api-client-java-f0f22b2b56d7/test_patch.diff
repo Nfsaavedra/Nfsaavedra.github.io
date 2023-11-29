@@ -1,0 +1,238 @@
+diff --git a/src/test/java/com/crowdin/client/bundles/BundlesApiTest.java b/src/test/java/com/crowdin/client/bundles/BundlesApiTest.java
+index f6db9b6..21ff98f 100644
+--- a/src/test/java/com/crowdin/client/bundles/BundlesApiTest.java
++++ b/src/test/java/com/crowdin/client/bundles/BundlesApiTest.java
+@@ -19,6 +19,9 @@ import org.junit.jupiter.api.Test;
+ import java.util.Arrays;
+ import java.util.Collections;
+ import java.util.List;
++import java.util.TimeZone;
++import java.util.Date;
++import java.util.Calendar;
+ 
+ import static org.junit.jupiter.api.Assertions.*;
+ 
+@@ -35,6 +38,7 @@ public class BundlesApiTest extends TestClient {
+     private final String pattern = "strings-%two_letter_code%.resx";
+     private final String exportId = "50fb3506-4127-4ba8-8296-f97dc7e3e0c3";
+     private final String status = "finished";
++    private final TimeZone tz = TimeZone.getTimeZone("GMT");
+ 
+     @Override
+     public List<RequestMock> getMocks() {
+@@ -117,7 +121,9 @@ public class BundlesApiTest extends TestClient {
+ 
+     @Test
+     public void downloadBundleTest() {
++        TimeZone.setDefault(tz);
+         ResponseObject<DownloadLink> response = this.getBundlesApi().downloadBundle(projectId, bundleId, exportId);
++        assertEquals(new Date(119, Calendar.SEPTEMBER, 20,10,31,21), response.getData().getExpireIn());
+         assertEquals("test.com", response.getData().getUrl());
+     }
+ 
+diff --git a/src/test/java/com/crowdin/client/glossaries/GlossariesApiTest.java b/src/test/java/com/crowdin/client/glossaries/GlossariesApiTest.java
+index 68cb9da..320656c 100644
+--- a/src/test/java/com/crowdin/client/glossaries/GlossariesApiTest.java
++++ b/src/test/java/com/crowdin/client/glossaries/GlossariesApiTest.java
+@@ -14,6 +14,9 @@ import org.junit.jupiter.api.Test;
+ import java.util.*;
+ import java.util.stream.Collectors;
+ import java.util.stream.Stream;
++import java.util.TimeZone;
++import java.util.Date;
++import java.util.Calendar;
+ 
+ import static java.util.Collections.singletonList;
+ import static org.junit.jupiter.api.Assertions.assertEquals;
+@@ -33,6 +36,7 @@ public class GlossariesApiTest extends TestClient {
+     private final String importId = "c050fba2-200e-4ce1-8de4-f7ba8eb58732";
+     private final String link = "test.com";
+     private final String languageId = "ro";
++    private final TimeZone tz = TimeZone.getTimeZone("GMT");
+ 
+     @Override
+     public List<RequestMock> getMocks() {
+@@ -85,9 +89,11 @@ public class GlossariesApiTest extends TestClient {
+ 
+     @Test
+     public void getConceptTest() {
++        TimeZone.setDefault(tz);
+         ResponseObject<Concept> conceptResponseObject = this.getGlossariesApi().getConcept(glossaryId, conceptId);
+         assertEquals(conceptResponseObject.getData().getId(), glossaryId);
+         assertEquals(conceptResponseObject.getData().getSubject(), subject);
++        assertEquals(new Date(119,Calendar.SEPTEMBER,23,7,19,47), conceptResponseObject.getData().getCreatedAt());
+     }
+ 
+     @Test
+@@ -199,9 +205,11 @@ public class GlossariesApiTest extends TestClient {
+ 
+     @Test
+     public void listTermsTest() {
++        TimeZone.setDefault(tz);
+         ResponseList<Term> termResponseList = this.getGlossariesApi().listTerms(glossaryId, null, null, null, null, null, null);
+         assertEquals(termResponseList.getData().size(), 1);
+         assertEquals(termResponseList.getData().get(0).getData().getId(), termId);
++        assertEquals(new Date(119,Calendar.SEPTEMBER,23,7,19,47), termResponseList.getData().get(0).getData().getCreatedAt());
+     }
+ 
+     @Test
+diff --git a/src/test/java/com/crowdin/client/reports/ReportsApiTest.java b/src/test/java/com/crowdin/client/reports/ReportsApiTest.java
+index 4f95f1c..8e87ea4 100644
+--- a/src/test/java/com/crowdin/client/reports/ReportsApiTest.java
++++ b/src/test/java/com/crowdin/client/reports/ReportsApiTest.java
+@@ -4,6 +4,7 @@ import com.crowdin.client.core.model.*;
+ import com.crowdin.client.framework.RequestMock;
+ import com.crowdin.client.framework.TestClient;
+ import com.crowdin.client.reports.model.*;
++import com.crowdin.client.reports.model.Currency;
+ import org.apache.http.client.methods.HttpDelete;
+ import org.apache.http.client.methods.HttpGet;
+ import org.apache.http.client.methods.HttpPatch;
+@@ -13,6 +14,9 @@ import org.junit.jupiter.api.Test;
+ import java.util.Arrays;
+ import java.util.Collections;
+ import java.util.List;
++import java.util.TimeZone;
++import java.util.Date;
++import java.util.Calendar;
+ 
+ import static java.util.Collections.singletonList;
+ import static org.junit.jupiter.api.Assertions.assertEquals;
+@@ -25,6 +29,7 @@ public class ReportsApiTest extends TestClient {
+     private final String name = "my report template";
+     private final String id = "50fb3506-4127-4ba8-8296-f97dc7e3e0c3";
+     private final String link = "test.com";
++    private final TimeZone tz = TimeZone.getTimeZone("GMT");
+ 
+     @Override
+     public List<RequestMock> getMocks() {
+@@ -40,6 +45,7 @@ public class ReportsApiTest extends TestClient {
+ 
+     @Test
+     public void generateReportTest() {
++        TimeZone.setDefault(tz);
+         CostEstimateGenerateReportRequest request = new CostEstimateGenerateReportRequest();
+         request.setName("costs-estimation");
+         CostEstimateGenerateReportRequest.Schema schema = new CostEstimateGenerateReportRequest.Schema();
+@@ -62,6 +68,7 @@ public class ReportsApiTest extends TestClient {
+         request.setSchema(schema);
+         ResponseObject<ReportStatus> reportStatusResponseObject = this.getReportsApi().generateReport(projectId, request);
+         assertEquals(reportStatusResponseObject.getData().getIdentifier(), id);
++        assertEquals(new Date(119,Calendar.SEPTEMBER,23,11,26,54), reportStatusResponseObject.getData().getCreatedAt());
+     }
+ 
+     @Test
+diff --git a/src/test/java/com/crowdin/client/screenshots/ScreenshotsApiTest.java b/src/test/java/com/crowdin/client/screenshots/ScreenshotsApiTest.java
+index 7d25e89..808a8c6 100644
+--- a/src/test/java/com/crowdin/client/screenshots/ScreenshotsApiTest.java
++++ b/src/test/java/com/crowdin/client/screenshots/ScreenshotsApiTest.java
+@@ -22,6 +22,9 @@ import org.junit.jupiter.api.Test;
+ 
+ import java.util.Arrays;
+ import java.util.List;
++import java.util.TimeZone;
++import java.util.Date;
++import java.util.Calendar;
+ 
+ import static java.util.Collections.singletonList;
+ import static org.junit.jupiter.api.Assertions.assertEquals;
+@@ -34,6 +37,7 @@ public class ScreenshotsApiTest extends TestClient {
+     private final Long tagId = 98L;
+     private final Long stringId = 12L;
+     private final String name = "translate_with_siri.jpg";
++    private final TimeZone tz = TimeZone.getTimeZone("GMT");
+ 
+     @Override
+     public List<RequestMock> getMocks() {
+@@ -78,11 +82,14 @@ public class ScreenshotsApiTest extends TestClient {
+ 
+     @Test
+     public void updateScreenshotTest() {
++        TimeZone.setDefault(tz);
+         UpdateScreenshotRequest request = new UpdateScreenshotRequest();
+         request.setName(name);
+         request.setStorageId(storageId);
+         ResponseObject<Screenshot> screenshotResponseObject = this.getScreenshotsApi().updateScreenshot(projectId, screenshotId, request);
+         assertEquals(screenshotResponseObject.getData().getId(), screenshotId);
++        assertEquals(new Date(119,Calendar.SEPTEMBER,23,9,35,31), screenshotResponseObject.getData().getTags().get(0).getCreatedAt());
++        assertEquals(new Date(119,Calendar.SEPTEMBER,23,9,29,19), screenshotResponseObject.getData().getUpdatedAt());
+     }
+ 
+     @Test
+diff --git a/src/test/java/com/crowdin/client/sourcefiles/SourceFilesApiTest.java b/src/test/java/com/crowdin/client/sourcefiles/SourceFilesApiTest.java
+index c5f4a2c..bfb141c 100644
+--- a/src/test/java/com/crowdin/client/sourcefiles/SourceFilesApiTest.java
++++ b/src/test/java/com/crowdin/client/sourcefiles/SourceFilesApiTest.java
+@@ -19,6 +19,9 @@ import java.util.Arrays;
+ import java.util.HashMap;
+ import java.util.List;
+ import java.util.Map;
++import java.util.TimeZone;
++import java.util.Date;
++import java.util.Calendar;
+ 
+ import static org.junit.jupiter.api.Assertions.assertEquals;
+ import static org.junit.jupiter.api.Assertions.assertTrue;
+@@ -40,6 +43,7 @@ public class SourceFilesApiTest extends TestClient {
+     private final String status = "finished";
+     private final List<Long> attachLabelIds = Arrays.asList(1L);
+     private final List<Long> detachLabelIds = attachLabelIds;
++    private final TimeZone tz = TimeZone.getTimeZone("GMT");
+ 
+     @Override
+     public List<RequestMock> getMocks() {
+@@ -130,9 +134,11 @@ public class SourceFilesApiTest extends TestClient {
+ 
+     @Test
+     public void getDirectoryTest() {
++        TimeZone.setDefault(tz);
+         ResponseObject<Directory> directoryResponseObject = this.getSourceFilesApi().getDirectory(projectId, directoryId);
+         assertEquals(directoryResponseObject.getData().getId(), directoryId);
+         assertEquals(directoryResponseObject.getData().getName(), directoryName);
++        assertEquals(new Date(119,Calendar.SEPTEMBER,19,14,14,0),directoryResponseObject.getData().getCreatedAt());
+     }
+ 
+     @Test
+diff --git a/src/test/java/com/crowdin/client/tasks/TasksApiTest.java b/src/test/java/com/crowdin/client/tasks/TasksApiTest.java
+index d3d2fa8..efbc40b 100644
+--- a/src/test/java/com/crowdin/client/tasks/TasksApiTest.java
++++ b/src/test/java/com/crowdin/client/tasks/TasksApiTest.java
+@@ -19,7 +19,10 @@ import org.apache.http.client.methods.HttpPost;
+ import org.junit.jupiter.api.Test;
+ 
+ import java.util.Arrays;
++import java.util.Date;
+ import java.util.List;
++import java.util.TimeZone;
++import java.util.Calendar;
+ 
+ import static java.util.Collections.singletonList;
+ import static org.junit.jupiter.api.Assertions.assertEquals;
+@@ -50,10 +53,12 @@ public class TasksApiTest extends TestClient {
+ 
+     @Test
+     public void listTasksTest() {
++        TimeZone.setDefault(TimeZone.getTimeZone("GMT"));
+         ResponseList<Task> taskResponseList = this.getTasksApi().listTasks(projectId, null, null, null);
+         assertEquals(taskResponseList.getData().size(), 1);
+         assertEquals(taskResponseList.getData().get(0).getData().getId(), taskId);
+         assertEquals(taskResponseList.getData().get(0).getData().getStatus(), status);
++        assertEquals(new Date(119, Calendar.SEPTEMBER,27,7,0,14), taskResponseList.getData().get(0).getData().getDeadline());
+     }
+ 
+     @Test
+@@ -89,11 +94,14 @@ public class TasksApiTest extends TestClient {
+ 
+     @Test
+     public void getTaskTest() {
++        TimeZone.setDefault(TimeZone.getTimeZone("GMT"));
+         ResponseObject<Task> taskResponseObject = this.getTasksApi().getTask(projectId, taskId);
++        Date createdAt = new Date(119,Calendar.SEPTEMBER,23,9,4,29);
+         assertEquals(taskResponseObject.getData().getId(), taskId);
+         assertEquals(taskResponseObject.getData().getStatus(), status);
+         assertNotNull(taskResponseObject.getData().getTranslateProgress());
+         assertEquals(62, taskResponseObject.getData().getTranslateProgress().getPercent().intValue());
++        assertEquals(createdAt, taskResponseObject.getData().getCreatedAt());
+     }
+ 
+     @Test

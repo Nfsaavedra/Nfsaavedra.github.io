@@ -1,0 +1,13 @@
+diff --git a/src/test/java/br/com/wmixvideo/sped/leiaute/bloco1/SF1010ObrigatoriedadeRegistrosBloco1Test.java b/src/test/java/br/com/wmixvideo/sped/leiaute/bloco1/SF1010ObrigatoriedadeRegistrosBloco1Test.java
+index 630496b..0955e61 100644
+--- a/src/test/java/br/com/wmixvideo/sped/leiaute/bloco1/SF1010ObrigatoriedadeRegistrosBloco1Test.java
++++ b/src/test/java/br/com/wmixvideo/sped/leiaute/bloco1/SF1010ObrigatoriedadeRegistrosBloco1Test.java
+@@ -7,6 +7,6 @@ public class SF1010ObrigatoriedadeRegistrosBloco1Test {
+ 
+     @Test
+     public void deveGerarLinhaCompleta() {
+-        Assert.assertEquals("|1010|N|N|N|N|N|N|N|N|N|", new SF1010ObrigatoriedadeRegistrosBloco1().toString());
++        Assert.assertEquals("|1010|N|N|N|N|N|N|N|N|N|N|N|N|N|", new SF1010ObrigatoriedadeRegistrosBloco1().toString());
+     }
+ }
+\ No newline at end of file

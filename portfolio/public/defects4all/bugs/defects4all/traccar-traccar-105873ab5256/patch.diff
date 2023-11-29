@@ -1,0 +1,28 @@
+diff --git a/src/main/java/org/traccar/protocol/Minifinder2ProtocolDecoder.java b/src/main/java/org/traccar/protocol/Minifinder2ProtocolDecoder.java
+index 85589b0..6289bd2 100644
+--- a/src/main/java/org/traccar/protocol/Minifinder2ProtocolDecoder.java
++++ b/src/main/java/org/traccar/protocol/Minifinder2ProtocolDecoder.java
+@@ -324,6 +324,23 @@ public class Minifinder2ProtocolDecoder extends BaseProtocolDecoder {
+ 
+             return positions;
+ 
++        } else if (type == MSG_RESPONSE) {
++
++            DeviceSession deviceSession = getDeviceSession(channel, remoteAddress);
++            if (deviceSession == null) {
++                return null;
++            }
++
++            Position position = new Position(getProtocolName());
++            position.setDeviceId(deviceSession.getDeviceId());
++
++            getLastLocation(position, null);
++
++            buf.readUnsignedByte(); // length
++            position.set(Position.KEY_RESULT, String.valueOf(buf.readUnsignedByte()));
++
++            return position;
++
+         }
+ 
+         return null;

@@ -1,0 +1,651 @@
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] 🚀  Start image=gitbugactions:latest
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   🐳  docker pull image=gitbugactions:latest platform= username= forcePull=false
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   🐳  docker create image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   🐳  docker run image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/1106faf3-81f4-4bf6-950e-090ce4c6508b] user=0 workdir=
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] ⭐ Run Main Checkout
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   🐳  docker cp src=/tmp/1106faf3-81f4-4bf6-950e-090ce4c6508b/. dst=/tmp/1106faf3-81f4-4bf6-950e-090ce4c6508b
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/1106faf3-81f4-4bf6-950e-090ce4c6508b] user=0 workdir=
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   ✅  Success - Main Checkout
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] ⭐ Run Main Set up JDK 8
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   🐳  docker cp src=/tmp/act-cache/3c7f50a5-98c4-45df-b392-4b52f8183502/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   ❓  ::group::Installed distributions
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   💬  ::debug::isExplicit: 11.0.20-1
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   💬  ::debug::explicit? true
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   💬  ::debug::isExplicit: 17.0.8-1
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   💬  ::debug::explicit? true
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   💬  ::debug::isExplicit: 21.0.0-35
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   💬  ::debug::explicit? true
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   💬  ::debug::isExplicit: 8.0.382-5
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   💬  ::debug::explicit? true
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Resolved Java 8.0.382+5 from tool-cache
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Setting Java 8.0.382+5 as the default
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Creating toolchains.xml for JDK version 8 from temurin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Writing to /home/runner/.m2/toolchains.xml
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Java configuration:
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   |   Distribution: temurin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   |   Version: 8.0.382+5
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   |   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.382-5/x64
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   ❓  ::endgroup::
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   ❓ add-matcher /run/act/actions/actions-setup-java@v3/.github/java.json
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Creating settings.xml with server-id: github
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Writing to /home/runner/.m2/settings.xml
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   ✅  Success - Main Set up JDK 8
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   ⚙  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.382-5/x64
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   ⚙  ::set-env:: JAVA_HOME_8_X64=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.382-5/x64
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   ⚙  ::set-output:: distribution=Temurin-Hotspot
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   ⚙  ::set-output:: path=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.382-5/x64
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   ⚙  ::set-output:: version=8.0.382+5
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   ⚙  ::add-path:: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.382-5/x64/bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] ⭐ Run Main Set up Gradle
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   🐳  docker cp src=/tmp/act-cache/3c7f50a5-98c4-45df-b392-4b52f8183502/act/gradle-gradle-build-action@v2/ dst=/var/run/act/actions/gradle-gradle-build-action@v2/
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/gradle-gradle-build-action@v2/] user=0 workdir=
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   🐳  docker exec cmd=[node /var/run/act/actions/gradle-gradle-build-action@v2/dist/main/index.js] user= workdir=
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   💬  ::debug::Determined user.home from java -version output: '/home/runner'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Cache is disabled: will not restore state from previous builds.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   ✅  Success - Main Set up Gradle
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   ⚙  ::set-env:: GRADLE_BUILD_ACTION_SETUP_COMPLETED=true
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   ⚙  ::set-env:: GRADLE_BUILD_ACTION_CACHE_RESTORED=true
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] ⭐ Run Main Build with Gradle
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://services.gradle.org/distributions/gradle-8.2-bin.zip
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | ............10%............20%............30%.............40%............50%............60%............70%.............80%............90%............100%
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Initialized native services in: /home/runner/.gradle/native
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Initialized jansi services in: /home/runner/.gradle/native
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Welcome to Gradle 8.2!
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Here are the highlights of this release:
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   |  - Kotlin DSL: new reference documentation, assignment syntax by default
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   |  - Kotlin DSL is now the default with Gradle init
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   |  - Improved suggestions to resolve errors in console output
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | For more details see https://docs.gradle.org/8.2/release-notes.html
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Received JVM installation metadata from '/usr/lib/jvm/temurin-8-jdk-amd64': {JAVA_HOME=/usr/lib/jvm/temurin-8-jdk-amd64/jre, JAVA_VERSION=1.8.0_382, JAVA_VENDOR=Temurin, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=1.8.0_382-b05, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=25.382-b05, VM_VENDOR=Temurin, OS_ARCH=amd64}
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Removing 0 daemon stop events from registry
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Starting a Gradle Daemon (subsequent builds will be faster)
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Starting process 'Gradle build daemon'. Working directory: /home/runner/.gradle/daemon/8.2 Command: /usr/lib/jvm/temurin-8-jdk-amd64/bin/java -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -cp /home/runner/.gradle/wrapper/dists/gradle-8.2-bin/bbg7u40eoinfdyxsxr3z4i7ta/gradle-8.2/lib/gradle-launcher-8.2.jar -javaagent:/home/runner/.gradle/wrapper/dists/gradle-8.2-bin/bbg7u40eoinfdyxsxr3z4i7ta/gradle-8.2/lib/agents/gradle-instrumentation-agent-8.2.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 8.2
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Successfully started process 'Gradle build daemon'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | An attempt to start the daemon took 1.687 secs.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The client will now receive all logging from the daemon (pid: 322). The daemon log file: /home/runner/.gradle/daemon/8.2/daemon-322.out.log
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Starting build in new daemon [memory: 1.5 GiB]
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Closing daemon's stdin at end of input.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The daemon will no longer process any standard input.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Using 128 worker leases.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Received JVM installation metadata from '/usr/lib/jvm/temurin-8-jdk-amd64': {JAVA_HOME=/usr/lib/jvm/temurin-8-jdk-amd64/jre, JAVA_VERSION=1.8.0_382, JAVA_VENDOR=Temurin, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=1.8.0_382-b05, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=25.382-b05, VM_VENDOR=Temurin, OS_ARCH=amd64}
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Calculating task graph as no configuration cache is available for tasks: build
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching the file system is configured to be enabled
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Now considering [/tmp/1106faf3-81f4-4bf6-950e-090ce4c6508b] as hierarchies to watch
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Now considering [/tmp/1106faf3-81f4-4bf6-950e-090ce4c6508b/buildSrc, /tmp/1106faf3-81f4-4bf6-950e-090ce4c6508b] as hierarchies to watch
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | File system watching is active
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 1 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 1 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 2 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 3 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 3 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 4 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Compiling initialization script '/home/runner/.gradle/init.d/gradle-build-action.build-result-capture.init.gradle' using SubsetScriptTransformer.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Compiling initialization script '/home/runner/.gradle/init.d/gradle-build-action.build-result-capture.init.gradle' using BuildScriptTransformer.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Compiling initialization script '/home/runner/.gradle/init.d/gradle-build-action.github-dependency-graph.init.gradle' using SubsetScriptTransformer.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Compiling initialization script '/home/runner/.gradle/init.d/gradle-build-action.github-dependency-graph.init.gradle' using BuildScriptTransformer.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Compiling initialization script '/home/runner/.gradle/init.d/gradle-build-action.inject-gradle-enterprise.init.gradle' using SubsetScriptTransformer.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Compiling initialization script '/home/runner/.gradle/init.d/gradle-build-action.inject-gradle-enterprise.init.gradle' using BuildScriptTransformer.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Starting Build
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Compiling settings file '/tmp/1106faf3-81f4-4bf6-950e-090ce4c6508b/settings.gradle' using SubsetScriptTransformer.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration detachedConfiguration1 is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration detachedConfiguration1 is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration detachedConfiguration1 is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration detachedConfiguration1 is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/gradle/enterprise/com.gradle.enterprise.gradle.plugin/3.13.4/com.gradle.enterprise.gradle.plugin-3.13.4.pom to /home/runner/.gradle/.tmp/gradle_download4529672518529628695bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration detachedConfiguration2 is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration detachedConfiguration2 is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration detachedConfiguration2 is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration detachedConfiguration2 is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/gradle/common-custom-user-data-gradle-plugin/com.gradle.common-custom-user-data-gradle-plugin.gradle.plugin/1.11/com.gradle.common-custom-user-data-gradle-plugin.gradle.plugin-1.11.pom to /home/runner/.gradle/.tmp/gradle_download9118215262152590423bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration detachedConfiguration3 is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration detachedConfiguration3 is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration detachedConfiguration3 is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration detachedConfiguration3 is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/gradle/toolchains/foojay-resolver-convention/org.gradle.toolchains.foojay-resolver-convention.gradle.plugin/0.5.0/org.gradle.toolchains.foojay-resolver-convention.gradle.plugin-0.5.0.pom to /home/runner/.gradle/.tmp/gradle_download2722454308934709801bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/gradle/gradle-enterprise-gradle-plugin/3.13.4/gradle-enterprise-gradle-plugin-3.13.4.pom to /home/runner/.gradle/.tmp/gradle_download2092236632849169bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/gradle/gradle-enterprise-gradle-plugin/3.13.4/gradle-enterprise-gradle-plugin-3.13.4.module to /home/runner/.gradle/.tmp/gradle_download6137810818229402342bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/gradle/common-custom-user-data-gradle-plugin/1.11/common-custom-user-data-gradle-plugin-1.11.pom to /home/runner/.gradle/.tmp/gradle_download8925457202648532602bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/gradle/common-custom-user-data-gradle-plugin/1.11/common-custom-user-data-gradle-plugin-1.11.module to /home/runner/.gradle/.tmp/gradle_download7238945437173558678bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/gradle/toolchains/foojay-resolver/0.5.0/foojay-resolver-0.5.0.pom to /home/runner/.gradle/.tmp/gradle_download6346224612522856442bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/gradle/toolchains/foojay-resolver/0.5.0/foojay-resolver-0.5.0.module to /home/runner/.gradle/.tmp/gradle_download6188433520908992441bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/google/code/gson/gson/2.9.1/gson-2.9.1.pom to /home/runner/.gradle/.tmp/gradle_download1289025245035088952bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/google/code/gson/gson-parent/2.9.1/gson-parent-2.9.1.pom to /home/runner/.gradle/.tmp/gradle_download2440714905839873952bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/sonatype/oss/oss-parent/9/oss-parent-9.pom to /home/runner/.gradle/.tmp/gradle_download3419602882939941949bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Resource missing. [HTTP HEAD: https://plugins.gradle.org/m2/com/gradle/enterprise/com.gradle.enterprise.gradle.plugin/3.13.4/com.gradle.enterprise.gradle.plugin-3.13.4.jar]
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Resource missing. [HTTP HEAD: https://plugins.gradle.org/m2/com/gradle/common-custom-user-data-gradle-plugin/com.gradle.common-custom-user-data-gradle-plugin.gradle.plugin/1.11/com.gradle.common-custom-user-data-gradle-plugin.gradle.plugin-1.11.jar]
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Resource missing. [HTTP HEAD: https://plugins.gradle.org/m2/org/gradle/toolchains/foojay-resolver-convention/org.gradle.toolchains.foojay-resolver-convention.gradle.plugin/0.5.0/org.gradle.toolchains.foojay-resolver-convention.gradle.plugin-0.5.0.jar]
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/gradle/gradle-enterprise-gradle-plugin/3.13.4/gradle-enterprise-gradle-plugin-3.13.4.jar to /home/runner/.gradle/.tmp/gradle_download8875076204497524944bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/google/code/gson/gson/2.9.1/gson-2.9.1.jar to /home/runner/.gradle/.tmp/gradle_download1097441938330484261bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/gradle/toolchains/foojay-resolver/0.5.0/foojay-resolver-0.5.0.jar to /home/runner/.gradle/.tmp/gradle_download4430852615090189424bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/gradle/common-custom-user-data-gradle-plugin/1.11/common-custom-user-data-gradle-plugin-1.11.jar to /home/runner/.gradle/.tmp/gradle_download1276803402986768876bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Compiling settings file '/tmp/1106faf3-81f4-4bf6-950e-090ce4c6508b/settings.gradle' using BuildScriptTransformer.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Settings evaluated using settings file '/tmp/1106faf3-81f4-4bf6-950e-090ce4c6508b/settings.gradle'.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Compiling script '/home/runner/.gradle/init.d/gradle-build-action.build-result-capture-service.plugin.groovy' using SubsetScriptTransformer.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Compiling script '/home/runner/.gradle/init.d/gradle-build-action.build-result-capture-service.plugin.groovy' using BuildScriptTransformer.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Using local directory build cache for the root build (location = /home/runner/.gradle/caches/build-cache-1, removeUnusedEntriesAfter = 7 days).
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Using remote Gradle Enterprise build cache for the root build (Allow insecure protocol = false, Allow untrusted server = false, Build cache server = https://ge.solutions-team.gradle.com, Cache path = cache, Gradle Enterprise server = https://ge.solutions-team.gradle.com, Use ExpectContinue = false, Use access key = false, Use username/password = false).
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 4 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 4 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Projects loaded. Root project using build file '/tmp/1106faf3-81f4-4bf6-950e-090ce4c6508b/build.gradle'.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Included projects: [root project 'common-custom-user-data-gradle-plugin']
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 5 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 5 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Compiling initialization script '/home/runner/.gradle/init.d/gradle-build-action.build-result-capture.init.gradle' using SubsetScriptTransformer.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Compiling initialization script '/home/runner/.gradle/init.d/gradle-build-action.build-result-capture.init.gradle' using BuildScriptTransformer.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Compiling initialization script '/home/runner/.gradle/init.d/gradle-build-action.github-dependency-graph.init.gradle' using SubsetScriptTransformer.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Compiling initialization script '/home/runner/.gradle/init.d/gradle-build-action.github-dependency-graph.init.gradle' using BuildScriptTransformer.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Compiling initialization script '/home/runner/.gradle/init.d/gradle-build-action.inject-gradle-enterprise.init.gradle' using SubsetScriptTransformer.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Compiling initialization script '/home/runner/.gradle/init.d/gradle-build-action.inject-gradle-enterprise.init.gradle' using BuildScriptTransformer.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Compiling settings file '/tmp/1106faf3-81f4-4bf6-950e-090ce4c6508b/buildSrc/settings.gradle' using SubsetScriptTransformer.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Compiling settings file '/tmp/1106faf3-81f4-4bf6-950e-090ce4c6508b/buildSrc/settings.gradle' using BuildScriptTransformer.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 5 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 5 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | > Configure project :buildSrc
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Evaluating project ':buildSrc' using build file '/tmp/1106faf3-81f4-4bf6-950e-090ce4c6508b/buildSrc/build.gradle'.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Compiling build file '/tmp/1106faf3-81f4-4bf6-950e-090ce4c6508b/buildSrc/build.gradle' using SubsetScriptTransformer.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Compiling build file '/tmp/1106faf3-81f4-4bf6-950e-090ce4c6508b/buildSrc/build.gradle' using BuildScriptTransformer.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Starting process 'command '/usr/lib/jvm/temurin-21-jdk-amd64/bin/java''. Working directory: /home/runner/.gradle/.tmp/tmp-jvm506726353547375030probe Command: /usr/lib/jvm/temurin-21-jdk-amd64/bin/java -cp . JavaProbe
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Successfully started process 'command '/usr/lib/jvm/temurin-21-jdk-amd64/bin/java''
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Received JVM installation metadata from '/usr/lib/jvm/temurin-21-jdk-amd64': {JAVA_HOME=/usr/lib/jvm/temurin-21-jdk-amd64, JAVA_VERSION=21, JAVA_VENDOR=Eclipse Adoptium, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=21+35-LTS, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=21+35-LTS, VM_VENDOR=Eclipse Adoptium, OS_ARCH=amd64}
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Starting process 'command '/usr/lib/jvm/temurin-17-jdk-amd64/bin/java''. Working directory: /home/runner/.gradle/.tmp/tmp-jvm2685847591212942178probe Command: /usr/lib/jvm/temurin-17-jdk-amd64/bin/java -cp . JavaProbe
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Successfully started process 'command '/usr/lib/jvm/temurin-17-jdk-amd64/bin/java''
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Received JVM installation metadata from '/usr/lib/jvm/temurin-17-jdk-amd64': {JAVA_HOME=/usr/lib/jvm/temurin-17-jdk-amd64, JAVA_VERSION=17.0.8.1, JAVA_VENDOR=Eclipse Adoptium, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=17.0.8.1+1, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=17.0.8.1+1, VM_VENDOR=Eclipse Adoptium, OS_ARCH=amd64}
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Starting process 'command '/usr/lib/jvm/temurin-11-jdk-amd64/bin/java''. Working directory: /home/runner/.gradle/.tmp/tmp-jvm5277034927341049567probe Command: /usr/lib/jvm/temurin-11-jdk-amd64/bin/java -cp . JavaProbe
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Successfully started process 'command '/usr/lib/jvm/temurin-11-jdk-amd64/bin/java''
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Received JVM installation metadata from '/usr/lib/jvm/temurin-11-jdk-amd64': {JAVA_HOME=/usr/lib/jvm/temurin-11-jdk-amd64, JAVA_VERSION=11.0.20.1, JAVA_VENDOR=Eclipse Adoptium, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=11.0.20.1+1, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=11.0.20.1+1, VM_VENDOR=Eclipse Adoptium, OS_ARCH=amd64}
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration :buildSrc:mainSourceElements is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Resolve mutations for :buildSrc:compileJava (Thread[Execution worker,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | :buildSrc:compileJava (Thread[Execution worker,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | > Task :buildSrc:compileJava NO-SOURCE
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 6 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Skipping task ':buildSrc:compileJava' as it has no source files and no previous output files.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Resolve mutations for :buildSrc:compileGroovy (Thread[Execution worker,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | :buildSrc:compileGroovy (Thread[Execution worker,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | > Task :buildSrc:compileGroovy
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 7 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Generating /home/runner/.gradle/caches/8.2/generated-gradle-jars/gradle-api-8.2.jar
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 7 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 7 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 7 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 7 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Build cache key for task ':buildSrc:compileGroovy' is 468d1a5461386b70d530b35c87c93aec
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Task ':buildSrc:compileGroovy' is not up-to-date because:
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   |   No history is available.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The input changes require a full rebuild for incremental task ':buildSrc:compileGroovy'.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 7 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 7 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 7 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 7 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | This JVM does not support getting OS memory, so no OS memory status updates will be broadcast
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | > Task :buildSrc:compileGroovy
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Starting process 'Gradle Worker Daemon 1'. Working directory: /home/runner/.gradle/workers Command: /usr/lib/jvm/temurin-8-jdk-amd64/bin/java -Djava.security.manager=worker.org.gradle.process.internal.worker.child.BootstrapSecurityManager -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -cp /home/runner/.gradle/caches/8.2/workerMain/gradle-worker.jar worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Worker Daemon 1'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Successfully started process 'Gradle Worker Daemon 1'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Started Gradle worker daemon (0.891 secs) with fork options DaemonForkOptions{executable=/usr/lib/jvm/temurin-8-jdk-amd64/bin/java, minHeapSize=null, maxHeapSize=null, jvmArgs=[], keepAliveMode=SESSION}.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Created user preferences directory.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 8 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 9 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 10 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Could not store entry 468d1a5461386b70d530b35c87c93aec in remote build cache: Storing entry at 'https://ge.solutions-team.gradle.com/cache/468d1a5461386b70d530b35c87c93aec' response status 403: Forbidden
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Stored cache entry for task ':buildSrc:compileGroovy' with cache key 468d1a5461386b70d530b35c87c93aec
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Resolve mutations for :buildSrc:processResources (Thread[Execution worker,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | :buildSrc:processResources (Thread[Execution worker,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | > Task :buildSrc:processResources NO-SOURCE
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 10 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Skipping task ':buildSrc:processResources' as it has no source files and no previous output files.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Resolve mutations for :buildSrc:classes (Thread[Execution worker,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | :buildSrc:classes (Thread[Execution worker,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | > Task :buildSrc:classes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Skipping task ':buildSrc:classes' as it has no actions.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Resolve mutations for :buildSrc:jar (Thread[Execution worker,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | :buildSrc:jar (Thread[Execution worker,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | > Task :buildSrc:jar
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 11 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 12 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 13 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 13 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Caching disabled for task ':buildSrc:jar' because:
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   |   Not worth caching
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Task ':buildSrc:jar' is not up-to-date because:
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   |   No history is available.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 13 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | file or directory '/tmp/1106faf3-81f4-4bf6-950e-090ce4c6508b/buildSrc/build/classes/java/main', not found
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | file or directory '/tmp/1106faf3-81f4-4bf6-950e-090ce4c6508b/buildSrc/build/resources/main', not found
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 14 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | > Configure project :
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Evaluating root project 'common-custom-user-data-gradle-plugin' using build file '/tmp/1106faf3-81f4-4bf6-950e-090ce4c6508b/build.gradle'.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Compiling build file '/tmp/1106faf3-81f4-4bf6-950e-090ce4c6508b/build.gradle' using SubsetScriptTransformer.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration detachedConfiguration1 is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration detachedConfiguration1 is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration detachedConfiguration1 is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration detachedConfiguration1 is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/gradle/plugin-publish/com.gradle.plugin-publish.gradle.plugin/1.2.0/com.gradle.plugin-publish.gradle.plugin-1.2.0.pom to /home/runner/.gradle/.tmp/gradle_download7621357477767198689bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration detachedConfiguration2 is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration detachedConfiguration2 is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration detachedConfiguration2 is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration detachedConfiguration2 is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/github/breadmoirai/github-release/com.github.breadmoirai.github-release.gradle.plugin/2.4.1/com.github.breadmoirai.github-release.gradle.plugin-2.4.1.pom to /home/runner/.gradle/.tmp/gradle_download8018341745871269383bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration detachedConfiguration3 is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration detachedConfiguration3 is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration detachedConfiguration3 is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration detachedConfiguration3 is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/gradle/wrapper-upgrade/org.gradle.wrapper-upgrade.gradle.plugin/0.11.2/org.gradle.wrapper-upgrade.gradle.plugin-0.11.2.pom to /home/runner/.gradle/.tmp/gradle_download804242973882174061bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration :classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration :classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration :classpath is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration :classpath is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/gradle/publish/plugin-publish-plugin/1.2.0/plugin-publish-plugin-1.2.0.pom to /home/runner/.gradle/.tmp/gradle_download7984992233184924018bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/gradle/publish/plugin-publish-plugin/1.2.0/plugin-publish-plugin-1.2.0.module to /home/runner/.gradle/.tmp/gradle_download1301001939890438002bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/github/breadmoirai/github-release/2.4.1/github-release-2.4.1.pom to /home/runner/.gradle/.tmp/gradle_download2034388374181987663bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/github/breadmoirai/github-release/2.4.1/github-release-2.4.1.module to /home/runner/.gradle/.tmp/gradle_download1722620979251411819bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/gradle/wrapper-upgrade-gradle-plugin/0.11.2/wrapper-upgrade-gradle-plugin-0.11.2.pom to /home/runner/.gradle/.tmp/gradle_download3806149769080477946bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/gradle/wrapper-upgrade-gradle-plugin/0.11.2/wrapper-upgrade-gradle-plugin-0.11.2.module to /home/runner/.gradle/.tmp/gradle_download1211191144800128364bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/apache/maven/maven-model/3.6.3/maven-model-3.6.3.pom to /home/runner/.gradle/.tmp/gradle_download6373502443931447742bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/apache/maven/maven/3.6.3/maven-3.6.3.pom to /home/runner/.gradle/.tmp/gradle_download7826828091528919621bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/apache/maven/maven-parent/33/maven-parent-33.pom to /home/runner/.gradle/.tmp/gradle_download3938678199714184595bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/apache/apache/21/apache-21.pom to /home/runner/.gradle/.tmp/gradle_download2054179639204356348bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/kohsuke/github-api/1.315/github-api-1.315.pom to /home/runner/.gradle/.tmp/gradle_download6197839462683418390bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/dataformat/jackson-dataformat-xml/2.15.2/jackson-dataformat-xml-2.15.2.pom to /home/runner/.gradle/.tmp/gradle_download5628005631915420952bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/core/jackson-core/2.15.2/jackson-core-2.15.2.pom to /home/runner/.gradle/.tmp/gradle_download7154657011453484632bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/jackson-base/2.15.2/jackson-base-2.15.2.pom to /home/runner/.gradle/.tmp/gradle_download817897339311292342bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/jackson-bom/2.15.2/jackson-bom-2.15.2.pom to /home/runner/.gradle/.tmp/gradle_download6512989021963122203bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/jackson-parent/2.15/jackson-parent-2.15.pom to /home/runner/.gradle/.tmp/gradle_download6416436054779409803bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/fasterxml/oss-parent/50/oss-parent-50.pom to /home/runner/.gradle/.tmp/gradle_download6525909988757562959bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/junit/junit-bom/5.9.2/junit-bom-5.9.2.pom to /home/runner/.gradle/.tmp/gradle_download108818871621656035bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/junit/junit-bom/5.9.2/junit-bom-5.9.2.module to /home/runner/.gradle/.tmp/gradle_download7754618023780518686bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/dataformat/jackson-dataformat-xml/2.15.2/jackson-dataformat-xml-2.15.2.module to /home/runner/.gradle/.tmp/gradle_download4017132809869271025bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/core/jackson-core/2.15.2/jackson-core-2.15.2.module to /home/runner/.gradle/.tmp/gradle_download7271954073891337210bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.pom to /home/runner/.gradle/.tmp/gradle_download2927441941515864524bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/core/jackson-databind/2.14.0/jackson-databind-2.14.0.pom to /home/runner/.gradle/.tmp/gradle_download3759292915564015108bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/jackson-base/2.14.0/jackson-base-2.14.0.pom to /home/runner/.gradle/.tmp/gradle_download2561716090570966822bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/apache/commons/commons-parent/48/commons-parent-48.pom to /home/runner/.gradle/.tmp/gradle_download235923832642910757bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/commons-io/commons-io/2.8.0/commons-io-2.8.0.pom to /home/runner/.gradle/.tmp/gradle_download8271425676392789829bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/apache/commons/commons-parent/52/commons-parent-52.pom to /home/runner/.gradle/.tmp/gradle_download8856223369677347633bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/apache/apache/23/apache-23.pom to /home/runner/.gradle/.tmp/gradle_download2178418298170488737bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/jackson-bom/2.14.0/jackson-bom-2.14.0.pom to /home/runner/.gradle/.tmp/gradle_download1268565445456790713bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/jackson-parent/2.14/jackson-parent-2.14.pom to /home/runner/.gradle/.tmp/gradle_download1193956737834358754bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/fasterxml/oss-parent/48/oss-parent-48.pom to /home/runner/.gradle/.tmp/gradle_download736481665095005757bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/core/jackson-databind/2.14.0/jackson-databind-2.14.0.module to /home/runner/.gradle/.tmp/gradle_download7088228331929267915bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/core/jackson-databind/2.15.2/jackson-databind-2.15.2.pom to /home/runner/.gradle/.tmp/gradle_download5587860594429111180bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/core/jackson-databind/2.15.2/jackson-databind-2.15.2.module to /home/runner/.gradle/.tmp/gradle_download4962481797098507264bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/codehaus/woodstox/stax2-api/4.2.1/stax2-api-4.2.1.pom to /home/runner/.gradle/.tmp/gradle_download6362020459139913798bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/fasterxml/oss-parent/38/oss-parent-38.pom to /home/runner/.gradle/.tmp/gradle_download2819461919677917049bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/fasterxml/woodstox/woodstox-core/6.5.1/woodstox-core-6.5.1.pom to /home/runner/.gradle/.tmp/gradle_download7474958109395210974bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/core/jackson-annotations/2.15.2/jackson-annotations-2.15.2.pom to /home/runner/.gradle/.tmp/gradle_download1089966443088775534bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/core/jackson-annotations/2.15.2/jackson-annotations-2.15.2.module to /home/runner/.gradle/.tmp/gradle_download3791233446468503382bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Resource missing. [HTTP HEAD: https://plugins.gradle.org/m2/com/gradle/plugin-publish/com.gradle.plugin-publish.gradle.plugin/1.2.0/com.gradle.plugin-publish.gradle.plugin-1.2.0.jar]
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Resource missing. [HTTP HEAD: https://plugins.gradle.org/m2/com/github/breadmoirai/github-release/com.github.breadmoirai.github-release.gradle.plugin/2.4.1/com.github.breadmoirai.github-release.gradle.plugin-2.4.1.jar]
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Resource missing. [HTTP HEAD: https://plugins.gradle.org/m2/org/gradle/wrapper-upgrade/org.gradle.wrapper-upgrade.gradle.plugin/0.11.2/org.gradle.wrapper-upgrade.gradle.plugin-0.11.2.jar]
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/gradle/publish/plugin-publish-plugin/1.2.0/plugin-publish-plugin-1.2.0.jar to /home/runner/.gradle/.tmp/gradle_download4099490501759958662bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/commons-io/commons-io/2.8.0/commons-io-2.8.0.jar to /home/runner/.gradle/.tmp/gradle_download4224690522871299453bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/apache/maven/maven-model/3.6.3/maven-model-3.6.3.jar to /home/runner/.gradle/.tmp/gradle_download6872253554131856190bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/github/breadmoirai/github-release/2.4.1/github-release-2.4.1.jar to /home/runner/.gradle/.tmp/gradle_download7663574253953692349bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/codehaus/woodstox/stax2-api/4.2.1/stax2-api-4.2.1.jar to /home/runner/.gradle/.tmp/gradle_download5503574913472077548bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/apache/commons/commons-lang3/3.9/commons-lang3-3.9.jar to /home/runner/.gradle/.tmp/gradle_download5721088191976833252bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/core/jackson-core/2.15.2/jackson-core-2.15.2.jar to /home/runner/.gradle/.tmp/gradle_download5431172097210892121bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/dataformat/jackson-dataformat-xml/2.15.2/jackson-dataformat-xml-2.15.2.jar to /home/runner/.gradle/.tmp/gradle_download3630524286202767698bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/core/jackson-databind/2.15.2/jackson-databind-2.15.2.jar to /home/runner/.gradle/.tmp/gradle_download2887788729425065653bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/fasterxml/woodstox/woodstox-core/6.5.1/woodstox-core-6.5.1.jar to /home/runner/.gradle/.tmp/gradle_download8709710403098590069bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/com/fasterxml/jackson/core/jackson-annotations/2.15.2/jackson-annotations-2.15.2.jar to /home/runner/.gradle/.tmp/gradle_download2527794018476530312bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/kohsuke/github-api/1.315/github-api-1.315.jar to /home/runner/.gradle/.tmp/gradle_download6464206638553422414bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/gradle/wrapper-upgrade-gradle-plugin/0.11.2/wrapper-upgrade-gradle-plugin-0.11.2.jar to /home/runner/.gradle/.tmp/gradle_download2497614170055040452bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Compiling build file '/tmp/1106faf3-81f4-4bf6-950e-090ce4c6508b/build.gradle' using BuildScriptTransformer.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 15 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 15 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Signing plugin detected. Will automatically sign the published artifacts.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | All projects evaluated.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Task name matched 'build'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Selected primary task 'build' from project :
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration :javadocElements is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration :mainSourceElements is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration :signatures is both resolvable and consumable. This is considered a legacy configuration and it will eventually only be possible to be one of these.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration :signatures is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The configuration :sourcesElements is both consumable and declarable. This combination is incorrect, only one of these flags should be set.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Tasks to be executed: [task ':compileJava', task ':pluginDescriptors', task ':processResources', task ':classes', task ':jar', task ':javadoc', task ':javadocJar', task ':sourcesJar', task ':assemble', task ':compileTestJava', task ':pluginUnderTestMetadata', task ':processTestResources', task ':testClasses', task ':test', task ':validatePlugins', task ':check', task ':build']
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Tasks that were excluded: []
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/junit/junit-bom/5.9.3/junit-bom-5.9.3.pom to /home/runner/.gradle/.tmp/gradle_download2754233992977664882bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/junit/junit-bom/5.9.3/junit-bom-5.9.3.module to /home/runner/.gradle/.tmp/gradle_download1211279346366075980bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/junit/jupiter/junit-jupiter/5.9.3/junit-jupiter-5.9.3.pom to /home/runner/.gradle/.tmp/gradle_download4461089777174472425bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/junit/jupiter/junit-jupiter/5.9.3/junit-jupiter-5.9.3.module to /home/runner/.gradle/.tmp/gradle_download2562252650340252421bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/junit/jupiter/junit-jupiter-api/5.9.3/junit-jupiter-api-5.9.3.pom to /home/runner/.gradle/.tmp/gradle_download2031666167599684685bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/junit/jupiter/junit-jupiter-params/5.9.3/junit-jupiter-params-5.9.3.pom to /home/runner/.gradle/.tmp/gradle_download117769768171329376bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/junit/jupiter/junit-jupiter-api/5.9.3/junit-jupiter-api-5.9.3.module to /home/runner/.gradle/.tmp/gradle_download4427619824483053155bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/junit/jupiter/junit-jupiter-params/5.9.3/junit-jupiter-params-5.9.3.module to /home/runner/.gradle/.tmp/gradle_download8627628412534231738bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.pom to /home/runner/.gradle/.tmp/gradle_download8913041345643081127bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.pom to /home/runner/.gradle/.tmp/gradle_download9041260851327464797bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.module to /home/runner/.gradle/.tmp/gradle_download5728973281052537577bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/junit/platform/junit-platform-commons/1.9.3/junit-platform-commons-1.9.3.pom to /home/runner/.gradle/.tmp/gradle_download4796031134631413156bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/junit/platform/junit-platform-commons/1.9.3/junit-platform-commons-1.9.3.module to /home/runner/.gradle/.tmp/gradle_download6890064140276360186bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/junit/jupiter/junit-jupiter/5.9.3/junit-jupiter-5.9.3.jar to /home/runner/.gradle/.tmp/gradle_download6682155590587375653bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/junit/jupiter/junit-jupiter-api/5.9.3/junit-jupiter-api-5.9.3.jar to /home/runner/.gradle/.tmp/gradle_download7433213568106598280bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar to /home/runner/.gradle/.tmp/gradle_download3921268589186256303bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/junit/jupiter/junit-jupiter-params/5.9.3/junit-jupiter-params-5.9.3.jar to /home/runner/.gradle/.tmp/gradle_download8049750649992660426bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar to /home/runner/.gradle/.tmp/gradle_download2357884083189576886bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/junit/platform/junit-platform-commons/1.9.3/junit-platform-commons-1.9.3.jar to /home/runner/.gradle/.tmp/gradle_download2601386697038013760bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Generating /home/runner/.gradle/caches/8.2/generated-gradle-jars/gradle-test-kit-8.2.jar
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/junit/jupiter/junit-jupiter-engine/5.9.3/junit-jupiter-engine-5.9.3.pom to /home/runner/.gradle/.tmp/gradle_download2333078747057579379bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/junit/jupiter/junit-jupiter-engine/5.9.3/junit-jupiter-engine-5.9.3.module to /home/runner/.gradle/.tmp/gradle_download23826444949786605bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/junit/platform/junit-platform-engine/1.9.3/junit-platform-engine-1.9.3.pom to /home/runner/.gradle/.tmp/gradle_download3326248897250065718bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/junit/platform/junit-platform-engine/1.9.3/junit-platform-engine-1.9.3.module to /home/runner/.gradle/.tmp/gradle_download2278672033518884395bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/junit/jupiter/junit-jupiter-engine/5.9.3/junit-jupiter-engine-5.9.3.jar to /home/runner/.gradle/.tmp/gradle_download4167052078837838324bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Downloading https://plugins.gradle.org/m2/org/junit/platform/junit-platform-engine/1.9.3/junit-platform-engine-1.9.3.jar to /home/runner/.gradle/.tmp/gradle_download5242893436111248071bin
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Ignoring listeners of task graph ready event, as this build (:) has already executed work.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Resolve mutations for :compileJava (Thread[included builds,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | :compileJava (Thread[included builds,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Resolve mutations for :pluginDescriptors (Thread[Execution worker Thread 105,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | :pluginDescriptors (Thread[Execution worker Thread 105,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Resolve mutations for :sourcesJar (Thread[Execution worker Thread 104,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | :sourcesJar (Thread[Execution worker Thread 104,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Resolve mutations for :processTestResources (Thread[Execution worker Thread 103,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | :processTestResources (Thread[Execution worker Thread 103,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | > Task :processTestResources NO-SOURCE
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 16 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Skipping task ':processTestResources' as it has no source files and no previous output files.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | > Task :pluginDescriptors
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 16 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Caching disabled for task ':pluginDescriptors' because:
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   |   Not worth caching
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Task ':pluginDescriptors' is not up-to-date because:
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   |   No history is available.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 16 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 21 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Resolve mutations for :processResources (Thread[Execution worker,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | :processResources (Thread[Execution worker,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | > Task :sourcesJar
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 17 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 23 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 23 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Caching disabled for task ':sourcesJar' because:
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   |   Not worth caching
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Task ':sourcesJar' is not up-to-date because:
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   |   No history is available.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 23 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | file or directory '/tmp/1106faf3-81f4-4bf6-950e-090ce4c6508b/src/main/resources', not found
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 25 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | > Task :processResources
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 22 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Caching disabled for task ':processResources' because:
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   |   Not worth caching
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Task ':processResources' is not up-to-date because:
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   |   No history is available.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 24 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | file or directory '/tmp/1106faf3-81f4-4bf6-950e-090ce4c6508b/src/main/resources', not found
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 28 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | > Task :compileJava
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 20 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 23 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 23 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 23 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 24 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Build cache key for task ':compileJava' is 0dea1003e6c26b74333b015a8fb92df4
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Task ':compileJava' is not up-to-date because:
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   |   No history is available.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The input changes require a full rebuild for incremental task ':compileJava'.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 28 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 28 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 27 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 26 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Full recompilation is required because no incremental change information is available. This is usually caused by clean builds or changing compiler arguments.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Compiling with toolchain '/usr/lib/jvm/temurin-8-jdk-amd64'.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Compiling with JDK Java compiler API.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Class dependency analysis for incremental compilation took 0.068 secs.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Created classpath snapshot for incremental compilation in 14.835 secs.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 29 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 30 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 31 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 32 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Stored cache entry for task ':compileJava' with cache key 0dea1003e6c26b74333b015a8fb92df4
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Resolve mutations for :classes (Thread[included builds,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Resolve mutations for :validatePlugins (Thread[Execution worker,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | :classes (Thread[included builds,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | :validatePlugins (Thread[Execution worker,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | > Task :classes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Skipping task ':classes' as it has no actions.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Resolve mutations for :jar (Thread[included builds,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Resolve mutations for :javadoc (Thread[Execution worker Thread 82,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | :jar (Thread[included builds,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | :javadoc (Thread[Execution worker Thread 82,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Resolve mutations for :compileTestJava (Thread[Execution worker Thread 83,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Resolve mutations for :pluginUnderTestMetadata (Thread[Execution worker Thread 81,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | :compileTestJava (Thread[Execution worker Thread 83,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | :pluginUnderTestMetadata (Thread[Execution worker Thread 78,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | > Task :pluginUnderTestMetadata
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 34 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Caching disabled for task ':pluginUnderTestMetadata' because:
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   |   Not worth caching
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Task ':pluginUnderTestMetadata' is not up-to-date because:
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   |   No history is available.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 41 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 42 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | > Task :jar
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 34 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 34 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Caching disabled for task ':jar' because:
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   |   Not worth caching
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Task ':jar' is not up-to-date because:
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   |   No history is available.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 40 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | :jar: No valid plugin descriptors were found in META-INF/gradle-plugins
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 42 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | > Task :compileTestJava
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 37 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 38 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 39 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 40 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 41 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Build cache key for task ':compileTestJava' is 2e1ca8de8e9c0b0adee7af819521b4fa
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Task ':compileTestJava' is not up-to-date because:
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   |   No history is available.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The input changes require a full rebuild for incremental task ':compileTestJava'.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 41 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 40 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 39 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 38 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Full recompilation is required because no incremental change information is available. This is usually caused by clean builds or changing compiler arguments.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Compiling with toolchain '/usr/lib/jvm/temurin-8-jdk-amd64'.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Compiling with JDK Java compiler API.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Class dependency analysis for incremental compilation took 0.026 secs.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Created classpath snapshot for incremental compilation in 0.706 secs.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 41 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 42 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 43 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 44 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Stored cache entry for task ':compileTestJava' with cache key 2e1ca8de8e9c0b0adee7af819521b4fa
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Resolve mutations for :testClasses (Thread[Execution worker Thread 28,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | :testClasses (Thread[Execution worker Thread 28,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | > Task :testClasses
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Skipping task ':testClasses' as it has no actions.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Resolve mutations for :test (Thread[Execution worker Thread 28,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | :test (Thread[Execution worker Thread 28,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | > Task :validatePlugins
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 33 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Build cache key for task ':validatePlugins' is 6b0fc262a0605541b371066e63f7b2ea
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Task ':validatePlugins' is not up-to-date because:
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   |   No history is available.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 44 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 44 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | > Task :javadoc
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 34 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Build cache key for task ':javadoc' is e41a5678c41a8846520debbecaf0f779
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Task ':javadoc' is not up-to-date because:
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   |   No history is available.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 44 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Starting process 'command '/usr/lib/jvm/temurin-8-jdk-amd64/bin/javadoc''. Working directory: /tmp/1106faf3-81f4-4bf6-950e-090ce4c6508b Command: /usr/lib/jvm/temurin-8-jdk-amd64/bin/javadoc @/tmp/1106faf3-81f4-4bf6-950e-090ce4c6508b/build/tmp/javadoc/javadoc.options
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Successfully started process 'command '/usr/lib/jvm/temurin-8-jdk-amd64/bin/javadoc''
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Starting process 'Gradle Worker Daemon 2'. Working directory: /home/runner/.gradle/workers Command: /usr/lib/jvm/temurin-8-jdk-amd64/bin/java -Djava.security.manager=worker.org.gradle.process.internal.worker.child.BootstrapSecurityManager -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -cp /home/runner/.gradle/caches/8.2/workerMain/gradle-worker.jar worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Worker Daemon 2'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Successfully started process 'Gradle Worker Daemon 2'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | > Task :test
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 44 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 44 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Started Gradle worker daemon (1.233 secs) with fork options DaemonForkOptions{executable=/usr/lib/jvm/temurin-8-jdk-amd64/bin/java, minHeapSize=null, maxHeapSize=null, jvmArgs=[], keepAliveMode=SESSION}.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | This JVM does not support getting OS memory, so no OS memory status updates will be broadcast
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | > Task :validatePlugins
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Plugin validation finished without warnings.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 45 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Stored cache entry for task ':validatePlugins' with cache key 6b0fc262a0605541b371066e63f7b2ea
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | > Task :javadoc
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 48 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Stored cache entry for task ':javadoc' with cache key e41a5678c41a8846520debbecaf0f779
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Resolve mutations for :javadocJar (Thread[Execution worker Thread 83,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | :javadocJar (Thread[Execution worker Thread 83,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | > Task :javadocJar
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 49 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 49 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Caching disabled for task ':javadocJar' because:
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   |   Not worth caching
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Task ':javadocJar' is not up-to-date because:
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   |   No history is available.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 49 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 49 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Resolve mutations for :assemble (Thread[Execution worker Thread 120,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | :assemble (Thread[Execution worker Thread 120,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | > Task :assemble
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Skipping task ':assemble' as it has no actions.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | > Task :test
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 50 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Build cache key for task ':test' is 3f42ee2be72d1a6652947cc3594874d6
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Task ':test' is not up-to-date because:
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   |   No history is available.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 49 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Starting process 'Gradle Test Executor 3'. Working directory: /tmp/1106faf3-81f4-4bf6-950e-090ce4c6508b Command: /usr/lib/jvm/temurin-8-jdk-amd64/bin/java -Djava.security.manager=worker.org.gradle.process.internal.worker.child.BootstrapSecurityManager -Dorg.gradle.internal.worker.tmpdir=/tmp/1106faf3-81f4-4bf6-950e-090ce4c6508b/build/tmp/test/work -Dorg.gradle.native=false -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.variant -ea -cp /home/runner/.gradle/caches/8.2/workerMain/gradle-worker.jar worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 3'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Successfully started process 'Gradle Test Executor 3'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Gradle Test Executor 3 started executing tests.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Gradle Test Executor 3 finished executing tests.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | > Task :test
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Finished generating test XML results (0.019 secs) into: /tmp/1106faf3-81f4-4bf6-950e-090ce4c6508b/build/test-results/test
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Generating HTML test report...
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Finished generating test html results (0.024 secs) into: /tmp/1106faf3-81f4-4bf6-950e-090ce4c6508b/build/reports/tests/test
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 50 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 55 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Watching 56 directories to track changes
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Stored cache entry for task ':test' with cache key 3f42ee2be72d1a6652947cc3594874d6
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Resolve mutations for :check (Thread[Execution worker Thread 28,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | :check (Thread[Execution worker Thread 43,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | > Task :check
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Skipping task ':check' as it has no actions.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Resolve mutations for :build (Thread[Execution worker Thread 118,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | :build (Thread[Execution worker Thread 78,5,main]) started.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | > Task :build
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Skipping task ':build' as it has no actions.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 0 problems were found storing the configuration cache.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | See the complete report at file:///tmp/1106faf3-81f4-4bf6-950e-090ce4c6508b/build/reports/configuration-cache/c2fkktx3vx6igoefn2qcun16u/47uk5m29pnwn2ys980iojyrnv/configuration-cache-report.html
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | For more on this, please refer to https://docs.gradle.org/8.2/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | BUILD SUCCESSFUL in 2m 6s
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | 13 actionable tasks: 13 executed
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Configuration cache entry stored.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | The remote build cache was disabled during the build due to errors.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Stopped 2 worker daemon(s).
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   ✅  Success - Main Build with Gradle
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] ⭐ Run Post Set up Gradle
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   🐳  docker exec cmd=[node /var/run/act/actions/gradle-gradle-build-action@v2/dist/post/index.js] user= workdir=
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | In final post-action step, saving state and writing summary
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Cache is disabled: will not save state for later builds.
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   | Writing job summary
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   ✅  Success - Post Set up Gradle
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] ⭐ Run Post Set up JDK 8
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification]   ✅  Success - Post Set up JDK 8
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] 🏁  Job succeeded
+[0c219dbc-34a3-4221-9508-9223064cfc3a/Verification] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ffb66dd7b41dd42ffef3b5f1c2a9b388b737f6e6'

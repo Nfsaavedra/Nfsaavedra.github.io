@@ -1,0 +1,38 @@
+diff --git a/src/test/java/org/jsoup/nodes/CommentTest.java b/src/test/java/org/jsoup/nodes/CommentTest.java
+index fe1c136..c622f18 100644
+--- a/src/test/java/org/jsoup/nodes/CommentTest.java
++++ b/src/test/java/org/jsoup/nodes/CommentTest.java
+@@ -41,6 +41,20 @@ public class CommentTest {
+         assertEquals("<!-- a simple comment -->", c1.outerHtml());
+     }
+ 
++    @Test void stableIndentInBlock() {
++        String html = "<div><!-- comment --> Text</div><p><!-- comment --> Text</p>";
++        Document doc = Jsoup.parse(html);
++        String out = doc.body().html();
++        assertEquals("<div>\n" +
++            " <!-- comment --> Text\n" +
++            "</div>\n" +
++            "<p><!-- comment --> Text</p>", out);
++
++        Document doc2 = Jsoup.parse(out);
++        String out2 = doc2.body().html();
++        assertEquals(out, out2);
++    }
++
+     @Test
+     public void testClone() {
+         Comment c1 = comment.clone();
+diff --git a/src/test/java/org/jsoup/parser/HtmlParserTest.java b/src/test/java/org/jsoup/parser/HtmlParserTest.java
+index 1f83518..26b546d 100644
+--- a/src/test/java/org/jsoup/parser/HtmlParserTest.java
++++ b/src/test/java/org/jsoup/parser/HtmlParserTest.java
+@@ -1247,7 +1247,7 @@ public class HtmlParserTest {
+         File in = ParseTest.getFile("/htmltests/comments.html");
+         Document doc = Jsoup.parse(in, "UTF-8");
+ 
+-        assertEquals("<!--?xml version=\"1.0\" encoding=\"utf-8\"?--><!-- so --> <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"><!-- what --> <html xml:lang=\"en\" lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\"><!-- now --> <head><!-- then --> <meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\"> <title>A Certain Kind of Test</title> </head> <body> <h1>Hello</h1>h1&gt; (There is a UTF8 hidden BOM at the top of this file.) </body> </html>",
++        assertEquals("<!--?xml version=\"1.0\" encoding=\"utf-8\"?--><!-- so --> <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"><!-- what --> <html xml:lang=\"en\" lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\"> <!-- now --> <head> <!-- then --> <meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\"> <title>A Certain Kind of Test</title> </head> <body> <h1>Hello</h1>h1&gt; (There is a UTF8 hidden BOM at the top of this file.) </body> </html>",
+             StringUtil.normaliseWhitespace(doc.html()));
+ 
+         assertEquals("A Certain Kind of Test", doc.head().select("title").text());

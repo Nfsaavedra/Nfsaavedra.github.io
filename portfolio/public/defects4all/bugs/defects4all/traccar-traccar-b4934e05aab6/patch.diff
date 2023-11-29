@@ -1,0 +1,840 @@
+diff --git a/src/main/java/org/traccar/api/resource/CommandResource.java b/src/main/java/org/traccar/api/resource/CommandResource.java
+index 6ef6ee9..3460cf6 100644
+--- a/src/main/java/org/traccar/api/resource/CommandResource.java
++++ b/src/main/java/org/traccar/api/resource/CommandResource.java
+@@ -105,7 +105,6 @@ public class CommandResource extends ExtendedObjectResource<Command> {
+     @POST
+     @Path("send")
+     public Response send(Command entity) throws Exception {
+-        permissionsService.checkRestriction(getUserId(), UserRestrictions::getReadonly);
+         if (entity.getId() > 0) {
+             permissionsService.checkPermission(baseClass, getUserId(), entity.getId());
+             long deviceId = entity.getDeviceId();
+diff --git a/src/main/java/org/traccar/api/resource/ReportResource.java b/src/main/java/org/traccar/api/resource/ReportResource.java
+index 70177dd..6944de9 100644
+--- a/src/main/java/org/traccar/api/resource/ReportResource.java
++++ b/src/main/java/org/traccar/api/resource/ReportResource.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright 2016 - 2022 Anton Tananaev (anton@traccar.org)
++ * Copyright 2016 - 2023 Anton Tananaev (anton@traccar.org)
+  * Copyright 2016 - 2018 Andrey Kunitsyn (andrey@traccar.org)
+  *
+  * Licensed under the Apache License, Version 2.0 (the "License");
+@@ -19,27 +19,23 @@ package org.traccar.api.resource;
+ import org.slf4j.Logger;
+ import org.slf4j.LoggerFactory;
+ import org.traccar.api.BaseResource;
+-import org.traccar.mail.MailManager;
+ import org.traccar.helper.LogAction;
+ import org.traccar.model.Event;
+ import org.traccar.model.Position;
+-import org.traccar.model.User;
+ import org.traccar.model.UserRestrictions;
+ import org.traccar.reports.EventsReportProvider;
+ import org.traccar.reports.RouteReportProvider;
+ import org.traccar.reports.StopsReportProvider;
+ import org.traccar.reports.SummaryReportProvider;
+ import org.traccar.reports.TripsReportProvider;
++import org.traccar.reports.common.ReportExecutor;
++import org.traccar.reports.common.ReportMailer;
+ import org.traccar.reports.model.StopReportItem;
+ import org.traccar.reports.model.SummaryReportItem;
+ import org.traccar.reports.model.TripReportItem;
+ import org.traccar.storage.StorageException;
+ 
+-import javax.activation.DataHandler;
+ import javax.inject.Inject;
+-import javax.mail.MessagingException;
+-import javax.mail.internet.MimeBodyPart;
+-import javax.mail.util.ByteArrayDataSource;
+ import javax.ws.rs.Consumes;
+ import javax.ws.rs.GET;
+ import javax.ws.rs.Path;
+@@ -51,9 +47,6 @@ import javax.ws.rs.core.HttpHeaders;
+ import javax.ws.rs.core.MediaType;
+ import javax.ws.rs.core.Response;
+ import javax.ws.rs.core.StreamingOutput;
+-import java.io.ByteArrayOutputStream;
+-import java.io.IOException;
+-import java.io.OutputStream;
+ import java.util.Collection;
+ import java.util.Date;
+ import java.util.List;
+@@ -83,31 +76,11 @@ public class ReportResource extends BaseResource {
+     private TripsReportProvider tripsReportProvider;
+ 
+     @Inject
+-    private MailManager mailManager;
++    private ReportMailer reportMailer;
+ 
+-    private interface ReportExecutor {
+-        void execute(OutputStream stream) throws StorageException, IOException;
+-    }
+-
+-    private Response executeReport(
+-            long userId, boolean mail, ReportExecutor executor) {
++    private Response executeReport(long userId, boolean mail, ReportExecutor executor) {
+         if (mail) {
+-            new Thread(() -> {
+-                try {
+-                    var stream = new ByteArrayOutputStream();
+-                    executor.execute(stream);
+-
+-                    MimeBodyPart attachment = new MimeBodyPart();
+-                    attachment.setFileName("report.xlsx");
+-                    attachment.setDataHandler(new DataHandler(new ByteArrayDataSource(
+-                            stream.toByteArray(), "application/octet-stream")));
+-
+-                    User user = permissionsService.getUser(userId);
+-                    mailManager.sendMessage(user, "Report", "The report is in the attachment.", attachment);
+-                } catch (StorageException | IOException | MessagingException e) {
+-                    LOGGER.warn("Report failed", e);
+-                }
+-            }).start();
++            reportMailer.sendAsync(userId, executor);
+             return Response.noContent().build();
+         } else {
+             StreamingOutput stream = output -> {
+diff --git a/src/main/java/org/traccar/handler/ComputedAttributesHandler.java b/src/main/java/org/traccar/handler/ComputedAttributesHandler.java
+index c9f1f63..6208525 100644
+--- a/src/main/java/org/traccar/handler/ComputedAttributesHandler.java
++++ b/src/main/java/org/traccar/handler/ComputedAttributesHandler.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright 2017 - 2022 Anton Tananaev (anton@traccar.org)
++ * Copyright 2017 - 2023 Anton Tananaev (anton@traccar.org)
+  * Copyright 2017 Andrey Kunitsyn (andrey@traccar.org)
+  *
+  * Licensed under the Apache License, Version 2.0 (the "License");
+@@ -116,17 +116,45 @@ public class ComputedAttributesHandler extends BaseDataHandler {
+                 }
+                 if (result != null) {
+                     try {
+-                        switch (attribute.getType()) {
+-                            case "number":
+-                                Number numberValue = (Number) result;
+-                                position.getAttributes().put(attribute.getAttribute(), numberValue);
++                        switch (attribute.getAttribute()) {
++                            case "valid":
++                                position.setValid((Boolean) result);
+                                 break;
+-                            case "boolean":
+-                                Boolean booleanValue = (Boolean) result;
+-                                position.getAttributes().put(attribute.getAttribute(), booleanValue);
++                            case "latitude":
++                                position.setLatitude(((Number) result).doubleValue());
++                                break;
++                            case "longitude":
++                                position.setLongitude(((Number) result).doubleValue());
++                                break;
++                            case "altitude":
++                                position.setAltitude(((Number) result).doubleValue());
++                                break;
++                            case "speed":
++                                position.setSpeed(((Number) result).doubleValue());
++                                break;
++                            case "course":
++                                position.setCourse(((Number) result).doubleValue());
++                                break;
++                            case "address":
++                                position.setAddress((String) result);
++                                break;
++                            case "accuracy":
++                                position.setAccuracy(((Number) result).doubleValue());
+                                 break;
+                             default:
+-                                position.getAttributes().put(attribute.getAttribute(), result.toString());
++                                switch (attribute.getType()) {
++                                    case "number":
++                                        Number numberValue = (Number) result;
++                                        position.getAttributes().put(attribute.getAttribute(), numberValue);
++                                        break;
++                                    case "boolean":
++                                        Boolean booleanValue = (Boolean) result;
++                                        position.getAttributes().put(attribute.getAttribute(), booleanValue);
++                                        break;
++                                    default:
++                                        position.getAttributes().put(attribute.getAttribute(), result.toString());
++                                }
++                                break;
+                         }
+                     } catch (ClassCastException error) {
+                         LOGGER.warn("Attribute cast error", error);
+diff --git a/src/main/java/org/traccar/helper/ClassScanner.java b/src/main/java/org/traccar/helper/ClassScanner.java
+index c928f6a..c201d10 100644
+--- a/src/main/java/org/traccar/helper/ClassScanner.java
++++ b/src/main/java/org/traccar/helper/ClassScanner.java
+@@ -46,7 +46,7 @@ public final class ClassScanner {
+         URL packageUrl = baseClass.getClassLoader().getResource(packagePath);
+ 
+         if (packageUrl.getProtocol().equals("jar")) {
+-            String jarFileName = URLDecoder.decode(packageUrl.getFile(), StandardCharsets.UTF_8.name());
++            String jarFileName = URLDecoder.decode(packageUrl.getFile(), StandardCharsets.UTF_8);
+             try (JarFile jf = new JarFile(jarFileName.substring(5, jarFileName.indexOf("!")))) {
+                 Enumeration<JarEntry> jarEntries = jf.entries();
+                 while (jarEntries.hasMoreElements()) {
+diff --git a/src/main/java/org/traccar/helper/StringUtil.java b/src/main/java/org/traccar/helper/StringUtil.java
+new file mode 100644
+index 0000000..9b4d717
+diff --git a/src/main/java/org/traccar/helper/StringUtil.java b/src/main/java/org/traccar/helper/StringUtil.java
+new file mode 100644
+index 0000000..9b4d717
+--- a/src/main/java/org/traccar/helper/StringUtil.java
++++ b/src/main/java/org/traccar/helper/StringUtil.java
+@@ -0,0 +1,32 @@
++/*
++ * Copyright 2023 Anton Tananaev (anton@traccar.org)
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++package org.traccar.helper;
++
++public final class StringUtil {
++
++    private StringUtil() {
++    }
++
++    public static boolean containsHex(String value) {
++        for (char c : value.toCharArray()) {
++            if (c >= 'a' && c <= 'f' || c >= 'A' && c <= 'F') {
++                return true;
++            }
++        }
++        return false;
++    }
++
++}
+diff --git a/src/main/java/org/traccar/model/Report.java b/src/main/java/org/traccar/model/Report.java
+new file mode 100644
+index 0000000..83bb2e9
+diff --git a/src/main/java/org/traccar/model/Report.java b/src/main/java/org/traccar/model/Report.java
+new file mode 100644
+index 0000000..83bb2e9
+--- a/src/main/java/org/traccar/model/Report.java
++++ b/src/main/java/org/traccar/model/Report.java
+@@ -0,0 +1,65 @@
++/*
++ * Copyright 2022 Anton Tananaev (anton@traccar.org)
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++package org.traccar.model;
++
++import org.traccar.storage.StorageName;
++
++import java.util.Date;
++
++@StorageName("tc_reports")
++public class Report extends ScheduledModel {
++
++    private String type;
++
++    public String getType() {
++        return type;
++    }
++
++    public void setType(String type) {
++        this.type = type;
++    }
++
++    private String description;
++
++    public String getDescription() {
++        return description;
++    }
++
++    public void setDescription(String description) {
++        this.description = description;
++    }
++
++    private Date from;
++
++    public Date getFrom() {
++        return from;
++    }
++
++    public void setFrom(Date from) {
++        this.from = from;
++    }
++
++    private Date to;
++
++    public Date getTo() {
++        return to;
++    }
++
++    public void setTo(Date to) {
++        this.to = to;
++    }
++
++}
+diff --git a/src/main/java/org/traccar/protocol/GalileoProtocolDecoder.java b/src/main/java/org/traccar/protocol/GalileoProtocolDecoder.java
+index fc8a49c..d4bd45c 100644
+--- a/src/main/java/org/traccar/protocol/GalileoProtocolDecoder.java
++++ b/src/main/java/org/traccar/protocol/GalileoProtocolDecoder.java
+@@ -23,6 +23,7 @@ import org.traccar.BaseProtocolDecoder;
+ import org.traccar.NetworkMessage;
+ import org.traccar.Protocol;
+ import org.traccar.helper.BitBuffer;
++import org.traccar.helper.BitUtil;
+ import org.traccar.helper.UnitsConverter;
+ import org.traccar.model.Position;
+ import org.traccar.session.DeviceSession;
+@@ -66,7 +67,7 @@ public class GalileoProtocolDecoder extends BaseProtocolDecoder {
+         };
+         int[] l3 = {
+             0x63, 0x64, 0x6f, 0x5d, 0x65, 0x66, 0x67, 0x68,
+-            0x69, 0x6a, 0x6b, 0x6c, 0x6d, 0x6e
++            0x69, 0x6a, 0x6b, 0x6c, 0x6d, 0x6e, 0xfa
+         };
+         int[] l4 = {
+             0x20, 0x33, 0x44, 0x90, 0xc0, 0xc2, 0xc3, 0xd3,
+@@ -88,6 +89,8 @@ public class GalileoProtocolDecoder extends BaseProtocolDecoder {
+         }
+         TAG_LENGTH_MAP.put(0x5b, 7); // variable length
+         TAG_LENGTH_MAP.put(0x5c, 68);
++        TAG_LENGTH_MAP.put(0xfd, 8);
++        TAG_LENGTH_MAP.put(0xfe, 8);
+     }
+ 
+     private static int getTagLength(int tag) {
+@@ -239,6 +242,8 @@ public class GalileoProtocolDecoder extends BaseProtocolDecoder {
+             }
+         } else if (header == 0x07) {
+             return decodePhoto(channel, remoteAddress, buf);
++        } else if (header == 0x08) {
++            return decodeCompressedPositions(channel, remoteAddress, buf);
+         }
+ 
+         return null;
+@@ -259,7 +264,7 @@ public class GalileoProtocolDecoder extends BaseProtocolDecoder {
+ 
+         position.setValid(bits.readUnsigned(1) == 0);
+         position.setLongitude(360 * bits.readUnsigned(22) / 4194304.0 - 180);
+-        position.setLatitude(360 * bits.readUnsigned(21) / 2097152.0 - 90);
++        position.setLatitude(180 * bits.readUnsigned(21) / 2097152.0 - 90);
+         if (bits.readUnsigned(1) > 0) {
+             position.set(Position.KEY_ALARM, Position.ALARM_GENERAL);
+         }
+@@ -267,10 +272,10 @@ public class GalileoProtocolDecoder extends BaseProtocolDecoder {
+ 
+     private Position decodeIridiumPosition(Channel channel, SocketAddress remoteAddress, ByteBuf buf) {
+ 
+-        buf.readUnsignedShortLE(); // length
++        buf.readUnsignedShort(); // length
+ 
+         buf.skipBytes(3); // identification header
+-        buf.readUnsignedIntLE(); // index
++        buf.readUnsignedInt(); // index
+ 
+         DeviceSession deviceSession = getDeviceSession(
+                 channel, remoteAddress, buf.readSlice(15).toString(StandardCharsets.US_ASCII));
+@@ -283,12 +288,19 @@ public class GalileoProtocolDecoder extends BaseProtocolDecoder {
+ 
+         buf.readUnsignedByte(); // session status
+         buf.skipBytes(4); // reserved
+-        buf.readUnsignedIntLE(); // date and time
++        position.setTime(new Date(buf.readUnsignedInt() * 1000));
+ 
+-        buf.skipBytes(23); // coordinates block
++        buf.skipBytes(3); // coordinates header
++        int flags = buf.readUnsignedByte();
++        double latitude = buf.readUnsignedByte() + buf.readUnsignedShort() / 60000.0;
++        double longitude = buf.readUnsignedByte() + buf.readUnsignedShort() / 60000.0;
++        position.setLatitude(BitUtil.check(flags, 1) ? -latitude : latitude);
++        position.setLongitude(BitUtil.check(flags, 0) ? -longitude : longitude);
++        buf.readUnsignedInt(); // accuracy
+ 
+-        buf.skipBytes(3); // data tag header
+-        decodeMinimalDataSet(position, buf);
++        buf.readUnsignedByte(); // data tag header
++        // ByteBuf data = buf.readSlice(buf.readUnsignedShort());
++        // decodeMinimalDataSet(position, data);
+ 
+         return position;
+     }
+@@ -392,4 +404,43 @@ public class GalileoProtocolDecoder extends BaseProtocolDecoder {
+         return position;
+     }
+ 
++    private List<Position> decodeCompressedPositions(Channel channel, SocketAddress remoteAddress, ByteBuf buf) {
++
++        buf.readUnsignedShortLE(); // length
++
++        DeviceSession deviceSession = getDeviceSession(channel, remoteAddress);
++        if (deviceSession == null) {
++            return null;
++        }
++
++        List<Position> positions = new LinkedList<>();
++        while (buf.readableBytes() > 2) {
++
++            Position position = new Position(getProtocolName());
++            position.setDeviceId(deviceSession.getDeviceId());
++
++            decodeMinimalDataSet(position, buf);
++
++            int[] tags = new int[BitUtil.to(buf.readUnsignedByte(), 8)];
++            for (int i = 0; i < tags.length; i++) {
++                tags[i] = buf.readUnsignedByte();
++            }
++
++            for (int tag : tags) {
++                decodeTag(position, buf, tag);
++            }
++
++            positions.add(position);
++
++        }
++
++        sendResponse(channel, 0x02, buf.readUnsignedShortLE());
++
++        for (Position p : positions) {
++            p.setDeviceId(deviceSession.getDeviceId());
++        }
++
++        return positions.isEmpty() ? null : positions;
++    }
++
+ }
+diff --git a/src/main/java/org/traccar/protocol/WatchProtocolDecoder.java b/src/main/java/org/traccar/protocol/WatchProtocolDecoder.java
+index 142d1b6..40d56b1 100644
+--- a/src/main/java/org/traccar/protocol/WatchProtocolDecoder.java
++++ b/src/main/java/org/traccar/protocol/WatchProtocolDecoder.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright 2015 - 2022 Anton Tananaev (anton@traccar.org)
++ * Copyright 2015 - 2023 Anton Tananaev (anton@traccar.org)
+  *
+  * Licensed under the Apache License, Version 2.0 (the "License");
+  * you may not use this file except in compliance with the License.
+@@ -19,6 +19,7 @@ import io.netty.buffer.ByteBuf;
+ import io.netty.buffer.Unpooled;
+ import io.netty.channel.Channel;
+ import org.traccar.BaseProtocolDecoder;
++import org.traccar.helper.StringUtil;
+ import org.traccar.session.DeviceSession;
+ import org.traccar.NetworkMessage;
+ import org.traccar.Protocol;
+@@ -139,41 +140,45 @@ public class WatchProtocolDecoder extends BaseProtocolDecoder {
+         String[] values = parser.next().split(",");
+         int index = 0;
+ 
+-        Network network = new Network();
++        if (values.length < 4 || !StringUtil.containsHex(values[index + 3])) {
+ 
+-        int cellCount = Integer.parseInt(values[index++]);
+-        if (cellCount > 0) {
+-            index += 1; // timing advance
+-            int mcc = !values[index].isEmpty() ? Integer.parseInt(values[index++]) : 0;
+-            int mnc = !values[index].isEmpty() ? Integer.parseInt(values[index++]) : 0;
++            Network network = new Network();
+ 
+-            for (int i = 0; i < cellCount; i++) {
+-                int lac = Integer.parseInt(values[index++]);
+-                int cid = Integer.parseInt(values[index++]);
+-                String rssi = values[index++];
+-                if (!rssi.isEmpty()) {
+-                    network.addCellTower(CellTower.from(mcc, mnc, lac, cid, Integer.parseInt(rssi)));
+-                } else {
+-                    network.addCellTower(CellTower.from(mcc, mnc, lac, cid));
++            int cellCount = Integer.parseInt(values[index++]);
++            if (cellCount > 0) {
++                index += 1; // timing advance
++                int mcc = !values[index].isEmpty() ? Integer.parseInt(values[index++]) : 0;
++                int mnc = !values[index].isEmpty() ? Integer.parseInt(values[index++]) : 0;
++
++                for (int i = 0; i < cellCount; i++) {
++                    int lac = Integer.parseInt(values[index], StringUtil.containsHex(values[index++]) ? 16 : 10);
++                    int cid = Integer.parseInt(values[index], StringUtil.containsHex(values[index++]) ? 16 : 10);
++                    String rssi = values[index++];
++                    if (!rssi.isEmpty()) {
++                        network.addCellTower(CellTower.from(mcc, mnc, lac, cid, Integer.parseInt(rssi)));
++                    } else {
++                        network.addCellTower(CellTower.from(mcc, mnc, lac, cid));
++                    }
+                 }
+             }
+-        }
+ 
+-        if (index < values.length && !values[index].isEmpty()) {
+-            int wifiCount = Integer.parseInt(values[index++]);
++            if (index < values.length && !values[index].isEmpty()) {
++                int wifiCount = Integer.parseInt(values[index++]);
+ 
+-            for (int i = 0; i < wifiCount; i++) {
+-                index += 1; // wifi name
+-                String macAddress = values[index++];
+-                String rssi = values[index++];
+-                if (!macAddress.isEmpty() && !macAddress.equals("0") && !rssi.isEmpty()) {
+-                    network.addWifiAccessPoint(WifiAccessPoint.from(macAddress, Integer.parseInt(rssi)));
++                for (int i = 0; i < wifiCount; i++) {
++                    index += 1; // wifi name
++                    String macAddress = values[index++];
++                    String rssi = values[index++];
++                    if (!macAddress.isEmpty() && !macAddress.equals("0") && !rssi.isEmpty()) {
++                        network.addWifiAccessPoint(WifiAccessPoint.from(macAddress, Integer.parseInt(rssi)));
++                    }
+                 }
+             }
+-        }
+ 
+-        if (network.getCellTowers() != null || network.getWifiAccessPoints() != null) {
+-            position.setNetwork(network);
++            if (network.getCellTowers() != null || network.getWifiAccessPoints() != null) {
++                position.setNetwork(network);
++            }
++
+         }
+ 
+         return position;
+@@ -263,7 +268,7 @@ public class WatchProtocolDecoder extends BaseProtocolDecoder {
+             Position position = decodePosition(deviceSession, buf.toString(StandardCharsets.US_ASCII));
+ 
+             if (type.startsWith("AL")) {
+-                if (position != null) {
++                if (position != null && !position.hasAttribute(Position.KEY_ALARM)) {
+                     position.set(Position.KEY_ALARM, Position.ALARM_GENERAL);
+                 }
+                 sendResponse(channel, id, index, "AL");
+@@ -279,6 +284,7 @@ public class WatchProtocolDecoder extends BaseProtocolDecoder {
+                 || type.equalsIgnoreCase("HEART")
+                 || type.equalsIgnoreCase("BLOOD")
+                 || type.equalsIgnoreCase("BPHRT")
++                || type.equalsIgnoreCase("TEMP")
+                 || type.equalsIgnoreCase("btemp2")) {
+ 
+             if (buf.isReadable()) {
+@@ -291,7 +297,9 @@ public class WatchProtocolDecoder extends BaseProtocolDecoder {
+                 String[] values = buf.toString(StandardCharsets.US_ASCII).split(",");
+                 int valueIndex = 0;
+ 
+-                if (type.equalsIgnoreCase("btemp2")) {
++                if (type.equalsIgnoreCase("TEMP")) {
++                    position.set(Position.PREFIX_TEMP + 1, Double.parseDouble(values[valueIndex]));
++                } else if (type.equalsIgnoreCase("btemp2")) {
+                     if (Integer.parseInt(values[valueIndex++]) > 0) {
+                         position.set(Position.PREFIX_TEMP + 1, Double.parseDouble(values[valueIndex]));
+                     }
+diff --git a/src/main/java/org/traccar/reports/common/ReportExecutor.java b/src/main/java/org/traccar/reports/common/ReportExecutor.java
+new file mode 100644
+index 0000000..aed4b8c
+diff --git a/src/main/java/org/traccar/reports/common/ReportExecutor.java b/src/main/java/org/traccar/reports/common/ReportExecutor.java
+new file mode 100644
+index 0000000..aed4b8c
+--- a/src/main/java/org/traccar/reports/common/ReportExecutor.java
++++ b/src/main/java/org/traccar/reports/common/ReportExecutor.java
+@@ -0,0 +1,25 @@
++/*
++ * Copyright 2023 Anton Tananaev (anton@traccar.org)
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++package org.traccar.reports.common;
++
++import org.traccar.storage.StorageException;
++
++import java.io.IOException;
++import java.io.OutputStream;
++
++public interface ReportExecutor {
++    void execute(OutputStream stream) throws StorageException, IOException;
++}
+diff --git a/src/main/java/org/traccar/reports/common/ReportMailer.java b/src/main/java/org/traccar/reports/common/ReportMailer.java
+new file mode 100644
+index 0000000..1723c0e
+diff --git a/src/main/java/org/traccar/reports/common/ReportMailer.java b/src/main/java/org/traccar/reports/common/ReportMailer.java
+new file mode 100644
+index 0000000..1723c0e
+--- a/src/main/java/org/traccar/reports/common/ReportMailer.java
++++ b/src/main/java/org/traccar/reports/common/ReportMailer.java
+@@ -0,0 +1,69 @@
++/*
++ * Copyright 2023 Anton Tananaev (anton@traccar.org)
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++package org.traccar.reports.common;
++
++import org.slf4j.Logger;
++import org.slf4j.LoggerFactory;
++import org.traccar.mail.MailManager;
++import org.traccar.model.User;
++import org.traccar.storage.Storage;
++import org.traccar.storage.StorageException;
++import org.traccar.storage.query.Columns;
++import org.traccar.storage.query.Condition;
++import org.traccar.storage.query.Request;
++
++import javax.activation.DataHandler;
++import javax.inject.Inject;
++import javax.mail.MessagingException;
++import javax.mail.internet.MimeBodyPart;
++import javax.mail.util.ByteArrayDataSource;
++import java.io.ByteArrayOutputStream;
++import java.io.IOException;
++
++public class ReportMailer {
++
++    private static final Logger LOGGER = LoggerFactory.getLogger(ReportMailer.class);
++
++    private final Storage storage;
++    private final MailManager mailManager;
++
++    @Inject
++    public ReportMailer(Storage storage, MailManager mailManager) {
++        this.storage = storage;
++        this.mailManager = mailManager;
++    }
++
++    public void sendAsync(long userId, ReportExecutor executor) {
++        new Thread(() -> {
++            try {
++                var stream = new ByteArrayOutputStream();
++                executor.execute(stream);
++
++                MimeBodyPart attachment = new MimeBodyPart();
++                attachment.setFileName("report.xlsx");
++                attachment.setDataHandler(new DataHandler(new ByteArrayDataSource(
++                        stream.toByteArray(), "application/octet-stream")));
++
++                User user = storage.getObject(
++                        User.class, new Request(new Columns.All(), new Condition.Equals("id", userId)));
++                mailManager.sendMessage(user, "Report", "The report is in the attachment.", attachment);
++            } catch (StorageException | IOException | MessagingException e) {
++                LOGGER.warn("Email report failed", e);
++            }
++        }).start();
++    }
++
++}
+diff --git a/src/main/java/org/traccar/schedule/ScheduleManager.java b/src/main/java/org/traccar/schedule/ScheduleManager.java
+index 6412a18..e1de3b3 100644
+--- a/src/main/java/org/traccar/schedule/ScheduleManager.java
++++ b/src/main/java/org/traccar/schedule/ScheduleManager.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright 2020 - 2022 Anton Tananaev (anton@traccar.org)
++ * Copyright 2020 - 2023 Anton Tananaev (anton@traccar.org)
+  *
+  * Licensed under the Apache License, Version 2.0 (the "License");
+  * you may not use this file except in compliance with the License.
+@@ -38,8 +38,12 @@ public class ScheduleManager implements LifecycleObject {
+     @Override
+     public void start() {
+         executor = Executors.newSingleThreadScheduledExecutor();
+-        List.of(TaskDeviceInactivityCheck.class, TaskWebSocketKeepalive.class, TaskHealthCheck.class)
+-                .forEach(task -> injector.getInstance(task).schedule(executor));
++        var tasks = List.of(
++                TaskReports.class,
++                TaskDeviceInactivityCheck.class,
++                TaskWebSocketKeepalive.class,
++                TaskHealthCheck.class);
++        tasks.forEach(task -> injector.getInstance(task).schedule(executor));
+     }
+ 
+     @Override
+diff --git a/src/main/java/org/traccar/schedule/TaskReports.java b/src/main/java/org/traccar/schedule/TaskReports.java
+new file mode 100644
+index 0000000..259eb10
+diff --git a/src/main/java/org/traccar/schedule/TaskReports.java b/src/main/java/org/traccar/schedule/TaskReports.java
+new file mode 100644
+index 0000000..259eb10
+--- a/src/main/java/org/traccar/schedule/TaskReports.java
++++ b/src/main/java/org/traccar/schedule/TaskReports.java
+@@ -0,0 +1,154 @@
++/*
++ * Copyright 2023 Anton Tananaev (anton@traccar.org)
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++package org.traccar.schedule;
++
++import org.slf4j.Logger;
++import org.slf4j.LoggerFactory;
++import org.traccar.model.BaseModel;
++import org.traccar.model.Calendar;
++import org.traccar.model.Device;
++import org.traccar.model.Group;
++import org.traccar.model.Report;
++import org.traccar.model.User;
++import org.traccar.reports.EventsReportProvider;
++import org.traccar.reports.RouteReportProvider;
++import org.traccar.reports.StopsReportProvider;
++import org.traccar.reports.SummaryReportProvider;
++import org.traccar.reports.TripsReportProvider;
++import org.traccar.reports.common.ReportMailer;
++import org.traccar.storage.Storage;
++import org.traccar.storage.StorageException;
++import org.traccar.storage.query.Columns;
++import org.traccar.storage.query.Condition;
++import org.traccar.storage.query.Request;
++
++import javax.inject.Inject;
++import java.util.Date;
++import java.util.List;
++import java.util.concurrent.ScheduledExecutorService;
++import java.util.concurrent.TimeUnit;
++import java.util.stream.Collectors;
++
++public class TaskReports implements ScheduleTask {
++
++    private static final Logger LOGGER = LoggerFactory.getLogger(TaskReports.class);
++
++    private static final long CHECK_PERIOD_MINUTES = 1;
++
++    private final Storage storage;
++    private final ReportMailer reportMailer;
++
++    @Inject
++    private EventsReportProvider eventsReportProvider;
++
++    @Inject
++    private RouteReportProvider routeReportProvider;
++
++    @Inject
++    private StopsReportProvider stopsReportProvider;
++
++    @Inject
++    private SummaryReportProvider summaryReportProvider;
++
++    @Inject
++    private TripsReportProvider tripsReportProvider;
++
++    @Inject
++    public TaskReports(Storage storage, ReportMailer reportMailer) {
++        this.storage = storage;
++        this.reportMailer = reportMailer;
++    }
++
++    @Override
++    public void schedule(ScheduledExecutorService executor) {
++        executor.scheduleAtFixedRate(this, CHECK_PERIOD_MINUTES, CHECK_PERIOD_MINUTES, TimeUnit.MINUTES);
++    }
++
++    @Override
++    public void run() {
++        Date currentCheck = new Date();
++        Date lastCheck = new Date(System.currentTimeMillis() - TimeUnit.MINUTES.toMillis(CHECK_PERIOD_MINUTES));
++
++        try {
++            for (Report report : storage.getObjects(Report.class, new Request(new Columns.All()))) {
++                Calendar calendar = storage.getObject(Calendar.class, new Request(
++                        new Columns.All(), new Condition.Equals("id", report.getCalendarId())));
++                if (calendar.checkMoment(currentCheck) && !calendar.checkMoment(lastCheck)) {
++                    executeReport(report);
++                }
++            }
++        } catch (StorageException e) {
++            LOGGER.warn("Scheduled reports error", e);
++        }
++    }
++
++    private void executeReport(Report report) throws StorageException {
++        var deviceIds = storage.getObjects(Device.class, new Request(
++                new Columns.Include("id"),
++                new Condition.Permission(Device.class, Report.class, report.getId())))
++                .stream().map(BaseModel::getId).collect(Collectors.toList());
++        var groupIds = storage.getObjects(Group.class, new Request(
++                new Columns.Include("id"),
++                new Condition.Permission(Group.class, Report.class, report.getId())))
++                .stream().map(BaseModel::getId).collect(Collectors.toList());
++        var users = storage.getObjects(User.class, new Request(
++                new Columns.Include("id"),
++                new Condition.Permission(User.class, Report.class, report.getId())));
++        for (User user : users) {
++            switch (report.getType()) {
++                case "events":
++                    reportMailer.sendAsync(user.getId(), stream -> {
++                        eventsReportProvider.getExcel(
++                                stream, user.getId(), deviceIds, groupIds,
++                                List.of(), report.getFrom(), report.getTo());
++                    });
++                    break;
++                case "route":
++                    reportMailer.sendAsync(user.getId(), stream -> {
++                        routeReportProvider.getExcel(
++                                stream, user.getId(), deviceIds, groupIds,
++                                report.getFrom(), report.getTo());
++                    });
++                    break;
++                case "summary":
++                    reportMailer.sendAsync(user.getId(), stream -> {
++                        summaryReportProvider.getExcel(
++                                stream, user.getId(), deviceIds, groupIds,
++                                report.getFrom(), report.getTo(), false);
++                    });
++                    break;
++                case "trips":
++                    reportMailer.sendAsync(user.getId(), stream -> {
++                        tripsReportProvider.getExcel(
++                                stream, user.getId(), deviceIds, groupIds,
++                                report.getFrom(), report.getTo());
++                    });
++                    break;
++                case "stops":
++                    reportMailer.sendAsync(user.getId(), stream -> {
++                        stopsReportProvider.getExcel(
++                                stream, user.getId(), deviceIds, groupIds,
++                                report.getFrom(), report.getTo());
++                    });
++                    break;
++                default:
++                    LOGGER.warn("Unsupported report type {}", report.getType());
++                    break;
++            }
++        }
++    }
++
++}

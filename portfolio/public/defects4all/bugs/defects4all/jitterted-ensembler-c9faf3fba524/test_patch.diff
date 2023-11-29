@@ -1,0 +1,47 @@
+diff --git a/src/test/java/com/jitterted/mobreg/adapter/in/web/member/EnsembleSummaryViewActionTest.java b/src/test/java/com/jitterted/mobreg/adapter/in/web/member/EnsembleSummaryViewActionTest.java
+index db72bd0..3265ca2 100644
+--- a/src/test/java/com/jitterted/mobreg/adapter/in/web/member/EnsembleSummaryViewActionTest.java
++++ b/src/test/java/com/jitterted/mobreg/adapter/in/web/member/EnsembleSummaryViewActionTest.java
+@@ -1,7 +1,6 @@
+ package com.jitterted.mobreg.adapter.in.web.member;
+ 
+ import com.jitterted.mobreg.domain.MemberStatus;
+-import org.junit.jupiter.api.Disabled;
+ import org.junit.jupiter.api.Nested;
+ import org.junit.jupiter.api.Test;
+ 
+@@ -128,12 +127,17 @@ class EnsembleSummaryViewActionTest {
+         }
+ 
+         @Test // parameterize for Unknown/Declined/Spectator
+-        @Disabled
+-        void disabledWhenMemberIsNotParticipantAndRotationIsFull() {
+-            ParticipantAction participantAction = ParticipantAction.from(MemberStatus.UNKNOWN, false);
++        void disabledTextShowsWhenButtonIsDisabled() {
++            ParticipantAction participantAction = ParticipantAction.from(MemberStatus.UNKNOWN, true);
+ 
+-            assertThat(participantAction.disabled())
+-                    .isTrue();
++            ParticipantAction expectedParticipantAction =
++                    new ParticipantAction(
++                            "",
++                            "Cannot Participate: Ensemble Full",
++                            true);
++
++            assertThat(participantAction)
++                    .isEqualTo(expectedParticipantAction);
+         }
+     }
+ 
+diff --git a/src/test/java/com/jitterted/mobreg/adapter/in/web/member/EnsembleSummaryViewTest.java b/src/test/java/com/jitterted/mobreg/adapter/in/web/member/EnsembleSummaryViewTest.java
+index 449ad11..4f9dbbb 100644
+--- a/src/test/java/com/jitterted/mobreg/adapter/in/web/member/EnsembleSummaryViewTest.java
++++ b/src/test/java/com/jitterted/mobreg/adapter/in/web/member/EnsembleSummaryViewTest.java
+@@ -215,6 +215,7 @@ class EnsembleSummaryViewTest {
+             assertThat(ensembleSummaryView.showActionButtons())
+                     .isFalse();
+         }
++
+     }
+ 
+ 

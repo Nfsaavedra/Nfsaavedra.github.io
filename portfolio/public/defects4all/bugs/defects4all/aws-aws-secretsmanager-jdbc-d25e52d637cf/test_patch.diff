@@ -1,0 +1,13 @@
+diff --git a/src/test/java/com/amazonaws/secretsmanager/sql/AWSSecretsManagerPostgreSQLDriverTest.java b/src/test/java/com/amazonaws/secretsmanager/sql/AWSSecretsManagerPostgreSQLDriverTest.java
+index d6239dd..a7ecf4b 100644
+--- a/src/test/java/com/amazonaws/secretsmanager/sql/AWSSecretsManagerPostgreSQLDriverTest.java
++++ b/src/test/java/com/amazonaws/secretsmanager/sql/AWSSecretsManagerPostgreSQLDriverTest.java
+@@ -93,7 +93,7 @@ public class AWSSecretsManagerPostgreSQLDriverTest extends TestClass {
+     @Test
+     public void test_constructUrlNullDatabase() {
+         String url = sut.constructUrlFromEndpointPortDatabase("test-endpoint", "1234", null);
+-        assertEquals(url, "jdbc:postgresql://test-endpoint:1234");
++        assertEquals(url, "jdbc:postgresql://test-endpoint:1234/");
+     }
+ 
+     @Test

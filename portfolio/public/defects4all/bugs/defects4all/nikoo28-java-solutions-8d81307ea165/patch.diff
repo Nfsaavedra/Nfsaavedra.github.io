@@ -1,0 +1,13 @@
+diff --git a/src/main/java/leetcode/medium/OnlineStockSpan.java b/src/main/java/leetcode/medium/OnlineStockSpan.java
+index ee013ef..dc22f4f 100644
+--- a/src/main/java/leetcode/medium/OnlineStockSpan.java
++++ b/src/main/java/leetcode/medium/OnlineStockSpan.java
+@@ -35,7 +35,7 @@ public class OnlineStockSpan {
+ 
+     for (int i = 1; i < prices.length; i++) {
+       while (!indexStack.isEmpty()
+-          && prices[indexStack.peek()] <= prices[i])
++          && prices[indexStack.peek()] < prices[i])
+         indexStack.pop();
+ 
+       // If index stack is empty, the price at index 'i'

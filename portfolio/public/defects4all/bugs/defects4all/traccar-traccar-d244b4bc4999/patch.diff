@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/traccar/model/ExtendedModel.java b/src/main/java/org/traccar/model/ExtendedModel.java
+index 0a0923b..d5cd094 100644
+--- a/src/main/java/org/traccar/model/ExtendedModel.java
++++ b/src/main/java/org/traccar/model/ExtendedModel.java
+@@ -91,7 +91,7 @@ public class ExtendedModel extends BaseModel {
+ 
+     public String getString(String key, String defaultValue) {
+         if (attributes.containsKey(key)) {
+-            Object value = attributes.containsKey(key);
++            Object value = attributes.get(key);
+             return value != null ? value.toString() : null;
+         } else {
+             return defaultValue;

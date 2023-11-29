@@ -1,0 +1,14 @@
+diff --git a/src/main/java/com/github/davidmoten/oas3/puml/Converter.java b/src/main/java/com/github/davidmoten/oas3/puml/Converter.java
+index fcc6d19..8b36859 100644
+--- a/src/main/java/com/github/davidmoten/oas3/puml/Converter.java
++++ b/src/main/java/com/github/davidmoten/oas3/puml/Converter.java
+@@ -125,8 +125,7 @@ public final class Converter {
+                 + "\nhide empty fields" //
+                 + "\nskinparam class {"
+                 + "\nBackgroundColor<<Path>> Wheat"
+-                + "\nBorderColor<<Path>> Tomato"
+-                + "}"
++                + "\n}"
+                 // make sure that periods in class names aren't interpreted as namespace
+                 // separators (which results in recursive boxing)
+                 + "\nset namespaceSeparator none" //

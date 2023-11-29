@@ -1,0 +1,29 @@
+diff --git a/src/main/java/org/jsoup/parser/CharacterReader.java b/src/main/java/org/jsoup/parser/CharacterReader.java
+index df902b1..1d00ec6 100644
+--- a/src/main/java/org/jsoup/parser/CharacterReader.java
++++ b/src/main/java/org/jsoup/parser/CharacterReader.java
+@@ -116,6 +116,11 @@ public final class CharacterReader {
+         return readerPos + bufPos;
+     }
+ 
++    /** Tests if the buffer has been fully read. */
++    boolean readFully() {
++        return readFully;
++    }
++
+     /**
+      Enables or disables line number tracking. By default, will be <b>off</b>.Tracking line numbers improves the
+      legibility of parser error messages, for example. Tracking should be enabled before any content is read to be of
+diff --git a/src/main/java/org/jsoup/parser/TokeniserState.java b/src/main/java/org/jsoup/parser/TokeniserState.java
+index 874fed0..f269fc6 100644
+--- a/src/main/java/org/jsoup/parser/TokeniserState.java
++++ b/src/main/java/org/jsoup/parser/TokeniserState.java
+@@ -186,7 +186,7 @@ enum TokeniserState {
+             if (r.matches('/')) {
+                 t.createTempBuffer();
+                 t.advanceTransition(RCDATAEndTagOpen);
+-            } else if (r.matchesAsciiAlpha() && t.appropriateEndTagName() != null && !r.containsIgnoreCase(t.appropriateEndTagSeq())) {
++            } else if (r.readFully() && r.matchesAsciiAlpha() && t.appropriateEndTagName() != null &&  !r.containsIgnoreCase(t.appropriateEndTagSeq())) {
+                 // diverge from spec: got a start tag, but there's no appropriate end tag (</title>), so rather than
+                 // consuming to EOF; break out here
+                 t.tagPending = t.createTagPending(false).name(t.appropriateEndTagName());

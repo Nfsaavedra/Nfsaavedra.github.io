@@ -1,0 +1,84 @@
+diff --git a/src/test/java/net/e175/klaus/solarpositioning/Grena3Test.java b/src/test/java/net/e175/klaus/solarpositioning/Grena3Test.java
+index 69b9e4e..00a0258 100644
+--- a/src/test/java/net/e175/klaus/solarpositioning/Grena3Test.java
++++ b/src/test/java/net/e175/klaus/solarpositioning/Grena3Test.java
+@@ -11,6 +11,7 @@ import java.time.ZonedDateTime;
+ import static java.lang.Math.PI;
+ import static java.lang.Math.toDegrees;
+ import static org.junit.jupiter.api.Assertions.assertEquals;
++import static org.junit.jupiter.api.Assertions.assertThrows;
+ 
+ class Grena3Test {
+ 
+@@ -67,6 +68,15 @@ class Grena3Test {
+         assertEquals(result, result2);
+     }
+ 
++    @Test
++    void testSillyLatLon() {
++        ZonedDateTime time = ZonedDateTime.of(2003, 10, 17, 12, 30, 30, 0, ZoneOffset.ofHours(-7));
++
++        assertThrows(IllegalArgumentException.class, () -> Grena3.calculateSolarPosition(time, 139.742476, -105.1786, 67, -2, 1000));
++
++        assertThrows(IllegalArgumentException.class, () -> Grena3.calculateSolarPosition(time, 39.742476, -205.1786, 67, -2, 1000));
++    }
++
+     @ParameterizedTest
+     @CsvFileSource(resources = "/azimuth_zenith/spa_reference_testdata.csv")
+     void testBulkSpaReferenceValues(ZonedDateTime dateTime, double lat, double lon, double refAzimuth, double refZenith) {
+diff --git a/src/test/java/net/e175/klaus/solarpositioning/SPASunriseTransitSetTest.java b/src/test/java/net/e175/klaus/solarpositioning/SPASunriseTransitSetTest.java
+index b7e5b8f..f6b0f2a 100644
+--- a/src/test/java/net/e175/klaus/solarpositioning/SPASunriseTransitSetTest.java
++++ b/src/test/java/net/e175/klaus/solarpositioning/SPASunriseTransitSetTest.java
+@@ -15,6 +15,7 @@ import java.time.temporal.ChronoUnit;
+ import static net.e175.klaus.solarpositioning.SunriseTransitSet.Type.*;
+ import static org.assertj.core.api.Assertions.assertThat;
+ import static org.assertj.core.api.Assertions.within;
++import static org.junit.jupiter.api.Assertions.assertThrows;
+ 
+ class SPASunriseTransitSetTest {
+ 
+@@ -121,6 +122,15 @@ class SPASunriseTransitSetTest {
+         compare(res, NORMAL, "2015-09-27T07:04:14+13:00", "2015-09-27T13:12:17+13:00", "2015-09-27T19:20:56+13:00", WITHIN_A_MINUTE);
+     }
+ 
++    @Test
++    void testSillyLatLon() {
++        ZonedDateTime time = ZonedDateTime.of(2003, 10, 17, 12, 30, 30, 0, ZoneOffset.ofHours(-7));
++
++        assertThrows(IllegalArgumentException.class, () -> SPA.calculateSunriseTransitSet(time, 139.742476, -105.1786, 67));
++
++        assertThrows(IllegalArgumentException.class, () -> SPA.calculateSunriseTransitSet(time, 39.742476, -205.1786, 67));
++    }
++
+     void compare(SunriseTransitSet res, ZonedDateTime baseDateTime, SunriseTransitSet.Type type, LocalTime sunrise, LocalTime transit, LocalTime sunset, TemporalUnitOffset tolerance) {
+         compare(res,
+                 type,
+diff --git a/src/test/java/net/e175/klaus/solarpositioning/SPATest.java b/src/test/java/net/e175/klaus/solarpositioning/SPATest.java
+index 0b5ad5b..84574cd 100644
+--- a/src/test/java/net/e175/klaus/solarpositioning/SPATest.java
++++ b/src/test/java/net/e175/klaus/solarpositioning/SPATest.java
+@@ -8,6 +8,7 @@ import java.time.ZoneOffset;
+ import java.time.ZonedDateTime;
+ 
+ import static org.junit.jupiter.api.Assertions.assertEquals;
++import static org.junit.jupiter.api.Assertions.assertThrows;
+ 
+ class SPATest {
+ 
+@@ -50,6 +51,15 @@ class SPATest {
+         assertEquals(result, result2);
+     }
+ 
++    @Test
++    void testSillyLatLon() {
++        ZonedDateTime time = ZonedDateTime.of(2003, 10, 17, 12, 30, 30, 0, ZoneOffset.ofHours(-7));
++
++        assertThrows(IllegalArgumentException.class, () -> SPA.calculateSolarPosition(time, 139.742476, -105.1786, 1830.14, 67, 820, 11));
++
++        assertThrows(IllegalArgumentException.class, () -> SPA.calculateSolarPosition(time, 39.742476, -205.1786, 1830.14, 67, 820, 11));
++    }
++
+     @ParameterizedTest
+     @CsvFileSource(resources = "/azimuth_zenith/spa_reference_testdata.csv")
+     void testBulkSpaReferenceValues(ZonedDateTime dateTime, double lat, double lon, double refAzimuth, double refZenith) {

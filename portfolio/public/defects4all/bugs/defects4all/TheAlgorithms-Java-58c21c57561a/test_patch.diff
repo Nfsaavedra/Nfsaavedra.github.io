@@ -1,0 +1,25 @@
+diff --git a/src/test/java/com/thealgorithms/maths/ParseIntegerTest.java b/src/test/java/com/thealgorithms/maths/ParseIntegerTest.java
+index dc5bf37..7649e21 100644
+--- a/src/test/java/com/thealgorithms/maths/ParseIntegerTest.java
++++ b/src/test/java/com/thealgorithms/maths/ParseIntegerTest.java
+@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
+  */
+ public class ParseIntegerTest {
+     private static final String NULL_PARAMETER_MESSAGE = "Input parameter must not be null!";
++    private static final String EMPTY_PARAMETER_MESSAGE = "Input parameter must not be empty!";
+     private static final String INCORRECT_FORMAT_MESSAGE = "Input parameter of incorrect format";
+ 
+     @Test
+@@ -17,6 +18,12 @@ public class ParseIntegerTest {
+     }
+ 
+     @Test
++    public void testEmptyInput() {
++        IllegalArgumentException exception = Assertions.assertThrows(IllegalArgumentException.class, () -> ParseInteger.parseInt(""));
++        Assertions.assertEquals(exception.getMessage(), EMPTY_PARAMETER_MESSAGE);
++    }
++
++    @Test
+     public void testInputOfIncorrectFormat() {
+         IllegalArgumentException exception = Assertions.assertThrows(NumberFormatException.class, () -> ParseInteger.parseInt("+0a123"));
+         Assertions.assertTrue(exception.getMessage().contains(INCORRECT_FORMAT_MESSAGE));

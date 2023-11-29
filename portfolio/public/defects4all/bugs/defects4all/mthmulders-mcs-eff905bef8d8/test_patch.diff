@@ -1,0 +1,13 @@
+diff --git a/src/test/java/it/mulders/mcs/search/printer/TabularOutputPrinterTest.java b/src/test/java/it/mulders/mcs/search/printer/TabularOutputPrinterTest.java
+index 8fbc1ea..6e605dd 100644
+--- a/src/test/java/it/mulders/mcs/search/printer/TabularOutputPrinterTest.java
++++ b/src/test/java/it/mulders/mcs/search/printer/TabularOutputPrinterTest.java
+@@ -41,7 +41,7 @@ class TabularOutputPrinterTest implements WithAssertions {
+ 
+         // Assert
+         var table = buffer.toString();
+-        assertThat(table).contains("org.codehaus.plexus:plexus-utils");
++        assertThat(table).contains("org.codehaus.plexus:plexus-utils:3.4.1");
+     }
+ 
+     @Test

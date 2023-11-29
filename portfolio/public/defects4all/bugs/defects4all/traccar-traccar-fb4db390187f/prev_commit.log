@@ -1,0 +1,143 @@
+[891121f5-580a-453c-bff4-17c2059b33cc/build] 🚀  Start image=gitbugactions:latest
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   🐳  docker pull image=gitbugactions:latest platform= username= forcePull=false
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   🐳  docker create image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   🐳  docker run image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/003e0d20-cbaa-476d-93ca-79f015755edb] user=0 workdir=
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build] ⭐ Run Main actions/checkout@v3
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   🐳  docker cp src=/tmp/003e0d20-cbaa-476d-93ca-79f015755edb/. dst=/tmp/003e0d20-cbaa-476d-93ca-79f015755edb
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/003e0d20-cbaa-476d-93ca-79f015755edb] user=0 workdir=
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   ✅  Success - Main actions/checkout@v3
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build] ⭐ Run Main actions/setup-java@v3
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   🐳  docker cp src=/tmp/act-cache/82d03b1a-ecd1-44d1-8ecc-6f94467763b1/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   ❓  ::group::Installed distributions
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | Trying to resolve the latest version from remote
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   💬  ::debug::Gathering available versions from 'https://api.azul.com/zulu/download/community/v1.0/bundles/?os=linux&ext=tar.gz&bundle_type=jdk&javafx=false&arch=x86&hw_bitness=64&release_status=ga'
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | Resolved latest version as 11.0.21+9
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | Trying to download...
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | Downloading Java 11.0.21+9 (Zulu) from https://cdn.azul.com/zulu/bin/zulu11.68.17-ca-jdk11.0.21-linux_x64.tar.gz ...
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   💬  ::debug::Downloading https://cdn.azul.com/zulu/bin/zulu11.68.17-ca-jdk11.0.21-linux_x64.tar.gz
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   💬  ::debug::Destination /tmp/da10ae2a-bb97-48b1-9a09-066ee0d6eedc
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   💬  ::debug::download complete
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | Extracting Java archive...
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   💬  ::debug::Checking tar --version
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   💬  ::debug::tar (GNU tar) 1.34%0ACopyright (C) 2021 Free Software Foundation, Inc.%0ALicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.%0AThis is free software: you are free to change and redistribute it.%0AThere is NO WARRANTY, to the extent permitted by law.%0A%0AWritten by John Gilmore and Jay Fenlason.
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/9ff5fef0-fa01-40d8-b20d-06620d09acb3 -f /tmp/da10ae2a-bb97-48b1-9a09-066ee0d6eedc
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   💬  ::debug::Caching tool Java_Zulu_jdk 11.0.21-9 x64
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   💬  ::debug::source dir: /tmp/9ff5fef0-fa01-40d8-b20d-06620d09acb3/zulu11.68.17-ca-jdk11.0.21-linux_x64
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   💬  ::debug::destination /opt/hostedtoolcache/Java_Zulu_jdk/11.0.21-9/x64
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   💬  ::debug::finished caching tool
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | Java 11.0.21+9 was downloaded
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | Setting Java 11.0.21+9 as the default
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | Creating toolchains.xml for JDK version 11 from zulu
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | Writing to /home/runner/.m2/toolchains.xml
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | 
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | Java configuration:
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   |   Distribution: zulu
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   |   Version: 11.0.21+9
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   |   Path: /opt/hostedtoolcache/Java_Zulu_jdk/11.0.21-9/x64
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | 
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   ❓  ::endgroup::
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   ❓ add-matcher /run/act/actions/actions-setup-java@v3/.github/java.json
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | Creating settings.xml with server-id: github
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | Writing to /home/runner/.m2/settings.xml
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   ✅  Success - Main actions/setup-java@v3
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   ⚙  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Zulu_jdk/11.0.21-9/x64
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   ⚙  ::set-env:: JAVA_HOME_11_X64=/opt/hostedtoolcache/Java_Zulu_jdk/11.0.21-9/x64
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   ⚙  ::set-output:: distribution=Zulu
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   ⚙  ::set-output:: path=/opt/hostedtoolcache/Java_Zulu_jdk/11.0.21-9/x64
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   ⚙  ::set-output:: version=11.0.21+9
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   ⚙  ::add-path:: /opt/hostedtoolcache/Java_Zulu_jdk/11.0.21-9/x64/bin
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build] ⭐ Run Main ./gradlew build --no-daemon --warning-mode=fail
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | Downloading https://services.gradle.org/distributions/gradle-7.5.1-bin.zip
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | ...........10%............20%...........30%............40%...........50%............60%...........70%............80%...........90%............100%
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | 
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | Welcome to Gradle 7.5.1!
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | 
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | Here are the highlights of this release:
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   |  - Support for Java 18
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   |  - Support for building with Groovy 4
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   |  - Much more responsive continuous builds
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   |  - Improved diagnostics for dependency resolution
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | 
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | For more details see https://docs.gradle.org/7.5.1/release-notes.html
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | 
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | To honour the JVM settings for this build a single-use Daemon process will be forked. See https://docs.gradle.org/7.5.1/userguide/gradle_daemon.html#sec:disabling_the_daemon.
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | Daemon will be stopped at the end of the build 
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | 
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | > Configure project :
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | Kordamp Enforcer Gradle plugin 0.13.0. Consider becoming a patron at https://www.patreon.com/aalmiray
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | 
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | > Task :copyDependencies
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | > Task :extractIncludeProto
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | > Task :extractProto
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | > Task :generateProto
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | > Task :compileJava
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | Note: Some input files use or override a deprecated API.
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | Note: Recompile with -Xlint:deprecation for details.
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | Note: Some input files use unchecked or unsafe operations.
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | Note: Recompile with -Xlint:unchecked for details.
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | 
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | > Task :processResources
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | > Task :classes
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | > Task :jar
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | > Task :assemble
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | > Task :extractIncludeTestProto
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | > Task :extractTestProto
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | > Task :generateTestProto NO-SOURCE
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | 
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | > Task :compileTestJava
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | Note: Some input files use or override a deprecated API.
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | Note: Recompile with -Xlint:deprecation for details.
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | 
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | > Task :processTestResources NO-SOURCE
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | > Task :testClasses
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | > Task :checkstyleTest SKIPPED
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | > Task :checkstyleMain
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | > Task :test
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | > Task :check
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | > Task :build
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | 
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | BUILD SUCCESSFUL in 2m 40s
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   | 12 actionable tasks: 12 executed
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   ✅  Success - Main ./gradlew build --no-daemon --warning-mode=fail
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
+[891121f5-580a-453c-bff4-17c2059b33cc/build] ⭐ Run Post actions/setup-java@v3
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=
+[891121f5-580a-453c-bff4-17c2059b33cc/build]   ✅  Success - Post actions/setup-java@v3
+[891121f5-580a-453c-bff4-17c2059b33cc/build] 🏁  Job succeeded
+[891121f5-580a-453c-bff4-17c2059b33cc/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '18c1e761fd203c994445ac85e808ca6f672d0ec5'
