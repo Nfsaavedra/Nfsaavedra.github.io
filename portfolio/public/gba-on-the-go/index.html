@@ -1,9 +1,9 @@
 <!-- index.html -->
 <!DOCTYPE html>
-<html lang="en" ng-app="gitbugs-java-website" ng-controller="mainController">
+<html lang="en" ng-app="gba-on-the-go-website" ng-controller="mainController">
 	<head>
 		<meta charset="UTF-8">
-		<title>GitBugs-Java</title>
+		<title>GitBug-Actions on the Go</title>
 
 		<!-- CSS -->
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -16,7 +16,7 @@
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css" />
 		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/diff2html@3.4.35/bundles/css/diff2html.min.css">
-		<link rel="stylesheet" href="/gitbugs-java/website/style/style.css">
+		<link rel="stylesheet" href="/gba-on-the-go/website/style/style.css">
 
 
 		<!-- JS -->
@@ -34,7 +34,7 @@
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
 		<script type="text/javascript" src="//jtblin.github.io/angular-chart.js/dist/angular-chart.min.js"></script>
 
-		<script src="/gitbugs-java/website/js/app.js"></script>
+		<script src="/gba-on-the-go/website/js/app.js"></script>
 	</head>
 	<body keypress-events>
 		<div id="wrapper">
@@ -47,7 +47,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<h2>GitBugs-Java is showing {{filteredBugs.length}} bug-fixes</h2>
+					<h2>GitBug-Actions on the Go is showing {{filteredBugs.length}} bug-fixes</h2>
 				</div>
 				<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
 				<div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -95,7 +95,7 @@
 									<i class="fa fa-fw fa-search"></i>Languages <i class="fa fa-fw fa-angle-down pull-right"></i></a>
 									<ul class="collapse" uib-collapse="submenuLang">
 										<li>
-											<label for="java" ng-class="{'actived': filters['java']}"><input type="checkbox" id="java" ng-model="filters['java']" ng-click="clickFilter('java')">Java</label>
+											<label for="go" ng-class="{'actived': filters['go']}"><input type="checkbox" id="go" ng-model="filters['go']" ng-click="clickFilter('go')">Go</label>
 										</li>
 									</ul>
 								</li>
@@ -255,7 +255,7 @@
 	</script>
 	<script type="text/ng-template" id="stat.html">
 		<div class="modal-header">
-			<h3 class="modal-title" id="modal-title">GitBugs-Java Stat</h3>
+			<h3 class="modal-title" id="modal-title">GitBug-Actions on the Go Stat</h3>
 		</div>
 		<div class="modal-body" id="modal-body">
 			<section>
@@ -269,47 +269,40 @@
 					<thead>
 						<tr>
 							<th>Metric</th>
-							<th>Java</th>
-							<th>Python</th>
+							<th>Go</th>
 							<th>Total</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
 							<th># Modified files</th>
-							<td>{{$ctrl.fileStat.java.modified}}</td>
-							<td>{{$ctrl.fileStat.python.modified}}</td>
-							<td>{{$ctrl.fileStat.java.modified + $ctrl.fileStat.python.modified}}</td>
+							<td>{{$ctrl.fileStat.go.modified}}</td>
+							<td>{{$ctrl.fileStat.go.modified + $ctrl.fileStat.python.modified}}</td>
 						</tr>
 						<tr>
 							<th># Added files</th>
-							<td>{{$ctrl.fileStat.java.added}}</td>
-							<td>{{$ctrl.fileStat.python.added}}</td>
-							<td>{{$ctrl.fileStat.java.added + $ctrl.fileStat.python.added}}</td>
+							<td>{{$ctrl.fileStat.go.added}}</td>
+							<td>{{$ctrl.fileStat.go.added + $ctrl.fileStat.python.added}}</td>
 						</tr>
 						<tr>
 							<th># Deleted files</th>
-							<td>{{$ctrl.fileStat.java.deleted}}</td>
-							<td>{{$ctrl.fileStat.python.deleted}}</td>
-							<td>{{$ctrl.fileStat.java.deleted + $ctrl.fileStat.python.deleted}}</td>
+							<td>{{$ctrl.fileStat.go.deleted}}</td>
+							<td>{{$ctrl.fileStat.go.deleted + $ctrl.fileStat.python.deleted}}</td>
 						</tr>
 						<tr>
 							<th># Added lines</th>
-							<td>{{$ctrl.patchSizeStat.java.added}}</td>
-							<td>{{$ctrl.patchSizeStat.python.added}}</td>
-							<td>{{$ctrl.patchSizeStat.java.added + $ctrl.patchSizeStat.python.added}}</td>
+							<td>{{$ctrl.patchSizeStat.go.added}}</td>
+							<td>{{$ctrl.patchSizeStat.go.added + $ctrl.patchSizeStat.python.added}}</td>
 						</tr>
 						<tr>
 							<th># Removed lines</th>
-							<td>{{$ctrl.patchSizeStat.java.deleted}}</td>
-							<td>{{$ctrl.patchSizeStat.python.deleted}}</td>
-							<td>{{$ctrl.patchSizeStat.java.deleted + $ctrl.patchSizeStat.python.deleted}}</td>
+							<td>{{$ctrl.patchSizeStat.go.deleted}}</td>
+							<td>{{$ctrl.patchSizeStat.go.deleted + $ctrl.patchSizeStat.python.deleted}}</td>
 						</tr>
 						<tr>
 							<th># Changed lines</th>
-							<td>{{$ctrl.patchSizeStat.java.added + $ctrl.patchSizeStat.java.deleted}}</td>
-							<td>{{$ctrl.patchSizeStat.python.added + $ctrl.patchSizeStat.python.deleted}}</td>
-							<td>{{$ctrl.patchSizeStat.java.added + $ctrl.patchSizeStat.python.added + $ctrl.patchSizeStat.java.deleted + $ctrl.patchSizeStat.python.deleted}}</td>
+							<td>{{$ctrl.patchSizeStat.go.added + $ctrl.patchSizeStat.go.deleted}}</td>
+							<td>{{$ctrl.patchSizeStat.go.added + $ctrl.patchSizeStat.python.added + $ctrl.patchSizeStat.go.deleted + $ctrl.patchSizeStat.python.deleted}}</td>
 						</tr>
 					</tbody>
 				</table>

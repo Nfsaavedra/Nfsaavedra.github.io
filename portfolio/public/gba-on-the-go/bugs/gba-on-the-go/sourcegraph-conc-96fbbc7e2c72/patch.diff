@@ -1,0 +1,196 @@
+diff --git a/group/iter.go b/group/iter.go
+index b7c7bd1..141f0b3 100644
+--- a/group/iter.go
++++ b/group/iter.go
+@@ -5,19 +5,31 @@ import (
+ )
+ 
+ func ForEachIdx[T any](input []T, f func(int, *T)) {
+-	conc.ForEachIdxIn(New(), input, f)
++	g := New()
++	defer g.Wait()
++
++	conc.ForEachIdxIn(g, input, f)
+ }
+ 
+ func ForEach[T any](input []T, f func(*T)) {
+-	conc.ForEachIdxIn(New(), input, func(_ int, t *T) {
++	g := New()
++	defer g.Wait()
++
++	conc.ForEachIn(g, input, func(t *T) {
+ 		f(t)
+ 	})
+ }
+ 
+ func Map[T any, R any](input []T, f func(*T) R) []R {
+-	return conc.MapIn(New(), input, f)
++	g := New()
++	defer g.Wait()
++
++	return conc.MapIn(g, input, f)
+ }
+ 
+ func MapErr[T any, R any](input []T, f func(*T) (R, error)) ([]R, error) {
++	g := New()
++	defer g.Wait()
++
+ 	return conc.MapErrIn(New(), input, f)
+ }
+diff --git a/iter.go b/iter.go
+index d485ac1..9075c5c 100644
+--- a/iter.go
++++ b/iter.go
+@@ -1,6 +1,7 @@
+ package conc
+ 
+ import (
++	"runtime"
+ 	"sync"
+ 	"sync/atomic"
+ 
+@@ -18,12 +19,19 @@ func ForEachIdxIn[T any](goer Goer, input []T, f func(int, *T)) {
+ 	var wg sync.WaitGroup
+ 	task := func() {
+ 		defer wg.Done()
+-		for i := int(idx.Add(1) - 1); i < len(input); i = int(idx.Add(1) - 1) {
++		i := int(idx.Add(1) - 1)
++		for ; i < len(input); i = int(idx.Add(1) - 1) {
+ 			f(i, &input[i])
+ 		}
+ 	}
+ 
+ 	n := goer.MaxGoroutines()
++	if n > len(input) {
++		n = len(input)
++	} else if n == 0 {
++		n = runtime.GOMAXPROCS(0)
++	}
++
+ 	wg.Add(n)
+ 	for i := 0; i < n; i++ {
+ 		goer.Go(task)
+diff --git a/limiter.go b/limiter.go
+index 4c69545..a6e513f 100644
+--- a/limiter.go
++++ b/limiter.go
+@@ -1,6 +1,9 @@
+ package conc
+ 
+ func NewLimiter(n int) Limiter {
++	if n < 1 {
++		return nil
++	}
+ 	return make(Limiter, n)
+ }
+ 
+diff --git a/pool/context_pool.go b/pool/context_pool.go
+index c9448b2..6f843a4 100644
+--- a/pool/context_pool.go
++++ b/pool/context_pool.go
+@@ -5,20 +5,20 @@ import (
+ )
+ 
+ type ContextPool struct {
+-	ErrorPool
++	errorPool ErrorPool
+ 
+ 	ctx    context.Context
+ 	cancel context.CancelFunc
+ }
+ 
+ func (g *ContextPool) Go(f func(ctx context.Context) error) {
+-	g.ErrorPool.Go(func() error {
++	g.errorPool.Go(func() error {
+ 		err := f(g.ctx)
+ 		if err != nil && g.cancel != nil {
+ 			// Add the error directly because otherwise, canceling could cause
+ 			// another goroutine to exit and return an error before this error
+ 			// was added, which breaks the expectations of WithFirstError().
+-			g.ErrorPool.addErr(err)
++			g.errorPool.addErr(err)
+ 			g.cancel()
+ 			return nil
+ 		}
+@@ -27,7 +27,7 @@ func (g *ContextPool) Go(f func(ctx context.Context) error) {
+ }
+ 
+ func (p *ContextPool) Wait() error {
+-	return p.ErrorPool.Wait()
++	return p.errorPool.Wait()
+ }
+ 
+ func (p *ContextPool) WithCancelOnError() *ContextPool {
+diff --git a/pool/error_pool.go b/pool/error_pool.go
+index 652e00a..7871bed 100644
+--- a/pool/error_pool.go
++++ b/pool/error_pool.go
+@@ -8,7 +8,7 @@ import (
+ )
+ 
+ type ErrorPool struct {
+-	Pool
++	pool Pool
+ 
+ 	onlyFirst bool
+ 
+@@ -17,19 +17,19 @@ type ErrorPool struct {
+ }
+ 
+ func (p *ErrorPool) Go(f func() error) {
+-	p.Pool.Go(func() {
++	p.pool.Go(func() {
+ 		p.addErr(f())
+ 	})
+ }
+ 
+ func (p *ErrorPool) Wait() error {
+-	p.Pool.Wait()
++	p.pool.Wait()
+ 	return p.errs
+ }
+ 
+ func (p *ErrorPool) WithContext(ctx context.Context) *ContextPool {
+ 	return &ContextPool{
+-		ErrorPool: *p,
++		errorPool: *p,
+ 		ctx:       ctx,
+ 	}
+ }
+diff --git a/pool/pool.go b/pool/pool.go
+index b2cd885..f6c843c 100644
+--- a/pool/pool.go
++++ b/pool/pool.go
+@@ -47,13 +47,13 @@ func (p *Pool) WithMaxGoroutines(n int) *Pool {
+ 
+ func (p *Pool) WithErrors() *ErrorPool {
+ 	return &ErrorPool{
+-		Pool: *p,
++		pool: *p,
+ 	}
+ }
+ 
+-func (p Pool) WithContext(ctx context.Context) *ContextPool {
++func (p *Pool) WithContext(ctx context.Context) *ContextPool {
+ 	return &ContextPool{
+-		ErrorPool: *p.WithErrors(),
++		errorPool: *p.WithErrors(),
+ 		ctx:       ctx,
+ 	}
+ }
+diff --git a/stream/stream.go b/stream/stream.go
+index 9aeb7a0..90d24ff 100644
+--- a/stream/stream.go
++++ b/stream/stream.go
+@@ -1,9 +1,10 @@
+ package stream
+ 
+ import (
++	"sync"
++
+ 	"github.com/camdencheek/conc"
+ 	"github.com/camdencheek/conc/pool"
+-	"sync"
+ )
+ 
+ func New() *Stream {

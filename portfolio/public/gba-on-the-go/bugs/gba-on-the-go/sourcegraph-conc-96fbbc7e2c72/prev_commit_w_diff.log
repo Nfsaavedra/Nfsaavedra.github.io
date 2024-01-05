@@ -1,0 +1,230 @@
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] 🚀  Start image=crawlergpt:latest
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   🐳  docker pull image=crawlergpt:latest platform= username= forcePull=false
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   🐳  docker create image=crawlergpt:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   🐳  docker run image=crawlergpt:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/1d4aeb92-5f2b-4884-bcc2-253360f41687] user=0 workdir=
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] ⭐ Run Main actions/checkout@v3
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   🐳  docker cp src=/tmp/1d4aeb92-5f2b-4884-bcc2-253360f41687/. dst=/tmp/1d4aeb92-5f2b-4884-bcc2-253360f41687
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/1d4aeb92-5f2b-4884-bcc2-253360f41687] user=0 workdir=
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   ✅  Success - Main actions/checkout@v3
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] ⭐ Run Main Set up Go
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   🐳  docker cp src=/tmp/act-cache/cddfba3b-5011-47bb-b2df-fc8dbc45b943/act/actions-setup-go@v3/ dst=/var/run/act/actions/actions-setup-go@v3/
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-go@v3/] user=0 workdir=
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-go@v3/dist/setup/index.js] user= workdir=
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | Setup go version spec 1.19
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::isExplicit: 
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::explicit? false
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::isExplicit: 1.14.15
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::explicit? true
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::isExplicit: 1.15.15
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::explicit? true
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::isExplicit: 1.16.7
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::explicit? true
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::evaluating 3 versions
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::match not found
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | Attempting to download 1.19...
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::No manifest cached
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::set auth
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | matching 1.19...
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::check 1.21.3 satisfies 1.19
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::check 1.21.2 satisfies 1.19
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::check 1.21.1 satisfies 1.19
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::check 1.21.0 satisfies 1.19
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::check 1.20.10 satisfies 1.19
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::check 1.20.9 satisfies 1.19
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::check 1.20.8 satisfies 1.19
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::check 1.20.7 satisfies 1.19
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::check 1.20.6 satisfies 1.19
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::check 1.20.5 satisfies 1.19
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::check 1.20.4 satisfies 1.19
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::check 1.20.3 satisfies 1.19
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::check 1.20.2 satisfies 1.19
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::check 1.20.1 satisfies 1.19
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::check 1.20.0 satisfies 1.19
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::check 1.19.13 satisfies 1.19
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::arm64===x64 && darwin===linux
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::x64===x64 && darwin===linux
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::x64===x64 && linux===linux
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::matched 1.19.13
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | Acquiring 1.19.13 from https://github.com/actions/go-versions/releases/download/1.19.13-6107263891/go-1.19.13-linux-x64.tar.gz
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::Downloading https://github.com/actions/go-versions/releases/download/1.19.13-6107263891/go-1.19.13-linux-x64.tar.gz
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::Destination /tmp/954e6c34-3c74-4de5-ac7f-4d0e0ea8b0d3
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::set auth
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::download complete
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | Extracting Go...
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::Checking tar --version
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::tar (GNU tar) 1.30%0ACopyright (C) 2017 Free Software Foundation, Inc.%0ALicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.%0AThis is free software: you are free to change and redistribute it.%0AThere is NO WARRANTY, to the extent permitted by law.%0A%0AWritten by John Gilmore and Jay Fenlason.
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /tmp/ced78559-1eae-4f5d-96f5-aad6852aa293 -f /tmp/954e6c34-3c74-4de5-ac7f-4d0e0ea8b0d3
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | Successfully extracted go to /tmp/ced78559-1eae-4f5d-96f5-aad6852aa293
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | Adding to the cache ...
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::Caching tool go 1.19.13 x64
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::source dir: /tmp/ced78559-1eae-4f5d-96f5-aad6852aa293
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::destination /opt/hostedtoolcache/go/1.19.13/x64
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::finished caching tool
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | Successfully cached go to /opt/hostedtoolcache/go/1.19.13/x64
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | Added go to the path
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::which go :/opt/hostedtoolcache/go/1.19.13/x64/bin/go:
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::go env GOPATH :/home/runneradmin/go:
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::creating /home/runneradmin/go
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::creating /home/runneradmin/go/bin
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   💬  ::debug::add bin true
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | Successfully set up Go version 1.19
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   ❓ add-matcher /run/act/actions/actions-setup-go@v3/matchers.json
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | go version go1.19.13 linux/amd64
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | 
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   ❓  ::group::go env
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | GO111MODULE=""
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | GOARCH="amd64"
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | GOBIN=""
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | GOCACHE="/home/runneradmin/.cache/go-build"
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | GOENV="/home/runneradmin/.config/go/env"
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | GOEXE=""
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | GOEXPERIMENT=""
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | GOFLAGS=""
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | GOHOSTARCH="amd64"
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | GOHOSTOS="linux"
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | GOINSECURE=""
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | GOMODCACHE="/home/runneradmin/go/pkg/mod"
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | GONOPROXY=""
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | GONOSUMDB=""
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | GOOS="linux"
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | GOPATH="/home/runneradmin/go"
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | GOPRIVATE=""
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | GOPROXY="https://proxy.golang.org,direct"
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | GOROOT="/opt/hostedtoolcache/go/1.19.13/x64"
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | GOSUMDB="sum.golang.org"
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | GOTMPDIR=""
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | GOTOOLDIR="/opt/hostedtoolcache/go/1.19.13/x64/pkg/tool/linux_amd64"
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | GOVCS=""
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | GOVERSION="go1.19.13"
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | GCCGO="gccgo"
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | GOAMD64="v1"
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | AR="ar"
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | CC="gcc"
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | CXX="g++"
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | CGO_ENABLED="1"
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | GOMOD="/tmp/1d4aeb92-5f2b-4884-bcc2-253360f41687/go.mod"
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | GOWORK=""
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | CGO_CFLAGS="-g -O2"
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | CGO_CPPFLAGS=""
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | CGO_CXXFLAGS="-g -O2"
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | CGO_FFLAGS="-g -O2"
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | CGO_LDFLAGS="-g -O2"
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | PKG_CONFIG="pkg-config"
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | GOGCCFLAGS="-fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -fdebug-prefix-map=/tmp/go-build419362573=/tmp/go-build -gno-record-gcc-switches"
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | 
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   ❓  ::endgroup::
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   ✅  Success - Main Set up Go
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   ⚙  ::set-output:: go-version=1.19.13
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   ⚙  ::add-path:: /opt/hostedtoolcache/go/1.19.13/x64/bin
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   ⚙  ::add-path:: /home/runneradmin/go/bin
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] ⭐ Run Main Build
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | go: downloading github.com/sourcegraph/sourcegraph/lib v0.0.0-20221216004406-749998a2ac74
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | go: downloading github.com/cockroachdb/errors v1.9.0
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | go: downloading github.com/getsentry/sentry-go v0.13.0
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | go: downloading github.com/gogo/protobuf v1.3.2
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | go: downloading github.com/cockroachdb/logtags v0.0.0-20211118104740-dabe8e521a4f
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | go: downloading github.com/pkg/errors v0.9.1
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | go: downloading github.com/kr/pretty v0.3.0
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | go: downloading github.com/cockroachdb/redact v1.1.3
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | go: downloading github.com/kr/text v0.2.0
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | go: downloading github.com/rogpeppe/go-internal v1.9.0
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | go: downloading golang.org/x/sys v0.0.0-20220829200755-d48e67d00261
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/cockroachdb/errors/stdstrings
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/gogo/protobuf/sortkeys
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/kr/text
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/cockroachdb/redact/internal/rfmt/fmtsort
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/rogpeppe/go-internal/fmtsort
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/cockroachdb/redact/interfaces
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/cockroachdb/redact/internal/fmtforward
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/pkg/errors
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | golang.org/x/sys/execabs
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/cockroachdb/logtags
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/gogo/protobuf/proto
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/getsentry/sentry-go/internal/crypto/randutil
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/getsentry/sentry-go/internal/debug
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/getsentry/sentry-go/internal/ratelimit
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/kr/pretty
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/cockroachdb/redact/internal/markers
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/cockroachdb/redact/internal/redact
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/getsentry/sentry-go
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/cockroachdb/redact/internal/escape
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/cockroachdb/redact/internal/buffer
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/cockroachdb/redact/internal/rfmt
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/cockroachdb/redact/builder
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/cockroachdb/redact
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/gogo/protobuf/protoc-gen-gogo/descriptor
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/gogo/protobuf/types
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/gogo/protobuf/gogoproto
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/cockroachdb/errors/errorspb
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/cockroachdb/errors/errbase
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/cockroachdb/errors/secondary
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/cockroachdb/errors/telemetrykeys
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/cockroachdb/errors/contexttags
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/cockroachdb/errors/withstack
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/cockroachdb/errors/hintdetail
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/cockroachdb/errors/safedetails
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/cockroachdb/errors/barriers
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/cockroachdb/errors/markers
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/cockroachdb/errors/assert
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/cockroachdb/errors/domains
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/cockroachdb/errors/issuelink
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/cockroachdb/errors/report
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/cockroachdb/errors/errutil
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/cockroachdb/errors
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/sourcegraph/sourcegraph/lib/errors
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/camdencheek/conc
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/camdencheek/conc/group
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/camdencheek/conc/pool
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | github.com/camdencheek/conc/stream
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   ✅  Success - Main Build
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] ⭐ Run Main Test
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   | go: downloading github.com/jstemmer/go-junit-report/v2 v2.0.0
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build]   ❌  Failure - Main Test
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] exitcode '1': failure
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] 🏁  Job failed
+[b459952b-b7b5-4f2a-8d7c-07d469652c69/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'd63d096b2987c0dc5b8306bcc78bc15a2c3f27f8'

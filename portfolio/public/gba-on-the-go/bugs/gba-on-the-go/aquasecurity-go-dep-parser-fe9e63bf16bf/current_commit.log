@@ -1,0 +1,175 @@
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] 🚀  Start image=crawlergpt:latest
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   🐳  docker pull image=crawlergpt:latest platform= username= forcePull=false
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   🐳  docker create image=crawlergpt:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   🐳  docker run image=crawlergpt:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/385a5b09-59aa-430b-906a-21e13594cd63] user=0 workdir=
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] ⭐ Run Main Set up Go
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   🐳  docker cp src=/tmp/act-cache/7a79bb5b-854b-4be1-85a0-49b258c19cc4/act/actions-setup-go@v3/ dst=/var/run/act/actions/actions-setup-go@v3/
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-go@v3/] user=0 workdir=
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-go@v3/dist/setup/index.js] user= workdir=
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | Setup go version spec 1.18
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::isExplicit: 
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::explicit? false
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::isExplicit: 1.14.15
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::explicit? true
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::isExplicit: 1.15.15
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::explicit? true
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::isExplicit: 1.16.7
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::explicit? true
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::evaluating 3 versions
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::match not found
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | Attempting to download 1.18...
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::No manifest cached
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::set auth
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | matching 1.18...
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::check 1.21.3 satisfies 1.18
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::check 1.21.2 satisfies 1.18
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::check 1.21.1 satisfies 1.18
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::check 1.21.0 satisfies 1.18
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::check 1.20.10 satisfies 1.18
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::check 1.20.9 satisfies 1.18
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::check 1.20.8 satisfies 1.18
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::check 1.20.7 satisfies 1.18
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::check 1.20.6 satisfies 1.18
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::check 1.20.5 satisfies 1.18
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::check 1.20.4 satisfies 1.18
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::check 1.20.3 satisfies 1.18
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::check 1.20.2 satisfies 1.18
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::check 1.20.1 satisfies 1.18
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::check 1.20.0 satisfies 1.18
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::check 1.19.13 satisfies 1.18
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::check 1.19.12 satisfies 1.18
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::check 1.19.11 satisfies 1.18
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::check 1.19.10 satisfies 1.18
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::check 1.19.9 satisfies 1.18
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::check 1.19.8 satisfies 1.18
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::check 1.19.7 satisfies 1.18
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::check 1.19.6 satisfies 1.18
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::check 1.19.5 satisfies 1.18
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::check 1.19.4 satisfies 1.18
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::check 1.19.3 satisfies 1.18
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::check 1.19.2 satisfies 1.18
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::check 1.19.1 satisfies 1.18
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::check 1.19.0 satisfies 1.18
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::check 1.18.10 satisfies 1.18
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::x64===x64 && darwin===linux
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::x64===x64 && linux===linux
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::matched 1.18.10
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | Acquiring 1.18.10 from https://github.com/actions/go-versions/releases/download/1.18.10-3890634278/go-1.18.10-linux-x64.tar.gz
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::Downloading https://github.com/actions/go-versions/releases/download/1.18.10-3890634278/go-1.18.10-linux-x64.tar.gz
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::Destination /tmp/0aeab358-e01a-4690-8d77-40d8de26d39a
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::set auth
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::download complete
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | Extracting Go...
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::Checking tar --version
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::tar (GNU tar) 1.30%0ACopyright (C) 2017 Free Software Foundation, Inc.%0ALicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.%0AThis is free software: you are free to change and redistribute it.%0AThere is NO WARRANTY, to the extent permitted by law.%0A%0AWritten by John Gilmore and Jay Fenlason.
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /tmp/767229c8-e796-427d-bc20-2f8f987a5957 -f /tmp/0aeab358-e01a-4690-8d77-40d8de26d39a
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | Successfully extracted go to /tmp/767229c8-e796-427d-bc20-2f8f987a5957
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | Adding to the cache ...
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::Caching tool go 1.18.10 x64
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::source dir: /tmp/767229c8-e796-427d-bc20-2f8f987a5957
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::destination /opt/hostedtoolcache/go/1.18.10/x64
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::finished caching tool
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | Successfully cached go to /opt/hostedtoolcache/go/1.18.10/x64
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | Added go to the path
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::which go :/opt/hostedtoolcache/go/1.18.10/x64/bin/go:
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::go env GOPATH :/home/runneradmin/go:
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::creating /home/runneradmin/go
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::creating /home/runneradmin/go/bin
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   💬  ::debug::add bin true
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | Successfully set up Go version 1.18
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   ❓ add-matcher /run/act/actions/actions-setup-go@v3/matchers.json
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | go version go1.18.10 linux/amd64
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | 
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   ❓  ::group::go env
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | GO111MODULE=""
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | GOARCH="amd64"
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | GOBIN=""
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | GOCACHE="/home/runneradmin/.cache/go-build"
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | GOENV="/home/runneradmin/.config/go/env"
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | GOEXE=""
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | GOEXPERIMENT=""
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | GOFLAGS=""
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | GOHOSTARCH="amd64"
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | GOHOSTOS="linux"
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | GOINSECURE=""
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | GOMODCACHE="/home/runneradmin/go/pkg/mod"
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | GONOPROXY=""
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | GONOSUMDB=""
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | GOOS="linux"
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | GOPATH="/home/runneradmin/go"
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | GOPRIVATE=""
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | GOPROXY="https://proxy.golang.org,direct"
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | GOROOT="/opt/hostedtoolcache/go/1.18.10/x64"
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | GOSUMDB="sum.golang.org"
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | GOTMPDIR=""
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | GOTOOLDIR="/opt/hostedtoolcache/go/1.18.10/x64/pkg/tool/linux_amd64"
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | GOVCS=""
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | GOVERSION="go1.18.10"
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | GCCGO="gccgo"
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | GOAMD64="v1"
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | AR="ar"
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | CC="gcc"
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | CXX="g++"
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | CGO_ENABLED="1"
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | GOMOD="/dev/null"
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | GOWORK=""
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | CGO_CFLAGS="-g -O2"
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | CGO_CPPFLAGS=""
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | CGO_CXXFLAGS="-g -O2"
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | CGO_FFLAGS="-g -O2"
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | CGO_LDFLAGS="-g -O2"
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | PKG_CONFIG="pkg-config"
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | GOGCCFLAGS="-fPIC -m64 -pthread -fmessage-length=0 -fdebug-prefix-map=/tmp/go-build4015388709=/tmp/go-build -gno-record-gcc-switches"
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | 
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   ❓  ::endgroup::
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   ✅  Success - Main Set up Go
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   ⚙  ::set-output:: go-version=1.18.10
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   ⚙  ::add-path:: /opt/hostedtoolcache/go/1.18.10/x64/bin
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   ⚙  ::add-path:: /home/runneradmin/go/bin
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] ⭐ Run Main Check out code into the Go module directory
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   🐳  docker cp src=/tmp/385a5b09-59aa-430b-906a-21e13594cd63/. dst=/tmp/385a5b09-59aa-430b-906a-21e13594cd63
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/385a5b09-59aa-430b-906a-21e13594cd63] user=0 workdir=
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   ✅  Success - Main Check out code into the Go module directory
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] ⭐ Run Main Run unit tests
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   | go: downloading github.com/jstemmer/go-junit-report/v2 v2.0.0
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   ✅  Success - Main Run unit tests
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] ⭐ Run Post Set up Go
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-go@v3/dist/cache-save/index.js] user= workdir=
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test]   ✅  Success - Post Set up Go
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] 🏁  Job succeeded
+[14985291-7188-4b8b-9394-f84af1c629e5/Unit Test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'fe9e63bf16bf110081a910f9421e818bdab7a0f5'
