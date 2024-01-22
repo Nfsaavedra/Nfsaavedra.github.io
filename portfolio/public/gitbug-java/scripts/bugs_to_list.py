@@ -2,9 +2,9 @@ import os
 import json
 from unidiff import PatchSet
 
-benchmark = "gitbugs-java"
+benchmark = "gitbug-java"
 
-with open('../gitbugs-java.json', 'w') as gitbugs_java:
+with open('../gitbug-java.json', 'w') as gitbug_java:
     bugs_path = '../website/bugs'
     bugs = {}
 
@@ -92,5 +92,5 @@ with open('../gitbugs-java.json', 'w') as gitbugs_java:
                         patch_file.write(bug['actions_runs'][2][0]['stdout'])
 
     
-    gitbugs_java.write(json.dumps(bugs))
+    gitbug_java.write(json.dumps(bugs))
 

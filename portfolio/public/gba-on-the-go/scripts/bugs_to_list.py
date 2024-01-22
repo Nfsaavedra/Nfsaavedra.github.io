@@ -10,7 +10,7 @@ with open("non-flaky.json", "r") as non_flaky:
     for line in lines:
         non_flaky.append(json.loads(line)["commit"])
 
-with open('../gba-on-the-go.json', 'w') as gitbugs_java:
+with open('../gba-on-the-go.json', 'w') as gitbug_java:
     bugs_path = '../website/bugs'
     bugs = {}
 
@@ -100,5 +100,5 @@ with open('../gba-on-the-go.json', 'w') as gitbugs_java:
                         patch_file.write(bug['actions_runs'][2][0]['stdout'])
 
     
-    gitbugs_java.write(json.dumps(bugs))
+    gitbug_java.write(json.dumps(bugs))
 

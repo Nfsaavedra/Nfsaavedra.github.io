@@ -1,6 +1,6 @@
-const base_url = "/gitbugs-java/"
+const base_url = "/gitbug-java/"
 
-angular.module('gitbugs-java-website', ['ngRoute', 'ui.bootstrap', 'anguFixedHeaderTable', 'chart.js'])
+angular.module('gitbug-java-website', ['ngRoute', 'ui.bootstrap', 'anguFixedHeaderTable', 'chart.js'])
     .config(function($routeProvider, $locationProvider) {
         $routeProvider
             .when('/bug/:benchmark/:id', {
@@ -487,7 +487,7 @@ angular.module('gitbugs-java-website', ['ngRoute', 'ui.bootstrap', 'anguFixedHea
             'mixed': true,
             'unknown': true,
         };
-        $scope.benchmarks = ["GitBugs-Java"];
+        $scope.benchmarks = ["GitBug-Java"];
         $scope.tools = [];
 
         // create the list of sushi rolls 
