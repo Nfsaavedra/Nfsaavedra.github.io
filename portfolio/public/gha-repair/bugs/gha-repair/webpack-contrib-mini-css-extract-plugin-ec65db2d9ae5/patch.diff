@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/cancel.yml b/.github/workflows/cancel.yml
+index 23703ea..1913e49 100644
+--- a/.github/workflows/cancel.yml
++++ b/.github/workflows/cancel.yml
+@@ -1,5 +1,13 @@
+ name: Cancel
+-on: [push]
++on:
++  push:
++    branches:
++      - master
++      - next
++  pull_request:
++    branches:
++      - master
++      - next
+ permissions: {} # none
+ jobs:
+   cancel:

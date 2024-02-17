@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/upgrade-tree-sitter.yml b/.github/workflows/upgrade-tree-sitter.yml
+index e566132..1c00be7 100644
+--- a/.github/workflows/upgrade-tree-sitter.yml
++++ b/.github/workflows/upgrade-tree-sitter.yml
+@@ -1,4 +1,7 @@
++name: Upgrade tree-sitter
++
+ on:
++   workflow_dispatch:
+   schedule:
+     - cron: '0 12 * * 2'
+ 

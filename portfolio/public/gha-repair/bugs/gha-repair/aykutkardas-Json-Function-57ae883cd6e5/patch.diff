@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index ed248fe..30a1fca 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -8,7 +8,7 @@ jobs:
+ 
+     strategy:
+       matrix:
+-        node-version: [12.x, 14.x, 16.x]
++        node-version: [14.x, 16.x]
+ 
+     steps:
+       - uses: actions/checkout@v2
+@@ -19,4 +19,4 @@ jobs:
+       - run: yarn install
+       - run: yarn test
+         env:
+-          CI: true
+\ No newline at end of file
++          CI: true

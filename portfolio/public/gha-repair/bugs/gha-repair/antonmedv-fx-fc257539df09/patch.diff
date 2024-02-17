@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 7eb8137..c4e1789 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -23,5 +23,5 @@ jobs:
+     - name: Build and Release
+       env:
+         FORCE_COLOR: 3
+-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
++        GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
+       run: npx zx .github/workflows/release.mjs

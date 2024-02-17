@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/publish.yml b/.github/workflows/publish.yml
+index d25b9ca..8808e00 100644
+--- a/.github/workflows/publish.yml
++++ b/.github/workflows/publish.yml
+@@ -1,4 +1,4 @@
+-name: Authing JS SDK Github CI
++name: Authing JS SDK publish CI
+ 
+ on:
+   workflow_dispatch:

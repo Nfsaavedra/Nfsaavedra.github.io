@@ -1,0 +1,23 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index a60508e..a9a9133 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -7,16 +7,11 @@ jobs:
+ 
+     runs-on: ubuntu-latest
+ 
+-    strategy:
+-      matrix:
+-        node-version: [12.x]
+-
+     steps:
+     - uses: actions/checkout@v2
+-    - name: Use Node.js ${{ matrix.node-version }}
+-      uses: actions/setup-node@v1
++    - uses: actions/setup-node@v1
+       with:
+-        node-version: ${{ matrix.node-version }}
++        node-version: '12.x'
+     - run: npm install -g yarn
+     - run: yarn install
+     - run: yarn test

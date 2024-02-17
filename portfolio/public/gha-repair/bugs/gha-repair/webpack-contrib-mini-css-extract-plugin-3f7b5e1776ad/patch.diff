@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/dependency-review.yml b/.github/workflows/dependency-review.yml
+index 745f4c5..24a35a0 100644
+--- a/.github/workflows/dependency-review.yml
++++ b/.github/workflows/dependency-review.yml
+@@ -11,4 +11,4 @@ jobs:
+       - name: "Checkout Repository"
+         uses: actions/checkout@v3
+       - name: "Dependency Review"
+-        uses: actions/dependency-review-action@v2
++        uses: actions/dependency-review-action@v3

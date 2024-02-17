@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/rust_check.yml b/.github/workflows/rust_check.yml
+index 294fccb..9d1089e 100644
+--- a/.github/workflows/rust_check.yml
++++ b/.github/workflows/rust_check.yml
+@@ -23,6 +23,8 @@ jobs:
+         rustc --version
+         cargo check --verbose
+     - name: Install build dependencies
+-      run: sudo apt-get install -y  openssl libssl-dev pkg-config ffmpeg yasm build-essential wget libbz2-dev zlib1g-dev libavformat-dev
++      run: |
++        sudo apt-get update
++        sudo apt-get install -y  openssl libssl-dev pkg-config ffmpeg yasm build-essential wget libbz2-dev zlib1g-dev libavformat-dev
+     - name: Run unit tests
+       run: cargo test --all

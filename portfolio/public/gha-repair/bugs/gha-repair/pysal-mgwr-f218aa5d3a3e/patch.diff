@@ -1,0 +1,150 @@
+diff --git a/.ci/310.yaml b/.ci/310.yaml
+new file mode 100644
+index 0000000..365ac28
+--- /dev/null
++++ b/.ci/310.yaml
+@@ -0,0 +1,16 @@
++name: test
++channels:
++  - conda-forge
++dependencies:
++  - python=3.10
++  - libpysal
++  - numpy>=1.3
++  - pandas>=1
++  - scikit-learn>=0.22
++  - scipy>=1.0
++  - spreg
++  - codecov
++  - coverage
++  - pytest
++  - pytest-cov
++  - pytest-timeout
+diff --git a/.ci/311-DEV.yaml b/.ci/311-DEV.yaml
+new file mode 100644
+index 0000000..de2e94a
+--- /dev/null
++++ b/.ci/311-DEV.yaml
+@@ -0,0 +1,17 @@
++name: test
++channels:
++  - conda-forge
++dependencies:
++  - python=3.11
++  - libpysal
++  - shapely
++  - numpy>=1.3
++  - pandas>=1
++  - scikit-learn>=0.22
++  - scipy>=1.0
++  - spreg
++  - codecov
++  - coverage
++  - pytest
++  - pytest-cov
++  - pytest-timeout
+diff --git a/.ci/311.yaml b/.ci/311.yaml
+new file mode 100644
+index 0000000..fbf813c
+--- /dev/null
++++ b/.ci/311.yaml
+@@ -0,0 +1,16 @@
++name: test
++channels:
++  - conda-forge
++dependencies:
++  - python=3.11
++  - libpysal
++  - numpy>=1.3
++  - pandas>=1
++  - scikit-learn>=0.22
++  - scipy>=1.0
++  - spreg
++  - codecov
++  - coverage
++  - pytest
++  - pytest-cov
++  - pytest-timeout
+diff --git a/.ci/37.yaml b/.ci/37.yaml
+deleted file mode 100644
+index 85fc07e..0000000
+--- a/.ci/37.yaml
++++ /dev/null
+@@ -1,16 +0,0 @@
+-name: test
+-channels:
+-  - conda-forge
+-dependencies:
+-  - python=3.7
+-  - libpysal
+-  - numpy>=1.3
+-  - pandas>=1
+-  - scikit-learn>=0.22
+-  - scipy>=1.0
+-  - spreg
+-  - codecov
+-  - coverage
+-  - pytest
+-  - pytest-cov
+-  - pytest-timeout
+diff --git a/.ci/38.yaml b/.ci/38.yaml
+deleted file mode 100644
+index 730ce78..0000000
+--- a/.ci/38.yaml
++++ /dev/null
+@@ -1,16 +0,0 @@
+-name: test
+-channels:
+-  - conda-forge
+-dependencies:
+-  - python=3.8
+-  - libpysal
+-  - numpy>=1.3
+-  - pandas>=1
+-  - scikit-learn>=0.22
+-  - scipy>=1.0
+-  - spreg
+-  - codecov
+-  - coverage
+-  - pytest
+-  - pytest-cov
+-  - pytest-timeout
+diff --git a/.ci/39-DEV.yaml b/.ci/39-DEV.yaml
+deleted file mode 100644
+index d355d2a..0000000
+--- a/.ci/39-DEV.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-name: test
+-channels:
+-  - conda-forge
+-dependencies:
+-  - python=3.9
+-  - libpysal
+-  - shapely
+-  - numpy>=1.3
+-  - pandas>=1
+-  - scikit-learn>=0.22
+-  - scipy>=1.0
+-  - spreg
+-  - codecov
+-  - coverage
+-  - pytest
+-  - pytest-cov
+-  - pytest-timeout
+diff --git a/.github/workflows/unittest.yml b/.github/workflows/unittest.yml
+index 390110d..5b202e0 100644
+--- a/.github/workflows/unittest.yml
++++ b/.github/workflows/unittest.yml
+@@ -16,9 +16,9 @@
+      strategy:
+        matrix:
+          os: ['macos-latest', 'ubuntu-latest', 'windows-latest']
+-         environment-file: [.ci/37.yaml, .ci/38.yaml, .ci/39.yaml]
++         environment-file: [.ci/39.yaml, .ci/310.yaml, .ci/311.yaml]
+          include:
+-           - environment-file: .ci/39-DEV.yaml
++           - environment-file: .ci/311-DEV.yaml
+              os: ubuntu-latest
+      defaults:
+        run:

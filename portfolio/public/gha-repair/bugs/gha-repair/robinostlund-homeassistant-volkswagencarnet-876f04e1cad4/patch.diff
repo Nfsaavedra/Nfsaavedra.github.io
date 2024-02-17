@@ -1,0 +1,26 @@
+diff --git a/.github/workflows/release.yaml b/.github/workflows/release.yaml
+index 2a7874e..7e81b8b 100644
+--- a/.github/workflows/release.yaml
++++ b/.github/workflows/release.yaml
+@@ -25,21 +25,6 @@ jobs:
+           cd custom_components/volkswagencarnet
+           zip volkswagencarnet.zip -r ./
+ 
+-
+-      # - name: Create Release
+-      #   id: create_release
+-      #   uses: actions/create-release@v1
+-      #   env:
+-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+-      #   with:
+-      #     tag_name: ${{ github.ref }}
+-      #     release_name: Release ${{ github.ref }}
+-      #     body: |
+-      #       Changes in this release:
+-      #       ${{ steps.changelog.outputs.changelog }}
+-      #     draft: true
+-      #     prerelease: true
+-
+       - name: Create Release
+         id: create_release
+         uses: release-drafter/release-drafter@v5

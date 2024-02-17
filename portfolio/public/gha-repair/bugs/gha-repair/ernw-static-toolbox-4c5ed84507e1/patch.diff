@@ -1,0 +1,149 @@
+diff --git a/.github/workflows/build-gdb-aarch64.yml b/.github/workflows/build-gdb-aarch64.yml
+new file mode 100644
+index 0000000..2fb3bf8
+--- /dev/null
++++ b/.github/workflows/build-gdb-aarch64.yml
+@@ -0,0 +1,38 @@
++name: GDB AARCH64
++on:
++  workflow_dispatch
++jobs:
++    build:
++        name: Build GDB AARCH64
++        runs-on: ubuntu-latest
++        container: muslcc/x86_64:aarch64-linux-musl
++        steps:
++          - name: Install dependencies
++            run: apk update && apk add bash git perl make cmake flex bison automake autoconf libtool qemu-arm qemu-aarch64 file texinfo zip
++
++          - name: Install build compiler
++            run: /bin/sh -c "apk update && apk upgrade && apk add --no-cache curl rsync sudo util-linux && cd / && curl -so ${ARCH}-cross.tgz ${HOST}/${ARCH}-cross.tgz && tar -xf ${ARCH}-cross.tgz && rm ${ARCH}-cross.tgz && cd ${ARCH}-cross"
++            env:
++                ARCH: x86_64-linux-musl
++                HOST: https://more.musl.cc/9.2.1/x86_64-linux-musl
++                TEMP: /tmp
++                USER: 0
++
++          - name: Checkout
++            uses: actions/checkout@v2
++
++          - name: Build GDB
++            id: build_gdb
++            run: $GITHUB_WORKSPACE/build/targets/build_gdb.sh aarch64
++
++          - name: List build directory
++            run: ls -la /build
++
++          - name: List build artifacts
++            run: ls -la /output
++
++          - name: Upload artifacts
++            uses: actions/upload-artifact@v2
++            with:
++                name: ${{ steps.build_gdb.outputs.PACKAGED_NAME }}
++                path: ${{ steps.build_gdb.outputs.PACKAGED_NAME_PATH }}
+diff --git a/.github/workflows/build-gdb-armhf.yml b/.github/workflows/build-gdb-armhf.yml
+new file mode 100644
+index 0000000..0e085fb
+--- /dev/null
++++ b/.github/workflows/build-gdb-armhf.yml
+@@ -0,0 +1,38 @@
++name: GDB ARMHF
++on:
++  workflow_dispatch
++jobs:
++    build:
++        name: Build GDB ARMHF
++        runs-on: ubuntu-latest
++        container: muslcc/x86_64:armel-linux-musleabihf
++        steps:
++          - name: Install dependencies
++            run: apk update && apk add bash git perl make cmake flex bison automake autoconf libtool qemu-arm qemu-aarch64 file texinfo zip
++
++          - name: Install build compiler
++            run: /bin/sh -c "apk update && apk upgrade && apk add --no-cache curl rsync sudo util-linux && cd / && curl -so ${ARCH}-cross.tgz ${HOST}/${ARCH}-cross.tgz && tar -xf ${ARCH}-cross.tgz && rm ${ARCH}-cross.tgz && cd ${ARCH}-cross"
++            env:
++                ARCH: x86_64-linux-musl
++                HOST: https://more.musl.cc/9.2.1/x86_64-linux-musl
++                TEMP: /tmp
++                USER: 0
++
++          - name: Checkout
++            uses: actions/checkout@v2
++
++          - name: Build GDB
++            id: build_gdb
++            run: $GITHUB_WORKSPACE/build/targets/build_gdb.sh armhf
++
++          - name: List build directory
++            run: ls -la /build
++
++          - name: List build artifacts
++            run: ls -la /output
++            
++          - name: Upload artifacts
++            uses: actions/upload-artifact@v2
++            with:
++                name: ${{ steps.build_gdb.outputs.PACKAGED_NAME }}
++                path: ${{ steps.build_gdb.outputs.PACKAGED_NAME_PATH }}
+diff --git a/.github/workflows/build-gdb-x86.yml b/.github/workflows/build-gdb-x86.yml
+new file mode 100644
+index 0000000..0c6c5ea
+--- /dev/null
++++ b/.github/workflows/build-gdb-x86.yml
+@@ -0,0 +1,30 @@
++name: GDB x86
++on:
++  workflow_dispatch
++jobs:
++    build:
++        name: Build GDB x86
++        runs-on: ubuntu-latest
++        container: muslcc/x86_64:i686-linux-musl
++        steps:
++          - name: Install dependencies
++            run: apk update && apk add bash git perl make cmake flex bison automake autoconf libtool qemu-arm qemu-aarch64 file texinfo zip
++
++          - name: Checkout
++            uses: actions/checkout@v2
++
++          - name: Build GDB
++            id: build_gdb
++            run: $GITHUB_WORKSPACE/build/targets/build_gdb.sh x86
++
++          - name: List build directory
++            run: ls -la /build
++
++          - name: List build artifacts
++            run: ls -la /output
++
++          - name: Upload artifacts
++            uses: actions/upload-artifact@v2
++            with:
++                name: ${{ steps.build_gdb.outputs.PACKAGED_NAME }}
++                path: ${{ steps.build_gdb.outputs.PACKAGED_NAME_PATH }}
+diff --git a/.github/workflows/build-gdb-x86_64.yml b/.github/workflows/build-gdb-x86_64.yml
+index 0c88a12..8115b0d 100644
+--- a/.github/workflows/build-gdb-x86_64.yml
++++ b/.github/workflows/build-gdb-x86_64.yml
+@@ -9,15 +9,20 @@ jobs:
+         steps:
+           - name: Install dependencies
+             run: apk update && apk add bash git perl make cmake flex bison automake autoconf libtool qemu-arm qemu-aarch64 file texinfo zip
++
+           - name: Checkout
+             uses: actions/checkout@v2
++
+           - name: Build GDB
+             id: build_gdb
+             run: $GITHUB_WORKSPACE/build/targets/build_gdb.sh x86_64
++
+           - name: List build directory
+             run: ls -la /build
++
+           - name: List build artifacts
+             run: ls -la /output
++            
+           - name: Upload artifacts
+             uses: actions/upload-artifact@v2
+             with:

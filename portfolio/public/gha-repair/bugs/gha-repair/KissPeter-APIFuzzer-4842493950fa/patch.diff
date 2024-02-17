@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/python-app.yml b/.github/workflows/python-app.yml
+index 9dbe897..b2912f7 100644
+--- a/.github/workflows/python-app.yml
++++ b/.github/workflows/python-app.yml
+@@ -44,10 +44,12 @@ jobs:
+           coverage html
+           coverage report
+       - uses: actions/upload-artifact@v3
++        if: always()
+         with:
+           name: Coverage-${{ matrix.python-version }}
+           path: ./htmlcov
+       - uses: actions/upload-artifact@v3
++        if: always()
+         with:
+           name: Pytest-Report-${{ matrix.python-version }}
+           path: pytest.html

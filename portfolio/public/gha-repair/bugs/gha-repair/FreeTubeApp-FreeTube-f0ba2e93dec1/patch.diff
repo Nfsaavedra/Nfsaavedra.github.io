@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/autoMerge.yml b/.github/workflows/autoMerge.yml
+index 3f3b186..62bb32a 100644
+--- a/.github/workflows/autoMerge.yml
++++ b/.github/workflows/autoMerge.yml
+@@ -9,6 +9,7 @@ jobs:
+ 
+     steps:
+     - name: Auto Merge PR
++      if: contains(${{ github.event.base.ref }}, 'development')
+       run: |
+         echo ${{ secrets.PUSH_TOKEN }} >> auth.txt
+         gh auth login --with-token < auth.txt

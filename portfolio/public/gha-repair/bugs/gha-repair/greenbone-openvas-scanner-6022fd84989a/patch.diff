@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/update-header.yml b/.github/workflows/update-header.yml
+index b5b8aae..f016a4e 100644
+--- a/.github/workflows/update-header.yml
++++ b/.github/workflows/update-header.yml
+@@ -7,6 +7,7 @@ on:
+ 
+ permissions:
+   contents: write
++  pull-requests: write
+ 
+ jobs:
+   update-header:

@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/examples-build.yml b/.github/workflows/examples-build.yml
+index c730e6c..8da6473 100644
+--- a/.github/workflows/examples-build.yml
++++ b/.github/workflows/examples-build.yml
+@@ -7,6 +7,10 @@ on:
+   push:
+     branches: [ master ]
+ 
++defaults:
++  run:
++    working-directory: ./javascript
++
+ jobs:
+   build:
+ 

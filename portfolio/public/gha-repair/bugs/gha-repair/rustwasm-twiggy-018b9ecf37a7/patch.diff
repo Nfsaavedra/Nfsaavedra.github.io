@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index a86e50f..9072dcc 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -28,7 +28,7 @@ jobs:
+   build:
+     strategy:
+       matrix:
+-        os: ['ubuntu-latest', 'windows-latest', 'macos-latest']
++        os: ['windows-latest', 'macos-latest']
+     runs-on: ${{ matrix.os }}
+     steps:
+     - uses: actions/checkout@v2

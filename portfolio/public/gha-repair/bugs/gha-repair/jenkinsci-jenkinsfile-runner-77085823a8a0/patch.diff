@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/docker-cd.yml b/.github/workflows/docker-cd.yml
+index 6750258..1e4af44 100644
+--- a/.github/workflows/docker-cd.yml
++++ b/.github/workflows/docker-cd.yml
+@@ -106,7 +106,7 @@ jobs:
+         images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+         flavor: |
+           latest=${{ matrix.tag-latest }}
+-          prefix=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}/${{ matrix.tag-prefix }}
++          prefix=${{ matrix.tag-prefix }}
+           suffix=
+ 
+     - name: Build and Deploy Docker image

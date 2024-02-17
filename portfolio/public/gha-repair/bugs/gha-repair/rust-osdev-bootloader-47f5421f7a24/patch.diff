@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 47cefc9..a397f5f 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -110,7 +110,6 @@ jobs:
+         uses: obi1kenobi/cargo-semver-checks-action@v2
+         with:
+           package: bootloader_api
+-          prefix-key: api
+           rust-toolchain: manual
+       - name: Check semver
+         uses: obi1kenobi/cargo-semver-checks-action@v2

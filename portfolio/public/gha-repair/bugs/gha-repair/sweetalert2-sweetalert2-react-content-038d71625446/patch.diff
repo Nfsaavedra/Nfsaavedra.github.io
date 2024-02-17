@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 6d3d796..361fc31 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -21,6 +21,7 @@ jobs:
+       run: yarn test
+ 
+     - name: Run automated release process with semantic-release
++      if: github.event_name == 'push' && contains(github.ref, 'master')
+       env:
+         GH_TOKEN: ${{ secrets.GH_TOKEN }}
+         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

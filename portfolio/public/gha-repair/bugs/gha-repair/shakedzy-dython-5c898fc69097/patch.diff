@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 971974a..018fe6f 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -18,5 +18,5 @@ jobs:
+         pip install .
+     - name: Test with pytest
+       run: |
+-        pip install pytest hypothesis
+-        pytest tests/ --doctest-modules
+\ No newline at end of file
++        pip install -r dev_requirements.txt
++        pytest tests/ --doctest-modules --black
+\ No newline at end of file

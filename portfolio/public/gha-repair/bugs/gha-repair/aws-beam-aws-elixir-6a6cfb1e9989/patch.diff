@@ -1,0 +1,24 @@
+diff --git a/.github/workflows/codegen.yml b/.github/workflows/codegen.yml
+index 040aa8e..d831655 100644
+--- a/.github/workflows/codegen.yml
++++ b/.github/workflows/codegen.yml
+@@ -105,7 +105,6 @@ jobs:
+           base: master
+           branch: update-services-aws-sdk-go-${{ env.LATEST_AWS_SDK_GO_TAG }}
+           title: Update services based on ${{ env.LATEST_AWS_SDK_GO_TAG }} of AWS Go SDK 
+-          commit-message: Update services based on ${{ env.LATEST_AWS_SDK_GO_TAG }} of AWS Go SDK 
+           author: GitHub <noreply@github.com>
+           delete-branch: true
+           body: |
+@@ -115,6 +114,11 @@ jobs:
+ 
+             For changes, please check https://github.com/aws/aws-sdk-go/releases/tag/${{ env.LATEST_AWS_SDK_GO_TAG }}
+ 
++          commit-message: |
++            Update services based on ${{ env.LATEST_AWS_SDK_GO_TAG }} of AWS Go SDK 
++
++            For changes, please check https://github.com/aws/aws-sdk-go/releases/tag/${{ env.LATEST_AWS_SDK_GO_TAG }}
++
+           add-paths: |
+             lib/aws/generated/*
+             .latest-tag-aws-sdk-go

@@ -1,0 +1,9 @@
+diff --git a/.github/workflows/release-latest.yml b/.github/workflows/release-latest.yml
+index 9443122..23db770 100644
+--- a/.github/workflows/release-latest.yml
++++ b/.github/workflows/release-latest.yml
+@@ -148,3 +148,4 @@ jobs:
+           asset_name: ${{ matrix.asset_prefix }}-${{ steps.extract_version.outputs.version }}.zip
+           overwrite: true
+           tag: v${{ steps.extract_version.outputs.version }}-latest
++          release_name: v${{ steps.extract_version.outputs.version }}-latest

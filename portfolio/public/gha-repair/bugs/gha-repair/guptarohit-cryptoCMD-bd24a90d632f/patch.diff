@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 355df6f..b10857a 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -46,4 +46,4 @@ jobs:
+       - name: Install package
+         run: python setup.py install
+       - name: Run test script
+-        run: python examples/get_csv.py && python examples/get_by_coin_name.py
++        run: python examples/get_csv.py && python examples/get_by_coin_name.py && python examples/get_by_id_number.py

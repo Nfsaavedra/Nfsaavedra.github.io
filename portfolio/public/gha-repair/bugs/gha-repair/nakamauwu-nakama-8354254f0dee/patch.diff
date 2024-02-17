@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/deploy.yml b/.github/workflows/deploy.yml
+index 1c36122..7d2c2e1 100644
+--- a/.github/workflows/deploy.yml
++++ b/.github/workflows/deploy.yml
+@@ -17,12 +17,6 @@ jobs:
+     steps:
+       - uses: actions/checkout@v2
+ 
+-      - name: Set up QEMU
+-        uses: docker/setup-qemu-action@v1
+-
+-      - name: Set up Docker Buildx
+-        uses: docker/setup-buildx-action@v1
+-
+       - name: Login to DockerHub
+         uses: docker/login-action@v1
+         with:

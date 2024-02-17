@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build-wheels.yml b/.github/workflows/build-wheels.yml
+index c6b0f77..9ec7eaf 100644
+--- a/.github/workflows/build-wheels.yml
++++ b/.github/workflows/build-wheels.yml
+@@ -51,8 +51,6 @@ jobs:
+         env:
+           CIBW_BUILD: cp37-${{ matrix.platform_id }}
+         run: |
+-          python setup.py build_ext --inplace
+-          python setup.py sdist bdist_wheel
+           python -m cibuildwheel --output-dir wheelhouse
+ 
+       - uses: actions/upload-artifact@v2

@@ -1,0 +1,55 @@
+diff --git a/.github/workflows/cancel.yml b/.github/workflows/cancel.yml
+deleted file mode 100644
+index 9fb6d03..0000000
+--- a/.github/workflows/cancel.yml
++++ /dev/null
+@@ -1,23 +0,0 @@
+-name: Cancel
+-on:
+-  push:
+-    branches:
+-      - master
+-      - next
+-  pull_request:
+-    branches:
+-      - master
+-      - next
+-permissions: {} # none
+-jobs:
+-  cancel:
+-    permissions:
+-      actions: write
+-    name: Cancel Previous Runs
+-    runs-on: ubuntu-latest
+-    timeout-minutes: 3
+-    steps:
+-      - uses: styfle/cancel-workflow-action@0.11.0
+-        with:
+-          workflow_id: nodejs.yml
+-          access_token: ${{ github.token }}
+diff --git a/.github/workflows/nodejs.yml b/.github/workflows/nodejs.yml
+index ccadd5b..d64b42c 100644
+--- a/.github/workflows/nodejs.yml
++++ b/.github/workflows/nodejs.yml
+@@ -27,6 +27,10 @@ jobs:
+ 
+     runs-on: ${{ matrix.os }}
+ 
++    concurrency:
++      group: lint-${{ matrix.os }}-v${{ matrix.node-version }}-${{ github.ref }}
++      cancel-in-progress: true
++
+     steps:
+       - uses: actions/checkout@v3
+         with:
+@@ -67,6 +71,10 @@ jobs:
+ 
+     runs-on: ${{ matrix.os }}
+ 
++    concurrency:
++      group: test-${{ matrix.os }}-v${{ matrix.node-version }}-${{ matrix.webpack-version }}-${{ github.ref }}
++      cancel-in-progress: true
++
+     steps:
+       - name: Setup Git
+         if: matrix.os == 'windows-latest'

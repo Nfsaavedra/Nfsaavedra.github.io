@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/security_audit.yml b/.github/workflows/security_audit.yml
+index c356a0e..7936a1d 100644
+--- a/.github/workflows/security_audit.yml
++++ b/.github/workflows/security_audit.yml
+@@ -26,4 +26,4 @@ jobs:
+         uses: actions-rs/cargo@v1
+         with:
+           command: audit
+-          args: --deny-warnings
+\ No newline at end of file
++          args: --deny warnings
+\ No newline at end of file

@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index ce25529..c9cb6d5 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -1,9 +1,13 @@
+ name: CI Build Status
+ 
+-on: [push, pull_request]
++on:
++  pull_request:
++  push:
++    branches: main
+ 
+ env:
+   RUST_BACKTRACE: 1
++  CARGO_INCREMENTAL: 0
+ 
+ defaults:
+   run:

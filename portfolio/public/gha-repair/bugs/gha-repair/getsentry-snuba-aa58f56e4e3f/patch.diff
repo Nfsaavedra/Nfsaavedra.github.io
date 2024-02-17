@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 711c8ee..1687a25 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -61,5 +61,6 @@ jobs:
+             version: ${{ env.RELEASE_VERSION }}
+           env:
+             DRY_RUN: ${{ github.event.inputs.dry_run }}
++            GITHUB_API_TOKEN: ${{ secrets.GH_SENTRY_BOT_PAT }}
+             DOCKER_USERNAME: 'sentrybuilder'
+             DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}

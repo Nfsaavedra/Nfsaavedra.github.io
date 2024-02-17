@@ -1,0 +1,22 @@
+diff --git a/.gitattributes b/.gitattributes
+new file mode 100644
+index 0000000..fcadb2c
+--- /dev/null
++++ b/.gitattributes
+@@ -0,0 +1,1 @@
++* text eol=lf
+diff --git a/.github/workflows/nodejs.yml b/.github/workflows/nodejs.yml
+index ca3cdbd..44b7352 100644
+--- a/.github/workflows/nodejs.yml
++++ b/.github/workflows/nodejs.yml
+@@ -9,10 +9,6 @@ jobs:
+       matrix:
+         os: [ubuntu-latest, windows-latest, macos-latest]
+     steps:
+-    - name: Set git to use LF
+-      run: |
+-        git config --global core.autocrlf false
+-        git config --global core.eol lf
+     - uses: actions/checkout@v2
+     - name: Use Node.js 12.x
+       uses: actions/setup-node@v1

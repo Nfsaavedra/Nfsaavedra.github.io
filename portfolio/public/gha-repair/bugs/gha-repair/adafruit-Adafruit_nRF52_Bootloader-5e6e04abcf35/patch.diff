@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/githubci.yml b/.github/workflows/githubci.yml
+index bbd40cd..c1494e2 100644
+--- a/.github/workflows/githubci.yml
++++ b/.github/workflows/githubci.yml
+@@ -60,13 +60,11 @@ jobs:
+     steps:
+     - name: Setup Python
+       uses: actions/setup-python@v3
+-
+-    - name: Setup Node.js
+-      uses: actions/setup-node@v1
+       
+     - name: Checkout Code
+       uses: actions/checkout@v3
+       with:
++        fetch-depth: 0
+         submodules: true
+ 
+     - name: Checkout linkermap

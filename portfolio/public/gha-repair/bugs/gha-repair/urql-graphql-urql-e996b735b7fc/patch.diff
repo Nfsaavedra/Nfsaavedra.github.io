@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index c6b40ff..19ab9e6 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -58,7 +58,7 @@ jobs:
+         if: steps.changesets.outputs.published == 'true'
+         uses: ./.github/actions/discord-message
+         with:
+-          publishedPackages: steps.changesets.outputs.publishedPackages
++          publishedPackages: ${{ steps.changesets.outputs.publishedPackages }}
+         env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

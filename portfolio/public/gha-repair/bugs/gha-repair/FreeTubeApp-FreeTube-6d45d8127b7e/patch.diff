@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 850fac7..a378a0b 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -60,6 +60,7 @@ jobs:
+           apt update
+           apt install -y nodejs
+           apt install -y build-essential
++          apt install -y libopenjp2-7
+           node --version
+           npm install
+           npm run lint

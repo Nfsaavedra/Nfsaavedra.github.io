@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/pull_request.yml b/.github/workflows/pull_request.yml
+index 3bfb870..58b2450 100644
+--- a/.github/workflows/pull_request.yml
++++ b/.github/workflows/pull_request.yml
+@@ -25,7 +25,7 @@ jobs:
+     - name: Check out code
+       uses: actions/checkout@v3
+       with:
+-        fetch-depth: 0
++        ref: ${{github.event.pull_request.head.sha}}
+ 
+     - name: Set up Go
+       uses: actions/setup-go@v3

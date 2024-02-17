@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index eb27458..e67d6be 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -1,9 +1,6 @@
+ name: release
+ 
+-on:
+-  release:
+-    types:
+-      - created
++on: [release, workflow_dispatch]
+ 
+ jobs:
+   snap:

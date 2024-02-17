@@ -1,0 +1,72 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 842b5d4..696b1ec 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -53,28 +53,3 @@ jobs:
+       - name: Tear down docker containers
+         run: |
+           docker rm -f rosbridge
+-  publish-release:
+-    name: build and deploy docs
+-    runs-on: ubuntu-latest
+-    steps:
+-      - uses: actions/checkout@v2
+-      - name: Set up Python 3.8
+-        uses: actions/setup-python@v2
+-        with:
+-          python-version: 3.8
+-      - name: 🔗 Install dependencies
+-        run: |
+-          python -m pip install --upgrade pip
+-          python -m pip install wheel
+-      - name: 💎 Install
+-        run: |
+-          python -m pip install --no-cache-dir -r requirements-dev.txt
+-      - name: 💃 Build release
+-        if: success() && startsWith(github.ref, 'refs/tags')
+-        run: |
+-          python setup.py clean --all sdist bdist_wheel
+-      - name: 📦 Publish release to PyPI
+-        if: success() && startsWith(github.ref, 'refs/tags')
+-        uses: pypa/gh-action-pypi-publish@master
+-        with:
+-            password: ${{ secrets.pypi_password }}
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+new file mode 100644
+index 0000000..5a81d35
+--- /dev/null
++++ b/.github/workflows/release.yml
+@@ -0,0 +1,33 @@
++name: build
++
++on:
++  push:
++    tags:
++      - 'v*'
++
++jobs:
++  publish-release:
++    name: publish release
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v2
++      - name: Set up Python 3.8
++        uses: actions/setup-python@v2
++        with:
++          python-version: 3.8
++      - name: 🔗 Install dependencies
++        run: |
++          python -m pip install --upgrade pip
++          python -m pip install wheel
++      - name: 💎 Install
++        run: |
++          python -m pip install --no-cache-dir -r requirements-dev.txt
++      - name: 💃 Build release
++        if: success() && startsWith(github.ref, 'refs/tags')
++        run: |
++          python setup.py clean --all sdist bdist_wheel
++      - name: 📦 Publish release to PyPI
++        if: success() && startsWith(github.ref, 'refs/tags')
++        uses: pypa/gh-action-pypi-publish@master
++        with:
++            password: ${{ secrets.pypi_password }}

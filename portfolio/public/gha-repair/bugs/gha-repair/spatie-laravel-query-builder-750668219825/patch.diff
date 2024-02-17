@@ -1,0 +1,21 @@
+diff --git a/.github/workflows/run-tests.yml b/.github/workflows/run-tests.yml
+index 1816972..fd87e8e 100644
+--- a/.github/workflows/run-tests.yml
++++ b/.github/workflows/run-tests.yml
+@@ -15,6 +15,7 @@ jobs:
+                 include:
+                     - laravel: 9.*
+                       testbench: 7.*
++                      carbon: ^2.63
+ 
+         name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.stability }} - ${{ matrix.os }}
+ 
+@@ -60,7 +61,7 @@ jobs:
+ 
+             - name: Install dependencies
+               run: |
+-                  composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
++                  composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" "nesbot/carbon:${{ matrix.carbon }}" --no-interaction --no-update
+                   composer update --${{ matrix.stability }} --prefer-dist --no-interaction
+ 
+             - name: Execute tests

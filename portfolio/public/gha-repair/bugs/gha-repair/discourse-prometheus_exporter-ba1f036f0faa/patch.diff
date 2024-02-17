@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 576659f..597f520 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -12,7 +12,7 @@ jobs:
+     name: Ruby ${{ matrix.ruby }}
+     strategy:
+       matrix:
+-        ruby: ["2.7", "2.6", "2.5"]
++        ruby: ["3.0","2.7", "2.6"]
+     steps:
+       - uses: actions/checkout@master
+         with:

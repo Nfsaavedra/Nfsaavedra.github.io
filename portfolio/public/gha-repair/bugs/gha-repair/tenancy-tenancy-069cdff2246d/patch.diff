@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 58257ed..1e6dbd4 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -104,6 +104,7 @@ jobs:
+ 
+             - name: Run tests
+               run: ./vendor/bin/phpunit
++              continue-on-error: ${{ matrix.experimental }}
+               env:
+                   TENANCY_DB: testing
+                   TENANCY_USERNAME: testing

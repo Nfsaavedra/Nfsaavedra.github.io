@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index f79af26..6f471c9 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -17,12 +17,6 @@ jobs:
+   lint-test:
+     uses: ./.github/workflows/lint-test.yml
+ 
+-  fixup-commit-blocker:
+-    if: github.ref != 'refs/heads/main'
+-    uses: python-discord/.github/.github/workflows/block-fixup-commits.yaml@main
+-    needs: lint-test
+-
+-
+   generate-sha-tag:
+     if: github.ref == 'refs/heads/main'
+     runs-on: ubuntu-latest

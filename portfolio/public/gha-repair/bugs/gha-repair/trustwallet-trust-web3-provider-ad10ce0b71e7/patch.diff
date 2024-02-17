@@ -1,0 +1,29 @@
+diff --git a/.github/workflows/web-ci.yml b/.github/workflows/web-ci.yml
+index f563847..d70a8e6 100644
+--- a/.github/workflows/web-ci.yml
++++ b/.github/workflows/web-ci.yml
+@@ -3,7 +3,7 @@ name: Web CI
+ on:
+   push:
+     tags:
+-      - "v[0-9]+.[0-9]+.[0-9]+"
++      - "[0-9]+.[0-9]+.[0-9]+"
+   workflow_dispatch:
+     inputs:
+       version:
+@@ -48,8 +48,8 @@ jobs:
+         uses: actions/setup-node@v3
+         with:
+           node-version: 18
+-          registry-url: 'https://npm.pkg.github.com'
+-          scope: '@trustwallet'
++          registry-url: "https://npm.pkg.github.com"
++          scope: "@trustwallet"
+ 
+       - name: Set output
+         id: vars
+@@ -74,4 +74,3 @@ permissions:
+   contents: write
+   deployments: write
+   packages: write
+-

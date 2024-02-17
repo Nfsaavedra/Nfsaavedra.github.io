@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/CI.yml b/.github/workflows/CI.yml
+index 71bcb7c..ef01c11 100644
+--- a/.github/workflows/CI.yml
++++ b/.github/workflows/CI.yml
+@@ -70,7 +70,7 @@ jobs:
+       - uses: actions/upload-artifact@v3
+         with:
+           name: coverage-${{ matrix.suite }}
+-          path: '**.cov'
++          path: '**/*.cov'
+         if: matrix.version == '1' && matrix.os == 'ubuntu-latest'
+ 
+   coverage:

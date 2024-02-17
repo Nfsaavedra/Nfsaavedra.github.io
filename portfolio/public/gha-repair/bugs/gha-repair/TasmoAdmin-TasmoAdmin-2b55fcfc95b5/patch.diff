@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 473f7df..98bc80a 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -54,7 +54,7 @@ jobs:
+       run: |
+         cd tasmoadmin
+         XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-clover coverage.xml
+-    - uses: codecov/codecov-action@v3
++    - uses: codecov/codecov-action@v4
+       if: matrix.php-version == '8.2'
+       with:
+         token: ${{ secrets.CODECOV_TOKEN }}

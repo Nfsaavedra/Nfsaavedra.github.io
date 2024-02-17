@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/win64_release.yml b/.github/workflows/win64_release.yml
+index 92beb0b..7b95dcd 100644
+--- a/.github/workflows/win64_release.yml
++++ b/.github/workflows/win64_release.yml
+@@ -29,9 +29,9 @@ jobs:
+                 ls -l C:/hostedtoolcache/
+                 ls -l C:/hostedtoolcache/windows/
+                 ls -l C:/hostedtoolcache/windows/python/
+-                ls -l C:/hostedtoolcache/windows/python/3.9.4/
+-                ls -l C:/hostedtoolcache/windows/python/3.9.4/x64/
+-                ls -l C:/hostedtoolcache/windows/python/3.9.4/x64/include
++                ls -l C:/hostedtoolcache/windows/python/3.9.7/
++                ls -l C:/hostedtoolcache/windows/python/3.9.7/x64/
++                ls -l C:/hostedtoolcache/windows/python/3.9.7/x64/include
+               
+ #            - name: Cache Qt
+ #              id: cache-qt

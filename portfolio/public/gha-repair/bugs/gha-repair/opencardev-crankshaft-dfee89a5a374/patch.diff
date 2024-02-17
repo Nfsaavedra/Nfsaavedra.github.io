@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/crankshaft.yml b/.github/workflows/crankshaft.yml
+index e9a1307..17493ac 100644
+--- a/.github/workflows/crankshaft.yml
++++ b/.github/workflows/crankshaft.yml
+@@ -28,7 +28,7 @@ jobs:
+     steps:
+       -
+         name: Checkout
+-        uses: actions/checkout@v2
++        uses: actions/checkout@v2.3.4
+         with:
+           submodules: true
+       -

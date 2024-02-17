@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/lint-test.yaml b/.github/workflows/lint-test.yaml
+index f3fec4f..5ad1026 100644
+--- a/.github/workflows/lint-test.yaml
++++ b/.github/workflows/lint-test.yaml
+@@ -12,7 +12,7 @@ jobs:
+         uses: actions/checkout@v4
+ 
+       - name: Install Python Dependencies
+-        uses: HassanAbouelela/actions/setup-python@setup-python_v1.4.1
++        uses: HassanAbouelela/actions/setup-python@setup-python_v1.4.2
+         with:
+           python_version: '3.11'
+ 

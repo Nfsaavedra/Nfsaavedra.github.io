@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/build_macos_wheels.yml b/.github/workflows/build_macos_wheels.yml
+index 890a6ab..6969f4d 100644
+--- a/.github/workflows/build_macos_wheels.yml
++++ b/.github/workflows/build_macos_wheels.yml
+@@ -22,8 +22,8 @@ jobs:
+       - name: Build wheels
+         run: python -m cibuildwheel --output-dir wheelhouse
+         # to supply options, put them in 'env', like:
+-        # env:
+-        #   CIBW_SOME_OPTION: value
++        env:
++          CIBW_SKIP: "pp*"
+ 
+       - uses: actions/upload-artifact@v2
+         with:

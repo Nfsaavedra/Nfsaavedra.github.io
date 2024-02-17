@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/push.yml b/.github/workflows/push.yml
+index 68b9549..620febe 100644
+--- a/.github/workflows/push.yml
++++ b/.github/workflows/push.yml
+@@ -188,6 +188,7 @@ jobs:
+         with:
+           github_token: ${{ secrets.STAKATER_GITHUB_TOKEN }}
+ 
++      # Push Latest Tag
+       - name: Push Latest Tag
+         uses: anothrNick/github-tag-action@1.26.0
+         env:

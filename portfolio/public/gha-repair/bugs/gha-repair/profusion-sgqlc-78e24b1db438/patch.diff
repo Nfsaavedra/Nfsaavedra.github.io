@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index f1c5cc1..d2f7055 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -40,7 +40,7 @@ jobs:
+         path: ~/.cache/pre-commit
+         key: pre-commit-3|${{ env.pythonLocation }}|${{ hashFiles('.pre-commit-config.yaml') }}
+     - name: "Run pre-commit"
+-      run: pre-commit run --show-diff-on-failure --color=always --hook-stage push
++      run: pre-commit run --show-diff-on-failure --color=always --hook-stage push --all-files
+     - name: Install
+       run: |
+         ./setup.py install --skip-build

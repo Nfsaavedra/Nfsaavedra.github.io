@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/githubci.yml b/.github/workflows/githubci.yml
+index 6052860..a8050eb 100644
+--- a/.github/workflows/githubci.yml
++++ b/.github/workflows/githubci.yml
+@@ -94,5 +94,6 @@ jobs:
+           path: |
+             ${{runner.workspace}}/build/bin
+             !**/*.lib
++            !**/*.pdb
+           retention-days: 5
+           if-no-files-found: error

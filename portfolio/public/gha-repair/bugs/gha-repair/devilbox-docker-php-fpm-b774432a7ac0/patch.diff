@@ -1,0 +1,22 @@
+diff --git a/.github/workflows/zzz-reuse-build.yml b/.github/workflows/zzz-reuse-build.yml
+index 0caea2d..769bd6c 100644
+--- a/.github/workflows/zzz-reuse-build.yml
++++ b/.github/workflows/zzz-reuse-build.yml
+@@ -172,12 +172,11 @@ jobs:
+       # ------------------------------------------------------------
+       # Test
+       # ------------------------------------------------------------
+-      # FIXME: re-enable
+-      #- name: Test
+-      #  uses: cytopia/shell-command-retry-action@v0.1.2
+-      #  with:
+-      #    command: |
+-      #      make test VERSION=${{ matrix.version }} FLAVOUR=${{ inputs.flavour }} ARCH=${{ matrix.arch }}
++      - name: Test
++        uses: cytopia/shell-command-retry-action@v0.1.2
++        with:
++          command: |
++            make test VERSION=${{ matrix.version }} FLAVOUR=${{ inputs.flavour }} ARCH=${{ matrix.arch }}
+ 
+ 
+       # ------------------------------------------------------------

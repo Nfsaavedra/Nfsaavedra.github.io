@@ -1,0 +1,24 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 518c016..bfe2392 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -4,7 +4,10 @@ on:
+   push:
+   pull_request:
+     branches: [master]
+-    
++
++env:
++  FORCE_COLOR: 1
++
+ jobs:
+   test:
+     runs-on: ubuntu-latest
+@@ -14,6 +17,7 @@ jobs:
+         with:
+           node-version: 12
+       - run: npm install
++      - run: npm run lint
+       - run: npm test
+   publish-npm:
+     needs: test

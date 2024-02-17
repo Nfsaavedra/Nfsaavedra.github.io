@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/pythonapp.yml b/.github/workflows/pythonapp.yml
+index fc2ec88..7ebb009 100644
+--- a/.github/workflows/pythonapp.yml
++++ b/.github/workflows/pythonapp.yml
+@@ -20,6 +20,8 @@ jobs:
+         python -m pip install --upgrade pip
+         pip install -r requirements.txt
+     - name: Lint with flake8
++      env:
++        robin_username: ${{ secrets.username }}
+       run: |
+         pip install flake8
+         # stop the build if there are Python syntax errors or undefined names

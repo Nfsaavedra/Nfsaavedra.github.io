@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/status_embed.yaml b/.github/workflows/status_embed.yaml
+index 4178c36..0fa240b 100644
+--- a/.github/workflows/status_embed.yaml
++++ b/.github/workflows/status_embed.yaml
+@@ -3,6 +3,7 @@ name: Status Embed
+ on:
+   workflow_run:
+     workflows:
++      - CI
+       - Lint & Test
+       - Build
+       - Deploy

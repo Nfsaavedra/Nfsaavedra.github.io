@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 9a871f7..16f1669 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -48,7 +48,7 @@ jobs:
+       if: startsWith(matrix.os, 'ubuntu')
+       with:
+         architecture: aarch64
+-        distribution: ubuntu20.04
++        distribution: ubuntu18.04
+         run: |
+           export DEBIAN_FRONTEND=noninteractive
+           export TZ=Europe/Kiev

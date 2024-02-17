@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 5835fd9..2ba50ed 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -5,9 +5,9 @@ name: Python application
+ 
+ on:
+   push:
+-    branches: [ * ]
++    branches: [ '**' ]
+   pull_request:
+-    branches: [ * ]
++    branches: [ 'develop', 'master' ]
+   # Allow manual workflow execution
+   workflow_dispatch:
+ 

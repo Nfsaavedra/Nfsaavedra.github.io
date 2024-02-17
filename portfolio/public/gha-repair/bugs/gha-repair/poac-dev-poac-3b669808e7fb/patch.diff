@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/doxygen.yml b/.github/workflows/doxygen.yml
+index e98f9ca..0ba79f1 100644
+--- a/.github/workflows/doxygen.yml
++++ b/.github/workflows/doxygen.yml
+@@ -44,7 +44,7 @@ jobs:
+         uses: actions/configure-pages@v3
+ 
+       - name: Upload artifact
+-        uses: actions/upload-pages-artifact@v1
++        uses: actions/upload-pages-artifact@v2
+         with:
+           path: './html'
+ 

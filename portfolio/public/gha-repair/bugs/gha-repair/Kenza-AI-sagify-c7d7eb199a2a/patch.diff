@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 050be17..115225a 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -9,7 +9,7 @@ jobs:
+ 
+     strategy:
+       matrix:
+-        python-version: [3.10, 3.11]
++        python-version: ['3.10', '3.11']
+ 
+     steps:
+     - name: Checkout code

@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index bcd968d..9bc50ed 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -96,8 +96,8 @@ jobs:
+       run: |
+         mvn verify -PtemplatesRelease \
+         -DprojectId="dataflow-templates" \
+-        -DbucketName="dataflow-templates-rc" \
+-        -DlibrariesBucketName="dataflow-templates-releases" \
++        -DbucketName="dataflow-templates-staging" \
++        -DlibrariesBucketName="dataflow-templates-libraries" \
+         -DstagePrefix="${CANDIDATE_NAME}" \
+         -Dmaven.test.skip -T8 -e
+       env:

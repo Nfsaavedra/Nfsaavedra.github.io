@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index e13fc95..1f7a855 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -26,4 +26,4 @@ jobs:
+     steps:
+       - uses: actions/checkout@v2
+       - uses: dtolnay/rust-toolchain@clippy
+-      - run: cargo clippy -- -Dclippy::pedantic
++      - run: cargo clippy -- -Dclippy::all -Dclippy::pedantic

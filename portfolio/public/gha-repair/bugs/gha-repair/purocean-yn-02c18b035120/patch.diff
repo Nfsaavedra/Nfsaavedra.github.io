@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index c56c6b4..43c1528 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -100,7 +100,6 @@ jobs:
+         uses: actions/setup-python@v4
+         with:
+           python-version: '3.9'
+-          cache: 'pip' # caching pip dependencies
+ 
+       - name: Install coscmd
+         if: matrix.platform != 'win'

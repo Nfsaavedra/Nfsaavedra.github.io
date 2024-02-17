@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 50c7cdf..5f30875 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -54,6 +54,7 @@ jobs:
+             echo ">> Checking in $crate"
+             cargo deadlinks --check-http --dir "$crate"
+           done
++        continue-on-error: true
+ 
+   test:
+     name: Test and Lint for each Client

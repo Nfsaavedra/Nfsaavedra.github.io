@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/lin_release.yml b/.github/workflows/lin_release.yml
+index 04c573c..c41c7c1 100644
+--- a/.github/workflows/lin_release.yml
++++ b/.github/workflows/lin_release.yml
+@@ -43,7 +43,7 @@ jobs:
+                 unzip sqlite-amalgamation-$SQLITE_VERSION.zip
+ 
+             - name: Install SQLite3
+-              dir: '${{ github.workspace }}/sqlite-amalgamation-$SQLITE_VERSION'
++              working-directory: '${{ github.workspace }}/sqlite-amalgamation-$SQLITE_VERSION'
+               run: |
+                 gcc sqlite3.c -lpthread -ldl -lm -Os -fpic -shared -o libsqlite3.so \
+                     -DSQLITE_ENABLE_UPDATE_DELETE_LIMIT \

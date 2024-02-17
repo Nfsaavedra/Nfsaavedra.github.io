@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/maven.yml b/.github/workflows/maven.yml
+index a1fcbc5..c1b1483 100644
+--- a/.github/workflows/maven.yml
++++ b/.github/workflows/maven.yml
+@@ -5,9 +5,9 @@ name: Build
+ 
+ on:
+   push:
+-    branches: [ main ]
++    branches: [ 3.1.x ]
+   pull_request:
+-    branches: [ main ]
++    branches: [ 3.1.x ]
+ 
+ jobs:
+   build:

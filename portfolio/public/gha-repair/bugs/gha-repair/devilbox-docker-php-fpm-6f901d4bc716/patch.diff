@@ -1,0 +1,26 @@
+diff --git a/.github/workflows/schedule.yml b/.github/workflows/schedule.yml
+index 8943baa..b6f88ff 100644
+--- a/.github/workflows/schedule.yml
++++ b/.github/workflows/schedule.yml
+@@ -8,7 +8,7 @@ on:
+ 
+ jobs:
+   build:
+-    name: "[ ${{ matrix.version }} ]"
++    name: "[ PHP-${{ matrix.version }} (ref: $${{ ,matrix.refs }} ]"
+     runs-on: ubuntu-latest
+     strategy:
+       fail-fast: False
+@@ -32,7 +32,11 @@ jobs:
+       - name: Checkout repository
+         uses: actions/checkout@v2
+         with:
+-          ref: ${REF}
++          fetch-depth: 0
++
++      - name: Checkout ref
++        run: |
++          git checkout ${REF}
+         env:
+           REF: ${{ matrix.refs }}
+ 

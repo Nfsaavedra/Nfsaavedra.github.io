@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 91e0c94..7f1cf6e 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -17,5 +17,7 @@ jobs:
+       uses: actions/setup-node@v1
+       with:
+         node-version: ${{ matrix.node-version }}
+-    - name: npm test
+-      run: npm test
++    - name: npm install, test
++      run: |
++        npm install
++        npm run test

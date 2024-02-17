@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/lint-and-test.yml b/.github/workflows/lint-and-test.yml
+index 452ecf9..d4799c4 100644
+--- a/.github/workflows/lint-and-test.yml
++++ b/.github/workflows/lint-and-test.yml
+@@ -17,7 +17,7 @@ permissions:
+   contents: read
+ 
+ env:
+-  LINTING_PYTHON_VERSION: 3.7
++  LINTING_PYTHON_VERSION: 3.8
+ 
+ jobs:
+   mypy:

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index d954ea1..5a549bf 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -5,8 +5,6 @@ on:
+     branches:
+       - '**'
+       - '!dependabot/**'
+-    tags:
+-      - '*'
+     paths-ignore:
+       - '**.md'
+   pull_request:

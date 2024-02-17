@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/autoMerge.yml b/.github/workflows/autoMerge.yml
+index 89b0ead..e227ac1 100644
+--- a/.github/workflows/autoMerge.yml
++++ b/.github/workflows/autoMerge.yml
+@@ -5,7 +5,7 @@ on:
+ 
+ jobs:
+   build:
+-    runs-on: ubuntu-latest
++    runs-on: macos-latest
+ 
+     steps:
+     - name: Auto Merge PR

@@ -1,0 +1,115 @@
+diff --git a/.github/workflows/githubci.yml b/.github/workflows/githubci.yml
+index 0c5f9bc..5d8d47c 100644
+--- a/.github/workflows/githubci.yml
++++ b/.github/workflows/githubci.yml
+@@ -27,6 +27,7 @@ jobs:
+           - 'adm_b_nrf52840_1'
+           - 'ae_bl652_bo'
+           - 'aramcon_badge_2019'
++          - 'aramcon2_badge'
+           - 'arcade_feather_nrf52840_express'
+           - 'arduino_nano_33_ble'
+           - 'bast_ble'
+diff --git a/src/boards/aramcon2_badge/board.h b/src/boards/aramcon2_badge/board.h
+new file mode 100644
+index 0000000..f651915
+--- /dev/null
++++ b/src/boards/aramcon2_badge/board.h
+@@ -0,0 +1,65 @@
++/*
++ * The MIT License (MIT)
++ *
++ * Copyright (c) 2021 Benjamin Meisels
++ *
++ * Permission is hereby granted, free of charge, to any person obtaining a copy
++ * of this software and associated documentation files (the "Software"), to deal
++ * in the Software without restriction, including without limitation the rights
++ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
++ * copies of the Software, and to permit persons to whom the Software is
++ * furnished to do so, subject to the following conditions:
++ *
++ * The above copyright notice and this permission notice shall be included in
++ * all copies or substantial portions of the Software.
++ *
++ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
++ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
++ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
++ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
++ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
++ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
++ * THE SOFTWARE.
++ */
++
++#ifndef _ARAMCON2_BADGE_H
++#define _ARAMCON2_BADGE_H
++
++#define _PINNUM(port, pin)    ((port)*32 + (pin))
++
++/*------------------------------------------------------------------*/
++/* LED
++ *------------------------------------------------------------------*/
++#define LEDS_NUMBER           1
++#define LED_PRIMARY_PIN       _PINNUM(1, 11) // Red
++
++#define LED_NEOPIXEL          _PINNUM(0, 8)
++#define NEOPIXELS_NUMBER      2
++#define BOARD_RGB_BRIGHTNESS  0x040404
++
++/*------------------------------------------------------------------*/
++/* BUTTON
++ *------------------------------------------------------------------*/
++#define BUTTONS_NUMBER        2
++#define BUTTON_1              _PINNUM(0, 2) // left Button
++#define BUTTON_2              _PINNUM(0, 29) // middle button
++#define BUTTON_PULL           NRF_GPIO_PIN_PULLUP
++
++// Used as model string in OTA mode
++#define BLEDIS_MANUFACTURER   "ARAMCON Badge Team"
++#define BLEDIS_MODEL          "ARAMCON2 Badge"
++
++//--------------------------------------------------------------------+
++// USB
++//--------------------------------------------------------------------+
++#define USB_DESC_VID           0x239A
++#define USB_DESC_UF2_PID       0x007B
++#define USB_DESC_CDC_ONLY_PID  0x007B
++
++//------------- UF2 -------------//
++#define UF2_PRODUCT_NAME   "ARAMCON2 Badge"
++#define UF2_VOLUME_LABEL   "ARAMBOOT"
++#define UF2_BOARD_ID       "nrf52840-ARAMCON2-Badge"
++#define UF2_INDEX_URL      "https://github.com/aramcon-badge"
++
++#endif // _ARAMCON2_BADGE_H
+diff --git a/src/boards/aramcon2_badge/board.mk b/src/boards/aramcon2_badge/board.mk
+new file mode 100644
+index 0000000..9d29ac6
+--- /dev/null
++++ b/src/boards/aramcon2_badge/board.mk
+@@ -0,0 +1,1 @@
++MCU_SUB_VARIANT = nrf52840
+diff --git a/src/boards/aramcon2_badge/pinconfig.c b/src/boards/aramcon2_badge/pinconfig.c
+new file mode 100644
+index 0000000..a983e4a
+--- /dev/null
++++ b/src/boards/aramcon2_badge/pinconfig.c
+@@ -0,0 +1,19 @@
++#include "boards.h"
++#include "uf2/configkeys.h"
++
++__attribute__((used, section(".bootloaderConfig")))
++const uint32_t bootloaderConfig[] =
++{
++  /* CF2 START */
++  CFG_MAGIC0, CFG_MAGIC1,                       // magic
++  5, 100,                                       // used entries, total entries
++
++  204, 0x100000,                                // FLASH_BYTES = 0x100000
++  205, 0x40000,                                 // RAM_BYTES = 0x40000
++  208, (USB_DESC_VID << 16) | USB_DESC_UF2_PID, // BOOTLOADER_BOARD_ID = USB VID+PID, used for verification when updating bootloader via uf2
++  209, 0xada52840,                              // UF2_FAMILY = 0xada52840
++  210, 0x20,                                    // PINS_PORT_SIZE = PA_32
++
++  0, 0, 0, 0, 0, 0, 0, 0
++  /* CF2 END */
++};

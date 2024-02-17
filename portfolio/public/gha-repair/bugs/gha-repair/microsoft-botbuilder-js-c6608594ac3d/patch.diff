@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/run-eslint.yml b/.github/workflows/run-eslint.yml
+index 06e9df0..ce45638 100644
+--- a/.github/workflows/run-eslint.yml
++++ b/.github/workflows/run-eslint.yml
+@@ -6,10 +6,12 @@ on:
+     branches: 
+     - main
+     - 4.10
++    - 4.11
+   pull_request:
+     branches: 
+     - main
+     - 4.10
++    - 4.11
+ 
+ jobs:
+   build:

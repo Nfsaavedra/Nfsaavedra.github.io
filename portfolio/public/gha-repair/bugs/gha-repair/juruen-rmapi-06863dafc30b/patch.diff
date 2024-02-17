@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index a50be7d..0b33c42 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -37,10 +37,10 @@ jobs:
+         run: zip rmapi-macosx.zip rmapi
+ 
+       - name: Build Windows binary
+-        run:  GOOS=windows go build -v -o rmapi .
++        run:  GOOS=windows go build -v -o rmapi.exe .
+ 
+       - name: Create zip
+-        run: zip rmapi-win64.zip rmapi
++        run: zip rmapi-win64.zip rmapi.exe
+ 
+       - name: Release
+         uses: docker://softprops/action-gh-release

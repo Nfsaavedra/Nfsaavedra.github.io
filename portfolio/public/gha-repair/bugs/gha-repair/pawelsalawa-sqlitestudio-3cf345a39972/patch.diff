@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/win_release.yml b/.github/workflows/win_release.yml
+index 6313746..8345892 100644
+--- a/.github/workflows/win_release.yml
++++ b/.github/workflows/win_release.yml
+@@ -96,7 +96,7 @@ jobs:
+             - name: Compile Plugins
+               working-directory: output/build/Plugins
+               run: |
+-                qmake.exe CONFIG+=portable "INCLUDEPATH+=$pythonLocation/include" "LIBS += -L$pythonLocation" ..\..\..\Plugins
++                qmake.exe CONFIG+=portable "INCLUDEPATH+=${{ env.pythonLocation }}/include" "LIBS += -L${{ env.pythonLocation }}" ..\..\..\Plugins
+                 mingw32-make.exe -j 2
+               
+             - name: Prepare portable dir

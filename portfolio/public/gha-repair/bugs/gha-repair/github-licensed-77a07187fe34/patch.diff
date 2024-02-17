@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 329f31b..ff896e9 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -345,7 +345,6 @@ jobs:
+       with:
+         python-version: '3.x'
+         architecture: x64
+-        cache: pipenv
+     - name: Set up Ruby
+       uses: ruby/setup-ruby@v1
+       with:

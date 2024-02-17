@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/trivy-analysis-scheduled.yaml b/.github/workflows/trivy-analysis-scheduled.yaml
+index 152df12..882bd60 100644
+--- a/.github/workflows/trivy-analysis-scheduled.yaml
++++ b/.github/workflows/trivy-analysis-scheduled.yaml
+@@ -45,7 +45,7 @@ jobs:
+       - name: Check out code into the Go module directory
+         uses: actions/checkout@v2
+       - name: Setup - gcloud / gsutil
+-        uses: google-github-actions/setup-gcloud@master
++        uses: google-github-actions/setup-gcloud@v0
+         with:
+           service_account_key: ${{ secrets.GLOO_VULN_REPORTER }}
+           project_id: solo-public

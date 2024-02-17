@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/gh-pages.yml b/.github/workflows/gh-pages.yml
+index 4e3a13e..a22f694 100644
+--- a/.github/workflows/gh-pages.yml
++++ b/.github/workflows/gh-pages.yml
+@@ -12,7 +12,7 @@ jobs:
+ 
+     steps:
+       - uses: actions/checkout@master
+-      - uses: webfactory/ssh-agent@v0.3.0
++      - uses: webfactory/ssh-agent@v0.4.1
+         with:
+           ssh-private-key: ${{ secrets.SSH_PRIVATE_GH_PAGES }}
+       - name: Dependencies

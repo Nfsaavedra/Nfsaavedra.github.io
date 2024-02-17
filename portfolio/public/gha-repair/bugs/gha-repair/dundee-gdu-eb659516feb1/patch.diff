@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/winget.yml b/.github/workflows/winget.yml
+index 9d31e04..33902c8 100644
+--- a/.github/workflows/winget.yml
++++ b/.github/workflows/winget.yml
+@@ -5,7 +5,7 @@ on:
+ 
+ jobs:
+   publish:
+-    runs-on: windows-latest # Action can only run on Windows
++    runs-on: ubuntu-latest
+     steps:
+       - uses: vedantmgoyal2009/winget-releaser@v2
+         with:

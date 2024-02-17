@@ -1,0 +1,142 @@
+diff --git a/.github/workflows/release.mjs b/.github/workflows/release.mjs
+deleted file mode 100644
+index b2c7d35..0000000
+--- a/.github/workflows/release.mjs
++++ /dev/null
+@@ -1,23 +0,0 @@
+-let goos = [
+-  'linux',
+-  'darwin',
+-  'windows',
+-]
+-let goarch = [
+-  'amd64',
+-  'arm64',
+-]
+-
+-let name = (GOOS, GOARCH) => `fx_${GOOS}_${GOARCH}` + (GOOS === 'windows' ? '.exe' : '')
+-
+-await $`go mod download`
+-
+-await Promise.all(
+-  goos.flatMap(GOOS =>
+-    goarch.map(GOARCH =>
+-      $`GOOS=${GOOS} GOARCH=${GOARCH} go build -o ${name(GOOS, GOARCH)}`)))
+-
+-await Promise.all(
+-  goos.flatMap(GOOS =>
+-    goarch.map(GOARCH =>
+-      $`gh release upload ${process.env.RELEASE_VERSION} ${name(GOOS, GOARCH)}`)))
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index e3980df..eb27458 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -6,61 +6,7 @@ on:
+       - created
+ 
+ jobs:
+-  commit:
+-    runs-on: ubuntu-latest
+-    steps:
+-    - uses: actions/checkout@v3
+-      with:
+-        ref: master
+-
+-    - name: Set up Go
+-      uses: actions/setup-go@v3
+-      with:
+-        go-version: 1.18
+-
+-    - name: Get Version
+-      run: echo "RELEASE_VERSION=${GITHUB_REF##*/}" >> $GITHUB_ENV
+-
+-    - name: Update Version
+-      shell: bash
+-      run: |
+-        set -x
+-        sed -i "s/version = .*/version = \"${RELEASE_VERSION}\"/" version.go
+-        sed -i "s/version: .*/version: ${RELEASE_VERSION}/" snap/snapcraft.yaml
+-        git add version.go snap/snapcraft.yaml
+-        git config --global user.email "github-actions@github.com"
+-        git config --global user.name "github-actions"
+-        git commit -m "Release $RELEASE_VERSION"
+-        git tag "$RELEASE_VERSION" --force
+-        git push --atomic --force origin master "$RELEASE_VERSION"
+-
+-    - name: Test
+-      run: go test -v ./...
+-
+-  binary:
+-    needs: [commit]
+-    runs-on: ubuntu-latest
+-    steps:
+-      - uses: actions/checkout@v3
+-        with:
+-          ref: master
+-
+-      - name: Set up Go
+-        uses: actions/setup-go@v3
+-        with:
+-          go-version: 1.18
+-
+-      - name: Get Version
+-        run: echo "RELEASE_VERSION=${GITHUB_REF##*/}" >> $GITHUB_ENV
+-
+-      - name: Build and Upload
+-        env:
+-          FORCE_COLOR: 3
+-          GITHUB_TOKEN: ${{ secrets.MY_TOKEN }}
+-        run: npx zx .github/workflows/release.mjs
+-
+   snap:
+-    needs: [commit]
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v3
+@@ -82,7 +28,6 @@ jobs:
+           release: stable
+ 
+   brew:
+-    needs: [commit]
+     runs-on: macos-latest
+     steps:
+       - name: Set up Homebrew
+@@ -112,5 +57,5 @@ jobs:
+       - name: Bump formulae
+         uses: Homebrew/actions/bump-formulae@master
+         with:
+-          token: ${{ secrets.MY_TOKEN }}
++          token: ${{ secrets.MY_GITHUB_TOKEN_FOR_BREW_BUMP_FORMULAE }}
+           formulae: fx
+diff --git a/scripts/build.mjs b/scripts/build.mjs
+new file mode 100644
+index 0000000..213312c
+--- /dev/null
++++ b/scripts/build.mjs
+@@ -0,0 +1,26 @@
++const goos = [
++  'linux',
++  'darwin',
++  'windows',
++]
++const goarch = [
++  'amd64',
++  'arm64',
++]
++
++const name = (GOOS, GOARCH) => `fx_${GOOS}_${GOARCH}` + (GOOS === 'windows' ? '.exe' : '')
++
++const resp = await fetch('https://api.github.com/repos/antonmedv/fx/releases/latest')
++const {tag_name: latest} = await resp.json()
++
++await $`go mod download`
++
++await Promise.all(
++  goos.flatMap(GOOS =>
++    goarch.map(GOARCH =>
++      $`GOOS=${GOOS} GOARCH=${GOARCH} go build -o ${name(GOOS, GOARCH)}`)))
++
++await Promise.all(
++  goos.flatMap(GOOS =>
++    goarch.map(GOARCH =>
++      $`gh release upload ${latest} ${name(GOOS, GOARCH)}`)))

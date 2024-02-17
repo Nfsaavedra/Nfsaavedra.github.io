@@ -1,0 +1,57 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 87091d7..7472983 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -54,3 +54,13 @@ jobs:
+       - run: go mod download
+       - run: cd example/federation ; npm install
+       - run: .github/workflows/check-federation
++
++  windows:
++    runs-on: windows-latest
++    steps:
++      - uses: actions/setup-go@v1
++        with:
++          go-version: 1.13
++      - uses: actions/checkout@v1
++      - run: go generate ./...
++      - run: go test -timeout 20m ./...
+diff --git a/appveyor.yml b/appveyor.yml
+deleted file mode 100644
+index 0552318..0000000
+--- a/appveyor.yml
++++ /dev/null
+@@ -1,33 +0,0 @@
+-version: "{build}"
+-
+-# Source Config
+-
+-skip_branch_with_pr: true
+-clone_folder: c:\projects\gqlgen
+-
+-# Build host
+-
+-environment:
+-  GOPATH: c:\gopath
+-  GOVERSION: 1.13.7
+-  PATH: '%PATH%;c:\gopath\bin'
+-
+-init:
+-  - git config --global core.autocrlf input
+-
+-# Build
+-
+-install:
+-  # Install the specific Go version.
+-  - rmdir c:\go /s /q
+-  - appveyor DownloadFile https://storage.googleapis.com/golang/go%GOVERSION%.windows-amd64.msi
+-  - msiexec /i go%GOVERSION%.windows-amd64.msi /q
+-  - go version
+-
+-build: false
+-deploy: false
+-
+-test_script:
+-  - git clean -ffdx
+-  - go generate ./...
+-  - go test -timeout 20m ./...

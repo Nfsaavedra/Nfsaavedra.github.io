@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 00f1752..c88da43 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -1,10 +1,5 @@
+ name: Build
+-
+-on:
+-  push:
+-    branches:
+-    - master
+-    - staging
++on: [push, pull_request]
+ 
+ jobs:
+   build:

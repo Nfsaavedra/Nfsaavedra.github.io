@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/docker.yaml b/.github/workflows/docker.yaml
+index 88aa25a..6905ed0 100644
+--- a/.github/workflows/docker.yaml
++++ b/.github/workflows/docker.yaml
+@@ -14,7 +14,7 @@ jobs:
+ 
+       - name: Docker Metadata
+         id: metadata
+-        uses: docker/metadata-action@9dc751fe249ad99385a2583ee0d084c400eee04e
++        uses: docker/metadata-action@dbef88086f6cef02e264edb7dbf63250c17cef6c
+         with:
+           images: quay.io/rtctunnel/rtctunnel
+ 

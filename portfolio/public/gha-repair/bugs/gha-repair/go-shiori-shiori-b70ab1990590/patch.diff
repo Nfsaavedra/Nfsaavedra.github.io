@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/_delete-registry-tag.yml b/.github/workflows/_delete-registry-tag.yml
+index dc30694..c3d4c08 100644
+--- a/.github/workflows/_delete-registry-tag.yml
++++ b/.github/workflows/_delete-registry-tag.yml
+@@ -15,6 +15,6 @@ jobs:
+     steps:
+       - uses: chipkent/action-cleanup-package@1316a66015b82d745b57acbb6c570f2bb1d108f9 # v1.0.3
+         with:
+-          package-name: ghcr.io/${{ github.repository }}
++          package-name: ${{ github.repository }}
+           tag: ${{ inputs.tag_name }}
+           github-token: ${{ secrets.GITHUB_TOKEN }}

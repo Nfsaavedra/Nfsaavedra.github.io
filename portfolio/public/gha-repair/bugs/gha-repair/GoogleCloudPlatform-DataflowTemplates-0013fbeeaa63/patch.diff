@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index acb7469..488716f 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -32,8 +32,8 @@ jobs:
+     - name: Declare release branch name and tag name
+       id: variables
+       run: |
+-        echo "releaseBranchName=${CANDIDATE_NAME^^}" >> $GITHUB_OUTPUT
+-        echo "tagName=release_${CANDIDATE_NAME,,}" >> $GITHUB_OUTPUT
++        echo "releaseBranchName=release_${CANDIDATE_NAME,,}" >> $GITHUB_OUTPUT
++        echo "tagName=${CANDIDATE_NAME^^}" >> $GITHUB_OUTPUT
+       env:
+         CANDIDATE_NAME: ${{ inputs.candidateName }}
+     - name: Checkout code

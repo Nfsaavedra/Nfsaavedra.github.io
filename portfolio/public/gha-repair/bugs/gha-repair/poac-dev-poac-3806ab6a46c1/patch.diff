@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/linux.yml b/.github/workflows/linux.yml
+index b8ae5db..c09182b 100644
+--- a/.github/workflows/linux.yml
++++ b/.github/workflows/linux.yml
+@@ -166,7 +166,7 @@ jobs:
+           name: ${{ github.job }}-${{ matrix.compiler.pacakge }}
+           path: poac
+ 
+-      - uses: actions/setup-python@v1
++      - uses: actions/setup-python@v2.2.1
+         if: success() && matrix.build_type == 'Coverage'
+ 
+       - name: Upload coverage to Coveralls

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/sonar-scanner.yml b/.github/workflows/sonar-scanner.yml
+index b341e09..dc2fc2f 100644
+--- a/.github/workflows/sonar-scanner.yml
++++ b/.github/workflows/sonar-scanner.yml
+@@ -17,6 +17,8 @@ jobs:
+       uses: actions/checkout@v1
+     - name: Setup SonarQube scanner
+       uses: warchant/setup-sonar-scanner@v1
++      env:
++        ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+     - name: Run SonarQube on push
+       if: github.event_name == 'push'
+       env:

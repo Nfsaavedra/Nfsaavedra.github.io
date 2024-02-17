@@ -1,0 +1,206 @@
+diff --git a/.github/workflows/docs-gen.yaml b/.github/workflows/docs-gen.yaml
+new file mode 100644
+index 0000000..411e152
+--- /dev/null
++++ b/.github/workflows/docs-gen.yaml
+@@ -0,0 +1,46 @@
++name: Docs
++
++on:
++  push:
++    branches:
++    - 'master'
++  pull_request:
++    branches:
++    - 'master'
++  workflow_run:
++    workflows: ["Trivy Scan"]
++    types:
++      - completed
++jobs:
++  build:
++    name: Generate versioned docs site
++    runs-on: ubuntu-18.04
++    steps:
++    - name: Set up Go 1.14
++      uses: actions/setup-go@v1
++      with:
++        go-version: 1.14
++      id: go
++    - name: Setup Hugo
++      uses: peaceiris/actions-hugo@v2
++      with:
++        hugo-version: '0.69.2'
++    - name: Check out code into the Go module directory
++      uses: actions/checkout@v2
++
++    - name: Generate versioned docs site
++      run: make -C docs build-site
++      env:
++        GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
++
++    - name: Deploy to Firebase
++      # Do not publish docs if this workflow was triggered by a pull request
++      # Only deploy if this was triggered by a push to master, or a successful trivy workflow_run
++      if: ${{ github.event_name != 'pull_request' }}
++      uses: w9jds/firebase-action@master
++      with:
++        args: deploy --only hosting
++      env:
++        PROJECT_ID: solo-corp
++        PROJECT_PATH: ./docs/ci
++        GCP_SA_KEY: ${{ secrets.FIREBASE_APPLICATION_CREDENTIALS }}
+\ No newline at end of file
+diff --git a/.github/workflows/publish-docs.yaml b/.github/workflows/publish-docs.yaml
+deleted file mode 100644
+index abf8183..0000000
+--- a/.github/workflows/publish-docs.yaml
++++ /dev/null
+@@ -1,41 +0,0 @@
+-  
+-name: Docs
+-
+-on:
+-  push:
+-    branches:
+-    - 'master'
+-  workflow_run:
+-    workflows: ["Trivy Scan"]
+-    types:
+-      - completed
+-jobs:
+-  build:
+-    name: Generate versioned docs site
+-    runs-on: ubuntu-18.04
+-    steps:
+-    - name: Set up Go 1.14
+-      uses: actions/setup-go@v1
+-      with:
+-        go-version: 1.14
+-      id: go
+-    - name: Setup Hugo
+-      uses: peaceiris/actions-hugo@v2
+-      with:
+-        hugo-version: '0.69.2'
+-    - name: Check out code into the Go module directory
+-      uses: actions/checkout@v2
+-
+-    - name: Generate versioned docs site
+-      run: make -C docs build-site
+-      env:
+-        GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+-
+-    - name: Deploy to Firebase
+-      uses: w9jds/firebase-action@master
+-      with:
+-        args: deploy --only hosting
+-      env:
+-        PROJECT_ID: solo-corp
+-        PROJECT_PATH: ./docs/ci
+-        GCP_SA_KEY: ${{ secrets.FIREBASE_APPLICATION_CREDENTIALS }}
+\ No newline at end of file
+diff --git a/.github/workflows/regression-tests-and-codegen.yaml b/.github/workflows/regression-tests-and-codegen.yaml
+index d426197..9b16350 100644
+--- a/.github/workflows/regression-tests-and-codegen.yaml
++++ b/.github/workflows/regression-tests-and-codegen.yaml
+@@ -31,23 +31,7 @@ jobs:
+           ${{ runner.os }}-go-
+     - name: Generate Code
+       run: |
+-        ./ci/check-code-and-docs-gen.sh
+-    - name: Setup Hugo
+-      uses: peaceiris/actions-hugo@v2
+-      with:
+-        hugo-version: '0.69.2'
+-    - name: Detect Communinty PR
+-      id: community-pr-check
+-      if: ${{ github.event.pull_request.head.repo.full_name != 'solo-io/gloo' }}
+-      shell: bash
+-      run: |
+-          echo "Pull Request is from a fork. Setting IS_COMMUNITY_PR to true"
+-          echo "::set-output name=IS_COMMUNITY_PR::true"
+-    - name: Generate versioned docs site
+-      run: make -C docs build-site
+-      env:
+-        GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+-        SKIP_CHANGELOG_GENERATION: ${{ steps.community-pr-check.outputs.IS_COMMUNITY_PR }}
++        ./ci/check-generated-code.sh
+   regression_tests:
+     name: k8s regression tests
+     runs-on: ubuntu-18.04
+diff --git a/changelog/v1.7.0-beta25/cleanup-docs-workflows.yaml b/changelog/v1.7.0-beta25/cleanup-docs-workflows.yaml
+new file mode 100644
+index 0000000..5b48dfe
+--- /dev/null
++++ b/changelog/v1.7.0-beta25/cleanup-docs-workflows.yaml
+@@ -0,0 +1,5 @@
++changelog:
++  - type: NON_USER_FACING
++    description: >
++      Cleanup our docs gen github workflow to ensure that docs are only build on pull requests to master.
++      Consolidate the logic into a single place so that we maintain a single source of truth.
+\ No newline at end of file
+diff --git a/ci/check-code-and-docs-gen.sh b/ci/check-code-and-docs-gen.sh
+deleted file mode 100755
+index 9d32dbd..0000000
+--- a/ci/check-code-and-docs-gen.sh
++++ /dev/null
+@@ -1,26 +0,0 @@
+-#!/bin/bash
+-
+-set -ex
+-
+-protoc --version
+-
+-if [ ! -f .gitignore ]; then
+-  echo "_output" > .gitignore
+-fi
+-
+-make install-go-tools
+-
+-set +e
+-
+-make generated-code -B > /dev/null
+-if [[ $? -ne 0 ]]; then
+-  echo "Code generation failed"
+-  exit 1;
+-fi
+-if [[ $(git status --porcelain | wc -l) -ne 0 ]]; then
+-  echo "Error: Generating code produced a non-empty diff"
+-  echo "Try running 'make install-go-tools generated-code -B' then re-pushing."
+-  git status --porcelain
+-  git diff | cat
+-  exit 1;
+-fi
+diff --git a/ci/check-generated-code.sh b/ci/check-generated-code.sh
+new file mode 100755
+index 0000000..9d32dbd
+--- /dev/null
++++ b/ci/check-generated-code.sh
+@@ -0,0 +1,26 @@
++#!/bin/bash
++
++set -ex
++
++protoc --version
++
++if [ ! -f .gitignore ]; then
++  echo "_output" > .gitignore
++fi
++
++make install-go-tools
++
++set +e
++
++make generated-code -B > /dev/null
++if [[ $? -ne 0 ]]; then
++  echo "Code generation failed"
++  exit 1;
++fi
++if [[ $(git status --porcelain | wc -l) -ne 0 ]]; then
++  echo "Error: Generating code produced a non-empty diff"
++  echo "Try running 'make install-go-tools generated-code -B' then re-pushing."
++  git status --porcelain
++  git diff | cat
++  exit 1;
++fi

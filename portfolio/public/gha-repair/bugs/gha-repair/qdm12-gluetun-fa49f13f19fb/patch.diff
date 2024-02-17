@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/labels.yml b/.github/workflows/labels.yml
+index f34e413..6feb9bb 100644
+--- a/.github/workflows/labels.yml
++++ b/.github/workflows/labels.yml
+@@ -12,6 +12,6 @@ jobs:
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v3
+-      - uses: crazy-max/ghaction-github-labeler@v4
++      - uses: crazy-max/ghaction-github-labeler@v5
+         with:
+           yaml-file: .github/labels.yml

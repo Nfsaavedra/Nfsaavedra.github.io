@@ -1,0 +1,18 @@
+diff --git a/.github/workflows/regression-tests.yaml b/.github/workflows/regression-tests.yaml
+index d232b5a..4195dff 100644
+--- a/.github/workflows/regression-tests.yaml
++++ b/.github/workflows/regression-tests.yaml
+@@ -54,11 +54,11 @@ jobs:
+     - uses: testspace-com/setup-testspace@v1
+       with:
+         domain: solo-io.testspace.com
+-      if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
++      if: ${{ always() && github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+     - name: Push result to Testspace server
+       run: |
+         testspace push --verbose "**/junit.xml"
+-      if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
++      if: ${{ always() && github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+     - name: Debug Info
+       if: failure()
+       run: |

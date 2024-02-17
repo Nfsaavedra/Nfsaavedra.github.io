@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/run-tests.yml b/.github/workflows/run-tests.yml
+index b31039f..a10761d 100644
+--- a/.github/workflows/run-tests.yml
++++ b/.github/workflows/run-tests.yml
+@@ -47,7 +47,7 @@ jobs:
+               uses: shivammathur/setup-php@v1
+               with:
+                   php-version: ${{ matrix.php }}
+-                  extension-csv: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, mysql, mysqli, pdo_mysql, bcmath, soap, intl, gd, exif, iconv, imagick
++                  extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, mysql, mysqli, pdo_mysql, bcmath, soap, intl, gd, exif, iconv, imagick
+                   coverage: none
+ 
+             - name: Install dependencies

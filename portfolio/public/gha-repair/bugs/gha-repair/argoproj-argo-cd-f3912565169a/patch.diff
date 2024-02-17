@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yaml b/.github/workflows/release.yaml
+index bea15e8..4e9c472 100644
+--- a/.github/workflows/release.yaml
++++ b/.github/workflows/release.yaml
+@@ -142,7 +142,7 @@ jobs:
+           echo "RELEASE_NOTES=${RELEASE_NOTES}" >> $GITHUB_ENV
+ 
+       - name: Setup Golang
+-        uses: actions/setup-go@v1
++        uses: actions/setup-go@v2
+         with:
+           go-version: ${{ env.GOLANG_VERSION }}
+ 

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/coverity.yml b/.github/workflows/coverity.yml
+index cd32c06..f33977e 100644
+--- a/.github/workflows/coverity.yml
++++ b/.github/workflows/coverity.yml
+@@ -30,6 +30,7 @@ jobs:
+           tar czf netplan.tar.gz cov-int
+       - name: Upload results
+         run: |
++          git fetch --unshallow --tags
+           TAG=$(git describe --tags $(git rev-list --tags --max-count=1))  # find latest (stable) tag
+           REV=$(git rev-parse --short HEAD)  # get current git revision
+           VER="$TAG+git~$REV"

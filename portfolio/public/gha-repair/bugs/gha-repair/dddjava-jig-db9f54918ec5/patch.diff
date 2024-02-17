@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/build-main.yml b/.github/workflows/build-main.yml
+index f456d35..2cdc4ff 100644
+--- a/.github/workflows/build-main.yml
++++ b/.github/workflows/build-main.yml
+@@ -9,6 +9,7 @@ jobs:
+       matrix:
+         os: [ ubuntu-latest, windows-latest ]
+         java-version: [ '8', '11' ]
++    name: build Java ${{ matrix.java-version }} (${{ matrix.os }})
+     env:
+       GRADLE_OPTS: '-Dorg.gradle.daemon=false'
+     steps:

@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 1983210..b2c773b 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -12,6 +12,5 @@ jobs:
+       with:
+         ruby-version: ${{ matrix.ruby }}
+     - run: |
+-        gem install bundler
+         bundle install
+         bundle exec rake test

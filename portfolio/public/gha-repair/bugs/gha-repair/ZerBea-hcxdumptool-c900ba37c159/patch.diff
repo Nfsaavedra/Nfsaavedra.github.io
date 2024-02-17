@@ -1,0 +1,21 @@
+diff --git a/.github/workflows/cpush.yml b/.github/workflows/cpush.yml
+index 40ed91e..d9423e1 100644
+--- a/.github/workflows/cpush.yml
++++ b/.github/workflows/cpush.yml
+@@ -18,13 +18,11 @@ jobs:
+         platform: ['x64', 'x86'] 
+ 
+     steps:
+-   - name: Setup GCC
+-     uses: Dup4/actions-setup-gcc@v1
+-       with:
+-       version: latest
+-
+     - uses: actions/checkout@v3
+       with:
+         fetch-depth: 0
+     - name: Make
++      env:
++       CC: gcc-${{matrix.cc}}
++
+       run: make

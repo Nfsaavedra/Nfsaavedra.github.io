@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index eef3843..bff3b32 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -35,6 +35,11 @@ jobs:
+         with:
+           command: check
+           args: --manifest-path "codespan/Cargo.toml" --features "serialization"
++      - name: Run cargo test for codespan without codespan-reporting
++        uses: actions-rs/cargo@v1
++        with:
++          command: check
++          args: --manifest-path "codespan/Cargo.toml" --no-default-features
+       - name: Run cargo test for codespan-lsp
+         uses: actions-rs/cargo@v1
+         with:

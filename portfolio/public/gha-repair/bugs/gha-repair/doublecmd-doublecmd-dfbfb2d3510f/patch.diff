@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/snapshots.yml b/.github/workflows/snapshots.yml
+index 4c7e5f2..7b34c58 100644
+--- a/.github/workflows/snapshots.yml
++++ b/.github/workflows/snapshots.yml
+@@ -58,7 +58,7 @@ jobs:
+     - name: Install Lazarus
+       uses: alexx2000/setup-fpc@win
+       with:
+-        lazarus-version: "2.2.6"
++        lazarus-version: "stable"
+ 
+     - name: Checkout source
+       uses: actions/checkout@v2

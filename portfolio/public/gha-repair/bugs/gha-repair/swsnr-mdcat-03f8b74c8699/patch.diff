@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 731a1f0..0b7aec4 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -6,7 +6,7 @@ on:
+       - mdcat-*
+ 
+ jobs:
+-  unix:
++  package:
+     runs-on: '${{ matrix.os }}'
+     strategy:
+       matrix:

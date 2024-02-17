@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/run-tests.yml b/.github/workflows/run-tests.yml
+index d0fd945..17d1d55 100644
+--- a/.github/workflows/run-tests.yml
++++ b/.github/workflows/run-tests.yml
+@@ -9,7 +9,7 @@ jobs:
+             fail-fast: true
+             matrix:
+                 os: [ubuntu-latest]
+-                php: [8.0, 7.4, 7.3, 7.2]
++                php: [8.2, 8.0, 7.4, 7.3, 7.2]
+                 stability: [prefer-lowest, prefer-stable]
+ 
+         name: P${{ matrix.php }} - ${{ matrix.stability }} - ${{ matrix.os }}

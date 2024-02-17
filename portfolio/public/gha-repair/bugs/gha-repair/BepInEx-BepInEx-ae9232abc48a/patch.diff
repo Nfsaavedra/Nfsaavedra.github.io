@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/comment_pr.yml b/.github/workflows/comment_pr.yml
+index df496bc..355bce5 100644
+--- a/.github/workflows/comment_pr.yml
++++ b/.github/workflows/comment_pr.yml
+@@ -60,4 +60,4 @@ jobs:
+             for (const pr of pull_requests) {
+               await upsertComment(owner, repo, pr.number,
+                 "nightly-link", body);
+-            }
+\ No newline at end of file
++            }

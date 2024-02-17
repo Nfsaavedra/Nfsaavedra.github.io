@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/rust.yml b/.github/workflows/rust.yml
+index 90686fe..a7b9fa6 100644
+--- a/.github/workflows/rust.yml
++++ b/.github/workflows/rust.yml
+@@ -26,4 +26,4 @@ jobs:
+           cargo fmt --all -- --check
+ 
+       - name: Run build on all Systems
+-          cargo build --all-features
++        run: cargo build --all-features

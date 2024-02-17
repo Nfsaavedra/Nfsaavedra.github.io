@@ -1,0 +1,93 @@
+diff --git a/.github/workflows/ci-cross-compile.yml b/.github/workflows/ci-cross-compile.yml
+new file mode 100644
+index 0000000..19df813
+--- /dev/null
++++ b/.github/workflows/ci-cross-compile.yml
+@@ -0,0 +1,60 @@
++name: Cross Compile CI
++on:
++  pull_request:
++  push:
++    tags:
++    branches:
++      - 'master'
++jobs:
++  build:
++    runs-on: ${{ matrix.os }}
++    strategy:
++      fail-fast: false
++      matrix:
++        # This is the matrix. They form permutations.
++        os: [ubuntu-latest]
++        config: [debug, release]
++        preset: [""]
++        triplet: [""]
++        exclude:
++          - preset: ""
++        # These are additional individual jobs. There are no permutations of these.
++        include:
++          # Testing x86-windows bit in debug only
++          - os: windows-latest
++            config: debug
++            preset: ninja-multi-vcpkg
++            triplet: x86-windows
++
++    steps:
++      - uses: actions/checkout@v2
++        with:
++          submodules: recursive
++
++      - name: Install Linux dependencies
++        run: |
++          sudo apt update -y
++          sudo apt install -y libgl1-mesa-dev libglu1-mesa-dev
++        if: matrix.os == 'ubuntu-latest'
++
++      # Setup nasm, needed for ffmpeg stuff
++      - uses: ilammy/setup-nasm@v1
++
++      # Setup the build machine with the most recent versions of CMake and Ninja. Both are cached if not already: on subsequent runs both will be quickly restored from GitHub cache service.
++      - uses: lukka/get-cmake@latest
++
++      - name: Restore artifacts, or setup vcpkg for building artifacts
++        uses: lukka/run-vcpkg@v10
++        id: runvcpkg
++        with:
++          vcpkgJsonGlob: 'vcpkg.json'
++
++      - name: Run CMake+vcpkg+Ninja+CTest to generate/build.
++        uses: lukka/run-cmake@v10
++        id: runcmake
++        with:
++          configurePreset: '${{ matrix.preset }}'
++          buildPreset: '${{ matrix.preset }}-${{ matrix.config }}'
++
++    env:
++      VCPKG_DEFAULT_TRIPLET: ${{ matrix.triplet }}
+diff --git a/.github/workflows/ci-vcpkg.yml b/.github/workflows/ci-vcpkg.yml
+index 49baaef..b36a2fa 100644
+--- a/.github/workflows/ci-vcpkg.yml
++++ b/.github/workflows/ci-vcpkg.yml
+@@ -14,15 +14,10 @@ jobs:
+         # This is the matrix. They form permutations.
+         os: [ubuntu-latest, macos-latest, windows-latest, windows-2022]
+         config: [debug, release]
+-        triplet: [""]
+         cc: [""]
+         cxx: [""]
+         # These are additional individual jobs. There are no permutations of these.
+         include:
+-          # Testing 32 bit
+-          - os: windows-latest
+-            config: debug
+-            triplet: x86-windows
+           # Testing clang
+           - os: ubuntu-latest
+             config: debug
+@@ -61,6 +56,5 @@ jobs:
+           # testPreset: 'ninja-multi-vcpkg-${{ matrix.config }}'
+ 
+     env:
+-      VCPKG_DEFAULT_TRIPLET: ${{ matrix.triplet }}
+       CC: ${{ matrix.cc }}
+       CXX: ${{ matrix.cxx }}

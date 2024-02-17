@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/coveralls.yml b/.github/workflows/coveralls.yml
+index 137dac8..19f262d 100644
+--- a/.github/workflows/coveralls.yml
++++ b/.github/workflows/coveralls.yml
+@@ -33,7 +33,7 @@ jobs:
+             fs.writeFileSync('${{github.workspace}}/coverage-build-artifact.zip', Buffer.from(download.data));
+       - run: unzip coverage-build-artifact.zip
+ 
+-      - uses: actions/setup-python@v2.2.1
++      - uses: actions/setup-python@v2.2.2
+ 
+       - name: Upload coverage to Coveralls
+         run: |

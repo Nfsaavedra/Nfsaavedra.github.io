@@ -1,0 +1,40 @@
+diff --git a/.github/workflows/rust.yml b/.github/workflows/rust.yml
+index 0706962..726840c 100644
+--- a/.github/workflows/rust.yml
++++ b/.github/workflows/rust.yml
+@@ -11,7 +11,7 @@ env:
+ 
+ jobs:
+   ubuntu-nightly:
+-    runs-on: ubuntu-latest
++    runs-on: ubuntu-20.04
+     steps:
+     - uses: actions/checkout@v2
+     - uses: actions-rs/toolchain@v1
+@@ -25,7 +25,7 @@ jobs:
+       run: ./test.sh
+   
+   ubuntu-beta:
+-    runs-on: ubuntu-latest
++    runs-on: ubuntu-20.04
+     steps:
+     - uses: actions/checkout@v2
+     - uses: actions-rs/toolchain@v1
+@@ -39,7 +39,7 @@ jobs:
+       run: ./test.sh
+       
+   ubuntu-stable:
+-    runs-on: ubuntu-latest
++    runs-on: ubuntu-20.04
+     steps:
+     - uses: actions/checkout@v2
+     - uses: actions-rs/toolchain@v1
+@@ -53,7 +53,7 @@ jobs:
+       run: ./test.sh
+ 
+   ubuntu-msrv:
+-    runs-on: ubuntu-latest
++    runs-on: ubuntu-20.04
+     steps:
+     - uses: actions/checkout@v2
+     - uses: actions-rs/toolchain@v1

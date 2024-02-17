@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/label-issue.yml b/.github/workflows/label-issue.yml
+index 46eed6d..24e42dc 100644
+--- a/.github/workflows/label-issue.yml
++++ b/.github/workflows/label-issue.yml
+@@ -11,7 +11,7 @@ jobs:
+   triage:
+     runs-on: ubuntu-latest
+     steps:
+-    - uses: github/issue-labeler@v3.3
++    - uses: github/issue-labeler@v3.4
+       with:
+         configuration-path: .github/issue-labeler.yml
+         enable-versioned-regex: 0

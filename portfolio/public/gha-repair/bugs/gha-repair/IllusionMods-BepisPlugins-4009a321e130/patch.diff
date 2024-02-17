@@ -1,0 +1,36 @@
+diff --git a/.github/workflows/nuget.yml b/.github/workflows/nuget.yml
+index 57c4b75..541c7d2 100644
+--- a/.github/workflows/nuget.yml
++++ b/.github/workflows/nuget.yml
+@@ -1,6 +1,8 @@
+ name: Push to nuget feed on release
+ 
+-on: push
++on:
++  release:
++    types: [published]
+ 
+ jobs:
+   build:
+diff --git a/src/PH_ExtensibleSaveFormat/PH_ExtensibleSaveFormat.nuspec b/src/PH_ExtensibleSaveFormat/PH_ExtensibleSaveFormat.nuspec
+new file mode 100644
+index 0000000..1c79d46
+--- /dev/null
++++ b/src/PH_ExtensibleSaveFormat/PH_ExtensibleSaveFormat.nuspec
+@@ -0,0 +1,15 @@
++<?xml version="1.0"?>
++<package >
++  <metadata>
++    <id>ExtensibleSaveFormat.PlayHome</id>
++    <version>$version$</version>
++    <authors>IllusionMods</authors>
++    <projectUrl>https://github.com/IllusionMods/BepisPlugins</projectUrl>
++    <requireLicenseAcceptance>false</requireLicenseAcceptance>
++    <description>Allows additional data to be saved to character, coordinate and scene cards</description>
++    <developmentDependency>true</developmentDependency>
++  </metadata>
++  <files>
++    <file src="..\install.ps1" target="tools"/>
++  </files>
++</package>
+\ No newline at end of file

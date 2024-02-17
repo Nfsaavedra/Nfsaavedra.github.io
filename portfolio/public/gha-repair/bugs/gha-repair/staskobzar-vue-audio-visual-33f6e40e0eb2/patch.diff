@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/node.js.yml b/.github/workflows/node.js.yml
+index 4b3661c..8250299 100644
+--- a/.github/workflows/node.js.yml
++++ b/.github/workflows/node.js.yml
+@@ -30,5 +30,4 @@ jobs:
+     - run: npm run lint
+     - run: npm run build --if-present
+     - run: npm run test:ci
+-    - name: Upload coverage to Codecov
+-      uses: codecov/codecov-action@v3
++    - uses: codecov/codecov-action@v3

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/run-tests.yml b/.github/workflows/run-tests.yml
+index ff06646..9aaeec5 100644
+--- a/.github/workflows/run-tests.yml
++++ b/.github/workflows/run-tests.yml
+@@ -20,6 +20,7 @@ jobs:
+         cd build
+         sudo cmake ..
+         sudo make
++        ls -lh
+         sudo cp libgtest* /usr/lib/
+         cd ..
+         sudo rm -rf build

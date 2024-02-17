@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 418a4d8..e5012bc 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -10,7 +10,7 @@ jobs:
+     runs-on: ubuntu-latest
+     steps:
+     - name: Checkout
+-      uses: actions/checkout@v2
++      uses: actions/checkout@v3
+ 
+     - name: Build
+       run: cargo build

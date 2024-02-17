@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 835bd51..64624ee 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -16,7 +16,7 @@ jobs:
+       with:
+         channel: 'stable'
+     - run: flutter --version
++    - run: flutter pub get
+     - run: dart analyze --fatal-infos
+     - run: dart format --output none --set-exit-if-changed .
+     - run: flutter test
+-  

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/verify.yml b/.github/workflows/verify.yml
+index 11aec38..ee58e30 100644
+--- a/.github/workflows/verify.yml
++++ b/.github/workflows/verify.yml
+@@ -20,7 +20,7 @@ jobs:
+         run: sbt bsp4j/xtend
+ 
+       - name: Verify Changed files
+-        uses: tj-actions/verify-changed-files@v15
++        uses: tj-actions/verify-changed-files@v16
+         id: verify-changed-files
+         with:
+           files: |

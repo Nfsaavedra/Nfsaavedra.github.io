@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yaml b/.github/workflows/ci.yaml
+index 690865d..31923f7 100644
+--- a/.github/workflows/ci.yaml
++++ b/.github/workflows/ci.yaml
+@@ -24,7 +24,7 @@ jobs:
+       - run: npm install
+       - run: npm test
+       - name: coverage
+-        uses: codecov/codecov-action@v1
++        uses: codecov/codecov-action@v2
+         with:
+           name: actions ${{ matrix.node }}
+   lint:

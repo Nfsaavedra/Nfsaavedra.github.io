@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/benchmarks.yml b/.github/workflows/benchmarks.yml
+index ec07724..3242849 100644
+--- a/.github/workflows/benchmarks.yml
++++ b/.github/workflows/benchmarks.yml
+@@ -104,7 +104,7 @@ jobs:
+           which pip
+           python --version
+           pip --version
+-          pip install -v -r cmake/bm-xp/requirements.txt
++          pip install -v -r ext/c4core/cmake/bm-xp/requirements.txt
+           python -c 'import munch ; print("ok!") ; exit(0)'
+           echo $?
+       - name: shared64-configure---------------------------------------------------

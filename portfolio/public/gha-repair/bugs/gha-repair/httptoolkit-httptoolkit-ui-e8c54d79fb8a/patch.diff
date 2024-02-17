@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 911180a..900e954 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -128,7 +128,8 @@ jobs:
+         run: |
+           # Clear CDN cache to re-request content:
+           curl -f --request POST \
+-            --url https://api.bunny.net/pullzone/1110200/purgeCache \
++            --url https://api.bunny.net/pullzone/$PULL_ZONE_ID/purgeCache \
+             --header "AccessKey: $BUNNY_SITE_API_KEY"
+         env:
++          PULL_ZONE_ID: 1110200
+           BUNNY_SITE_API_KEY: ${{ secrets.BUNNY_SITE_API_KEY }}
+\ No newline at end of file

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/deploy-demo.yml b/.github/workflows/deploy-demo.yml
+index 910a161..befab18 100644
+--- a/.github/workflows/deploy-demo.yml
++++ b/.github/workflows/deploy-demo.yml
+@@ -16,6 +16,6 @@ jobs:
+           username: ${{ secrets.AUDIOSERVE_USERNAME }}
+           key: ${{ secrets.AUDIOSERVE_KEY }}
+           script: |
+-            docker rm -f audioserve
++            docker rm -f audioserve || true
+             docker pull izderadicka/audioserve:unstable
+-            ./run_audioserve
++            ./run_audioserve.sh

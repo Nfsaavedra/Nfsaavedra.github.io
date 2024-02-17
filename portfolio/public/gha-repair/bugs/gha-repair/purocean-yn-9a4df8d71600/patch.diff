@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 1658d23..6932b12 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -23,6 +23,10 @@ jobs:
+       npm_config_runtime: "electron"
+ 
+     steps:
++      - name: Set git config
++        run: |
++          git config --global core.autocrlf false
++
+       - name: Checkout
+         uses: actions/checkout@v2.3.3
+ 

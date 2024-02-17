@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 2bd05d7..aa25c48 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -42,4 +42,4 @@ jobs:
+         if: ${{ startsWith(github.event.head_commit.message, '[artifacts]') }}
+         with:
+           name: ${{ matrix.os }}
+-          path: release/*.[exe|dmg|AppImage|zip|deb]
++          path: release/*.{exe,dmg,AppImage,zip,deb}

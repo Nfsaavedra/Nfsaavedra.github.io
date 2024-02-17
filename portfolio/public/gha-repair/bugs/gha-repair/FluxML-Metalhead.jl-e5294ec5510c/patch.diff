@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/CI.yml b/.github/workflows/CI.yml
+index 6ba45e0..29ee17f 100644
+--- a/.github/workflows/CI.yml
++++ b/.github/workflows/CI.yml
+@@ -22,7 +22,7 @@ jobs:
+         os:
+           - ubuntu-latest
+           - macOS-latest
+-          # - windows-latest
++          - windows-latest
+         arch:
+           - x64
+     steps:

@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/linux.yml b/.github/workflows/linux.yml
+index 2c7acb4..8c196db 100644
+--- a/.github/workflows/linux.yml
++++ b/.github/workflows/linux.yml
+@@ -111,7 +111,8 @@ jobs:
+             -DCMAKE_INSTALL_PREFIX=${{ runner.temp }}/libs/libgit2 \
+             -DCMAKE_BUILD_TYPE=Release                             \
+             -DBUILD_SHARED_LIBS=ON                                 \
+-            -DBUILD_CLAR=OFF
++            -DBUILD_CLAR=OFF                                       \
++            -DCMAKE_C_FLAGS=-fPIC
+           make
+           sudo make install
+         working-directory: ${{ runner.temp }}

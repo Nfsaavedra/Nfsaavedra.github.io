@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/labels.yaml b/.github/workflows/labels.yaml
+index 1dcde00..6a9ffc5 100644
+--- a/.github/workflows/labels.yaml
++++ b/.github/workflows/labels.yaml
+@@ -1,4 +1,4 @@
+-name: "Validate"
++name: "Labels"
+ 
+ on:
+   pull_request_target:

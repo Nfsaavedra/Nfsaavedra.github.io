@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/code-cov.yml b/.github/workflows/code-cov.yml
+index 0f46cc3..e6c229c 100644
+--- a/.github/workflows/code-cov.yml
++++ b/.github/workflows/code-cov.yml
+@@ -19,6 +19,7 @@ jobs:
+       run: |
+         pip install pytest
+         pip install pytest-cov
++        pip install importlib_resources
+         pip install -e .
+         pytest --cov=./ --cov-report=xml
+     - name: Upload coverage to Codecov

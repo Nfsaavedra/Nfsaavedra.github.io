@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/images.yml b/.github/workflows/images.yml
+index 8f940ab..a786a2d 100644
+--- a/.github/workflows/images.yml
++++ b/.github/workflows/images.yml
+@@ -269,7 +269,7 @@ jobs:
+             if [ -n "${GITHUB_HEAD_REF}" ]; then
+               GIT_SLUG="${GITHUB_HEAD_REF}"
+             else
+-              GIT_SLUG="${GITHUB_REF/refs\/head\//}"
++              GIT_SLUG="${GITHUB_REF/refs\/heads\//}"
+             fi
+           fi
+ 

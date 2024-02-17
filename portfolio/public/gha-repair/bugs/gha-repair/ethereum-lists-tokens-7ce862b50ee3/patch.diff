@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/all_checks.yml b/.github/workflows/all_checks.yml
+index 2870deb..d0557d8 100644
+--- a/.github/workflows/all_checks.yml
++++ b/.github/workflows/all_checks.yml
+@@ -9,7 +9,7 @@ jobs:
+ 
+       - name: Get changed files
+         id: changed-files
+-        uses: tj-actions/changed-files@v35
++        uses: tj-actions/changed-files@v41
+ 
+       - name: Check changed files
+         run: |

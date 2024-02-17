@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 11da67e..013d617 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -34,12 +34,12 @@ jobs:
+       - name: Setup Python environment
+         uses: actions/setup-python@v4
+         with:
+-          python-version: '3.10'
++          python-version: '3.11.5'
+ 
+       - name: Setup Node.js environment
+         uses: actions/setup-node@v2.1.2
+         with:
+-          node-version: 14.x
++          node-version: 16.x
+ 
+       - name: Install
+         run: |

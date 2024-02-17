@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/publish.yaml b/.github/workflows/publish.yaml
+index 494b1af..28a1930 100644
+--- a/.github/workflows/publish.yaml
++++ b/.github/workflows/publish.yaml
+@@ -27,6 +27,9 @@ jobs:
+         with:
+           tag_name: ${{ github.ref }}
+           release_name: Release ${{ github.ref }}
++          body: |
++            Changes in this release:
++            - ..
+           draft: true
+           prerelease: true
+ 

@@ -1,0 +1,24 @@
+diff --git a/.github/workflows/trivy-analysis.yaml b/.github/workflows/trivy-analysis.yaml
+index 312b764..1172bd1 100644
+--- a/.github/workflows/trivy-analysis.yaml
++++ b/.github/workflows/trivy-analysis.yaml
+@@ -56,7 +56,7 @@ jobs:
+       - name: Gloo Docs
+         uses: aquasecurity/trivy-action@master
+         with:
+-          image-ref: ${{ env.IMAGE_REPO }}/${{ matrix.image-type }}:${{ github.event.release.tag_name }}"
++          image-ref: ${{ env.IMAGE_REPO }}/${{ matrix.image-type }}:${{ github.event.release.tag_name }}
+           format: 'template'
+           template: '@hack/utils/security_scan_report/markdown.tpl'
+           output: ${{ env.SCAN_DIR }}/${{ steps.build-docker-image.outputs.VERSION }}/${{ matrix.image-type }}_cve_report.docgen
+diff --git a/changelog/v1.7.0-beta20/fix-image-ref-parsing.yaml b/changelog/v1.7.0-beta20/fix-image-ref-parsing.yaml
+new file mode 100644
+index 0000000..4e1878e
+--- /dev/null
++++ b/changelog/v1.7.0-beta20/fix-image-ref-parsing.yaml
+@@ -0,0 +1,4 @@
++changelog:
++  - type: NON_USER_FACING
++    description: >
++      Fix image ref name parsing in release workflow
+\ No newline at end of file

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 2ac1d04..9036c34 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -17,7 +17,7 @@ jobs:
+           - 15
+         architecture:
+           - x64
+-          - arm64
++#          - arm64   precompiled bits may not allow for this
+         # an extra windows-x86 run:
+ #        include:
+ #          - os: windows-latest

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/windows.yml b/.github/workflows/windows.yml
+index 43ec705..f5ff5c6 100644
+--- a/.github/workflows/windows.yml
++++ b/.github/workflows/windows.yml
+@@ -64,7 +64,7 @@ jobs:
+         run: |
+           mkdir build
+           cd build
+-          cmake .. -G "${{ env.GENERATOR }}"`
++          cmake .. -G "${{ env.GENERATOR }}" `
+             -Dpoac_BUILD_TEST=OFF `
+             -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} `
+             -DGIT2_DIR="C:/Program Files (x86)/libgit2" `

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 34380b5..c2e41d9 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -17,7 +17,7 @@ jobs:
+         yarn build
+ 
+     - name: Setup MSBuild.exe
+-      uses: warrenbuckley/Setup-MSBuild@v1
++      uses: microsoft/setup-msbuild@v1.0.2
+     
+     - name: MSBuild
+       run: msbuild FluentTerminal.sln -t:build -p:Configuration=Debug -p:Platform=x64 -m -restore

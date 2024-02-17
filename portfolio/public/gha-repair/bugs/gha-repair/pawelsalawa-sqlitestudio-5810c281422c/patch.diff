@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/3.2.yml b/.github/workflows/3.2.yml
+index 1268712..ed87fb2 100644
+--- a/.github/workflows/3.2.yml
++++ b/.github/workflows/3.2.yml
+@@ -54,6 +54,9 @@ jobs:
+             - name: Decompress dependencies
+               run: 7z x -o".." ..\win64_deps.zip
+               
++            - name: Add dependencies to PATH
++              run: echo "::add-path::${{ github.workspace }}\..\lib"
++ 
+             - name: Prepare output dir
+               shell: bash
+               run: mkdir output output/build output/build/Plugins

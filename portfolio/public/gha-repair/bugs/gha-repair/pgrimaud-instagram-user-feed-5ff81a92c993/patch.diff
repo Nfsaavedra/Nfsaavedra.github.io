@@ -1,0 +1,18 @@
+diff --git a/.github/workflows/main.yaml b/.github/workflows/main.yaml
+index f00f1fd..5ef8ac2 100644
+--- a/.github/workflows/main.yaml
++++ b/.github/workflows/main.yaml
+@@ -28,4 +28,13 @@ jobs:
+       - name: "Tests"
+         run: php vendor/bin/phpunit tests --whitelist src --coverage-clover ./build/logs/clover.xml
+ 
++  finish:
++    needs: tests
++    runs-on: ubuntu-latest
++    steps:
++      - name: "Coveralls"
++        uses: coverallsapp/github-action@master
++        with:
++          github-token: ${{ secrets.github_token }}
++          parallel-finished: true
+ 

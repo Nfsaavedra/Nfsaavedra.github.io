@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index a499b7f..353c4ad 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -1,4 +1,4 @@
+-name: Tests CI
++name: Release CI
+ 
+ on:
+   push:

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/cmake.yml b/.github/workflows/cmake.yml
+index 153390a..3a58333 100644
+--- a/.github/workflows/cmake.yml
++++ b/.github/workflows/cmake.yml
+@@ -31,5 +31,5 @@ jobs:
+     - name: Build
+       working-directory: ${{runner.workspace}}/build
+       shell: bash
+-      # Execute the build.  You can specify a specific target with "--target <NAME>"
+-      run: cmake --build . -DENABLE_TESTS=ON
++      run: make
++

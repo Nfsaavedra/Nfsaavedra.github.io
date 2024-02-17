@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 8f23b33..fc598e6 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -74,11 +74,11 @@ jobs:
+       security-events: write
+     steps:
+       - uses: actions/checkout@v4
+-      - uses: github/codeql-action/init@v2
++      - uses: github/codeql-action/init@v3
+         with:
+           languages: go
+-      - uses: github/codeql-action/autobuild@v2
+-      - uses: github/codeql-action/analyze@v2
++      - uses: github/codeql-action/autobuild@v3
++      - uses: github/codeql-action/analyze@v3
+ 
+   publish:
+     if: |

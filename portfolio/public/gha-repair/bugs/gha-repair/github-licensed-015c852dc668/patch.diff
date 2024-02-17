@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 0fb144c..0608369 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -201,8 +201,7 @@ jobs:
+     - name: Set up Ruby
+       uses: ruby/setup-ruby@v1
+       with:
+-        ruby-version: 2.6
+-    - run: bundle lock
++        bundler-cache: true
+     - name: Set up Java
+       uses: actions/setup-java@v3
+       with:

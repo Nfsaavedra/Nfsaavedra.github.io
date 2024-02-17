@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 41ab4a3..6d211ec 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -33,4 +33,5 @@ jobs:
+           timeout_minutes: 20
+           command: |
+             cd _examples
+-            go mod download && go test -race ./...
++            go mod download
++            go test -race ./...

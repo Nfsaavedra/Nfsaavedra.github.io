@@ -1,0 +1,23 @@
+diff --git a/.github/workflows/macos.yml b/.github/workflows/macos.yml
+index cc7508d..7bf7e5e 100644
+--- a/.github/workflows/macos.yml
++++ b/.github/workflows/macos.yml
+@@ -81,14 +81,14 @@ jobs:
+             clang-12)
+               CC=clang
+               CXX=clang++
+-              export CFLAGS="-Wno-zero-length-array"
+-              export CXXFLAGS="-Wno-zero-length-array"
++              export CFLAGS="-Wno-zero-length-array -Wno-deprecated-declarations"
++              export CXXFLAGS="-Wno-zero-length-array -Wno-deprecated-declarations"
+               ;;
+             clang-11)
+               CC=$(brew --prefix llvm)/bin/clang
+               CXX=$(brew --prefix llvm)/bin/clang++
+-              export CFLAGS="-Wno-zero-length-array"
+-              export CXXFLAGS="-Wno-zero-length-array"
++              export CFLAGS="-Wno-zero-length-array -Wno-deprecated-declarations"
++              export CXXFLAGS="-Wno-zero-length-array -Wno-deprecated-declarations"
+               ;;
+             *)
+               CC=${{ matrix.compiler.cc }}

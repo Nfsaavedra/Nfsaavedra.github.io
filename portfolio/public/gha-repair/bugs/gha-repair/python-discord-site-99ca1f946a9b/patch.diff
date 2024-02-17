@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/main.yaml b/.github/workflows/main.yaml
+index 03b0e9b..fd47b5c 100644
+--- a/.github/workflows/main.yaml
++++ b/.github/workflows/main.yaml
+@@ -18,7 +18,6 @@ jobs:
+ 
+ 
+   generate-sha-tag:
+-    if: github.ref == 'refs/heads/main'
+     runs-on: ubuntu-latest
+     outputs:
+       sha-tag: ${{ steps.sha-tag.outputs.sha-tag }}

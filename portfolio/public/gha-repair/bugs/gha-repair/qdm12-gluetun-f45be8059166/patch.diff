@@ -1,0 +1,151 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 77dce34..f797d24 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -1,6 +1,21 @@
+ name: CI
+ on:
+   push:
++    branches:
++      - master
++    paths:
++      - .github/workflows/ci.yml
++      - cmd/**
++      - internal/**
++      - pkg/**
++      - .dockerignore
++      - .golangci.yml
++      - Dockerfile
++      - go.mod
++      - go.sum
++  pull_request:
++    branches:
++      - master
+     paths:
+       - .github/workflows/ci.yml
+       - cmd/**
+@@ -14,6 +29,7 @@ on:
+ 
+ jobs:
+   verify:
++    if: github.event.pull_request.head.repo.full_name == github.repository
+     runs-on: ubuntu-latest
+     env:
+       DOCKER_BUILDKIT: "1"
+@@ -52,6 +68,7 @@ jobs:
+           image: final-image
+ 
+   publish:
++    if: github.event.pull_request.head.repo.full_name == github.repository
+     needs: [verify]
+     runs-on: ubuntu-latest
+     steps:
+@@ -70,18 +87,14 @@ jobs:
+         env:
+           EVENT_NAME: ${{ github.event_name }}
+         run: |
+-          BRANCH=${GITHUB_REF#refs/heads/}
+           TAG=${GITHUB_REF#refs/tags/}
+           echo ::set-output name=commit::$(git rev-parse --short HEAD)
+           echo ::set-output name=created::$(date -u +%Y-%m-%dT%H:%M:%SZ)
+           if [ "$TAG" != "$GITHUB_REF" ]; then
+             echo ::set-output name=version::$TAG
+             echo ::set-output name=platforms::linux/amd64,linux/386,linux/arm64,linux/arm/v6,linux/arm/v7,linux/ppc64le
+-          elif [ "$BRANCH" = "master" ]; then
+-            echo ::set-output name=version::latest
+-            echo ::set-output name=platforms::linux/amd64,linux/386,linux/arm64,linux/arm/v6,linux/arm/v7,linux/ppc64le
+           else
+-            echo ::set-output name=version::$BRANCH
++            echo ::set-output name=version::latest
+             echo ::set-output name=platforms::linux/amd64,linux/386,linux/arm64,linux/arm/v6,linux/arm/v7,linux/ppc64le
+           fi
+ 
+diff --git a/.github/workflows/dependabot.yml b/.github/workflows/dependabot.yml
+new file mode 100644
+index 0000000..eb64d5b
+--- /dev/null
++++ b/.github/workflows/dependabot.yml
+@@ -0,0 +1,37 @@
++name: Dependabot
++on:
++  pull_request:
++    branches:
++      - master
++    paths:
++      - .github/workflows/dependabot.yml
++      - cmd/**
++      - internal/**
++      - pkg/**
++      - .dockerignore
++      - .golangci.yml
++      - Dockerfile
++      - go.mod
++      - go.sum
++
++jobs:
++  verify:
++    if: ${{ github.actor == 'dependabot[bot]' }}
++    runs-on: ubuntu-latest
++    env:
++      DOCKER_BUILDKIT: "1"
++    steps:
++      - uses: actions/checkout@v2.3.4
++
++      - name: Build test image
++        run: docker build --target test -t test-container .
++
++      - name: Run tests in test container
++        run: |
++          touch coverage.txt
++          docker run --rm \
++          -v "$(pwd)/coverage.txt:/tmp/gobuild/coverage.txt" \
++          test-container
++
++      - name: Build final image
++        run: docker build -t final-image .
+diff --git a/.github/workflows/fork.yml b/.github/workflows/fork.yml
+new file mode 100644
+index 0000000..5ba81d9
+--- /dev/null
++++ b/.github/workflows/fork.yml
+@@ -0,0 +1,40 @@
++name: Fork
++on:
++  pull_request:
++    branches:
++      - master
++    paths:
++      - .github/workflows/fork.yml
++      - cmd/**
++      - internal/**
++      - pkg/**
++      - .dockerignore
++      - .golangci.yml
++      - Dockerfile
++      - go.mod
++      - go.sum
++
++jobs:
++  verify:
++    if: github.event.pull_request.head.repo.full_name != github.repository && github.actor != 'dependabot[bot]'
++    runs-on: ubuntu-latest
++    env:
++      DOCKER_BUILDKIT: "1"
++    steps:
++      - uses: actions/checkout@v2.3.4
++
++      - name: Linting
++        run: docker build --target lint .
++
++      - name: Build test image
++        run: docker build --target test -t test-container .
++
++      - name: Run tests in test container
++        run: |
++          touch coverage.txt
++          docker run --rm \
++          -v "$(pwd)/coverage.txt:/tmp/gobuild/coverage.txt" \
++          test-container
++
++      - name: Build final image
++        run: docker build -t final-image .

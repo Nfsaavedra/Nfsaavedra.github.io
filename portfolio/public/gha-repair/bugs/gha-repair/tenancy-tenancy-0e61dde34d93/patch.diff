@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 1f771d5..58257ed 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -53,6 +53,8 @@ jobs:
+ 
+         name: 'PHP ${{ matrix.php }} / Laravel: ${{ matrix.laravel }} / ${{ matrix.db }}'
+ 
++        continue-on-error: ${{ matrix.experimental }}
++
+         steps:
+             - uses: actions/checkout@master
+ 

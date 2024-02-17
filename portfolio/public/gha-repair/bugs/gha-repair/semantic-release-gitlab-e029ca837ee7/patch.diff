@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index ce03c8a..e158fcd 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -15,7 +15,7 @@ jobs:
+       - uses: actions/setup-node@v3
+         with:
+           cache: npm
+-          node-version: 16
++          node-version: lts/*
+       - run: npm ci
+       - run: npx semantic-release
+         env:

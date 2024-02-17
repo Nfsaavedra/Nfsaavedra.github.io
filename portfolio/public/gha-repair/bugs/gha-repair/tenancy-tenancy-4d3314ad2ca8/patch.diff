@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index c55c05a..5d2beef 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -9,7 +9,7 @@ jobs:
+         strategy:
+             fail-fast: false
+             matrix:
+-                php: [7.2, 7.3, 7.4]
++                php: [7.2, 7.3]
+                 service: ['mysql:8', 'mysql:5.7', mariadb]
+ 
+                 include:

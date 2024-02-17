@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/pomo.yaml b/.github/workflows/pomo.yaml
+index 7b86ba4..f82b32c 100644
+--- a/.github/workflows/pomo.yaml
++++ b/.github/workflows/pomo.yaml
+@@ -21,6 +21,7 @@ jobs:
+     - name: dependencies
+       run: |
+         go get -v -t -d ./...
+-
++    - name: test
++      run: make test
+     - name: build
+       run: make

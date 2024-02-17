@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/githubci.yml b/.github/workflows/githubci.yml
+index ad77865..dfd20f6 100644
+--- a/.github/workflows/githubci.yml
++++ b/.github/workflows/githubci.yml
+@@ -45,6 +45,7 @@ jobs:
+           - 'mikoto'
+           - 'nice_nano'
+           - 'nrf52840_bboard'
++          - 'nrf52840-connectkit'
+           - 'nrf52840_m2'
+           - 'ohs2020_badge'
+           - 'particle_argon'

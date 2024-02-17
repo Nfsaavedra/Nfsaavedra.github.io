@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/draft-release.yml b/.github/workflows/draft-release.yml
+index 416c23d..4cfe39e 100644
+--- a/.github/workflows/draft-release.yml
++++ b/.github/workflows/draft-release.yml
+@@ -20,7 +20,7 @@ jobs:
+       uses: actions/setup-java@v2
+       with:
+         distribution: 'adopt'
+-        java-version: '17'
++        java-version: '11'
+     - name: Cache Maven packages
+       uses: actions/cache@v2
+       with:

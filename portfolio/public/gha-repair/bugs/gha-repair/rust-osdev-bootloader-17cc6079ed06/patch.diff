@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index abee896..f8986d8 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -100,7 +100,7 @@ jobs:
+           windows-latest
+         ]
+     runs-on: ${{ matrix.platform }}
+-    timeout-minutes: 5
++    timeout-minutes: 10
+ 
+     steps:
+     - uses: actions/checkout@v1

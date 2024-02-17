@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/nim.yml b/.github/workflows/nim.yml
+index 47f45d1..0b5bd26 100644
+--- a/.github/workflows/nim.yml
++++ b/.github/workflows/nim.yml
+@@ -25,7 +25,7 @@ jobs:
+     - name: Build INim
+       run: /home/runner/.nimble/bin/nimble build
+     - name: Run tests
+-      run: /home/runnea/.nimble/bin/nimble test -d:prompt_no_history
++      run: /home/runner/.nimble/bin/nimble test -d:prompt_no_history
+ 
+   build-latest:
+ 

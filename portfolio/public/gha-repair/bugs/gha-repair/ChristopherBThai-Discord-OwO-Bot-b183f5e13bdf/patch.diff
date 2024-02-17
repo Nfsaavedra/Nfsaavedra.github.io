@@ -1,0 +1,47 @@
+diff --git a/.github/workflows/lint.yml b/.github/workflows/lint.yml
+index 4173866..e0389f9 100644
+--- a/.github/workflows/lint.yml
++++ b/.github/workflows/lint.yml
+@@ -33,7 +33,7 @@ jobs:
+ 
+       # ESLint and Prettier must be in `package.json`
+       - name: Install Node.js dependencies
+-        run: npm install prettier@2.8.0 eslint@8.29.0 eslint-config-prettier@8.5.0
++        run: rm package.json && mv package-dev.json package.json && npm ci
+ 
+       - name: Run linters
+         uses: wearerequired/lint-action@v2
+diff --git a/package-dev.json b/package-dev.json
+new file mode 100644
+index 0000000..b0f332c
+--- /dev/null
++++ b/package-dev.json
+@@ -0,0 +1,28 @@
++{
++	"name": "owobot",
++	"version": "1.0.0",
++	"description": "a discord bot!",
++	"main": "index.js",
++	"scripts": {
++		"lint": "npx eslint .",
++		"lint:fix": "npx eslint --fix",
++		"prettier": "npx prettier --check .",
++		"prettier:fix": "npx prettier --write .",
++		"format": "npm run lint:fix && npm run prettier:fix"
++	},
++	"dependencies": {
++		"eslint": "^8.29.0",
++		"eslint-config-prettier": "^8.5.0",
++		"prettier": "^2.8.0"
++	},
++	"repository": {
++		"type": "git",
++		"url": "git+https://github.com/ChristopherBThai/Discord-OwO-Bot.git"
++	},
++	"author": "Christopher Thai",
++	"license": "ISC",
++	"bugs": {
++		"url": "https://github.com/ChristopherBThai/Discord-OwO-Bot/issues"
++	},
++	"homepage": "https://github.com/ChristopherBThai/Discord-OwO-Bot#readme"
++}

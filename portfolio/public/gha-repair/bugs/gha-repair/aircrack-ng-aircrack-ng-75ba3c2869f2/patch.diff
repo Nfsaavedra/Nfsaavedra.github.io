@@ -1,0 +1,31 @@
+diff --git a/.github/workflows/check-release-ready.yml b/.github/workflows/check-release-ready.yml
+index 2c4f3a5..c3352ba 100644
+--- a/.github/workflows/check-release-ready.yml
++++ b/.github/workflows/check-release-ready.yml
+@@ -108,22 +108,22 @@ jobs:
+             DO_FAIL=1
+           fi
+ 
+-          if [ "${{steps.copyright.outputs.airodump-ng }}" -eq 0]; then
++          if [ "${{steps.copyright.outputs.airodump-ng }}" -eq 0 ]; then
+             echo "[!] Missing copyrights in airodump-ng license/help screen"
+             DO_FAIL=1
+           fi
+ 
+-          if [ "${{steps.copyright.outputs.aircrack-ng }}" -eq 0]; then
++          if [ "${{steps.copyright.outputs.aircrack-ng }}" -eq 0 ]; then
+             echo "[!] Missing copyrights in aircrack-ng license/help screen"
+             DO_FAIL=1
+           fi
+ 
+-          if [ "${{steps.copyright.outputs.airbase-ng }}" -eq 0]; then
++          if [ "${{steps.copyright.outputs.airbase-ng }}" -eq 0 ]; then
+             echo "[!] Missing copyrights in airbase-ng license/help screen"
+             DO_FAIL=1
+           fi
+ 
+-          if [ "${{steps.copyright.outputs.aireplay-ng }}" -eq 0]; then
++          if [ "${{steps.copyright.outputs.aireplay-ng }}" -eq 0 ]; then
+             echo "[!] Missing copyrights in aireplay-ng license/help screen"
+             DO_FAIL=1
+           fi

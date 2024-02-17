@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/publish.yml b/.github/workflows/publish.yml
+index 8f293f4..0123b29 100644
+--- a/.github/workflows/publish.yml
++++ b/.github/workflows/publish.yml
+@@ -4,8 +4,7 @@ on:
+   push:
+     branches:
+       - master
+-    tags:
+-      - v.*
++    tags: ["*"]
+ 
+ jobs:
+   sbt:

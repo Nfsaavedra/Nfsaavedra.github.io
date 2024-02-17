@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/publish.yml b/.github/workflows/publish.yml
+index ea64f62..af1109e 100644
+--- a/.github/workflows/publish.yml
++++ b/.github/workflows/publish.yml
+@@ -23,6 +23,8 @@ jobs:
+         exclude:
+           - os: macos-latest
+             python-version: "3.6"
++          - os: windows-latest
++            python-version: "3.6"
+ 
+     steps:
+       - uses: actions/checkout@v2

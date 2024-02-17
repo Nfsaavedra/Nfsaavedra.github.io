@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/linux.yml b/.github/workflows/linux.yml
+index 803cd1f..c65edb9 100644
+--- a/.github/workflows/linux.yml
++++ b/.github/workflows/linux.yml
+@@ -6,7 +6,7 @@ on:
+   pull_request:
+ 
+ env:
+-  BOOST_VERSION: 1.79.0
++  BOOST_VERSION: 1.80.0
+ 
+ jobs:
+   build-and-test:

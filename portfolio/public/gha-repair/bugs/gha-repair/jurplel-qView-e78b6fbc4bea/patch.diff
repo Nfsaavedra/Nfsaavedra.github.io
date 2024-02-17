@@ -1,0 +1,367 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index cecf7e0..33768ca 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -57,17 +57,17 @@ jobs:
+ 
+       - name: Build qView
+         shell: pwsh
+-        run: ci/scripts/build.ps1
++        run: dist/scripts/build.ps1
+ 
+       - name: Deploy qView
+         shell: pwsh
+         run: |
+           if ($IsWindows) {
+-            Invoke-Expression "& 'ci/scripts/windeployqt.ps1' ${{ env.buildNumString }}"
++            Invoke-Expression "& 'dist/scripts/windeployqt.ps1' ${{ env.buildNumString }}"
+           } elseif ($IsMacOS) {
+-            bash ci/scripts/macdeploy.sh ${{ env.buildNumString }}
++            bash dist/scripts/macdeploy.sh ${{ env.buildNumString }}
+           } else {
+-            bash ci/scripts/linuxdeployqt.sh ${{ env.buildNumString }}
++            bash dist/scripts/linuxdeployqt.sh ${{ env.buildNumString }}
+           }
+ 
+       - name: 'Upload Artifact'
+diff --git a/ci/scripts/build.ps1 b/ci/scripts/build.ps1
+deleted file mode 100755
+index 092ca8a..0000000
+--- a/ci/scripts/build.ps1
++++ /dev/null
+@@ -1,23 +0,0 @@
+-#!/usr/bin/env pwsh
+-
+-param
+-(
+-    $Prefix = "/usr"
+-)
+-
+-if ($IsWindows) {
+-    ci/scripts/vcvars.ps1
+-}
+-
+-if ((qmake --version -split '\n')[1][17] -eq '6') {
+-    qmake QMAKE_APPLE_DEVICE_ARCHS="x86_64 arm64" $args[0] PREFIX=$Prefix DEFINES+="$env:nightlyDefines"
+-} else {
+-    qmake $args[0] PREFIX=$Prefix DEFINES+="$env:nightlyDefines"
+-}
+-
+-
+-if ($IsWindows) {
+-    nmake
+-} else {
+-    make
+-}
+diff --git a/ci/scripts/innomake.ps1 b/ci/scripts/innomake.ps1
+deleted file mode 100755
+index 3650558..0000000
+--- a/ci/scripts/innomake.ps1
++++ /dev/null
+@@ -1,6 +0,0 @@
+-# Script assumes $env:arch will start with win64 or win32
+-$win64orwin32 = $env:arch.substring(0, 5)
+-New-Item -Path "dist\win\qView-$win64orwin32" -ItemType Directory -ea 0
+-copy -R bin\* "dist\win\qView-$win64orwin32"
+-iscc dist\win\qView$($env:arch.substring(3, 2)).iss
+-copy dist\win\Output\* bin\
+\ No newline at end of file
+diff --git a/ci/scripts/linuxdeployqt.sh b/ci/scripts/linuxdeployqt.sh
+deleted file mode 100755
+index bbd1daf..0000000
+--- a/ci/scripts/linuxdeployqt.sh
++++ /dev/null
+@@ -1,38 +0,0 @@
+-#!/usr/bin/bash
+-
+-wget 'https://sourceforge.net/projects/qt5ct/files/latest/download'
+-tar xf download
+-cd qt5ct*
+-qmake
+-sudo make install
+-cd ..
+-
+-if [ $1 != "" ]; then
+-        VERSION=$1
+-else
+-        VERSION=$(LC_ALL=C sed -n -e '/^VERSION/p' qView.pro)
+-        VERSION=${VERSION: -3}
+-fi
+-
+-# echo VERSION was set to $VERSION
+-# if [[ $2 == *"-extra-plugins"* ]]; then
+-#         PLUGINS=$2
+-# fi
+-
+-wget -c -nv "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage"
+-chmod a+x linuxdeployqt-continuous-x86_64.AppImage
+-
+-mkdir -p bin/appdir/usr
+-make install INSTALL_ROOT=bin/appdir
+-cp dist/linux/hicolor/scalable/apps/com.interversehq.qView.svg bin/appdir/
+-cd bin
+-rm qview
+-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/
+-../linuxdeployqt-continuous-x86_64.AppImage appdir/usr/share/applications/com.interversehq.qView.desktop -appimage -updateinformation="gh-releases-zsync|jurplel|qView|latest|qView-*x86_64.AppImage.zsync" -extra-plugins=styles/libqt5ct-style.so,platformthemes/libqt5ct.so
+-
+-if [ $1 != "" ]; then
+-    mv *.AppImage qView-nightly-$1-x86_64.AppImage
+-else
+-    mv *.AppImage qView-$VERSION-x86_64.AppImage
+-fi
+-rm -r appdir
+diff --git a/ci/scripts/macdeploy.sh b/ci/scripts/macdeploy.sh
+deleted file mode 100755
+index 6b44a2a..0000000
+--- a/ci/scripts/macdeploy.sh
++++ /dev/null
+@@ -1,22 +0,0 @@
+-#!/usr/bin/bash
+-
+-if [ $1 != "" ]; then
+-        VERSION=$0
+-else
+-        VERSION=$(LC_ALL=C sed -n -e '/^VERSION/p' qView.pro)
+-        VERSION=${VERSION: -3}
+-fi
+-
+-cd bin
+-
+-macdeployqt qView.app
+-if [ $1 != "" ]; then
+-    mv qView.app qView-nightly-$1\.app
+-    macdeployqt *.app -codesign=- -dmg
+-else
+-    brew install create-dmg
+-    codesign --sign - --deep qView.app
+-    create-dmg --volname "qView $VERSION" --window-size 660 400 --icon-size 160 --icon "qView.app" 180 170 --hide-extension qView.app --app-drop-link 480 170 "qView-$VERSION.dmg" "qView.app"
+-fi
+-
+-rm -r *.app
+\ No newline at end of file
+diff --git a/ci/scripts/vcvars.ps1 b/ci/scripts/vcvars.ps1
+deleted file mode 100755
+index 69d52ef..0000000
+--- a/ci/scripts/vcvars.ps1
++++ /dev/null
+@@ -1,12 +0,0 @@
+-# Script assumes $env:arch will start with win64 or win32
+-# This should probably be an arg
+-$arch = $env:arch.substring(3, 2)
+-$path = Resolve-Path "${env:ProgramFiles(x86)}\Microsoft Visual Studio\*\*\VC\Auxiliary\Build" | select -ExpandProperty Path
+-
+-cmd.exe /c "call `"$path\vcvars$arch.bat`" && set > %temp%\vcvars.txt"
+-
+-Get-Content "$env:temp\vcvars.txt" | Foreach-Object {
+-  if ($_ -match "^(.*?)=(.*)$") {
+-    Set-Content "env:\$($matches[1])" $matches[2]
+-  }
+-}
+\ No newline at end of file
+diff --git a/ci/scripts/windeployqt.ps1 b/ci/scripts/windeployqt.ps1
+deleted file mode 100755
+index 9ec811b..0000000
+--- a/ci/scripts/windeployqt.ps1
++++ /dev/null
+@@ -1,30 +0,0 @@
+-param
+-(
+-    $NightlyVersion = ""
+-)
+-
+-# Download and extract openssl
+-$ProgressPreference = 'SilentlyContinue'
+-Invoke-WebRequest https://www.firedaemon.com/download-firedaemon-openssl-1-zip -O openssl.zip
+-7z x -y .\openssl.zip
+-
+-# Check if "arch" environment variable is win32
+-# If it is, install x86 binaries, otherwise x64 binaries
+-if ($env:arch.substring(3, 2) -eq '32') {
+-    copy openssl-1.1\x86\bin\libssl-1_1.dll bin\
+-    copy openssl-1.1\x86\bin\libcrypto-1_1.dll bin\
+-}  Else {
+-    copy openssl-1.1\x64\bin\libssl-1_1-x64.dll bin\
+-    copy openssl-1.1\x64\bin\libcrypto-1_1-x64.dll bin\
+-}
+-
+-# Run windeployqt which should be in path
+-windeployqt bin/qView.exe --no-compiler-runtime
+-
+-# Do renaming-y stuff
+-mv bin\qView.exe "bin\qView-nightly-$NightlyVersion.exe"
+-
+-# Call innomake if we are not building a nightly version (no version passed)
+-if ($NightlyVersion -ne '') {
+-    & "ci/scripts/innomake.ps1"
+-}
+\ No newline at end of file
+diff --git a/dist/scripts/build.ps1 b/dist/scripts/build.ps1
+new file mode 100755
+index 0000000..1b06dbf
+--- /dev/null
++++ b/dist/scripts/build.ps1
+@@ -0,0 +1,23 @@
++#!/usr/bin/env pwsh
++
++param
++(
++    $Prefix = "/usr"
++)
++
++if ($IsWindows) {
++    dist/scripts/vcvars.ps1
++}
++
++if ((qmake --version -split '\n')[1][17] -eq '6') {
++    qmake QMAKE_APPLE_DEVICE_ARCHS="x86_64 arm64" $args[0] PREFIX=$Prefix DEFINES+="$env:nightlyDefines"
++} else {
++    qmake $args[0] PREFIX=$Prefix DEFINES+="$env:nightlyDefines"
++}
++
++
++if ($IsWindows) {
++    nmake
++} else {
++    make
++}
+diff --git a/dist/scripts/innomake.ps1 b/dist/scripts/innomake.ps1
+new file mode 100755
+index 0000000..3650558
+--- /dev/null
++++ b/dist/scripts/innomake.ps1
+@@ -0,0 +1,6 @@
++# Script assumes $env:arch will start with win64 or win32
++$win64orwin32 = $env:arch.substring(0, 5)
++New-Item -Path "dist\win\qView-$win64orwin32" -ItemType Directory -ea 0
++copy -R bin\* "dist\win\qView-$win64orwin32"
++iscc dist\win\qView$($env:arch.substring(3, 2)).iss
++copy dist\win\Output\* bin\
+\ No newline at end of file
+diff --git a/dist/scripts/linuxdeployqt.sh b/dist/scripts/linuxdeployqt.sh
+new file mode 100755
+index 0000000..bbd1daf
+--- /dev/null
++++ b/dist/scripts/linuxdeployqt.sh
+@@ -0,0 +1,38 @@
++#!/usr/bin/bash
++
++wget 'https://sourceforge.net/projects/qt5ct/files/latest/download'
++tar xf download
++cd qt5ct*
++qmake
++sudo make install
++cd ..
++
++if [ $1 != "" ]; then
++        VERSION=$1
++else
++        VERSION=$(LC_ALL=C sed -n -e '/^VERSION/p' qView.pro)
++        VERSION=${VERSION: -3}
++fi
++
++# echo VERSION was set to $VERSION
++# if [[ $2 == *"-extra-plugins"* ]]; then
++#         PLUGINS=$2
++# fi
++
++wget -c -nv "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage"
++chmod a+x linuxdeployqt-continuous-x86_64.AppImage
++
++mkdir -p bin/appdir/usr
++make install INSTALL_ROOT=bin/appdir
++cp dist/linux/hicolor/scalable/apps/com.interversehq.qView.svg bin/appdir/
++cd bin
++rm qview
++export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/
++../linuxdeployqt-continuous-x86_64.AppImage appdir/usr/share/applications/com.interversehq.qView.desktop -appimage -updateinformation="gh-releases-zsync|jurplel|qView|latest|qView-*x86_64.AppImage.zsync" -extra-plugins=styles/libqt5ct-style.so,platformthemes/libqt5ct.so
++
++if [ $1 != "" ]; then
++    mv *.AppImage qView-nightly-$1-x86_64.AppImage
++else
++    mv *.AppImage qView-$VERSION-x86_64.AppImage
++fi
++rm -r appdir
+diff --git a/dist/scripts/macdeploy.sh b/dist/scripts/macdeploy.sh
+new file mode 100755
+index 0000000..6b44a2a
+--- /dev/null
++++ b/dist/scripts/macdeploy.sh
+@@ -0,0 +1,22 @@
++#!/usr/bin/bash
++
++if [ $1 != "" ]; then
++        VERSION=$0
++else
++        VERSION=$(LC_ALL=C sed -n -e '/^VERSION/p' qView.pro)
++        VERSION=${VERSION: -3}
++fi
++
++cd bin
++
++macdeployqt qView.app
++if [ $1 != "" ]; then
++    mv qView.app qView-nightly-$1\.app
++    macdeployqt *.app -codesign=- -dmg
++else
++    brew install create-dmg
++    codesign --sign - --deep qView.app
++    create-dmg --volname "qView $VERSION" --window-size 660 400 --icon-size 160 --icon "qView.app" 180 170 --hide-extension qView.app --app-drop-link 480 170 "qView-$VERSION.dmg" "qView.app"
++fi
++
++rm -r *.app
+\ No newline at end of file
+diff --git a/dist/scripts/vcvars.ps1 b/dist/scripts/vcvars.ps1
+new file mode 100755
+index 0000000..69d52ef
+--- /dev/null
++++ b/dist/scripts/vcvars.ps1
+@@ -0,0 +1,12 @@
++# Script assumes $env:arch will start with win64 or win32
++# This should probably be an arg
++$arch = $env:arch.substring(3, 2)
++$path = Resolve-Path "${env:ProgramFiles(x86)}\Microsoft Visual Studio\*\*\VC\Auxiliary\Build" | select -ExpandProperty Path
++
++cmd.exe /c "call `"$path\vcvars$arch.bat`" && set > %temp%\vcvars.txt"
++
++Get-Content "$env:temp\vcvars.txt" | Foreach-Object {
++  if ($_ -match "^(.*?)=(.*)$") {
++    Set-Content "env:\$($matches[1])" $matches[2]
++  }
++}
+\ No newline at end of file
+diff --git a/dist/scripts/windeployqt.ps1 b/dist/scripts/windeployqt.ps1
+new file mode 100755
+index 0000000..4f8c668
+--- /dev/null
++++ b/dist/scripts/windeployqt.ps1
+@@ -0,0 +1,30 @@
++param
++(
++    $NightlyVersion = ""
++)
++
++# Download and extract openssl
++$ProgressPreference = 'SilentlyContinue'
++Invoke-WebRequest https://www.firedaemon.com/download-firedaemon-openssl-1-zip -O openssl.zip
++7z x -y .\openssl.zip
++
++# Check if "arch" environment variable is win32
++# If it is, install x86 binaries, otherwise x64 binaries
++if ($env:arch.substring(3, 2) -eq '32') {
++    copy openssl-1.1\x86\bin\libssl-1_1.dll bin\
++    copy openssl-1.1\x86\bin\libcrypto-1_1.dll bin\
++}  Else {
++    copy openssl-1.1\x64\bin\libssl-1_1-x64.dll bin\
++    copy openssl-1.1\x64\bin\libcrypto-1_1-x64.dll bin\
++}
++
++# Run windeployqt which should be in path
++windeployqt bin/qView.exe --no-compiler-runtime
++
++# Do renaming-y stuff
++mv bin\qView.exe "bin\qView-nightly-$NightlyVersion.exe"
++
++# Call innomake if we are not building a nightly version (no version passed)
++if ($NightlyVersion -ne '') {
++    & "dist/scripts/innomake.ps1"
++}

@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index d591ccb..84e2f2a 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -66,6 +66,12 @@ jobs:
+           yarn run electron-builder --${{ matrix.platform }} -p never | sed 's/identityName=.*$//'
+           if (!(Test-Path out/win-unpacked/resources/app.asar.unpacked/node_modules/node-pty/build/Release/pty.node)) { throw 'node-pty not exist' }
+ 
++      - name: Setup Xcode
++        if: matrix.platform == 'mac'
++        uses: maxim-lobanov/setup-xcode@v1
++        with:
++          xcode-version: latest-stable
++
+       - name: Electron-Mac
+         if: matrix.platform == 'mac'
+         run: |

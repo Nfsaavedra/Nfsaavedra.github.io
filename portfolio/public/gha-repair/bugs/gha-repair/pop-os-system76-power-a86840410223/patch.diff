@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/coverage.yml b/.github/workflows/coverage.yml
+index 97e70ac..dc58bd6 100644
+--- a/.github/workflows/coverage.yml
++++ b/.github/workflows/coverage.yml
+@@ -28,4 +28,4 @@ jobs:
+           args: --all-features
+ 
+       - name: Upload to codecov.io
+-        uses: codecov/codecov-action@v1
++        uses: codecov/codecov-action@v2

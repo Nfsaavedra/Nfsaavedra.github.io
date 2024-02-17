@@ -1,0 +1,31 @@
+diff --git a/.github/workflows/ci-vcpkg.yml b/.github/workflows/ci-vcpkg.yml
+index ad2cc87..811af2b 100644
+--- a/.github/workflows/ci-vcpkg.yml
++++ b/.github/workflows/ci-vcpkg.yml
+@@ -30,7 +30,7 @@ jobs:
+       - name: Install Linux dependencies
+         run: |
+           sudo apt update -y
+-          sudo apt install -y libgl1-mesa-dev libglu1-mesa-dev
++          sudo apt install -y libgl1-mesa-dev libglu1-mesa-dev clang-tidy
+         if: matrix.os == 'ubuntu-latest'
+ 
+       - name: Set GCC 10
+@@ -81,6 +81,17 @@ jobs:
+           CC: ${{matrix.cc}}
+           CXX: ${{matrix.cxx}}
+ 
++      - name: Create compile_commands.json
++        run: cmake . -B cmake-build-tidy --preset=ninja-multi-vcpkg -DCMAKE_EXPORT_COMPILE_COMMANDS=On
++        if: matrix.os == 'ubuntu-latest'
++
++      - name: Run clang-tidy
++        uses: ZedThree/clang-tidy-review@v0.8.3
++        id: review
++        with:
++          build_dir: cmake-build-tidy
++        if: matrix.cc == 'ubuntu-latest'
++
+       - name: Upload compiled openblack and tools
+         uses: actions/upload-artifact@v3
+         if: matrix.cc == ''

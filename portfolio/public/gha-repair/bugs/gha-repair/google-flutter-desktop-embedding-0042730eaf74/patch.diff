@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 6ff2f3c..26cc2b6 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -16,6 +16,8 @@ jobs:
+         path: flutter
+         repository: flutter/flutter	
+         ref: master	
++        # Shallow clones don't work; see https://github.com/flutter/flutter/issues/18532
++        fetch-depth: 0
+     - name: Add Flutter to path	
+       run: echo "::add-path::$env:GITHUB_WORKSPACE\flutter\bin"	
+     - name: Enable desktop support	

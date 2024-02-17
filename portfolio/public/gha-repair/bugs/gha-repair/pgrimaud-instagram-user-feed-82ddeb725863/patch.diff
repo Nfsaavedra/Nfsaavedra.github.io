@@ -1,0 +1,57 @@
+diff --git a/.github/workflows/main.yaml b/.github/workflows/main.yaml
+index f3378ed..8b7d753 100644
+--- a/.github/workflows/main.yaml
++++ b/.github/workflows/main.yaml
+@@ -9,7 +9,7 @@ jobs:
+ 
+     strategy:
+       matrix:
+-        php: ['7.2', '7.3', '7.4','8']
++        php: [ '7.2', '7.3', '7.4','8' ]
+ 
+     steps:
+       - name: "Init repository"
+@@ -29,4 +29,6 @@ jobs:
+         run: php vendor/bin/phpunit tests --whitelist src --coverage-clover ./build/logs/clover.xml
+ 
+       - name: "Coveralls"
+-        run: COVERALLS_REPO_TOKEN=${{ secrets.GITHUB_TOKEN }} php vendor/bin/php-coveralls -v
++        run: php vendor/bin/php-coveralls -v
++        env:
++          COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+diff --git a/.github/workflows/pr.yaml b/.github/workflows/pr.yaml
+new file mode 100644
+index 0000000..7ef6439
+--- /dev/null
++++ b/.github/workflows/pr.yaml
+@@ -0,0 +1,30 @@
++name: CI
++
++on:
++  pull_request:
++
++jobs:
++  Tests:
++    runs-on: ubuntu-latest
++
++    strategy:
++      matrix:
++        php: [ '7.2', '7.3', '7.4','8' ]
++
++    steps:
++      - name: "Init repository"
++        uses: actions/checkout@v2
++
++      - name: "Setup PHP"
++        uses: shivammathur/setup-php@v2
++        with:
++          php-version: ${{ matrix.php }}
++          extensions: imap
++          tools: composer
++
++      - name: "Install dependencies"
++        run: composer install
++
++      - name: "Tests"
++        run: php vendor/bin/phpunit tests --whitelist src --coverage-clover ./build/logs/clover.xml
++

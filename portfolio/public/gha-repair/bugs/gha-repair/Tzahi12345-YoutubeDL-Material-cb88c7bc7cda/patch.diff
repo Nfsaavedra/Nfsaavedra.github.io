@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/docker.yml b/.github/workflows/docker.yml
+index 5521f4f..c74f29b 100644
+--- a/.github/workflows/docker.yml
++++ b/.github/workflows/docker.yml
+@@ -3,8 +3,6 @@ name: docker
+ on:
+   push:
+     branches: [master]
+-  pull_request:
+-    branches: [master]
+ 
+ jobs:
+   build-and-push:

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index ee5e99b..2752f34 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -24,7 +24,7 @@ jobs:
+           persist-credentials: false
+ 
+       - name: Dependency review
+-        uses: actions/dependency-review-action@v2
++        uses: actions/dependency-review-action@v3
+ 
+   linter:
+     name: Lint Code

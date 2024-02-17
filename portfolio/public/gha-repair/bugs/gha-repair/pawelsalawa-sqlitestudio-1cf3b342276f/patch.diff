@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/win_release.yml b/.github/workflows/win_release.yml
+index b06c529..77a465c 100644
+--- a/.github/workflows/win_release.yml
++++ b/.github/workflows/win_release.yml
+@@ -34,7 +34,7 @@ jobs:
+                 version: ${{ env.QT_VERSION }}
+                 host: 'windows'
+                 arch: ${{ env.QT_ARCH }}
+-                dir: '../'
++                dir: '${{ github.workspace }}/../'
+                 modules: 'qtscript'
+                 
+             - name: Fix Qt path

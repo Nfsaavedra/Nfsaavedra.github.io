@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/tests.yml b/.github/workflows/tests.yml
+index c77c062..e59db37 100644
+--- a/.github/workflows/tests.yml
++++ b/.github/workflows/tests.yml
+@@ -39,7 +39,7 @@ jobs:
+             ${{ runner.os }}-maven-
+ 
+       - name: Tests
+-        run: mvn clean test -B -V -Dh3.remove.images=true
++        run: mvn "-Dh3.remove.images=true" -B -V clean test
+ 
+   tests-no-docker:
+     name: Java (no Docker) ${{ matrix.java-version }} ${{ matrix.os }}

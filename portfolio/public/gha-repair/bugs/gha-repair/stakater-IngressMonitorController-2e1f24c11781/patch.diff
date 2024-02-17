@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/pull_request.yml b/.github/workflows/pull_request.yml
+index 24fa2e6..b268db9 100644
+--- a/.github/workflows/pull_request.yml
++++ b/.github/workflows/pull_request.yml
+@@ -56,7 +56,7 @@ jobs:
+ 
+     - name: Check cluster info
+       run: |
+-        kubectl version --short --client
++        kubectl version --client
+         kind version
+         kind version | grep -q ${KIND_VERSION}
+ 

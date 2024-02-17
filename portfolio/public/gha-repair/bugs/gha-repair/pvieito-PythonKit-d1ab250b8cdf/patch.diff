@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/continuous-integration.yml b/.github/workflows/continuous-integration.yml
+index e7639a6..0694ee3 100644
+--- a/.github/workflows/continuous-integration.yml
++++ b/.github/workflows/continuous-integration.yml
+@@ -18,5 +18,11 @@ jobs:
+         uses: YOCKOW/Action-setup-swift@master
+         with:
+           swift-version: '5.1'
+-      - name: Test
++      - name: Test (Python 2)
+         run: swift test --enable-test-discovery
++        env:
++          PYTHON_VERSION: 2
++      - name: Test (Python 3)
++        run: swift test --enable-test-discovery
++        env:
++          PYTHON_VERSION: 3

@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/tests.yml b/.github/workflows/tests.yml
+index 25547ed..a13c6a8 100644
+--- a/.github/workflows/tests.yml
++++ b/.github/workflows/tests.yml
+@@ -24,12 +24,11 @@ jobs:
+ 
+       - uses: actions/setup-java@v2
+         with:
+-          distribution: "${{ matrix.java-distribution }}""
++          distribution: "${{ matrix.java-distribution }}"
+           java-version: "${{ matrix.java-version }}"
+ 
+-      - name: Setup Docker
+-        uses: docker-practice/actions-setup-docker@master
+-        if: !startsWith(matrix.os, 'windows')
++      - uses: docker-practice/actions-setup-docker@master
++        if: "!startsWith(matrix.os, 'windows')"
+ 
+       - name: Tests
+         run: mvn clean test

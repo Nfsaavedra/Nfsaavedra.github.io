@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/rust_check.yml b/.github/workflows/rust_check.yml
+index 9d1089e..a819167 100644
+--- a/.github/workflows/rust_check.yml
++++ b/.github/workflows/rust_check.yml
+@@ -1,4 +1,4 @@
+-name: Rust_check
++name: Build
+ 
+ on:
+   push:

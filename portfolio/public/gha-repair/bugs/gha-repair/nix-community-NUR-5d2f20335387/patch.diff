@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/update.yml b/.github/workflows/update.yml
+index 87f225d..958520c 100644
+--- a/.github/workflows/update.yml
++++ b/.github/workflows/update.yml
+@@ -3,7 +3,7 @@ on:
+   workflow_dispatch:
+   schedule:
+     # chosen by fair dice rolling
+-    - cron:  '05 4 * * *'
++    - cron:  '40 * * * *'
+   push:
+     branches:
+       - master

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 67fabc0..4aa5089 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -30,7 +30,7 @@ jobs:
+         env:
+           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+       - name: Check out Code
+-        uses: actions/checkout@v1
++        uses: actions/checkout@v2
+       - name: Install Dependencies
+         run: yarn install
+         env:

@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/build.yaml b/.github/workflows/build.yaml
+index 514c42e..95ee99c 100644
+--- a/.github/workflows/build.yaml
++++ b/.github/workflows/build.yaml
+@@ -54,3 +54,5 @@ jobs:
+           tags: |
+             ghcr.io/python-discord/site:latest
+             ghcr.io/python-discord/site:${{ steps.sha_tag.outputs.tag }}
++          build-args: |
++            git_sha=${{ GITHUB_SHA }}

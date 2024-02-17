@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/ruby.yml b/.github/workflows/ruby.yml
+index 985d2ef..36f8847 100644
+--- a/.github/workflows/ruby.yml
++++ b/.github/workflows/ruby.yml
+@@ -2,9 +2,9 @@ name: Ruby
+ 
+ on:
+   push:
+-    branches: [master]
++    branches: [main]
+   pull_request:
+-    branches: [master]
++    branches: [main]
+ 
+ jobs:
+   validate:

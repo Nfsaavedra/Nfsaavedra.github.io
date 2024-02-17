@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 33768ca..2486e96 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -62,6 +62,7 @@ jobs:
+       - name: Deploy qView
+         shell: pwsh
+         run: |
++          Invoke-Expression "& 'dist/scripts/download-plugins.ps1'"
+           if ($IsWindows) {
+             Invoke-Expression "& 'dist/scripts/windeployqt.ps1' ${{ env.buildNumString }}"
+           } elseif ($IsMacOS) {

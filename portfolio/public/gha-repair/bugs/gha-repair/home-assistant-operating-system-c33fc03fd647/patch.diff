@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/artifacts-index.yaml b/.github/workflows/artifacts-index.yaml
+index c3652a4..bdfa253 100644
+--- a/.github/workflows/artifacts-index.yaml
++++ b/.github/workflows/artifacts-index.yaml
+@@ -25,6 +25,11 @@ jobs:
+     name: Build Home Assistant OS artifacts index
+     runs-on: ubuntu-22.04
+     steps:
++      - name: Checkout source
++        uses: actions/checkout@v4
++        with:
++          persist-credentials: false
++
+       - name: Setup Python version ${{ env.PYTHON_VERSION }}
+         uses: actions/setup-python@v4
+         with:

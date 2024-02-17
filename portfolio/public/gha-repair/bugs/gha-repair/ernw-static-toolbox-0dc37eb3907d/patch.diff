@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/build-gdb.yml b/.github/workflows/build-gdb.yml
+index a9af073..10e4f89 100644
+--- a/.github/workflows/build-gdb.yml
++++ b/.github/workflows/build-gdb.yml
+@@ -49,7 +49,6 @@ jobs:
+       - name: Build GDB
+         id: build_gdb
+         run: |
+-          export PATH="$PATH:/x86_64-linux-musl-cross/bin"
+           $GITHUB_WORKSPACE/build/targets/build_gdb.sh x86_64
+         
+       - name: Upload artifacts

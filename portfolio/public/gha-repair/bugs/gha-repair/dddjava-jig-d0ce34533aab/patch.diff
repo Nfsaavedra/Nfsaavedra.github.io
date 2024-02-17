@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/build-main.yml b/.github/workflows/build-main.yml
+index 18baf73..4fcd311 100644
+--- a/.github/workflows/build-main.yml
++++ b/.github/workflows/build-main.yml
+@@ -25,15 +25,6 @@ jobs:
+            key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+       - name: Run Build
+         run: |
+-          ./gradlew :jig-core:build
+-      - name: Upload test report
+-        uses: actions/upload-artifact@v2.2.4
+-        with:
+-          name: test-reports-${{ runner.os }}
+-          path: jig-core/build/reports/tests/test/
+-          retention-days: 3
+-      - name: Run Build
+-        run: |
+           ./gradlew build
+       - name: Upload test failure report
+         uses: actions/upload-artifact@v2

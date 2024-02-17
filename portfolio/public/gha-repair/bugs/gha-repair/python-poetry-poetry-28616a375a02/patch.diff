@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index b93d92b..1d4108c 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -15,6 +15,10 @@ on:
+     branches:
+       - '**'
+ 
++concurrency:
++  group: ${{ github.head_ref }}
++  cancel-in-progress: true
++
+ jobs:
+   tests:
+     name: ${{ matrix.os }} / ${{ matrix.python-version }} ${{ matrix.suffix }}

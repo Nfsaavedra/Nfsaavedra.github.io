@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/autoMerge.yml b/.github/workflows/autoMerge.yml
+index b27a3cf..c4f53c8 100644
+--- a/.github/workflows/autoMerge.yml
++++ b/.github/workflows/autoMerge.yml
+@@ -12,7 +12,7 @@ jobs:
+   build:
+     # The type of runner that the job will run on
+     runs-on: ubuntu-latest
+-    environment: workflow-env
++    environment: workflow_env
+ 
+     # Steps represent a sequence of tasks that will be executed as part of the job
+     steps:

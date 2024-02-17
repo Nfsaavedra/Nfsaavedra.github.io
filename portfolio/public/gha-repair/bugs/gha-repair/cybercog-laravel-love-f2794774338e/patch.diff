@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/static-analysis.yml b/.github/workflows/static-analysis.yml
+index aac258d..ba5ff65 100644
+--- a/.github/workflows/static-analysis.yml
++++ b/.github/workflows/static-analysis.yml
+@@ -1,11 +1,6 @@
+ name: static analysis
+ 
+-on:
+-  push:
+-    branches:
+-      - master
+-      - '*.x'
+-  pull_request:
++on: [ push, pull_request ]
+ 
+ jobs:
+   types:

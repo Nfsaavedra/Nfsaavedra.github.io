@@ -1,0 +1,33 @@
+diff --git a/.github/workflows/release.yaml b/.github/workflows/release.yaml
+index e84ca12..641f0dd 100644
+--- a/.github/workflows/release.yaml
++++ b/.github/workflows/release.yaml
+@@ -54,17 +54,17 @@ jobs:
+           draft: true
+           prerelease: true
+           change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+-          version-resolver:
+-            major:
+-              labels:
+-                - 'major'
+-            minor:
+-              labels:
+-                - 'minor'
+-            patch:
+-              labels:
+-                - 'patch'
+-            default: patch
++          # version-resolver:
++          #   major:
++          #     labels:
++          #       - 'major'
++          #   minor:
++          #     labels:
++          #       - 'minor'
++          #   patch:
++          #     labels:
++          #       - 'patch'
++          #   default: patch
+           template: |
+             ## What’s Changed
+ 

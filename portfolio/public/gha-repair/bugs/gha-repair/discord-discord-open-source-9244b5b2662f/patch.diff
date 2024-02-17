@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index aa305d8..01934bb 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -1,6 +1,8 @@
+ on:
+   push:
+     branches: [master]
++  schedule:
++    - cron: '0 0 * * *'
+ 
+ jobs:
+   build:

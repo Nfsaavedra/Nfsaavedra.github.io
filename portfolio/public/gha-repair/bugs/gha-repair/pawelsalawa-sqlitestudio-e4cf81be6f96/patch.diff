@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/win32_release.yml b/.github/workflows/win32_release.yml
+index 310339c..f0cfb57 100644
+--- a/.github/workflows/win32_release.yml
++++ b/.github/workflows/win32_release.yml
+@@ -195,5 +195,5 @@ jobs:
+             - name: Upload installer artifact
+               uses: actions/upload-artifact@v1
+               with:
+-                name: SQLiteStudio-${{ env.SQLITESTUDIO_VERSION }}-windows-x86-installer.exe
+-                path: SQLiteStudio-${{ env.SQLITESTUDIO_VERSION }}-windows-x86-installer.exe
++                name: SQLiteStudio-${{ env.SQLITESTUDIO_VERSION }}-windows-installer.exe
++                path: SQLiteStudio-${{ env.SQLITESTUDIO_VERSION }}-windows-installer.exe

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 47ec24a..2d973e1 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -367,7 +367,7 @@ jobs:
+           coverage report --fail-under=99
+           coverage xml
+       - name: Upload coverage to Codecov
+-        uses: codecov/codecov-action@v1.0.14
++        uses: codecov/codecov-action@v1
+       - name: Upload coverage to Coveralls
+         env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

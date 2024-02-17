@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/java-continuous-integration.yml b/.github/workflows/java-continuous-integration.yml
+index 93b09b2..79df8e4 100644
+--- a/.github/workflows/java-continuous-integration.yml
++++ b/.github/workflows/java-continuous-integration.yml
+@@ -23,6 +23,8 @@ jobs:
+     steps:
+       - name: Check out repository code
+         uses: actions/checkout@v2
++        with:
++          fetch-depth: 0
+       - name: Setup java
+         uses: actions/setup-java@v2
+         with:

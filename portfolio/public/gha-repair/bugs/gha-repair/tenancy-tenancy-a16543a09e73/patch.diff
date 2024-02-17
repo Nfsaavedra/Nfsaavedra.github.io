@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 54c4c65..fc5bbd3 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -31,7 +31,7 @@ jobs:
+           DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+ 
+         steps:
+-            - uses: actions/checkout@v3
++            - uses: actions/checkout@v4
+ 
+             - name: Login to DockerHub
+               uses: docker/login-action@v3

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/pr-checks.yml b/.github/workflows/pr-checks.yml
+index f5419b9..e1ef88a 100644
+--- a/.github/workflows/pr-checks.yml
++++ b/.github/workflows/pr-checks.yml
+@@ -21,7 +21,7 @@ jobs:
+     - name: Check shell scripts
+       uses: ludeeus/action-shellcheck@2.0.0
+       with:
+-        ignore: buildroot
++        ignore_paths: buildroot
+ 
+     - name: Check buildroot-external packages
+       run: |

@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/go.yml b/.github/workflows/go.yml
+index 1f66ec2..c22a351 100644
+--- a/.github/workflows/go.yml
++++ b/.github/workflows/go.yml
+@@ -1,5 +1,5 @@
+ name: Go
+-on: [push]
++on: [push, pull_request]
+ jobs:
+ 
+   lint:

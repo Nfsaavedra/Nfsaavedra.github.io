@@ -1,0 +1,24 @@
+diff --git a/.github/workflows/book.yml b/.github/workflows/book.yml
+index 748e627..393ae5d 100644
+--- a/.github/workflows/book.yml
++++ b/.github/workflows/book.yml
+@@ -15,6 +15,19 @@ jobs:
+           toolchain: stable
+           override: true
+ 
++      - name: Cache dependencies
++        uses: actions/cache@v2
++        env:
++          cache-name: cache-mdbook
++        with:
++          path: |
++            ~/.cargo/.crates.toml
++            ~/.cargo/.crates2.json
++            ~/.cargo/bin
++            ~/.cargo/registry/index
++            ~/.cargo/registry/cache
++          key: ${{ runner.os }}-build-${{ env.cache-name }}-0.2 }}
++
+       - name: Install mdbook
+         run: |
+           (test -x $HOME/.cargo/bin/cargo-install-update || cargo install cargo-update)

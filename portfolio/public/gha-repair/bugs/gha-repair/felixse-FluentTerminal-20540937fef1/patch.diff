@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 34380b5..c48c508 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -20,4 +20,4 @@ jobs:
+       uses: warrenbuckley/Setup-MSBuild@v1
+     
+     - name: MSBuild
+-      run: msbuild FluentTerminal.sln -t:build -p:Configuration=Debug -p:Platform=x64 -m -restore
++      run: msbuild FluentTerminal.sln -t:build -p:Configuration=Debug -p:Platform=x64 -p:AppxPackage=false -m -restore

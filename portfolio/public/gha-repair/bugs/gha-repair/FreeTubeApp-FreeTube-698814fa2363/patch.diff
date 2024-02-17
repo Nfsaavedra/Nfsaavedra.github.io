@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/node.js.yml b/.github/workflows/node.js.yml
+index 9951180..902fbcf 100644
+--- a/.github/workflows/node.js.yml
++++ b/.github/workflows/node.js.yml
+@@ -29,4 +29,5 @@ jobs:
+     - name: Upload Ubuntu Artifact
+       uses: actions/upload-artifact@v2
+       with:
++        name: freetube-vue_0.8.0_amd64.deb
+         path: build/freetube-vue_0.8.0_amd64.deb

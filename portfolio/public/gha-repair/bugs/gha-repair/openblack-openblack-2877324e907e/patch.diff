@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/clang-format-check.yml b/.github/workflows/clang-format-check.yml
+index 9772e12..c1980ed 100644
+--- a/.github/workflows/clang-format-check.yml
++++ b/.github/workflows/clang-format-check.yml
+@@ -28,3 +28,10 @@ jobs:
+       - uses: reviewdog/action-suggester@v1
+         with:
+           tool_name: clang-format
++
++      - run: |
++          git diff > format.patch
++
++      - uses: actions/upload-artifact@v2
++        with:
++          path: format.patch

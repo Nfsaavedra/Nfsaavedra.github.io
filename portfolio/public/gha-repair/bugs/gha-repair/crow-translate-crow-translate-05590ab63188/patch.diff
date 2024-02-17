@@ -1,0 +1,27 @@
+diff --git a/.github/FUNDING.yml b/.github/FUNDING.yml
+deleted file mode 100644
+index c1fc6d5..0000000
+--- a/.github/FUNDING.yml
++++ /dev/null
+@@ -1,1 +0,0 @@
+-open_collective: crow-translate
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 7627620..3b18765 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -6,7 +6,6 @@ on:
+     paths-ignore:
+       - '**.md'
+       - '.github/workflows/release.yml'
+-      - '.github/FUNDING.yml'
+       - '.gitignore'
+       - 'crowdin.yml'
+       - 'data/translations/**'
+@@ -14,7 +13,6 @@ on:
+     paths-ignore:
+       - '**.md'
+       - '.github/workflows/release.yml'
+-      - '.github/FUNDING.yml'
+       - '.gitignore'
+       - 'crowdin.yml'
+       - 'data/translations/**'

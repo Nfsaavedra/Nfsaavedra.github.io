@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/stale.yml b/.github/workflows/stale.yml
+index ff28d49..11168ae 100644
+--- a/.github/workflows/stale.yml
++++ b/.github/workflows/stale.yml
+@@ -22,3 +22,5 @@ jobs:
+         stale-issue-label: "stale"
+         stale-pr-label: "stale"
+         ascending: true
++        # Never mark feature requests/enhancements as stale
++        exempt-issue-labels: "feature-request,enhancement"

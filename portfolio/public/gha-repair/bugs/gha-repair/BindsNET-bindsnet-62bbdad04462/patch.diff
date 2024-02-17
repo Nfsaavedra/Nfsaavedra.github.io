@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/black.yml b/.github/workflows/black.yml
+index af929af..01519d9 100644
+--- a/.github/workflows/black.yml
++++ b/.github/workflows/black.yml
+@@ -1,4 +1,4 @@
+-name: Lint
++name: Black Formater
+ 
+ on: [push, pull_request]
+ 

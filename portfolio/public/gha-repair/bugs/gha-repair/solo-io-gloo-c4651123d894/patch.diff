@@ -1,0 +1,28 @@
+diff --git a/.github/workflows/issue_board.yaml b/.github/workflows/issue_board.yaml
+index 8a720cb..d7dc045 100644
+--- a/.github/workflows/issue_board.yaml
++++ b/.github/workflows/issue_board.yaml
+@@ -13,11 +13,11 @@ jobs:
+       - uses: actions/add-to-project@main
+         with:
+           project-url: https://github.com/orgs/solo-io/projects/22
+-          github-token: ${{ secrets.ORG_CROSS_REPO }}
++          github-token: ${{ secrets.ORG_CROSS_REPO_DEUX }}
+           labeled: "Type: Enhancement,Type: Bug"
+           label-operator: OR
+       - uses: actions/add-to-project@main
+         with:
+           project-url: https://github.com/orgs/solo-io/projects/24
+-          github-token: ${{ secrets.ORG_CROSS_REPO }}
++          github-token: ${{ secrets.ORG_CROSS_REPO_DEUX }}
+           labeled: "Type: Docs"
+diff --git a/changelog/v1.12.0-beta31/automation_secret.yaml b/changelog/v1.12.0-beta31/automation_secret.yaml
+new file mode 100644
+index 0000000..c7abaf9
+--- /dev/null
++++ b/changelog/v1.12.0-beta31/automation_secret.yaml
+@@ -0,0 +1,3 @@
++changelog:
++  - type: NON_USER_FACING
++    description: Use the new secret to access issues and add them to team boards.
+\ No newline at end of file

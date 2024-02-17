@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 2c995d9..b810075 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -19,7 +19,7 @@ jobs:
+     runs-on: ${{ matrix.os }}
+     strategy:
+       matrix:
+-        os: [ubuntu-20.04, ubuntu-18.04, ubuntu-22.04]
++        os: [ubuntu-20.04, ubuntu-22.04]
+     
+     steps:
+     - uses: actions/checkout@v3

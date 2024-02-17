@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/publishefcore.yml b/.github/workflows/publishefcore.yml
+index 0667cb7..fcceedb 100644
+--- a/.github/workflows/publishefcore.yml
++++ b/.github/workflows/publishefcore.yml
+@@ -2,7 +2,7 @@ name: publish Ardalis.Specification.EntityFrameworkCore to nuget
+ on:
+   push:
+     branches:
+-      - master # Your default release branch
++      - main # Your default release branch
+     paths:
+       - 'ArdalisSpecificationEF/src/Ardalis.Specification.EF/**'
+ jobs:

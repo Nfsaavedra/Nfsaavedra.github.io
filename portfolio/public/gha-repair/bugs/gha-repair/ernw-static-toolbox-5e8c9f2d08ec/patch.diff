@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/build-nmap.yml b/.github/workflows/build-nmap.yml
+index 6bb1a22..7fd648e 100644
+--- a/.github/workflows/build-nmap.yml
++++ b/.github/workflows/build-nmap.yml
+@@ -150,10 +150,9 @@ jobs:
+             git push origin "nmap-v${{ needs.build-x86.outputs.version }}"
+ 
+         - name: Create Release
+-          uses: softprops/action-gh-release@v1
++          uses: ncipollo/release-action@v1
+           with:
+-            files: /tmp/releases/*
+             name: Nmap v${{ needs.build-x86.outputs.version }}
+-          env:
+-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+-            GITHUB_REF: nmap-v${{ needs.build-x86.outputs.version }}
+\ No newline at end of file
++            tag: nmap-v${{ needs.build-x86.outputs.version }}
++            artifacts: /tmp/releases/*
++            token: ${{ secrets.GITHUB_TOKEN }}

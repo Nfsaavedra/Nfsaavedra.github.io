@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/coverity.yml b/.github/workflows/coverity.yml
+index 1631197..17a26c9 100644
+--- a/.github/workflows/coverity.yml
++++ b/.github/workflows/coverity.yml
+@@ -34,7 +34,7 @@ jobs:
+         name: Prepare build
+         if: steps.changes.outputs.code == 'true'
+         run: |
+-          autoreconf -vi
++          autoreconf -vif
+           ./configure --with-experimental --enable-maintainer-mode
+           make clean
+       -

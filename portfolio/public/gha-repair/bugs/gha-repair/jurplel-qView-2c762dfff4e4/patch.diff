@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 4407bcf..a940210 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -2,7 +2,7 @@ name: Build qView
+ on:
+   push:
+     branches: [master]
+-  pull-request:
++  pull_request:
+   workflow_dispatch:
+     inputs:
+       isNightly:

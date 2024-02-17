@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/continuous-deployment.yml b/.github/workflows/continuous-deployment.yml
+index 49aaeaf..0709410 100644
+--- a/.github/workflows/continuous-deployment.yml
++++ b/.github/workflows/continuous-deployment.yml
+@@ -78,6 +78,9 @@ jobs:
+       - name: "Sign composer-normalize.phar with gpg"
+         run: "gpg --armor --local-user \"${{ secrets.GPG_LOCAL_USER }}\" --output ${{ env.COMPOSER_NORMALIZE_PHAR_SIGNATURE }} --passphrase \"${{ secrets.GPG_KEY_PASSPHRASE }}\" --pinentry-mode loopback --yes --detach-sig ${{ env.COMPOSER_NORMALIZE_PHAR }}"
+ 
++      - name: "Receive key with gpg"
++        run: "gpg --receive-key \"${{ secrets.GPG_LOCAL_USER }}\""
++
+       - name: "Verify signature of composer-normalize.phar with gpg"
+         run: "gpg --verify ${{ env.COMPOSER_NORMALIZE_PHAR_SIGNATURE }} ${{ env.COMPOSER_NORMALIZE_PHAR }}"
+ 

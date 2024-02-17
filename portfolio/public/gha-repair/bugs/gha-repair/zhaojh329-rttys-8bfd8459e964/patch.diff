@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 775be70..29ee650 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -65,5 +65,5 @@ jobs:
+         with:
+           push: true
+           tags: |
+-            ${{ secrets.DOCKERHUB_USERNAME }}/rttys:latest
+             ${{ secrets.DOCKERHUB_USERNAME }}/rttys:${{ steps.get-version.outputs.version-without-v }}
++            ${{ secrets.DOCKERHUB_USERNAME }}/rttys:latest

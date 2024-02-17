@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/docker.yml b/.github/workflows/docker.yml
+index 8df1635..4c0b990 100644
+--- a/.github/workflows/docker.yml
++++ b/.github/workflows/docker.yml
+@@ -7,6 +7,7 @@ on:
+     paths-ignore:
+       - '.devcontainer/**'
+       - '.github/ISSUE_TEMPLATE/**'
++      - '.github/workflows/coverity.yml'
+       - '.github/workflows/docker-release.yml'
+       - '.github/workflows/linux.yml'
+       - '.github/workflows/macos.yml'
+@@ -37,6 +38,7 @@ on:
+     paths-ignore:
+       - '.devcontainer/**'
+       - '.github/ISSUE_TEMPLATE/**'
++      - '.github/workflows/coverity.yml'
+       - '.github/workflows/docker-release.yml'
+       - '.github/workflows/linux.yml'
+       - '.github/workflows/macos.yml'

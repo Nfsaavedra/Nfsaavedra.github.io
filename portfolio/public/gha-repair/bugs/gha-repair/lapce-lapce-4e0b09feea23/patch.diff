@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index e48d92b..6b14bda 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -50,6 +50,7 @@ jobs:
+   fmt:
+     name: Rustfmt (${{ matrix.toolchain }}) on ${{ matrix.os }}
+     strategy:
++      fail-fast: false
+       matrix:
+         os: [ ubuntu-latest, windows-latest, macos-latest ]
+         toolchain: [ stable ]
+@@ -78,6 +79,7 @@ jobs:
+   clippy:
+     name: Clippy (${{ matrix.toolchain }}) on ${{ matrix.os }}
+     strategy:
++      fail-fast: false
+       matrix:
+         os: [ ubuntu-latest, windows-latest, macos-latest ]
+         toolchain: [ stable ]

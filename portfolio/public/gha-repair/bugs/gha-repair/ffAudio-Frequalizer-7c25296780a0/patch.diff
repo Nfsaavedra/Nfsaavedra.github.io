@@ -1,0 +1,36 @@
+diff --git a/.github/workflows/workflow.yml b/.github/workflows/workflow.yml
+index d78ed7c..3f5df7a 100644
+--- a/.github/workflows/workflow.yml
++++ b/.github/workflows/workflow.yml
+@@ -72,6 +72,13 @@ jobs:
+ 
+         productbuild --distribution distribution.xml --package-path ${DIST_DIR} ${DIST_DIR}/Frequalizer.pkg
+ 
++    - name: InnoSetup Installer (Windows)
++      if: runner.os == 'Windows'
++      working-directory: ${{runner.workspace}}/build
++      run: |
++        "%programfiles(x86)%\Inno Setup 6\iscc.exe" /DBuildDir="${{runner.workspace}}\build\frequalizer_artefacts\Release" "${{runner.workspace}}\Frequalizer\Resources\InnoSetup.iss"
++      shell: cmd
++
+     - name: 'Upload Artifact (MacOS)'
+       if: runner.os == 'MacOS'
+       uses: actions/upload-artifact@v2
+diff --git a/Resources/InnoSetup.iss b/Resources/InnoSetup.iss
+new file mode 100644
+index 0000000..9108afc
+--- /dev/null
++++ b/Resources/InnoSetup.iss
+@@ -0,0 +1,12 @@
++[Setup]
++AppName=Frequalizer
++AppVersion=1.1.0
++Uninstallable=no
++SourceDir="{#BuildDir}"
++DefaultDirName="{cf64}\VST3"
++DefaultGroupName=Frequalizer
++OutputBaseFilename=Frequalizer_WIN
++[Files]
++Source: "VST3\Frequalizer.vst3"; DestDir: {app}; Flags: recursesubdirs
++;Source: "VST\Frequalizer.dll"; DestDir: {cf64}\VST
++;Source: "AAX\Frequalizer.aaxplugin\*"; DestDir: "{cf64}\Avid\Audio\Plug-Ins\Frequalizer.aaxplugin"; Flags: recursesubdirs

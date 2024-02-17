@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 74e1d43..6fedb17 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -19,6 +19,7 @@ jobs:
+       - run: npm install --unsafe-perm
+       - run: npm run build
+       - run: mkdir -p build
++      - run: cp -rp img/* build
+ 
+       - name: Converts Markdown to HTML
+         uses: jaywcjlove/markdown-to-html-cli@main

@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/android_tests.yml b/.github/workflows/android_tests.yml
+index 1193f1c..7aeb3fe 100644
+--- a/.github/workflows/android_tests.yml
++++ b/.github/workflows/android_tests.yml
+@@ -25,3 +25,11 @@ jobs:
+ 
+       - name: Run instrumented tests
+         run: ./gradlew alkaaDevicesGroupDebugAndroidTest -Pandroid.testoptions.manageddevices.emulator.gpu="swiftshader_indirect"
++
++      - name: Save Test Results
++        uses: actions/upload-artifact@v2
++        if: ${{ always() }}
++        with:
++          name: test-results
++          path: /Users/runner/work/alkaa/alkaa/app/build/reports/androidTests/managedDevice/
++          retention-days: 7

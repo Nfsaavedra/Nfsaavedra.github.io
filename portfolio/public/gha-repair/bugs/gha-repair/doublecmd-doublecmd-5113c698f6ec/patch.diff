@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/winget.yml b/.github/workflows/winget.yml
+index a99e16c..ebe885f 100644
+--- a/.github/workflows/winget.yml
++++ b/.github/workflows/winget.yml
+@@ -6,7 +6,7 @@ jobs:
+   publish:
+     runs-on: windows-latest # action can only be run on windows
+     steps:
+-      - uses: vedantmgoyal2009/winget-releaser@latest
++      - uses: vedantmgoyal2009/winget-releaser@v1
+         with:
+           identifier: alexx2000.DoubleCommander
+           installers-regex: '.(exe|msi)$'

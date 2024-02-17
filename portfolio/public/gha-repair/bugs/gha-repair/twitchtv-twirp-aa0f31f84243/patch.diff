@@ -1,0 +1,80 @@
+diff --git a/.github/workflows/commit-checks.yml b/.github/workflows/commit-checks.yml
+new file mode 100644
+index 0000000..706277c
+--- /dev/null
++++ b/.github/workflows/commit-checks.yml
+@@ -0,0 +1,24 @@
++name: commit checks
++on:
++  push:
++jobs:
++  run:
++    name: tests
++    runs-on: ubuntu-latest
++    strategy:
++      matrix:
++        go-version: ['^1.16.0', '^1.15.0', '^1.14.0']
++    env:
++      GO111MODULE: 'off'
++    steps:
++    - uses: actions/checkout@v2
++      with:
++        path: ./go/src/github.com/${{ github.repository }}
++    - name: Install Go
++      uses: actions/setup-go@v2
++      with:
++        go-version: ${{ matrix.go-version }}
++    - name: Run Go Tests
++      run: |
++        export GOPATH=$GITHUB_WORKSPACE/go
++        go test -race -coverprofile=cover.out ./...
+diff --git a/.github/workflows/pr-checks.yml b/.github/workflows/pr-checks.yml
+new file mode 100644
+index 0000000..2b1c2ad
+--- /dev/null
++++ b/.github/workflows/pr-checks.yml
+@@ -0,0 +1,34 @@
++name: pull request checks
++on:
++  pull_request:
++jobs:
++  run:
++    name: test and cover
++    runs-on: ubuntu-latest
++    strategy:
++      matrix:
++        go-version: ['^1.16.0', '^1.15.0', '^1.14.0']
++    env:
++      GO111MODULE: 'off'
++    steps:
++    - uses: actions/checkout@v2
++      with:
++        path: ./go/src/github.com/${{ github.repository }}
++    - name: Install Go
++      uses: actions/setup-go@v2
++      with:
++        go-version: ${{ matrix.go-version }}
++    - name: Generate coverage
++      run: |
++        export GOPATH=$GITHUB_WORKSPACE/go
++        go test -race -coverprofile=cover.out ./...
++        go tool cover -func=cover.out | grep total | grep -Eo '[0-9]+\.[0-9]+' > cover_percentage
++    - name: Ensure coverage
++      shell: python
++      run: |
++        import sys
++        with open("cover_percentage", "r") as f:
++          cov = float(f.readlines()[0])
++          if cov < 12.8:
++            sys.exit("insufficient code coverage {}%".format(cov))
++          print("code coverage {}%".format(cov))
+diff --git a/.github/workflows/stale.yaml b/.github/workflows/stale.yaml
+index 582d370..0714f7c 100644
+--- a/.github/workflows/stale.yaml
++++ b/.github/workflows/stale.yaml
+@@ -17,3 +17,5 @@ jobs: # Job to close stale PRs and issues. Documentation on the github action ht
+         days-before-close: 5
+         stale-pr-label: 'no-pr-activity'
+         stale-issue-label: 'no-issue-activity'
++        exempt-pr-labels: 'pending'
++        exempt-issue-labels: 'pending'

@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index fe21996..673c867 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -37,7 +37,8 @@ jobs:
+         if: "!contains(matrix.target, 'windows')"
+       - id: version
+         shell: bash
+-        run: echo "version=$(cargo pkgid | cut -d'#' -f2 | cut -d: -f2)" >>"${GITHUB_OUTPUT}"
++        run: |
++          echo "version=$(cargo pkgid | cut -d'#' -f2 | cut -d: -f2)" >>"${GITHUB_OUTPUT}"
+       - id: package
+         shell: bash
+         run: ./scripts/package '${{ steps.version.outputs.version }}' '${{ matrix.target }}' '${{ steps.build.outputs.outdir }}'

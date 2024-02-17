@@ -1,0 +1,24 @@
+diff --git a/.github/workflows/regression-tests-and-codegen.yaml b/.github/workflows/regression-tests-and-codegen.yaml
+index 21634b9..b0ed9b0 100644
+--- a/.github/workflows/regression-tests-and-codegen.yaml
++++ b/.github/workflows/regression-tests-and-codegen.yaml
+@@ -15,7 +15,7 @@ jobs:
+         go-version: 1.14
+       id: go
+     - name: Install Protoc
+-      uses: arduino/setup-protoc@v1.1.0
++      uses: solo-io/setup-protoc@master
+       with:
+         version: '3.6.1'
+     - name: Check out code into the Go module directory
+diff --git a/changelog/v1.5.0-beta14/setup-protoc.yaml b/changelog/v1.5.0-beta14/setup-protoc.yaml
+new file mode 100644
+index 0000000..94f9751
+--- /dev/null
++++ b/changelog/v1.5.0-beta14/setup-protoc.yaml
+@@ -0,0 +1,5 @@
++changelog:
++- type: NON_USER_FACING
++  description: >
++      Use the solo-io fork of the github action setup-protoc, as the upstream doesn't support
++      release pagination, meaning 3.6.1 wouldn't install.

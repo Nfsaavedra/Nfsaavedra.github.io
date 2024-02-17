@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/master.yml b/.github/workflows/master.yml
+index 151fdd8..e98a45a 100644
+--- a/.github/workflows/master.yml
++++ b/.github/workflows/master.yml
+@@ -22,6 +22,7 @@ jobs:
+         with:
+           github-token: ${{ secrets.GITHUB_TOKEN }}
+           path-to-lcov: ./workspaces/mammoth/coverage/lcov.info
++          base-path: ./workspaces/mammoth
+       - id: publish
+         uses: JS-DevTools/npm-publish@v1
+         with:

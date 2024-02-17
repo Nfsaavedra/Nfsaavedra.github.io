@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/build.yaml b/.github/workflows/build.yaml
+index f149815..3de9626 100644
+--- a/.github/workflows/build.yaml
++++ b/.github/workflows/build.yaml
+@@ -255,6 +255,11 @@ jobs:
+     runs-on: ubuntu-22.04
+ 
+     steps:
++    - name: Checkout source
++      uses: actions/checkout@v4
++      with:
++        persist-credentials: false
++
+     - name: Initialize git
+       uses: home-assistant/actions/helpers/git-init@master
+       with:

@@ -1,0 +1,26 @@
+diff --git a/.github/workflows/rust.yml b/.github/workflows/rust.yml
+index 304f0aa..1774bef 100644
+--- a/.github/workflows/rust.yml
++++ b/.github/workflows/rust.yml
+@@ -112,6 +112,21 @@ jobs:
+           command: doc
+           args: --no-deps --document-private-items
+ 
++  audit:
++    name: Audit
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v2
++      - uses: actions-rs/toolchain@v1
++        with:
++          profile: minimal
++          toolchain: stable
++          override: true
++      - uses: actions-rs/cargo@v1
++        with:
++          command: audit
++          args: --deny warnings
++
+   clippy:
+     name: Clippy
+     runs-on: ubuntu-latest

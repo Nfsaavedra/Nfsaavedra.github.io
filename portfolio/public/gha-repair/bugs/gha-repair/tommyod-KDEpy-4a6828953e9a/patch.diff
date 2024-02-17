@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/test_base.yml b/.github/workflows/test_base.yml
+index 06134dc..e015ad8 100644
+--- a/.github/workflows/test_base.yml
++++ b/.github/workflows/test_base.yml
+@@ -5,7 +5,6 @@ on:
+ 
+ jobs:
+   build:
+-    name: Python ${{ matrix.python-version }} / ${{ matrix.os }}
+     runs-on: ${{ matrix.os }}
+     strategy:
+       fail-fast: false # Allow one of the matrix builds to fail without failing others

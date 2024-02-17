@@ -1,0 +1,65 @@
+diff --git a/.docker/main.Dockerfile b/.docker/main.Dockerfile
+deleted file mode 100644
+index a180758..0000000
+--- a/.docker/main.Dockerfile
++++ /dev/null
+@@ -1,20 +0,0 @@
+-ARG VERSION=unstable
+-# this allows to work on forked repository
+-ARG REPOSITORY=greenbone/openvas-scanner
+-FROM ${REPOSITORY}-build:$VERSION AS build
+-COPY . /source
+-RUN cmake -DCMAKE_BUILD_TYPE=Release -B/build /source
+-RUN DESTDIR=/install cmake --build /build -- install 
+-
+-FROM greenbone/community-feed-vts AS feed
+-
+-FROM greenbone/gvm-libs:$VERSION
+-RUN apt-get update && apt-get install --no-install-recommends --no-install-suggests -y \
+-    bison \
+-    libjson-glib-1.0-0 \
+-    libksba8 \
+-    libnet1 \
+-    && rm -rf /var/lib/apt/lists/*
+-COPY --from=feed /opt/greenbone/feed/plugins /var/lib/openvas/plugins
+-COPY --from=build /install/ /
+-RUN ldconfig
+diff --git a/.docker/prod.Dockerfile b/.docker/prod.Dockerfile
+new file mode 100644
+index 0000000..a180758
+--- /dev/null
++++ b/.docker/prod.Dockerfile
+@@ -0,0 +1,20 @@
++ARG VERSION=unstable
++# this allows to work on forked repository
++ARG REPOSITORY=greenbone/openvas-scanner
++FROM ${REPOSITORY}-build:$VERSION AS build
++COPY . /source
++RUN cmake -DCMAKE_BUILD_TYPE=Release -B/build /source
++RUN DESTDIR=/install cmake --build /build -- install 
++
++FROM greenbone/community-feed-vts AS feed
++
++FROM greenbone/gvm-libs:$VERSION
++RUN apt-get update && apt-get install --no-install-recommends --no-install-suggests -y \
++    bison \
++    libjson-glib-1.0-0 \
++    libksba8 \
++    libnet1 \
++    && rm -rf /var/lib/apt/lists/*
++COPY --from=feed /opt/greenbone/feed/plugins /var/lib/openvas/plugins
++COPY --from=build /install/ /
++RUN ldconfig
+diff --git a/.github/workflows/container.yml b/.github/workflows/container.yml
+index 284baca..dc04e07 100644
+--- a/.github/workflows/container.yml
++++ b/.github/workflows/container.yml
+@@ -29,7 +29,7 @@ jobs:
+           context: .
+           push: true
+           tags: ${{ steps.container.outputs.image-tags }}
+-          file: .docker/main.Dockerfile
++          file: .docker/prod.Dockerfile
+           build-args: |
+             REPOSITORY=${{ github.repository }}
+ 

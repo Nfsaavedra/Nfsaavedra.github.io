@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 0fba4a6..c7024f1 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -51,5 +51,5 @@ jobs:
+         with:
+           publish: yarn changeset publish
+         env:
+-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
++          GITHUB_TOKEN: ${{ secrets.CHANGESETS_GITHUB_TOKEN }}
+           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

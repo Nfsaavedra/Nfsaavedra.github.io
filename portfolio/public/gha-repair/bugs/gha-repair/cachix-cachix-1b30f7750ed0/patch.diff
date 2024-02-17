@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 5d3025b..4e90ddc 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -22,6 +22,7 @@ jobs:
+     - uses: stefanzweifel/git-auto-commit-action@v4
+       with:
+         commit_message: "Bumping *.cabal to ${{ github.ref_name }}"
++        branch: master
+     - run: cabal v2-sdist all
+     - uses: haskell-actions/hackage-publish@v1
+       with:

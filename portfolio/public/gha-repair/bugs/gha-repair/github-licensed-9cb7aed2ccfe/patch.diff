@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index a15183f..92e0378 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -175,6 +175,7 @@ jobs:
+       with:
+         go-version: ${{ matrix.go }}
+         cache: true
++        cache-dependency-path: test/fixtures/go/src/test/go.sum
+     - name: Set up Ruby
+       uses: ruby/setup-ruby@v1
+       with:

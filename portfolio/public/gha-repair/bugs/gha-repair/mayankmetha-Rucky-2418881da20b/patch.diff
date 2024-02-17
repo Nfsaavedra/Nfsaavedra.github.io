@@ -1,0 +1,51 @@
+diff --git a/.github/workflows/nightly.yml b/.github/workflows/nightly.yml
+index cdc46e5..6e9b748 100644
+--- a/.github/workflows/nightly.yml
++++ b/.github/workflows/nightly.yml
+@@ -4,23 +4,24 @@ on:
+     branches:
+       master
+ jobs:
+-  runs-on: ubuntu-latest
+-  steps:
+-    - name: Checkout Code
+-      uses: actions/checkout@v2
+-    - name: JDK
+-      uses: actions/setup-java@v2
+-      with:
+-        java-version: '11'
+-        distribution: 'adopt'
+-    - name: Nightly Build
+-      run: ./gradlew clean assembleNightly
+-    - name: Sign APK
+-      uses: r0adkll/sign-android-release@v1
+-      id: sign_app
+-      with:
+-        releaseDirectory: app/build/outputs/apk/nightly
+-        signingKeyBase64: ${{ secrets.NIGHTLY_SIGNING_KEY }}
+-        alias: ${{ secrets.NIGHTLY_ALIAS }}
+-        keyStorePassword: ${{ secrets.NIGHTLY_KEY_STORE_PASSWORD }}
+-        keyPassword: ${{ secrets.NIGHTLY_KEY_PASSWORD }}
+\ No newline at end of file
++  build:
++    runs-on: ubuntu-latest
++    steps:
++      - name: Checkout Code
++        uses: actions/checkout@v2
++      - name: JDK
++        uses: actions/setup-java@v2
++        with:
++          java-version: '11'
++          distribution: 'adopt'
++      - name: Nightly Build
++        run: ./gradlew clean assembleNightly
++      - name: Sign APK
++        uses: r0adkll/sign-android-release@v1
++        id: sign_app
++        with:
++          releaseDirectory: app/build/outputs/apk/nightly
++          signingKeyBase64: ${{ secrets.NIGHTLY_SIGNING_KEY }}
++          alias: ${{ secrets.NIGHTLY_ALIAS }}
++          keyStorePassword: ${{ secrets.NIGHTLY_KEY_STORE_PASSWORD }}
++          keyPassword: ${{ secrets.NIGHTLY_KEY_PASSWORD }}
+\ No newline at end of file

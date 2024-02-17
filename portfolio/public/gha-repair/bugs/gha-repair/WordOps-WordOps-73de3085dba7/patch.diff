@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index ee1c271..88477c4 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -16,7 +16,10 @@ on:
+ jobs:
+   my_job:
+     name: test WordOps
+-    runs-on: ubuntu-18.04
++    runs-on: ${{ matrix.os }}
++    strategy:
++      matrix:
++        os: [ubuntu-20.04, ubuntu-18.04]
+     
+     steps:
+     - uses: actions/checkout@v2

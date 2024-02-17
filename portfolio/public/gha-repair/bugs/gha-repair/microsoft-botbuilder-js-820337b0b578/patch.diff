@@ -1,0 +1,89 @@
+diff --git a/.github/workflows/run-consumer-test.yml b/.github/workflows/run-consumer-test.yml
+new file mode 100644
+index 0000000..da0e387
+--- /dev/null
++++ b/.github/workflows/run-consumer-test.yml
+@@ -0,0 +1,42 @@
++name: Consumer Test
++
++on:
++  workflow_dispatch:
++  push:
++    branches: 
++    - main
++    - 4.10
++    - 4.11
++  pull_request:
++    branches: 
++    - main
++    - 4.10
++    - 4.11
++
++jobs:
++  build:
++    name: Run test:consumer
++    runs-on: ubuntu-latest
++
++    steps:
++      - uses: actions/checkout@v2
++      
++      - uses: actions/setup-node@v2-beta
++        with:
++          node-version: '12'
++
++      - uses: actions/cache@v2
++        with:
++          path: |
++            ~/.npm
++            **/node_modules
++          key: ${{ runner.os }}-${{ hashFiles('**/package.json') }}
++
++      - name: npm install
++        run: npm install
++
++      - name: npm build
++        run: npm run build
++
++      - name: Run "test:consumer" npm script
++        run: npm run test:consumer
+\ No newline at end of file
+diff --git a/.github/workflows/run-eslint.yml b/.github/workflows/run-eslint.yml
+index ce45638..c1d9940 100644
+--- a/.github/workflows/run-eslint.yml
++++ b/.github/workflows/run-eslint.yml
+@@ -1,4 +1,4 @@
+-name: Code Analysis
++name: ESLint
+ 
+ on:
+   workflow_dispatch:
+@@ -21,19 +21,20 @@ jobs:
+     steps:
+       - uses: actions/checkout@v2
+       
+-      # Use current Node LTS
+-      # This step may be unnecessary. Alternatively it may provide better performance per:
+-      # https://github.com/actions/setup-node/blob/c6fd00ceb9747fb23ffdf72987450a2664414867/README.md#v2-beta
+-      # If installing or specifying the Node.js version is required.
+       - uses: actions/setup-node@v2-beta
+         with:
+           node-version: '12'
+ 
+-      # Install root package devDependencies
+-      # Don't run unnecessary postinstall script
++      - uses: actions/cache@v2
++        with:
++          path: |
++            ~/.npm
++            **/node_modules
++          key: ${{ runner.os }}-${{ hashFiles('**/package.json') }}
++
++      # Note: postinstall is unnecessary for linting
+       - name: npm install --ignore-scripts
+         run: npm install --ignore-scripts
+ 
+-      # Run eslint from the root
+       - name: Run "eslint" npm script
+-        run: npm run eslint
++        run: npm run eslint
+\ No newline at end of file

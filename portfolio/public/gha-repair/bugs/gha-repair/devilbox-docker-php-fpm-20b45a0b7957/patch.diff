@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/zzz-reuse-deploy-images.yml b/.github/workflows/zzz-reuse-deploy-images.yml
+index a951a64..dd389c9 100644
+--- a/.github/workflows/zzz-reuse-deploy-images.yml
++++ b/.github/workflows/zzz-reuse-deploy-images.yml
+@@ -39,7 +39,7 @@ on:
+ 
+ jobs:
+   deploy:
+-    name: ${{ matrix.name }}-${{ matrix.version }}-${{ inputs.flavour }} (${{ matrix.arch }}) ${{ matrix.refs }}
++    name: ${{ matrix.name }}-${{ matrix.version }} (${{ matrix.arch }}) ${{ matrix.refs }}
+     runs-on: ubuntu-latest
+     strategy:
+       fail-fast: false

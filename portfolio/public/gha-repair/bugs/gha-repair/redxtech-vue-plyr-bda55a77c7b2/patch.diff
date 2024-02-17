@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/npm.yml b/.github/workflows/npm.yml
+index a07fc3a..e75ea6d 100644
+--- a/.github/workflows/npm.yml
++++ b/.github/workflows/npm.yml
+@@ -20,9 +20,7 @@ jobs:
+         run: npm run lint
+ 
+       - name: Test and build package
+-        run: |
+-#          npm test
+-          npm run build
++        run: npm run build
+ 
+       - name: Publish tag to npm
+         if: contains(github.ref, 'tags')

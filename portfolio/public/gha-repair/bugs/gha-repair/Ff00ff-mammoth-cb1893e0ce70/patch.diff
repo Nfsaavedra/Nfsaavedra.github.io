@@ -1,0 +1,18 @@
+diff --git a/.github/workflows/next.yml b/.github/workflows/next.yml
+index ad01b33..4836574 100644
+--- a/.github/workflows/next.yml
++++ b/.github/workflows/next.yml
+@@ -1,4 +1,4 @@
+-name: Mammoth
++name: Lint, build & test
+ 
+ on:
+   push:
+@@ -10,6 +10,7 @@ env:
+ 
+ jobs:
+   build:
++    runs-on: ubuntu-latest
+     services:
+       postgres:
+         image: postgres:11.5-alpine

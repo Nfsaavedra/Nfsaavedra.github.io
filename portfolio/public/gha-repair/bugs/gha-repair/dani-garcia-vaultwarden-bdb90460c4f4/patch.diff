@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/rust-win.yml b/.github/workflows/rust-win.yml
+index eb5bd16..f9ce14a 100644
+--- a/.github/workflows/rust-win.yml
++++ b/.github/workflows/rust-win.yml
+@@ -14,7 +14,7 @@ jobs:
+     steps:
+     - uses: actions/checkout@v1
+     - name: Install dependencies
+-      run: choco install openssl sqlite postgres mysql
++      run: choco install openssl sqlite postgresql12 mysql
+ 
+     - name: Cache cargo registry
+       uses: actions/cache@v1.0.3

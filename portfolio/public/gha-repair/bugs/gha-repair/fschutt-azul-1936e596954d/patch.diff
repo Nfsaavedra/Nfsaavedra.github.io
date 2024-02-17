@@ -1,0 +1,23 @@
+diff --git a/.github/workflows/rust.yml b/.github/workflows/rust.yml
+index 789f520..48159e5 100644
+--- a/.github/workflows/rust.yml
++++ b/.github/workflows/rust.yml
+@@ -3,7 +3,7 @@ name: Rust
+ on: [push]
+ 
+ jobs:
+-  build:
++  build-linux:
+     runs-on: ubuntu-latest
+ 
+     steps:
+@@ -16,6 +16,9 @@ jobs:
+           toolchain: stable
+           default: true
+           override: true
++          
++      - name: Install dependencies
++        run: sudo apt install -y libxcb-shape0-dev libxcb-xfixes0-dev
+ 
+       - name: Build
+         run: cd azul-dll && cargo build --verbose --release

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index dd328e9..e630c43 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -57,7 +57,7 @@ jobs:
+             flags:
+             rust: beta
+           - target: x86_64-unknown-linux-musl
+-            flags: --no-default-features --features terminology,kitty,remote_resources
++            flags: --no-default-features --features terminology,kitty
+             rust: stable
+     steps:
+       - uses: actions/checkout@v1

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/generate_tag.yml b/.github/workflows/generate_tag.yml
+index e56c183..6a5665e 100644
+--- a/.github/workflows/generate_tag.yml
++++ b/.github/workflows/generate_tag.yml
+@@ -21,6 +21,6 @@ jobs:
+             github.rest.git.createRef({
+               owner: context.repo.owner,
+               repo: context.repo.repo,
+-              ref: github.event.inputs.tagname,
++              ref: ${{ github.event.inputs.tagname }},
+               sha: context.sha
+             })

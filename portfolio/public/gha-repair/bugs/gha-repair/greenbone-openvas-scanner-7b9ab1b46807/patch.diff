@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci-c.yml b/.github/workflows/ci-c.yml
+index 7807e19..7c2f9c6 100644
+--- a/.github/workflows/ci-c.yml
++++ b/.github/workflows/ci-c.yml
+@@ -19,7 +19,7 @@ jobs:
+   gen_xml_doc:
+     name: Build XML documentation
+     runs-on: ubuntu-latest
+-    container: greenbone/code-metrics-doxygen-debian-stretch
++    container: greenbone/doxygen
+     steps:
+       - name: Check out openvas-scanner
+         uses: actions/checkout@v2

@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 2d702b7..47e70c7 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -28,9 +28,7 @@ jobs:
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v2
+-      - uses: dtolnay/rust-toolchain@nightly
+-        with:
+-          components: miri
++      - uses: dtolnay/rust-toolchain@miri
+       - run: cargo miri test
+         env:
+           MIRIFLAGS: '-Zmiri-tag-raw-pointers'

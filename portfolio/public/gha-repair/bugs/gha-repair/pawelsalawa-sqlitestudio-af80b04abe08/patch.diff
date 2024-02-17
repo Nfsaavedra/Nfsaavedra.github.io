@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/win32_release.yml b/.github/workflows/win32_release.yml
+index 322a6cf..4cb9c1d 100644
+--- a/.github/workflows/win32_release.yml
++++ b/.github/workflows/win32_release.yml
+@@ -53,6 +53,7 @@ jobs:
+               if: steps.cache-qt.outputs.cache-hit != 'true'
+               shell: bash
+               run: |
++                choco uninstall mingw
+                 curl -L ${{ env.MINGW_URL }} --output ../mingw.7z
+                 7z x -o"../Qt" ../mingw.7z
+                 echo "${{ env.MINGW_DIR }}/bin" >> $GITHUB_PATH

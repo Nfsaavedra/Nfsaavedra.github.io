@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/nim.yml b/.github/workflows/nim.yml
+index 2161052..aa49016 100644
+--- a/.github/workflows/nim.yml
++++ b/.github/workflows/nim.yml
+@@ -10,7 +10,8 @@ jobs:
+   build-devel:
+ 
+     runs-on: ubuntu-latest
+-
++    env: 
++      PATH: $PATH:/home/runner/.nimble/bin
+     steps:
+     - uses: actions/checkout@v2
+     - name: install curl

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/docs.yml b/.github/workflows/docs.yml
+index 8d732f3..d7c1360 100644
+--- a/.github/workflows/docs.yml
++++ b/.github/workflows/docs.yml
+@@ -2,6 +2,8 @@ name: Docs
+ 
+ on:
+   push:
++    branches:
++    - master
+   pull_request:
+   workflow_dispatch:
+ 

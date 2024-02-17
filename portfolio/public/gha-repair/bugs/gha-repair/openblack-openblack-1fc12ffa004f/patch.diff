@@ -1,0 +1,18 @@
+diff --git a/.github/workflows/ci-cross-compile.yml b/.github/workflows/ci-cross-compile.yml
+index 3192560..57160ce 100644
+--- a/.github/workflows/ci-cross-compile.yml
++++ b/.github/workflows/ci-cross-compile.yml
+@@ -19,6 +19,13 @@ jobs:
+         os: [ubuntu-latest]
+         # These are additional individual jobs. There are no permutations of these.
+         include:
++          - triplet: x86-linux
++            os: ubuntu-latest
++            preset: ninja-multi-vcpkg
++            setup: |
++              sudo dpkg --add-architecture i386
++              sudo apt-get update
++              sudo apt-get install -y libx11-dev:i386 libxext-dev:i386 libgl1-mesa-dev:i386 libglu1-mesa-dev:i386 gcc:i386 g++:i386
+           - triplet: x86-windows
+             os: windows-latest
+             preset: ninja-multi-vcpkg

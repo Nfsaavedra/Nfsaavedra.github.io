@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/mocha.yml b/.github/workflows/mocha.yml
+index 62502af..127a7df 100644
+--- a/.github/workflows/mocha.yml
++++ b/.github/workflows/mocha.yml
+@@ -23,7 +23,7 @@ jobs:
+           node-version: '${{ matrix.node }}'
+       - uses: actions/checkout@v4
+       - name: 'Cache node_modules'
+-        uses: actions/cache@v3
++        uses: actions/cache@v4
+         with:
+           path: ~/.npm
+           key: ${{ runner.os }}-node-v${{ matrix.node }}-${{ hashFiles('**/package-lock.json') }}

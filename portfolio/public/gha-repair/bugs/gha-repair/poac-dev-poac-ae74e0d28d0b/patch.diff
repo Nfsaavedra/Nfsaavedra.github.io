@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/coverity.yml b/.github/workflows/coverity.yml
+index 5a90300..13dc62c 100644
+--- a/.github/workflows/coverity.yml
++++ b/.github/workflows/coverity.yml
+@@ -4,6 +4,7 @@ on:
+   push:
+     tags:
+       - 'v?[0-9]+.[0-9]+.[0-9]+'
++  workflow_dispatch:
+ 
+ jobs:
+   scan:

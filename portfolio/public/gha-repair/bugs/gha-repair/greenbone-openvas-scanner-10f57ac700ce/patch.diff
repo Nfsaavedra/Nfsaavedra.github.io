@@ -1,0 +1,82 @@
+diff --git a/.github/prepare-feed.sh b/.github/prepare-feed.sh
+new file mode 100644
+index 0000000..c649636
+--- /dev/null
++++ b/.github/prepare-feed.sh
+@@ -0,0 +1,20 @@
++#!/bin/sh
++# This script prepares the feed used for integration tests.
++# We don't use the download action because it is not capapble of a fork based
++# workflow.
++[ -z $FEED_DIR ] && FEED_DIR="/var/lib/openvas/plugins"
++DOCKER_CMD=docker
++FEED_IMAGE="greenbone/vulnerability-tests"
++set -e
++printf "Copying feed $FEED_IMAGE "
++FEED_VERSION=$($DOCKER_CMD run --rm $FEED_IMAGE sh -c 'ls /var/lib/openvas/' | sort -r | head -n 1)
++printf "(version: $FEED_VERSION) to $FEED_DIR\n"
++# instanciate container
++CFP="/var/lib/openvas/$FEED_VERSION/vt-data/nasl/"
++CID=$($DOCKER_CMD create $FEED_IMAGE)
++rm -rf $FEED_DIR
++mkdir -p $FEED_DIR
++$DOCKER_CMD cp $CID:$CFP $FEED_DIR
++mv $FEED_DIR/nasl/* $FEED_DIR
++rm -r $FEED_DIR/nasl
++$DOCKER_CMD rm $CID
+diff --git a/.github/workflows/rustification.yaml b/.github/workflows/rustification.yaml
+index b0de81e..c3b3df1 100644
+--- a/.github/workflows/rustification.yaml
++++ b/.github/workflows/rustification.yaml
+@@ -107,23 +107,11 @@ jobs:
+     runs-on: ubuntu-latest
+     needs: [releases]
+     steps:
+-      - name: download feed
+-        uses: greenbone/actions/download-artifact@v2
+-        with:
+-          token: ${{ secrets.GREENBONE_BOT_TOKEN }}
+-          repository: "greenbone/vulnerability-tests"
+-          workflow: feed-deployment.yml
+-          name: vulnerability-tests-community-main
+-      - name: simplify feed structure
+-        run: |
+-          tar -xf vulnerability-tests-community-main.tar.xz
+-          rm -rf feed 
+-          mkdir feed 
+-          mv ./community/vulnerability-feed/$(ls ./community/vulnerability-feed/ | sort -r | head -n 1)/vt-data/nasl/* feed/
++      - uses: actions/checkout@v3
++      - run: FEED_DIR="feed/" sh .github/prepare-feed.sh
+       - uses: actions/download-artifact@v3
+         with:
+           name: nasl-cli
+-      - run: ls -las
+       - name: verify syntax parsing
+         run: chmod a+x ./nasl-cli && ./nasl-cli syntax --quiet feed/
+   verify-feed-update:
+@@ -143,22 +131,9 @@ jobs:
+           --health-timeout 5s
+           --health-retries 5
+     steps:
+-      - name: download feed
+-        uses: greenbone/actions/download-artifact@v2
+-        with:
+-          token: ${{ secrets.GREENBONE_BOT_TOKEN }}
+-          repository: "greenbone/vulnerability-tests"
+-          workflow: feed-deployment.yml
+-          name: vulnerability-tests-community-main
+-      - name: simplify feed structure
+-        run: |
+-          # we need xz to extract, probably better to put in image?
+-          apt update
+-          apt install -y xz-utils
+-          tar -xvf vulnerability-tests-community-main.tar.xz
+-          rm -rf feed 
+-          mkdir feed 
+-          mv ./community/vulnerability-feed/$(ls ./community/vulnerability-feed/ | sort -r | head -n 1)/vt-data/nasl/* feed/
++      - uses: actions/checkout@v3
++      - run: apt-get update && apt-get install -y docker.io
++      - run: FEED_DIR="feed/" sh .github/prepare-feed.sh
+       - uses: actions/download-artifact@v3
+         with:
+           name: nasl-cli

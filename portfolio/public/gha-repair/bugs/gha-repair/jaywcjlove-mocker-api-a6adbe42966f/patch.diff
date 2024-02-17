@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index e82bf52..66b236d 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -1,4 +1,4 @@
+-name: GitHub Actions Build and Deploy mocker-api
++name: Build and Deploy
+ on:
+   push:
+     branches:

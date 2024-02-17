@@ -1,0 +1,309 @@
+diff --git a/.github/workflows/coverage.yml b/.github/workflows/coverage.yml
+index b863b96..4fc9069 100644
+--- a/.github/workflows/coverage.yml
++++ b/.github/workflows/coverage.yml
+@@ -25,7 +25,7 @@ jobs:
+     - name: Install jq
+       run: sudo apt install jq
+     - name: Determine coverage
+-      run: scripts/coverage.bash
++      run: coverage/coverage.bash
+       shell: bash
+     - name: Codecov
+       uses: codecov/codecov-action@v2
+diff --git a/coverage/README.md b/coverage/README.md
+new file mode 100644
+index 0000000..3b541e0
+--- /dev/null
++++ b/coverage/README.md
+@@ -0,0 +1,27 @@
++# Scripts
++
++This folder contains some helpfull scripts that can be helpfull during development.
++
++## Pre-Requirements
++
++To run the scripts in this folder you have to install a few tools on your system. You can use the following script to install the required tools (just replace `brew` with the packet manager of your choice).
++
++```sh
++# nightly toolchain
++rustup toolchain install nightly
++
++# llvm toolchain for nightly
++rustup component add --toolchain nightly llvm-tools-preview
++
++# cargo-binutils and rustfilt for nightly
++cargo +nightly install cargo-binutils rustfilt
++
++# jq from your package manager of choice (just replace brew with apt or a similar manager)
++brew install jq
++```
++
++## coverage.bash
++
++`coverage.bash` calculates the region & line based code coverage of the tests. Just execute it and it will write the reports to `target/coverage`.
++
++Note: When executing this script `cargo clean` be executed and previous coverage data will be deleted.
+diff --git a/coverage/coverage.bash b/coverage/coverage.bash
+new file mode 100755
+index 0000000..fcc2f9a
+--- /dev/null
++++ b/coverage/coverage.bash
+@@ -0,0 +1,108 @@
++#!/usr/bin/env bash
++
++# PRE-REQUIREMENTS:
++#
++# To execute this script you have to have a few additional things installed
++# on your system. You can run the following commands to do so:
++#
++# ```sh
++# # nightly toolchain
++# rustup toolchain install nightly 
++#
++# # llvm toolchain for nightly
++# rustup component add --toolchain nightly llvm-tools-preview
++#
++# # cargo-binutils and rustfilt for nightly
++# cargo +nightly install cargo-binutils rustfilt
++#
++# # jq from your package manager of choice (just replace brew with apt or a similar manager)
++# brew install jq
++# ```
++
++# switch to the etherparse root directory
++pushd "$(dirname "${BASH_SOURCE[0]}")/.."
++
++# folder for all the coverage files
++coverage_dir="$(pwd -P)/target/coverage"
++
++# make sure no cached data is used (can interfere with the instrumentalisation and testruns)
++cargo clean
++
++# remove previous runs and setup the result folders
++rm -rf "${coverage_dir}"
++mkdir -p "${coverage_dir}"
++mkdir -p "${coverage_dir}/raw"
++
++# run the instrumented tests
++RUSTFLAGS="-Zinstrument-coverage" \
++    LLVM_PROFILE_FILE="${coverage_dir}/raw/coverage-%m.profraw" \
++    cargo +nightly test --tests
++
++# determine the filenames of the run executables
++RUSTFLAGS="-Zinstrument-coverage" \
++    LLVM_PROFILE_FILE="${coverage_dir}/raw/coverage-%m.profraw" \
++cargo +nightly test --no-run --message-format=json | jq -r "select(.profile.test == true) | .filenames[]" | grep -v dSYM - > "${coverage_dir}/raw/filenames.txt"
++
++cargo profdata -- merge -sparse "${coverage_dir}/raw/coverage-"*".profraw" -o "${coverage_dir}/raw/merge.profdata"
++
++cargo cov -- report \
++    --use-color \
++    --summary-only \
++    --Xdemangler=rustfilt \
++    --ignore-filename-regex='/.cargo/registry' \
++    --ignore-filename-regex='/.rustup/toolchains' \
++    --ignore-filename-regex='/rustc' \
++    "--instr-profile=${coverage_dir}/raw/merge.profdata" \
++    $(printf -- "-object %s " $(cat "${coverage_dir}/raw/filenames.txt")) \
++  > "${coverage_dir}/report_all.txt"
++
++cargo cov -- report \
++    --use-color \
++    --summary-only \
++    --Xdemangler=rustfilt \
++    --ignore-filename-regex='/.cargo/registry' \
++    --ignore-filename-regex='/.rustup/toolchains' \
++    --ignore-filename-regex='/rustc' \
++    --ignore-filename-regex='tests/' \
++    "--instr-profile=${coverage_dir}/raw/merge.profdata" \
++    $(printf -- "-object %s " $(cat "${coverage_dir}/raw/filenames.txt")) \
++  > "${coverage_dir}/report_without_tests.txt"
++
++cargo cov -- show --format=html \
++    --Xdemangler=rustfilt \
++    --ignore-filename-regex='/.cargo/registry' \
++    --ignore-filename-regex='/.rustup/toolchains' \
++    --ignore-filename-regex='/rustc' \
++    "--instr-profile=${coverage_dir}/raw/merge.profdata" \
++    $(printf -- "-object %s " $(cat "${coverage_dir}/raw/filenames.txt")) \
++    "--output-dir=${coverage_dir}/html_all"
++
++cargo cov -- show --format=html \
++    --Xdemangler=rustfilt \
++    --ignore-filename-regex='/.cargo/registry' \
++    --ignore-filename-regex='/.rustup/toolchains' \
++    --ignore-filename-regex='/rustc' \
++    --ignore-filename-regex='tests/' \
++    "--instr-profile=${coverage_dir}/raw/merge.profdata" \
++    $(printf -- "-object %s " $(cat "${coverage_dir}/raw/filenames.txt")) \
++    "--output-dir=${coverage_dir}/html_without_tests"
++
++cargo cov -- export --format=lcov \
++    --Xdemangler=rustfilt \
++    --ignore-filename-regex='/.cargo/registry' \
++    --ignore-filename-regex='/.rustup/toolchains' \
++    --ignore-filename-regex='/rustc' \
++    "--instr-profile=${coverage_dir}/raw/merge.profdata" \
++    $(printf -- "-object %s " $(cat "${coverage_dir}/raw/filenames.txt")) \
++  > "${coverage_dir}/export.lcov.txt"
++
++cargo cov -- export --format=text \
++    --Xdemangler=rustfilt \
++    --ignore-filename-regex='/.cargo/registry' \
++    --ignore-filename-regex='/.rustup/toolchains' \
++    --ignore-filename-regex='/rustc' \
++    "--instr-profile=${coverage_dir}/raw/merge.profdata" \
++    $(printf -- "-object %s " $(cat "${coverage_dir}/raw/filenames.txt")) \
++  > "${coverage_dir}/export.json"
++
++popd
+\ No newline at end of file
+diff --git a/etherparse/scripts/README.md b/etherparse/scripts/README.md
+deleted file mode 100644
+index 3b541e0..0000000
+--- a/etherparse/scripts/README.md
++++ /dev/null
+@@ -1,27 +0,0 @@
+-# Scripts
+-
+-This folder contains some helpfull scripts that can be helpfull during development.
+-
+-## Pre-Requirements
+-
+-To run the scripts in this folder you have to install a few tools on your system. You can use the following script to install the required tools (just replace `brew` with the packet manager of your choice).
+-
+-```sh
+-# nightly toolchain
+-rustup toolchain install nightly
+-
+-# llvm toolchain for nightly
+-rustup component add --toolchain nightly llvm-tools-preview
+-
+-# cargo-binutils and rustfilt for nightly
+-cargo +nightly install cargo-binutils rustfilt
+-
+-# jq from your package manager of choice (just replace brew with apt or a similar manager)
+-brew install jq
+-```
+-
+-## coverage.bash
+-
+-`coverage.bash` calculates the region & line based code coverage of the tests. Just execute it and it will write the reports to `target/coverage`.
+-
+-Note: When executing this script `cargo clean` be executed and previous coverage data will be deleted.
+diff --git a/etherparse/scripts/coverage.bash b/etherparse/scripts/coverage.bash
+deleted file mode 100755
+index 52fde34..0000000
+--- a/etherparse/scripts/coverage.bash
++++ /dev/null
+@@ -1,108 +0,0 @@
+-#!/usr/bin/env bash
+-
+-# PRE-REQUIREMENTS:
+-#
+-# To execute this script you have to have a few additional things installed
+-# on your system. You can run the following commands to do so:
+-#
+-# ```sh
+-# # nightly toolchain
+-# rustup toolchain install nightly 
+-#
+-# # llvm toolchain for nightly
+-# rustup component add --toolchain nightly llvm-tools-preview
+-#
+-# # cargo-binutils and rustfilt for nightly
+-# cargo +nightly install cargo-binutils rustfilt
+-#
+-# # jq from your package manager of choice (just replace brew with apt or a similar manager)
+-# brew install jq
+-# ```
+-
+-# switch to the etherparse root directory
+-pushd "$(dirname "${BASH_SOURCE[0]}")/.."
+-
+-# folder for all the coverage files
+-coverage_dir="target/coverage"
+-    
+-# make sure no cached data is used (can interfere with the instrumentalisation and testruns)
+-cargo clean
+-
+-# remove previous runs and setup the result folders
+-rm -rf "${coverage_dir}"
+-mkdir -p "${coverage_dir}"
+-mkdir -p "${coverage_dir}/raw"
+-
+-# run the instrumented tests
+-RUSTFLAGS="-Zinstrument-coverage" \
+-    LLVM_PROFILE_FILE="${coverage_dir}/raw/coverage-%m.profraw" \
+-    cargo +nightly test --tests
+-
+-# determine the filenames of the run executables
+-RUSTFLAGS="-Zinstrument-coverage" \
+-    LLVM_PROFILE_FILE="${coverage_dir}/raw/coverage-%m.profraw" \
+-cargo +nightly test --no-run --message-format=json | jq -r "select(.profile.test == true) | .filenames[]" | grep -v dSYM - > "${coverage_dir}/raw/filenames.txt"
+-
+-cargo profdata -- merge -sparse "${coverage_dir}/raw/coverage-"*".profraw" -o "${coverage_dir}/raw/merge.profdata"
+-
+-cargo cov -- report \
+-    --use-color \
+-    --summary-only \
+-    --Xdemangler=rustfilt \
+-    --ignore-filename-regex='/.cargo/registry' \
+-    --ignore-filename-regex='/.rustup/toolchains' \
+-    --ignore-filename-regex='/rustc' \
+-    "--instr-profile=${coverage_dir}/raw/merge.profdata" \
+-    $(printf -- "-object %s " $(cat "${coverage_dir}/raw/filenames.txt")) \
+-  > "${coverage_dir}/report_all.txt"
+-
+-cargo cov -- report \
+-    --use-color \
+-    --summary-only \
+-    --Xdemangler=rustfilt \
+-    --ignore-filename-regex='/.cargo/registry' \
+-    --ignore-filename-regex='/.rustup/toolchains' \
+-    --ignore-filename-regex='/rustc' \
+-    --ignore-filename-regex='tests/' \
+-    "--instr-profile=${coverage_dir}/raw/merge.profdata" \
+-    $(printf -- "-object %s " $(cat "${coverage_dir}/raw/filenames.txt")) \
+-  > "${coverage_dir}/report_without_tests.txt"
+-
+-cargo cov -- show --format=html \
+-    --Xdemangler=rustfilt \
+-    --ignore-filename-regex='/.cargo/registry' \
+-    --ignore-filename-regex='/.rustup/toolchains' \
+-    --ignore-filename-regex='/rustc' \
+-    "--instr-profile=${coverage_dir}/raw/merge.profdata" \
+-    $(printf -- "-object %s " $(cat "${coverage_dir}/raw/filenames.txt")) \
+-    "--output-dir=${coverage_dir}/html_all"
+-
+-cargo cov -- show --format=html \
+-    --Xdemangler=rustfilt \
+-    --ignore-filename-regex='/.cargo/registry' \
+-    --ignore-filename-regex='/.rustup/toolchains' \
+-    --ignore-filename-regex='/rustc' \
+-    --ignore-filename-regex='tests/' \
+-    "--instr-profile=${coverage_dir}/raw/merge.profdata" \
+-    $(printf -- "-object %s " $(cat "${coverage_dir}/raw/filenames.txt")) \
+-    "--output-dir=${coverage_dir}/html_without_tests"
+-
+-cargo cov -- export --format=lcov \
+-    --Xdemangler=rustfilt \
+-    --ignore-filename-regex='/.cargo/registry' \
+-    --ignore-filename-regex='/.rustup/toolchains' \
+-    --ignore-filename-regex='/rustc' \
+-    "--instr-profile=${coverage_dir}/raw/merge.profdata" \
+-    $(printf -- "-object %s " $(cat "${coverage_dir}/raw/filenames.txt")) \
+-  > "${coverage_dir}/export.lcov.txt"
+-
+-cargo cov -- export --format=text \
+-    --Xdemangler=rustfilt \
+-    --ignore-filename-regex='/.cargo/registry' \
+-    --ignore-filename-regex='/.rustup/toolchains' \
+-    --ignore-filename-regex='/rustc' \
+-    "--instr-profile=${coverage_dir}/raw/merge.profdata" \
+-    $(printf -- "-object %s " $(cat "${coverage_dir}/raw/filenames.txt")) \
+-  > "${coverage_dir}/export.json"
+-
+-popd
+\ No newline at end of file

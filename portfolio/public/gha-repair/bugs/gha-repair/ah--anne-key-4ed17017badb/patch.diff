@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 771f7a3..7241c33 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -26,11 +26,6 @@ jobs:
+         with:
+           token: ${{ secrets.GITHUB_TOKEN }}
+           args: --release --features use_semihosting
+-      - name: Run cargo build with semihosting
+-        uses: actions-rs/cargo@v1
+-        with:
+-          command: build
+-          args: --release --features use_semihosting
+ 
+   build:
+     name: build DFU

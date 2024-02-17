@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index b785c58..3c2ccaa 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -56,6 +56,7 @@ jobs:
+     steps:
+       - uses: actions/checkout@v3
+       - uses: dtolnay/rust-toolchain@miri
++      - run: cargo miri setup
+       - run: cargo miri test
+         env:
+           MIRIFLAGS: -Zmiri-strict-provenance

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/microbenchmark.yml b/.github/workflows/microbenchmark.yml
+index 12c66f7..ea38e14 100644
+--- a/.github/workflows/microbenchmark.yml
++++ b/.github/workflows/microbenchmark.yml
+@@ -16,7 +16,7 @@ permissions:
+   contents: read
+ 
+ env:
+-  GO_VERSION: 1.15.10
++  GO_VERSION: stable
+ 
+ jobs:
+   microbenchmark:

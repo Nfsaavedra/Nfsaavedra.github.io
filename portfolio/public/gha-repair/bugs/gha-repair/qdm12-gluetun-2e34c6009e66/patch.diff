@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/markdown.yml b/.github/workflows/markdown.yml
+index 5643658..83eb223 100644
+--- a/.github/workflows/markdown.yml
++++ b/.github/workflows/markdown.yml
+@@ -4,7 +4,7 @@ on:
+     branches:
+       - master
+     paths:
+-      - README.md
++      - "**.md"
+       - .github/workflows/markdown.yml
+ jobs:
+   markdown:

@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/rust.yml b/.github/workflows/rust.yml
+index b064dd9..bb5a368 100644
+--- a/.github/workflows/rust.yml
++++ b/.github/workflows/rust.yml
+@@ -1,10 +1,9 @@
+ name: Rust
+ 
+-on: [push,  pull_request]
++on: [push, pull_request]
+ 
+ jobs:
+   build:
+-
+     runs-on: ubuntu-latest
+     strategy:
+         matrix:

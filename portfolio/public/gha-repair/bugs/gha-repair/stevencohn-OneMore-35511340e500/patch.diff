@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/winget-releaser.yml b/.github/workflows/winget-releaser.yml
+index 83936d8..1617128 100644
+--- a/.github/workflows/winget-releaser.yml
++++ b/.github/workflows/winget-releaser.yml
+@@ -8,7 +8,7 @@ jobs:
+     steps:
+       - uses: vedantmgoyal2009/winget-releaser@v2
+         with:
+-          identifier: Package.Identifier
++          identifier: stevencohn.OneMore
+           installers-regex: '\.msi$' # Only .msi files
+           token: ${{ secrets.WINGET_TOKEN }}
+     

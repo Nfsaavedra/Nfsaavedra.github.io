@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 104dc14..5d0bb4e 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -53,7 +53,7 @@ jobs:
+           overwrite: true
+ 
+   linux:
+-    runs-on: ubuntu-latest
++    runs-on: ubuntu-18.04
+ 
+     steps:
+       - uses: actions/checkout@v2

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/tests.yml b/.github/workflows/tests.yml
+index 9e4f645..a739e53 100644
+--- a/.github/workflows/tests.yml
++++ b/.github/workflows/tests.yml
+@@ -22,7 +22,7 @@ jobs:
+       - name: Set up python
+         uses: actions/setup-python@v2
+         with:
+-          python-version: ${{ matrix.python }}
++          python-version: '3.11'
+       - name: Install poetry
+         uses: snok/install-poetry@v1
+       - name: Install dependencies

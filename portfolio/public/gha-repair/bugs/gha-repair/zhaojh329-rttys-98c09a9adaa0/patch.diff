@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index a739b4b..3fff92e 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -36,7 +36,7 @@ jobs:
+         uses: battila7/get-version-action@v2
+       - uses: actions/setup-go@v2
+         with:
+-          go-version: 1.15.7
++          go-version: 1.16.0
+       - id: release-asset
+         env:
+           target: ${{ matrix.target }}

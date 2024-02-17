@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 1da1bf4..5643542 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -16,4 +16,5 @@ jobs:
+       with:
+         branch: master
+         work-dir: cachix
++        hackage-token: ${{ secrets.HACKAGE_AUTH_TOKEN }}
+         
+\ No newline at end of file

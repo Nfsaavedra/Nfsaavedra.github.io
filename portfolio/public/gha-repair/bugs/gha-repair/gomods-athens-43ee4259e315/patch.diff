@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/goreleaser.yml b/.github/workflows/goreleaser.yml
+index d4dd696..f82604d 100644
+--- a/.github/workflows/goreleaser.yml
++++ b/.github/workflows/goreleaser.yml
+@@ -12,7 +12,7 @@ jobs:
+       - name: unshallow
+         run: git fetch --prune --unshallow
+       - name: setup-go
+-        uses: actions/setup-go@v2
++        uses: actions/setup-go@v3
+         with:
+           go-version: "1.20"
+       - name: capture current date

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/deploy.yml b/.github/workflows/deploy.yml
+index 8b809b7..f8a8292 100644
+--- a/.github/workflows/deploy.yml
++++ b/.github/workflows/deploy.yml
+@@ -38,6 +38,6 @@ jobs:
+         uses: Azure/k8s-deploy@v1
+         with:
+           manifests: |
+-              bot/deployment.yaml
++              namespaces/default/bot/deployment.yaml
+           images: 'ghcr.io/python-discord/bot:${{ steps.sha_tag.outputs.tag }}'
+           kubectl-version: 'latest'

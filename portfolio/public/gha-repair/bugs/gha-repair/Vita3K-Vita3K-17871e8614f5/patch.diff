@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/c-cpp.yml b/.github/workflows/c-cpp.yml
+index d9b6fd4..b84710a 100644
+--- a/.github/workflows/c-cpp.yml
++++ b/.github/workflows/c-cpp.yml
+@@ -40,7 +40,6 @@ jobs:
+     steps:
+       - name: Set up build environment (macos-latest)
+         run: |
+-          sudo xcode-select -s "/Applications/Xcode_11.7.app"
+           brew install ccache boost
+           echo "/usr/local/opt/ccache/libexec" >> $GITHUB_PATH
+           echo "CCACHE_DIR=/tmp/ccache" >> $GITHUB_ENV

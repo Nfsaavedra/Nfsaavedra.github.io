@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/build-and-test.yml b/.github/workflows/build-and-test.yml
+index 8251537..a95d68d 100644
+--- a/.github/workflows/build-and-test.yml
++++ b/.github/workflows/build-and-test.yml
+@@ -57,6 +57,7 @@ jobs:
+         if: "${{ contains(matrix.cmake_args, 'mingw') }}"
+         run: |-
+           sudo dpkg --add-architecture i386  # for wine32
++          sudo apt-add-repository ppa:ondrej/php -y  # due to libwine:i386 conflicts
+           sudo apt-get update  # again, due to new architecture
+           sudo apt-get install --yes --no-install-recommends -V \
+               mingw-w64 \

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/release.yaml b/.github/workflows/release.yaml
+index dca0c66..e84ca12 100644
+--- a/.github/workflows/release.yaml
++++ b/.github/workflows/release.yaml
+@@ -46,6 +46,7 @@ jobs:
+       #     prerelease: true
+ 
+       - name: Create Release
++        id: create_release
+         uses: release-drafter/release-drafter@v5
+         env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 7c6c166..750bee9 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -60,7 +60,7 @@ jobs:
+               run: mysql -uroot -proot -e "grant all privileges on *.* to 'testing'@'%' with grant option;" --port 13306
+ 
+             - name: Install Composer dependencies
+-              run: composer install
++              run: composer install --no-ansi --no-interaction
+ 
+             - name: Run tests
+               run: ./vendor/bin/phpunit

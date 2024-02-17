@@ -1,0 +1,21 @@
+diff --git a/.github/workflows/release.yaml b/.github/workflows/release.yaml
+index 966ebf5..2d5ce81 100644
+--- a/.github/workflows/release.yaml
++++ b/.github/workflows/release.yaml
+@@ -64,11 +64,11 @@ jobs:
+             ## What’s Changed
+ 
+             $CHANGES
+-          categories:
+-            - title: "🚀 Features"
+-              label: "feature"
+-            - title: "🐛 Bug Fixes"
+-              label: "fix"
++          # categories:
++          #   - title: "🚀 Features"
++          #     label: "feature"
++          #   - title: "🐛 Bug Fixes"
++          #     label: "fix"
+ 
+       - name: Upload Release Asset
+         id: upload-release-asset 

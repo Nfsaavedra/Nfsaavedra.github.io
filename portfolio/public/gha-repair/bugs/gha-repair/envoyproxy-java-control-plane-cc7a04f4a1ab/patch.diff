@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/scheduled.yml b/.github/workflows/scheduled.yml
+index 5670209..216e844 100644
+--- a/.github/workflows/scheduled.yml
++++ b/.github/workflows/scheduled.yml
+@@ -14,7 +14,7 @@ jobs:
+ 
+   call-update-protobuf:
+     permissions:
+-      contents: read
++      contents: write
+       pull-requests: write
+     needs: call-compare-envoy-versions-workflow
+     if: ${{ needs.call-compare-envoy-versions-workflow.outputs.target-version != 'noop' }}

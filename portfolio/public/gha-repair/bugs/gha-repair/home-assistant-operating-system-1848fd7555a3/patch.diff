@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yaml b/.github/workflows/build.yaml
+index efdaff0..fb28330 100644
+--- a/.github/workflows/build.yaml
++++ b/.github/workflows/build.yaml
+@@ -88,7 +88,7 @@ jobs:
+           fi
+ 
+       - name: Create build matrix
+-        uses: actions/github-script@v6
++        uses: actions/github-script@v7
+         id: generate_matrix
+         with:
+           script: |

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/on-pull-request.yml b/.github/workflows/on-pull-request.yml
+index 2c93d96..f0e8d8f 100644
+--- a/.github/workflows/on-pull-request.yml
++++ b/.github/workflows/on-pull-request.yml
+@@ -8,6 +8,7 @@ on:
+     branches: [ master ]
+   pull_request:
+     branches: [ master ]
++  workflow_dispatch:
+ 
+ jobs:
+   build:

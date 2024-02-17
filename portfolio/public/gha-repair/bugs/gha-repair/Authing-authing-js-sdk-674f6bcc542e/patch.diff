@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/publish.yml b/.github/workflows/publish.yml
+index 1401bfc..d25b9ca 100644
+--- a/.github/workflows/publish.yml
++++ b/.github/workflows/publish.yml
+@@ -81,6 +81,7 @@ jobs:
+           VERESION: ${{ github.event.inputs.version }}
+     
+       - name: release
++        if: ${{ github.ref_name == 'master' }}
+         uses: actions/github-script@v3
+         with:
+           script: |

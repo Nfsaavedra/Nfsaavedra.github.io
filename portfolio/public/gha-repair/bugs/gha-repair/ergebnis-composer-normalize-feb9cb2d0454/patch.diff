@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/integrate.yaml b/.github/workflows/integrate.yaml
+index 625ae08..879aed8 100644
+--- a/.github/workflows/integrate.yaml
++++ b/.github/workflows/integrate.yaml
+@@ -251,6 +251,7 @@ jobs:
+     runs-on: "ubuntu-latest"
+ 
+     strategy:
++      fail-fast: false
+       matrix:
+         php-version:
+           - "7.1"

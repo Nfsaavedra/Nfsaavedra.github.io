@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/ci.yaml b/.github/workflows/ci.yaml
+index b05326e..5a7d3fb 100644
+--- a/.github/workflows/ci.yaml
++++ b/.github/workflows/ci.yaml
+@@ -2,8 +2,12 @@ name: Continuous Integration Tests
+ on:
+   push:
+     branches: [master, develop, github_actions]
++    paths-ignore:
++      - 'docs/**'
+   pull_request:
+     branches: [master, develop, github_actions]
++    paths-ignore:
++      - 'docs/**'
+   # Allows manual invocation:
+   workflow_dispatch:
+ 

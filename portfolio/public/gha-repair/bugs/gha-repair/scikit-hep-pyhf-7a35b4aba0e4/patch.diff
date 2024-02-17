@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/tag.yml b/.github/workflows/tag.yml
+index d6153f0..656f4e0 100644
+--- a/.github/workflows/tag.yml
++++ b/.github/workflows/tag.yml
+@@ -44,6 +44,9 @@ jobs:
+         fi
+     - name: Checkout repository
+       uses: actions/checkout@v2
++      # Get history for checkout master to work
++    - run: |
++        git fetch --prune --unshallow
+     - name: Set up git user
+       run: |
+         git config --local user.email "action@github.com"

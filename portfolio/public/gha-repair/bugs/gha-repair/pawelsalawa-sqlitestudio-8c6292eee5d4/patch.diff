@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/lin_release.yml b/.github/workflows/lin_release.yml
+index bf0750e..3d6a97e 100644
+--- a/.github/workflows/lin_release.yml
++++ b/.github/workflows/lin_release.yml
+@@ -39,7 +39,7 @@ jobs:
+ 
+             - name: Install SQLite3
+               run: |
+-                sudo apt-get remove --auto-remove sqlite3 libsqlite3-0
++                sudo apt-get remove sqlite3 libsqlite3-0
+                 wget http://sqlite.org/$SQLITE_RELEASE_YEAR/sqlite-amalgamation-$SQLITE_VERSION.zip
+                 unzip sqlite-amalgamation-$SQLITE_VERSION.zip
+                 cd sqlite-amalgamation-$SQLITE_VERSION

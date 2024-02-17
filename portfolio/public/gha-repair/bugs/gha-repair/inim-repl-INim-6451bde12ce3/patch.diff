@@ -1,0 +1,61 @@
+diff --git a/.github/workflows/nim.yml b/.github/workflows/nim.yml
+index ae55682..a15961a 100644
+--- a/.github/workflows/nim.yml
++++ b/.github/workflows/nim.yml
+@@ -16,25 +16,11 @@ jobs:
+ 
+     steps:
+     - uses: actions/checkout@v2
++    - name: setup choosenim
++      run: ./setupci.sh
+     - name: Update nimble
+       run: nimble update
+     - name: Build INim
+       run: nimble build
+     - name: Run tests
+       run: nimble test -d:prompt_no_history
+-
+-  build-devel:
+-
+-    runs-on: ubuntu-latest
+-
+-    container:
+-      image: nimlang/nim:devel
+-
+-    steps:
+-    - uses: actions/checkout@v2
+-    - name: Update nimble
+-      run: nimble update
+-    - name: Build INim
+-      run: nim -v && nimble build --verbose
+-    - name: Run tests
+-      run: nimble test -d:prompt_no_history
+diff --git a/setupci.sh b/setupci.sh
+new file mode 100755
+index 0000000..891402c
+--- /dev/null
++++ b/setupci.sh
+@@ -0,0 +1,23 @@
++#! /bin/bash
++
++# This script borrowed from the Nimble project - Thanks!
++
++export GITBIN=$HOME/.choosenim/git/bin
++export PATH=$HOME/.nimble/bin:$GITBIN:$PATH
++
++if ! type -P choosenim &> /dev/null; then
++  echo "Fresh install"
++  mkdir -p $GITBIN
++
++  export CHOOSENIM_CHOOSE_VERSION="$BRANCH --latest"
++  curl https://nim-lang.org/choosenim/init.sh -sSf > init.sh
++  sh init.sh -y
++  cp $HOME/.nimble/bin/choosenim$EXT $GITBIN/.
++
++else
++  echo "Already installed"
++  rm -rf $HOME/.choosenim/current
++  choosenim update $BRANCH --latest
++  choosenim $BRANCH
++fi
++

@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/rust.yml b/.github/workflows/rust.yml
+index 90191a7..9b78d93 100644
+--- a/.github/workflows/rust.yml
++++ b/.github/workflows/rust.yml
+@@ -1,4 +1,4 @@
+-name: Rust
++name: Build
+ 
+ on:
+   push:
+@@ -18,6 +18,8 @@ jobs:
+ 
+     steps:
+     - uses: actions/checkout@v2
++    - name: Install XCB deps
++      run: sudo apt-get install -y libxrandr-dev xcb
+     - name: Build
+       run: cargo build --verbose
+     - name: Run tests

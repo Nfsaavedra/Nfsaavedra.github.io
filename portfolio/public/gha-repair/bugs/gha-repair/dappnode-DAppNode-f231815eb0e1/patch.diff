@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 3d4d0eb..4479dc2 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -80,7 +80,7 @@ jobs:
+           tag_name: ${{ github.event.inputs.core }}
+           prerelease: true
+           files: |
+-            ./images/DAppNode-debian-bullseye-amd64.iso
++            ./DAppNode-*-amd64.iso
+             ./scripts/dappnode_install.sh
+             ./scripts/dappnode_install_pre.sh
+             ./scripts/dappnode_uninstall.sh

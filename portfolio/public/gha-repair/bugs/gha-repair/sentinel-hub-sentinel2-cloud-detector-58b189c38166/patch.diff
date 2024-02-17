@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci_action.yml b/.github/workflows/ci_action.yml
+index a373a51..ab1c827 100644
+--- a/.github/workflows/ci_action.yml
++++ b/.github/workflows/ci_action.yml
+@@ -102,7 +102,7 @@ jobs:
+           pytest -m "not sh_integration"
+ 
+       - name: Upload code coverage
+-        if: matrix.python-version == '3.9'
++        if: ${{ matrix.python-version == '3.9' && github.event_name == 'push'}}
+         uses: codecov/codecov-action@v2
+         with:
+           files: coverage.xml

@@ -1,0 +1,192 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 4fb6c48..28b4e85 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -17,5 +17,13 @@ jobs:
+       with:
+         go-version: 1.18
+ 
+-    - name: Build
+-      run: go build -v ./...
++    - name: Test
++      run: go test ./...
++
++  node:
++    runs-on: ubuntu-latest
++    steps:
++    - uses: actions/checkout@v3
++
++    - name: Test
++      run: cd npm && node test.js
+diff --git a/npm/index.js b/npm/index.js
+new file mode 100644
+index 0000000..5af795f
+--- /dev/null
++++ b/npm/index.js
+@@ -0,0 +1,92 @@
++void async function main() {
++  const process = await import('node:process')
++  let input = ''
++  process.stdin.setEncoding('utf8')
++  for await (const chunk of process.stdin)
++    input += chunk
++  const args = process.argv.slice(2)
++
++  let json
++  try {
++    json = JSON.parse(input)
++  } catch (err) {
++    try {
++      json = eval(input)
++    } catch (_) {
++      process.stderr.write(`Invalid JSON: ${err.message}\n`)
++      process.exit(1)
++    }
++  }
++
++  let i, code, output = json
++  for ([i, code] of args.entries()) try {
++    output = transform(output, code)
++  } catch (err) {
++    printErr(err)
++    process.exit(1)
++  }
++
++  if (typeof output === 'undefined')
++    process.stderr.write('undefined\n')
++  else if (typeof output === 'string')
++    console.log(output)
++  else
++    console.log(JSON.stringify(output, null, 2))
++
++  function printErr(err) {
++    let pre = args.slice(0, i).join(' ')
++    let post = args.slice(i + 1).join(' ')
++    if (pre.length > 20) pre = '...' + pre.substring(pre.length - 20)
++    if (post.length > 20) post = post.substring(0, 20) + '...'
++    process.stderr.write(
++      `\n  ${pre} ${code} ${post}\n` +
++      `  ${' '.repeat(pre.length + 1)}${'^'.repeat(code.length)}\n` +
++      `\n${err.stack || err}\n`
++    )
++  }
++}()
++
++function transform(json, code) {
++  if ('.' === code)
++    return json
++
++  if ('?' === code)
++    return Object.keys(json)
++
++  if (/^(\.\w*)+\[]/.test(code))
++    code = fold(code.split('[]'))
++
++  if (/^\.\[/.test(code))
++    return eval(`(function () {
++      return this${code.substring(1)}
++    })`).call(json)
++
++  if (/^\./.test(code))
++    return eval(`(function () {
++      return this${code}
++    })`).call(json)
++
++  if (/^map\(.+?\)$/.test(code))
++    return eval(`(function () {
++      return this.map(x => apply(x, ${code.substring(4, code.length - 1)}))
++    })`).call(json)
++
++  const fn = eval(`(function () {
++    return ${code}
++  })`).call(json)
++
++  return apply(json, fn)
++}
++
++function apply(json, fn) {
++  if (typeof fn === 'function') return fn(json)
++  return fn
++}
++
++function fold(s) {
++  if (s.length === 1)
++    return 'x => x' + s[0]
++  let obj = s.shift()
++  obj = obj === '.' ? 'x' : 'x' + obj
++  return `x => Object.values(${obj}).flatMap(${fold(s)})`
++}
+diff --git a/npm/test.js b/npm/test.js
+new file mode 100644
+index 0000000..1181ef1
+--- /dev/null
++++ b/npm/test.js
+@@ -0,0 +1,68 @@
++async function test(name, fn) {
++  try {
++    await fn(await import('node:assert/strict'))
++    console.log(`✓ ${name}`)
++  } catch (err) {
++    console.error(`✗ ${name}`)
++    throw err
++  }
++}
++
++async function run(json, code = '') {
++  const {spawnSync} = await import('node:child_process')
++  return spawnSync(`echo '${JSON.stringify(json)}' | node index.js ${code}`, {
++    stdio: 'pipe',
++    encoding: 'utf8',
++    shell: true
++  })
++}
++
++void async function main() {
++  await test('passes json as is', async t => {
++    const {stdout} = await run([{'greeting': 'hello world'}])
++    t.deepEqual(JSON.parse(stdout), [{'greeting': 'hello world'}])
++  })
++
++  await test('works with anon func', async t => {
++    const {stdout} = await run({'key': 'value'}, '\'function (x) { return x.key }\'')
++    t.equal(stdout, 'value\n')
++  })
++
++  await test('works with arrow func', async t => {
++    const {stdout} = await run({'key': 'value'}, '\'x => x.key\'')
++    t.equal(stdout, 'value\n')
++  })
++
++  await test('works with arrow func with param brackets', async t => {
++    const {stdout} = await run({'key': 'value'}, '\'(x) => x.key\'')
++    t.equal(stdout, 'value\n')
++  })
++
++  await test('this is json', async t => {
++    const {stdout} = await run([1, 2, 3, 4, 5], '\'this.map(x => x * this.length)\'')
++    t.deepEqual(JSON.parse(stdout), [5, 10, 15, 20, 25])
++  })
++
++  await test('args chain works', async t => {
++    const {stdout} = await run({'items': ['foo', 'bar']}, '\'this.items\' \'.\' \'x => x[1]\'')
++    t.equal(stdout, 'bar\n')
++  })
++
++  await test('flat map works', async t => {
++    const {stdout} = await run({master: {foo: [{bar: [{val: 1}]}]}}, '.master.foo[].bar[].val')
++    t.deepEqual(JSON.parse(stdout), [1])
++  })
++
++  await test('flat map works on the first level', async t => {
++    const {stdout} = await run([{val: 1}, {val: 2}], '.[].val')
++    t.deepEqual(JSON.parse(stdout), [1, 2])
++  })
++
++  await test('invalid code argument', async t => {
++    const json = {foo: 'bar'}
++    const code = '".foo.toUpperCase("'
++    const {stderr, status} = await run(json, code)
++    t.strictEqual(status, 1)
++    t.ok(stderr.includes(`SyntaxError: Unexpected token '}'`))
++  })
++}()

@@ -1,0 +1,27 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index f1d8191..ea05eff 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -18,4 +18,20 @@ jobs:
+         branch: master
+         work-dir: cachix
+         hackage-token: ${{ secrets.HACKAGE_AUTH_TOKEN }}
+-        
+\ No newline at end of file
++    - uses: cachix/install-nix-action@v20
++    - uses: cachix/cachix-action@v12
++      with:
++        name: cachix
++    - run: nix build -L '.#ci' '.#cachix' --show-trace --impure
++  pin:
++    needs: release
++    runs-on: ubuntu-latest
++    steps:
++    - uses: actions/checkout@v3
++    - uses: cachix/install-nix-action@v20
++    - uses: cachix/cachix-action@v12
++      with:
++        name: cachix
++    - run: cachix pin cachix ${{ github.ref_name }} $(nix build '.#cachix' --impure --print-out-paths)
++
++

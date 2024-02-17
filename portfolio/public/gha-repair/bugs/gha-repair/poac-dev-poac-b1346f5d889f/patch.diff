@@ -1,0 +1,22 @@
+diff --git a/.github/workflows/linux.yml b/.github/workflows/linux.yml
+index 551c0b2..a9c5365 100644
+--- a/.github/workflows/linux.yml
++++ b/.github/workflows/linux.yml
+@@ -217,7 +217,7 @@ jobs:
+       - run: file ./build/poac
+ 
+       - name: Upload pre-built binary
+-        uses: actions/upload-artifact@v1
++        uses: actions/upload-artifact@v2.2.1
+         if: matrix.build_type == 'Release'
+         with:
+           name: ${{ github.job }}-${{ matrix.package_prefix }}${{ matrix.compiler_version }}
+@@ -422,7 +422,7 @@ jobs:
+       - run: file ./build/poac
+ 
+       - name: Upload pre-built binary
+-        uses: actions/upload-artifact@v1
++        uses: actions/upload-artifact@v2.2.1
+         if: matrix.build_type == 'Release'
+         with:
+           name: ${{ matrix.target_platform }}-unknown-linux-gnu

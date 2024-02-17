@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/auto-merge.yml b/.github/workflows/auto-merge.yml
+index de80807..02adbbe 100644
+--- a/.github/workflows/auto-merge.yml
++++ b/.github/workflows/auto-merge.yml
+@@ -6,7 +6,7 @@ jobs:
+   enable-auto-merge:
+     runs-on: ubuntu-latest
+ 
+-    if: github.event.pull_request.user.login == 'dependabot[bot]' && contains(github.event.pull_request.labels.*.name, 'dependencies')
++    if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
+     steps:
+     - uses: alexwilson/enable-github-automerge-action@main
+       with:

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/automerge.yml b/.github/workflows/automerge.yml
+index 9924257..b5aacfc 100644
+--- a/.github/workflows/automerge.yml
++++ b/.github/workflows/automerge.yml
+@@ -2,6 +2,7 @@ name: Automerge
+ on: pull_request
+ jobs:
+   auto-merge:
++    runs-on: ubuntu-latest
+     steps:
+       - uses: KeisukeYamashita/auto-pull-request-merge@v1
+         with:

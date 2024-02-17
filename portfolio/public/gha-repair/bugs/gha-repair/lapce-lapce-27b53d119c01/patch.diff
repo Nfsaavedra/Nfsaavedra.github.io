@@ -1,0 +1,40 @@
+diff --git a/.github/dependabot.yml b/.github/dependabot.yml
+new file mode 100644
+index 0000000..0a8ff26
+--- /dev/null
++++ b/.github/dependabot.yml
+@@ -0,0 +1,11 @@
++version: 2
++updates:
++  - package-ecosystem: 'github-actions'
++    directory: '/'
++    schedule:
++      interval: 'weekly'
++
++  - package-ecosystem: 'cargo'
++    directory: '/'
++    schedule:
++      interval: 'weekly'
+\ No newline at end of file
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index ff7579e..8d8f1a0 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -31,7 +31,7 @@ jobs:
+           rustup component add llvm-tools-preview
+ 
+       - name: Cache Rust dependencies
+-        uses: Swatinem/rust-cache@v1
++        uses: Swatinem/rust-cache@v2
+ 
+       - name: Build
+         run: cargo build
+@@ -86,7 +86,7 @@ jobs:
+         run: sudo apt-get update && sudo apt-get install cmake pkg-config libgtk-3-dev
+ 
+       - name: Cache Rust dependencies
+-        uses: Swatinem/rust-cache@v1
++        uses: Swatinem/rust-cache@v2
+ 
+       - name: Run clippy
+         run: cargo clippy -- -D warnings

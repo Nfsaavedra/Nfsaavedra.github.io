@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/pkgdown.yaml b/.github/workflows/pkgdown.yaml
+index 090ec87..22ba858 100644
+--- a/.github/workflows/pkgdown.yaml
++++ b/.github/workflows/pkgdown.yaml
+@@ -14,7 +14,7 @@ jobs:
+ 
+       - uses: r-lib/actions/setup-r@v2
+         with:
+-          r-version: 4.2.2
++          r-version: 4.3.1
+ 
+       - uses: r-lib/actions/setup-pandoc@v2
+       

@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 9a5aafc..ded1b8b 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -3,9 +3,7 @@ name: Build
+ on: 
+   workflow_run:
+     workflows: ["Lint"]
+-    types: [completed] 
+-    branches:
+-      - master
++    types: [completed]
+     paths-ignore:
+       - '**.md'  
+   

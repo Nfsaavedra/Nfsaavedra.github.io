@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/check-bioc.yml b/.github/workflows/check-bioc.yml
+index 1ab57a5..79ad849 100644
+--- a/.github/workflows/check-bioc.yml
++++ b/.github/workflows/check-bioc.yml
+@@ -252,6 +252,8 @@ jobs:
+         run: |
+           covr::codecov()
+         shell: Rscript {0}
++      - name: Upload coverage to Codecov
++        uses: codecov/codecov-action@v1
+ 
+       - name: Install package
+         if: github.ref == 'refs/heads/master' && env.run_pkgdown == 'true' && runner.os == 'Linux'

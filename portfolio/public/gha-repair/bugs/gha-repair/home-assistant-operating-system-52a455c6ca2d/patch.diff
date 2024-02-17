@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/stale.yml b/.github/workflows/stale.yml
+index d03cca2..1b13520 100644
+--- a/.github/workflows/stale.yml
++++ b/.github/workflows/stale.yml
+@@ -3,7 +3,7 @@ name: Stale
+ # yamllint disable-line rule:truthy
+ on:
+   schedule:
+-    - cron: "0 * * * *"
++    - cron: "40 5 * * *"
+   workflow_dispatch:
+ 
+ jobs:

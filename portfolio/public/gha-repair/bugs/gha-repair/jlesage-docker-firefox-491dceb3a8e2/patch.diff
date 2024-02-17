@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build-image.yml b/.github/workflows/build-image.yml
+index 8372a98..2f0f1a9 100644
+--- a/.github/workflows/build-image.yml
++++ b/.github/workflows/build-image.yml
+@@ -118,7 +118,7 @@ jobs:
+           password: ${{ secrets.DOCKERHUB_PASSWORD }}
+ 
+       - name: Build and push
+-        uses: docker/build-push-action@v3
++        uses: docker/build-push-action@v4
+         with:
+           push: ${{ steps.prep.outputs.is_release == 'yes' }}
+           platforms: ${{ env.PLATFORMS }}

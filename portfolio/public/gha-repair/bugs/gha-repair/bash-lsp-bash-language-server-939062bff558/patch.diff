@@ -1,0 +1,40 @@
+diff --git a/.github/workflows/verify.yml b/.github/workflows/verify.yml
+index a7c3527..cc95d56 100644
+--- a/.github/workflows/verify.yml
++++ b/.github/workflows/verify.yml
+@@ -13,9 +13,21 @@ jobs:
+ 
+     steps:
+       - uses: actions/checkout@v2
++
+       - name: Use Node.js ${{ matrix.node-version }}
+         uses: actions/setup-node@v1
+         with:
+           node-version: ${{ matrix.node-version }}
++
+       - run: yarn install
++        name: Install Dependencies
++
+       - run: yarn verify:bail
++        name: Verify changes
++
++      - name: Publish coverage to codecov.io
++        uses: codecov/codecov-action@v1
++        if: success() && matrix.node-version == '12.x'
++        with:
++          token: ${{ secrets.CODECOV_TOKEN }}
++          yml: ./codecov.yml
+diff --git a/codecov.yml b/codecov.yml
+new file mode 100644
+index 0000000..01be4d7
+--- /dev/null
++++ b/codecov.yml
+@@ -0,0 +1,8 @@
++coverage:
++  status:
++    project: on
++    patch: off
++
++    project:
++      default:
++        threshold: 1%

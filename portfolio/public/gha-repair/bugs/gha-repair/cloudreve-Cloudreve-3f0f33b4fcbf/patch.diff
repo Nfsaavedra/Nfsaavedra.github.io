@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 7a42eae..ed4fbdd 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -8,7 +8,7 @@ jobs:
+ 
+   test:
+     name: Test
+-    runs-on: ubuntu-latest
++    runs-on: ubuntu-16.04
+     steps:
+ 
+     - name: Set up Go 1.13

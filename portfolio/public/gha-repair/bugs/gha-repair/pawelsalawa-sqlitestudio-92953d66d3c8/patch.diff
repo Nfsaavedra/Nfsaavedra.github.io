@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/lin_release.yml b/.github/workflows/lin_release.yml
+index 4c08445..6e96aad 100644
+--- a/.github/workflows/lin_release.yml
++++ b/.github/workflows/lin_release.yml
+@@ -105,7 +105,7 @@ jobs:
+               
+             - name: Install other tools/dependencies
+               run: |
+-                sudo apt install libreadline-dev libncurses5-dev patchelf
++                sudo apt install libreadline-dev libncurses5-dev patchelf chrpath
+                 echo "${{ github.workspace }}/../Qt/${{ env.QT_VERSION }}/gcc_64/bin" >> $GITHUB_PATH
+  
+             - uses: actions/setup-python@v2

@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/docker-image.yml b/.github/workflows/docker-image.yml
+index 121721a..37ef1f6 100644
+--- a/.github/workflows/docker-image.yml
++++ b/.github/workflows/docker-image.yml
+@@ -2,8 +2,8 @@ name: Build and Push Docker Image
+ 
+ on:
+   push:
+-    branches:
+-      - '*'
++    tags:
++      - 'v*'
+ 
+ jobs:
+   docker-build-push:

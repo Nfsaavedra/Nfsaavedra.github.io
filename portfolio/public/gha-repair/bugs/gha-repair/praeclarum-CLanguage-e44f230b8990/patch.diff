@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build-nugets.yml b/.github/workflows/build-nugets.yml
+index 409583b..ed4e764 100644
+--- a/.github/workflows/build-nugets.yml
++++ b/.github/workflows/build-nugets.yml
+@@ -15,7 +15,7 @@ jobs:
+     - uses: actions/checkout@v2
+     - name: Update Versions
+       env:
+-        VERSION_PREFIX: 0.18
++        VERSION_PREFIX: 0.19
+         VERSION_SUFFIX: ${{github.run_number}}
+       run: |
+         VERSION=$VERSION_PREFIX.$VERSION_SUFFIX

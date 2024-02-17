@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/molecule.yml b/.github/workflows/molecule.yml
+index 3109199..cbc1696 100644
+--- a/.github/workflows/molecule.yml
++++ b/.github/workflows/molecule.yml
+@@ -17,6 +17,7 @@ jobs:
+     name: Molecule
+     runs-on: ubuntu-20.04
+     strategy:
++      fail-fast: false
+       matrix:
+         scenario:
+           - default

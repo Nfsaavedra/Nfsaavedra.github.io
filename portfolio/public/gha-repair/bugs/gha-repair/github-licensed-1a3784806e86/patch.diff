@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 4063b71..e49b501 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -93,7 +93,7 @@ jobs:
+     steps:
+     - uses: actions/checkout@v2
+     - name: Setup php
+-      uses: nanasess/setup-php@v1.0.2
++      uses: nanasess/setup-php@v3.0.4
+       with:
+         php-version: ${{ matrix.php }}
+     - name: Set up Ruby

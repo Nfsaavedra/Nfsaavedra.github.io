@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/avatars.yml b/.github/workflows/avatars.yml
+index de8e046..22f14a3 100644
+--- a/.github/workflows/avatars.yml
++++ b/.github/workflows/avatars.yml
+@@ -35,7 +35,7 @@ jobs:
+       - name: Commit Changes
+         if: always()
+         run: |
+-          git add images/avatars
++          git add site/assets/img/avatars
+           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+           git config --global user.name "GitHub Action"
+           git commit -a -m "Update avatars"

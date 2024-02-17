@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/tests.yml b/.github/workflows/tests.yml
+index 9cbec40..ce09f59 100644
+--- a/.github/workflows/tests.yml
++++ b/.github/workflows/tests.yml
+@@ -20,6 +20,7 @@ on:
+             - '**.pro'
+             - '**.pri'
+             - '**.ui'
++            - '**.qrc'
+             - '**/tests.yml'
+ 
+ jobs:

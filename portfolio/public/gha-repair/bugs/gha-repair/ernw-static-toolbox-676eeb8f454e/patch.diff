@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/build-nmap.yml b/.github/workflows/build-nmap.yml
+index d79a2f9..bd6832d 100644
+--- a/.github/workflows/build-nmap.yml
++++ b/.github/workflows/build-nmap.yml
+@@ -145,6 +145,7 @@ jobs:
+           run: ls -laR /tmp/releases
+ 
+         - name: Tag Release
++          id: tag_release
+           run: |
+             set +e
+             git fetch --quiet --prune --tags

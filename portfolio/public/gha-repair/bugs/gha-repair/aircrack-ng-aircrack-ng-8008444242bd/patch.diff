@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/scanbuild.yml b/.github/workflows/scanbuild.yml
+index 3729fde..88b832f 100644
+--- a/.github/workflows/scanbuild.yml
++++ b/.github/workflows/scanbuild.yml
+@@ -25,7 +25,7 @@ jobs:
+         name: Build and run scan-build
+         id: scanbuild
+         run: |
+-          SCANBUILD_DIR=/scanbuild
++          SCANBUILD_DIR=/tmp/scanbuild
+           CPUS=$(nproc)
+           autoreconf -vif
+           CC=clang CXX=clang++ ./configure --with-experimental --enable-maintainer-mode || { cat config.log; exit 1; }

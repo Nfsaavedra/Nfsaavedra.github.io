@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/cron.yml b/.github/workflows/cron.yml
+index 5af6e75..6359468 100644
+--- a/.github/workflows/cron.yml
++++ b/.github/workflows/cron.yml
+@@ -25,11 +25,12 @@ jobs:
+         with:
+           token: ${{ secrets.GH_TOKEN }}
+           commit-message: 'software: update `pdm.min.lock`.'
+-          branch: update-pdm.min.lock
++          branch: update-lockfile
+           title: 'Update `pdm.min.lock`'
+           body: '*This pull request was automatically created by the `cron` GitHub Actions workflow.*'
+         id: create-pull-request
+-      - name: Automatically merge pull request
++      - if: ${{ steps.create-pull-request.outputs.pull-request-number }}
++        name: Automatically merge pull request
+         run: gh pr merge --merge --auto ${{ steps.create-pull-request.outputs.pull-request-number }}
+         env:
+           GH_TOKEN: ${{ secrets.GH_TOKEN }}

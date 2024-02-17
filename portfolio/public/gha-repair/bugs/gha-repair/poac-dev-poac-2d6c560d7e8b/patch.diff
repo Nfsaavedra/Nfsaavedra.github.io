@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/cpp.yml b/.github/workflows/cpp.yml
+index aaee393..cb42bb0 100644
+--- a/.github/workflows/cpp.yml
++++ b/.github/workflows/cpp.yml
+@@ -5,6 +5,9 @@ on:
+     branches: [ main ]
+   pull_request:
+ 
++permissions:
++  contents: read
++
+ jobs:
+   clang-tidy:
+     runs-on: ubuntu-22.04

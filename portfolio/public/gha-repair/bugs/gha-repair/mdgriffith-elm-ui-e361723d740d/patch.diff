@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/tests.yml b/.github/workflows/tests.yml
+index d9df8ac..bb1e646 100644
+--- a/.github/workflows/tests.yml
++++ b/.github/workflows/tests.yml
+@@ -35,4 +35,4 @@ jobs:
+       run: npm run test-render
+     
+     - name: Rendering test suite on saucelabs
+-      run: npm run test-render-sauce
++      run: npm run test-render-sauce-automated

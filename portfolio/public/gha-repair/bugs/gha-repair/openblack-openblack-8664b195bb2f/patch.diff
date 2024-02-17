@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/ci-vcpkg.yml b/.github/workflows/ci-vcpkg.yml
+index 0ffab52..39bca06 100644
+--- a/.github/workflows/ci-vcpkg.yml
++++ b/.github/workflows/ci-vcpkg.yml
+@@ -31,6 +31,7 @@ jobs:
+ 
+       - name: Install Linux dependencies
+         run: |
++          sudo apt update -y
+           sudo apt install -y libgl1-mesa-dev libglu1-mesa-dev
+         if: matrix.os == 'ubuntu-latest'
+ 

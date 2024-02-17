@@ -1,0 +1,58 @@
+diff --git a/.github/workflows/notify-on-regression-failure-list.json b/.github/workflows/notify-on-regression-failure-list.json
+new file mode 100644
+index 0000000..0dc9e19
+--- /dev/null
++++ b/.github/workflows/notify-on-regression-failure-list.json
+@@ -0,0 +1,19 @@
++{
++    "github_id": "slack_id",
++    "__artberger": "U02BQ7EF3LY",
++    "ben-taussig-solo": "U024KB026P7",
++    "bewebi": "U01LDKSG4TW",
++    "elcasteel": "U0239CFLF3M",
++    "gunnar-solo": "U02GW11FVJP",
++    "inFocus7": "U032J2NT4CF",
++    "__jameshbarton" : "U017SFK32D8",
++    "__jenshu": "U016LC0Q70A",
++    "__jmunozro" : "U0214QV6L3Y",
++    "kdorosh": "ULE7TSJ12",
++    "__MitchAman": "U01TH9ZJP3N",
++    "mkazin": "U02JFCX4YAE",
++    "__nfuden": "U02JCDBKEDT",
++    "__Rachael-Graham": "U02BQ7E7W3S",
++    "__saiskee": "U01D06A9NVA",
++    "sam-heilbron": "U01DAPLBEBG"
++}
+diff --git a/.github/workflows/regression-tests.yaml b/.github/workflows/regression-tests.yaml
+index 00d596c..f935d96 100644
+--- a/.github/workflows/regression-tests.yaml
++++ b/.github/workflows/regression-tests.yaml
+@@ -96,3 +96,18 @@ jobs:
+         # see what's in the cluster if we failed
+         kubectl get all -A
+         kubectl get configmaps -A
++    - name: Set pull_request_url
++      if: ${{ github.event_name == 'pull_request' && failure() }}
++      run: echo "pull_request_url=$(cat ${{ github.event_path }} | jq --raw-output .pull_request._links.html.href)" >> $GITHUB_ENV
++    - name: Set direct_message_id
++      if: ${{ github.event_name == 'pull_request' && failure() }}
++      run: echo "direct_message_id=$(cat ./.github/workflows/notify-on-regression-failure-list.json | jq -r '."${{ github.actor }}"')" >> $GITHUB_ENV
++    - name: Send Message
++      id: message-on-fail
++      if: ${{ github.event_name == 'pull_request' && failure() }}
++      shell: bash
++      run: |
++        curl -X POST https://slack.com/api/chat.postMessage\
++              -H "Content-Type: application/json; charset=utf-8"\
++              -H "Authorization: Bearer ${{ secrets.SLACKBOT_BEARER }}"\
++              -d '{"channel":"${{ env.direct_message_id }}","text":"Hey, `${{ github.actor }}`!  The <https://github.com/solo-io/gloo/actions/runs/${{github.run_id}}|regression tests> for your <${{ env.pull_request_url }}|${{ github.head_ref }} PR> have failed."}'
+diff --git a/changelog/v1.11.0-beta18/notify-on-failure.yaml b/changelog/v1.11.0-beta18/notify-on-failure.yaml
+new file mode 100644
+index 0000000..3e0df6d
+--- /dev/null
++++ b/changelog/v1.11.0-beta18/notify-on-failure.yaml
+@@ -0,0 +1,3 @@
++changelog:
++  - type: NON_USER_FACING
++    description: Send slack notifications on regression test failure on an opt-in basis.
+\ No newline at end of file

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/crankshaft.yml b/.github/workflows/crankshaft.yml
+index 85d3206..6bd26d6 100644
+--- a/.github/workflows/crankshaft.yml
++++ b/.github/workflows/crankshaft.yml
+@@ -8,6 +8,7 @@ on:
+ #      - '**'
+     tags:
+       - '*.*.*'
++      - 'csng-*'
+ #  pull_request:
+ 
+ jobs:

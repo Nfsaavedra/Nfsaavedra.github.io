@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 6e7c2e7..e0ee0f5 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -437,7 +437,7 @@ jobs:
+     needs: core
+     strategy:
+       matrix:
+-        python: [ '3.7', '3.8', '3.9', '3.10' ]
++        python: [ '3.8', '3.9', '3.10', '3.11' ]
+     steps:
+     - uses: actions/checkout@v3
+     - name: Setup python

@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 73b514d..79c754c 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -147,4 +147,4 @@ jobs:
+         env:
+           DEBUG: api
+         run: |
+-          gh release create $TAG_NAME $PRERELEASE --title "$SUBJECT" --target $GITHUB_SHA lapce-macos/* lapce-linux/* lapce-windows/*
++          gh release create $TAG_NAME $PRERELEASE --title "$TAG_NAME" --target $GITHUB_SHA lapce-macos/* lapce-linux/* lapce-windows/*

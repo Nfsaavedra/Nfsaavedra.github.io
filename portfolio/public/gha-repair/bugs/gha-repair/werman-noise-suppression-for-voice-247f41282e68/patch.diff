@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index f1e893f..23372eb 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -99,7 +99,7 @@ jobs:
+         run: |
+           zip -r linux-rnnoise linux-rnnoise
+           zip -r win-rnnoise win-rnnoise
+-          zip -r macos-rnnoise-linux macos-rnnoise
++          zip -r macos-rnnoise macos-rnnoise
+ 
+       - name: Create tag
+         id: tag_version

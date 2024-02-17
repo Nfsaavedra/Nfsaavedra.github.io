@@ -1,0 +1,24 @@
+diff --git a/.github/workflows/dotnetcore.yml b/.github/workflows/dotnetcore.yml
+index fb4f926..5aa694b 100644
+--- a/.github/workflows/dotnetcore.yml
++++ b/.github/workflows/dotnetcore.yml
+@@ -9,16 +9,12 @@ jobs:
+         runs-on: [windows-latest]
+ 
+     runs-on: ${{ matrix.runs-on }}
+-    name: Master workflow ${{ matrix.runs-on }}. 
++    name: Running tests on ${{ matrix.runs-on }}. 
+     steps:
+     - uses: actions/checkout@master
+     - name: Setup .NET Core
+       uses: actions/setup-dotnet@v1
+       with:
+         dotnet-version: 3.0.100
+-#    - name: Build & Run tests
+-#      run: dotnet test --configuration Release
+-    - name: Pack
+-      uses: dotnet pack -c Release
+-    - name: Publish
+-      run: ls ./
++    - name: Build & Run tests
++      run: dotnet test --configuration Release

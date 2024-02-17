@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/pkgdown.yaml b/.github/workflows/pkgdown.yaml
+index 9ce2851..d823882 100644
+--- a/.github/workflows/pkgdown.yaml
++++ b/.github/workflows/pkgdown.yaml
+@@ -52,6 +52,14 @@ jobs:
+       - name: Install package
+         run: R CMD INSTALL .
+ 
++      - name: Session Info
++        run: |
++          library(tidyverse)
++          library(IRanges)
++          library(gggenomes)
++          print(sessionInfo())
++        shell: Rscript {0}
++
+       - name: Configure git user
+         run: |
+           git config --global user.name "github-actions[bot]"

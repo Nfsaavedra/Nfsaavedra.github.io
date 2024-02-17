@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/release-apidocs.yml b/.github/workflows/release-apidocs.yml
+index 838b18f..2b85691 100644
+--- a/.github/workflows/release-apidocs.yml
++++ b/.github/workflows/release-apidocs.yml
+@@ -21,6 +21,7 @@ jobs:
+           git reset HEAD -- .
+           git clean -df
+           mv ../build/dokka/htmlMultiModule/* .
++          echo api.openrndr.org > CNAME
+           git status
+           git config --global user.email "actions@openrndr.org"
+           git config --global user.name "OPENRNDR Actions"

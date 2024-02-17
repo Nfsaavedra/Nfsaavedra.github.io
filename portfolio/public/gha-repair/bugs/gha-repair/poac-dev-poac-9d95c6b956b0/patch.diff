@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/cpp.yml b/.github/workflows/cpp.yml
+index b670128..ca73e0a 100644
+--- a/.github/workflows/cpp.yml
++++ b/.github/workflows/cpp.yml
+@@ -20,7 +20,7 @@ jobs:
+       - uses: actions/checkout@v3
+ 
+       - name: Run clang-format style check
+-        uses: jidicula/clang-format-action@v4.5.0
++        uses: jidicula/clang-format-action@v4.6.2
+         with:
+           clang-format-version: '14'
+           check-path: ${{ matrix.path }}

@@ -1,0 +1,31 @@
+diff --git a/.github/workflows/trivy-analysis-scheduled.yaml b/.github/workflows/trivy-analysis-scheduled.yaml
+index e6f5038..4414b46 100644
+--- a/.github/workflows/trivy-analysis-scheduled.yaml
++++ b/.github/workflows/trivy-analysis-scheduled.yaml
+@@ -37,10 +37,12 @@ jobs:
+ 
+           echo "After clearing disk space:"
+           df -h
+-      - name: Install Trivy (0.30.3)
++      - name: Install Trivy (latest)
+         run: |
+-          wget https://github.com/aquasecurity/trivy/releases/download/v0.30.3/trivy_0.30.3_Linux-64bit.deb
+-          sudo dpkg -i trivy_0.30.3_Linux-64bit.deb
++          TRIVY_VERSION=$(curl --silent "https://api.github.com/repos/aquasecurity/trivy/releases/latest" | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/') 
++          echo Using Trivy v${TRIVY_VERSION}
++          wget https://github.com/aquasecurity/trivy/releases/download/v${TRIVY_VERSION}/trivy_${TRIVY_VERSION}_Linux-64bit.deb
++          sudo dpkg -i trivy_${TRIVY_VERSION}_Linux-64bit.deb
+       - name: Set up Go
+         uses: actions/setup-go@v2
+         with:
+diff --git a/changelog/v1.14.0-beta14/trivy-version.yaml b/changelog/v1.14.0-beta14/trivy-version.yaml
+new file mode 100644
+index 0000000..d0f543b
+--- /dev/null
++++ b/changelog/v1.14.0-beta14/trivy-version.yaml
+@@ -0,0 +1,4 @@
++changelog:
++  - type: NON_USER_FACING
++    description: security-scan-scheduled job now always gets the latest version of trivy
++    issueLink: https://github.com/solo-io/gloo/issues/7845
+\ No newline at end of file

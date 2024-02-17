@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 28b4e85..c41ab13 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -7,7 +7,7 @@ on:
+     branches: [ master ]
+ 
+ jobs:
+-  test:
++  go:
+     runs-on: ubuntu-latest
+     steps:
+     - uses: actions/checkout@v3

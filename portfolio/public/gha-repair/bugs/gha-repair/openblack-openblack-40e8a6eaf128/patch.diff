@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci-vcpkg.yml b/.github/workflows/ci-vcpkg.yml
+index dd8c992..7e209a2 100644
+--- a/.github/workflows/ci-vcpkg.yml
++++ b/.github/workflows/ci-vcpkg.yml
+@@ -218,7 +218,7 @@ jobs:
+         # This is the matrix. They form permutations.
+         os: [ windows-latest ] # ubuntu-latest, macos-latest
+     env:
+-      ARGS: -g game-data\bw --num-frames-to-simulate 10 --screenshot-frame 5 --log-file stdout --log-level all=debug -W 1280 -H 1024
++      ARGS: -g game-data\bw --num-frames-to-simulate 10 --screenshot-frame 5 --log-file stdout --log-level all=debug -W 800 -H 600
+       BACKEND: Direct3D11
+     steps:
+       - name: Download compiled openblack and tools

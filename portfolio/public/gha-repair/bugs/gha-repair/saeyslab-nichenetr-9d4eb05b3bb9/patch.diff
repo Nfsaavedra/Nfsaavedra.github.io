@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/check-bioc.yml b/.github/workflows/check-bioc.yml
+index e57bc79..08723d7 100644
+--- a/.github/workflows/check-bioc.yml
++++ b/.github/workflows/check-bioc.yml
+@@ -160,7 +160,7 @@ jobs:
+ 
+       - name: Set BiocVersion
+         run: |
+-          BiocManager::install(version = "${{ matrix.config.bioc }}", ask = FALSE)
++          BiocManager::install(version = "${{ matrix.config.bioc }}", ask = FALSE, update = FALSE)
+         shell: Rscript {0}
+ 
+       - name: Install dependencies pass 1

@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/build_pr.yml b/.github/workflows/build_pr.yml
+index efd7a0e..d6af703 100644
+--- a/.github/workflows/build_pr.yml
++++ b/.github/workflows/build_pr.yml
+@@ -1,9 +1,6 @@
+ name: Build PR
+ 
+ on:
+-  push:
+-    branches-ignore:
+-      - master # For master, we use special BE build workflow
+   pull_request:
+     branches:
+       - master

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/size-limit.yml b/.github/workflows/size-limit.yml
+index 0c9ce67..ba1850a 100644
+--- a/.github/workflows/size-limit.yml
++++ b/.github/workflows/size-limit.yml
+@@ -9,7 +9,7 @@ jobs:
+     env:
+       CI_JOB_NUMBER: 1
+     steps:
+-      - uses: actions/checkout@v2
++      - uses: actions/checkout@v3
+       - uses: andresz1/size-limit-action@v1.6.1
+         with:
+           github_token: ${{ secrets.GITHUB_TOKEN }}

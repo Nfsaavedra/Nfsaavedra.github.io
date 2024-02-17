@@ -1,0 +1,40 @@
+diff --git a/.github/workflows/CICD.yml b/.github/workflows/CICD.yml
+index 02bf48a..569d006 100644
+--- a/.github/workflows/CICD.yml
++++ b/.github/workflows/CICD.yml
+@@ -330,3 +330,15 @@ jobs:
+           ${{ steps.debian-package.outputs.DPKG_PATH }}
+       env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
++
++  winget:
++    name: Publish to Winget
++    runs-on: windows-latest # Action can only run on Windows
++    needs: build
++    if: startsWith(github.ref, 'refs/tags/v')
++    steps:
++      - uses: vedantmgoyal2009/winget-releaser@v2
++        with:
++          identifier: sharkdp.hyperfine
++          installers-regex: '-pc-windows-msvc\.zip$'
++          token: ${{ secrets.WINGET_TOKEN }}
+diff --git a/.github/workflows/winget.yml b/.github/workflows/winget.yml
+deleted file mode 100644
+index 3b95532..0000000
+--- a/.github/workflows/winget.yml
++++ /dev/null
+@@ -1,14 +0,0 @@
+-name: Publish to Winget
+-on:
+-  release:
+-    types: [released]
+-
+-jobs:
+-  publish:
+-    runs-on: windows-latest # Action can only run on Windows
+-    steps:
+-      - uses: vedantmgoyal2009/winget-releaser@v2
+-        with:
+-          identifier: sharkdp.hyperfine
+-          installers-regex: '-pc-windows-msvc\.zip$'
+-          token: ${{ secrets.WINGET_TOKEN }}

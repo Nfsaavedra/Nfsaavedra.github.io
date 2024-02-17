@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/nim.yml b/.github/workflows/nim.yml
+index 8128f2d..e04de98 100644
+--- a/.github/workflows/nim.yml
++++ b/.github/workflows/nim.yml
+@@ -10,8 +10,6 @@ jobs:
+   build-devel:
+ 
+     runs-on: ubuntu-latest
+-    env: 
+-      PATH: $PATH:/home/runner/.nimble/bin
+     steps:
+     - name: debug
+       run: echo $PATH

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/pythonapp.yml b/.github/workflows/pythonapp.yml
+index 48eecd3..664c381 100644
+--- a/.github/workflows/pythonapp.yml
++++ b/.github/workflows/pythonapp.yml
+@@ -27,6 +27,7 @@ jobs:
+     - name: Test with pytest
+       env:
+         robin_username: ${{ secrets.username }}
++        robin_password: ${{ secrets.password }}
+       run: |
+         pip install pytest
+         pytest

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 3c85889..dd0bb55 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -34,7 +34,7 @@ jobs:
+         run: |
+           echo "arch=${{ matrix.qtArch }}" >> $GITHUB_ENV
+           if [ "${{ inputs.isRelease }}" != "true" ]; then
+-            buildNum=$(date --iso-8601).$GITHUB_RUN_ATTEMPT
++            buildNum=$(date '+%Y-%m-%d').$GITHUB_RUN_ATTEMPT
+             echo "nightlyDefines=NIGHTLY=$buildNum" >> $GITHUB_ENV
+             echo "nightlyString=-nightly" >> $GITHUB_ENV
+             echo "buildNumString=$buildNum" >> $GITHUB_ENV

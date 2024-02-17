@@ -1,0 +1,72 @@
+diff --git a/.github/ISSUE_TEMPLATE/bug_report.md b/.github/ISSUE_TEMPLATE/bug_report.md
+deleted file mode 100644
+index a56e789..0000000
+--- a/.github/ISSUE_TEMPLATE/bug_report.md
++++ /dev/null
+@@ -1,27 +0,0 @@
+----
+-name: Bug report
+-about: Create a report to help us improve
+-title: "[BUG]"
+-labels: kind/bug
+-assignees: ''
+-
+----
+-
+-**Describe the bug**
+-A clear and concise description of what the bug is.
+-
+-**To Reproduce**
+-Steps to reproduce the behavior
+-
+-**Expected behavior**
+-A clear and concise description of what you expected to happen.
+-
+-**Screenshots**
+-If applicable, add screenshots to help explain your problem.
+-
+-**Environment**
+- - Operator Version:
+- - Kubernetes/OpenShift Version:
+-
+-**Additional context**
+-Add any other context about the problem here.
+diff --git a/.github/ISSUE_TEMPLATE/feature_request.md b/.github/ISSUE_TEMPLATE/feature_request.md
+deleted file mode 100644
+index 9d7b83d..0000000
+--- a/.github/ISSUE_TEMPLATE/feature_request.md
++++ /dev/null
+@@ -1,20 +0,0 @@
+----
+-name: Feature request
+-about: Suggest an idea for this project
+-title: "[ENHANCE]"
+-labels: kind/enhancement
+-assignees: ''
+-
+----
+-
+-**Is your feature request related to a problem? Please describe.**
+-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+-
+-**Describe the solution you'd like**
+-A clear and concise description of what you want to happen.
+-
+-**Describe alternatives you've considered**
+-A clear and concise description of any alternative solutions or features you've considered.
+-
+-**Additional context**
+-Add any other context or screenshots about the feature request here.
+diff --git a/.github/workflows/pull_request.yml b/.github/workflows/pull_request.yml
+index 02035b1..5522b71 100644
+--- a/.github/workflows/pull_request.yml
++++ b/.github/workflows/pull_request.yml
+@@ -106,7 +106,7 @@ jobs:
+         cache-to: type=inline
+         platforms: linux/amd64,linux/arm,linux/arm64
+         tags: |
+-          ${{ env.IMAGE_REPOSITORY }}:${{ steps.generate_tag.outputs.new_tag }}
++          ${{ env.IMAGE_REPOSITORY }}:${{ steps.generate_tag.outputs.GIT_TAG }}
+         labels: |
+           org.opencontainers.image.source=${{ github.event.repository.clone_url }}
+           org.opencontainers.image.created=${{ steps.prep.outputs.created }}

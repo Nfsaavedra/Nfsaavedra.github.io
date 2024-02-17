@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/action_schedule_master.yml b/.github/workflows/action_schedule_master.yml
+index eddf581..2f0c6b5 100644
+--- a/.github/workflows/action_schedule_master.yml
++++ b/.github/workflows/action_schedule_master.yml
+@@ -11,6 +11,7 @@ name: nightly
+ # -------------------------------------------------------------------------------------------------
+ on:
+   # Runs daily
++  workflow_dispatch:
+   schedule:
+     - cron: '0 0 * * *'
+ 

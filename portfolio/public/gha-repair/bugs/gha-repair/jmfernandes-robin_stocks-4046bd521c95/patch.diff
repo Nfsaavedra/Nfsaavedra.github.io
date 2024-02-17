@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/pythonapp.yml b/.github/workflows/pythonapp.yml
+index 0bc6985..381483a 100644
+--- a/.github/workflows/pythonapp.yml
++++ b/.github/workflows/pythonapp.yml
+@@ -35,4 +35,5 @@ jobs:
+       run: |
+         pip install pytest
+         pip install pytest-dotenv
++        pip install python-dateutil
+         pytest tests/test_github_actions.py

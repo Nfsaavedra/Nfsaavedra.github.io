@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/bump-version.yml b/.github/workflows/bump-version.yml
+index fdcfa8b..d55c697 100644
+--- a/.github/workflows/bump-version.yml
++++ b/.github/workflows/bump-version.yml
+@@ -37,7 +37,7 @@ jobs:
+     steps:
+     - uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8  # v3.1.0
+       with:
+-        token: ${{ secrets.BUMP_SENTRY_TOKEN }}
++        token: ${{ secrets.GETSENTRY_BOT_REVERT_TOKEN }}
+     - run: |
+         set -euxo pipefail
+ 

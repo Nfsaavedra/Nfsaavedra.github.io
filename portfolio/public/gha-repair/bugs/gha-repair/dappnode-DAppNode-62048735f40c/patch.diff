@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 4eff2bc..fdee229 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -147,3 +147,9 @@ jobs:
+ 
+         env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
++
++      # Commit.dappnode_profile change
++      - uses: stefanzweifel/git-auto-commit-action@v4
++        with:
++          commit_message: bump
++          file_pattern: .dappnode_profile

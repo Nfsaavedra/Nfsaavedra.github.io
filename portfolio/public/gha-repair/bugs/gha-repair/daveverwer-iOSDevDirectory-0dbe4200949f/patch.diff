@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/re-sort.yml b/.github/workflows/re-sort.yml
+index bee31f0..9b123ef 100644
+--- a/.github/workflows/re-sort.yml
++++ b/.github/workflows/re-sort.yml
+@@ -6,7 +6,8 @@ on:
+     - cron: "0 7 * * 1" # At 07:00 every Monday
+ 
+ jobs:
+-  validate:
++  sort:
++    name: Re-sort Blogs
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v3

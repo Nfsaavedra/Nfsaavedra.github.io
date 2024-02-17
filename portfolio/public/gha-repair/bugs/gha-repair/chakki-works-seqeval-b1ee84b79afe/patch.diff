@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index c1d9b4a..6650c9d 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -17,7 +17,7 @@ jobs:
+       run: |
+         python -m pip install --upgrade pip
+         pip install pipenv
+-        pipenv install --dev --skip-lock
++        pipenv sync --dev
+     - name: Lint with flake8
+       run: |
+         pipenv run flake8

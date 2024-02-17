@@ -1,0 +1,79 @@
+diff --git a/.github/workflows/miri.yml b/.github/workflows/miri.yml
+new file mode 100644
+index 0000000..295115a
+--- /dev/null
++++ b/.github/workflows/miri.yml
+@@ -0,0 +1,36 @@
++name: Rust - Miri Testing (CRON)
++on:
++  schedule:
++    # Conduct Miri testing on 3:30 UTC every night.
++    - cron: "30 3 * * *"
++jobs:
++  miri:
++    name: Miri
++    runs-on: ubuntu-latest
++    steps:
++        - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11
++        - uses: dtolnay/rust-toolchain@nightly
++          with:
++            components: miri
++            targets: x86_64-unknown-linux-gnu
++        - name: Set up Cargo cache
++          uses: actions/cache@v4
++          continue-on-error: false
++          with:
++            path: |
++              ~/.cargo/bin/
++              ~/.cargo/registry/index/
++              ~/.cargo/registry/cache/
++              ~/.cargo/git/db/
++              ~/target/
++            key: ${{ runner.os }}-cargo-miri-${{ hashFiles('**/Cargo.lock') }}
++            restore-keys: ${{ runner.os }}-cargo-miri-
++        - name: Checkout Submodules
++          run: git submodule update --init --recursive
++        - name: Install cargo-nextest
++          run: |
++            # Note: We use `|| true` because cargo install returns an error
++            #       if cargo-nextest was already installed on the CI runner.
++            cargo install cargo-nextest || true
++        - name: Miri Testing - Wasm Spec Testsuite
++          run: cargo miri nextest run --test-threads "num-cpus" --no-fail-fast --target x86_64-unknown-linux-gnu --test spec_shim
+diff --git a/.github/workflows/rust.yml b/.github/workflows/rust.yml
+index 61bf9da..a8b11c1 100644
+--- a/.github/workflows/rust.yml
++++ b/.github/workflows/rust.yml
+@@ -285,6 +285,7 @@ jobs:
+       - uses: dtolnay/rust-toolchain@nightly
+         with:
+           components: miri
++          targets: x86_64-unknown-linux-gnu
+       - name: Set up Cargo cache
+         uses: actions/cache@v4
+         continue-on-error: false
+@@ -297,10 +298,22 @@ jobs:
+             ~/target/
+           key: ${{ runner.os }}-cargo-miri-${{ hashFiles('**/Cargo.lock') }}
+           restore-keys: ${{ runner.os }}-cargo-miri-
++      - name: Checkout Submodules
++        run: git submodule update --init --recursive
++      - name: Install cargo-nextest
++        run: |
++          # Note: We use `|| true` because cargo install returns an error
++          #       if cargo-nextest was already installed on the CI runner.
++          cargo install cargo-nextest || true
+       - name: Miri (--lib)
+-        run: cargo miri test --lib --workspace
++        run: cargo miri nextest run --test-threads "num-cpus" --no-fail-fast --target x86_64-unknown-linux-gnu --lib --workspace
+       - name: Miri (--doc)
+-        run: cargo miri test --doc --workspace
++        run: cargo miri test --doc --workspace --target x86_64-unknown-linux-gnu
++      - name: Miri - Wasm Spec Testsuite (store)
++        # We just run the `store.wast` test since running the entire Wasm spec testsuite
++        # simply takes too long to do on every pull request commit. There exists an entire
++        # CRON job that runs the entire Wasm spec testsuite using miri every night.
++        run: cargo miri nextest run --test-threads "num-cpus" --no-fail-fast --target x86_64-unknown-linux-gnu ::wasm_store
+ 
+   clippy:
+     name: Clippy

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/linux.yml b/.github/workflows/linux.yml
+index cc700bb..85949bb 100644
+--- a/.github/workflows/linux.yml
++++ b/.github/workflows/linux.yml
+@@ -6,7 +6,7 @@ on:
+   pull_request:
+ 
+ env:
+-  OPENSSL_VERSION: 'OpenSSL_1_1_1j'
++  OPENSSL_VERSION: OpenSSL_1_1_1k
+   BOOST_VERSION: 1.76.0
+   LIBGIT2_VERSION: 1.1.1
+ 

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/lint-test.yml b/.github/workflows/lint-test.yml
+index 53d9baa..ac7e47f 100644
+--- a/.github/workflows/lint-test.yml
++++ b/.github/workflows/lint-test.yml
+@@ -16,6 +16,7 @@ jobs:
+       ALLOWED_LICENSE: Apache Software License;
+         BSD License;
+         GNU Library or Lesser General Public License (LGPL);
++        ISC License (ISCL);
+         MIT License;
+         Mozilla Public License 2.0 (MPL 2.0);
+         Public Domain;

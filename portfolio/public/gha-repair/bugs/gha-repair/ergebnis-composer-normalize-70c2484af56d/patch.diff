@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/renew.yaml b/.github/workflows/renew.yaml
+index 2605d97..1086489 100644
+--- a/.github/workflows/renew.yaml
++++ b/.github/workflows/renew.yaml
+@@ -68,7 +68,7 @@ jobs:
+         run: "vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --diff --verbose"
+ 
+       - name: "Commit modified files"
+-        uses: "stefanzweifel/git-auto-commit-action@v4.14.0"
++        uses: "stefanzweifel/git-auto-commit-action@v4.14.1"
+         with:
+           commit_author: "ergebnis-bot <bot@ergebn.is>"
+           commit_message: "Enhancement: Update license year"

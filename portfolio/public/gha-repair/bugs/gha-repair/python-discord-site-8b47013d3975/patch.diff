@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/deploy.yaml b/.github/workflows/deploy.yaml
+index ea5e030..d4c6fec 100644
+--- a/.github/workflows/deploy.yaml
++++ b/.github/workflows/deploy.yaml
+@@ -33,7 +33,7 @@ jobs:
+       - uses: azure/setup-kubectl@v3
+ 
+       - name: Authenticate with Kubernetes
+-        uses: azure/k8s-set-context@v1
++        uses: azure/k8s-set-context@v3
+         with:
+           method: kubeconfig
+           kubeconfig: ${{ secrets.KUBECONFIG }}

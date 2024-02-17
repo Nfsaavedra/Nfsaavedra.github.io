@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index e2e08b0..423a615 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -29,7 +29,7 @@ jobs:
+       - name: Create Release
+         uses: actions/create-release@main
+         env:
+-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
++          GITHUB_TOKEN: "${{ secrets.GH_PAT }}"
+         with:
+           tag_name: "${{ github.ref }}"
+           release_name: "v${{ github.ref }}"

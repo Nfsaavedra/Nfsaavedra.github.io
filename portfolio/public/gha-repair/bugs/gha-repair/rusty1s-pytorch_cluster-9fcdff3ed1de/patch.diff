@@ -1,0 +1,9 @@
+diff --git a/.github/workflows/stale.yml b/.github/workflows/stale.yml
+index a3d07b2..d4e8502 100644
+--- a/.github/workflows/stale.yml
++++ b/.github/workflows/stale.yml
+@@ -20,3 +20,4 @@ jobs:
+           stale-pr-label: 'stale'
+           days-before-stale: 180
+           days-before-close: 14
++          operations-per-run: 200

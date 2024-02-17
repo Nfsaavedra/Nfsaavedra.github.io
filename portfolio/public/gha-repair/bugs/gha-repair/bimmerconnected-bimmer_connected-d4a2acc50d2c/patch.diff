@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/lock.yml b/.github/workflows/lock.yml
+index fece2d2..8ef0cd4 100644
+--- a/.github/workflows/lock.yml
++++ b/.github/workflows/lock.yml
+@@ -3,7 +3,7 @@ name: Lock
+ # yamllint disable-line rule:truthy
+ on:
+   schedule:
+-    - cron: "0 * * * *"
++    - cron: "0 3 * * *"
+ 
+ jobs:
+   lock:

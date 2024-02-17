@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/lint.yml b/.github/workflows/lint.yml
+index 3ea2cd5..4872a8c 100644
+--- a/.github/workflows/lint.yml
++++ b/.github/workflows/lint.yml
+@@ -18,4 +18,4 @@ jobs:
+       - uses: actions/setup-go@v5
+         with:
+           go-version: stable
+-      - uses: golangci/golangci-lint-action@v3
++      - uses: golangci/golangci-lint-action@v4

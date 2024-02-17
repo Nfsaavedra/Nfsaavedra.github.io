@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 319ece3..bd73922 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -56,7 +56,7 @@ jobs:
+         if: success()
+         with:
+           version: latest
+-          args: release --rm-dist
++          args: release --clean
+           distribution: goreleaser-pro
+         env:
+           GITHUB_TOKEN: ${{ secrets.GH_PAT }}

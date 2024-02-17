@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/pythonapp.yml b/.github/workflows/pythonapp.yml
+index fe662b7..1c66cf9 100644
+--- a/.github/workflows/pythonapp.yml
++++ b/.github/workflows/pythonapp.yml
+@@ -1,6 +1,9 @@
+ name: Python application
+ 
+-on: [push]
++on:
++  push:
++    branches:
++      - master
+ 
+ jobs:
+   build:

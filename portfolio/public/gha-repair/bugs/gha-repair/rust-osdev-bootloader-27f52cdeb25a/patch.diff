@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 7f3c993..43a57e3 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -113,7 +113,7 @@ jobs:
+         run: cargo semver-checks check-release
+ 
+   typos:
+-      name: Check spelling
+-      runs-on: ubuntu-latest
+-      steps:
+-        - uses: crate-ci/typos@v1.0.4
++    name: Check spelling
++    runs-on: ubuntu-latest
++    steps:
++      - uses: crate-ci/typos@v1.0.4

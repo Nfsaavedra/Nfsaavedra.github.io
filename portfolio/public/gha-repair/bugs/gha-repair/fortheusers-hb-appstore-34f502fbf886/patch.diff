@@ -1,0 +1,19 @@
+diff --git a/.github/FUNDING.yml b/.github/FUNDING.yml
+deleted file mode 100644
+index 2663d2c..0000000
+--- a/.github/FUNDING.yml
++++ /dev/null
+@@ -1,1 +0,0 @@
+-open_collective: fortheusers
+diff --git a/.github/workflows/pc-builds.yml b/.github/workflows/pc-builds.yml
+index 94364a8..fc6f48b 100644
+--- a/.github/workflows/pc-builds.yml
++++ b/.github/workflows/pc-builds.yml
+@@ -24,5 +24,5 @@ jobs:
+       run: ./libs/chesto/helpers/build_pc.sh appstore ${{ matrix.os }} ${{ matrix.library }}
+     - uses: actions/upload-artifact@v3
+       with:
+-        name: appstore-${{ matrix.ext }}
++        name: appstore_${{ matrix.os }}_${{ matrix.library }}
+         path: ./appstore_${{ matrix.os }}_${{ matrix.library }}.zip
+\ No newline at end of file

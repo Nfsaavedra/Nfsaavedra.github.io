@@ -1,0 +1,56 @@
+diff --git a/.github/workflows/pr-title-check.yml b/.github/workflows/pr-title-check.yml
+new file mode 100644
+index 0000000..f1e80e2
+--- /dev/null
++++ b/.github/workflows/pr-title-check.yml
+@@ -0,0 +1,38 @@
++name: "Lint PR"
++
++on:
++  pull_request_target:
++    types:
++      - opened
++      - edited
++      - synchronize
++
++permissions:
++  contents: read
++
++# PR updates can happen in quick succession leading to this
++# workflow being trigger a number of times. This limits it
++# to one run per PR.
++concurrency:
++  group: ${{ github.workflow }}-${{ github.ref }}
++
++jobs:
++  main:
++    permissions:
++      pull-requests: read  # for amannn/action-semantic-pull-request to analyze PRs
++      statuses: write  # for amannn/action-semantic-pull-request to mark status of analyzed PR
++    name: Validate PR title
++    runs-on: ubuntu-latest
++    steps:
++      - uses: amannn/action-semantic-pull-request@01d5fd8a8ebb9aafe902c40c53f0f4744f7381eb # v5.0.2
++        with:
++          types: |
++            feat
++            fix
++            docs
++            test
++            ci
++            chore
++            [Bot] docs
++        env:
++          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+diff --git a/.github/workflows/update-snyk.yaml b/.github/workflows/update-snyk.yaml
+index 02c83f6..3dd74e8 100644
+--- a/.github/workflows/update-snyk.yaml
++++ b/.github/workflows/update-snyk.yaml
+@@ -31,6 +31,6 @@ jobs:
+           git config --global user.email 'ci@argoproj.com'
+           git config --global user.name 'CI'
+           git add docs/snyk
+-          git commit -m "[Bot] Update Snyk reports" --signoff
++          git commit -m "[Bot] docs: Update Snyk reports" --signoff
+           git push --set-upstream origin "$pr_branch"
+           gh pr create -B master -H "$pr_branch" --title '[Bot] docs: Update Snyk report' --body ''

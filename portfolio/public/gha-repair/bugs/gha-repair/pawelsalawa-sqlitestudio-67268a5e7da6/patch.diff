@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/lin_release.yml b/.github/workflows/lin_release.yml
+index 2a352df..8a29f03 100644
+--- a/.github/workflows/lin_release.yml
++++ b/.github/workflows/lin_release.yml
+@@ -11,6 +11,8 @@ env:
+ name: Linux release build
+ 
+ on:
++    schedule:
++        - cron: '30 3 * * *' # run at 3:30 AM UTC
+     repository_dispatch:
+         types: [lin_release]
+ 
+@@ -203,4 +205,4 @@ jobs:
+               uses: actions/upload-artifact@v1
+               with:
+                 name: SQLiteStudio-${{ env.SQLITESTUDIO_VERSION }}-linux-x64-installer.run
+-                path: SQLiteStudio-${{ env.SQLITESTUDIO_VERSION }}-linux-x64-installer.run
+\ No newline at end of file
++                path: SQLiteStudio-${{ env.SQLITESTUDIO_VERSION }}-linux-x64-installer.run

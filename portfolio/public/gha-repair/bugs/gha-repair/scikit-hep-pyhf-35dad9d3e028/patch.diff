@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/docker.yml b/.github/workflows/docker.yml
+index 3ce3fad..87fd09c 100644
+--- a/.github/workflows/docker.yml
++++ b/.github/workflows/docker.yml
+@@ -53,7 +53,7 @@ jobs:
+           echo "created=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" >> $GITHUB_OUTPUT
+ 
+       - name: Set up QEMU
+-        uses: docker/setup-qemu-action@v2
++        uses: docker/setup-qemu-action@v3
+ 
+       - name: Set up Docker Buildx
+         uses: docker/setup-buildx-action@v2

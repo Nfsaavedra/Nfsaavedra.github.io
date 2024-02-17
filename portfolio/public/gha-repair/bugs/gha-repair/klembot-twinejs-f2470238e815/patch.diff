@@ -1,0 +1,23 @@
+diff --git a/.github/workflows/create-release.yml b/.github/workflows/create-release.yml
+index e94085f..90d6cb8 100644
+--- a/.github/workflows/create-release.yml
++++ b/.github/workflows/create-release.yml
+@@ -2,8 +2,8 @@ name: Create draft release
+ 
+ on:
+   push:
+-    branches:
+-      - main
++    branches-ignore:
++      - '2.3-maintenance'
+     tags:
+       - '[0-9]+.[0-9]+.[0-9]+*'
+ 
+@@ -28,7 +28,6 @@ jobs:
+         uses: softprops/action-gh-release@v1
+         with:
+           draft: true
+-          fail_on_unmatched_files: true
+           files: |
+             dist/electron/twine-*.dmg
+             dist/electron/twine-*.exe

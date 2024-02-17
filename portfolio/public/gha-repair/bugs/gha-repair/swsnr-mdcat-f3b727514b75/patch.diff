@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index f46ec5d..565ff75 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -32,7 +32,7 @@ jobs:
+         run: sudo apt-get install musl-tools
+         if: contains(matrix.target, 'linux-musl')
+       - name: Build in release configuration
+-        run: cargo build --target ${{ matrix.target }} ${{ matrix.flags }} --release --verbose
++        run: cargo build --target ${{ matrix.target }} ${{ matrix.flags }} --release
+       - name: Strip binary
+         run: strip 'target/${{ matrix.target }}/release/mdcat'
+         if: "!contains(matrix.target, 'windows')"

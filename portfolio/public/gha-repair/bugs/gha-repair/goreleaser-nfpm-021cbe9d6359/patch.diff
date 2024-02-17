@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 85c6936..b2b47b2 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -36,7 +36,7 @@ jobs:
+         with:
+           repo-token: ${{ secrets.GITHUB_TOKEN }}
+       - uses: sigstore/cosign-installer@v2.8.1
+-      - uses: anchore/sbom-action/download-syft@v0.13.1
++      - uses: anchore/sbom-action/download-syft@v0.13.2
+       - uses: docker/setup-qemu-action@v2
+       - uses: docker/setup-buildx-action@v2
+       - run: task setup

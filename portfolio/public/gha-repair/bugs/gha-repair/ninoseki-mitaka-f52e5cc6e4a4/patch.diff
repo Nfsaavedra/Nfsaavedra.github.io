@@ -1,0 +1,23 @@
+diff --git a/.github/workflows/nodejs.yml b/.github/workflows/nodejs.yml
+index 3deed83..0b8d23b 100644
+--- a/.github/workflows/nodejs.yml
++++ b/.github/workflows/nodejs.yml
+@@ -1,6 +1,10 @@
+ name: Node.js CI
+ 
+-on: ["pull_request"]
++on:
++  push:
++    branches: [master]
++  pull_request:
++    branches: [master]
+ 
+ jobs:
+   build:
+@@ -27,4 +31,4 @@ jobs:
+       - name: Coveralls
+         uses: coverallsapp/github-action@master
+         with:
+-          github-token: ${{ secrets.GITHUB_TOKEN }}
+\ No newline at end of file
++          github-token: ${{ secrets.GITHUB_TOKEN }}

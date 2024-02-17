@@ -1,0 +1,21 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 5862475..4bcfb34 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -1,7 +1,7 @@
+ name: main
+ 
+ on:
+-  workflow_call:
++  workflow_dispatch:
+     inputs:
+       # enabled by default, required for merge through default GH check
+       test_ci:
+@@ -32,7 +32,6 @@ on:
+         default: false
+         required: false
+         type: boolean
+-  workflow_dispatch:
+   push:
+     branches:
+       - main

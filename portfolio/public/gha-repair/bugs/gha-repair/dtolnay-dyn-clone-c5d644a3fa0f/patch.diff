@@ -1,0 +1,21 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 327e4d0..2bcab1b 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -20,6 +20,16 @@ jobs:
+           toolchain: ${{matrix.rust}}
+       - run: cargo test
+ 
++  miri:
++    name: Miri
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v2
++      - uses: dtolnay/rust-toolchain@nightly
++        with:
++          components: miri
++      - run: cargo miri test
++
+   clippy:
+     name: Clippy
+     runs-on: ubuntu-latest

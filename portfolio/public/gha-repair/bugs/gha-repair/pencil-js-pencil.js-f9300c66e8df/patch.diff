@@ -1,0 +1,18 @@
+diff --git a/.github/workflows/nodejs.yml b/.github/workflows/nodejs.yml
+index 8d6dcce..394db20 100644
+--- a/.github/workflows/nodejs.yml
++++ b/.github/workflows/nodejs.yml
+@@ -2,6 +2,13 @@ name: Node CI
+ 
+ on:
+     push:
++        branches:
++            - master
++        paths:
++            - '**.js'
++    pull_request:
++        branches:
++            - master
+         paths:
+             - '**.js'
+ 

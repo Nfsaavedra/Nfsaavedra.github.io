@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/release-apidocs.yml b/.github/workflows/release-apidocs.yml
+index 8c86be7..6a6ad4c 100644
+--- a/.github/workflows/release-apidocs.yml
++++ b/.github/workflows/release-apidocs.yml
+@@ -19,10 +19,6 @@ jobs:
+           git reset HEAD -- .
+           cd -
+           ./gradlew dokka
+-      - uses: actions/checkout@v2
+-        with:
+-          ref: gh-pages
+-          path: build/docs/openrndr  
+       - name: Publish to gh-pages
+         run: |
+           cd build/docs/openrndr

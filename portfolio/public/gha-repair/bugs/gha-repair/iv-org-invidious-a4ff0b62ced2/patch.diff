@@ -1,0 +1,25 @@
+diff --git a/.github/workflows/container-release.yml b/.github/workflows/container-release.yml
+index 8945ef7..c60d08f 100644
+--- a/.github/workflows/container-release.yml
++++ b/.github/workflows/container-release.yml
+@@ -4,9 +4,18 @@ on:
+   push:
+     branches:
+       - "master"
+-  schedule:
+-    - cron: 0 0 * * *
++    paths-ignore:
++      - "*.md"
++      - LICENCE
++      - TRANSLATION
++      - invidious.service
++      - .git*
++      - .editorconfig
+ 
++      - screenshots/*
++      - .github/ISSUE_TEMPLATE/*
++      - kubernetes/**
++  
+ jobs:
+   release:
+     runs-on: ubuntu-latest

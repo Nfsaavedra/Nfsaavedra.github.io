@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 060951f..a50fc89 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -30,5 +30,8 @@ jobs:
+           sudo apt-get -qq update
+           sudo apt-get install -y squashfs-tools
+ 
++      - name: Update Go modules
++        run: make update-gomod
++
+       - name: Test
+         run: make check

@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/browsers.yml b/.github/workflows/browsers.yml
+index 1595ec2..d3a2f90 100644
+--- a/.github/workflows/browsers.yml
++++ b/.github/workflows/browsers.yml
+@@ -10,8 +10,7 @@ jobs:
+ 
+     steps:
+       - uses: actions/checkout@v2
+-      - name: Checkout submodules
+-        uses: textbook/git-checkout-submodule-action@master
++        with: { submodules: true }
+       - uses: actions/setup-node@v2
+         with:
+           node-version: '16'

@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 839635c..d52a563 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -14,4 +14,5 @@ jobs:
+       with:
+         node-version: 16
+         cache: npm
++    - run: npm install
+     - run: npm test

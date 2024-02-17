@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/CI.yml b/.github/workflows/CI.yml
+index a00f957..b51b0d0 100644
+--- a/.github/workflows/CI.yml
++++ b/.github/workflows/CI.yml
+@@ -37,4 +37,4 @@ jobs:
+       - uses: actions-rs/clippy-check@v1
+         with:
+           token: ${{ secrets.GITHUB_TOKEN }}
+-          args: --all-features
+\ No newline at end of file
++          args: --all-features

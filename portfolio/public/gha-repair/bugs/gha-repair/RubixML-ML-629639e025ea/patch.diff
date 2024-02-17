@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 3dc2766..d2bd8d8 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -23,9 +23,6 @@ jobs:
+           extensions: svm, mbstring, gd, fileinfo
+           ini-values: memory_limit=-1
+ 
+-      - name: Install GraphViz
+-        run: sudo apt-get install graphviz
+-
+       - name: Validate composer.json
+         run: composer validate
+ 

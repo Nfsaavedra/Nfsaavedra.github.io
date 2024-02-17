@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/format-check.yml b/.github/workflows/format-check.yml
+index 09e52a6..9364127 100644
+--- a/.github/workflows/format-check.yml
++++ b/.github/workflows/format-check.yml
+@@ -71,6 +71,6 @@ jobs:
+     name: Copyright Check
+     runs-on: ubuntu-latest
+     steps:
+-    - uses: actions/checkout@v2
+-    - name: Check License Lines
+-      uses: kt3k/license_checker@v1.0.6
++      - uses: actions/checkout@v2
++      - name: Check License Lines
++        uses: kt3k/license_checker@v1.0.6

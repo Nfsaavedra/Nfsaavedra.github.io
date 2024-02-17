@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/audit_check.yml b/.github/workflows/audit_check.yml
+index b5c9a4c..52412ab 100644
+--- a/.github/workflows/audit_check.yml
++++ b/.github/workflows/audit_check.yml
+@@ -25,6 +25,6 @@ jobs:
+     - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608
+       with:
+         persist-credentials: false
+-    - uses: EmbarkStudios/cargo-deny-action@a50c7d5f86370e02fae8472c398f15a36e517bb8
++    - uses: EmbarkStudios/cargo-deny-action@1e59595bed8fc55c969333d08d7817b36888f0c5
+       with:
+         command: check ${{ matrix.checks }}
+\ No newline at end of file

@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/linux.yml b/.github/workflows/linux.yml
+index d7a44c5..d5d6d1a 100644
+--- a/.github/workflows/linux.yml
++++ b/.github/workflows/linux.yml
+@@ -132,5 +132,5 @@ jobs:
+           path: ./build/poac
+ 
+       - name: Upload coverage to Codecov
+-        uses: codecov/codecov-action@v2.0.2
++        uses: codecov/codecov-action@v2.0.3
+         if: success() && matrix.build_type == 'Coverage'

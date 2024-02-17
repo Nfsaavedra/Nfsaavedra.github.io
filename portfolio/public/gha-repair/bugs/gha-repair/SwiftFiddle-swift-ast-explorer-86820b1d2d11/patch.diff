@@ -1,0 +1,26 @@
+diff --git a/.github/workflows/setup.yml b/.github/workflows/setup.yml
+index e031881..607457b 100644
+--- a/.github/workflows/setup.yml
++++ b/.github/workflows/setup.yml
+@@ -87,14 +87,19 @@ jobs:
+             --compressed \
+             --data "$data"
+ 
+-          ip_address=$(curl --silent -X GET \
++          curl --silent --fail -X GET \
++            "https://compute.googleapis.com/compute/v1/projects/${{ secrets.GOOGLE_CLOUD_PLATFORM_PROJECT_ID }}/zones/$VM_ZONE/instances/$VM_NAME?key=${{ secrets.GOOGLE_CLOUD_PLATFORM_API_KEY }}" \
++            --header "Authorization: Bearer $GOOGLE_CLOUD_PLATFORM_ACCESS_TOKEN" \
++            --header 'Accept: application/json' \
++            --compressed
++
++          ip_address=$(curl --silent --fail -X GET \
+             "https://compute.googleapis.com/compute/v1/projects/${{ secrets.GOOGLE_CLOUD_PLATFORM_PROJECT_ID }}/zones/$VM_ZONE/instances/$VM_NAME?key=${{ secrets.GOOGLE_CLOUD_PLATFORM_API_KEY }}" \
+             --header "Authorization: Bearer $GOOGLE_CLOUD_PLATFORM_ACCESS_TOKEN" \
+             --header 'Accept: application/json' \
+             --compressed \
+             | jq  -r '.networkInterfaces[].accessConfigs[].natIP')
+ 
+-
+           docker login --username ${{ secrets.DOCKER_HUB_USERNAME }} --password ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+           docker build --rm --no-cache --tag kishikawakatsumi/swift-ast-explorer .
+           docker push kishikawakatsumi/swift-ast-explorer

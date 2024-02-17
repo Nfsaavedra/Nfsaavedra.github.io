@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/maven.yml b/.github/workflows/maven.yml
+index e058df7..3e8e46a 100644
+--- a/.github/workflows/maven.yml
++++ b/.github/workflows/maven.yml
+@@ -23,7 +23,7 @@ jobs:
+       - name: Set up JDK ${{ matrix.java }}
+         uses: actions/setup-java@v3
+         with:
+-          distribution: 'zulu'
++          distribution: 'temurin'
+           java-version: ${{ matrix.java }}
+           cache: 'maven'
+       - name: Build with Maven

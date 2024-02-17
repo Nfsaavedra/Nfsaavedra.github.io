@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index d75e391..43aca5b 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -41,6 +41,7 @@ jobs:
+     - name: Notebook check
+       run: |
+         python Otherfiles/notebook_check.py
++      if: matrix.os == 'ubuntu-latest'
+     - name: Other tests
+       run: |
+           python -m vulture pycm/ Otherfiles/ setup.py --min-confidence 65 --exclude=__init__.py --sort-by-size

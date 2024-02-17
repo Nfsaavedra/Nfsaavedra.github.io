@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/workflow_ci.yml b/.github/workflows/workflow_ci.yml
+index f75b298..5ac6fff 100644
+--- a/.github/workflows/workflow_ci.yml
++++ b/.github/workflows/workflow_ci.yml
+@@ -48,9 +48,11 @@ jobs:
+     steps:
+       - name: checkout
+         uses: actions/checkout@v2
++        with:
++          fetch-depth: 0
+       - name: revision
+         id: revision
+-        run: git rev-list --count HEAD
++        run: git rev-list --count master
+       - name: build
+         run: dotnet publish --configuration Release src/compute.sln
+       - name: artifacts

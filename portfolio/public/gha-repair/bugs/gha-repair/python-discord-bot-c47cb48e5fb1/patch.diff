@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build-deploy.yml b/.github/workflows/build-deploy.yml
+index 2530009..53e9a67 100644
+--- a/.github/workflows/build-deploy.yml
++++ b/.github/workflows/build-deploy.yml
+@@ -29,7 +29,7 @@ jobs:
+         uses: docker/setup-buildx-action@v2
+ 
+       - name: Login to Github Container Registry
+-        uses: docker/login-action@v2
++        uses: docker/login-action@v3
+         with:
+           registry: ghcr.io
+           username: ${{ github.repository_owner }}

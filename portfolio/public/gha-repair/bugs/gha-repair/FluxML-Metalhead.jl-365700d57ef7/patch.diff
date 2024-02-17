@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/CI.yml b/.github/workflows/CI.yml
+index c3e46c3..ce02716 100644
+--- a/.github/workflows/CI.yml
++++ b/.github/workflows/CI.yml
+@@ -43,4 +43,9 @@ jobs:
+             ${{ runner.os }}-
+       - uses: julia-actions/julia-buildpkg@v1
+       - uses: julia-actions/julia-runtest@v1
+-
++      - uses: julia-actions/julia-processcoverage@v1
++        if: matrix.version == '1' && matrix.os == 'ubuntu-latest'
++      - uses: codecov/codecov-action@v2
++        if: matrix.version == '1' && matrix.os == 'ubuntu-latest'
++        with:
++          file: lcov.info

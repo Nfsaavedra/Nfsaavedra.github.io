@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/rust_check.yml b/.github/workflows/rust_check.yml
+index f008710..6fd54fd 100644
+--- a/.github/workflows/rust_check.yml
++++ b/.github/workflows/rust_check.yml
+@@ -13,7 +13,7 @@ jobs:
+     runs-on: ubuntu-20.04
+     steps:
+     - uses: actions/checkout@v3
+-    - uses: Swatinem/rust-cache@v1
++    - uses: Swatinem/rust-cache@v2
+     - name: Check formattig
+       run: |
+         rustfmt --version

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 3aa97c6..790a153 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -26,7 +26,7 @@ jobs:
+         id: go
+ 
+       - name: Run GoReleaser
+-        uses: goreleaser/goreleaser-action@v3
++        uses: goreleaser/goreleaser-action@master
+         with:
+           version: latest
+           args: release --rm-dist

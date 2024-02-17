@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 2b5c484..3dc951d 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -28,4 +28,5 @@ jobs:
+       - name: Build
+         run: |
+           eval $(opam env)
++          opam update
+           opam pin add . -y

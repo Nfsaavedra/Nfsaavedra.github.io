@@ -1,0 +1,25 @@
+diff --git a/.github/workflows/opentelemetry.yml b/.github/workflows/opentelemetry.yml
+index aaa9e4e..84a6209 100644
+--- a/.github/workflows/opentelemetry.yml
++++ b/.github/workflows/opentelemetry.yml
+@@ -1,14 +1,16 @@
+ ---
++# Look up results at https://ela.st/oblt-ci-cd-stats.
++# There will be one service per GitHub repository, including the org name, and one Transaction per Workflow.
+ name: OpenTelemetry Export Trace
+ 
+ on:
+   workflow_run:
+-    workflows:
+-      - ci
+-      - microbenchmark
+-      - updatecli
++    workflows: [ "*" ]
+     types: [completed]
+ 
++permissions:
++  contents: read
++
+ jobs:
+   otel-export-trace:
+     runs-on: ubuntu-latest

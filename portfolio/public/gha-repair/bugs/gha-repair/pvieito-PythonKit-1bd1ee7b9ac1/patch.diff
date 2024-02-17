@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/continuous-integration.yml b/.github/workflows/continuous-integration.yml
+index 3c8d1be..951d074 100644
+--- a/.github/workflows/continuous-integration.yml
++++ b/.github/workflows/continuous-integration.yml
+@@ -14,7 +14,8 @@ jobs:
+     runs-on: ${{ matrix.os }}
+     steps:
+       - uses: actions/checkout@v1
+-      - uses: YOCKOW/Action-setup-swift@master
++      - name: Install Swift
++        uses: YOCKOW/Action-setup-swift@master
+         with:
+           swift-version: '5.1'
+       - name: Test (Python 2)

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.latest.yml b/.github/workflows/release.latest.yml
+index cda9927..bcd79da 100644
+--- a/.github/workflows/release.latest.yml
++++ b/.github/workflows/release.latest.yml
+@@ -25,7 +25,7 @@ jobs:
+ 
+       - name: Docker meta
+         id: meta
+-        uses: docker/metadata-action@v4
++        uses: docker/metadata-action@v5
+         with:
+           images: |
+             gomods/athens

@@ -1,0 +1,22 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index fa47880..caa6ca7 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -15,7 +15,7 @@ jobs:
+ 
+       - name: Docker Buildx setup
+         id: buildx
+-        uses: docker/setup-buildx-action@v1.1.2
++        uses: docker/setup-buildx-action@v1.2.0
+ 
+       - name: Registry login
+         if: github.event_name != 'pull_request'
+@@ -93,7 +93,7 @@ jobs:
+ 
+       - name: Docker Buildx setup
+         id: buildx
+-        uses: docker/setup-buildx-action@v1.1.2
++        uses: docker/setup-buildx-action@v1.2.0
+ 
+       - name: Build "build"
+         run: |

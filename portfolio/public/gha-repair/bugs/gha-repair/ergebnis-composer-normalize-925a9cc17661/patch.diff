@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/integrate.yaml b/.github/workflows/integrate.yaml
+index 21026d8..36f056c 100644
+--- a/.github/workflows/integrate.yaml
++++ b/.github/workflows/integrate.yaml
+@@ -509,7 +509,7 @@ jobs:
+               "ergebnis-bot",
+             ]
+ 
+-            await github.pulls.createReviewRequest({
++            await github.pulls.requestReviewers({
+               owner: repository.owner,
+               pull_number: pullRequest.number,
+               repo: repository.repo,

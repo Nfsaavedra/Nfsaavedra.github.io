@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 0c2013d..05534a5 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -374,5 +374,5 @@ jobs:
+         with:
+           project_name: snuba
+           local_image: ghcr.io/getsentry/snuba-ci:${{ github.sha }}
+-          container_repo: ghcr.io/getsentry/snuba
++          docker_repo: ghcr.io/getsentry/snuba
+           # TODO: add docker tag to build for

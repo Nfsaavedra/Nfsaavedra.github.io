@@ -1,0 +1,28 @@
+diff --git a/.github/workflows/tests.yaml b/.github/workflows/tests.yaml
+index b1351d5..598d3de 100644
+--- a/.github/workflows/tests.yaml
++++ b/.github/workflows/tests.yaml
+@@ -5,7 +5,11 @@ on:
+     branches: [ master ]
+   pull_request:
+     branches: [ master ]
+-
++services:
++  mongodb:
++    image: mongo:3.4.23
++    ports:
++      - 27017:27017
+ jobs:
+   build:
+     runs-on: ubuntu-latest
+@@ -18,10 +22,6 @@ jobs:
+       uses: actions/setup-node@v1
+       with:
+         node-version: ${{ matrix.node-version }}
+-    - name: Start MongoDB
+-      uses: supercharge/mongodb-github-action@1.1.0
+-      with:
+-        mongodb-version: ${{ matrix.mongodb-version }}
+     - name: npm install
+       run: npm i
+     - name: npm test

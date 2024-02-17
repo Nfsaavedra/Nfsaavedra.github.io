@@ -1,0 +1,29 @@
+diff --git a/.github/actionlint.yaml b/.github/actionlint.yaml
+new file mode 100644
+index 0000000..78e745b
+--- /dev/null
++++ b/.github/actionlint.yaml
+@@ -0,0 +1,10 @@
++self-hosted-runner:
++  # Labels of self-hosted runner in array of strings.
++  labels:
++    # FIXME: Remove `macos-13` when resolved:
++    #   https://github.com/rhysd/actionlint/issues/296
++    - macos-13
++# Configuration variables in array of strings defined in your repository or
++# organization. `null` means disabling configuration variables check.
++# Empty array means no configuration variable is allowed.
++config-variables: []
+diff --git a/.github/workflows/macos.yml b/.github/workflows/macos.yml
+index 4a0b080..dfc2f93 100644
+--- a/.github/workflows/macos.yml
++++ b/.github/workflows/macos.yml
+@@ -19,7 +19,7 @@ jobs:
+     strategy:
+       fail-fast: false
+       matrix:
+-        os: [ macos-11, macos-12 ]
++        os: [ macos-11, macos-12, macos-13 ]
+         build_type: [ Debug, Release ]
+     steps:
+       - uses: actions/checkout@v3

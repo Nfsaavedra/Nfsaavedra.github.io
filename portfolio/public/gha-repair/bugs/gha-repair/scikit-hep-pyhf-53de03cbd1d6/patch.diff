@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/publish-package.yml b/.github/workflows/publish-package.yml
+index e291de6..84e350a 100644
+--- a/.github/workflows/publish-package.yml
++++ b/.github/workflows/publish-package.yml
+@@ -26,12 +26,13 @@ jobs:
+       run: |
+         python -m pip install --upgrade pip setuptools wheel
+         python -m pip install build check-manifest twine
++        python -m pip list
+     - name: Check MANIFEST
+       run: |
+         check-manifest
+     - name: Build a wheel and a sdist
+       run: |
+-        python -m build --sdist --wheel --outdir dist/ .
++        python -m build --outdir dist/ .
+     - name: Verify untagged commits have dev versions
+       if: "!startsWith(github.ref, 'refs/tags/')"
+       run: |

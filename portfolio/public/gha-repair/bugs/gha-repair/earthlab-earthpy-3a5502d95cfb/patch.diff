@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/lint-docs.yml b/.github/workflows/lint-docs.yml
+index a901007..70fd381 100644
+--- a/.github/workflows/lint-docs.yml
++++ b/.github/workflows/lint-docs.yml
+@@ -37,7 +37,7 @@ jobs:
+         make docs -B
+     - name: Run Black
+       run: |
+-        flake8 earthpy
++        black earthpy
+     - name: Run Flake8
+       run: |
+-        flake8 earthpy
+\ No newline at end of file
++        flake8 earthpy

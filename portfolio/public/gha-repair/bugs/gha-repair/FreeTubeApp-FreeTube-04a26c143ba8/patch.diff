@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index a94f91f..850fac7 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -59,6 +59,7 @@ jobs:
+           echo 'finished installing node'
+           apt update
+           apt install -y nodejs
++          apt install -y build-essential
+           node --version
+           npm install
+           npm run lint

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/spm.yml b/.github/workflows/spm.yml
+index c9e88ab..9178343 100644
+--- a/.github/workflows/spm.yml
++++ b/.github/workflows/spm.yml
+@@ -29,7 +29,7 @@ jobs:
+           swift package update --package-path Resources/parsers/trunk
+       - name: Create Pull Request
+         id: cpr
+-        uses: peter-evans/create-pull-request@v5
++        uses: peter-evans/create-pull-request@v6
+         with:
+           token: ${{ secrets.GH_PAT }}
+           base: "master"

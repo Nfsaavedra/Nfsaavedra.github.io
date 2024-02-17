@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/update-protobuf.yml b/.github/workflows/update-protobuf.yml
+index 55fbbd0..0d201b1 100644
+--- a/.github/workflows/update-protobuf.yml
++++ b/.github/workflows/update-protobuf.yml
+@@ -14,7 +14,7 @@ on:
+ jobs:
+   update-protobuf:
+     permissions:
+-      contents: read
++      contents: write
+       pull-requests: write
+     runs-on: ubuntu-latest
+     steps:

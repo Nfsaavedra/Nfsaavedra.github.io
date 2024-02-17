@@ -1,0 +1,38 @@
+diff --git a/.github/workflows/docker-release.yml b/.github/workflows/docker-release.yml
+index 6c49210..6788ea1 100644
+--- a/.github/workflows/docker-release.yml
++++ b/.github/workflows/docker-release.yml
+@@ -46,5 +46,12 @@ jobs:
+           file: ./Dockerfile
+           platforms: linux/amd64,linux/arm64,linux/arm/v7
+           tags: ${{ steps.envs.outputs.tags }}
++      - name: Update Docker Hub Description
++        uses: peter-evans/dockerhub-description@v3
++        with:
++          username: ${{ secrets.DOCKERHUB_USERNAME }}
++          password: ${{ secrets.DOCKERHUB_PASSWORD }}
++          repository: cloudreve/cloudreve
++          short-description: ${{ github.event.repository.description }}
+       - name: Image Digest
+         run: echo ${{ steps.docker_build.outputs.digest }}
+diff --git a/docker-bootstrap.sh b/docker-bootstrap.sh
+deleted file mode 100644
+index e5d86fb..0000000
+--- a/docker-bootstrap.sh
++++ /dev/null
+@@ -1,15 +0,0 @@
+-#!/bin/sh
+-GREEN='\033[0;32m'
+-RESET='\033[0m'
+-if [ ! -f /etc/cloudreve/aria2c.conf ]; then
+-    echo -e "[${GREEN}aria2c${RESET}] aria2c config not found. Generating..."
+-    secret=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 13)
+-    echo -e "[${GREEN}aria2c${RESET}] Generated port: 6800, secret: $secret"
+-    cat <<EOF > /etc/cloudreve/aria2c.conf
+-enable-rpc=true
+-rpc-listen-port=6800
+-rpc-secret=$secret
+-EOF
+-fi
+-aria2c --conf-path /etc/cloudreve/aria2c.conf -D
+-cloudreve

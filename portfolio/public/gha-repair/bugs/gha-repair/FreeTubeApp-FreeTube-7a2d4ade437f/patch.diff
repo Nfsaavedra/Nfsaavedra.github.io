@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/remove-outdated-labels.yml b/.github/workflows/remove-outdated-labels.yml
+index 737882b..ebeacff 100644
+--- a/.github/workflows/remove-outdated-labels.yml
++++ b/.github/workflows/remove-outdated-labels.yml
+@@ -19,6 +19,7 @@ jobs:
+             PR: changes requested
+             PR: merge conflicts / rebase needed
+             PR/Issue: dependent
++            PR: stale
+ 
+   remove-closed-pr-labels:
+     name: Remove closed pull request labels
+@@ -33,4 +34,5 @@ jobs:
+             PR: WIP
+             PR: changes requested
+             PR: merge conflicts / rebase needed
+-            PR/Issue: dependent      
++            PR/Issue: dependent
++            PR: stale

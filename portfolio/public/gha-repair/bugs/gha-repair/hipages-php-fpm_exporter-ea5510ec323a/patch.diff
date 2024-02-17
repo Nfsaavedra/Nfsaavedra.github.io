@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 4b5487e..73d2f5f 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -77,7 +77,7 @@ jobs:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+ 
+     - name: Scan image
+-      uses: anchore/scan-action@v2.0.4
++      uses: anchore/scan-action@v3.2.0
+       with:
+         image: "hipages/php-fpm_exporter:latest"
+         fail-build: true

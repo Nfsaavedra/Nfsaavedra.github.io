@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build-and-test.yml b/.github/workflows/build-and-test.yml
+index 4eead77..ba5cb84 100644
+--- a/.github/workflows/build-and-test.yml
++++ b/.github/workflows/build-and-test.yml
+@@ -19,7 +19,7 @@ jobs:
+       - name: Add Clang/LLVM repositories
+         run: |-
+           wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
+-          sudo add-apt-repository 'deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic-11 main'
++          sudo add-apt-repository 'deb http://apt.llvm.org/focal/ llvm-toolchain-focal-11 main'
+ 
+       - name: Install build dependencies
+         run: |-

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 61418bc..aeff51e 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -3,6 +3,7 @@ name: CI
+ on:
+   push:
+   pull_request:
++  workflow_dispatch:
+   schedule: [cron: "40 1 * * *"]
+ 
+ permissions:

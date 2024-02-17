@@ -1,0 +1,142 @@
+diff --git a/.github/workflows/tests.yml b/.github/workflows/tests.yml
+index ef26995..74bfa6b 100644
+--- a/.github/workflows/tests.yml
++++ b/.github/workflows/tests.yml
+@@ -84,8 +84,8 @@ jobs:
+           python-version: 3.7
+       - name: Build wheels
+         env:
+-          CIBW_BEFORE_BUILD: python scripts/fetch-codecs /tmp/vendor
+-          CIBW_BEFORE_BUILD_WINDOWS: python scripts\fetch-codecs C:\cibw\vendor
++          CIBW_BEFORE_BUILD: python scripts/fetch-vendor /tmp/vendor
++          CIBW_BEFORE_BUILD_WINDOWS: python scripts\fetch-vendor C:\cibw\vendor
+           CIBW_ENVIRONMENT: CFLAGS=-I/tmp/vendor/include LDFLAGS=-L/tmp/vendor/lib
+           CIBW_ENVIRONMENT_WINDOWS: CL="/IC:\cibw\vendor\include" LINK="/LIBPATH:C:\cibw\vendor\lib"
+           CIBW_SKIP: cp27-* cp35-* pp27-*
+diff --git a/scripts/fetch-codecs b/scripts/fetch-codecs
+deleted file mode 100755
+index 46715e6..0000000
+--- a/scripts/fetch-codecs
++++ /dev/null
+@@ -1,45 +0,0 @@
+-#!/usr/bin/env python
+-
+-import os
+-import shutil
+-import struct
+-import subprocess
+-import sys
+-
+-destination_dir = sys.argv[1]
+-tarball_dir = "tarballs"
+-
+-
+-def get_platform():
+-    if sys.platform == "linux":
+-        return "manylinux_%s" % os.uname().machine
+-    elif sys.platform == "darwin":
+-        return "macosx_%s" % os.uname().machine
+-    elif sys.platform == "win32":
+-        return "win%s" % (struct.calcsize("P") * 8)
+-    else:
+-        raise Exception("Unsupported platfom %s" % sys.platform)
+-
+-
+-# determine tarball name
+-tarball_name = "codecs-%s.tar.gz" % get_platform()
+-tarball_url = (
+-    "https://github.com/aiortc/aiortc-codecs/releases/download/1.1/%s" % tarball_name
+-)
+-
+-# download tarball
+-tarball_file = os.path.join(tarball_dir, tarball_name)
+-if not os.path.exists(tarball_file):
+-    print("Downloading %s" % tarball_url)
+-    if not os.path.exists(tarball_dir):
+-        os.mkdir(tarball_dir)
+-    subprocess.check_call(
+-        ["curl", "--location", "--output", tarball_file, "--silent", tarball_url]
+-    )
+-
+-# extract tarball
+-print("Extracting to %s" % destination_dir)
+-if os.path.exists(destination_dir):
+-    shutil.rmtree(destination_dir)
+-os.mkdir(destination_dir)
+-subprocess.check_call(["tar", "-C", destination_dir, "-xf", tarball_file])
+diff --git a/scripts/fetch-vendor b/scripts/fetch-vendor
+new file mode 100755
+index 0000000..a06d623
+--- /dev/null
++++ b/scripts/fetch-vendor
+@@ -0,0 +1,61 @@
++#!/usr/bin/env python
++
++import argparse
++import logging
++import json
++import os
++import shutil
++import struct
++import subprocess
++import sys
++
++
++def get_platform():
++    if sys.platform == "linux":
++        return "manylinux_%s" % os.uname().machine
++    elif sys.platform == "darwin":
++        return "macosx_%s" % os.uname().machine
++    elif sys.platform == "win32":
++        return "win%s" % (struct.calcsize("P") * 8)
++    else:
++        raise Exception("Unsupported platfom %s" % sys.platform)
++
++
++parser = argparse.ArgumentParser(description="Fetch and extract tarballs")
++parser.add_argument("destination_dir")
++parser.add_argument("--cache-dir", default="tarballs")
++parser.add_argument("--config-file", default=__file__ + ".json")
++args = parser.parse_args()
++logging.basicConfig(level=logging.INFO)
++
++# work around buggy 'tar' executable on Windows
++if sys.platform == "win32":
++    os.environ["PATH"] = "C:\\Program Files\\Git\\usr\\bin;" + os.environ["PATH"]
++
++# read config file
++with open(args.config_file, "r") as fp:
++    config = json.load(fp)
++
++# create fresh destination directory
++logging.info("Creating directory %s" % args.destination_dir)
++if os.path.exists(args.destination_dir):
++    shutil.rmtree(args.destination_dir)
++os.mkdir(args.destination_dir)
++
++for url_template in config["urls"]:
++    tarball_url = url_template.replace("{platform}", get_platform())
++
++    # download tarball
++    tarball_name = tarball_url.split("/")[-1]
++    tarball_file = os.path.join(args.cache_dir, tarball_name)
++    if not os.path.exists(tarball_file):
++        logging.info("Downloading %s" % tarball_url)
++        if not os.path.exists(args.cache_dir):
++            os.mkdir(args.cache_dir)
++        subprocess.check_call(
++            ["curl", "--location", "--output", tarball_file, "--silent", tarball_url]
++        )
++
++    # extract tarball
++    logging.info("Extracting %s" % tarball_name)
++    subprocess.check_call(["tar", "-C", args.destination_dir, "-xf", tarball_file])
+diff --git a/scripts/fetch-vendor.json b/scripts/fetch-vendor.json
+new file mode 100644
+index 0000000..9190767
+--- /dev/null
++++ b/scripts/fetch-vendor.json
+@@ -0,0 +1,3 @@
++{
++    "urls": ["https://github.com/aiortc/aiortc-codecs/releases/download/1.1/codecs-{platform}.tar.gz"]
++}

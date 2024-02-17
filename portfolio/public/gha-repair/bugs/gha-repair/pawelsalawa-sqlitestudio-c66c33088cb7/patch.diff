@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/sandbox_w64.yml b/.github/workflows/sandbox_w64.yml
+index 60ef4ce..6bc0d5c 100644
+--- a/.github/workflows/sandbox_w64.yml
++++ b/.github/workflows/sandbox_w64.yml
+@@ -59,7 +59,7 @@ jobs:
+             - name: Find zlib
+               shell: bash
+               run: |
+-                find / -name "zlib.h"
++                find ../../ -name "zlib.h"
+  
+             # - name: Install SQLite3
+               # shell: bash

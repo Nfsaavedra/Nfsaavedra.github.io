@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/tests.yml b/.github/workflows/tests.yml
+index 4fdd642..482e366 100644
+--- a/.github/workflows/tests.yml
++++ b/.github/workflows/tests.yml
+@@ -48,6 +48,7 @@ jobs:
+                 aqtversion: '==3.0.*'
+                 py7zrversion: '==0.20.*'
+                 setup-python: 'false'
++                extra: '--external 7z'
+ 
+             - name: Clone repo
+               uses: actions/checkout@v3

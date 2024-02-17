@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/validate.yml b/.github/workflows/validate.yml
+index 15ba4ee..ba497be 100644
+--- a/.github/workflows/validate.yml
++++ b/.github/workflows/validate.yml
+@@ -14,13 +14,13 @@ jobs:
+       - name: Checkout repository
+         uses: actions/checkout@v2
+         with:
+-          # Workaround unexplained "no merge base" error
++          # Ensure connection with 'master' branch
+           fetch-depth: 2
+ 
+       - name: Retrieve last master commit (for `git diff` purposes)
+         run: |
+           git checkout -b pr
+-          git fetch --prune --depth=1 origin +refs/heads/master:refs/remotes/origin/master
++          git fetch --prune --depth=20 origin +refs/heads/master:refs/remotes/origin/master
+           git checkout master
+           git checkout pr
+ 

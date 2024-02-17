@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/develop.yml b/.github/workflows/develop.yml
+index b1ce506..dde25a9 100644
+--- a/.github/workflows/develop.yml
++++ b/.github/workflows/develop.yml
+@@ -36,6 +36,10 @@ jobs:
+         with:
+           python-version: "3.8"
+ 
++      - name: Install dependencies
++        run: |
++          python -m pip install --upgrade pip
++          pip install cibuildwheel>=1.7.0
+       - name: Build wheels
+         run: |
+           python -m cibuildwheel --output-dir dist

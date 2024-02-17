@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/tests.yml b/.github/workflows/tests.yml
+index 13a1be8..ec8942a 100644
+--- a/.github/workflows/tests.yml
++++ b/.github/workflows/tests.yml
+@@ -1,5 +1,5 @@
+ name: Tests
+-on: [push]
++on: [push, pull_request]
+ jobs:
+   mysql-tests:
+     name: MySQL tests

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/npm-publish.yml b/.github/workflows/npm-publish.yml
+index 1fc976a..e5375ec 100644
+--- a/.github/workflows/npm-publish.yml
++++ b/.github/workflows/npm-publish.yml
+@@ -11,7 +11,7 @@ jobs:
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v3
+-      - uses: actions/setup-node@v3
++      - uses: actions/setup-node@v4
+         with:
+           node-version: 16
+           registry-url: https://registry.npmjs.org/

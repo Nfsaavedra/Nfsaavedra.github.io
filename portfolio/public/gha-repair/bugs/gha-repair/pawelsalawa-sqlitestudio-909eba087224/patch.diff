@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/tests.yml b/.github/workflows/tests.yml
+index 46d8302..4fdd642 100644
+--- a/.github/workflows/tests.yml
++++ b/.github/workflows/tests.yml
+@@ -30,7 +30,7 @@ jobs:
+ 
+         strategy:
+             matrix:
+-                QT_VERSION: ['5.12.10', '5.15.2']
++                QT_VERSION: ['5.15.2']
+ 
+         steps:
+             - uses: actions/setup-python@v4

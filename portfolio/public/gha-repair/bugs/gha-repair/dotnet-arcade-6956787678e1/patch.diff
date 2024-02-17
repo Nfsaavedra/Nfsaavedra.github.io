@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/backport.yml b/.github/workflows/backport.yml
+index bb9ed94..7f7d210 100644
+--- a/.github/workflows/backport.yml
++++ b/.github/workflows/backport.yml
+@@ -1,5 +1,6 @@
+ name: Backport PR to branch
+ on:
++  workflow_call:
+   issue_comment:
+     types: [created]
+   schedule:

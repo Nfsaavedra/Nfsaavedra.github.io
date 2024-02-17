@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 37165b3..2418629 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -11,10 +11,10 @@ jobs:
+     steps:
+     - uses: actions/checkout@v3
+     - uses: cachix/install-nix-action@v17
+-    - uses: cachix/cachix-action@v11
++    - uses: cachix/cachix-action@v12
+       with:
+         name: cachix
+-    - uses: cachix/cachix-action@v11
++    - uses: cachix/cachix-action@v12
+       with:
+         name: cachix
+         installCommand: NIXPKGS_ALLOW_BROKEN=1 nix-env -if .

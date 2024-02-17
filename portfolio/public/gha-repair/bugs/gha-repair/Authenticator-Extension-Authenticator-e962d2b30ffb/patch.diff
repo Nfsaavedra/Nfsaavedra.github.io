@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/codeql-analysis.yml b/.github/workflows/codeql-analysis.yml
+index 4d94410..5cdff73 100644
+--- a/.github/workflows/codeql-analysis.yml
++++ b/.github/workflows/codeql-analysis.yml
+@@ -7,7 +7,7 @@ on:
+     # The branches below must be a subset of the branches above
+     branches: [dev]
+   schedule:
+-    - cron: '0 22 * * 1'
++    - cron: '0 12 * * 4'
+ 
+ jobs:
+   analyse:

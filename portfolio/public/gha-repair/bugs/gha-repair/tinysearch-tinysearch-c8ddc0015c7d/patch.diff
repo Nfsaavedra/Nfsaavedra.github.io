@@ -1,0 +1,47 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index b906dd9..e9b661c 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -1,6 +1,13 @@
+ name: CI
+ 
+-on: [push, pull_request]
++on:
++  pull_request:
++  push:
++    branches:
++      - master
++  schedule:
++    # Runs every Thursday at 20:23 GMT to avoid bit rot
++    - cron: "20 23 * * 4"
+ 
+ jobs:
+   build:
+@@ -38,4 +45,24 @@ jobs:
+         run: cargo install --force --path bin
+ 
+       - name: Build wasm package
+-        run: tinysearch fixtures/index.json
+\ No newline at end of file
++        run: tinysearch fixtures/index.json
++
++      - name: Audit for Security Vulnerabilities
++        uses: actions-rs/audit-check@v1
++        with:
++          token: ${{ secrets.GITHUB_TOKEN }}
++
++      - name: Generate Docs
++        uses: actions-rs/cargo@v1
++        with:
++          command: doc
++          args: --all-features --no-deps
++
++      - name: Release
++        uses: softprops/action-gh-release@v1
++        if: startsWith(github.ref, 'refs/tags/')
++        with:
++          prerelease: true
++          files: target/release/tinysearch
++        env:
++          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+\ No newline at end of file

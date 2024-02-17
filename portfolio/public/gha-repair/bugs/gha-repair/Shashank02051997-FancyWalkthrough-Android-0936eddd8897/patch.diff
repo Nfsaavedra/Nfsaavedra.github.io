@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/BuildTest.yml b/.github/workflows/BuildTest.yml
+index 2908a39..5b19f86 100644
+--- a/.github/workflows/BuildTest.yml
++++ b/.github/workflows/BuildTest.yml
+@@ -107,5 +107,5 @@ jobs:
+       - name: Upload APK
+         uses: actions/upload-artifact@v2
+         with:
+-          name: apk
++          name: FancyWalkthroughAPK
+           path: app/build/outputs/apk/debug/**.apk

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/docker-release.yml b/.github/workflows/docker-release.yml
+index f819f65..3b36e87 100644
+--- a/.github/workflows/docker-release.yml
++++ b/.github/workflows/docker-release.yml
+@@ -36,7 +36,7 @@ jobs:
+       - name: Set image tag
+         id: tags
+         run: |
+-          if [ ${{ github.event.action }} == "workflow_dispatch" ]; then
++          if [ ${{ github.event.inputs.tags }} == "workflow_dispatch" ]; then
+             echo "::set-output name=tags::${{ github.event.inputs.tags }}"
+           elif [ ${{ github.event.action }} == "release" ]; then
+             echo "::set-output name=tags::${{ github.event.release.tag_name }}"

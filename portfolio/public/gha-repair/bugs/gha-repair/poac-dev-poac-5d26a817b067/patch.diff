@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/linux.yml b/.github/workflows/linux.yml
+index 7292a89..eddd73b 100644
+--- a/.github/workflows/linux.yml
++++ b/.github/workflows/linux.yml
+@@ -61,6 +61,7 @@ jobs:
+ 
+       - name: Install ${{ matrix.compiler.pacakge }}
+         run: |
++          sudo apt-get -qq clean
+           sudo apt-get -qq update
+           sudo apt-get install -y -qq pkg-config cmake ${{ matrix.compiler.pacakge }}
+ 

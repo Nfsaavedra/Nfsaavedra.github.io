@@ -1,0 +1,23 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 4a2b9dc..2d702b7 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -5,6 +5,9 @@ on:
+   pull_request:
+   schedule: [cron: "40 1 * * *"]
+ 
++env:
++  RUSTFLAGS: '-Dwarnings'
++
+ jobs:
+   test:
+     name: Rust ${{matrix.rust}}
+@@ -30,7 +33,7 @@ jobs:
+           components: miri
+       - run: cargo miri test
+         env:
+-          MIRIFLAGS: "-Zmiri-tag-raw-pointers"
++          MIRIFLAGS: '-Zmiri-tag-raw-pointers'
+ 
+   clippy:
+     name: Clippy

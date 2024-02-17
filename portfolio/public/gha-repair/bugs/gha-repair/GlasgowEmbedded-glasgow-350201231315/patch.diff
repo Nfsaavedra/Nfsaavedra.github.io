@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index d6b5d64..dabcbdf 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -11,7 +11,7 @@ jobs:
+     runs-on: ubuntu-20.04
+     strategy:
+       matrix:
+-        python-version: ['3.7', '3.8', '3.9']
++        python-version: ['3.8', '3.9', '3.10']
+     steps:
+       - name: Check out source code
+         uses: actions/checkout@v2

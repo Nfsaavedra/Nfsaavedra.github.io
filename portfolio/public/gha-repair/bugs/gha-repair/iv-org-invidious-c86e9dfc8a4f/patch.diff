@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/container-release.yml b/.github/workflows/container-release.yml
+index 1859f08..137308d 100644
+--- a/.github/workflows/container-release.yml
++++ b/.github/workflows/container-release.yml
+@@ -6,6 +6,8 @@ on:
+       - "master"
+   pull_request:
+     branches: "*"
++  schedule:
++    - cron: 0 0 * * *
+ 
+ jobs:
+   release:

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/doxygen.yml b/.github/workflows/doxygen.yml
+index 8be7bfc..ccf5d71 100644
+--- a/.github/workflows/doxygen.yml
++++ b/.github/workflows/doxygen.yml
+@@ -38,7 +38,7 @@ jobs:
+           sudo apt-get install -y graphviz
+ 
+       - name: Build docs with doxygen
+-        uses: mattnotmitt/doxygen-action@v1.9.2
++        uses: mattnotmitt/doxygen-action@v1.9.5
+ 
+       - name: Setup Pages
+         uses: actions/configure-pages@v2

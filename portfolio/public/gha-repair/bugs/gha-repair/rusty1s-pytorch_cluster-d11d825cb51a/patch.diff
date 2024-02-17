@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/building-conda.yml b/.github/workflows/building-conda.yml
+index 189a62f..754b305 100644
+--- a/.github/workflows/building-conda.yml
++++ b/.github/workflows/building-conda.yml
+@@ -39,7 +39,7 @@ jobs:
+       - name: Free up disk space
+         if: ${{ runner.os == 'Linux' && matrix.cuda-version == 'cu111' }}
+         run: |
+-          sudo du -hs /usr/share
++          sudo du -hs /usr/share/*
+           sudo rm -rf /usr/share/dotnet
+ 
+       - name: Install Conda packages

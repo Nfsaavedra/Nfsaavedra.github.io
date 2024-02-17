@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/win64_release.yml b/.github/workflows/win64_release.yml
+index e0db4fa..203e3d8 100644
+--- a/.github/workflows/win64_release.yml
++++ b/.github/workflows/win64_release.yml
+@@ -98,7 +98,8 @@ jobs:
+               run: |
+                 cd ..
+                 mkdir ext
+-                curl -L http://sqlite.org/$SQLITE_RELEASE_YEAR/sqlite-src-$SQLITE_VERSION.zip --output sqlite-amalgamation-$SQLITE_VERSION.zip
++                curl -L http://sqlite.org/$SQLITE_RELEASE_YEAR/sqlite-src-$SQLITE_VERSION.zip --output sqlite-src-$SQLITE_VERSION.zip
++                ls -l
+                 7z x sqlite-src-$SQLITE_VERSION.zip
+                 ls -l
+                 ls -l sqlite-src-$SQLITE_VERSION/

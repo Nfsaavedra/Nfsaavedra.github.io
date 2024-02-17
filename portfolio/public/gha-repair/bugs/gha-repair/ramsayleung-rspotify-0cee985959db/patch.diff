@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/close_stale.yaml b/.github/workflows/close_stale.yaml
+index bed4f3d..7ca6bfe 100644
+--- a/.github/workflows/close_stale.yaml
++++ b/.github/workflows/close_stale.yaml
+@@ -10,4 +10,6 @@ jobs:
+       - uses: actions/stale@v8
+         with:
+           stale-issue-message: 'Message to comment on stale issues. If none provided, will not mark issues stale'
+-          stale-pr-message: 'Message to comment on stale PRs. If none provided, will not mark PRs stale'
+\ No newline at end of file
++          stale-pr-message: 'Message to comment on stale PRs. If none provided, will not mark PRs stale'
++          days-before-stale: 180
++          days-before-close: 15

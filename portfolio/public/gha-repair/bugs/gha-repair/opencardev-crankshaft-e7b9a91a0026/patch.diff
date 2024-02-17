@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/crankshaft.yml b/.github/workflows/crankshaft.yml
+index 5023856..9501482 100644
+--- a/.github/workflows/crankshaft.yml
++++ b/.github/workflows/crankshaft.yml
+@@ -113,6 +113,7 @@ jobs:
+         csng-
+       ', needs.buildimage.outputs.version)
+     runs-on: ubuntu-latest
++    steps:
+       - 
+         name: Create Release
+         id: create_release

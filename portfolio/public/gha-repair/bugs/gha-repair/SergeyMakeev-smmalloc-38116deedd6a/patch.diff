@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index a4e6620..0aa5cd4 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -15,7 +15,7 @@ jobs:
+         defines: [standard]
+     steps:
+     - name: configure
+-      run: mkdir build && cd build && cmake ..
++      run: cmake .
+     - name: build
+       run: cmake --build . --config Release
+     - name: test

@@ -1,0 +1,62 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 3c09f8f..711438c 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -1,4 +1,4 @@
+-name: Build app
++name: Build console app
+ 
+ on:
+   push:
+@@ -14,8 +14,6 @@ jobs:
+     strategy:
+       matrix:
+         include:
+-          - platform: pc
+-            ext: bin
+           - platform: wiiu
+             ext: rpx
+           - platform: wiiu
+@@ -26,8 +24,6 @@ jobs:
+             ext: 3dsx
+           - platform: wii
+             ext: dol
+-          - platform: pc-sdl1
+-            ext: bin-sdl1
+     container:
+       image: ghcr.io/fortheusers/sealeo:latest
+     steps:
+diff --git a/.github/workflows/pc-builds.yml b/.github/workflows/pc-builds.yml
+new file mode 100644
+index 0000000..393513f
+--- /dev/null
++++ b/.github/workflows/pc-builds.yml
+@@ -0,0 +1,27 @@
++name: Build PC client apps
++
++on:
++  push:
++    branches:
++      - main
++  pull_request:
++    branches:
++      - main
++
++jobs:
++  all:
++    strategy:
++      matrix:
++        os: [ubuntu, windows, macos]
++        library: [sdl2, sdl1]
++    runs-on: ${{ matrix.os }-latest
++    steps:
++    - uses: actions/checkout@main
++      with:
++        submodules: recursive
++    - name: Build ${{ matrix.platform }}
++      run: /__w/hb-appstore/hb-appstore/libs/chesto/helpers/build_pc.sh ${{ matrix.os }} ${{ matrix.library }}}
++    - uses: actions/upload-artifact@v3
++      with:
++        name: appstore-${{ matrix.ext }}
++        path: /__w/hb-appstore/hb-appstore/appstore_${{ matrix.os }}}_${{ matrix.library }}}.zip
+\ No newline at end of file

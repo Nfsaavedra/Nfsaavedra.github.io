@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/maven.yml b/.github/workflows/maven.yml
+index 64eb67f..6abd67a 100644
+--- a/.github/workflows/maven.yml
++++ b/.github/workflows/maven.yml
+@@ -28,6 +28,6 @@ jobs:
+           cache: 'maven'
+       - name: Build with Maven
+         run: ./mvnw clean install -B -U -P sonar
+-      - uses: codecov/codecov-action@v1
++      - uses: codecov/codecov-action@v3
+         with:
+           fail_ci_if_error: true

@@ -1,0 +1,55 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 2d8ac5b..150105f 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -90,10 +90,10 @@ jobs:
+           mv target/${{ matrix.target }}/release/hwatch package/bin
+           mkdir -p package/man
+           cp man/hwatch.1 package/man
+-          cp -r misc/completions package/
++          cp -r completion package/
+           ## sed -i is not used due to difference between macOS and Linux
+           perl -i -pe s/___VERSION___/${{ steps.package_version.outputs.version }}/ ./package/.tar2package.yml
+-          tar zcvf "$_TAR" -C "$PWD/package" misc/completions bin man .tar2package.yml
++          tar zcvf "$_TAR" -C "$PWD/package" completion bin man .tar2package.yml
+ 
+       # use: https://github.com/greymd/tar2package
+       - name: Build rpm
+diff --git a/completion/_hwatch b/completion/_hwatch
+new file mode 100644
+index 0000000..d899144
+--- /dev/null
++++ b/completion/_hwatch
+@@ -0,0 +1,10 @@
++#compdef hwatch
++_hwatch() {
++    _arguments -s \
++        '(-h --help)'{-h,--help}'[show help]' \
++        '(-V --version)'{-V,--version}'[show version]' \
++        '(-c --color)'{-c,--color}'[interpret ANSI color and style sequences]' \
++        '(-d --differences)'{-d,--differences}'[highlight changes between updates]' \
++        '(-l --logfile)'{-l,--logfile}'+[logging file]:include file:_files' \
++        '(-n --interval)'{-n,--interval}'[seconds to wait between updates]:num:_values num 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20' \
++}
+diff --git a/completion/hwatch-completion.bash b/completion/hwatch-completion.bash
+new file mode 100644
+index 0000000..e69de29
+diff --git a/misc/completions/_hwatch b/misc/completions/_hwatch
+deleted file mode 100644
+index d899144..0000000
+--- a/misc/completions/_hwatch
++++ /dev/null
+@@ -1,10 +0,0 @@
+-#compdef hwatch
+-_hwatch() {
+-    _arguments -s \
+-        '(-h --help)'{-h,--help}'[show help]' \
+-        '(-V --version)'{-V,--version}'[show version]' \
+-        '(-c --color)'{-c,--color}'[interpret ANSI color and style sequences]' \
+-        '(-d --differences)'{-d,--differences}'[highlight changes between updates]' \
+-        '(-l --logfile)'{-l,--logfile}'+[logging file]:include file:_files' \
+-        '(-n --interval)'{-n,--interval}'[seconds to wait between updates]:num:_values num 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20' \
+-}
+diff --git a/misc/completions/hwatch-completion.bash b/misc/completions/hwatch-completion.bash
+deleted file mode 100644
+index e69de29..0000000

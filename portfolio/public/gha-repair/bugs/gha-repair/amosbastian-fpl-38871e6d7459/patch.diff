@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/pytest.yaml b/.github/workflows/pytest.yaml
+index 598b223..6218e9d 100644
+--- a/.github/workflows/pytest.yaml
++++ b/.github/workflows/pytest.yaml
+@@ -38,5 +38,5 @@ jobs:
+ 
+       - name: Run test suite
+         run: |
+-          pipenv run python setup.py develop
++          pipenv run python setup.py install
+           pipenv run pytest tests/
+\ No newline at end of file

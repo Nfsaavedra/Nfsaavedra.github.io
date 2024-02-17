@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/manual.yml b/.github/workflows/manual.yml
+index 40adb1e..d7d3f7a 100644
+--- a/.github/workflows/manual.yml
++++ b/.github/workflows/manual.yml
+@@ -2,6 +2,9 @@ name: Other Linux testing
+ 
+ on:
+   workflow_call:
++  workflow_dispatch:
++  schedule:
++    - cron: "* * 2 * *"
+ 
+ jobs:
+   lint:

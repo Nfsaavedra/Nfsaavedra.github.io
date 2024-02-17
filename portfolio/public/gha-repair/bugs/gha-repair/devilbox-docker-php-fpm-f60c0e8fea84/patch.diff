@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/schedule.yml b/.github/workflows/schedule.yml
+index 9f754b0..b712300 100644
+--- a/.github/workflows/schedule.yml
++++ b/.github/workflows/schedule.yml
+@@ -8,7 +8,7 @@ on:
+ 
+ jobs:
+   build:
+-    name: "[ PHP-${{ matrix.version }} (ref: ${{ matrix.refs }} ]"
++    name: "[ PHP-${{ matrix.version }} (ref: ${{ matrix.refs }}) ]"
+     runs-on: ubuntu-latest
+     strategy:
+       fail-fast: False

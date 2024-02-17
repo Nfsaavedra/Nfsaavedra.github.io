@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/labels.yml b/.github/workflows/labels.yml
+index 3d91fd1..1342d9e 100644
+--- a/.github/workflows/labels.yml
++++ b/.github/workflows/labels.yml
+@@ -25,6 +25,6 @@ jobs:
+         uses: actions/checkout@v4
+       -
+         name: Run Labeler
+-        uses: crazy-max/ghaction-github-labeler@v4
++        uses: crazy-max/ghaction-github-labeler@v5
+         with:
+           dry-run: ${{ github.event_name == 'pull_request' }}

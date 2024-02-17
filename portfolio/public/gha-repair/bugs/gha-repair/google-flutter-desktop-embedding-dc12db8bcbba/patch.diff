@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index ab6241d..f73ede5 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -43,7 +43,7 @@ jobs:
+       if: startsWith(matrix.os, 'ubuntu')
+       run: |
+         sudo apt-get update
+-        sudo apt-get install -y libgtk-3-dev libx11-dev pkg-config cmake ninja-build
++        sudo apt-get install -y libgtk-3-dev libx11-dev pkg-config cmake ninja-build libblkid-dev liblzma-dev
+     - name: Enable desktop support	
+       run: |
+         flutter config --enable-linux-desktop	

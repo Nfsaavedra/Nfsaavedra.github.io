@@ -1,0 +1,23 @@
+diff --git a/.github/workflows/addToProject.yml b/.github/workflows/addToProject.yml
+index 789fc4a..593c34a 100644
+--- a/.github/workflows/addToProject.yml
++++ b/.github/workflows/addToProject.yml
+@@ -15,14 +15,16 @@ jobs:
+     name: Assign milestoned to Project
+     steps:
+     - name: Assign issues with milestones to project
+-      uses: srggrs/assign-one-project-github-action@1.2.0
++      uses: elastic/assign-one-project-github-action@1.2.1
+       if: github.event.issue && github.event.issue.milestone
+       with:
+         project: 'https://github.com/orgs/elastic/projects/454'
++        project_id: '5882982'
+         column_name: 'Planned'
+     - name: Assign new pull requests to project
+-      uses: srggrs/assign-one-project-github-action@1.2.0
++      uses: elastic/assign-one-project-github-action@1.2.1
+       if: github.event.action == 'opened' && github.event.pull_request
+       with:
+         project: 'https://github.com/orgs/elastic/projects/454'
++        project_id: '5882982'
+         column_name: 'In Progress'

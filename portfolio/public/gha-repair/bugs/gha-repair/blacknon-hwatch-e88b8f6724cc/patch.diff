@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index a7069e5..b9d4111 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -96,6 +96,7 @@ jobs:
+         name: Get version.
+         shell: bash
+         run: |
++          ls -la
+           VERSION="$(cargo run --example version)"
+           echo "::set-output name=version::$VERSION"
+ 

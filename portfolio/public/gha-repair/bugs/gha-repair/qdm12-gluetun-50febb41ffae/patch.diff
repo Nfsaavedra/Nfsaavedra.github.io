@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index f797d24..89424d2 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -99,7 +99,7 @@ jobs:
+           fi
+ 
+       - name: Build and push final image
+-        uses: docker/build-push-action@v2.6.1
++        uses: docker/build-push-action@v2.7.0
+         with:
+           platforms: ${{ steps.vars.outputs.platforms }}
+           build-args: |

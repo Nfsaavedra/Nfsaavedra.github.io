@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/publish-package.yml b/.github/workflows/publish-package.yml
+index 04b1a5b..f77eade 100644
+--- a/.github/workflows/publish-package.yml
++++ b/.github/workflows/publish-package.yml
+@@ -81,7 +81,7 @@ jobs:
+         echo "python-build named built distribution: ${wheel_name}"
+ 
+     - name: Verify the distribution
+-      run: twine check dist/*
++      run: twine check --strict dist/*
+ 
+     - name: List contents of sdist
+       run: python -m tarfile --list dist/pyhf-*.tar.gz

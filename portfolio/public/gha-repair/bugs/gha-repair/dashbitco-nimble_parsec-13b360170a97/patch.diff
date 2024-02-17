@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 14f6362..42129c1 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -35,7 +35,7 @@ jobs:
+           path: |
+             deps
+             _build
+-          key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
++          key: ${{ runner.os }}-mix-${{matrix.pair.elixir}}-${{matrix.pair.otp}}-${{ hashFiles('**/mix.lock') }}
+           restore-keys: |
+             ${{ runner.os }}-mix-
+ 

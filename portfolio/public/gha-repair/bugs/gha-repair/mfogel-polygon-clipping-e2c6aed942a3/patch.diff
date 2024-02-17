@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 2e325e1..d924ae6 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -64,6 +64,7 @@ jobs:
+       - name: Upload coverage report to codecov
+         uses: codecov/codecov-action@v3
+         with:
++          token: ${{ secrets.CODECOV_TOKEN }}
+           fail_ci_if_error: true
+ 
+   build:

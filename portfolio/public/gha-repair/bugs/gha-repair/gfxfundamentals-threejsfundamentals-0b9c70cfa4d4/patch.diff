@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/deploy-to-gh-pages.yml b/.github/workflows/deploy-to-gh-pages.yml
+index 4b275d2..5596fd8 100644
+--- a/.github/workflows/deploy-to-gh-pages.yml
++++ b/.github/workflows/deploy-to-gh-pages.yml
+@@ -20,7 +20,7 @@ jobs:
+       - name: Install and Build 🏭
+         run: |
+           npm ci
+-          npm pre-build
++          npm run pre-build
+           npm run build-ci
+ 
+       - name: Deploy 📦

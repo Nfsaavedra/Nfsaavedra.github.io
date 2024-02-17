@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/npm-publish.yml b/.github/workflows/npm-publish.yml
+index 87eaa34..88991b8 100644
+--- a/.github/workflows/npm-publish.yml
++++ b/.github/workflows/npm-publish.yml
+@@ -19,7 +19,7 @@ jobs:
+ 
+       - name: Publish
+         run: |
+-          sed -i "s/\"version\".*/\"version\": \"`echo ${{ github.ref_name }} | sed -e "s/^v//"`\"/g" ./package.json
++          sed -i "s/\"version\".*/\"version\": \"`echo ${{ github.ref_name }} | sed -e "s/^v//"`\",/g" ./package.json
+           cat ./package.json
+           npm publish
+         env:

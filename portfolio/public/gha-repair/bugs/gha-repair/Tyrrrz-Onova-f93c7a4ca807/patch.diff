@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/CD.yml b/.github/workflows/CD.yml
+index 9edca6d..6c60a2e 100644
+--- a/.github/workflows/CD.yml
++++ b/.github/workflows/CD.yml
+@@ -24,4 +24,4 @@ jobs:
+         dotnet pack Onova --configuration Release --no-build
+ 
+     - name: Deploy
+-      run: dotnet nuget push Onova/bin/Release/*.nupkg -s nuget.org -k ${{secrets.NUGET_TOKEN}}
++      run: dotnet nuget push Onova\bin\Release\*.nupkg -s nuget.org -k ${{secrets.NUGET_TOKEN}}

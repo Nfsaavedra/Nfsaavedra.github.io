@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 0bbf120..6e3f98b 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -27,7 +27,7 @@ jobs:
+     steps:
+       - uses: actions/checkout@v3
+       - name: Use Node.js
+-        uses: actions/setup-node@v2
++        uses: actions/setup-node@v3
+         with:
+           node-version: ${{ matrix.node-version }}
+       - name: Install Dependencies

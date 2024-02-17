@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/auto-close-duplicate.yaml b/.github/workflows/auto-close-duplicate.yaml
+index 4495c22..aa6457e 100644
+--- a/.github/workflows/auto-close-duplicate.yaml
++++ b/.github/workflows/auto-close-duplicate.yaml
+@@ -27,10 +27,11 @@ jobs:
+           reactions: ''
+           close: true
+           # Comment to post when potential duplicates are detected.
+-          comment: >
++          comment: |
+             Hello, your issue is a duplicate of this/these issue(s): {{#issues}}
+-              - #{{ number }} [accuracy: ({{ accuracy }}%)]
++              - #{{ number }} [accuracy: {{ accuracy }}%]
+             {{/issues}}
++            
+             If this is a mistake please explain why and ping @\unixfox, @\SamantazFox and @\TheFrenchGhosty.
+             
+-            Please refrain from opening new issues, it won't help in solving your problem.
+\ No newline at end of file
++            Please refrain from opening new issues, it won't help in solving your problem.

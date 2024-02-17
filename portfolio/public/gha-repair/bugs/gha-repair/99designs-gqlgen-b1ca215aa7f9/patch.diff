@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/check-integration b/.github/workflows/check-integration
+index d9b95d5..93783ba 100755
+--- a/.github/workflows/check-integration
++++ b/.github/workflows/check-integration
+@@ -15,7 +15,8 @@ curl -s --connect-timeout 5 \
+     --retry-max-time 40 \
+     --retry-connrefused \
+     localhost:8080 > /dev/null
+-
++npm install -g typescript
++npm link typescript
+ echo "### running jest integration spec"
+ ./node_modules/.bin/jest --color
+ 

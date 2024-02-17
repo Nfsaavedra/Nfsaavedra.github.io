@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/cpush.yml b/.github/workflows/cpush.yml
+index da68277..17388f5 100644
+--- a/.github/workflows/cpush.yml
++++ b/.github/workflows/cpush.yml
+@@ -19,7 +19,7 @@ jobs:
+ 
+     steps:
+     - uses: actions/checkout@v3
+-    - name: make
++    - name: Make
+       env:
+        CC: gcc-${{matrix.cc}}
+ 

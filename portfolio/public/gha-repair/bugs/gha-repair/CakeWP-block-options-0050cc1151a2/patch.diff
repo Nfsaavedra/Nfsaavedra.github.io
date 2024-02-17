@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/development-zip.yml b/.github/workflows/development-zip.yml
+index 0fc9c3e..1f2ce0c 100644
+--- a/.github/workflows/development-zip.yml
++++ b/.github/workflows/development-zip.yml
+@@ -33,7 +33,7 @@ jobs:
+                       ${{ runner.os }}-composer-
+ 
+             - name: Build autoloader
+-              run: composer install --prefer-dist --no-progress --no-suggest --no-dev
++              run: composer install
+ 
+             - name: Using Node version ${{ matrix.node-version }}
+               uses: actions/setup-node@v1

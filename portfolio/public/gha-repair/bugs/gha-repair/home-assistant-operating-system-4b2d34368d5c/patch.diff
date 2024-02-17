@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yaml b/.github/workflows/build.yaml
+index f2c1ea7..8cb89c0 100644
+--- a/.github/workflows/build.yaml
++++ b/.github/workflows/build.yaml
+@@ -364,7 +364,7 @@ jobs:
+         with:
+           name: haos_${{ matrix.board.id }}-${{ needs.prepare.outputs.version_full }}.vhdx.zip
+           path: |
+-            output/images/haos_${{ matrix.board.id }}-${{ needs.prepare.outputs.version_full }}.vhdx..zip
++            output/images/haos_${{ matrix.board.id }}-${{ needs.prepare.outputs.version_full }}.vhdx.zip
+ 
+   test:
+     name: Test OS image

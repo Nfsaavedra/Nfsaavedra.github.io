@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/golang.yml b/.github/workflows/golang.yml
+index 84e3b71..583a440 100644
+--- a/.github/workflows/golang.yml
++++ b/.github/workflows/golang.yml
+@@ -24,7 +24,7 @@ jobs:
+       - name: Lint
+         uses: golangci/golangci-lint-action@v3
+         with:
+-          version: v1.49.0
++          version: v1.52.1
+ 
+       - name: Test
+         run: go test ./... -race -count 1

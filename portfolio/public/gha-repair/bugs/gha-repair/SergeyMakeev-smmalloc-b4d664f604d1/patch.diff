@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index f008ec5..0f5c69c 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -23,7 +23,7 @@ jobs:
+     - name: Build
+       run: cd build && cmake --build . --config Release
+     - name: Debug
+-      run: ls
++      run: cd build && ls
+     - name: Run unit tests
+       run: "./build/Release/smmalloc_test"
+     - name: Run performance tests

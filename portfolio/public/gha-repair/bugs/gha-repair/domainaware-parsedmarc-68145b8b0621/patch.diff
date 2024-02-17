@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/python-tests.yml b/.github/workflows/python-tests.yml
+index 8dd9d8e..375414b 100644
+--- a/.github/workflows/python-tests.yml
++++ b/.github/workflows/python-tests.yml
+@@ -48,7 +48,6 @@ jobs:
+     - name: Test sample DMARC reports
+       continue-on-error: true
+       run: |
+-        python setup.py install
+         parsedmarc --debug -c ci.ini samples/aggregate/*
+         parsedmarc --debug -c ci.ini samples/forensic/*"
+     - name: Test building packages

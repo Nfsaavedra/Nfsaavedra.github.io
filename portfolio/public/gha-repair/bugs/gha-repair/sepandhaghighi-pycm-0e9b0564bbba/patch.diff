@@ -1,0 +1,76 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 4dd01ac..e30a1eb 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -39,7 +39,7 @@ jobs:
+         python Otherfiles/notebook_check.py
+     - name: Other tests
+       run: |
+-          python -m vulture --min-confidence 65 --exclude=__init__.py --sort-by-size pycm/ setup.py Otherfiles/version_check.py Otherfiles/notebook_check.py
++          python -m vulture pycm/ Otherfiles/ setup.py --min-confidence 65 --exclude=__init__.py --sort-by-size
+           python -m bandit -r pycm -s B311
+           python -m pydocstyle --match-dir=pycm
+       if: matrix.python-version == 3.7
+diff --git a/.travis/install.sh b/.travis/install.sh
+deleted file mode 100644
+index e791aa3..0000000
+--- a/.travis/install.sh
++++ /dev/null
+@@ -1,25 +0,0 @@
+-#!/bin/bash
+-  set -e
+-  set -x
+-  
+-  PYTHON_COMMAND=python
+-  PIP_COMMAND=pip
+-  if [ "$TRAVIS_OS_NAME" == "osx" ]
+-  then
+-	  PYTHON_COMMAND=python3
+-	  PIP_COMMAND=pip3
+-  fi
+-  
+-  $PIP_COMMAND install -r requirements.txt
+-  $PYTHON_COMMAND setup.py install
+-  $PYTHON_COMMAND -m pycm test
+-  $PYTHON_COMMAND -m pycm
+-  
+-  if [ "$TRAVIS_OS_NAME" == "osx" ]
+-  then
+-	$PIP_COMMAND install --upgrade --upgrade-strategy=only-if-needed -r dev-requirements.txt --user
+-  else
+-	$PIP_COMMAND install --upgrade --upgrade-strategy=only-if-needed -r dev-requirements.txt
+-  fi
+-
+-
+diff --git a/.travis/test.sh b/.travis/test.sh
+deleted file mode 100644
+index 8b84c98..0000000
+--- a/.travis/test.sh
++++ /dev/null
+@@ -1,26 +0,0 @@
+-#!/bin/bash
+-  set -e
+-  set -x
+-  IS_IN_TRAVIS=false
+-  PYTHON_COMMAND=python
+-  
+-  if [ "$TRAVIS_OS_NAME" == "osx" ]
+-  then
+-	PYTHON_COMMAND=python3
+-  fi
+-  $PYTHON_COMMAND -m pytest Test --cov=pycm --cov-report=term
+-  $PYTHON_COMMAND Otherfiles/version_check.py
+-  
+-  if [ "$CI" = 'true' ] && [ "$TRAVIS" = 'true' ]
+-  then
+-      IS_IN_TRAVIS=true
+-  fi
+-
+-  if [ "$IS_IN_TRAVIS" = 'false' ] || [ "$TRAVIS_PYTHON_VERSION" = '3.6' ]
+-  then
+-      $PYTHON_COMMAND -m vulture pycm/ Otherfiles/ setup.py --min-confidence 65 --exclude=__init__.py --sort-by-size
+-      $PYTHON_COMMAND -m bandit -r pycm -s B311
+-      $PYTHON_COMMAND -m pydocstyle -v --match-dir=pycm
+-      $PYTHON_COMMAND Otherfiles/notebook_check.py
+-  fi
+-  $PYTHON_COMMAND -m cProfile -s cumtime pycm/pycm_profile.py

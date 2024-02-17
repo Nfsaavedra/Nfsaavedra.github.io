@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 511097c..e82b49a 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -84,7 +84,7 @@ jobs:
+   config-validation:
+     name: "Dataset Config Validation"
+     runs-on: ubuntu-latest
+-    timeout-minutes: 1
++    timeout-minutes: 2
+     steps:
+       - uses: actions/checkout@v3
+         name: Checkout code

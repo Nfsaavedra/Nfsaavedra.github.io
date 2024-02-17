@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/subsplit.yml b/.github/workflows/subsplit.yml
+index d9cc525..a8ac264 100644
+--- a/.github/workflows/subsplit.yml
++++ b/.github/workflows/subsplit.yml
+@@ -13,7 +13,7 @@ jobs:
+ 
+         steps:
+             - uses: actions/checkout@master
+-            - uses: webfactory/ssh-agent@v0.1.1
++            - uses: webfactory/ssh-agent@v0.4.1
+               with:
+                 ssh-private-key: ${{ secrets.SUBSPLIT_KEY }}
+ 

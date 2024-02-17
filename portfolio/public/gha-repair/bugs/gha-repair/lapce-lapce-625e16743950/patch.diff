@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index b29f085..23478ee 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -59,8 +59,8 @@ jobs:
+         uses: devbotsxyz/xcode-notarize@v1
+         with:
+           product-path: "./target/release/macos/Lapce-macos.dmg"
+-          appstore-connect-username: ${{ secrets.NOTARIZATION_USERNAME }}
+-          appstore-connect-password: ${{ secrets.NOTARIZATION_PASSWORD }}
++          appstore-connect-username: ${{ secrets.NOTARIZE_USERNAME }}
++          appstore-connect-password: ${{ secrets.NOTARIZE_PASSWORD }}
+       - name: "Staple Release Build"
+         uses: devbotsxyz/xcode-staple@v1
+         with:

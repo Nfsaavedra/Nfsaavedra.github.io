@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index c9da457..41f7692 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -38,6 +38,6 @@ jobs:
+       - name: Chmod
+         run:  chmod +x mvnw
+       - name: Maven Build
+-        run: ./mvnw install -B -V -Dmaven.test.skip=true
++        run: ./mvnw install -B -V -Dmaven.test.skip=false
+       - name: Java Doc
+         run: ./mvnw javadoc:javadoc

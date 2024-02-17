@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/go.yml b/.github/workflows/go.yml
+index 5fbadcf..345b6e7 100644
+--- a/.github/workflows/go.yml
++++ b/.github/workflows/go.yml
+@@ -43,7 +43,7 @@ jobs:
+         with:
+           # either 'goreleaser' (default) or 'goreleaser-pro'
+           distribution: goreleaser
+-          version: latest
++          version: v1.15.2
+           args: release --rm-dist
+         env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

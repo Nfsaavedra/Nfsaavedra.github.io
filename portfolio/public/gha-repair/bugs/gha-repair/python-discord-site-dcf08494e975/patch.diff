@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/lint-test.yaml b/.github/workflows/lint-test.yaml
+index 6c94fd1..2e9a9a6 100644
+--- a/.github/workflows/lint-test.yaml
++++ b/.github/workflows/lint-test.yaml
+@@ -45,7 +45,7 @@ jobs:
+       # This step will publish the coverage reports coveralls.io and
+       # link the report to the commit
+       - name: Publish Coverage Report
+-        uses: coverallsapp/github-action@v2.2.1
++        uses: coverallsapp/github-action@v2.2.2
+         with:
+           github-token: ${{ secrets.GITHUB_TOKEN }}
+           file: ./coverage.lcov

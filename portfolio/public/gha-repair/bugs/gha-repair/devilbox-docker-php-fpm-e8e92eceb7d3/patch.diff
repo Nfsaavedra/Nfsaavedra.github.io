@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/zzz-build.yml b/.github/workflows/zzz-build.yml
+index 9c68542..f3da0ad 100644
+--- a/.github/workflows/zzz-build.yml
++++ b/.github/workflows/zzz-build.yml
+@@ -22,7 +22,7 @@ jobs:
+   # (2/2) Build
+   docker:
+     needs: [params]
+-    uses: ./.github/workflows/zzz-build.yml
++    uses: ./.github/workflows/zzz-reuse.yml
+     with:
+       enabled: true
+       can_deploy: ${{ github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags/') || startsWith(github.ref, 'refs/heads/release-') }}

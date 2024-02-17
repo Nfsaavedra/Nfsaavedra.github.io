@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/crankshaft.yml b/.github/workflows/crankshaft.yml
+index 052d145..644d451 100644
+--- a/.github/workflows/crankshaft.yml
++++ b/.github/workflows/crankshaft.yml
+@@ -61,7 +61,8 @@ jobs:
+         name: Get Name of Artifact
+         id: get-artifact-name
+         run: |
+-          ARTIFACT_PATHNAME=$(ls deploy/*.zip | head -n 1)
++          ls -hla
++          ARTIFACT_PATHNAME=$(ls ./deploy/*.zip | head -n 1)
+           ARTIFACT_NAME=$(basename $ARTIFACT_PATHNAME)
+           ARTIFACT_DIRNAME=$(dirname $ARTIFACT_PATHNAME)
+           echo ::set-output name=artifact_filename::${ARTIFACT_NAME}

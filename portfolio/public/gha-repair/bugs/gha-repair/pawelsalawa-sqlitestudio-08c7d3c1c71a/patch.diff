@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/mac_release.yml b/.github/workflows/mac_release.yml
+index 833c7eb..ac92a26 100644
+--- a/.github/workflows/mac_release.yml
++++ b/.github/workflows/mac_release.yml
+@@ -127,3 +127,9 @@ jobs:
+               with:
+                 name: sqlitestudio-${{ env.SQLITESTUDIO_VERSION }}.dmg
+                 path: output/SQLiteStudio/sqlitestudio-${{ env.SQLITESTUDIO_VERSION }}.dmg
++
++            - name: Upload installer artifact
++              uses: actions/upload-artifact@v1
++              with:
++                name: SQLiteStudio-${{ env.SQLITESTUDIO_VERSION }}-osx-installer.dmg
++                path: SQLiteStudio-${{ env.SQLITESTUDIO_VERSION }}-osx-installer.dmg

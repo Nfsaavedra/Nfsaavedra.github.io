@@ -1,0 +1,31 @@
+diff --git a/.github/workflows/CI.yml b/.github/workflows/CI.yml
+index e0df852..b74bc3f 100644
+--- a/.github/workflows/CI.yml
++++ b/.github/workflows/CI.yml
+@@ -11,7 +11,7 @@ jobs:
+     name: Rustfmt
+     runs-on: ubuntu-latest
+     steps:
+-      - uses: actions/checkout@v2
++      - uses: actions/checkout@v3
+       - uses: actions-rs/toolchain@v1
+         with:
+           toolchain: nightly
+@@ -29,7 +29,7 @@ jobs:
+     steps:
+       - name: install system dependencies
+         run: sudo apt-get update && sudo apt-get install libdbus-1-dev libusb-1.0-0-dev
+-      - uses: actions/checkout@v2
++      - uses: actions/checkout@v3
+       - uses: actions-rs/toolchain@v1
+         with:
+           profile: minimal
+@@ -45,7 +45,7 @@ jobs:
+     steps:
+       - name: install system dependencies
+         run: sudo apt-get update && sudo apt-get install libdbus-1-dev libusb-1.0-0-dev
+-      - uses: actions/checkout@v2
++      - uses: actions/checkout@v3
+       - uses: actions-rs/toolchain@v1
+         with:
+           profile: minimal

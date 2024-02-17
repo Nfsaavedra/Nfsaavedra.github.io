@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/docker-latest.yml b/.github/workflows/docker-latest.yml
+index be5f186..7282c09 100644
+--- a/.github/workflows/docker-latest.yml
++++ b/.github/workflows/docker-latest.yml
+@@ -2,7 +2,7 @@ name: Update docker image
+ 
+ on:
+   push:
+-    branches: [ main ]
++    branches: [ master ]
+ 
+ jobs:
+   build:

@@ -1,0 +1,26 @@
+diff --git a/.github/workflows/nightly.yml b/.github/workflows/nightly.yml
+index 43ca4cf..d3c65fa 100644
+--- a/.github/workflows/nightly.yml
++++ b/.github/workflows/nightly.yml
+@@ -10,16 +10,13 @@ jobs:
+ 
+   steps:
+     -uses: actions/checkout@v2
+-
+-    #-name: JDK
+-    # uses: actions/setup-java@v2
+-    # with:
+-    #   java-version: '11'
+-    #   distribution: 'adopt'
+-
++    -name: JDK
++     uses: actions/setup-java@v2
++     with:
++       java-version: '11'
++       distribution: 'adopt'
+     - name: Nightly Build
+       run: ./gradlew clean assembleNightly
+-
+     - name: Sign APK
+       uses: r0adkll/sign-android-release@v1
+       id: sign_app

@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index d8f2581..13c6bd3 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -18,6 +18,9 @@ jobs:
+           go-version: 1.14
+         id: go
+ 
++      - name: Login to docker hub
++        run: docker login -u $DOCKER_USER -p $DOCKER_PASS
++
+       - name: Run GoReleaser
+         uses: goreleaser/goreleaser-action@v1
+         with:

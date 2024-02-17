@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/docker-cd.yml b/.github/workflows/docker-cd.yml
+index 0fe3667..6eb7586 100644
+--- a/.github/workflows/docker-cd.yml
++++ b/.github/workflows/docker-cd.yml
+@@ -112,6 +112,7 @@ jobs:
+     - name: Build and Deploy Docker image
+       uses: docker/build-push-action@v2.6.1
+       with:
++        context: .
+         file: ${{ matrix.dockerfile }}
+         push: true
+         tags: ${{ steps.meta.outputs.tags }} ${{ matrix.extra-tags }}

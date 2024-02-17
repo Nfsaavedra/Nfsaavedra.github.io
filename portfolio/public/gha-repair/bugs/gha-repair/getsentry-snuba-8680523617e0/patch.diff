@@ -1,0 +1,21 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index edeb064..f905189 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -182,7 +182,7 @@ jobs:
+         with:
+           workdir: sentry
+           cache-files-hash: ${{ hashFiles('sentry/requirements**.txt') }}
+-          python-version: 3.8
++          python-version: 3.6
+           snuba: false
+           kafka: true
+           clickhouse: true
+@@ -206,7 +206,6 @@ jobs:
+             snuba-test
+           docker exec sentry_snuba snuba migrations migrate --force
+ 
+-
+       - name: Run snuba tests
+         working-directory: sentry
+         run: |

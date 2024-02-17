@@ -1,0 +1,18 @@
+diff --git a/.github/workflows/continuous.yml b/.github/workflows/continuous.yml
+index dce1e2e..ce2ab3e 100644
+--- a/.github/workflows/continuous.yml
++++ b/.github/workflows/continuous.yml
+@@ -17,11 +17,13 @@ jobs:
+ 
+   dependencies:
+     needs: setup
++    runs-on: ubuntu-latest
+     steps:
+     - run: npm install -g yarn
+     - run: yarn install
+ 
+   test:
+     needs: dependencies
++    runs-on: ubuntu-latest
+     steps:
+     - run: yarn test

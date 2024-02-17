@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/lock.yml b/.github/workflows/lock.yml
+index 3bfb884..9a8bd0c 100644
+--- a/.github/workflows/lock.yml
++++ b/.github/workflows/lock.yml
+@@ -13,7 +13,7 @@ jobs:
+     steps:
+       - uses: dessant/lock-threads@v2
+         with:
+-          github-token: ${{ secrets.GH_PAT }}
++          github-token: ${{ github.token }}
+           issue-lock-inactive-days: 30
+           pr-lock-inactive-days: 30
+           issue-lock-comment: >

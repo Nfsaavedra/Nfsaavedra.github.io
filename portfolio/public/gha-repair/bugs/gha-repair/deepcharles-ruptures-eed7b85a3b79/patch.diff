@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/build-wheels.yml b/.github/workflows/build-wheels.yml
+index 5fa2a89..a619e45 100644
+--- a/.github/workflows/build-wheels.yml
++++ b/.github/workflows/build-wheels.yml
+@@ -10,6 +10,7 @@ jobs:
+     strategy:
+       matrix:
+         os: [ubuntu-latest, windows-latest, macos-latest]
++        bitness: [32, 64]
+         include:
+           # Run 32 and 64 bit version in parallel for Linux and Windows
+           - os: windows-latest

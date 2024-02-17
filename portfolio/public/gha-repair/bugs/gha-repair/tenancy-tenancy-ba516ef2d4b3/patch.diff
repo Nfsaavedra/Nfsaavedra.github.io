@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/subsplit.yml b/.github/workflows/subsplit.yml
+index 283fa36..ab59ff2 100644
+--- a/.github/workflows/subsplit.yml
++++ b/.github/workflows/subsplit.yml
+@@ -18,7 +18,7 @@ jobs:
+                   php-version: '7.3'
+ 
+             - name: Clone subsplit
+-              run: git clone git@github.com:dflydev/git-subsplit.git ~/subsplit
++              run: git clone https://github.com/dflydev/git-subsplit.git ~/subsplit
+ 
+             - name: Install subsplit
+               run: cp ~/subsplit/git-subsplit.sh "$(git --exec-path)"/git-subsplit

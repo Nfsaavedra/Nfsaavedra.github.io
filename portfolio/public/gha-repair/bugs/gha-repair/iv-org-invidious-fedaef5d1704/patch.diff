@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index fde6506..fc0e809 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -18,6 +18,8 @@ jobs:
+       
+       - name: Install Crystal
+         uses: oprypin/install-crystal@v1.2.4
++        with:
++          crystal: 0.35.1
+       
+       - name: Cache Shards
+         uses: actions/cache@v2

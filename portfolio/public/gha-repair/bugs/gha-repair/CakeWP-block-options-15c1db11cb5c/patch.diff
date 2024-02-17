@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/support-check.yml b/.github/workflows/support-check.yml
+index 056ad1b..a8f3f9a 100644
+--- a/.github/workflows/support-check.yml
++++ b/.github/workflows/support-check.yml
+@@ -11,6 +11,6 @@ jobs:
+         uses: CakeWP/integrate-github-with-wordpress@v1.1
+         with:
+           plugin-slug: block-options
+-          github-token: ${{ secrets.SUPPORT_TOKEN }}
++          github-token: ${{ secrets.GITHUB_TOKEN }}
+           random-assignees: farhan-shafi, muneebahmed0346
+           repo-name: block-options
+\ No newline at end of file

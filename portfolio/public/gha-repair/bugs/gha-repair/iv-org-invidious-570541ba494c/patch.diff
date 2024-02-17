@@ -1,0 +1,26 @@
+diff --git a/.github/workflows/container-release.yml b/.github/workflows/container-release.yml
+index c60d08f..13d2e3a 100644
+--- a/.github/workflows/container-release.yml
++++ b/.github/workflows/container-release.yml
+@@ -23,6 +23,14 @@ jobs:
+     steps:
+       - name: Checkout
+         uses: actions/checkout@v2
++        
++      - name: Run lint
++        run: |
++          if ! crystal tool format --check; then
++            crystal tool format
++            git diff
++            exit 1
++          fi
+ 
+       - name: Set up QEMU
+         uses: docker/setup-qemu-action@v1
+@@ -61,4 +69,4 @@ jobs:
+           labels: quay.expires-after=12w
+           push: true
+           tags: quay.io/invidious/invidious:${{ github.sha }}-arm64,quay.io/invidious/invidious:latest-arm64
+-          build-args: release=1
+\ No newline at end of file
++          build-args: release=1

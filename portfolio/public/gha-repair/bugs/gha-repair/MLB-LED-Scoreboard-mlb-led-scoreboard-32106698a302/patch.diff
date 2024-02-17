@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/run_unittest_on_pr_open.yml b/.github/workflows/run_unittest_on_pr_open.yml
+index 1697b03..c50fde1 100644
+--- a/.github/workflows/run_unittest_on_pr_open.yml
++++ b/.github/workflows/run_unittest_on_pr_open.yml
+@@ -12,7 +12,7 @@ jobs:
+     runs-on: ubuntu-latest
+     strategy:
+       matrix:
+-        python-version: ["3.7", "3.8", "3.9", "3.10"]
++        python-version: ["3.7", "3.8", "3.9", "3.10", "3.11"]
+     steps:
+       - uses: actions/checkout@v3
+       - name: Set up Python ${{ matrix.python-version }}
+@@ -25,4 +25,4 @@ jobs:
+           pip install -r ./requirements.txt
+       - name: Test with unittest
+         run: |
+-          python -m unittest discover -s ./tests  -p 'test_*.py'
+\ No newline at end of file
++          python -m unittest discover -s ./tests  -p 'test_*.py'

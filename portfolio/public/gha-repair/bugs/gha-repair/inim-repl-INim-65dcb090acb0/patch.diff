@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/nim.yml b/.github/workflows/nim.yml
+index 525850a..17f316f 100644
+--- a/.github/workflows/nim.yml
++++ b/.github/workflows/nim.yml
+@@ -18,7 +18,7 @@ jobs:
+     - uses: actions/checkout@v2
+     - name: Update nimble
+       run: nimble update
+-    - name: Install dependencies
++    - name: Build INim
+       run: nimble build
+     - name: Run tests
+       run: nimble test

@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index cbfd53d..060951f 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -25,12 +25,6 @@ jobs:
+       - name: Checkout code
+         uses: actions/checkout@v2
+ 
+-      - name: Get Go dependencies
+-        run: |
+-          go mod init github.com/lxc/distrobuilder
+-          go get github.com/mudler/docker-companion/api@master
+-          go get -t -d ./...
+-
+       - name: Install dependencies
+         run: |
+           sudo apt-get -qq update

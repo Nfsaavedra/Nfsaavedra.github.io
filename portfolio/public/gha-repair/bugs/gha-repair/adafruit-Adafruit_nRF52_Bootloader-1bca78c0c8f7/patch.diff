@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/githubci.yml b/.github/workflows/githubci.yml
+index 7644c7c..ad77865 100644
+--- a/.github/workflows/githubci.yml
++++ b/.github/workflows/githubci.yml
+@@ -58,7 +58,9 @@ jobs:
+           - 'raytac_mdbt50q_rx'
+           - 'sparkfun_nrf52840_micromod'
+           - 'waveshare_nrf52840_eval'
+-
++          - 'xiao_nrf52840_ble'
++          - 'xiao_nrf52840_ble_sense'
++                    
+     steps:
+     - name: Setup Python
+       uses: actions/setup-python@v3

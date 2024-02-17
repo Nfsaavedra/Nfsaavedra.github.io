@@ -1,0 +1,9 @@
+diff --git a/.github/workflows/docker.yml b/.github/workflows/docker.yml
+index a94bdc0..5521f4f 100644
+--- a/.github/workflows/docker.yml
++++ b/.github/workflows/docker.yml
+@@ -29,4 +29,3 @@ jobs:
+           platforms: linux/amd64,linux/arm,linux/arm64/v8
+           push: true
+           tags: tzahi12345/youtubedl-material:nightly
+-  

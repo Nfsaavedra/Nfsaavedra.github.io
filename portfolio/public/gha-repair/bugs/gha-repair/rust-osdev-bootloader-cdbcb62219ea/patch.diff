@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index e019125..91d1742 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -71,7 +71,7 @@ jobs:
+       if: runner.os == 'Windows'
+       shell: pwsh
+     - name: Install QEMU (Windows)
+-      run: scoop install qemu
++      run: scoop install qemu@5.2.0-rc2
+       if: runner.os == 'Windows'
+       shell: pwsh
+     - name: "Print QEMU Version"

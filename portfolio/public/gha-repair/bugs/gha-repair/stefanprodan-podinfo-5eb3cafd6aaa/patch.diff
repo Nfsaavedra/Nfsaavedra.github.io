@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/e2e.yml b/.github/workflows/e2e.yml
+index 8260cfd..ffb107f 100644
+--- a/.github/workflows/e2e.yml
++++ b/.github/workflows/e2e.yml
+@@ -61,6 +61,9 @@ jobs:
+         run: |
+           docker build -t ${PODINFO_IMAGE_URL}:${PODINFO_VERSION} --build-arg "REVISION=${GITHUB_SHA}"  -f Dockerfile.xx .
+           kind load docker-image ${PODINFO_IMAGE_URL}:${PODINFO_VERSION}
++      - name: Vet module
++        run: |
++          timoni mod vet ./timoni/podinfo --debug
+       - name: Build module
+         run: |
+           timoni mod push ./timoni/podinfo ${PODINFO_MODULE_URL} -v ${PODINFO_VERSION}

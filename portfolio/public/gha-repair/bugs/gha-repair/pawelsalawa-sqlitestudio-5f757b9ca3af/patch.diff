@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/lin_release.yml b/.github/workflows/lin_release.yml
+index 2553065..4c08445 100644
+--- a/.github/workflows/lin_release.yml
++++ b/.github/workflows/lin_release.yml
+@@ -20,7 +20,7 @@ on:
+ 
+ jobs:
+     build:
+-        runs-on: ubuntu-20.04
++        runs-on: ubuntu-22.04
+ 
+         steps:
+             - name: Cache Qt

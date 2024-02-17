@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/run-tests.yml b/.github/workflows/run-tests.yml
+index d6a2624..7467f5e 100644
+--- a/.github/workflows/run-tests.yml
++++ b/.github/workflows/run-tests.yml
+@@ -52,7 +52,7 @@ jobs:
+               if: failure()
+               with:
+                   status: ${{ job.status }}
+-                  author_name: {{ github.actor }}
++                  author_name: ${{ github.actor }}
+               env:
+                 SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

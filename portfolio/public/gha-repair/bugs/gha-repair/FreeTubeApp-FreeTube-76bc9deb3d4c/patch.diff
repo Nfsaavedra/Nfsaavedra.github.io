@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index de0b2cc..00f8a5a 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -51,6 +51,7 @@ jobs:
+           distribution: ubuntu18.04
+           run: |
+             apt update
++            apt install -y curl
+             curl -sL https://deb.nodesource.com/setup_12.x | -E bash -
+             apt install -y nodejs
+             apt install -y build-essential

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/validate.yaml b/.github/workflows/validate.yaml
+index 23971b3..e9dc03c 100644
+--- a/.github/workflows/validate.yaml
++++ b/.github/workflows/validate.yaml
+@@ -30,8 +30,6 @@ jobs:
+         run: |
+           black --check --diff --color --line-length=120 .
+ 
+-    
+-
+   validate-hassfest:
+     name: With hassfest
+     runs-on: ubuntu-latest

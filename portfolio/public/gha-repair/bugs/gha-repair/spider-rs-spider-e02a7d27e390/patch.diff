@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/bench.yml b/.github/workflows/bench.yml
+index 36d7aa7..7660d2c 100644
+--- a/.github/workflows/bench.yml
++++ b/.github/workflows/bench.yml
+@@ -24,10 +24,5 @@ jobs:
+             ~/.cargo/git/db/
+             target/
+           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+-      - name: Install Benchmark Dependencies
+-        run: |
+-          # install the local cli latest
+-          cd ./spider_cli && cargo install --features jemalloc --path . && cd ../
+-          cd benches && cargo build
+       - name: Run Benchmarks
+         run: cargo bench

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/coverity.yml b/.github/workflows/coverity.yml
+index 2fe607e..f5e097b 100644
+--- a/.github/workflows/coverity.yml
++++ b/.github/workflows/coverity.yml
+@@ -26,8 +26,6 @@ jobs:
+           CUR_REV=$(git rev-parse HEAD | cut -b 1-30)
+           echo "Current git revision: ${CUR_REV}"
+ 
+-          git log -n 3
+-
+           SKIP=false
+           if [ ${COV_REV} == ${CUR_REV} ] ||
+              [ -z "$(git diff --name-only ${COV_REV}..HEAD -- . | grep -v -f .coverityignore | grep -v coverityignore)" ]; then

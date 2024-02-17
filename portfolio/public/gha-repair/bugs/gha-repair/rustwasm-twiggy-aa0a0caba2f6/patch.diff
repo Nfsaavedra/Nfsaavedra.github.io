@@ -1,0 +1,57 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index a95b7d0..859daf5 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -46,19 +46,4 @@ jobs:
+       with:
+        toolchain: stable
+     - name: Run test script with WASM job
+-      run: cargo run --bin job_runner -- --wasm
+-  docs_deploy:
+-    runs-on: ubuntu-latest
+-    needs: test
+-    if: github.ref == 'refs/heads/master'
+-    steps:
+-      - name: Checkout
+-        uses: actions/checkout@v2.3.1
+-      - name: Build the book
+-        run: cd guide && mdbook build
+-      - name: Deploy
+-        uses: JamesIves/github-pages-deploy-action@4.1.4
+-        with:
+-          branch: master
+-          folder: guide/book
+-          token: ${{ secrets.GITHUB_TOKEN }}
++      run: cargo run --bin job_runner -- --wasm
+\ No newline at end of file
+diff --git a/.github/workflows/deploy_docs.yml b/.github/workflows/deploy_docs.yml
+new file mode 100644
+index 0000000..8fe7283
+--- /dev/null
++++ b/.github/workflows/deploy_docs.yml
+@@ -0,0 +1,24 @@
++name: Deploy Docs
++
++on:
++  push:
++    branches: [ master ]
++    
++env:
++  CARGO_TERM_COLOR: always
++
++jobs:
++  docs_deploy:
++    runs-on: ubuntu-latest
++    needs: test
++    steps:
++      - name: Checkout
++        uses: actions/checkout@v2.3.1
++      - name: Build the book
++        run: cd guide && mdbook build
++      - name: Deploy
++        uses: JamesIves/github-pages-deploy-action@4.1.4
++        with:
++          branch: master
++          folder: guide/book
++          token: ${{ secrets.GITHUB_TOKEN }}
+\ No newline at end of file

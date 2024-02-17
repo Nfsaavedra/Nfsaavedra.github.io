@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 570e914..6699033 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -16,7 +16,7 @@ jobs:
+       fail-fast: false
+       matrix:
+         os: ['ubuntu-18.04', 'windows-2019', 'macos-10.15']
+-        python-version: [3.7, 3.8, 3.9]
++        python-version: [3.7, 3.8, 3.10]
+ 
+     runs-on: ${{ matrix.os }}
+ 

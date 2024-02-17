@@ -1,0 +1,47 @@
+diff --git a/.github/workflows/setup.yml b/.github/workflows/setup.yml
+index 7999e02..7080a41 100644
+--- a/.github/workflows/setup.yml
++++ b/.github/workflows/setup.yml
+@@ -10,7 +10,7 @@ jobs:
+         run: |
+           set -ex
+ 
+-          GOOGLE_CLOUD_PLATFORM_ACCESS_TOKEN=$(curl  --request POST \
++          export GOOGLE_CLOUD_PLATFORM_ACCESS_TOKEN=$(curl --silent -X POST \
+             'https://www.googleapis.com/oauth2/v4/token' \
+             --data "refresh_token=${{ secrets.GOOGLE_CLOUD_PLATFORM_REFRESH_TOKEN }}" \
+             --data "client_id=${{ secrets.GOOGLE_CLOUD_PLATFORM_CLIENT_ID }}" \
+@@ -18,13 +18,13 @@ jobs:
+             --data "grant_type=refresh_token" \
+             | jq '.access_token' -r)
+ 
+-          VM_NAME=swift-ast-explorer-$(date +%Y%m%d-%H%M%S)
+-          VM_ZONE=us-west1-b
+-          VM_MACHINE_TYPE=g1-small
+-          VM_DISK_SIZE=30
+-          VM_SWAP_SIZE=2G
++          export VM_NAME=swift-ast-explorer-$(date +%Y%m%d-%H%M%S)
++          export VM_ZONE=us-west1-b
++          export VM_MACHINE_TYPE=g1-small
++          export VM_DISK_SIZE=30
++          export VM_SWAP_SIZE=2G
+ 
+-          curl --request POST \
++          curl --silent -X POST \
+             'https://compute.googleapis.com/compute/v1/projects/${{ secrets.GOOGLE_CLOUD_PLATFORM_PROJECT_ID }}/zones/us-central1-a/instances?key=${{ secrets.GOOGLE_CLOUD_PLATFORM_API_KEY }}' \
+             --header "Authorization: Bearer $GOOGLE_CLOUD_PLATFORM_ACCESS_TOKEN" \
+             --header 'Accept: application/json' \
+diff --git a/gce/startup-script b/gce/startup-script
+deleted file mode 100644
+index 7dfdc18..0000000
+--- a/gce/startup-script
++++ /dev/null
+@@ -1,7 +0,0 @@
+-sysctl vm.disk_based_swap=1
+-
+-fallocate -l 2G /var/swapfile
+-chmod 600 /var/swapfile
+-mkswap /var/swapfile
+-swapon /var/swapfile
+-echo "/var/swapfile none swap sw,nofail 0 0" >> /etc/fstab
+\ No newline at end of file

@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/release.yaml b/.github/workflows/release.yaml
+index 274de04..bfb6a60 100644
+--- a/.github/workflows/release.yaml
++++ b/.github/workflows/release.yaml
+@@ -1,4 +1,4 @@
+-name: Upload Release Asset
++name: Release New Version
+ 
+ on:
+   push:

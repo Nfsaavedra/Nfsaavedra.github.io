@@ -1,0 +1,22 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 3f0c601..121ff64 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -26,6 +26,8 @@ jobs:
+ 
+     steps:
+       - uses: actions/checkout@v2
++        with:
++          fetch-depth: '0'
+ 
+       - name: Set up Python
+         uses: actions\setup-python@v2
+@@ -57,6 +59,8 @@ jobs:
+ 
+     steps:
+       - uses: actions/checkout@v2
++        with:
++          fetch-depth: '0'
+ 
+       - name: Set up Python ${{ matrix.python-version }}
+         uses: actions\setup-python@v2

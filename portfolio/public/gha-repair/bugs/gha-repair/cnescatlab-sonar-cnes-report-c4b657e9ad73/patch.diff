@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/draft-release.yml b/.github/workflows/draft-release.yml
+index 5c1acae..416c23d 100644
+--- a/.github/workflows/draft-release.yml
++++ b/.github/workflows/draft-release.yml
+@@ -20,7 +20,7 @@ jobs:
+       uses: actions/setup-java@v2
+       with:
+         distribution: 'adopt'
+-        java-version: '11'
++        java-version: '17'
+     - name: Cache Maven packages
+       uses: actions/cache@v2
+       with:
+@@ -54,4 +54,4 @@ jobs:
+         name: ${{ env.project }} ${{ env.tag }}
+         bodyFile: "temp_release_notes/release_file.md"
+         draft: true
+-        token: ${{ secrets.GITHUB_TOKEN }}
+\ No newline at end of file
++        token: ${{ secrets.GITHUB_TOKEN }}

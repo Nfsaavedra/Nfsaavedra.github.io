@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/go.yml b/.github/workflows/go.yml
+index 08d4d24..e05a0d4 100644
+--- a/.github/workflows/go.yml
++++ b/.github/workflows/go.yml
+@@ -14,9 +14,9 @@ jobs:
+     - uses: actions/checkout@v2
+ 
+     - name: Set up Go
+-      uses: actions/setup-go@v2
++      uses: actions/setup-go@v4
+       with:
+-        go-version: 1.17
++        go-version-file: './go.mod'
+ 
+     - name: Build
+       run: go build -v ./...

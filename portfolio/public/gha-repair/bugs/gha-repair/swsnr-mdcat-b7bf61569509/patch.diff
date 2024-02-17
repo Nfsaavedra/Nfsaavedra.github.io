@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index a4c8f5c..c085f4e 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -32,7 +32,7 @@ jobs:
+       - name: Strip binary
+         run: strip 'target/${{ matrix.target }}/release/mdcat'
+       - uses: olegtarasov/get-tag@v1
+-      - run: Build package
++      - name: Build package
+         id: package
+         run: |          
+           ARCHIVE_NAME="${GITHUB_TAG_NAME}-${{ matrix.target }}"

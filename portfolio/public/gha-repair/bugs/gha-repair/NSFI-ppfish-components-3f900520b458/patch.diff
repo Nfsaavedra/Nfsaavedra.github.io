@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/doc-site.yml b/.github/workflows/doc-site.yml
+index 2aeb281..0381c23 100644
+--- a/.github/workflows/doc-site.yml
++++ b/.github/workflows/doc-site.yml
+@@ -25,4 +25,4 @@ jobs:
+         uses: JamesIves/github-pages-deploy-action@v4.2.5
+         with:
+           branch: gh-pages # The branch the action should deploy to.
+-          folder: dist # The folder the action should deploy.
++          folder: dist/site # The folder the action should deploy.

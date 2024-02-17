@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/release-apidocs.yml b/.github/workflows/release-apidocs.yml
+index 18ff0a2..008e136 100644
+--- a/.github/workflows/release-apidocs.yml
++++ b/.github/workflows/release-apidocs.yml
+@@ -5,6 +5,7 @@ on:
+       - master
+ jobs:
+   build:
++    if: github.repository == 'openrndr/openrndr'
+     runs-on: ubuntu-18.04
+     steps:
+       - uses: actions/checkout@v2

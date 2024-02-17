@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 9b62f6f..1b877f8 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -38,7 +38,7 @@ jobs:
+         run: |
+           echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+ 
+-      - uses: actions/cache@v3
++      - uses: actions/cache@v4
+         name: Setup pnpm cache
+         with:
+           path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}

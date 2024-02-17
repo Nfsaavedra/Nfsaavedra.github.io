@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index e434f9b..ce1b083 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -8,7 +8,7 @@ on:
+   pull_request:
+     branches: [ master ]
+   workflow_dispatch:
+-    branches: [ master ]
++    branches: [ master, github_actions ]
+ 
+ # A workflow run is made up of one or more jobs that can run sequentially or in parallel
+ jobs:

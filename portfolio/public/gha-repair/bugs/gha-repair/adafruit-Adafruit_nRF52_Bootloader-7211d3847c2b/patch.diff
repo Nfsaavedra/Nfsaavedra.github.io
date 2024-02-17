@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/githubci.yml b/.github/workflows/githubci.yml
+index 94cc987..44da069 100644
+--- a/.github/workflows/githubci.yml
++++ b/.github/workflows/githubci.yml
+@@ -50,6 +50,7 @@ jobs:
+           - 'pca10059'
+           - 'pca10100'
+           - 'pitaya_go'
++          - 'raytac_mdbt50q_db_40'
+           - 'raytac_mdbt50q_rx'
+           - 'sparkfun_nrf52840_micromod'
+           - 'waveshare_nrf52840_eval'

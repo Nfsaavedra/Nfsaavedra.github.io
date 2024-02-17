@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/pkgdown.yaml b/.github/workflows/pkgdown.yaml
+index b928f6d..8e3f05d 100644
+--- a/.github/workflows/pkgdown.yaml
++++ b/.github/workflows/pkgdown.yaml
+@@ -60,8 +60,8 @@ jobs:
+           print(sessionInfo())
+         shell: Rscript {0}
+ 
+-      - name: Setup upterm session
+-        uses: lhotari/action-upterm@v1
++#      - name: Setup upterm session
++#        uses: lhotari/action-upterm@v1
+ 
+       - name: Configure git user
+         run: |

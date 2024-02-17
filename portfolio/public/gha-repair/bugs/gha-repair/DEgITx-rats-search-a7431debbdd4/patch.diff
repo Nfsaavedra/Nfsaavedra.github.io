@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 9036c34..58e47f4 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -4,6 +4,7 @@ on: [push, pull_request]
+ jobs:
+   build:
+     runs-on: ${{ matrix.os }}
++    continue-on-error: true
+     strategy:
+       matrix:
+         os:

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci-build.yaml b/.github/workflows/ci-build.yaml
+index 8a7d01b..564e31f 100644
+--- a/.github/workflows/ci-build.yaml
++++ b/.github/workflows/ci-build.yaml
+@@ -149,7 +149,7 @@ jobs:
+           path: test-results/
+ 
+   test-go-race:
+-    name: Run unit tests with -race, for Go packages
++    name: Run unit tests with -race for Go packages
+     runs-on: ubuntu-22.04
+     needs:
+       - build-go

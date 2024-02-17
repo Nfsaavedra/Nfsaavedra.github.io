@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index c2a75d2..d845ae0 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -30,6 +30,7 @@ jobs:
+         uses: actions/setup-java@main
+         with:
+           java-version: 8
++          distribution: 'adopt'
+       - name: Release Maven package
+         uses: samuelmeuli/action-maven-publish@v1
+         with:

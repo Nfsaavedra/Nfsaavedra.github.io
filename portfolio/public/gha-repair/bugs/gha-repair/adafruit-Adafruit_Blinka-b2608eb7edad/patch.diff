@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 1653034..5fe5064 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -48,7 +48,6 @@ jobs:
+       working-directory: docs
+       run: sphinx-build -E -W -b html . _build/html
+     - name: Build Python package
+-      if: contains(steps.need-pypi.outputs.setup-py, 'setup.py')
+       run: |
+         pip install --upgrade build twine
+         for file in $(find -not -path "./.*" -not -path "./docs*" \( -name "*.py" -o -name "*.toml" \) ); do

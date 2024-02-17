@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/combined.yaml b/.github/workflows/combined.yaml
+index e899f0c..c7a8bdf 100644
+--- a/.github/workflows/combined.yaml
++++ b/.github/workflows/combined.yaml
+@@ -1,11 +1,14 @@
+ name: "Validation And Formatting"
++
+ on:
+   push:
+   pull_request:
+   schedule:
+     - cron: '0 0 * * *'
++
+ jobs:
+   validate:
++    name: Validate
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v2

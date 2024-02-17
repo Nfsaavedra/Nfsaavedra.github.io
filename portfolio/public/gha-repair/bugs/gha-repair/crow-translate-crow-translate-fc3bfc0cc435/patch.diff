@@ -1,0 +1,23 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index fd78825..5bebe53 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -5,14 +5,16 @@ on:
+     - 'releases/**'
+     paths-ignore:
+     - 'dist/**'
+-    - '.github/workflows/release.yml'
++    - 'data/translations/**'
+     - '*.md'
++    - '.github/workflows/release.yml'
+     - '.gitignore'
+   pull_request:
+     paths-ignore:
+     - 'dist/**'
+-    - '.github/workflows/release.yml'
++    - 'data/translations/**'
+     - '*.md'
++    - '.github/workflows/release.yml'
+     - '.gitignore'
+ jobs:
+   Linux:

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 2e89eaf..9f4eee9 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -53,7 +53,7 @@ jobs:
+     needs: build-binaries
+     steps:
+       - uses: actions/checkout@v4
+-      - uses: actions/download-artifact@v3
++      - uses: actions/download-artifact@v4
+         with:
+           path: ./artifacts
+       - run: mkdir ./assets

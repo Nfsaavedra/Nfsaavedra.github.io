@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/cpush.yml b/.github/workflows/cpush.yml
+index d40b87e..da68277 100644
+--- a/.github/workflows/cpush.yml
++++ b/.github/workflows/cpush.yml
+@@ -13,7 +13,7 @@ jobs:
+ 
+     strategy:
+       matrix:
+-        cc: ['latest']
++        cc: ['12']
+         deps: ['enabled']
+         platform: ['x64', 'x86'] 
+ 

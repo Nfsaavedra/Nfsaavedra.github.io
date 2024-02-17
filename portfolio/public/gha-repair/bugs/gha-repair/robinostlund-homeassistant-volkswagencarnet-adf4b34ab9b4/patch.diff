@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/release.yaml b/.github/workflows/release.yaml
+index dff3f1c..2f63778 100644
+--- a/.github/workflows/release.yaml
++++ b/.github/workflows/release.yaml
+@@ -2,9 +2,8 @@ name: Release
+ 
+ on:
+   push:
+-    # Sequence of patterns matched against refs/tags
+     tags:
+-      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
++      - 'v*'
+ 
+ jobs:
+   build:

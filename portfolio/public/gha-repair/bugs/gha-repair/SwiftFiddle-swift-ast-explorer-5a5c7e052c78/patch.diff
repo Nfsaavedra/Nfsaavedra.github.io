@@ -1,0 +1,38 @@
+diff --git a/.github/workflows/deploy.yml b/.github/workflows/deploy.yml
+deleted file mode 100644
+index ca3e65a..0000000
+--- a/.github/workflows/deploy.yml
++++ /dev/null
+@@ -1,19 +0,0 @@
+-name: Deploy
+-on:
+-  push:
+-    branches: [master]
+-  workflow_dispatch:
+-
+-jobs:
+-  deploy:
+-    runs-on: ubuntu-latest
+-    steps:
+-      - name: Checkout
+-        uses: actions/checkout@v3
+-
+-      - name: Build, Push and Release a Docker container to Heroku
+-        uses: gonuit/heroku-docker-deploy@v1.3.3
+-        with:
+-          email: ${{ secrets.HEROKU_EMAIL }}
+-          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
+-          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+diff --git a/.github/workflows/spm.yml b/.github/workflows/spm.yml
+index 0df1945..8895951 100644
+--- a/.github/workflows/spm.yml
++++ b/.github/workflows/spm.yml
+@@ -9,7 +9,7 @@ jobs:
+     runs-on: macos-latest
+     steps:
+       - uses: actions/checkout@v3
+-      - name: Build
++      - name: Update Package.resolved
+         run: |
+           set -ex
+           swift package update

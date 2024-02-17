@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/github-ci.yml b/.github/workflows/github-ci.yml
+index 45e4319..39b6ca2 100644
+--- a/.github/workflows/github-ci.yml
++++ b/.github/workflows/github-ci.yml
+@@ -45,7 +45,7 @@ jobs:
+           npm run build
+           npm config set //registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN
+           npm publish $PUBLISH_OPTS
+-          echo "记得同步 taobao 源哦： https://npm.taobao.org/sync/authing-js-sdk"
++          echo "记得同步 taobao 源哦： https://npm.taobao.org/sync/authing-js-sdk 🚀"
+         env:
+           VERESION: ${{ steps.version.outputs.value }}
+           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}

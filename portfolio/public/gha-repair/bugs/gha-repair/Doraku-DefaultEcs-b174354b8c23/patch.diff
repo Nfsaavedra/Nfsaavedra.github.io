@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/ContinuousIntegration.yml b/.github/workflows/ContinuousIntegration.yml
+index 2e81601..7fe2362 100644
+--- a/.github/workflows/ContinuousIntegration.yml
++++ b/.github/workflows/ContinuousIntegration.yml
+@@ -3,8 +3,8 @@ name: Continuous Integration
+ on:
+   push:
+     paths:
+-      - *.cs
+-      - *.csproj
++      - '*.cs'
++      - '*.csproj'
+ 
+ jobs:
+   build:

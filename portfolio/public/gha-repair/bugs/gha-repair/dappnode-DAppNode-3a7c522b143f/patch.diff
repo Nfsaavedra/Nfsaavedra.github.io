@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/artifacts.yml b/.github/workflows/artifacts.yml
+index 37b4214..76c978c 100644
+--- a/.github/workflows/artifacts.yml
++++ b/.github/workflows/artifacts.yml
+@@ -39,7 +39,7 @@ env:
+ 
+ jobs:
+   pre-release:
+-    name: create pre release
++    name: create artifacts
+     runs-on: ubuntu-latest
+     defaults:
+       run:

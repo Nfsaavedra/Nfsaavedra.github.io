@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/lint-test.yml b/.github/workflows/lint-test.yml
+index b3e5831..af1d703 100644
+--- a/.github/workflows/lint-test.yml
++++ b/.github/workflows/lint-test.yml
+@@ -16,7 +16,8 @@ jobs:
+         MIT License;
+         Mozilla Public License 2.0 (MPL 2.0);
+         Public Domain;
+-        Python Software Foundation License
++        Python Software Foundation License;
++        The Unlicense (Unlicense)
+ 
+       # Dummy values for required bot environment variables
+       BOT_API_KEY: foo

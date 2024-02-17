@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/docker.yaml b/.github/workflows/docker.yaml
+index b295efb..cccc5ba 100644
+--- a/.github/workflows/docker.yaml
++++ b/.github/workflows/docker.yaml
+@@ -19,7 +19,7 @@ jobs:
+           images: quay.io/rtctunnel/rtctunnel
+ 
+       - name: Docker Login
+-        uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
++        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc
+         with:
+           registry: quay.io
+           username: rtctunnel+github

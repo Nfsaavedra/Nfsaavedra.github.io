@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index c06ae05..7ff9c1b 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -21,6 +21,8 @@ jobs:
+ 
+     steps:
+       - uses: actions/checkout@v2
++        with:
++          fetch-depth: '0'
+ 
+       - name: Set up Python 3.8
+         uses: actions/setup-python@v2

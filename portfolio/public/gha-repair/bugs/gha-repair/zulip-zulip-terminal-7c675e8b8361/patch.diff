@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/codeql-analysis.yml b/.github/workflows/codeql-analysis.yml
+index 275b4c7..44c3d17 100644
+--- a/.github/workflows/codeql-analysis.yml
++++ b/.github/workflows/codeql-analysis.yml
+@@ -20,6 +20,7 @@ permissions:
+ jobs:
+   analyse:
+     name: Analyse
++    if: ${{!github.event.repository.private}}
+     permissions:
+       actions: read
+       contents: read

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/publishefcore.yml b/.github/workflows/publishefcore.yml
+index e62d9c3..7d5d394 100644
+--- a/.github/workflows/publishefcore.yml
++++ b/.github/workflows/publishefcore.yml
+@@ -17,7 +17,7 @@ jobs:
+       - name: Setup dotnet
+         uses: actions/setup-dotnet@v1
+         with:
+-          dotnet-version: 5.0.x
++          dotnet-version: 6.0.x
+       
+       # Publish
+       - name: publish on version change

@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/check-release-ready.yml b/.github/workflows/check-release-ready.yml
+index 1d6d15b..f93da22 100644
+--- a/.github/workflows/check-release-ready.yml
++++ b/.github/workflows/check-release-ready.yml
+@@ -48,6 +48,7 @@ jobs:
+         name: Get copyright dates in some tools
+         id: copyright
+         run: |
++          set -e
+           for tool in airodump-ng aircrack-ng airbase-ng aireplay-ng; do
+             echo "Checking ${tool}"
+             LICENSE=$(grep Copyright src/${tool}/${tool}.c | grep $(date +%Y) )
+@@ -58,6 +59,7 @@ jobs:
+               echo "${tool}=1" >> $GITHUB_OUTPUT
+             fi
+           done
++          set +e
+       -
+         name: Check all the things
+         run: |

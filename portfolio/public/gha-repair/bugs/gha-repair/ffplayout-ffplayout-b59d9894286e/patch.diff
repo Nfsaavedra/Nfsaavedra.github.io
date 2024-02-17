@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/rust.yml b/.github/workflows/rust.yml
+index 20f1cab..0dba4a6 100644
+--- a/.github/workflows/rust.yml
++++ b/.github/workflows/rust.yml
+@@ -8,6 +8,8 @@ jobs:
+     runs-on: ${{ matrix.os }}
+     steps:
+       - uses: actions/checkout@v3
++      - uses: FedericoCarboni/setup-ffmpeg@v1
++        id: setup-ffmpeg
+       - run: rustup update stable
+       - run: rustup component add rustfmt
+       - run: rustup component add clippy

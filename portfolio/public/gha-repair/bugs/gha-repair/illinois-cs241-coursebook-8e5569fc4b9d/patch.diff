@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yaml b/.github/workflows/build.yaml
+index 29ac7e9..94e8fc0 100644
+--- a/.github/workflows/build.yaml
++++ b/.github/workflows/build.yaml
+@@ -22,7 +22,7 @@ jobs:
+     - name: Setup python
+       uses: actions/setup-python@v2
+       with:
+-        python-version: 3.6
++        python-version: 3.7
+ 
+     - name: Install
+       run: |

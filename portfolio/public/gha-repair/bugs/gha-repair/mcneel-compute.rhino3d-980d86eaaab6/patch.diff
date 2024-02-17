@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/workflow_ci.yml b/.github/workflows/workflow_ci.yml
+index 5ac6fff..15e7bc4 100644
+--- a/.github/workflows/workflow_ci.yml
++++ b/.github/workflows/workflow_ci.yml
+@@ -52,7 +52,8 @@ jobs:
+           fetch-depth: 0
+       - name: revision
+         id: revision
+-        run: git rev-list --count master
++        run: |
++          echo "::set-output name=revision::$(git rev-list --all --count)"
+       - name: build
+         run: dotnet publish --configuration Release src/compute.sln
+       - name: artifacts

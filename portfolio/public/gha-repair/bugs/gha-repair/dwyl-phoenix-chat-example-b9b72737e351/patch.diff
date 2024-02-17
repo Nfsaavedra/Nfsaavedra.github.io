@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 4262808..878e04b 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -41,7 +41,7 @@ jobs:
+       env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         MIX_ENV: test
+-        AUTH_API_KEY: 2PzB7PPnpuLsbWmWtXpGyI+kfSQSQ1zUW2Atz/+8PdZuSEJzHgzGnJWV35nTKRwx/authdemo.fly.dev
++        AUTH_API_KEY: ${{ secrets.AUTH_API_KEY }}
+     - name: Upload coverage to Codecov
+       uses: codecov/codecov-action@v1
+ 

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/pkgdown.yaml b/.github/workflows/pkgdown.yaml
+index 4e0e903..ae1e645 100644
+--- a/.github/workflows/pkgdown.yaml
++++ b/.github/workflows/pkgdown.yaml
+@@ -16,7 +16,7 @@ jobs:
+         with:
+           r-version: 4.0.4
+ 
+-      - uses: r-lib/actions/setup-pandoc@master
++      - uses: r-lib/actions/setup-pandoc@v2
+       
+       - name: Install dependencies
+         run: |

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/demo.yml b/.github/workflows/demo.yml
+index 4f92c91..bdc28ea 100644
+--- a/.github/workflows/demo.yml
++++ b/.github/workflows/demo.yml
+@@ -17,7 +17,7 @@ jobs:
+       with:
+         use-cross: true
+         command: build
+-        args: --target armv7-unknown-linux-gnueabihf --release --example demo --locked #--frozen #--offline
++        args: --target armv7-unknown-linux-gnueabihf --release --example demo
+     - uses: softprops/action-gh-release@v1
+       if: startsWith(github.ref, 'refs/tags/')
+       with:

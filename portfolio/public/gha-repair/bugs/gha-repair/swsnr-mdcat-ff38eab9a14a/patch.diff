@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 579aad2..43e4c03 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -59,7 +59,7 @@ jobs:
+     steps:
+       - uses: actions/checkout@v2
+       - name: Download artifacts
+-        uses: actions/download-artifact@v2
++        uses: actions/download-artifact@v3
+         with:
+           path: ./artifacts
+       - name: Aggregate assets

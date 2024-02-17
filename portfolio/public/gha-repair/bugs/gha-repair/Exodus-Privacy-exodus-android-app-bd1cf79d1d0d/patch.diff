@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index e3b89fe..2ce0d4b 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -20,3 +20,8 @@ jobs:
+         run: ./gradlew assembleDebug
+       - name: Run tests
+         run: ./gradlew test
++      - name: Upload APK
++        uses: actions/upload-artifact@v2
++        with:
++          name: app_debug
++          path: app/build/outputs/apk/exodus_google/debug/*.apk

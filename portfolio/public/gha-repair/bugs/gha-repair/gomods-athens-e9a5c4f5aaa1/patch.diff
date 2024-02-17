@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 3aee89b..2e649b2 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -21,7 +21,7 @@ jobs:
+           go-version-file: 'go.mod'
+           cache: true
+       - name: Lint code
+-        uses: golangci/golangci-lint-action@v3
++        uses: golangci/golangci-lint-action@v4
+         with:
+           version: ${{ env.GOLANGCI_LINT_VERSION }}
+           skip-pkg-cache: true

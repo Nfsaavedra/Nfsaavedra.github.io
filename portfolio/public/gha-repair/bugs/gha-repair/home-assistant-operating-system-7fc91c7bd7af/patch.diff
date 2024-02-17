@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yaml b/.github/workflows/test.yaml
+index 7b9a8dd..170b857 100644
+--- a/.github/workflows/test.yaml
++++ b/.github/workflows/test.yaml
+@@ -56,7 +56,7 @@ jobs:
+ 
+       - name: Get OS image artifact
+         if: ${{ inputs.use-artifact }}
+-        uses: actions/download-artifact@v3
++        uses: actions/download-artifact@v4
+         with:
+           name: ova-image
+ 

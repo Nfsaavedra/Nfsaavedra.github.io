@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/rust.yml b/.github/workflows/rust.yml
+index d2ba2e1..f4771b2 100644
+--- a/.github/workflows/rust.yml
++++ b/.github/workflows/rust.yml
+@@ -9,6 +9,10 @@ jobs:
+ 
+     steps:
+     - uses: actions/checkout@v1
++    - name: Setup Rust
++      run: |
++        rustup toolchain install stable
++        rustup override set stable
+     # Clippy must be run first, as its lints are only triggered during
+     # compilation. Put another way: after a successful `cargo build`, `cargo
+     # clippy` is guaranteed to produce no results. This bug is known upstream:

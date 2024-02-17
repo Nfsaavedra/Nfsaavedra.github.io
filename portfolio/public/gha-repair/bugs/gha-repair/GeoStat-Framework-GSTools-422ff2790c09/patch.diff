@@ -1,0 +1,21 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index fea1c1c..9568559 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -15,7 +15,7 @@ on:
+ 
+ jobs:
+   source_check:
+-    name: format check
++    name: source check
+     runs-on: ubuntu-latest
+     strategy:
+       fail-fast: false
+@@ -32,6 +32,7 @@ jobs:
+         run: |
+           python -m pip install --upgrade pip
+           pip install black pylint
++          pip install --editable .
+ 
+       - name: black check
+         run: |

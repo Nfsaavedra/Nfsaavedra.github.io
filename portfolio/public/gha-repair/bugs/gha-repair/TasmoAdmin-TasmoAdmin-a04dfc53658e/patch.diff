@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index e5e8ee8..481c599 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -22,7 +22,7 @@ jobs:
+         cd tasmoadmin
+         ./vendor/bin/phpstan
+   php-cs-fixer:
+-    name: Run PHPStan
++    name: Run php-cs-fixer
+     runs-on: ubuntu-20.04
+     steps:
+       - uses: actions/checkout@v3

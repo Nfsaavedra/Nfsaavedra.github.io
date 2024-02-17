@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/artifacts-index.yaml b/.github/workflows/artifacts-index.yaml
+index ccd06b1..c3652a4 100644
+--- a/.github/workflows/artifacts-index.yaml
++++ b/.github/workflows/artifacts-index.yaml
+@@ -46,7 +46,7 @@ jobs:
+           aws s3 cp \
+             "${{ github.event.inputs.version }}.json" \
+             s3://${{ secrets.R2_OS_ARTIFACTS_BUCKET }}/indexes/ \
+-            --endpoint-url "${{ secrets.R2_OS_ARTIFACTS_ENDPOINT }}""
++            --endpoint-url "${{ secrets.R2_OS_ARTIFACTS_ENDPOINT }}"
+ 
+       - name: Regenerate artifacts index
+         env:

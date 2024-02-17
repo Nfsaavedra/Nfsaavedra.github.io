@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 54a7393..042ba07 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -26,6 +26,9 @@ jobs:
+     - run: yarn run coverage
+     - run: yarn run doc
+ 
++    - run: npm install @jsdevtools/npm-publish
++    - run: ./node_modules/.bin/npm-publish --token="${{ secrets.NPM_TOKEN }}" ./packages/core/package.json
++
+     - name: Deploy
+       uses: peaceiris/actions-gh-pages@v3
+       with:

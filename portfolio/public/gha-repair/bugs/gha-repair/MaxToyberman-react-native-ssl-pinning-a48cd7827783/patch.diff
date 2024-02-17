@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/npm-publish.yml b/.github/workflows/npm-publish.yml
+index 0144057..f775195 100644
+--- a/.github/workflows/npm-publish.yml
++++ b/.github/workflows/npm-publish.yml
+@@ -29,4 +29,5 @@ jobs:
+         publish_args: "--non-interactive"
+       env: # More info about the environment variables in the README
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this as is, it's automatically generated
+-        NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }} # You need to set this in your repo settings
+\ No newline at end of file
++        NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }} # You need to set this in your repo settings
++        
+\ No newline at end of file

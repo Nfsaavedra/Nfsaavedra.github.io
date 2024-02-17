@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index a43b283..c05f5c0 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -18,9 +18,7 @@ jobs:
+           node-version: "18"
+           cache: "npm"
+       - name: Install dependencies
+-        run: npm ci && cd playground && npm ci & cd ..
+-      - name: Prepare
+-        run: npm run prepare:playground
++        run: npm ci && cd playground && npm ci && npm run prepare && cd ..
+       - name: Build lib
+         run: npm run build
+       - name: Cypress run

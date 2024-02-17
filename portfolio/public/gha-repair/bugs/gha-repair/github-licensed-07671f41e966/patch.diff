@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 75ed285..435d895 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -53,7 +53,7 @@ jobs:
+         ruby-version: 2.6.x
+ 
+     - name: Build gem
+-      run: gem build *.gemspec
++      run: gem build licensed.gemspec -o licensed-${{github.event.release.tag_name}}.gem
+ 
+     - uses: actions/upload-artifact@v2
+       with:

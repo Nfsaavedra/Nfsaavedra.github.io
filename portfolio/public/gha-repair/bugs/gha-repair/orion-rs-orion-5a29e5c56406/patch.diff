@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/code_coverage.yml b/.github/workflows/code_coverage.yml
+index 616412c..d8e5ee1 100644
+--- a/.github/workflows/code_coverage.yml
++++ b/.github/workflows/code_coverage.yml
+@@ -28,8 +28,6 @@ jobs:
+ 
+       - name: Upload to codecov.io
+         uses: codecov/codecov-action@v1.0.2
+-        with:
+-          token: ${{secrets.CODECOV_TOKEN}}
+ 
+       - name: Archive code coverage results
+         uses: actions/upload-artifact@v1

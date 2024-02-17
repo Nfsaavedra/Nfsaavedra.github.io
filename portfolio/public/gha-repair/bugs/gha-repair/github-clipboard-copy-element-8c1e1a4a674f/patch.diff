@@ -1,0 +1,23 @@
+diff --git a/.gitattributes b/.gitattributes
+deleted file mode 100644
+index fcadb2c..0000000
+--- a/.gitattributes
++++ /dev/null
+@@ -1,1 +0,0 @@
+-* text eol=lf
+diff --git a/.github/workflows/nodejs.yml b/.github/workflows/nodejs.yml
+index 44b7352..e11bfcf 100644
+--- a/.github/workflows/nodejs.yml
++++ b/.github/workflows/nodejs.yml
+@@ -8,7 +8,10 @@ jobs:
+       fail-fast: false
+       matrix:
+         os: [ubuntu-latest, windows-latest, macos-latest]
+-    steps:
++    steps::
++    - name: Set git to not change EoL
++      run: |
++        git config --global core.autocrlf false
+     - uses: actions/checkout@v2
+     - name: Use Node.js 12.x
+       uses: actions/setup-node@v1

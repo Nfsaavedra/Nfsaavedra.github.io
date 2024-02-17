@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/CI.yml b/.github/workflows/CI.yml
+index 93abe26..d1e73f7 100644
+--- a/.github/workflows/CI.yml
++++ b/.github/workflows/CI.yml
+@@ -106,8 +106,8 @@ jobs:
+     - uses: actions/checkout@v3
+     - uses: EmbarkStudios/cargo-deny-action@v1
+       with:
++        manifest-path: tower-http/Cargo.toml
+         command: check ${{ matrix.checks }}
+-        arguments: --all-features --manifest-path tower-http/Cargo.toml
+ 
+   cargo-public-api-crates:
+     runs-on: ubuntu-latest

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 10069a4..d8bd3e0 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -32,8 +32,6 @@ jobs:
+         run: |
+           set -ex
+ 
+-          cd ./Playground
+-
+           IMAGE_TAG=kishikawakatsumi/swift-ast-explorer.com:latest
+ 
+           docker build --rm --no-cache --build-arg FONTAWESOME_TOKEN=${{ env.FONTAWESOME_TOKEN }} --tag ${IMAGE_TAG} .

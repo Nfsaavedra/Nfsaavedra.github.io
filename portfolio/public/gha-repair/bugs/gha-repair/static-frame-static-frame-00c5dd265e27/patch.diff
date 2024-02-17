@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 2f70e4b..5b242b2 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -25,6 +25,7 @@ jobs:
+         python -m pip install --upgrade pip
+         pip install wheel
+         pip install numpy==1.16.5
++        pip install Cython==0.29.13
+         pip install -r requirements-test.txt
+ 
+     - name: Invoke Test

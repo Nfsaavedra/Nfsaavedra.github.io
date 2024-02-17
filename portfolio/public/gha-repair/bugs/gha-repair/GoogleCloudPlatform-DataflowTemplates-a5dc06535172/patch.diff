@@ -1,0 +1,759 @@
+diff --git a/.github/workflows/preconditions.yml b/.github/workflows/preconditions.yml
+index a3db991..224ef4d 100644
+--- a/.github/workflows/preconditions.yml
++++ b/.github/workflows/preconditions.yml
+@@ -34,5 +34,16 @@ jobs:
+           distribution: 'zulu'
+           java-version: '11' # Spotless won't work on version 8
+           cache: 'maven'
++      - name: Setup Go
++        uses: actions/setup-go@44e221478fc6847752e5c574fc7a7b3247b00fbf
++        with:
++          go-version: '1.17'
++      - name: Get Changed Files
++        id: changed-files
++        uses: tj-actions/changed-files@61ee456a9d0f512e7ecfdf28863634c97dae2d16
++        with:
++          separator: ','
+       - name: Run Spotless
+-        run: ./scripts/workflows/run_spotless_check.sh
++        run: |
++          cd cicd/ && go build ./cmd/run-spotless && cd ..
++          ./cicd/run-spotless --changed-files="${{ steps.changed-files.outputs.all_changed_files }}"
+diff --git a/.github/workflows/scorecards-analysis.yml b/.github/workflows/scorecards-analysis.yml
+deleted file mode 100644
+index 7f06285..0000000
+--- a/.github/workflows/scorecards-analysis.yml
++++ /dev/null
+@@ -1,55 +0,0 @@
+-name: Scorecards supply-chain security
+-on:
+-  # Only the default branch is supported.
+-  branch_protection_rule:
+-  schedule:
+-    - cron: '5 12 * * MON'
+-  push:
+-    branches: [ main ]
+-
+-# Declare default permissions as read only.
+-permissions: read-all
+-
+-jobs:
+-  analysis:
+-    name: Scorecards analysis
+-    runs-on: ubuntu-latest
+-    permissions:
+-      # Needed to upload the results to code-scanning dashboard.
+-      security-events: write
+-      actions: read
+-      contents: read
+-
+-    steps:
+-      - name: "Checkout code"
+-        uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579 # v2.4.0
+-        with:
+-          persist-credentials: false
+-
+-      - name: "Run analysis"
+-        uses: ossf/scorecard-action@e3e75cf2ffbf9364bbff86cdbdf52b23176fe492 # v1.0.1
+-        with:
+-          results_file: results.sarif
+-          results_format: sarif
+-          # Read-only PAT token. To create it,
+-          # follow the steps in https://github.com/ossf/scorecard-action#pat-token-creation.
+-          repo_token: ${{ secrets.SCORECARD_READ_TOKEN }}
+-          # Publish the results to enable scorecard badges. For more details, see
+-          # https://github.com/ossf/scorecard-action#publishing-results.
+-          # For private repositories, `publish_results` will automatically be set to `false`,
+-          # regardless of the value entered here.
+-          publish_results: true
+-
+-      # Upload the results as artifacts (optional).
+-      - name: "Upload artifact"
+-        uses: actions/upload-artifact@82c141cc518b40d92cc801eee768e7aafc9c2fa2 # v2.3.1
+-        with:
+-          name: SARIF file
+-          path: results.sarif
+-          retention-days: 5
+-
+-      # Upload the results to GitHub's code scanning dashboard.
+-      - name: "Upload to code-scanning"
+-        uses: github/codeql-action/upload-sarif@5f532563584d71fdef14ee64d17bafb34f751ce5 # v1.0.26
+-        with:
+-          sarif_file: results.sarif
+diff --git a/cicd/cmd/run-spotless/main.go b/cicd/cmd/run-spotless/main.go
+new file mode 100644
+index 0000000..9b39ec4
+--- /dev/null
++++ b/cicd/cmd/run-spotless/main.go
+@@ -0,0 +1,67 @@
++/*
++ * Copyright (C) 2021 Google LLC
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
++ * use this file except in compliance with the License. You may obtain a copy of
++ * the License at
++ *
++ *   http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
++ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
++ * License for the specific language governing permissions and limitations under
++ * the License.
++ */
++
++package main
++
++import (
++	"flag"
++	"fmt"
++	"log"
++	"strings"
++
++	"github.com/GoogleCloudPlatform/DataflowTemplates/cicd/internal/op"
++	"github.com/GoogleCloudPlatform/DataflowTemplates/cicd/internal/repo"
++)
++
++const (
++	SpotlessCommand = "spotless:check"
++)
++
++func main() {
++	changed := flag.String("changed-files", "", "List of changed files as a comma-separated string")
++	flag.Parse()
++
++	if len(*changed) == 0 {
++		log.Print("No changed files passed. This is probably an error, but we're assuming it isn't just in case")
++		return
++	}
++	log.Printf("Received changed files: %s", *changed)
++
++	s := strings.Split(*changed, ",")
++	modules := repo.GetModulesForPaths(s)
++
++	var fullErr error
++	if _, ok := modules[repo.ClassicRoot]; ok {
++		if err := op.RunMavenOnPom(repo.ClassicRoot, SpotlessCommand); err != nil {
++			fullErr = err
++		}
++	}
++	if flex, ok := modules[repo.FlexRoot]; ok {
++		for _, m := range flex {
++			if len(m) > 0 { // Zero length represents the root, which has no Java code
++				if err := op.RunMavenOnModule(repo.FlexRoot, SpotlessCommand, m); err != nil && fullErr != nil {
++					fullErr = err
++				} else if err != nil {
++					fullErr = fmt.Errorf("%w\n%v", fullErr, err)
++				}
++			}
++		}
++	}
++
++	if fullErr != nil {
++		log.Fatal("There were spotless errors. Check the output from the commands.")
++	}
++}
+diff --git a/cicd/go.mod b/cicd/go.mod
+new file mode 100644
+index 0000000..6c6c815
+--- /dev/null
++++ b/cicd/go.mod
+@@ -0,0 +1,3 @@
++module github.com/GoogleCloudPlatform/DataflowTemplates/cicd
++
++go 1.17
+diff --git a/cicd/internal/op/maven.go b/cicd/internal/op/maven.go
+new file mode 100644
+index 0000000..4093b6c
+--- /dev/null
++++ b/cicd/internal/op/maven.go
+@@ -0,0 +1,36 @@
++/*
++ * Copyright (C) 2021 Google LLC
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
++ * use this file except in compliance with the License. You may obtain a copy of
++ * the License at
++ *
++ *   http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
++ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
++ * License for the specific language governing permissions and limitations under
++ * the License.
++ */
++
++package op
++
++import (
++	"fmt"
++)
++
++// Runs the given Maven command on a specified POM file. Considering the input, this is equivalent to:
++//		mvn {cmd} -f {pomDir}/pom.xml {args...}
++func RunMavenOnPom(pomDir string, cmd string, args ...string) error {
++	wa := []string{cmd, "-f", fmt.Sprintf("%s/pom.xml", pomDir)}
++	return RunCmdAndStreamOutput("mvn", append(wa, args...))
++}
++
++// Runs the given Maven command on a specified module. Considering the input, this is equivalent to:
++//		mvn {cmd} -f {pomDir}/pom.xml -pl {module} {args...}
++func RunMavenOnModule(pomDir string, cmd string, module string, args ...string) error {
++	fullArgs := []string{"-pl", module}
++	fullArgs = append(fullArgs, args...)
++	return RunMavenOnPom(pomDir, cmd, fullArgs...)
++}
+diff --git a/cicd/internal/op/run-cmd.go b/cicd/internal/op/run-cmd.go
+new file mode 100644
+index 0000000..44976e1
+--- /dev/null
++++ b/cicd/internal/op/run-cmd.go
+@@ -0,0 +1,41 @@
++/*
++ * Copyright (C) 2021 Google LLC
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
++ * use this file except in compliance with the License. You may obtain a copy of
++ * the License at
++ *
++ *   http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
++ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
++ * License for the specific language governing permissions and limitations under
++ * the License.
++ */
++
++package op
++
++import (
++	"bufio"
++	"fmt"
++	"log"
++	"os/exec"
++	"strings"
++)
++
++// Runs a command and streams the output rather than waiting for it to complete.
++func RunCmdAndStreamOutput(cmd string, args []string) error {
++	log.Printf("Running command: %s %s", cmd, strings.Join(args, " "))
++	op := exec.Command(cmd, args...)
++
++	stdout, _ := op.StdoutPipe()
++	op.Start()
++
++	scanner := bufio.NewScanner(stdout)
++	for scanner.Scan() {
++		fmt.Println(scanner.Text())
++	}
++	
++	return op.Wait()
++}
+diff --git a/cicd/internal/repo/files.go b/cicd/internal/repo/files.go
+new file mode 100644
+index 0000000..bd93a22
+--- /dev/null
++++ b/cicd/internal/repo/files.go
+@@ -0,0 +1,86 @@
++/*
++ * Copyright (C) 2021 Google LLC
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
++ * use this file except in compliance with the License. You may obtain a copy of
++ * the License at
++ *
++ *   http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
++ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
++ * License for the specific language governing permissions and limitations under
++ * the License.
++ */
++
++package repo
++
++import (
++	"errors"
++	"fmt"
++	"io/fs"
++	"os"
++	"path/filepath"
++	"runtime"
++	"strings"
++)
++
++const (
++	RootDirName = "DataflowTemplates"
++)
++
++// Gets all the POM files under `dir`. `dir` is a relative path from the root of the repository.
++// So if the root is located at `$HOME/go/src/github.com/GoogleCloudPlatform/DataflowTemplates`, then
++// passing `v2` represents `$HOME/go/src/github.com/GoogleCloudPlatform/DataflowTemplates/v2`.
++func GetAllPomFiles(dir string) ([]string, error) {
++	root, e := getRootDir()
++	if e != nil {
++		return nil, e
++	}
++	poms := make([]string, 0)
++
++	var start string
++	if strings.HasPrefix(dir, RootDirName) {
++		start = root
++	} else {
++		start = filepath.Join(root, dir)
++	}
++
++	e = filepath.Walk(start, func(path string, info fs.FileInfo, err error) error {
++		if err != nil {
++			return err
++		}
++		if info.IsDir() || info.Name() != "pom.xml" {
++			return nil
++		}
++
++		poms = append(poms, path)
++		return nil
++	})
++
++	if e != nil {
++		return nil, e
++	}
++	return poms, nil
++}
++
++func getRootDir() (string, error) {
++	_, path, _, ok := runtime.Caller(0)
++	if !ok {
++		return "", errors.New("could not determine a starting path to get to root directory")
++	}
++
++	dir := filepath.Dir(path)
++	allDirs := strings.Split(dir, string(os.PathSeparator))
++	i := len(allDirs)
++	for ; i >= 0 && allDirs[i-1] != RootDirName; i -= 1 {
++		// Empty intentionally
++	}
++
++	if i == 0 {
++		return "", fmt.Errorf("%s is not in the %s project somehow", dir, RootDirName)
++	}
++
++	return strings.Join(allDirs[:i], string(os.PathSeparator)), nil
++}
+diff --git a/cicd/internal/repo/files_test.go b/cicd/internal/repo/files_test.go
+new file mode 100644
+index 0000000..45e421a
+--- /dev/null
++++ b/cicd/internal/repo/files_test.go
+@@ -0,0 +1,88 @@
++/*
++ * Copyright (C) 2021 Google LLC
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
++ * use this file except in compliance with the License. You may obtain a copy of
++ * the License at
++ *
++ *   http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
++ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
++ * License for the specific language governing permissions and limitations under
++ * the License.
++ */
++
++package repo
++
++import (
++	"os"
++	"path/filepath"
++	"strings"
++	"testing"
++)
++
++func TestGetAllPomFiles(t *testing.T) {
++	getModule := func(pomFile string) string {
++		dir := filepath.Dir(pomFile)
++		return dir[strings.LastIndex(dir, string(os.PathSeparator))+1:]
++	}
++
++	tests := []struct {
++		dir      string
++		expected map[string]interface{}
++	}{
++		{
++			dir: FlexRoot,
++			expected: map[string]interface{}{
++				"v2":                         nil,
++				"cdc-parent":                 nil,
++				"cdc-common":                 nil,
++				"pubsub-binary-to-bigquery":  nil,
++				"googlecloud-to-googlecloud": nil,
++			},
++		},
++		{
++			dir: RootDirName,
++			expected: map[string]interface{}{
++				RootDirName:                  nil,
++				"v2":                         nil,
++				"cdc-parent":                 nil,
++				"cdc-common":                 nil,
++				"pubsub-binary-to-bigquery":  nil,
++				"googlecloud-to-googlecloud": nil,
++			},
++		},
++		{
++			dir: ClassicRoot,
++			expected: map[string]interface{}{
++				RootDirName:                  nil,
++				"v2":                         nil,
++				"cdc-parent":                 nil,
++				"cdc-common":                 nil,
++				"pubsub-binary-to-bigquery":  nil,
++				"googlecloud-to-googlecloud": nil,
++			},
++		},
++	}
++
++	for _, test := range tests {
++		t.Logf("testing %s", test.dir)
++
++		files, err := GetAllPomFiles(test.dir)
++		if err != nil {
++			t.Fatalf("error getting POM files: %v", err)
++		}
++
++		for _, f := range files {
++			delete(test.expected, getModule(f))
++		}
++
++		if len(test.expected) > 0 {
++			t.Fatalf("did not encounter %v. got %v", test.expected, files)
++		}
++
++		t.Logf("successful for %s", test.dir)
++	}
++}
+diff --git a/cicd/internal/repo/modules.go b/cicd/internal/repo/modules.go
+new file mode 100644
+index 0000000..fbdc238
+--- /dev/null
++++ b/cicd/internal/repo/modules.go
+@@ -0,0 +1,179 @@
++/*
++ * Copyright (C) 2021 Google LLC
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
++ * use this file except in compliance with the License. You may obtain a copy of
++ * the License at
++ *
++ *   http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
++ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
++ * License for the specific language governing permissions and limitations under
++ * the License.
++ */
++
++package repo
++
++import (
++	"fmt"
++	"os"
++	"path/filepath"
++	"strings"
++)
++
++const (
++	// Roots in relation to the root directory of the repository.
++	ClassicRoot = "."
++	FlexRoot    = "v2"
++)
++
++// Returns a map of roots to their modules. Properties are:
++// 		Key: The root module, equivalent to one of the const values (e.g. ClassicRoot)
++//		Value: All the submodules, sometimes nested under another parent that is also in the slice
++// This could be used in the equivalent command:
++//		mvn x:y -f {key}/pom.xml -pl {value}
++// An empty value indicates no submodules.
++func GetModuleMapping() map[string][]string {
++	m := make(map[string][]string)
++	m[ClassicRoot] = make([]string, 0)
++
++	flexPoms, err := GetAllPomFiles(FlexRoot)
++	if err != nil {
++		// Panicking here seems reasonable, since something is deeply wrong with the filesystem
++		// if this fails.
++		panic(err)
++	}
++	flexModules := make([]string, len(flexPoms))
++	for i := range flexPoms {
++		if module, err := getModuleFromPomPath(flexPoms[i], FlexRoot); err != nil {
++			panic(err)
++		} else {
++			flexModules[i] = module
++		}
++	}
++	m[FlexRoot] = flexModules
++
++	return m
++}
++
++// Extracts module name from POM path, with `rootModule` being used as the reference for
++// the uppermost ancestor. The returned value should be usable with the `-pl` flag in relation
++// to the POM file at `rootModule`.
++func getModuleFromPomPath(pomPath string, rootModule string) (string, error) {
++	dir := filepath.Dir(pomPath)
++	allDirs := strings.Split(dir, string(os.PathSeparator))
++
++	i := len(allDirs)
++	for ; i > 0 && allDirs[i-1] != rootModule; i -= 1 {
++		// Empty intentionally
++	}
++
++	if i == 0 {
++		return "", fmt.Errorf("%s is not under %s", pomPath, rootModule)
++	}
++
++	return strings.Join(allDirs[i:], "/"), nil
++}
++
++// Gets all the unique modules for files whose path from the root directory is in `paths`. Example paths:
++//		pom.xml -> Mapped to Classic root
++//		v2/cdc-parent/pom.xml -> Mapped to cdc-parent under Flex Templates
++// The return value has the following properties:
++//		Key: The path of the root module, equivalent to ClassicRoot, FlexRoot, etc.
++//		Value: List of modules (e.g. cdc-parent, cdc-parent/cdc-common). An empty entry represents the root itself.
++func GetModulesForPaths(paths []string) map[string][]string {
++	if len(paths) == 0 {
++		return make(map[string][]string)
++	}
++
++	m := make(map[string][]string)
++	flex := make([]string, 0)
++
++	v2 := fmt.Sprintf("v2%s", string(os.PathSeparator))
++
++	for _, path := range paths {
++		if strings.HasPrefix(path, v2) {
++			flex = append(flex, strings.TrimPrefix(path, v2))
++		} else {
++			// TODO(zhoufek): Make this more granular, especially separating .github and cicd code
++			// into separate "modules"
++			m[ClassicRoot] = make([]string, 0)
++		}
++	}
++
++	if len(flex) > 0 {
++		// Even if nothing is found, we should still account for v2/ as its own module, since
++		// changes might be made to important files, like v2/pom.xml
++		m[FlexRoot] = findUniqueFlexModules(flex)
++	}
++
++	return m
++}
++
++type moduleTrieNode struct {
++	value    string
++	children map[rune]*moduleTrieNode
++}
++
++func flexModulesAsTrie() *moduleTrieNode {
++	root := &moduleTrieNode{
++		value:    "",
++		children: make(map[rune]*moduleTrieNode),
++	}
++
++	for _, m := range GetModuleMapping()[FlexRoot] {
++		curr := root
++		for _, r := range m {
++			if _, ok := curr.children[r]; ok {
++				curr = curr.children[r]
++			} else {
++				curr.children[r] = &moduleTrieNode{
++					value:    "",
++					children: make(map[rune]*moduleTrieNode),
++				}
++				curr = curr.children[r]
++			}
++		}
++		curr.value = m
++	}
++
++	return root
++}
++
++func findUniqueFlexModules(paths []string) []string {
++	trie := flexModulesAsTrie()
++	modules := make(map[string]interface{})
++
++	for _, path := range paths {
++		curr := trie
++		var possible *moduleTrieNode
++
++		for _, r := range path {
++			var ok bool
++			curr, ok = curr.children[r]
++			if !ok {
++				break
++			}
++			if curr.value != "" {
++				possible = curr
++			}
++		}
++
++		if possible != nil {
++			modules[possible.value] = nil
++		}
++		// We don't error from not finding anything, since it could be a root-level file
++		// that isn't part of any module.
++	}
++
++	ret := make([]string, len(modules))
++	i := 0
++	for k := range modules {
++		ret[i] = k
++		i += 1
++	}
++
++	return ret
++}
+diff --git a/cicd/internal/repo/modules_test.go b/cicd/internal/repo/modules_test.go
+new file mode 100644
+index 0000000..ec20145
+--- /dev/null
++++ b/cicd/internal/repo/modules_test.go
+@@ -0,0 +1,78 @@
++/*
++ * Copyright (C) 2021 Google LLC
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
++ * use this file except in compliance with the License. You may obtain a copy of
++ * the License at
++ *
++ *   http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
++ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
++ * License for the specific language governing permissions and limitations under
++ * the License.
++ */
++
++package repo
++
++import (
++	"reflect"
++	"testing"
++)
++
++func TestModuleMappingHasAllRoots(t *testing.T) {
++	m := GetModuleMapping()
++	if _, ok := m[ClassicRoot]; !ok {
++		t.Error("Missing Classic root")
++	}
++	if _, ok := m[FlexRoot]; !ok {
++		t.Error("Missing Flex root")
++	}
++}
++
++func TestGetModulesForPaths(t *testing.T) {
++	tests := []struct {
++		input    []string
++		expected map[string][]string
++	}{
++		{
++			input: []string{"src/something", "v2/pubsub-binary-to-bigquery/avro", "src/something-else", "v2/pubsub-binary-to-bigquery/proto"},
++			expected: map[string][]string{
++				ClassicRoot: []string{},
++				FlexRoot:    []string{"pubsub-binary-to-bigquery"},
++			},
++		},
++		{
++			input: []string{"v2/pubsub-cdc-to-bigquery", "v2/pubsub-binary-to-bigquery"},
++			expected: map[string][]string{
++				FlexRoot: []string{"pubsub-cdc-to-bigquery", "pubsub-binary-to-bigquery"},
++			},
++		},
++		{
++			input: []string{"v2/cdc-parent/something", "v2/cdc-parent/cdc-common/something"},
++			expected: map[string][]string{
++				FlexRoot: []string{"cdc-parent", "cdc-parent/cdc-common"},
++			},
++		},
++		{
++			input: []string{"something", "v2/something"},
++			expected: map[string][]string{
++				ClassicRoot: make([]string, 0),
++				FlexRoot:    make([]string, 0),
++			},
++		},
++		{
++			input:    make([]string, 0),
++			expected: make(map[string][]string),
++		},
++	}
++
++	for _, test := range tests {
++		t.Logf("Testing input: %v", test.input)
++		if actual := GetModulesForPaths(test.input); !reflect.DeepEqual(actual, test.expected) {
++			t.Errorf("incorrect results. expected: %v. got: %v", test.expected, actual)
++		}
++		t.Logf("Success")
++	}
++}
+diff --git a/scripts/workflows/run_spotless_check.sh b/scripts/workflows/run_spotless_check.sh
+deleted file mode 100755
+index 87c5c4b..0000000
+--- a/scripts/workflows/run_spotless_check.sh
++++ /dev/null
+@@ -1,44 +0,0 @@
+-#!/usr/bin/env bash
+-# Copyright 2021 Google LLC
+-#
+-# Licensed under the Apache License, Version 2.0 (the "License");
+-# you may not use this file except in compliance with the License.
+-# You may obtain a copy of the License at
+-#
+-#     https://www.apache.org/licenses/LICENSE-2.0
+-#
+-# Unless required by applicable law or agreed to in writing, software
+-# distributed under the License is distributed on an "AS IS" BASIS,
+-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+-# See the License for the specific language governing permissions and
+-# limitations under the License.
+-
+-echo 'Running spotless to verify that the code sticks to the Google style guide.'
+-
+-FINAL_STATUS=0
+-
+-# Attempts to get the changes based on a regex that filters from `git status`.
+-function get_change_count {
+-  echo $(git status | grep -e $1 | wc -l)
+-}
+-
+-if [[ $(get_change_count '[^/]src/') -gt 0 ]]; then
+-  mvn spotless:check
+-  readonly CLASSIC_STATUS=$?
+-  if [[ $CLASSIC_STATUS -ne 0 ]]; then echo 'Error in Classic Templates. Run `mvn spotless:apply` from root to fix'; fi
+-  FINAL_STATUS=$(($FINAL_STATUS | $CLASSIC_STATUS))
+-else
+-  echo 'No changes detected in Classic Templates. Skipping spotless check.'
+-fi
+-
+-if [[ $(get_change_count '[^/]v2/') -gt 0 ]]; then
+-  mvn spotless:check -f v2/pom.xml
+-  readonly FLEX_STATUS=$?
+-  if [[ $FLEX_STATUS -ne 0 ]]; then echo 'Error in Flex Templates. Run `mvn spotless:apply -f v2/pom.xml` to fix'; fi
+-  FINAL_STATUS=$(($FINAL_STATUS | $FLEX_STATUS))
+-else
+-  echo 'No changes detected in Flex Templates. Skipping spotless check.'
+-fi
+-
+-echo 'Check complete.'
+-exit $FINAL_STATUS

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index dbeaff7..6dba7e8 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -3,6 +3,7 @@ name: Build
+ 
+ on:
+   - push
++  - pull_request
+ 
+ jobs:
+   Linux:

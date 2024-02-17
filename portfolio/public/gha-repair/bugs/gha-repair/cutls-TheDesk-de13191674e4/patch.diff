@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/build-linux.yml b/.github/workflows/build-linux.yml
+index 1d05372..2f9f4cd 100644
+--- a/.github/workflows/build-linux.yml
++++ b/.github/workflows/build-linux.yml
+@@ -34,6 +34,6 @@ jobs:
+           upload_url: ${{ github.event.release.upload_url }}
+           asset_path: "build/*.snap"
+     - uses: shogo82148/actions-upload-release-asset@v1
+-     with:
+-         upload_url: ${{ github.event.release.upload_url }}
+-         asset_path: "build/*.AppImage"
++      with:
++          upload_url: ${{ github.event.release.upload_url }}
++          asset_path: "build/*.AppImage"

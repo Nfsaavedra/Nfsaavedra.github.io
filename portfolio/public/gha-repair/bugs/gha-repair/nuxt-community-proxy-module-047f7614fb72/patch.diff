@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index c1e1cdf..c5f2064 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -18,7 +18,7 @@ jobs:
+         node: [14]
+ 
+     steps:
+-      - uses: actions/setup-node@v1
++      - uses: actions/setup-node@v2
+         with:
+           node-version: ${{ matrix.node }}
+ 

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 6107e26..bc80c75 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -47,6 +47,8 @@ jobs:
+ 
+     steps:
+       - uses: actions/checkout@v3
++        with:
++          submodules: true
+ 
+       - name: Install Crystal
+         uses: crystal-lang/install-crystal@v1.6.0

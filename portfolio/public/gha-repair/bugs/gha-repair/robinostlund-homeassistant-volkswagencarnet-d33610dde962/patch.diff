@@ -1,0 +1,83 @@
+diff --git a/.github/workflows/hacs_validate.yaml b/.github/workflows/hacs_validate.yaml
+deleted file mode 100644
+index 18bb1d2..0000000
+--- a/.github/workflows/hacs_validate.yaml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-name: Validate with HACS
+-
+-on:
+-  push:
+-  schedule:
+-    - cron: "0 0 * * *"
+-
+-jobs:
+-  validate:
+-    runs-on: "ubuntu-latest"
+-    steps:
+-      - uses: "actions/checkout@v2"
+-      - name: HACS validation
+-        uses: "hacs/integration/action@master"
+-        with:
+-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+-          CATEGORY: "integration"
+\ No newline at end of file
+diff --git a/.github/workflows/hassfest.yaml b/.github/workflows/hassfest.yaml
+deleted file mode 100644
+index 109eae9..0000000
+--- a/.github/workflows/hassfest.yaml
++++ /dev/null
+@@ -1,14 +0,0 @@
+-name: Validate with hassfest
+-
+-on:
+-  push:
+-  pull_request:
+-  schedule:
+-    - cron: "0 0 * * *"
+-
+-jobs:
+-  validate:
+-    runs-on: "ubuntu-latest"
+-    steps:
+-      - uses: "actions/checkout@v2"
+-      - uses: home-assistant/actions/hassfest@master
+\ No newline at end of file
+diff --git a/.github/workflows/publish.yaml b/.github/workflows/publish.yaml
+index abf9e82..494b1af 100644
+--- a/.github/workflows/publish.yaml
++++ b/.github/workflows/publish.yaml
+@@ -3,8 +3,8 @@ name: Upload Release Asset
+ on:
+   push:
+     # Sequence of patterns matched against refs/tags
+-    # tags:
+-    #   - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
++    tags:
++      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+ 
+ jobs:
+   build:
+diff --git a/.travis.yml b/.travis.yml
+deleted file mode 100644
+index 0115e08..0000000
+--- a/.travis.yml
++++ /dev/null
+@@ -1,17 +0,0 @@
+-language: python
+-install: echo "Nothing to install, $TRAVIS_TAG"
+-script: echo "Nothing to test" && true
+-before_deploy:
+-  - cd custom_components/volkswagencarnet
+-  - zip -r volkswagencarnet .
+-deploy:
+-  provider: releases
+-  api_key: $GITHUB_OAUTH_TOKEN
+-  tag_name: $TRAVIS_TAG
+-  name: $TRAVIS_TAG
+-  file: volkswagencarnet.zip
+-  skip_cleanup: true
+-  draft: true
+-  prerelease: true
+-  on:
+-    tags: true

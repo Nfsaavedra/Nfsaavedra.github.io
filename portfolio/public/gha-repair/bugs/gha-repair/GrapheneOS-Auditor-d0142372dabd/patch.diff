@@ -1,0 +1,18 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index b965217..232b9a6 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -8,11 +8,11 @@ jobs:
+ 
+     steps:
+       - uses: actions/checkout@v3
+-      - name: Set up JDK 18
++      - name: Set up JDK 19
+         uses: actions/setup-java@v3
+         with:
+           distribution: 'temurin'
+-          java-version: 18
++          java-version: 19
+           cache: gradle
+       - name: Build with Gradle
+         run: ./gradlew build --no-daemon

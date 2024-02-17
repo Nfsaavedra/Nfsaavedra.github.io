@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/macos.yml b/.github/workflows/macos.yml
+index eba700a..c7abcf0 100644
+--- a/.github/workflows/macos.yml
++++ b/.github/workflows/macos.yml
+@@ -8,7 +8,7 @@ jobs:
+     runs-on: macOS-10.15
+     strategy:
+       matrix:
+-        build_type: [Debug] # TODO: Release
++        build_type: [ Debug ] # TODO: Release
+     steps:
+       - uses: actions/checkout@v1
+       - name: Install libgit2 & toml11

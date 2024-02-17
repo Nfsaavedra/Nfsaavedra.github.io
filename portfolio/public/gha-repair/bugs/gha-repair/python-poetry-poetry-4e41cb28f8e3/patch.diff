@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 1d4108c..5c587fa 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -79,5 +79,8 @@ jobs:
+       - name: Install dependencies
+         run: poetry install
+ 
++      - name: Install pytest plugin
++        run: poetry run pip install pytest-github-actions-annotate-failures
++
+       - name: Run pytest
+         run: poetry run python -m pytest -p no:sugar -q tests/

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index ca9d681..ae75ed9 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -27,8 +27,6 @@ jobs:
+         cd build
+         cd bin
+         ls
+-        ./smmalloc_test
+-        ./smmalloc_perf
+   build-windows:
+     runs-on: windows-latest
+     strategy:

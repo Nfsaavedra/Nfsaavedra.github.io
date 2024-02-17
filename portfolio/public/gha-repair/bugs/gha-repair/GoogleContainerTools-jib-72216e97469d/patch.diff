@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/prepare-release.yml b/.github/workflows/prepare-release.yml
+index 5fb7fd4..7cfc732 100644
+--- a/.github/workflows/prepare-release.yml
++++ b/.github/workflows/prepare-release.yml
+@@ -59,7 +59,7 @@ jobs:
+             -Prelease.releaseVersion=${{ github.event.inputs.release_version }}
+ 
+       - name: Create pull request
+-        uses: repo-sync/pull-request@v2.6
++        uses: repo-sync/pull-request@v2.6.2
+         id: create-pr
+         with:
+           # Use a personal token to file a PR to trigger other workflows (e.g., unit tests).

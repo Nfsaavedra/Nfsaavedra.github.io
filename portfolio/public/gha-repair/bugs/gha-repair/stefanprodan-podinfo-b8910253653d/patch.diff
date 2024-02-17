@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index cad18e5..195cc7c 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -70,7 +70,7 @@ jobs:
+             org.opencontainers.image.created=${{ steps.prep.outputs.BUILD_DATE }}
+       - name: Publish Helm chart to GHCR
+         run: |
+-          helm build charts/podinfo
++          helm package charts/podinfo
+           helm push podinfo-${{ steps.prep.outputs.VERSION }}.tgz oci://ghcr.io/stefanprodan/charts
+           rm podinfo-${{ steps.prep.outputs.VERSION }}.tgz
+       - name: Sign images

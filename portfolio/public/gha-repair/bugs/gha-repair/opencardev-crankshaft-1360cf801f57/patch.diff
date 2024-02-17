@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/pifile.yml b/.github/workflows/pifile.yml
+index e186046..0c91c3e 100644
+--- a/.github/workflows/pifile.yml
++++ b/.github/workflows/pifile.yml
+@@ -27,8 +27,6 @@ jobs:
+           else
+                 echo ::set-output name=version::"${version}"
+           fi
+-          raw=$(git branch -r --contains ${{ github.ref }})
+-          branch=${raw/origin\/}
+           builddate=$(date '+%Y-%m-%d')
+           buildbranch='crankshaft-ng'
+           buildhash=$(git rev-parse --short "$GITHUB_SHA")

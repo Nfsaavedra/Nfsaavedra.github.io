@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/deppy_cloudrun.yml b/.github/workflows/deppy_cloudrun.yml
+index cbe7d0f..fbffc6b 100644
+--- a/.github/workflows/deppy_cloudrun.yml
++++ b/.github/workflows/deppy_cloudrun.yml
+@@ -7,7 +7,7 @@ on:
+ env:
+   PROJECT_ID: ${{ secrets.GCP_PROJECT }}
+   GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+-  SERVICE_NAME: swiftfiddle-lsp
++  SERVICE_NAME: swift-ast-explorer
+   DEPLOY_REGION: us-central1
+   GCR_HOSTNAME: us.gcr.io
+ 

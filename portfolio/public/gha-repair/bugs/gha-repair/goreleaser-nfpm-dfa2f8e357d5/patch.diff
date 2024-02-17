@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index e3bddae..1aacde9 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -36,7 +36,7 @@ jobs:
+       - run: task setup
+       - run: task test
+       - run: git diff
+-      - uses: codecov/codecov-action@v2
++      - uses: codecov/codecov-action@v3
+         if: matrix.os == 'ubuntu-latest'
+         with:
+           token: ${{ secrets.CODECOV_TOKEN }}

@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/build-nmap.yml b/.github/workflows/build-nmap.yml
+index 5d4845c..6bb1a22 100644
+--- a/.github/workflows/build-nmap.yml
++++ b/.github/workflows/build-nmap.yml
+@@ -154,6 +154,6 @@ jobs:
+           with:
+             files: /tmp/releases/*
+             name: Nmap v${{ needs.build-x86.outputs.version }}
+-            tag_name: nmap-v${{ needs.build-x86.outputs.version }}
+           env:
+-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+\ No newline at end of file
++            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
++            GITHUB_REF: nmap-v${{ needs.build-x86.outputs.version }}
+\ No newline at end of file

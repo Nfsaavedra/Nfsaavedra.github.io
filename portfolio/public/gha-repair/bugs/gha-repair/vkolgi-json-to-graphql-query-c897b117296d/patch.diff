@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/on-pull-request.yml b/.github/workflows/on-pull-request.yml
+index f0e8d8f..2c173b6 100644
+--- a/.github/workflows/on-pull-request.yml
++++ b/.github/workflows/on-pull-request.yml
+@@ -16,7 +16,7 @@ jobs:
+     runs-on: ubuntu-latest
+ 
+     steps:
+-      - uses: actions/checkout@v2
++      - uses: actions/checkout@v3
+ 
+       # Run npm install, this also runs the tests (as part of prepare)
+       - name: Install and run tests

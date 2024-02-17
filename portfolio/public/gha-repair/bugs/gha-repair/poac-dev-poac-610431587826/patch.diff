@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/macos.yml b/.github/workflows/macos.yml
+index 6c1f6dd..04473cb 100644
+--- a/.github/workflows/macos.yml
++++ b/.github/workflows/macos.yml
+@@ -5,7 +5,7 @@ on: [push, pull_request]
+ jobs:
+   catalina:
+     name: Catalina (10.15)
+-    runs-on: macOS-latest
++    runs-on: macOS-10.15
+     strategy:
+       matrix:
+         build_type: [Debug] # TODO: Release

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index bc218b0..ae66eb8 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -28,6 +28,6 @@ jobs:
+           python setup.py clean --all sdist bdist_wheel
+       - name: 📦 Publish release to PyPI
+         if: success() && startsWith(github.ref, 'refs/tags')
+-        uses: pypa/gh-action-pypi-publish@master
++        uses: pypa/gh-action-pypi-publish@release/v1
+         with:
+             password: ${{ secrets.pypi_password }}

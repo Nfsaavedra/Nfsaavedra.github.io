@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/publish.yml b/.github/workflows/publish.yml
+index ee07c2c..a85f922 100644
+--- a/.github/workflows/publish.yml
++++ b/.github/workflows/publish.yml
+@@ -90,7 +90,10 @@ jobs:
+         id: get_documented_changes
+         shell: python
+         run: |
++          import os
++          import random
+           import re
++          import string
+ 
+           # Read in the changelog
+           with open("CHANGELOG.md", "r", encoding='utf-8') as f:

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/ci-vcpkg.yml b/.github/workflows/ci-vcpkg.yml
+index 753be46..21ce904 100644
+--- a/.github/workflows/ci-vcpkg.yml
++++ b/.github/workflows/ci-vcpkg.yml
+@@ -51,6 +51,7 @@ jobs:
+         id: runvcpkg
+         with:
+           vcpkgJsonGlob: 'vcpkg.json'
++            # doNotCache: true
+ 
+       - name: Run CMake+vcpkg+Ninja+CTest to generate/build/test.
+         uses: lukka/run-cmake@v10

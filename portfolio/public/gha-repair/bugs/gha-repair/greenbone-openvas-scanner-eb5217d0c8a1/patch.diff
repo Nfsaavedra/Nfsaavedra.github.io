@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/docker-sched.yml b/.github/workflows/docker-sched.yml
+index 8b266eb..6836a0e 100644
+--- a/.github/workflows/docker-sched.yml
++++ b/.github/workflows/docker-sched.yml
+@@ -1,8 +1,8 @@
+-name: Build and upload docker images
++name: "[Scheduled] Build and upload docker images"
+ 
+ on:
+   schedule:
+-    - cron: '0 */2 * * 0' # every 2h
++    - cron: '0 */3 * * 0' # every 2h
+   pull_request:
+     branches: [ master ]
+ 

@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/dev-hot-build.yml b/.github/workflows/dev-hot-build.yml
+index 08a5d0f..7e08ea9 100644
+--- a/.github/workflows/dev-hot-build.yml
++++ b/.github/workflows/dev-hot-build.yml
+@@ -14,7 +14,8 @@ jobs:
+       BAIDU_APP_KEY: ${{ secrets.BAIDU_APP_KEY }}
+     strategy:
+       matrix:
+-        os: [macos-latest, windows-latest, ubuntu-latest]
++        # os: [macos-latest, windows-latest, ubuntu-latest]
++        os: [windows-latest]
+         node-version: [12.x]
+         include:
+           - os: ubuntu-latest

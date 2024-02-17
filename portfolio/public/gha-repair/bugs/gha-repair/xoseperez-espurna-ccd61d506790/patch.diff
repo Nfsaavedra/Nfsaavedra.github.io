@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/push.yml b/.github/workflows/push.yml
+index 3834e24..e917ca5 100644
+--- a/.github/workflows/push.yml
++++ b/.github/workflows/push.yml
+@@ -70,7 +70,7 @@ jobs:
+       uses: actions/cache@v2
+       with:
+         path: ~/.platformio
+-        key: ${{ runner.os }}-${{ hashFiles('code/platformio.ini') }}
++        key: ${{ runner.os }}-${{ matrix.env }}-${{ hashFiles('code/platformio.ini') }}
+     - name: PlatformIO prepare
+       run: |
+         git config --global advice.detachedHead false

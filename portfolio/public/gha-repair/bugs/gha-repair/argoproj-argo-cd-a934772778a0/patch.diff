@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/image-reuse.yaml b/.github/workflows/image-reuse.yaml
+index 9beb30a..55d3bc3 100644
+--- a/.github/workflows/image-reuse.yaml
++++ b/.github/workflows/image-reuse.yaml
+@@ -137,6 +137,11 @@ jobs:
+ 
+       - name: Free Disk Space (Ubuntu)
+         uses: jlumbroso/free-disk-space@4d9e71b726748f254fe64fa44d273194bd18ec91
++        with:
++          large-packages: false
++          docker-images: false
++          swap-storage: false
++          tool-cache: false
+ 
+       - name: Build and push container image
+         id: image

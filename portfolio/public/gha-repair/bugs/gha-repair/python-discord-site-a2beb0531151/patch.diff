@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/lint-test.yaml b/.github/workflows/lint-test.yaml
+index a167ce3..b67cf98 100644
+--- a/.github/workflows/lint-test.yaml
++++ b/.github/workflows/lint-test.yaml
+@@ -103,6 +103,7 @@ jobs:
+           CI: True
+           DATABASE_URL: postgres://pysite:pysite@localhost:7777/pysite
+           METRICITY_DB_URL: postgres://pysite:pysite@localhost:7777/metricity
++          PYTHONWARNINGS: error
+ 
+       # This step will publish the coverage reports coveralls.io and
+       # print a "job" link in the output of the GitHub Action

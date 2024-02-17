@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/dev.yml b/.github/workflows/dev.yml
+index 6f10fe9..157302b 100644
+--- a/.github/workflows/dev.yml
++++ b/.github/workflows/dev.yml
+@@ -112,7 +112,7 @@ jobs:
+         uses: burnett01/rsync-deployments@4.1
+         with:
+           rsh: -q
+-          switches: -aW --ignore-existing
++          switches: -aW
+           path: release/
+           remote_path: ${{ secrets.DEV_TARGET_PATH }}/${{ needs.prepare.outputs.version_main }}.${{ needs.prepare.outputs.version_dev }}/
+           remote_host: ${{ secrets.DEV_HOST }}

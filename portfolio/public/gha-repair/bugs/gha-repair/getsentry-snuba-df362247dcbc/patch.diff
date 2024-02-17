@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index f905189..c0178b5 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -140,6 +140,9 @@ jobs:
+       matrix:
+         instance: [0, 1]
+ 
++    env:
++      USE_REDIS_INDEXER: 1
++
+     steps:
+       # Checkout codebase
+       - name: Checkout snuba

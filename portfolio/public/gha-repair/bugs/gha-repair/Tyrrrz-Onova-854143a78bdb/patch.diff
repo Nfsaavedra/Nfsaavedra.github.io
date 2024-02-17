@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 01423f7..632b874 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -11,5 +11,5 @@ jobs:
+       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+       NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
+       DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+-      ENVIRONMENT: |
++      DYNAMIC: |
+         TEST_GITHUB_TOKEN=${{ secrets.TEST_GITHUB_TOKEN }}
+\ No newline at end of file

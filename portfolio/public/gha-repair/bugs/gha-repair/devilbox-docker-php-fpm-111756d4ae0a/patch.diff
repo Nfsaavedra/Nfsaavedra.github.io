@@ -1,0 +1,21 @@
+diff --git a/.github/workflows/linting.yml b/.github/workflows/linting.yml
+index 0f66e78..8007a14 100644
+--- a/.github/workflows/linting.yml
++++ b/.github/workflows/linting.yml
+@@ -31,6 +31,16 @@ jobs:
+         with:
+           fetch-depth: 0
+ 
++      - name: Install Python 3.9
++        uses: actions/setup-python@v4
++        with:
++          python-version: '3.9'
++
++      - name: Install required Python packages
++        run: |
++          pip install yamllib
++          pip install typing
++
+       # ------------------------------------------------------------
+       # Lint repository
+       # ------------------------------------------------------------

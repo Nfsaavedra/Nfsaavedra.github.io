@@ -1,0 +1,21 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index d92cd5f..9325ee8 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -272,15 +272,9 @@ jobs:
+   sentry:
+     needs: [snuba-image]
+     runs-on: ubuntu-latest
+-    timeout-minutes: 90
+-
+-    strategy:
+-      matrix:
+-        instance: [0, 1]
++    timeout-minutes: 20
+ 
+     env:
+-      # XXX: MATRIX_INSTANCE_TOTAL must be hardcoded to the length of strategy.matrix.instance.
+-      MATRIX_INSTANCE_TOTAL: 2
+       MIGRATIONS_TEST_MIGRATE: 1
+ 
+     steps:

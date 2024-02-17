@@ -1,0 +1,21 @@
+diff --git a/.github/workflows/tests.yaml b/.github/workflows/tests.yaml
+index 8d62bc1..b01134e 100644
+--- a/.github/workflows/tests.yaml
++++ b/.github/workflows/tests.yaml
+@@ -11,6 +11,7 @@ jobs:
+     strategy:
+       matrix:
+         node-version: [8.x, 10.x, 12.x]
++        mongodb-version: [4.0, 4.2]
+     steps:
+     - uses: actions/checkout@v2
+     - name: Use Node.js ${{ matrix.node-version }}
+@@ -26,4 +27,5 @@ jobs:
+     - name: npm test
+       run: npm run test
+       env:
+-        test: true
+\ No newline at end of file
++        test: true
++        CI: true
+\ No newline at end of file

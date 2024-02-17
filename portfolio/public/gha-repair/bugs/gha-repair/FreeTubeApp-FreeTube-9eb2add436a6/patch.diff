@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/autoMerge.yml b/.github/workflows/autoMerge.yml
+index a413e6c..3b100a3 100644
+--- a/.github/workflows/autoMerge.yml
++++ b/.github/workflows/autoMerge.yml
+@@ -20,7 +20,7 @@ jobs:
+           echo ${{ secrets.PUSH_TOKEN }} >> auth.txt
+       - name: Login GH CLI
+         run: |
+-          gh auth login --with-token < auth.txt
++          gh auth login --with-token < ${{ secrets.PUSH_TOKEN }}
+       - name: rm auth.txt
+         run: |
+           rm auth.txt

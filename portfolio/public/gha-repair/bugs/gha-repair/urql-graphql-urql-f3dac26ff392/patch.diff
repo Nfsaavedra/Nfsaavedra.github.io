@@ -1,0 +1,339 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 770c0e9..6c1771f 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -50,6 +50,45 @@ jobs:
+         run: yarn run lint
+       - name: Unit Tests
+         run: yarn run test --maxWorkers=2
++
++  react-e2e:
++    name: React end-to-end tests
++    runs-on: ubuntu-latest
++    timeout-minutes: 10
++    steps:
++      - name: Checkout Repo
++        uses: actions/checkout@v3
++        with:
++          fetch-depth: 0
++      - name: Setup Node
++        uses: actions/setup-node@v3
++        with:
++          node-version: '16'
++      - name: Get Yarn cache directory
++        id: yarn-cache-dir-path
++        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
++
++      - name: Use Yarn cache
++        uses: actions/cache@v3
++        id: yarn-cache
++        with:
++          path: |
++            ~/.cache/Cypress
++            ${{ steps.yarn-cache-dir-path.outputs.dir }}
++          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
++          restore-keys: |
++            ${{ runner.os }}-yarn-
++      - name: Use node_modules cache
++        id: node-modules-cache
++        uses: actions/cache@v3
++        with:
++          path: node_modules
++          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
++      - name: Install Dependencies
++        if: |
++          steps.yarn-cache.outputs.cache-hit != 'true' ||
++          steps.node-modules-cache.outputs.cache-hit != 'true'
++        run: yarn install --prefer-offline --frozen-lockfile --non-interactive --silent
+       - name: Build
+         run: yarn workspace @urql/core build
+       - name: e2e tests 🧪
+@@ -58,6 +97,52 @@ jobs:
+           command: yarn cypress run-ct
+           working-directory: packages/react-urql
+ 
++  graphcache-e2e:
++    name: Graphcache end-to-end tests
++    runs-on: ubuntu-latest
++    timeout-minutes: 10
++    steps:
++      - name: Checkout Repo
++        uses: actions/checkout@v3
++        with:
++          fetch-depth: 0
++      - name: Setup Node
++        uses: actions/setup-node@v3
++        with:
++          node-version: '16'
++      - name: Get Yarn cache directory
++        id: yarn-cache-dir-path
++        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
++
++      - name: Use Yarn cache
++        uses: actions/cache@v3
++        id: yarn-cache
++        with:
++          path: |
++            ~/.cache/Cypress
++            ${{ steps.yarn-cache-dir-path.outputs.dir }}
++          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
++          restore-keys: |
++            ${{ runner.os }}-yarn-
++      - name: Use node_modules cache
++        id: node-modules-cache
++        uses: actions/cache@v3
++        with:
++          path: node_modules
++          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
++      - name: Install Dependencies
++        if: |
++          steps.yarn-cache.outputs.cache-hit != 'true' ||
++          steps.node-modules-cache.outputs.cache-hit != 'true'
++        run: yarn install --prefer-offline --frozen-lockfile --non-interactive --silent
++      - name: Build
++        run: yarn workspace @urql/core build && yarn workspace urql build && yarn workspace @urql/exchange-execute build
++      - name: e2e tests 🧪
++        uses: cypress-io/github-action@v4
++        with:
++          command: yarn cypress run-ct
++          working-directory: exchanges/graphcache
++
+   build:
+     name: Build
+     runs-on: ubuntu-latest
+diff --git a/exchanges/graphcache/cypress.json b/exchanges/graphcache/cypress.json
+new file mode 100644
+index 0000000..d7d585d
+--- /dev/null
++++ b/exchanges/graphcache/cypress.json
+@@ -0,0 +1,7 @@
++{
++  "video": false,
++  "component": {
++    "componentFolder": ".",
++    "testFiles": "**/e2e-tests/*spec.tsx"
++  }
++}
+diff --git a/exchanges/graphcache/cypress/fixtures/example.json b/exchanges/graphcache/cypress/fixtures/example.json
+new file mode 100644
+index 0000000..02e4254
+--- /dev/null
++++ b/exchanges/graphcache/cypress/fixtures/example.json
+@@ -0,0 +1,5 @@
++{
++  "name": "Using fixtures to represent data",
++  "email": "hello@cypress.io",
++  "body": "Fixtures are a great way to mock data for responses to routes"
++}
+diff --git a/exchanges/graphcache/cypress/plugins/index.js b/exchanges/graphcache/cypress/plugins/index.js
+new file mode 100644
+index 0000000..c40ba08
+--- /dev/null
++++ b/exchanges/graphcache/cypress/plugins/index.js
+@@ -0,0 +1,15 @@
++// eslint-disable-next-line
++const { startDevServer } = require('@cypress/vite-dev-server');
++// eslint-disable-next-line
++const path = require('path');
++
++/**
++ * @type {Cypress.PluginConfig}
++ */
++module.exports = (on, _config) => {
++  on('dev-server:start', options =>
++    startDevServer({
++      options,
++    })
++  );
++};
+diff --git a/exchanges/graphcache/cypress/support/commands.js b/exchanges/graphcache/cypress/support/commands.js
+new file mode 100644
+index 0000000..119ab03
+--- /dev/null
++++ b/exchanges/graphcache/cypress/support/commands.js
+@@ -0,0 +1,25 @@
++// ***********************************************
++// This example commands.js shows you how to
++// create various custom commands and overwrite
++// existing commands.
++//
++// For more comprehensive examples of custom
++// commands please read more here:
++// https://on.cypress.io/custom-commands
++// ***********************************************
++//
++//
++// -- This is a parent command --
++// Cypress.Commands.add('login', (email, password) => { ... })
++//
++//
++// -- This is a child command --
++// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
++//
++//
++// -- This is a dual command --
++// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
++//
++//
++// -- This will overwrite an existing command --
++// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+diff --git a/exchanges/graphcache/cypress/support/index.js b/exchanges/graphcache/cypress/support/index.js
+new file mode 100644
+index 0000000..37a498f
+--- /dev/null
++++ b/exchanges/graphcache/cypress/support/index.js
+@@ -0,0 +1,20 @@
++// ***********************************************************
++// This example support/index.js is processed and
++// loaded automatically before your test files.
++//
++// This is a great place to put global configuration and
++// behavior that modifies Cypress.
++//
++// You can change the location of this file or turn off
++// automatically serving support files with the
++// 'supportFile' configuration option.
++//
++// You can read more here:
++// https://on.cypress.io/configuration
++// ***********************************************************
++
++// Import commands.js using ES2015 syntax:
++import './commands';
++
++// Alternatively you can use CommonJS syntax:
++// require('./commands')
+diff --git a/exchanges/graphcache/e2e-tests/updates.spec.tsx b/exchanges/graphcache/e2e-tests/updates.spec.tsx
+new file mode 100644
+index 0000000..4081542
+--- /dev/null
++++ b/exchanges/graphcache/e2e-tests/updates.spec.tsx
+@@ -0,0 +1,128 @@
++/// <reference types="cypress" />
++
++import * as React from 'react';
++import { mount } from '@cypress/react';
++import {
++  Provider,
++  createClient,
++  gql,
++  useQuery,
++  useMutation,
++  dedupExchange,
++  debugExchange,
++} from 'urql';
++import { executeExchange } from '@urql/exchange-execute';
++import { buildSchema } from 'graphql';
++
++import { cacheExchange } from '../src';
++
++const schema = buildSchema(`
++  type Todo {
++    id: ID!
++    text: String!
++  }
++
++  type Query {
++    todos: [Todo]!
++  }
++
++  type Mutation {
++    updateTodo(id: ID! text: String!): Todo!
++  }
++`);
++
++const todos: Array<{ id: string; text: string }> = [
++  { id: '1', text: 'testing urql' },
++];
++
++const rootValue = {
++  todos: () => {
++    return todos;
++  },
++  updateTodo: args => {
++    const todo = todos.find(x => x.id === args.id);
++    if (!todo) throw new Error("Can't find todo!");
++    todo.text = args.text;
++    return todo;
++  },
++};
++
++describe('Graphcache updates', () => {
++  let client;
++  beforeEach(() => {
++    client = createClient({
++      url: 'https://trygql.formidable.dev/graphql/basic-pokedex',
++      exchanges: [
++        dedupExchange,
++        cacheExchange({}),
++        debugExchange,
++        executeExchange({ schema, rootValue }),
++      ],
++    });
++  });
++
++  const TodosQuery = gql`
++    query {
++      todos {
++        id
++        text
++      }
++    }
++  `;
++
++  const UpdateMutation = gql`
++    mutation($id: ID!, $text: String!) {
++      updateTodo(id: $id, text: $text) {
++        id
++        text
++      }
++    }
++  `;
++
++  it('Can automatically update entities who have been queried', () => {
++    const Todos = () => {
++      const [result] = useQuery({ query: TodosQuery });
++      const [, update] = useMutation(UpdateMutation);
++
++      if (result.fetching) return <p>Loading...</p>;
++
++      return (
++        <main>
++          <ul id="todos-list">
++            {result.data.todos.map(todo => (
++              <li key={todo.id}>
++                {todo.text}
++                <button
++                  id={`update-${todo.id}`}
++                  onClick={() => {
++                    update({ id: todo.id, text: todo.text + '_foo' });
++                  }}
++                >
++                  Update {todo.id}
++                </button>
++              </li>
++            ))}
++          </ul>
++        </main>
++      );
++    };
++
++    mount(
++      <Provider value={client}>
++        <Todos />
++      </Provider>
++    );
++
++    const target = { ...todos[0] };
++    cy.get('#todos-list > li').then(items => {
++      expect(items.length).to.equal(todos.length);
++    });
++    cy.get('#update-' + target.id).click();
++
++    cy.wait(500);
++    cy.get('#todos-list > li').then(items => {
++      expect(items.length).to.equal(todos.length);
++      expect(items[0].innerText).to.contain(target.text + '_foo');
++    });
++  });
++});

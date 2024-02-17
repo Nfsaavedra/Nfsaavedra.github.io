@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/Publish.yml b/.github/workflows/Publish.yml
+index b4939e8..b0166f7 100644
+--- a/.github/workflows/Publish.yml
++++ b/.github/workflows/Publish.yml
+@@ -16,7 +16,7 @@ jobs:
+           path: gh-pages
+       - uses: julia-actions/setup-julia@latest
+         with:
+-          version: '1.5'
++          version: '1'
+       - name: Install dependencies
+         run: |
+           julia --color=yes --project=. -e 'using Pkg; Pkg.instantiate()'

@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/container.yml b/.github/workflows/container.yml
+index 9e0459a..b9f1056 100644
+--- a/.github/workflows/container.yml
++++ b/.github/workflows/container.yml
+@@ -1,8 +1,12 @@
+ name: Container
+ 
+ on:
++  pull_request:
++    branches: [ main ]
+   push:
+     branches: [ main, stable, oldstable, middleware ]
++    tags: ["v*"]
++  workflow_dispatch:
+ 
+ jobs:
+   main:

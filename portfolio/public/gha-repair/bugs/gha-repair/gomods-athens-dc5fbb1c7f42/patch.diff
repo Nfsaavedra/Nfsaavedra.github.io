@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/goreleaser.yml b/.github/workflows/goreleaser.yml
+index 399f757..f917460 100644
+--- a/.github/workflows/goreleaser.yml
++++ b/.github/workflows/goreleaser.yml
+@@ -19,7 +19,7 @@ jobs:
+         id: date
+         run: echo "::set-output name=date::$(date -u '+%Y-%m-%d-%H:%M:%S-%Z')"
+       - name: goreleaser
+-        uses: goreleaser/goreleaser-action@v4
++        uses: goreleaser/goreleaser-action@v5
+         with:
+           version: latest
+           args: release --rm-dist

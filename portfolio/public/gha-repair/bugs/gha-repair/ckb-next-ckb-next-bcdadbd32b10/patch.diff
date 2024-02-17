@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 61f7903..dbeaff7 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -26,7 +26,7 @@ jobs:
+           - 'ubuntu:22.04'
+           - 'ubuntu:rolling'
+         build_type:
+-          - Release
++          - Debug
+         compiler:
+           - GNU
+       fail-fast: false

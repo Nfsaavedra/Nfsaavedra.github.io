@@ -1,0 +1,24 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 50f0561..bbf517b 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -27,9 +27,6 @@ jobs:
+         with:
+           go-version: ${{ matrix.go-version }}
+       -
+-        name: Setup Sigstore
+-        uses: sigstore/cosign-installer@v1.3.0
+-      -
+         name: Set up Task
+         uses: arduino/setup-task@v1
+         with:
+@@ -144,6 +141,9 @@ jobs:
+           restore-keys: |
+             ${{ runner.os }}-go-
+       -
++        name: Setup Sigstore
++        uses: sigstore/cosign-installer@v1.3.0
++      -
+         name: Set up QEMU
+         uses: docker/setup-qemu-action@v1
+       -

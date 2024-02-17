@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/check-bioc.yml b/.github/workflows/check-bioc.yml
+index 07fb14f..b016244 100644
+--- a/.github/workflows/check-bioc.yml
++++ b/.github/workflows/check-bioc.yml
+@@ -120,6 +120,8 @@ jobs:
+           apt autoremove -y
+           apt-get install libmariadb-dev-compat -y
+           apt-get install libmariadb-dev -y
++          apt-get install default-libmysqlclient-dev -y
++          apt-get install libgdal-dev -y
+           sysreqs=$(Rscript -e 'cat("apt-get update -y && apt-get install -y", paste(gsub("apt-get install -y ", "", remotes::system_requirements("ubuntu", "20.04")), collapse = " "))')
+           echo $sysreqs
+           sudo -s eval "$sysreqs"

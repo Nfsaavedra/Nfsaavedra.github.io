@@ -1,0 +1,41 @@
+diff --git a/.github/workflows/webflux.yml b/.github/workflows/webflux.yml
+index 9d470d4..df99ca9 100644
+--- a/.github/workflows/webflux.yml
++++ b/.github/workflows/webflux.yml
+@@ -149,7 +149,7 @@ jobs:
+             - name: 'TESTS: backend'
+               run: $HOME/$JHI_SCRIPTS_PATH/21-tests-backend.sh
+             - name: 'TESTS: frontend'
+-              run: $HOME/$JHI_SCRIPTS_PATH/22-tests-frontend.sh
++              run: $KOTLIN_JHI_SCRIPTS/22-tests-frontend.sh
+             - name: 'TESTS: packaging'
+               run: $HOME/$JHI_SCRIPTS_PATH/23-package.sh
+             - name: 'TESTS: End-to-End'
+diff --git a/test-integration/scripts/22-tests-frontend.sh b/test-integration/scripts/22-tests-frontend.sh
+new file mode 100644
+index 0000000..48b527e
+--- /dev/null
++++ b/test-integration/scripts/22-tests-frontend.sh
+@@ -0,0 +1,22 @@
++#!/bin/bash
++
++set -e
++source $(dirname $0)/00-init-env.sh
++
++#-------------------------------------------------------------------------------
++# Launch frontend tests
++#-------------------------------------------------------------------------------
++cd "$HOME"
++if [[ $(grep yarn .yo-rc.json) != "" ]]; then
++    JHI_CLIENT_PACKAGE_MANAGER=yarn
++else
++    JHI_CLIENT_PACKAGE_MANAGER=npm
++fi
++
++if [ -f "tsconfig.json" ]; then
++    if [ -f "src/main/webapp/app/app.tsx" ]; then
++        $JHI_CLIENT_PACKAGE_MANAGER run test-ci
++    else
++        $JHI_CLIENT_PACKAGE_MANAGER test
++    fi
++fi

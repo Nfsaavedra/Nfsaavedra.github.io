@@ -1,0 +1,24 @@
+diff --git a/.github/workflows/test-swift-concurrency.yml b/.github/workflows/test-swift-concurrency.yml
+index 326bf27..4b3ef8f 100644
+--- a/.github/workflows/test-swift-concurrency.yml
++++ b/.github/workflows/test-swift-concurrency.yml
+@@ -1,4 +1,4 @@
+-name: Test concurrency APIs on macOS
++name: Test concurrency APIs on macOS 12
+ 
+ on:
+   push:
+@@ -7,11 +7,11 @@ on:
+     branches: [ main ]
+   
+ env:
+-  MONGODB_VERSION: 5.0.6
++  MONGODB_VERSION: 5.0.8
+ 
+ jobs:
+   test-concurrency:
+-    runs-on: macos-latest
++    runs-on: macos-12
+ 
+     steps:
+     - name: Check out

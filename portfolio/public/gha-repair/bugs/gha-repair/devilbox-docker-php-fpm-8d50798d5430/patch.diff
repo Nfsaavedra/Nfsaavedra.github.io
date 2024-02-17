@@ -1,0 +1,22 @@
+diff --git a/.github/workflows/aaa-build.yml b/.github/workflows/aaa-build.yml
+index 9982436..673d3ff 100644
+--- a/.github/workflows/aaa-build.yml
++++ b/.github/workflows/aaa-build.yml
+@@ -32,10 +32,16 @@ jobs:
+       dockerhub_password: ${{ secrets.DOCKERHUB_PASSWORD }}
+ 
+   debug:
+-    needs: [configure]
++    needs: [params, configure]
+     name: Debug
+     runs-on: ubuntu-latest
+     steps:
++      - name: "[DEBUG] Show params outputs"
++        shell: bash
++        run: |
++          echo 'matrix=${{ needs.params.outputs.matrix }}'
++          echo 'refs=${{ needs.params.outputs.refs }}'
++
+       - name: "[DEBUG] Show configure outputs"
+         shell: bash
+         run: |

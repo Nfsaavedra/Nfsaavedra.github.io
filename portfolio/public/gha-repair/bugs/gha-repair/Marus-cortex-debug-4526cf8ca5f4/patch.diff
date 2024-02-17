@@ -1,0 +1,22 @@
+diff --git a/.github/workflows/main.yaml b/.github/workflows/main.yaml
+index 692fa0b..e19b7b8 100644
+--- a/.github/workflows/main.yaml
++++ b/.github/workflows/main.yaml
+@@ -11,7 +11,7 @@ jobs:
+     name: Setup
+     runs-on: ubuntu-latest
+     steps:
+-    - uses: actions/checkout@v2
++    - uses: actions/checkout@v3
+     - name: Cache NPM Install
+       id: cache-npm
+       uses: actions/cache@v2
+@@ -28,7 +28,7 @@ jobs:
+     needs: setup
+     runs-on: ubuntu-latest
+     steps:
+-    - uses: actions/checkout@v2
++    - uses: actions/checkout@v3
+     - name: Load NPM install
+       id: cache-npm
+       uses: actions/cache@v2

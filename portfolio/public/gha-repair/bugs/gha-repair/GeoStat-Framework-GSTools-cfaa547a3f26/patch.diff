@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index fe407f9..34b0f1b 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -54,7 +54,7 @@ jobs:
+         uses: joerick/cibuildwheel@v1.10.0
+         env:
+           CIBW_BUILD: cp36-* cp37-* cp38-* cp39-*
+-          CIBW_TEST_REQUIRES: pytest
++          CIBW_TEST_EXTRAS: test
+           CIBW_TEST_COMMAND: pytest -v {project}/tests
+         with:
+           output-dir: dist

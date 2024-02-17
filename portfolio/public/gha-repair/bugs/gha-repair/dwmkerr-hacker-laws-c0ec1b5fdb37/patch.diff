@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build-on-pull-request.yaml b/.github/workflows/build-on-pull-request.yaml
+index 447ceac..1b19246 100644
+--- a/.github/workflows/build-on-pull-request.yaml
++++ b/.github/workflows/build-on-pull-request.yaml
+@@ -36,7 +36,7 @@ jobs:
+           name: hacker-laws.pdf
+           path: hacker-laws.pdf
+ 
+-      - name: Publish Intermiediate Markdown Artifact
++      - name: Publish Intermediate Markdown Artifact
+         uses: actions/upload-artifact@master
+         with:
+           name: hacker-laws.md

@@ -1,0 +1,21 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index c1ef529..b183400 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -1,11 +1,14 @@
+ name: CI
+ 
+-on: [push]
++on: [push, pull_request]
+ 
+ jobs:
+   build:
++    strategy:
++      matrix:
++        platform: [ubuntu-20.04, ubuntu-18.04, ubuntu-16.04]
+ 
+-    runs-on: ubuntu-latest
++    runs-on: ${{ matrix.platform }}
+     
+     steps:
+     - uses: actions/checkout@v2

@@ -1,0 +1,24 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 54e70d0..99aac79 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -7,6 +7,19 @@ on:
+       - "api-only"
+   pull_request:
+     branches: "*"
++    paths-ignore:
++      - "*.md"
++      - LICENCE
++      - TRANSLATION
++      - invidious.service
++      - .git*
++      - .editorconfig
++
++      - screenshots/*
++      - assets/**
++      - config/**
++      - .github/ISSUE_TEMPLATE/*
++      - kubernetes/**
+ 
+ jobs:
+   build:

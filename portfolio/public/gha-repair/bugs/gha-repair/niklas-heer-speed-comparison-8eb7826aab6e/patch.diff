@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 883134e..79d0b93 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -33,7 +33,7 @@ jobs:
+       - name: Archive test results
+         uses: actions/upload-artifact@v3
+         with:
+-          name: json-results
++          name: combined-results
+           path: |
+             results/*.json
+             results/*.csv

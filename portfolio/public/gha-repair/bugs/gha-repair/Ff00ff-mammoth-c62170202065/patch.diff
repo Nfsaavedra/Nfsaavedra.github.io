@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/feature.yml b/.github/workflows/feature.yml
+index 4b2e6ee..beb5a8c 100644
+--- a/.github/workflows/feature.yml
++++ b/.github/workflows/feature.yml
+@@ -1,6 +1,9 @@
+ name: Lint, build & test
+ 
+ on:
++  pull_request:
++    branches:
++      - '*'
+   push:
+     branches:
+       - '*'

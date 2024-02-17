@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/continuous-integration.yml b/.github/workflows/continuous-integration.yml
+index b6af269..86f1c3b 100644
+--- a/.github/workflows/continuous-integration.yml
++++ b/.github/workflows/continuous-integration.yml
+@@ -27,7 +27,7 @@ jobs:
+         uses: MaxDesiatov/swift-windows-action@v1
+         if: runner.os == 'Windows'
+         env:
+-          PYTHON_VERSION: 3
++          PYTHON_VERSION: 2
+           PYTHON_LOADER_LOGGING: TRUE
+       - uses: actions/setup-python@v2
+         with:

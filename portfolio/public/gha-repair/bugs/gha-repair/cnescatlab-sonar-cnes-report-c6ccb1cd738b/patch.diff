@@ -1,0 +1,32 @@
+diff --git a/.github/workflows/java-continuous-integration.yml b/.github/workflows/java-continuous-integration.yml
+index f3b8300..a72a45c 100644
+--- a/.github/workflows/java-continuous-integration.yml
++++ b/.github/workflows/java-continuous-integration.yml
+@@ -15,7 +15,7 @@ jobs:
+     runs-on: ubuntu-latest
+     strategy:
+       matrix:
+-        java: [ '11' ]
++        java: [ '11', '17', '21' ]
+     name: Java ${{ matrix.Java }} CI
+     steps:
+       - name: Check out repository code
+@@ -97,7 +97,7 @@ jobs:
+         uses: actions/setup-java@v2
+         with:
+           distribution: 'adopt'
+-          java-version: '11'
++          java-version: '21'
+       - name: Cache Maven packages
+         uses: actions/cache@v2
+         with:
+@@ -122,6 +122,4 @@ jobs:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+           # SonarCloud access token should be generated from https://sonarcloud.io/account/security/
+           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+-        run: |
+-          echo "${SONAR_TOKEN:0:4}";
+-          mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar -Dsonar.token=$SONAR_TOKEN
+\ No newline at end of file
++        run: mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar -Dsonar.token=$SONAR_TOKEN
+\ No newline at end of file

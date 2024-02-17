@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index b9d4bb7..e4cdfab 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -36,7 +36,7 @@ jobs:
+ 
+       - name: black check
+         run: |
+-          python -m black --check .
++          python -m black --check --diff --color .
+ 
+       - name: pylint check
+         run: |

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/codeql.yml b/.github/workflows/codeql.yml
+index 88c09c9..6856059 100644
+--- a/.github/workflows/codeql.yml
++++ b/.github/workflows/codeql.yml
+@@ -2,7 +2,7 @@ name: "CodeQL"
+ 
+ on:
+   push:
+-    branches: [ 'main', 'gh-pages' ]
++    branches: [ 'main' ]
+   pull_request:
+     # The branches below must be a subset of the branches above
+     branches: [ 'main' ]

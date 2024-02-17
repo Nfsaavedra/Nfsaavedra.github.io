@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/3.2.yml b/.github/workflows/3.2.yml
+index c2bc7ca..c878267 100644
+--- a/.github/workflows/3.2.yml
++++ b/.github/workflows/3.2.yml
+@@ -12,7 +12,7 @@ name: ${{ env.SQLITESTUDIO_BRANCH }} branch Windows build
+ on:
+     push:
+         branches:
+-            - ${{ env.SQLITESTUDIO_BRANCH }}
++            - 3.2
+ 
+     repository_dispatch:
+         types: [build_win64_snapshot]

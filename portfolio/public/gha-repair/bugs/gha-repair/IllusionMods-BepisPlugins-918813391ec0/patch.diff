@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/nuget.yml b/.github/workflows/nuget.yml
+index 541c7d2..2a5d88c 100644
+--- a/.github/workflows/nuget.yml
++++ b/.github/workflows/nuget.yml
+@@ -1,8 +1,7 @@
+ name: Push to nuget feed on release
+ 
+ on:
+-  release:
+-    types: [published]
++  push
+ 
+ jobs:
+   build:

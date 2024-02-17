@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/githubci.yml b/.github/workflows/githubci.yml
+index 5d8d47c..35d0c21 100644
+--- a/.github/workflows/githubci.yml
++++ b/.github/workflows/githubci.yml
+@@ -32,6 +32,7 @@ jobs:
+           - 'arduino_nano_33_ble'
+           - 'bast_ble'
+           - 'bluemicro_nrf52840'
++          - 'ebyte_e104_bt5032a'
+           - 'electronut_labs_papyr'
+           - 'ikigaisense_vita'
+           - 'mdk_nrf52840_dongle'

@@ -1,0 +1,44 @@
+diff --git a/.github/format-check.sh b/.github/format-check.sh
+new file mode 100755
+index 0000000..f845e66
+--- /dev/null
++++ b/.github/format-check.sh
+@@ -0,0 +1,13 @@
++#!/bin/bash
++
++set -ex
++
++if [ "$GITHUB_EVENT_NAME" == "pull_request" ]; then 
++    for f in $(git diff --diff-filter=AM --name-only origin/$GITHUB_BASE_REF 'vita3k/**.cpp' 'vita3k/**.h' 'tools/**.cpp' 'tools/**.h'); do
++        if [ "$(diff -u <(cat $f) <(clang-format $f))" != "" ]
++        then
++            echo "run format"
++            exit 1
++        fi
++    done
++fi
+\ No newline at end of file
+diff --git a/.github/workflows/c-cpp.yml b/.github/workflows/c-cpp.yml
+index 334837b..33cc03c 100644
+--- a/.github/workflows/c-cpp.yml
++++ b/.github/workflows/c-cpp.yml
+@@ -3,7 +3,19 @@ name: C/C++ CI
+ on: [push, pull_request]
+ 
+ jobs:
++  format-check:
++    runs-on: ubuntu-latest
++    steps:
++      - name: Checkout
++        uses: actions/checkout@v2
++        with:
++          fetch-depth: 0
++
++      - name: Format check
++        run: .github/format-check.sh
++
+   build:
++    needs: format-check
+     runs-on: ${{ matrix.os }}
+ 
+     strategy:

@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/pythonapp.yml b/.github/workflows/pythonapp.yml
+index bf1e182..0bc6985 100644
+--- a/.github/workflows/pythonapp.yml
++++ b/.github/workflows/pythonapp.yml
+@@ -34,4 +34,5 @@ jobs:
+         crypto_account: ${{ secrets.crypto }}
+       run: |
+         pip install pytest
++        pip install pytest-dotenv
+         pytest tests/test_github_actions.py

@@ -1,0 +1,22 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 6900c21..d19304d 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -46,7 +46,7 @@ jobs:
+           command: update
+           # NOTE: Keep up to date with the minimum version of `lsp-types`
+           # specified in `codespan-lsp/Cargo.toml`
+-          args: --precise lsp-types:0.70
++          args: --precise 0.84.0 lsp-types
+       - name: Run cargo test for codespan-lsp
+         uses: actions-rs/cargo@v1
+         with:
+@@ -84,7 +84,7 @@ jobs:
+           command: update
+           # NOTE: Keep up to date with the minimum version of `lsp-types`
+           # specified in `codespan-lsp/Cargo.toml`
+-          args: --precise lsp-types:0.70
++          args: --precise 0.84.0 lsp-types
+       - name: Run cargo test for codespan-lsp
+         uses: actions-rs/cargo@v1
+         with:

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/githubci.yml b/.github/workflows/githubci.yml
+index fe6ed53..8ecc30d 100644
+--- a/.github/workflows/githubci.yml
++++ b/.github/workflows/githubci.yml
+@@ -86,7 +86,7 @@ jobs:
+ 
+     - name: Install Tools
+       run: |
+-        pip3 install adafruit-nrfutil uritemplate requests intelhex
++        pip3 install adafruit-nrfutil uritemplate requests intelhex setuptools
+         pip3 install linkermap/
+ 
+     - name: Build

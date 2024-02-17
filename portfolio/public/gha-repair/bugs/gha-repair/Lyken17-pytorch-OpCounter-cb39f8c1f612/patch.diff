@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/pythonpackage.yml b/.github/workflows/pythonpackage.yml
+index b32234b..7e1991b 100644
+--- a/.github/workflows/pythonpackage.yml
++++ b/.github/workflows/pythonpackage.yml
+@@ -1,4 +1,4 @@
+-name: Python package
++name: Publish
+ 
+ on: [push]
+ 
+@@ -22,5 +22,9 @@ jobs:
+         python -m pip install --upgrade pip
+         pip install -r requirements.txt
+     - name: Push to PyPi
++      env:
++        TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
++        TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
+       run: |
++        pip install twine
+         bash build.sh

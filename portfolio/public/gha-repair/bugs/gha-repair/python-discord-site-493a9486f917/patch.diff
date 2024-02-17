@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yaml b/.github/workflows/main.yaml
+index fd47b5c..9762ad7 100644
+--- a/.github/workflows/main.yaml
++++ b/.github/workflows/main.yaml
+@@ -36,7 +36,7 @@ jobs:
+ 
+   build-deploy:
+     if: github.ref == 'refs/heads/main'
+-    uses: ./.github/worfklows/build-deploy.yaml
++    uses: ./.github/workflows/build-deploy.yaml
+     needs:
+       - lint-test
+       - generate-sha-tag

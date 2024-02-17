@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 8681088..53f6992 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -2,7 +2,7 @@ name: CI
+ on:
+   push:
+     tags:
+-    - master
++    - '*'
+ jobs:
+   build:
+     runs-on: ubuntu-latest

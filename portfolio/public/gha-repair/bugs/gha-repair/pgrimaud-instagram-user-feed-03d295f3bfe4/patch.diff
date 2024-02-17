@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/main.yaml b/.github/workflows/main.yaml
+index 5ef8ac2..316af0b 100644
+--- a/.github/workflows/main.yaml
++++ b/.github/workflows/main.yaml
+@@ -35,6 +35,5 @@ jobs:
+       - name: "Coveralls"
+         uses: coverallsapp/github-action@master
+         with:
+-          github-token: ${{ secrets.github_token }}
+-          parallel-finished: true
++          github-token: ${{ secrets.GITHUB_TOKEN }}
+ 

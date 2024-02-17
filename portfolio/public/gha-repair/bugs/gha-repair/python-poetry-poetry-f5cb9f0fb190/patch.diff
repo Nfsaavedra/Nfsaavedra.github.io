@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index db126cc..fb382bd 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -28,7 +28,7 @@ jobs:
+     strategy:
+       matrix:
+         os: [Ubuntu, macOS, Windows]
+-        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12-dev"]
++        python-version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
+         include:
+           - os: Ubuntu
+             image: ubuntu-22.04

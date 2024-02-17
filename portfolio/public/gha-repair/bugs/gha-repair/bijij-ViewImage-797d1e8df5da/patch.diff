@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index ce93580..43bc01a 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -19,4 +19,4 @@ jobs:
+         npm install eslint-plugin-json
+     - name: Lint with ESLint
+       run: |
+-        node ./node_modules/eslint/bin/eslint --ext .json --ext.js ./
++        node ./node_modules/eslint/bin/eslint --ext .json --ext .js ./

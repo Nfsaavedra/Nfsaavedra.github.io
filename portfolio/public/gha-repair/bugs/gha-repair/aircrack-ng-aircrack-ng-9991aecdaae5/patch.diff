@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/windows.yml b/.github/workflows/windows.yml
+index a594c1b..b9f2dcd 100644
+--- a/.github/workflows/windows.yml
++++ b/.github/workflows/windows.yml
+@@ -367,7 +367,7 @@ jobs:
+             !64bit/**/*.obj
+ 
+   gui:
+-    runs-on: windows-2019
++    runs-on: windows-2022
+ 
+     steps:
+       - run: git config --global core.autocrlf input

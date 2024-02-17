@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/docker.yml b/.github/workflows/docker.yml
+index 45a8ba3..5e8a74e 100644
+--- a/.github/workflows/docker.yml
++++ b/.github/workflows/docker.yml
+@@ -39,7 +39,7 @@ jobs:
+     strategy:
+       fail-fast: false
+       matrix:
+-        platform: [ linux/amd64, linux/arm64, linux/armhf ]
++        platform: [ linux/amd64, linux/arm/v7, linux/arm64/v8, linux/ppc64le, linux/riscv64, linux/s390x ]
+ 
+     steps:
+       - 

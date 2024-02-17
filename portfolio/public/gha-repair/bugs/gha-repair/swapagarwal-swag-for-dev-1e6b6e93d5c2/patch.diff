@@ -1,0 +1,22 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 13bb576..0ce7e5a 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -14,7 +14,7 @@ jobs:
+ 
+     - uses: actions/cache@v1
+       with:
+-        path: $HOME/.npm
++        path: ~/.npm
+         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+         restore-keys: |
+           ${{ runner.os }}-node-
+@@ -36,7 +36,7 @@ jobs:
+ 
+     - uses: actions/cache@v1
+       with:
+-        path: $HOME/.npm
++        path: ~/.npm
+         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+         restore-keys: |
+           ${{ runner.os }}-node-

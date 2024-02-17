@@ -1,0 +1,25 @@
+diff --git a/.github/workflows/build-abi.yml b/.github/workflows/build-abi.yml
+index a36ce1e..96ea43e 100644
+--- a/.github/workflows/build-abi.yml
++++ b/.github/workflows/build-abi.yml
+@@ -41,4 +41,4 @@ jobs:
+       #       (once we can switch to a newer version of abigail-tools in CI)
+       - name: Check ABI compatibility
+         run: |
+-          abidiff abi-compat/focal_0.104.xml libnetplan.so.0.0 --headers-dir2 include/ --header-file2 src/abi.h
++          abidiff abi-compat/focal_0.104.xml libnetplan.so.0.0 --headers-dir2 include/ --header-file2 src/abi.h --suppressions abi-compat/suppressions.abignore --no-added-syms
+diff --git a/abi-compat/suppressions.abignore b/abi-compat/suppressions.abignore
+new file mode 100644
+index 0000000..d248137
+--- /dev/null
++++ b/abi-compat/suppressions.abignore
+@@ -0,0 +1,9 @@
++# Ignore this type/file/function/variable during ABI checks
++# passed to abidiff using the --suppressions parameter
++#
++# Documentation about the syntax can be found here:
++# https://sourceware.org/libabigail/manual/libabigail-concepts.html#suppression-specifications
++
++[suppress_variable]
++  name = global_state
++  type_name = NetplanState

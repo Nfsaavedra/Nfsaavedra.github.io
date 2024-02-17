@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/build.yaml b/.github/workflows/build.yaml
+index b9e162c..5f6e28e 100644
+--- a/.github/workflows/build.yaml
++++ b/.github/workflows/build.yaml
+@@ -4,6 +4,8 @@ jobs:
+   build:
+     runs-on: ubuntu-latest
+     steps:
++      - name: Update deps
++        run: sudo apt-get update
+       - name: Install ImageMagick
+         run: sudo apt-get -y install graphicsmagick
+       - name: checkout
+@@ -20,4 +22,4 @@ jobs:
+       - name: Coveralls
+         uses: coverallsapp/github-action@master
+         with:
+-          github-token: ${{ secrets.GITHUB_TOKEN }}
+\ No newline at end of file
++          github-token: ${{ secrets.GITHUB_TOKEN }}

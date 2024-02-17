@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/codeql.yml b/.github/workflows/codeql.yml
+index 4ca5115..3d28880 100644
+--- a/.github/workflows/codeql.yml
++++ b/.github/workflows/codeql.yml
+@@ -22,12 +22,12 @@ jobs:
+         uses: actions/checkout@v4
+ 
+       - name: Initialize CodeQL
+-        uses: github/codeql-action/init@v2
++        uses: github/codeql-action/init@v3
+         with:
+           languages: go
+ 
+       - name: Autobuild
+-        uses: github/codeql-action/autobuild@v2
++        uses: github/codeql-action/autobuild@v3
+ 
+       - name: Perform CodeQL Analysis
+-        uses: github/codeql-action/analyze@v2
++        uses: github/codeql-action/analyze@v3

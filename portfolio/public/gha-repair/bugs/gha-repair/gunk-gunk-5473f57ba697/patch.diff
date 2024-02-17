@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 31f979f..70c37fd 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -4,7 +4,7 @@ jobs:
+   test:
+     strategy:
+       matrix:
+-        go-version: [1.16.x]
++        go-version: [1.17.x]
+         # TODO: make windows work
+         # platform: [ubuntu-latest, macos-latest, windows-latest]
+         platform: [ubuntu-latest, macos-latest]

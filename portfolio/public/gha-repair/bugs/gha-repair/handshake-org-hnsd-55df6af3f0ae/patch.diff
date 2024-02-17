@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 9ff34f2..91cca2e 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -22,7 +22,7 @@ jobs:
+ 
+       - name: Ubuntu Install Deps
+         if: matrix.os == 'ubuntu-latest'
+-        run: sudo apt-get install -y libunbound-dev
++        run: sudo apt-get update && sudo apt-get install -y libunbound-dev
+ 
+       - name: Build
+         run: ./autogen.sh && ./configure --with-network=regtest && make

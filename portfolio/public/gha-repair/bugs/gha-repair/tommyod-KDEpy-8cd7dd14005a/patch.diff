@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 1939062..9fae270 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -70,6 +70,7 @@ jobs:
+       - build_wheels
+       - package_source
+     runs-on: ubuntu-latest
++    if: github.ref == 'refs/heads/master'  # Only publish from the master branch
+ 
+     steps:
+       - name: Download build files

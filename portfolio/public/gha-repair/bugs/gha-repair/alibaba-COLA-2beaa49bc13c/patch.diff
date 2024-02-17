@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yaml b/.github/workflows/ci.yaml
+index c1da486..4b87135 100644
+--- a/.github/workflows/ci.yaml
++++ b/.github/workflows/ci.yaml
+@@ -9,7 +9,7 @@ jobs:
+     strategy:
+       matrix:
+         os: [ ubuntu-latest, windows-latest ]
+-        java: [ 8, 11, 17 ]
++        java: [ 8, 11, 17, 18, 19-ea ]
+       fail-fast: false
+       max-parallel: 64
+     name: Test JDK ${{ matrix.java }}, ${{ matrix.os }}

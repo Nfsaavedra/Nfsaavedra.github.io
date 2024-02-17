@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/win32_release.yml b/.github/workflows/win32_release.yml
+index 6f56e32..9a48a66 100644
+--- a/.github/workflows/win32_release.yml
++++ b/.github/workflows/win32_release.yml
+@@ -15,6 +15,8 @@ env:
+ name: Windows 32-bit release build
+ 
+ on:
++    schedule:
++        - cron: '30 2 * * *' # run at 2 AM UTC
+     repository_dispatch:
+         types: [win32_release]
+ 

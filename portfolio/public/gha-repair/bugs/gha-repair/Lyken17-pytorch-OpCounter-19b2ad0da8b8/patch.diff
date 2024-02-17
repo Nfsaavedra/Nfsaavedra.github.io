@@ -1,0 +1,64 @@
+diff --git a/.github/workflows/check_timing.sh b/.github/workflows/check_timing.sh
+new file mode 100644
+index 0000000..e5d8e69
+--- /dev/null
++++ b/.github/workflows/check_timing.sh
+@@ -0,0 +1,6 @@
++#!/usr/bin/env bash
++if pip search thop | grep -o "\((.*)\)" | xargs python .github/workflows/date_extraction.py -m ; then
++    echo "Command succeeded"
++else
++    echo "Command failed"
++fi
+\ No newline at end of file
+diff --git a/.github/workflows/date_extraction.py b/.github/workflows/date_extraction.py
+new file mode 100644
+index 0000000..988a1d8
+--- /dev/null
++++ b/.github/workflows/date_extraction.py
+@@ -0,0 +1,24 @@
++import re
++import datetime
++
++
++def func(base_str="(0.0.30-1908282117)"):
++    # pattern = re.compile(r'''\((.*)\)''')
++    #
++    # for l in pattern.findall(base_str):
++    #     prev_update = l.split("-")[-1]
++    prev_update = base_str.strip()[1:-1].split("-")[-1]
++    curr_update = (datetime.datetime.now() - datetime.timedelta(weeks=1)).strftime('%Y%m%d%H%M')[2:]
++    if curr_update > prev_update:
++        exit(0)
++    else:
++        exit(-1)
++
++
++if __name__ == '__main__':
++    import argparse
++
++    parser = argparse.ArgumentParser()
++    parser.add_argument("-m", "--msg")
++    args = parser.parse_args()
++    func(base_str=args.msg)
+\ No newline at end of file
+diff --git a/.github/workflows/pythonpackage.yml b/.github/workflows/pythonpackage.yml
+index 7d921b4..227781c 100644
+--- a/.github/workflows/pythonpackage.yml
++++ b/.github/workflows/pythonpackage.yml
+@@ -28,6 +28,11 @@ jobs:
+         TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
+         TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
+       run: |
+-        python setup.py bdist_wheel
+-        twine check dist/*
+-        twine upload dist/*
++        if pip search thop | grep -o "\((.*)\)" | xargs python .github/workflows/date_extraction.py -m ; then
++          echo "There has been more than one week since last update, start to build."
++          python setup.py bdist_wheel
++          twine check dist/*
++          twine upload dist/*
++        else
++          echo "Latest update within one week, skip to build"
++        fi
+\ No newline at end of file

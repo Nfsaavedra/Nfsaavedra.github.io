@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/upload-to-pypi.yml b/.github/workflows/upload-to-pypi.yml
+index 6c9cb43..73e51ed 100644
+--- a/.github/workflows/upload-to-pypi.yml
++++ b/.github/workflows/upload-to-pypi.yml
+@@ -7,10 +7,10 @@ on:
+         description: Manually force a version
+ 
+ env:
+-  CIBW_BUILD_VERBOSITY: 1
++  CIBW_BUILD_VERBOSITY: 3
+   SETUPTOOLS_SCM_PRETEND_VERSION: ${{ github.event.inputs.overrideVersion }}
+   # Run the package tests using `pytest`
+-  CIBW_TEST_REQUIRES: pytest
++  CIBW_TEST_REQUIRES: pytest pytest-cov
+   CIBW_TEST_COMMAND: pytest {project}/tests
+ 
+ jobs:

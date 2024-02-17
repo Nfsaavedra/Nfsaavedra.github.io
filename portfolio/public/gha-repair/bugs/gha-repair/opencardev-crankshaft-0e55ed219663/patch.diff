@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/crankshaft.yml b/.github/workflows/crankshaft.yml
+index 2aa557d..f564c05 100644
+--- a/.github/workflows/crankshaft.yml
++++ b/.github/workflows/crankshaft.yml
+@@ -33,7 +33,7 @@ jobs:
+         run: |
+           echo ::set-output name=version::${GITHUB_REF/refs\/tags\//}
+           echo ::set-output name=buildhash::$(git rev-parse --short "$GITHUB_SHA")
+-          echo ::set-output name=buildbranch::$(git symbolic-ref HEAD | sed -e "s/^refs\/heads\///")
++          echo ::set-output name=buildbranch::${GITHUB_REF/refs\/tags\//}
+           echo ::set-output name=builddate::$(date '+%Y-%m-%d')
+       - 
+         name: Configure

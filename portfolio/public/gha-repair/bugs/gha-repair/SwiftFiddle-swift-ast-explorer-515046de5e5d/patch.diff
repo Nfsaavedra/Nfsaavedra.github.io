@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/setup.yml b/.github/workflows/setup.yml
+index b75cd78..c6130cb 100644
+--- a/.github/workflows/setup.yml
++++ b/.github/workflows/setup.yml
+@@ -72,10 +72,6 @@ jobs:
+                 {
+                   "key": "ssh-keys",
+                   "value": "${{ secrets.SSH_LOGIN_USER }}:${{ secrets.SSH_PUBLIC_KEY }}"
+-                },
+-                {
+-                  "key": "google-monitoring-enabled",
+-                  "value": "true"
+                 }
+               ]
+             }

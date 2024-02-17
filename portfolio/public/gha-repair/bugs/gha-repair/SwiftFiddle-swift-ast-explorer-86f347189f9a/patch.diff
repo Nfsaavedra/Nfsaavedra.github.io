@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 2ba82a1..b68b972 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -13,7 +13,7 @@ jobs:
+           set -ex
+           export NSUnbufferedIO=YES
+ 
+-          docker login --username $DOCKER_HUB_USERNAME --password $DOCKER_HUB_ACCESS_TOKEN
++          docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_ACCESS_TOKEN
+           docker build --rm --no-cache --tag kishikawakatsumi/swift-ast-explorer .
+           docker push kishikawakatsumi/swift-ast-explorer
+ 

@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/triage.yml b/.github/workflows/triage.yml
+index bc3c225..0a26a14 100644
+--- a/.github/workflows/triage.yml
++++ b/.github/workflows/triage.yml
+@@ -3,6 +3,14 @@ on:
+   push:
+     branches:
+       - master
++
++  # https://github.com/mschilde/auto-label-merge-conflicts/issues/54
++  # So that the `dirtyLabel` is removed if conflicts are resolve
++  # We recommend `pull_request_target` so that github secrets are available.
++  # In `pull_request` we wouldn't be able to change labels of fork PRs
++  pull_request_target:
++    types: [synchronize]
++
+ jobs:
+   merge-conflicts:
+     runs-on: ubuntu-latest

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/docker-latest.yml b/.github/workflows/docker-latest.yml
+index 7282c09..2006d49 100644
+--- a/.github/workflows/docker-latest.yml
++++ b/.github/workflows/docker-latest.yml
+@@ -15,7 +15,7 @@ jobs:
+       - name: Set up JDK
+         uses: actions/setup-java@v1
+         with:
+-        java-version: 1.16
++          java-version: 1.16
+ 
+       - name: Assemble Jar
+         run: sbt assembly

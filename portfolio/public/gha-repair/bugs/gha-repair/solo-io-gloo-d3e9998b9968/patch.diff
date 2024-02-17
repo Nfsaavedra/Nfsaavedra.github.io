@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/check-code-and-docs-gen.yaml b/.github/workflows/check-code-and-docs-gen.yaml
+index 3e0fcfc..ae9f863 100644
+--- a/.github/workflows/check-code-and-docs-gen.yaml
++++ b/.github/workflows/check-code-and-docs-gen.yaml
+@@ -11,7 +11,7 @@ jobs:
+         go-version: 1.14
+       id: go
+     - name: Install Protoc
+-      uses: Arduino/actions/setup-protoc@master
++      uses: arduino/setup-protoc@v1.1.0
+       with:
+         version: '3.6.1'
+ 

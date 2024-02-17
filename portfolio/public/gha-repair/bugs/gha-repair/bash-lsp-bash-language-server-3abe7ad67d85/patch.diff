@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/verify.yml b/.github/workflows/verify.yml
+index 4c91743..5dcc363 100644
+--- a/.github/workflows/verify.yml
++++ b/.github/workflows/verify.yml
+@@ -26,7 +26,7 @@ jobs:
+         name: Verify changes
+ 
+       - name: Publish coverage to codecov.io
+-        uses: codecov/codecov-action@v1
++        uses: codecov/codecov-action@v3
+         if: success() && matrix.node-version == '12.x'
+         with:
+           token: ${{ secrets.CODECOV_TOKEN }}

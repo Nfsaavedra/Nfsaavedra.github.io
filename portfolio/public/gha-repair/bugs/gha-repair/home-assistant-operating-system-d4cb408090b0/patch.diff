@@ -1,0 +1,26 @@
+diff --git a/.github/workflows/test.yaml b/.github/workflows/test.yaml
+index e8f75f6..1867142 100644
+--- a/.github/workflows/test.yaml
++++ b/.github/workflows/test.yaml
+@@ -27,16 +27,16 @@ jobs:
+       run:
+         working-directory: ./tests
+     steps:
+-      - name: Install system dependencies
+-        run: |
+-          sudo apt update
+-          sudo apt install -y qemu-system-x86 ovmf
+-
+       - name: Checkout source
+         uses: actions/checkout@v4
+         with:
+           persist-credentials: false
+ 
++      - name: Install system dependencies
++        run: |
++          sudo apt update
++          sudo apt install -y qemu-system-x86 ovmf
++
+       - name: Setup Python
+         uses: actions/setup-python@v4
+         with:

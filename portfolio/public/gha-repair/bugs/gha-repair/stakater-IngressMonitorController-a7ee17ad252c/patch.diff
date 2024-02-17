@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/push.yml b/.github/workflows/push.yml
+index a5efb27..c1f7065 100644
+--- a/.github/workflows/push.yml
++++ b/.github/workflows/push.yml
+@@ -43,7 +43,7 @@ jobs:
+     - name: Lint
+       uses: golangci/golangci-lint-action@v3
+       with:
+-        version: v1.50.1
++        version: v1.54
+         only-new-issues: false
+         args: --timeout 10m
+ 

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index c99d659..a62281c 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -12,7 +12,7 @@ jobs:
+     strategy:
+       matrix:
+         os: [ubuntu-latest, windows-latest, macOS-latest]
+-        python-version: [3.5, 3.6, 3.7, 3.8, 3.9]
++        python-version: [3.5, 3.6, 3.7, 3.8, 3.9, 3.10.0]
+     steps:
+     - uses: actions/checkout@v2
+     - name: Set up Python ${{ matrix.python-version }}

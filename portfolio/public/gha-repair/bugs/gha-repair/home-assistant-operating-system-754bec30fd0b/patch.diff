@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/label-actions.yml b/.github/workflows/label-actions.yml
+index 71ec3c7..5de3cc2 100644
+--- a/.github/workflows/label-actions.yml
++++ b/.github/workflows/label-actions.yml
+@@ -14,4 +14,4 @@ jobs:
+   action:
+     runs-on: ubuntu-latest
+     steps:
+-      - uses: dessant/label-actions@v3.1.0
++      - uses: dessant/label-actions@v4.0.0

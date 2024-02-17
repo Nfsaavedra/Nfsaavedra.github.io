@@ -1,0 +1,22 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index d97ee8c..da1c619 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -30,16 +30,11 @@ jobs:
+           toolchain: stable
+           override: true
+           components: clippy
+-      - name: Lint (default features)
++      - name: Lint
+         uses: actions-rs/clippy-check@v1
+         with:
+           token: ${{ secrets.GITHUB_TOKEN }}
+           args: --all-targets
+-      - name: Lint (no features)
+-        uses: actions-rs/clippy-check@v1
+-        with:
+-          token: ${{ secrets.GITHUB_TOKEN }}
+-          args: --all-targets --no-default-features
+ 
+   test_linux:
+     runs-on: ubuntu-latest

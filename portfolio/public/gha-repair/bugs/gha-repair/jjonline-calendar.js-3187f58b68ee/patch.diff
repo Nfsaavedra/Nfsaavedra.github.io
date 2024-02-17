@@ -1,0 +1,35 @@
+diff --git a/.github/workflows/npm-publish.yml b/.github/workflows/npm-publish.yml
+index 6b21f0d..12bc031 100644
+--- a/.github/workflows/npm-publish.yml
++++ b/.github/workflows/npm-publish.yml
+@@ -6,18 +6,18 @@ on:
+       - 'v*.*.*'
+ 
+ jobs:
+-  build:
++  build-and-release:
+     runs-on: ubuntu-latest
+     steps:
+-      - uses: actions/checkout@v3
++    - uses: actions/checkout@v3
+ 
+-      - name: Set up Node Then Publish
+-        uses: actions/setup-node@v3
+-        with:
+-          node-version: 16
+-          registry-url: https://registry.npmjs.org/
+-        run: |
+-          sed -i "s/\"version\".*/\"version\": \"`echo ${{ github.ref_name }} | sed -e "s/^v//"`\"/g" ./package.json
+-          npm publish
+-        env:
+-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
++    - name: Set up Node Then Publish
++      uses: actions/setup-node@v3
++      with:
++        node-version: 16
++        registry-url: https://registry.npmjs.org/
++      run: |
++        sed -i "s/\"version\".*/\"version\": \"`echo ${{ github.ref_name }} | sed -e "s/^v//"`\"/g" ./package.json
++        npm publish
++      env:
++        NODE_AUTH_TOKEN: ${{secrets.npm_token}}

@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/python-package-macos-and-windows.yml b/.github/workflows/python-package-macos-and-windows.yml
+index ebd0766..abab11a 100644
+--- a/.github/workflows/python-package-macos-and-windows.yml
++++ b/.github/workflows/python-package-macos-and-windows.yml
+@@ -7,8 +7,8 @@ jobs:
+     runs-on: ${{ matrix.os }}-latest
+     strategy:
+       matrix:
+-        python-version: ['3.7', '3.8']
+-        os: [MacOS, windows]
++        python-version: ['3.7', '3.8', '3.9', '3.10']
++        os: [MacOS]
+ 
+     steps:
+     - uses: actions/checkout@v2

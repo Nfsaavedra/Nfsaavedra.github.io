@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/workflow.yml b/.github/workflows/workflow.yml
+index 7510fb5..57083f9 100644
+--- a/.github/workflows/workflow.yml
++++ b/.github/workflows/workflow.yml
+@@ -57,7 +57,7 @@ jobs:
+         uses: docker/login-action@v1
+         with:
+           username: ${{ secrets.DOCKERHUB_USERNAME }}
+-          password: ${{ secrets.DOCKERHUB_TOKEN }
++          password: ${{ secrets.DOCKERHUB_TOKEN }}
+       - name: Release
+         # Merge ~ push.
+         if: ${{ github.event_name == 'push' || github.event_name == 'schedule' }}

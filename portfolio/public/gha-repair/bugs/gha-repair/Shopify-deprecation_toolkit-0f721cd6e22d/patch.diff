@@ -1,0 +1,31 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index a204a85..e9dc2c8 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -8,12 +8,14 @@ jobs:
+     name: Ruby ${{ matrix.ruby }} / ${{ matrix.gemfile }}
+     strategy:
+       matrix:
+-        gemfile: [gemfiles/activesupport_5.2.gemfile, gemfiles/activesupport_6.0.gemfile, gemfiles/activesupport_6.1.gemfile, gemfiles/activesupport_7.0.gemfile]
++        gemfile: [gemfiles/activesupport_5.2.gemfile, gemfiles/activesupport_6.0.gemfile, gemfiles/activesupport_6.1.gemfile, gemfiles/activesupport_7.0.gemfile, gemfiles/activesupport_edge.gemfile]
+         ruby: ["2.6", "2.7", "3.0", "3.1"]
+         exclude:
+         # Active Support requires Ruby >= 2.7 as of 7.0
+         - gemfile: "gemfiles/activesupport_7.0.gemfile"
+           ruby: "2.6"
++        - gemfile: "gemfiles/activesupport_edge.gemfile"
++          ruby: "2.6"
+     env:
+       BUNDLE_GEMFILE: ${{ matrix.gemfile }}
+     steps:
+diff --git a/gemfiles/activesupport_edge.gemfile b/gemfiles/activesupport_edge.gemfile
+new file mode 100644
+index 0000000..8ada088
+--- /dev/null
++++ b/gemfiles/activesupport_edge.gemfile
+@@ -0,0 +1,5 @@
++# frozen_string_literal: true
++
++@activesupport_gem_requirement = { github: "rails/rails" }
++
++eval_gemfile "../Gemfile"

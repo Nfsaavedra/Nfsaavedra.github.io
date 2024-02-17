@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 83c81a2..61cef28 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -20,7 +20,7 @@ jobs:
+     strategy:
+       fail-fast: false
+       matrix:
+-        ruby: [2.6, 2.7, 3.0]
++        ruby: ['2.6', '2.7', '3.0']
+         activerecord: [60, 61]
+ 
+     steps:

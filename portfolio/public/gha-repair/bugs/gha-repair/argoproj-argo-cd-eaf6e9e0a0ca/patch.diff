@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci-build.yaml b/.github/workflows/ci-build.yaml
+index f3bd3f3..f7c52ee 100644
+--- a/.github/workflows/ci-build.yaml
++++ b/.github/workflows/ci-build.yaml
+@@ -252,7 +252,7 @@ jobs:
+       - name: Checkout code
+         uses: actions/checkout@v3
+       - name: Setup NodeJS
+-        uses: actions/setup-node@v1
++        uses: actions/setup-node@v3
+         with:
+           node-version: '12.18.4'
+       - name: Restore node dependency cache

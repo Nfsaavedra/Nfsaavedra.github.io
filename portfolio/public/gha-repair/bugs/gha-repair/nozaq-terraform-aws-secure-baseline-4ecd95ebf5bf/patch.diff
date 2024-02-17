@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 22fadb3..85e0f00 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -1,5 +1,9 @@
+ name: Terraform
+-on: [push, pull_request]
++on:
++  push:
++    branches:
++    - master
++  pull_request:
+ env:
+   TF_ACTIONS_VERSION: latest
+ jobs:

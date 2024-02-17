@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/BuildTest.yml b/.github/workflows/BuildTest.yml
+index bbc539c..2908a39 100644
+--- a/.github/workflows/BuildTest.yml
++++ b/.github/workflows/BuildTest.yml
+@@ -1,8 +1,15 @@
+ name: Build and Test
+ 
+ on:
++
++  push:
++    branches: [ "master" ]
++  pull_request:
++    branches: [ "master" ]  
++    
+   workflow_dispatch:
+ 
++
+ jobs:
+ 
+   local_test_job:

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/params.yml b/.github/workflows/params.yml
+index 1c664d7..a452056 100644
+--- a/.github/workflows/params.yml
++++ b/.github/workflows/params.yml
+@@ -14,7 +14,7 @@ env:
+     [
+       {
+         "NAME":    "PHP",
+-        "VERSION": ["5.3", "5.4"],
++        "VERSION": ["5.2", "5.3", "5.4", "5.5", "5.6", "7.0", "7.1", "7.2", "7.3", "7.4", "8.0", "8.1", "8.2"],
+         "FLAVOUR": ["default"],
+         "ARCH":    ["linux/amd64"]
+       }

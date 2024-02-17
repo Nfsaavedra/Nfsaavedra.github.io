@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/release.yaml b/.github/workflows/release.yaml
+index 616f0f8..5c0db78 100644
+--- a/.github/workflows/release.yaml
++++ b/.github/workflows/release.yaml
+@@ -22,10 +22,6 @@ jobs:
+         env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+ 
+-
+-
+-
+-
+       # - name: Create Release Asset
+       #   run: |
+       #     cd custom_components/volkswagencarnet

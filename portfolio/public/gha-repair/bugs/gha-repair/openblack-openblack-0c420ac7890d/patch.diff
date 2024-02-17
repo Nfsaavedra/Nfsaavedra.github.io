@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/ci-vcpkg.yml b/.github/workflows/ci-vcpkg.yml
+index 2a7930e..dd114f6 100644
+--- a/.github/workflows/ci-vcpkg.yml
++++ b/.github/workflows/ci-vcpkg.yml
+@@ -23,6 +23,9 @@ jobs:
+           - os: ubuntu-latest
+             cc: clang
+             cxx: clang++
++          - os: windows-latest
++            cc: clang
++            cxx: clang++
+ 
+     steps:
+       - uses: actions/checkout@v3

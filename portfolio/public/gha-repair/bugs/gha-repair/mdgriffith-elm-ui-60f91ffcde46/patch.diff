@@ -1,0 +1,29 @@
+diff --git a/.github/workflows/label-issues.yml b/.github/workflows/label-issues.yml
+index 6b8d695..0f05e04 100644
+--- a/.github/workflows/label-issues.yml
++++ b/.github/workflows/label-issues.yml
+@@ -22,6 +22,12 @@ jobs:
+           keywords: '["#has-ellie"]'
+           labels: '["has-ellie"]'
+           github-token: "${{ secrets.GITHUB_TOKEN }}"
++
++      - uses: Amwam/issue-comment-action@v1.3.1
++        with:
++          keywords: '["#no-ellie"]'
++          labels: '["no-ellie"]'
++          github-token: "${{ secrets.GITHUB_TOKEN }}"
+       - uses: Amwam/issue-comment-action@v1.3.1
+         with:
+           keywords: '["#has-test"]'
+@@ -44,6 +50,11 @@ jobs:
+           github-token: "${{ secrets.GITHUB_TOKEN }}"
+       - uses: Amwam/issue-comment-action@v1.3.1
+         with:
++          keywords: '["#test-failing"]'
++          labels: '["test-failing"]'
++          github-token: "${{ secrets.GITHUB_TOKEN }}"
++      - uses: Amwam/issue-comment-action@v1.3.1
++        with:
+           keywords: '["#unexpected"]'
+           labels: '["unexpected"]'
+           github-token: "${{ secrets.GITHUB_TOKEN }}"

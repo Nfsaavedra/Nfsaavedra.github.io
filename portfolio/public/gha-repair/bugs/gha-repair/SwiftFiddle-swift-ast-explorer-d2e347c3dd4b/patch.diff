@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 81d9865..7fb873f 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -27,9 +27,9 @@ jobs:
+           cd "\$HOME/app"
+           git pull --rebase origin master
+ 
+-          docker-compose='docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v "\$PWD:\$PWD" -w="\$PWD" docker/compose:latest'
+-          eval \$docker-compose pull
+-          eval \$docker-compose up --detach
++          docker_compose='docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v "\$PWD:\$PWD" -w="\$PWD" docker/compose:latest'
++          eval \$docker_compose pull
++          eval \$docker_compose up --detach
+ 
+           docker image prune --force
+ 

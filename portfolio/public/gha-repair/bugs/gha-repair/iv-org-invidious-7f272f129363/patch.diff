@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/lock.yml b/.github/workflows/lock.yml
+index 3d2a0de..a0a181c 100644
+--- a/.github/workflows/lock.yml
++++ b/.github/workflows/lock.yml
+@@ -1,6 +1,8 @@
+-name: 'Lock Threads'
++# Documentation: https://github.com/marketplace/actions/lock-threads
+ 
++name: 'Lock Threads'
+ on:
++  workflow_dispatch:
+   schedule:
+     - cron: "0 */12 * * *"
+ 

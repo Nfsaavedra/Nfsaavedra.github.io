@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/tests.yml b/.github/workflows/tests.yml
+index fd9cb05..1657350 100644
+--- a/.github/workflows/tests.yml
++++ b/.github/workflows/tests.yml
+@@ -78,7 +78,9 @@ jobs:
+         with:
+           python-version: 3.7
+       - name: Build source package
+-        run: python setup.py sdist
++        run: |
++          pip install -U build
++          python -m build --sdist
+       - name: Upload source package
+         uses: actions/upload-artifact@v3
+         with:

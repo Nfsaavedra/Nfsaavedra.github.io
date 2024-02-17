@@ -1,0 +1,242 @@
+diff --git a/.github/workflows/githubci.yml b/.github/workflows/githubci.yml
+index 8ecc30d..5d8b275 100644
+--- a/.github/workflows/githubci.yml
++++ b/.github/workflows/githubci.yml
+@@ -21,8 +21,8 @@ jobs:
+           - 'feather_nrf52832'
+           - 'feather_nrf52833_express'
+           - 'feather_nrf52840_express'
+-          - 'feather_nrf52840_tft'
+           - 'feather_nrf52840_sense'
++          - 'feather_nrf52840_sense_tft'
+           - 'itsybitsy_nrf52840_express'
+           - 'metro_nrf52840_express'
+           - 'ledglasses_nrf52840'
+diff --git a/src/boards/feather_nrf52840_sense_tft/board.cmake b/src/boards/feather_nrf52840_sense_tft/board.cmake
+new file mode 100644
+index 0000000..25daf71
+--- /dev/null
++++ b/src/boards/feather_nrf52840_sense_tft/board.cmake
+@@ -0,0 +1,1 @@
++set(MCU_VARIANT nrf52840)
+diff --git a/src/boards/feather_nrf52840_sense_tft/board.h b/src/boards/feather_nrf52840_sense_tft/board.h
+new file mode 100644
+index 0000000..3dcea99
+--- /dev/null
++++ b/src/boards/feather_nrf52840_sense_tft/board.h
+@@ -0,0 +1,69 @@
++/*
++ * The MIT License (MIT)
++ *
++ * Copyright (c) 2018 Ha Thach for Adafruit Industries
++ *
++ * Permission is hereby granted, free of charge, to any person obtaining a copy
++ * of this software and associated documentation files (the "Software"), to deal
++ * in the Software without restriction, including without limitation the rights
++ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
++ * copies of the Software, and to permit persons to whom the Software is
++ * furnished to do so, subject to the following conditions:
++ *
++ * The above copyright notice and this permission notice shall be included in
++ * all copies or substantial portions of the Software.
++ *
++ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
++ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
++ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
++ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
++ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
++ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
++ * THE SOFTWARE.
++ */
++
++#ifndef _FEATHER_NRF52840_SENSE_TFT_H
++#define _FEATHER_NRF52840_SENSE_TFT_H
++
++#define _PINNUM(port, pin)    ((port)*32 + (pin))
++
++/*------------------------------------------------------------------*/
++/* LED
++ *------------------------------------------------------------------*/
++#define LEDS_NUMBER           1
++#define LED_PRIMARY_PIN       _PINNUM(0, 11)
++#define LED_STATE_ON          1
++
++#define LED_NEOPIXEL          _PINNUM(1, 8)
++#define NEOPIXEL_POWER_PIN    _PINNUM(1, 2)
++#define NEOPIXELS_NUMBER      1
++#define BOARD_RGB_BRIGHTNESS  0x040404
++
++/*------------------------------------------------------------------*/
++/* BUTTON
++ *------------------------------------------------------------------*/
++#define BUTTONS_NUMBER        2
++#define BUTTON_1              _PINNUM(1, 6)
++#define BUTTON_2              _PINNUM(1, 10) // DFU pin
++#define BUTTON_PULL           NRF_GPIO_PIN_PULLUP
++
++//--------------------------------------------------------------------+
++// BLE OTA
++//--------------------------------------------------------------------+
++#define BLEDIS_MANUFACTURER   "Adafruit Industries"
++#define BLEDIS_MODEL          "Feather nRF52840 Sense TFT"
++
++//--------------------------------------------------------------------+
++// USB
++//--------------------------------------------------------------------+
++#define USB_DESC_VID           0x239A
++#define USB_DESC_UF2_PID       0x0087
++#define USB_DESC_CDC_ONLY_PID  0x0088
++
++//------------- UF2 -------------//
++#define UF2_PRODUCT_NAME      "Adafruit Feather nRF52840 Sense TFT"
++#define UF2_VOLUME_LABEL      "FTHRSNSBOOT"
++#define UF2_BOARD_ID          "nRF52840-FeatherSenseTFT-revA"
++#define UF2_INDEX_URL         "https://www.adafruit.com/product/"
++
++#endif
+diff --git a/src/boards/feather_nrf52840_sense_tft/board.mk b/src/boards/feather_nrf52840_sense_tft/board.mk
+new file mode 100644
+index 0000000..9d29ac6
+--- /dev/null
++++ b/src/boards/feather_nrf52840_sense_tft/board.mk
+@@ -0,0 +1,1 @@
++MCU_SUB_VARIANT = nrf52840
+diff --git a/src/boards/feather_nrf52840_sense_tft/pinconfig.c b/src/boards/feather_nrf52840_sense_tft/pinconfig.c
+new file mode 100644
+index 0000000..a983e4a
+--- /dev/null
++++ b/src/boards/feather_nrf52840_sense_tft/pinconfig.c
+@@ -0,0 +1,19 @@
++#include "boards.h"
++#include "uf2/configkeys.h"
++
++__attribute__((used, section(".bootloaderConfig")))
++const uint32_t bootloaderConfig[] =
++{
++  /* CF2 START */
++  CFG_MAGIC0, CFG_MAGIC1,                       // magic
++  5, 100,                                       // used entries, total entries
++
++  204, 0x100000,                                // FLASH_BYTES = 0x100000
++  205, 0x40000,                                 // RAM_BYTES = 0x40000
++  208, (USB_DESC_VID << 16) | USB_DESC_UF2_PID, // BOOTLOADER_BOARD_ID = USB VID+PID, used for verification when updating bootloader via uf2
++  209, 0xada52840,                              // UF2_FAMILY = 0xada52840
++  210, 0x20,                                    // PINS_PORT_SIZE = PA_32
++
++  0, 0, 0, 0, 0, 0, 0, 0
++  /* CF2 END */
++};
+diff --git a/src/boards/feather_nrf52840_tft/board.cmake b/src/boards/feather_nrf52840_tft/board.cmake
+deleted file mode 100644
+index 25daf71..0000000
+--- a/src/boards/feather_nrf52840_tft/board.cmake
++++ /dev/null
+@@ -1,1 +0,0 @@
+-set(MCU_VARIANT nrf52840)
+diff --git a/src/boards/feather_nrf52840_tft/board.h b/src/boards/feather_nrf52840_tft/board.h
+deleted file mode 100644
+index 8e3ad8d..0000000
+--- a/src/boards/feather_nrf52840_tft/board.h
++++ /dev/null
+@@ -1,69 +0,0 @@
+-/*
+- * The MIT License (MIT)
+- *
+- * Copyright (c) 2018 Ha Thach for Adafruit Industries
+- *
+- * Permission is hereby granted, free of charge, to any person obtaining a copy
+- * of this software and associated documentation files (the "Software"), to deal
+- * in the Software without restriction, including without limitation the rights
+- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+- * copies of the Software, and to permit persons to whom the Software is
+- * furnished to do so, subject to the following conditions:
+- *
+- * The above copyright notice and this permission notice shall be included in
+- * all copies or substantial portions of the Software.
+- *
+- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+- * THE SOFTWARE.
+- */
+-
+-#ifndef _FEATHER_NRF52840_TFT_H
+-#define _FEATHER_NRF52840_TFT_H
+-
+-#define _PINNUM(port, pin)    ((port)*32 + (pin))
+-
+-/*------------------------------------------------------------------*/
+-/* LED
+- *------------------------------------------------------------------*/
+-#define LEDS_NUMBER           1
+-#define LED_PRIMARY_PIN       _PINNUM(0, 11)
+-#define LED_STATE_ON          1
+-
+-#define LED_NEOPIXEL          _PINNUM(1, 8)
+-#define NEOPIXEL_POWER_PIN    _PINNUM(1, 2)
+-#define NEOPIXELS_NUMBER      1
+-#define BOARD_RGB_BRIGHTNESS  0x040404
+-
+-/*------------------------------------------------------------------*/
+-/* BUTTON
+- *------------------------------------------------------------------*/
+-#define BUTTONS_NUMBER        2
+-#define BUTTON_1              _PINNUM(1, 6)
+-#define BUTTON_2              _PINNUM(1, 4) // not connected
+-#define BUTTON_PULL           NRF_GPIO_PIN_PULLUP
+-
+-//--------------------------------------------------------------------+
+-// BLE OTA
+-//--------------------------------------------------------------------+
+-#define BLEDIS_MANUFACTURER   "Adafruit Industries"
+-#define BLEDIS_MODEL          "Feather nRF52840 TFT"
+-
+-//--------------------------------------------------------------------+
+-// USB
+-//--------------------------------------------------------------------+
+-#define USB_DESC_VID           0x239A
+-#define USB_DESC_UF2_PID       0x0029
+-#define USB_DESC_CDC_ONLY_PID  0x002A
+-
+-//------------- UF2 -------------//
+-#define UF2_PRODUCT_NAME      "Adafruit Feather nRF52840 TFT"
+-#define UF2_VOLUME_LABEL      "FTHR840BOOT"
+-#define UF2_BOARD_ID          "nRF52840-FeatherTFT-revA"
+-#define UF2_INDEX_URL         "https://www.adafruit.com/product/"
+-
+-#endif
+diff --git a/src/boards/feather_nrf52840_tft/board.mk b/src/boards/feather_nrf52840_tft/board.mk
+deleted file mode 100644
+index 9d29ac6..0000000
+--- a/src/boards/feather_nrf52840_tft/board.mk
++++ /dev/null
+@@ -1,1 +0,0 @@
+-MCU_SUB_VARIANT = nrf52840
+diff --git a/src/boards/feather_nrf52840_tft/pinconfig.c b/src/boards/feather_nrf52840_tft/pinconfig.c
+deleted file mode 100644
+index a983e4a..0000000
+--- a/src/boards/feather_nrf52840_tft/pinconfig.c
++++ /dev/null
+@@ -1,19 +0,0 @@
+-#include "boards.h"
+-#include "uf2/configkeys.h"
+-
+-__attribute__((used, section(".bootloaderConfig")))
+-const uint32_t bootloaderConfig[] =
+-{
+-  /* CF2 START */
+-  CFG_MAGIC0, CFG_MAGIC1,                       // magic
+-  5, 100,                                       // used entries, total entries
+-
+-  204, 0x100000,                                // FLASH_BYTES = 0x100000
+-  205, 0x40000,                                 // RAM_BYTES = 0x40000
+-  208, (USB_DESC_VID << 16) | USB_DESC_UF2_PID, // BOOTLOADER_BOARD_ID = USB VID+PID, used for verification when updating bootloader via uf2
+-  209, 0xada52840,                              // UF2_FAMILY = 0xada52840
+-  210, 0x20,                                    // PINS_PORT_SIZE = PA_32
+-
+-  0, 0, 0, 0, 0, 0, 0, 0
+-  /* CF2 END */
+-};

@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/3.2.yml b/.github/workflows/3.2.yml
+index 4958d8c..5c19a02 100644
+--- a/.github/workflows/3.2.yml
++++ b/.github/workflows/3.2.yml
+@@ -33,11 +33,14 @@ jobs:
+             - name: Download mingw
+               if: steps.cache-qt.outputs.cache-hit != 'true'
+               shell: bash
+-              run: curl https://download.qt.io/online/qtsdkrepository/windows_x86/desktop/tools_mingw/qt.tools.win64_mingw730/7.3.0-1x86_64-7.3.0-release-posix-seh-rt_v5-rev0.7z --output ..\mingw.7z
++              run: curl https://download.qt.io/online/qtsdkrepository/windows_x86/desktop/tools_mingw/qt.tools.win64_mingw730/7.3.0-1x86_64-7.3.0-release-posix-seh-rt_v5-rev0.7z --output ../mingw.7z
+  
+             - name: Debug dir
+               run: dir ..
+               
++            - name: Debug dir2
++              run: dir
++              
+             - name: Decompress mingw
+               if: steps.cache-qt.outputs.cache-hit != 'true'
+               run: 7z x -o"${{ github.workspace }}\..\Qt" ..\mingw.7z

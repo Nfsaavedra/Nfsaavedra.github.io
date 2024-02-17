@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/CICD.yml b/.github/workflows/CICD.yml
+index 3c28829..a33ce4c 100644
+--- a/.github/workflows/CICD.yml
++++ b/.github/workflows/CICD.yml
+@@ -37,7 +37,7 @@ jobs:
+       uses: actions-rs/cargo@v1
+       with:
+         command: clippy
+-        args: --locked --all-targets --all-features -- --allow clippy::unknown_clippy_lints
++        args: --locked --all-targets --all-features -- --allow unknown_lints
+     - name: Run tests
+       uses: actions-rs/cargo@v1
+       with:

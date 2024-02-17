@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 5475760..342c822 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -172,6 +172,7 @@ jobs:
+         uses: jirutka/setup-alpine@v1
+         with:
+           arch: x86_64
++          branch: edge
+           packages: ${{ env.PACKAGES }}
+           volumes: ${{ steps.alpine-target.outputs.root-path }}:${{ env.CROSS_SYSROOT }}
+           shell-name: alpine.sh

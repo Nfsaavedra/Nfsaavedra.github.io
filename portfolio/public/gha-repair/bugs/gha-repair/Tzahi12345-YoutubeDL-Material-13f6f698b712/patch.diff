@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 53f2818..67dee9a 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -38,7 +38,7 @@ jobs:
+           Copy-Item -Path ./backend/public -Recurse -Destination ./build/youtubedl-material
+           Copy-Item -Path ./backend/subscriptions -Recurse -Destination ./build/youtubedl-material
+           Copy-Item -Path ./backend/video -Recurse -Destination ./build/youtubedl-material
+-          New-Item -Path ./build/youtubedl-material -Name users
++          Copy-Item -Path ./backend/users -Recurse -Destination ./build/youtubedl-material
+           Copy-Item -Path ./backend/*.js -Destination ./build/youtubedl-material
+           Copy-Item -Path ./backend/*.json -Destination ./build/youtubedl-material
+       - name: upload build artifact

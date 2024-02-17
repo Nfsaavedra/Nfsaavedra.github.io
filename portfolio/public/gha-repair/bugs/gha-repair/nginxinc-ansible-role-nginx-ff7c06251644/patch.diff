@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/requirements/requirements_ansible_lint.txt b/.github/workflows/requirements/requirements_ansible_lint.txt
+index 83543db..03057a5 100644
+--- a/.github/workflows/requirements/requirements_ansible_lint.txt
++++ b/.github/workflows/requirements/requirements_ansible_lint.txt
+@@ -1,5 +1,5 @@
+ ansible-core==2.16.3
+ jinja2==3.1.3
+ ansible-compat==4.1.11
+-yamllint==1.33.0
++yamllint==1.34.0
+ ansible-lint==24.2.0

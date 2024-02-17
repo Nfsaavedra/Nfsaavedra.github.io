@@ -1,0 +1,25 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 58257ed..9108048 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -26,18 +26,12 @@ jobs:
+                       db: MySQL5
+                     - service: mariadb
+                       db: MariaDB
++                    - php: 8.0
++                      experimental: true
+ 
+                 exclude:
+                     - laravel: 8.*
+                       php: 7.2
+-                    - php: 7.2
+-                      experimental: true
+-                    - php: 7.3
+-                      experimental: true
+-                    - php: 7.4
+-                      experimental: true
+-                    - php: 8.0
+-                      experimental: false
+ 
+         services:
+             mysql:

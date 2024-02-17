@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/container.yml b/.github/workflows/container.yml
+index 0d19c44..68819e6 100644
+--- a/.github/workflows/container.yml
++++ b/.github/workflows/container.yml
+@@ -33,7 +33,7 @@ jobs:
+           context: .
+           push: true
+           tags: ${{ steps.container.outputs.image-tags }}
+-          # platforms: linux/amd64,linux/arm64
++          platforms: linux/amd64,linux/arm64
+           file: .docker/prod.Dockerfile
+           build-args: |
+             REPOSITORY=${{ github.repository }}
+@@ -65,5 +65,5 @@ jobs:
+           context: .
+           push: true
+           tags: ${{ steps.container.outputs.image-tags }}
+-          # platforms: linux/amd64,linux/arm64
++          platforms: linux/amd64,linux/arm64
+           file: .docker/build.Dockerfile

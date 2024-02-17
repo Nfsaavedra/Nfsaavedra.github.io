@@ -1,0 +1,222 @@
+diff --git a/.github/workflows/deployment.yml b/.github/workflows/deployment.yml
+index cf15145..7d5caa5 100644
+--- a/.github/workflows/deployment.yml
++++ b/.github/workflows/deployment.yml
+@@ -21,6 +21,7 @@ jobs:
+           username: ${{ github.repository_owner }}
+           password: ${{ secrets.CR_PAT }}
+       - name: Build and push
++        id: docker_push
+         uses: docker/build-push-action@v2
+         with:
+           context: .
+@@ -28,3 +29,21 @@ jobs:
+           push: true
+           tags: |
+             ghcr.io/${{ github.repository }}:latest
++    outputs:
++      digest: ${{ steps.docker_push.outputs.digest }}
++
++  deploy:
++    needs: build-docker-image
++    runs-on: ubuntu-latest
++    steps:
++      - name: Patch and Sync
++        env:
++          DIGEST: ${{ needs.build-docker-image.outputs.digest }}
++          ARGOCD_SERVER: ${{ secrets.ARGOCD_SERVER }}
++          ARGOCD_AUTH_TOKEN: ${{ secrets.ARGOCD_AUTH_TOKEN }}
++        run: |
++          curl -sSL -o argocd https://${ARGOCD_SERVER}/download/argocd-linux-amd64
++          chmod +x argocd
++          ./argocd app patch deps-rs-staging --patch "{ \"spec\": { \"source\": { \"kustomize\": { \"images\": [\"ghcr.io/deps-rs/deps.rs@${DIGEST}\"] } } } }" --type merge --grpc-web
++          ./argocd app sync deps-rs-staging --grpc-web
++          ./argocd app wait deps-rs-staging --grpc-web
+diff --git a/deploy/base/deployment.yaml b/deploy/base/deployment.yaml
+new file mode 100644
+index 0000000..7296a23
+--- /dev/null
++++ b/deploy/base/deployment.yaml
+@@ -0,0 +1,32 @@
++apiVersion: apps/v1
++kind: Deployment
++metadata:
++  name: deps-rs
++spec:
++  selector:
++    matchLabels:
++      app: deps-rs
++  template:
++    metadata:
++      labels:
++        app: deps-rs
++    spec:
++      volumes:
++        - name: cargo
++          emptyDir: {}
++      containers:
++        - name: deps-rs
++          image: ghcr.io/deps-rs/deps.rs:latest
++          imagePullPolicy: Always
++          ports:
++            - containerPort: 8080
++          env:
++            - name: BASE_URL
++              value: https://$(DOMAIN)
++          volumeMounts:
++            - mountPath: /home/deps/.cargo
++              name: cargo
++          readinessProbe:
++            httpGet:
++              path: /
++              port: 8080
+diff --git a/deploy/base/ingress.yaml b/deploy/base/ingress.yaml
+new file mode 100644
+index 0000000..343ce1d
+--- /dev/null
++++ b/deploy/base/ingress.yaml
+@@ -0,0 +1,20 @@
++---
++apiVersion: extensions/v1beta1
++kind: Ingress
++metadata:
++  name: deps-rs
++  annotations:
++    cert-manager.io/cluster-issuer: letsencrypt
++spec:
++  rules:
++    - host: staging.deps.rs
++      http:
++        paths:
++          - backend:
++              serviceName: deps-rs
++              servicePort: http
++            path: /
++  tls:
++    - secretName: deps-rs-tls
++      hosts:
++        - $(DOMAIN)
+diff --git a/deploy/base/kustomization.yaml b/deploy/base/kustomization.yaml
+new file mode 100644
+index 0000000..68fb0d0
+--- /dev/null
++++ b/deploy/base/kustomization.yaml
+@@ -0,0 +1,16 @@
++apiVersion: kustomize.config.k8s.io/v1beta1
++kind: Kustomization
++
++resources:
++  - deployment.yaml
++  - service.yaml
++  - ingress.yaml
++
++vars:
++  - name: DOMAIN
++    objref:
++      apiVersion: extensions/v1beta1
++      kind: Ingress
++      name: deps-rs
++    fieldref:
++      fieldpath: spec.rules[0].host
+diff --git a/deploy/base/service.yaml b/deploy/base/service.yaml
+new file mode 100644
+index 0000000..14f34eb
+--- /dev/null
++++ b/deploy/base/service.yaml
+@@ -0,0 +1,12 @@
++apiVersion: v1
++kind: Service
++metadata:
++  name: deps-rs
++spec:
++  ports:
++    - port: 80
++      targetPort: 8080
++      protocol: TCP
++      name: http
++  selector:
++    app: deps-rs
+diff --git a/deploy/overlays/production/kustomization.yaml b/deploy/overlays/production/kustomization.yaml
+new file mode 100644
+index 0000000..2a584e6
+--- /dev/null
++++ b/deploy/overlays/production/kustomization.yaml
+@@ -0,0 +1,18 @@
++apiVersion: kustomize.config.k8s.io/v1beta1
++kind: Kustomization
++
++nameSuffix: -prd
++
++commonLabels:
++  env: prd
++
++resources:
++  - ../../base
++
++patches:
++  - path: patch-ingress.json
++    target:
++      group: extensions
++      version: v1beta1
++      kind: Ingress
++      name: deps-rs
+diff --git a/deploy/overlays/production/patch-ingress.json b/deploy/overlays/production/patch-ingress.json
+new file mode 100644
+index 0000000..a45dc47
+--- /dev/null
++++ b/deploy/overlays/production/patch-ingress.json
+@@ -0,0 +1,12 @@
++[
++  {
++    "op": "replace",
++    "path": "/spec/rules/0/host",
++    "value": "deps.rs"
++  },
++  {
++    "op": "replace",
++    "path": "/spec/tls/0/secretName",
++    "value": "deps-rs-tls"
++  }
++]
+diff --git a/deploy/overlays/staging/kustomization.yaml b/deploy/overlays/staging/kustomization.yaml
+new file mode 100644
+index 0000000..ee1d0f2
+--- /dev/null
++++ b/deploy/overlays/staging/kustomization.yaml
+@@ -0,0 +1,18 @@
++apiVersion: kustomize.config.k8s.io/v1beta1
++kind: Kustomization
++
++nameSuffix: -stg
++
++commonLabels:
++  env: stg
++
++resources:
++  - ../../base
++
++patches:
++  - path: patch-ingress.json
++    target:
++      group: extensions
++      version: v1beta1
++      kind: Ingress
++      name: deps-rs
+diff --git a/deploy/overlays/staging/patch-ingress.json b/deploy/overlays/staging/patch-ingress.json
+new file mode 100644
+index 0000000..7927d2f
+--- /dev/null
++++ b/deploy/overlays/staging/patch-ingress.json
+@@ -0,0 +1,12 @@
++[
++  {
++    "op": "replace",
++    "path": "/spec/rules/0/host",
++    "value": "staging.deps.rs"
++  },
++  {
++    "op": "replace",
++    "path": "/spec/tls/0/secretName",
++    "value": "staging-deps-rs-tls"
++  }
++]

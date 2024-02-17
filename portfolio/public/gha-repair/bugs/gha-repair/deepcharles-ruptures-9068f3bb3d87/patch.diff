@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/publish-to-pypi-tmp.yml b/.github/workflows/publish-to-pypi-tmp.yml
+index b5ab26c..26e8c20 100644
+--- a/.github/workflows/publish-to-pypi-tmp.yml
++++ b/.github/workflows/publish-to-pypi-tmp.yml
+@@ -1,4 +1,4 @@
+-name: Publish to Pypi (sdist and wheels)
++name: Tmp - Publish to Pypi (sdist and wheels)
+ 
+ on:
+   workflow_dispatch:

@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/pythonpackage.yml b/.github/workflows/pythonpackage.yml
+index 7e1991b..3fde6a4 100644
+--- a/.github/workflows/pythonpackage.yml
++++ b/.github/workflows/pythonpackage.yml
+@@ -26,5 +26,5 @@ jobs:
+         TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
+         TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
+       run: |
+-        pip install twine
++        pip install twine setuptools --upgrade
+         bash build.sh

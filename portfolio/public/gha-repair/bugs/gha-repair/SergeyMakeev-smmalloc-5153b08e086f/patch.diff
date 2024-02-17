@@ -1,0 +1,30 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 0aa5cd4..e3e51ba 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -1,21 +1,18 @@
+ name: build
+ 
+-on:
+-  push:
+-    branches:
+-      - 'master'
+-  pull_request:
++on: [push]
+ 
+ jobs:
+-  windows:
++  build-windows:
+     runs-on: windows-latest
+     strategy:
+       matrix:
+         arch: [Win32, x64]
+         defines: [standard]
+     steps:
++    - uses: actions/checkout@v1
+     - name: configure
+-      run: cmake .
++      run: dir && mkdir -p build && cd build && dir && cmake ..
+     - name: build
+       run: cmake --build . --config Release
+     - name: test

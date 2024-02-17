@@ -1,0 +1,37 @@
+diff --git a/.github/workflows/aaa-build.yml b/.github/workflows/aaa-build.yml
+index edebdcc..0c22f2f 100644
+--- a/.github/workflows/aaa-build.yml
++++ b/.github/workflows/aaa-build.yml
+@@ -19,6 +19,7 @@ jobs:
+   params:
+     uses: ./.github/workflows/aaa-reuse-params.yml
+ 
++  # (1/2) Configure Build and Deploy
+   configure:
+     needs: [params]
+     uses:  ./.github/workflows/aaa-reuse-configure.yml
+@@ -31,24 +32,6 @@ jobs:
+       dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
+       dockerhub_password: ${{ secrets.DOCKERHUB_PASSWORD }}
+ 
+-      #  debug:
+-      #    needs: [params, configure]
+-      #    name: Debug
+-      #    runs-on: ubuntu-latest
+-      #    steps:
+-      #      - name: "[DEBUG] Show params outputs"
+-      #        shell: bash
+-      #        run: |
+-      #          echo 'matrix=${{ needs.params.outputs.matrix }}'
+-      #          echo 'refs=${{ needs.params.outputs.refs }}'
+-      #
+-      #      - name: "[DEBUG] Show configure outputs"
+-      #        shell: bash
+-      #        run: |
+-      #          echo 'matrix_build=${{ needs.configure.outputs.matrix_build }}'
+-      #          echo 'has_refs=${{ needs.configure.outputs.has_refs }}'
+-      #          echo 'artifact_prefix=${{ needs.configure.outputs.artifact_prefix }}'
+-
+   # (2/2) Build 'base'
+   base:
+     needs: [params, configure]

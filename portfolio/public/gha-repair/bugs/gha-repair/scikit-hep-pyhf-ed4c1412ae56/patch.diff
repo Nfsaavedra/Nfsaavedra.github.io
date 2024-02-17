@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index f96e0a3..b3a57a1 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -31,7 +31,6 @@ jobs:
+       if: matrix.python-version == 3.7 && matrix.os == 'ubuntu-latest'
+       run: |
+         pyflakes src
+-        check-manifest
+     - name: Lint with Black
+       if: matrix.python-version == 3.7 && matrix.os == 'ubuntu-latest'
+       run: |

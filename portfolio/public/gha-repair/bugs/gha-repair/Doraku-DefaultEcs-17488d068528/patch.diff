@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/ContinuousIntegration.yml b/.github/workflows/ContinuousIntegration.yml
+index 9b5f3d0..e7985a3 100644
+--- a/.github/workflows/ContinuousIntegration.yml
++++ b/.github/workflows/ContinuousIntegration.yml
+@@ -40,8 +40,8 @@ jobs:
+       with:
+         github-token: ${{ secrets.GITHUB_TOKEN }}
+ 
+-    - name: Create package
+-      run: dotnet pack source\DefaultEcs\DefaultEcs.csproj -c Release -o package -p:PackageVersion=0-alpha
+-
+-    - name: Publish package
+-      run: dotnet nuget push -s https://nuget.pkg.github.com/Doraku/index.json -k ${{ secrets.GITHUB_TOKEN }} package\*.nupkg
+\ No newline at end of file
++#    - name: Create package
++#      run: dotnet pack source\DefaultEcs\DefaultEcs.csproj -c Release -o package -p:PackageVersion=0-alpha
++# 
++#    - name: Publish package
++#      run: dotnet nuget push -s https://nuget.pkg.github.com/Doraku/index.json -k ${{ secrets.GITHUB_TOKEN }} package\*.nupkg
+\ No newline at end of file

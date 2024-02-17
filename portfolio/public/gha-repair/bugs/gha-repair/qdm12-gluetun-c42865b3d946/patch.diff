@@ -1,0 +1,37 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index b332506..1ea7b3c 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -44,6 +44,11 @@ jobs:
+     steps:
+       - uses: actions/checkout@v2.4.0
+ 
++      - uses: reviewdog/action-misspell@v1
++        with:
++          locale: "US"
++          level: error
++
+       - name: Linting
+         run: docker build --target lint .
+ 
+diff --git a/.github/workflows/misspell.yml b/.github/workflows/misspell.yml
+deleted file mode 100644
+index 197af51..0000000
+--- a/.github/workflows/misspell.yml
++++ /dev/null
+@@ -1,15 +0,0 @@
+-name: Misspells
+-on:
+-  pull_request:
+-    branches: [master]
+-  push:
+-    branches: [master]
+-jobs:
+-  misspell:
+-    runs-on: ubuntu-latest
+-    steps:
+-      - uses: actions/checkout@v2.4.0
+-      - uses: reviewdog/action-misspell@v1
+-        with:
+-          locale: "US"
+-          level: error

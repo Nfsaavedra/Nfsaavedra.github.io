@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 4607916..7b1c31a 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -88,6 +88,7 @@ jobs:
+ 
+     - run: npm publish
+       continue-on-error: true
++      working-directory: packages/core
+       env:
+         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+ 

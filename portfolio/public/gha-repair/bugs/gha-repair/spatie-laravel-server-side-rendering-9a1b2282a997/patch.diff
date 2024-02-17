@@ -1,0 +1,25 @@
+diff --git a/.github/workflows/run-tests.yml b/.github/workflows/run-tests.yml
+index b9f591c..45d8bf4 100644
+--- a/.github/workflows/run-tests.yml
++++ b/.github/workflows/run-tests.yml
+@@ -30,15 +30,18 @@ jobs:
+                         php: 8.2
+                     -   laravel: 6.*
+                         php: 8.2
++                    -   laravel: 8.*
++                        php: 8.2
++                        dependency-version: prefer-lowest
+ 
+         name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.dependency-version }} - ${{ matrix.os }}
+ 
+         steps:
+             -   name: Checkout code
+-                uses: actions/checkout@v1
++                uses: actions/checkout@v3
+ 
+             -   name: Cache dependencies
+-                uses: actions/cache@v1
++                uses: actions/cache@v3
+                 with:
+                     path: ~/.composer/cache/files
+                     key: dependencies-laravel-${{ matrix.laravel }}-php-${{ matrix.php }}-composer-${{ hashFiles('composer.json') }}

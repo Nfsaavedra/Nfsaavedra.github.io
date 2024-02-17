@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/linting.yml b/.github/workflows/linting.yml
+index fa21886..01d7e46 100644
+--- a/.github/workflows/linting.yml
++++ b/.github/workflows/linting.yml
+@@ -41,10 +41,6 @@ jobs:
+         run: |
+           make lint-yaml
+ 
+-      - name: Lint workflow
+-        run: |
+-          make lint-workflow
+-
+       - name: Lint Changelog
+         run: |
+           make lint-changelog

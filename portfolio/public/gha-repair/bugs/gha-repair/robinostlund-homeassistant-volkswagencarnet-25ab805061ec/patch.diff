@@ -1,0 +1,63 @@
+diff --git a/.github/workflows/release.yaml b/.github/workflows/release.yaml
+index 7e81b8b..274de04 100644
+--- a/.github/workflows/release.yaml
++++ b/.github/workflows/release.yaml
+@@ -6,10 +6,6 @@ on:
+     tags:
+       - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+ 
+-  # push:
+-  #   branches:
+-  #     - development
+-
+ jobs:
+   build:
+     name: Upload Release Asset
+diff --git a/.github/workflows/validate_hacs.yaml b/.github/workflows/validate_hacs.yaml
+deleted file mode 100644
+index 9f00469..0000000
+--- a/.github/workflows/validate_hacs.yaml
++++ /dev/null
+@@ -1,19 +0,0 @@
+-name: Validate with HACS
+-
+-on:
+-  push:
+-  pull_request:
+-  schedule:
+-    - cron: "0 0 * * *"
+-
+-jobs:
+-  validate:
+-    name: Validate with HACS
+-    runs-on: "ubuntu-latest"
+-    steps:
+-      - uses: "actions/checkout@v2"
+-      - name: HACS validation
+-        uses: "hacs/integration/action@master"
+-        with:
+-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+-          CATEGORY: "integration"
+\ No newline at end of file
+diff --git a/.github/workflows/validate_hassfest.yaml b/.github/workflows/validate_hassfest.yaml
+deleted file mode 100644
+index 820bd95..0000000
+--- a/.github/workflows/validate_hassfest.yaml
++++ /dev/null
+@@ -1,15 +0,0 @@
+-name: Validate with hassfest
+-
+-on:
+-  push:
+-  pull_request:
+-  schedule:
+-    - cron: "0 0 * * *"
+-
+-jobs:
+-  validate:
+-    name: Validate with hassfest
+-    runs-on: "ubuntu-latest"
+-    steps:
+-      - uses: "actions/checkout@v2"
+-      - uses: home-assistant/actions/hassfest@master
+\ No newline at end of file

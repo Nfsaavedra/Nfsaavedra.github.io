@@ -1,0 +1,23 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index d4d00ef..6d3d796 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -8,6 +8,7 @@ on:
+ 
+ jobs:
+   build:
++    if: "!contains(github.event.commits[0].message, '[skip ci]')"
+     runs-on: ubuntu-latest
+ 
+     steps:
+@@ -31,3 +32,10 @@ jobs:
+       uses: coverallsapp/github-action@master
+       with:
+         github-token: ${{ secrets.GITHUB_TOKEN }}
++
++  skip:
++    if: "contains(github.event.commits[0].message, '[skip ci]')"
++    runs-on: ubuntu-latest
++    steps:
++      - name: skip ci
++        run: echo "skip ci"

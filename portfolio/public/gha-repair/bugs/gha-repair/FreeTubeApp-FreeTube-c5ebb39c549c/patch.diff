@@ -1,0 +1,37 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 29b3a1d..9fe5db9 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -68,6 +68,8 @@ jobs:
+           apt install -y build-essential
+           apt install -y libopenjp2-7
+           node --version
++          mkdir build
++          cp -r _icons/.icon-set/ build/.icon-set/
+           npm install
+           npm run lint
+           npm run build --if-present
+diff --git a/_icons/.icon-set/iconColor_256.png b/_icons/.icon-set/iconColor_256.png
+new file mode 100644
+index 0000000..b49c29d
+Binary files /dev/null and b/_icons/.icon-set/iconColor_256.png differ
+diff --git a/_icons/.icon-set/icon_128x128.png b/_icons/.icon-set/icon_128x128.png
+new file mode 100644
+index 0000000..3d89419
+Binary files /dev/null and b/_icons/.icon-set/icon_128x128.png differ
+diff --git a/_icons/.icon-set/icon_16x16.png b/_icons/.icon-set/icon_16x16.png
+new file mode 100644
+index 0000000..2faf48e
+Binary files /dev/null and b/_icons/.icon-set/icon_16x16.png differ
+diff --git a/_icons/.icon-set/icon_32x32.png b/_icons/.icon-set/icon_32x32.png
+new file mode 100644
+index 0000000..4240b97
+Binary files /dev/null and b/_icons/.icon-set/icon_32x32.png differ
+diff --git a/_icons/.icon-set/icon_48x48.png b/_icons/.icon-set/icon_48x48.png
+new file mode 100644
+index 0000000..402e871
+Binary files /dev/null and b/_icons/.icon-set/icon_48x48.png differ
+diff --git a/_icons/.icon-set/icon_64x64.png b/_icons/.icon-set/icon_64x64.png
+new file mode 100644
+index 0000000..80b3724
+Binary files /dev/null and b/_icons/.icon-set/icon_64x64.png differ

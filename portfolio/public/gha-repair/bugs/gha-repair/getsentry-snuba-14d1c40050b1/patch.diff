@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 852cadb..4d25666 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -238,7 +238,7 @@ jobs:
+     needs: [linting, snuba-image]
+     name: Tests and code coverage
+     runs-on: ubuntu-latest
+-    timeout-minutes: 25
++    timeout-minutes: 60
+     strategy:
+       matrix:
+         snuba_settings:

@@ -1,0 +1,159 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index ae594a7..3463ffe 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -32,16 +32,25 @@ on:
+ 
+ jobs:
+   verify:
+-    # Only run if it's a push event or if it's a PR from this repository, and it is not dependabot.
+-    if: |
+-      github.actor != 'dependabot[bot]' &&
+-      (github.event_name == 'push' ||
+-      github.event_name == 'release' ||
+-      (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository))
+     runs-on: ubuntu-latest
+     env:
+       DOCKER_BUILDKIT: "1"
+     steps:
++      - name: Check for event validity
++        if: |
++          !((
++            github.event_name == 'push'
++          ) || (
++            github.event_name == 'release'
++          ) ||  (
++            github.event.pull_request.head.repo.full_name != github.repository
++          ) ||(
++            github.actor == 'dependabot[bot]' &&
++            github.event_name == 'pull_request' &&
++            github.event.pull_request.head.repo.full_name == github.repository
++          ))
++        run: echo "Not a valid event!" && exit 1
++
+       - uses: actions/checkout@v3
+ 
+       - uses: reviewdog/action-misspell@v1
+@@ -62,27 +71,17 @@ jobs:
+           -v "$(pwd)/coverage.txt:/tmp/gobuild/coverage.txt" \
+           test-container
+ 
+-      - name: Code security analysis
+-        uses: snyk/actions/golang@master
+-        env:
+-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+-
+       - name: Build final image
+         run: docker build -t final-image .
+ 
+-      # - name: Image security analysis
+-      #   uses: snyk/actions/docker@master
+-      #   env:
+-      #     SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+-      #   with:
+-      #     image: final-image
+-
+   publish:
+-    # Only run if it's a push event or if it's a PR from this repository
+     if: |
+-      github.event_name == 'push' ||
+-      github.event_name == 'release' ||
+-      (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository)
++      github.event.pull_request.head.repo.full_name == github.repository &&
++      (
++        github.event_name == 'push' ||
++        github.event_name == 'release' ||
++        (github.event_name == 'pull_request' && github.actor != 'dependabot[bot]')
++      )
+     needs: [verify]
+     runs-on: ubuntu-latest
+     steps:
+diff --git a/.github/workflows/dependabot.yml b/.github/workflows/dependabot.yml
+deleted file mode 100644
+index 5988516..0000000
+--- a/.github/workflows/dependabot.yml
++++ /dev/null
+@@ -1,37 +0,0 @@
+-name: Dependabot
+-on:
+-  pull_request:
+-    branches:
+-      - master
+-    paths:
+-      - .github/workflows/dependabot.yml
+-      - cmd/**
+-      - internal/**
+-      - pkg/**
+-      - .dockerignore
+-      - .golangci.yml
+-      - Dockerfile
+-      - go.mod
+-      - go.sum
+-
+-jobs:
+-  verify:
+-    if: ${{ github.actor == 'dependabot[bot]' }}
+-    runs-on: ubuntu-latest
+-    env:
+-      DOCKER_BUILDKIT: "1"
+-    steps:
+-      - uses: actions/checkout@v3
+-
+-      - name: Build test image
+-        run: docker build --target test -t test-container .
+-
+-      - name: Run tests in test container
+-        run: |
+-          touch coverage.txt
+-          docker run --rm \
+-          -v "$(pwd)/coverage.txt:/tmp/gobuild/coverage.txt" \
+-          test-container
+-
+-      - name: Build final image
+-        run: docker build -t final-image .
+diff --git a/.github/workflows/fork.yml b/.github/workflows/fork.yml
+deleted file mode 100644
+index 047e339..0000000
+--- a/.github/workflows/fork.yml
++++ /dev/null
+@@ -1,40 +0,0 @@
+-name: Fork
+-on:
+-  pull_request:
+-    branches:
+-      - master
+-    paths:
+-      - .github/workflows/fork.yml
+-      - cmd/**
+-      - internal/**
+-      - pkg/**
+-      - .dockerignore
+-      - .golangci.yml
+-      - Dockerfile
+-      - go.mod
+-      - go.sum
+-
+-jobs:
+-  verify:
+-    if: github.event.pull_request.head.repo.full_name != github.repository && github.actor != 'dependabot[bot]'
+-    runs-on: ubuntu-latest
+-    env:
+-      DOCKER_BUILDKIT: "1"
+-    steps:
+-      - uses: actions/checkout@v3
+-
+-      - name: Linting
+-        run: docker build --target lint .
+-
+-      - name: Build test image
+-        run: docker build --target test -t test-container .
+-
+-      - name: Run tests in test container
+-        run: |
+-          touch coverage.txt
+-          docker run --rm \
+-          -v "$(pwd)/coverage.txt:/tmp/gobuild/coverage.txt" \
+-          test-container
+-
+-      - name: Build final image
+-        run: docker build -t final-image .

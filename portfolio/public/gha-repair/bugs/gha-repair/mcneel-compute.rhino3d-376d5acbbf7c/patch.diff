@@ -1,0 +1,21 @@
+diff --git a/.github/workflows/workflow_ci.yml b/.github/workflows/workflow_ci.yml
+index 0fcdd5a..1f22fdf 100644
+--- a/.github/workflows/workflow_ci.yml
++++ b/.github/workflows/workflow_ci.yml
+@@ -45,6 +45,8 @@ jobs:
+     runs-on: ubuntu-latest
+     needs: [check_workflow, check_src]
+     if: ${{ needs.check_src.outputs.any_changed == 'true' || needs.check_workflow.outputs.any_changed == 'true' }}
++    env:
++      SHA8: ${{ GITHUB_SHA::8 }}
+     steps:
+       - name: checkout
+         uses: actions/checkout@v2
+@@ -54,6 +56,7 @@ jobs:
+         id: revision
+         run: |
+           echo "::set-output name=revision::${GITHUB_SHA::8}"
++          echo $SHA8
+       - name: revision number
+         shell: pwsh
+         run: |

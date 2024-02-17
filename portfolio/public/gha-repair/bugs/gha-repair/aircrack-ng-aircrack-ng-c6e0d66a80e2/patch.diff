@@ -1,0 +1,54 @@
+diff --git a/.github/workflows/macos.yml b/.github/workflows/macos.yml
+index 9a53dc9..41e925f 100644
+--- a/.github/workflows/macos.yml
++++ b/.github/workflows/macos.yml
+@@ -10,6 +10,24 @@ on:
+       - contrib/**
+       - manpages/**
+       - patches/**
++      - '.github/ISSUE_TEMPLATE/**'
++      - '.github/workflows/coverity.yml'
++      - '.github/workflows/docker-release.yml'
++      - '.github/workflows/docker.yml'
++      - '.github/workflows/linux-pcre.yml'
++      - '.github/workflows/linux.yml'
++      - '.github/workflows/pvs-studio.yml'
++      - '.github/workflows/style.yml'
++      - '.github/workflows/windows.yml'
++      - '.vscode/**'
++      - Dockerfile
++      - Dockerfile.release
++      - 'docker_package_install.sh'
++      - '.clangformat'
++      - '.editorconfig'
++      - '.gitignore'
++      - '.pre-commit-config.yaml'
++      - 'centos_autotools.sh'
+ 
+   pull_request:
+     branches: [ master ]
+@@ -17,6 +35,24 @@ on:
+       - contrib/**
+       - manpages/**
+       - patches/**
++      - '.github/ISSUE_TEMPLATE/**'
++      - '.github/workflows/coverity.yml'
++      - '.github/workflows/docker-release.yml'
++      - '.github/workflows/docker.yml'
++      - '.github/workflows/linux-pcre.yml'
++      - '.github/workflows/linux.yml'
++      - '.github/workflows/pvs-studio.yml'
++      - '.github/workflows/style.yml'
++      - '.github/workflows/windows.yml'
++      - '.vscode/**'
++      - Dockerfile
++      - Dockerfile.release
++      - 'docker_package_install.sh'
++      - '.clangformat'
++      - '.editorconfig'
++      - '.gitignore'
++      - '.pre-commit-config.yaml'
++      - 'centos_autotools.sh'
+ 
+ env:
+   LANG: en_US.UTF-8

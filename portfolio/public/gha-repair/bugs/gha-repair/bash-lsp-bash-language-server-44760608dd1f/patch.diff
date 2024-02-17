@@ -1,0 +1,9 @@
+diff --git a/.github/workflows/upgrade-tree-sitter.yml b/.github/workflows/upgrade-tree-sitter.yml
+index 36e443f..8a03ce1 100644
+--- a/.github/workflows/upgrade-tree-sitter.yml
++++ b/.github/workflows/upgrade-tree-sitter.yml
+@@ -40,3 +40,4 @@ jobs:
+           add-paths: server
+           reviewers: skovhus
+           title: Auto upgrade tree-sitter-bash parser
++          commit-message: Auto upgrade tree-sitter-bash parser

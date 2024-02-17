@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/cron.yaml b/.github/workflows/cron.yaml
+index daacfe8..863691e 100644
+--- a/.github/workflows/cron.yaml
++++ b/.github/workflows/cron.yaml
+@@ -6,7 +6,7 @@ on:
+ 
+ jobs:
+   validate:
+-    name: Validate
++    name: Cron Validate
+     runs-on: "ubuntu-latest"
+     steps:
+       - name: Check out repository

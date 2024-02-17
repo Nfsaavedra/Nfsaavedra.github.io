@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/android_tests.yml b/.github/workflows/android_tests.yml
+index 4548d10..3b53056 100644
+--- a/.github/workflows/android_tests.yml
++++ b/.github/workflows/android_tests.yml
+@@ -27,7 +27,7 @@ jobs:
+         # run: ./gradlew alkaaDevicesGroupDebugAndroidTest -Pandroid.testoptions.manageddevices.emulator.gpu="swiftshader_indirect"
+         uses: reactivecircus/android-emulator-runner@v2
+         with:
+-          api-level: 30
++          api-level: 28
+           arch: x86_64
+           disable-animations: true
+           disk-size: 2000M

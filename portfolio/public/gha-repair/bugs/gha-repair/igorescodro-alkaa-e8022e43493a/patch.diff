@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 756103b..01d483f 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -17,4 +17,4 @@ jobs:
+           distribution: 'adopt'
+ 
+       - name: Build with Gradle
+-        run: ./gradlew clean build --no-daemon --parallel build
++        run: ./gradlew clean build test --no-daemon --parallel build

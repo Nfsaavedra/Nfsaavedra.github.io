@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/demo.yml b/.github/workflows/demo.yml
+index 465695a..03f33a7 100644
+--- a/.github/workflows/demo.yml
++++ b/.github/workflows/demo.yml
+@@ -1,4 +1,4 @@
+-on: [push]
++on: [push, pull_request]
+ name: Build for reMarkable
+ jobs:
+ 

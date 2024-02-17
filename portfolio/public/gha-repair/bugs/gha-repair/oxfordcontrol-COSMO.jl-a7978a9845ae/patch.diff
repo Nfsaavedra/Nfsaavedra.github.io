@@ -1,0 +1,24 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 3c1f474..635e629 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -10,9 +10,6 @@ jobs:
+       fail-fast: false
+       matrix:
+         include:
+-          - version: 'nightly'
+-            os: ubuntu-latest
+-            arch: x64
+           - version: '1'
+             os: ubuntu-latest
+             arch: x64
+@@ -20,9 +17,6 @@ jobs:
+             os: ubuntu-latest
+             arch: x64
+           - version: '1'
+-            os: ubuntu-latest
+-            arch: x86
+-          - version: '1'
+             os: windows-latest
+             arch: x64
+     steps:

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/dev-hot-build.yml b/.github/workflows/dev-hot-build.yml
+index 623d9e7..b04590a 100644
+--- a/.github/workflows/dev-hot-build.yml
++++ b/.github/workflows/dev-hot-build.yml
+@@ -101,7 +101,7 @@ jobs:
+         uses: actions/upload-artifact@v2
+         with:
+           name: macos-dist
+-          dest: out/dist/medict-macos-amd64-${{ steps.extract_version.outputs.version }}.zip
++          path: out/dist/medict-macos-amd64-${{ steps.extract_version.outputs.version }}.zip
+ 
+       # ---------- linux part ------------
+ 

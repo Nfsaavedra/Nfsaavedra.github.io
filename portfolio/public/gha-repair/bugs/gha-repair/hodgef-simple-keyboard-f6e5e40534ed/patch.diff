@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index a1a382a..096163b 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -24,11 +24,6 @@ jobs:
+         run: |
+           npm install
+           npm run coverage
+-      - uses: codecov/codecov-action@v1.0.2
+-        with:
+-          token: ${{secrets.CODECOV_TOKEN}}
+-        env:
+-          CI: true
+ 
+       - name: Discord notification
+         if: success()

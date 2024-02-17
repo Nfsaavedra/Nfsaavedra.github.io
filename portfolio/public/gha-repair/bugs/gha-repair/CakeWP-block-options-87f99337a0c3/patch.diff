@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/support-check.yml b/.github/workflows/support-check.yml
+index fd7dbc7..056ad1b 100644
+--- a/.github/workflows/support-check.yml
++++ b/.github/workflows/support-check.yml
+@@ -1,8 +1,7 @@
+ name: WordPress Support Check
+-# on:
+-#   schedule:
+-#     - cron: "*/30 * * * *" # every 30mins
+-on: workflow_dispatch
++on:
++  schedule:
++    - cron: "*/30 * * * *" # every 30mins
+ 
+ jobs:
+   check-support:

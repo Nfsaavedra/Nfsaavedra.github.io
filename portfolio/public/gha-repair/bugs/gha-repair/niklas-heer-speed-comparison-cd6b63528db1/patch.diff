@@ -1,0 +1,26 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index b6b00f4..6e7eed3 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -1,10 +1,20 @@
+ name: Run speed comparison
+ 
+-on: [push, pull_request]
++on:
++  push:
++    branches:
++      - master
++      - next
++  pull_request_review:
++    types: [submitted]
++  pull_request:
++    types:
++      - labeled
+ 
+ jobs:
+   build:
+     runs-on: ubuntu-latest
++    if: github.ref == 'refs/heads/master' || github.event.review.state == 'approved' || github.event.label.name == 'enable-ci'
+     steps:
+       - uses: actions/checkout@v3
+       - name: Put back the git branch into git (Earthly uses it for tagging)

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/c-cpp.yml b/.github/workflows/c-cpp.yml
+index c8b5013..512b969 100644
+--- a/.github/workflows/c-cpp.yml
++++ b/.github/workflows/c-cpp.yml
+@@ -99,7 +99,7 @@ jobs:
+         uses: Xotl/cool-github-releases@v1
+         with:
+           mode: update
+-          isPrerelease: true
++          isPrerelease: false
+           tag_name: continous
+           release_name: "Automatic CI builds"
+           body_mrkdwn: |

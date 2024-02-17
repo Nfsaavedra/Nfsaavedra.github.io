@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/conventional-commits.yml b/.github/workflows/conventional-commits.yml
+index 68793a2..036d0a5 100644
+--- a/.github/workflows/conventional-commits.yml
++++ b/.github/workflows/conventional-commits.yml
+@@ -3,6 +3,10 @@ name: Conventional Commits
+ on:
+   pull_request:
+ 
++permissions:
++  pull-requests: write
++  contents: read
++
+ jobs:
+   conventional-commits:
+     name: Conventional Commits

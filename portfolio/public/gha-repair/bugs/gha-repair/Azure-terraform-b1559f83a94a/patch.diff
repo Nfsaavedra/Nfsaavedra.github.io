@@ -1,0 +1,2529 @@
+diff --git a/.github/workflows/e2e.yaml b/.github/workflows/e2e.yaml
+index f503cde..698c742 100644
+--- a/.github/workflows/e2e.yaml
++++ b/.github/workflows/e2e.yaml
+@@ -32,9 +32,8 @@ jobs:
+           az login --identity --username $MSI_ID > /dev/null
+           export ARM_SUBSCRIPTION_ID=$(az login --identity --username $MSI_ID | jq -r '.[0] | .id')
+           export ARM_TENANT_ID=$(az login --identity --username $MSI_ID | jq -r '.[0] | .tenantId')
+-          ARM_CLIENT_ID=$(az identity list | jq -r --arg MSI_ID "$MSI_ID" '.[] | select(.principalId == $MSI_ID) | .clientId')
+           export CHANGED_FOLDERS="${{ steps.changed-files.outputs.all_changed_files }}"
+-          docker run --rm -v $(pwd):/src -w /src/test --network=host -e MSI_ID -e ARM_SUBSCRIPTION_ID -e ARM_TENANT_ID -e ARM_CLIENT_ID -e ARM_USE_MSI=true -e CHANGED_FOLDERS mcr.microsoft.com/azterraform:latest sh -c "go mod tidy && go test -timeout=360m -v ./e2e"
++          docker run --rm -v $(pwd):/src -w /src/test --network=host -e MSI_ID -e ARM_SUBSCRIPTION_ID -e ARM_TENANT_ID -e ARM_USE_MSI=true -e CHANGED_FOLDERS mcr.microsoft.com/azterraform:latest sh -c "go mod tidy && go test -timeout=360m -v ./e2e"
+       - uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32 #v3.1.3
+         with:
+           name: TestRecord-${{ github.event.number }}
+diff --git a/quickstart/301-service-fabric/TestRecord.md b/quickstart/301-service-fabric/TestRecord.md
+new file mode 100644
+index 0000000..e0e51b9
+--- /dev/null
++++ b/quickstart/301-service-fabric/TestRecord.md
+@@ -0,0 +1,846 @@
++## 31 Dec 23 00:17 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.6.3
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.47.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.6.0
++
++### Error
++
++
++
++---
++
++## 24 Dec 23 00:18 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.6.3
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.47.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.6.0
++
++### Error
++
++
++
++---
++
++## 17 Dec 23 00:23 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.6.3
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.47.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.6.0
++
++### Error
++
++
++
++---
++
++## 10 Dec 23 01:09 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.6.2
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.46.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.6.0
++
++### Error
++
++
++
++---
++
++## 04 Dec 23 02:17 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.6.2
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.46.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 26 Nov 23 01:03 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.6.2
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.46.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 19 Nov 23 03:38 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.6.2
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.46.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 12 Nov 23 06:51 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.6.0
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.45.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 05 Nov 23 00:22 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.6.0
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.45.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 29 Oct 23 00:28 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.6.0
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.45.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 22 Oct 23 04:46 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.5.7
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.44.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 15 Oct 23 05:00 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.5.7
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.43.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 08 Oct 23 04:50 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.5.6
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.43.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 01 Oct 23 00:24 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.5.6
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.43.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 24 Sep 23 04:37 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.5.6
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.43.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 20 Sep 23 10:54 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.5.6
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.42.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 17 Sep 23 04:24 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.5.5
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.42.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 10 Sep 23 04:59 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.5.4
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.41.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 03 Sep 23 00:30 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.5.4
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.41.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 27 Aug 23 05:16 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.5.4
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.41.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 20 Aug 23 00:17 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.5.3
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.41.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 13 Aug 23 00:11 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.5.2
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.41.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 06 Aug 23 00:12 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.5.1
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.41.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 30 Jul 23 00:16 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.5.1
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.41.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 16 Jul 23 04:45 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.5.0
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.40.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 09 Jul 23 00:18 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.5.0
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.39.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 02 Jul 23 00:11 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.5.0
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.39.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 25 Jun 23 00:11 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.5.0
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.39.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 18 Jun 23 00:16 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.4.6
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.39.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 11 Jun 23 00:17 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.4.6
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.39.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 04 Jun 23 00:13 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.4.6
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.39.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 28 May 23 05:26 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.4.5
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.39.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 21 May 23 04:32 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.4.5
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.39.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 14 May 23 04:21 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.4.5
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.39.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 07 May 23 00:11 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.4.5
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.38.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 30 Apr 23 00:15 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.4.5
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.38.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 23 Apr 23 04:22 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.4.4
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.37.2
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 16 Apr 23 00:17 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.4.3
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.37.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.5.1
++
++### Error
++
++
++
++---
++
++## 09 Apr 23 00:17 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.4.2
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.36.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.4.3
++
++### Error
++
++
++
++---
++
++## 02 Apr 23 04:27 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.4.1
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.36.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.4.3
++
++### Error
++
++
++
++---
++
++## 26 Mar 23 05:00 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.4.1
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.36.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.4.3
++
++### Error
++
++
++
++---
++
++## 19 Mar 23 04:23 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.4.0
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.36.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.4.3
++
++### Error
++
++
++
++---
++
++## 12 Mar 23 05:15 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.3.8
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.36.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.4.3
++
++### Error
++
++
++
++---
++
++## 08 Mar 23 18:19 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.3.8
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.36.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.4.3
++
++### Error
++
++
++
++---
++
++## 19 Feb 23 00:09 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.3.7
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.34.1
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.4.3
++
++### Error
++
++
++
++---
++
++## 12 Feb 23 00:15 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.3.7
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.33.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.4.3
++
++### Error
++
++
++
++---
++
++## 05 Feb 23 00:26 UTC
++
++Success: false
++
++### Versions
++
++Terraform v1.3.7
++on linux_amd64
+++ provider registry.terraform.io/hashicorp/azuread v2.33.0
+++ provider registry.terraform.io/hashicorp/azurerm v1.36.1
+++ provider registry.terraform.io/hashicorp/random v3.4.3
++
++### Error
++
++
++
++---
++
+diff --git a/quickstart/301-service-fabric/azuread.tf b/quickstart/301-service-fabric/azuread.tf
+new file mode 100644
+index 0000000..fdca96e
+--- /dev/null
++++ b/quickstart/301-service-fabric/azuread.tf
+@@ -0,0 +1,83 @@
++# Service Fabric Cluster
++resource "azuread_application" "cluster" {
++  display_name = "${var.name}-cluster-${var.environment}"
++}
++
++resource "azuread_service_principal" "cluster" {
++  application_id = azuread_application.cluster.application_id
++}
++
++resource "random_string" "cluster_password" {
++  length  = 32
++  special = true
++}
++
++resource "azuread_service_principal_password" "cluster" {
++  service_principal_id = azuread_service_principal.cluster.id
++  end_date             = "2099-01-01T01:00:00Z"
++}
++
++resource "random_uuid" "admin" {
++}
++
++resource "random_uuid" "reader" {
++}
++
++# Service Fabric Client
++resource "azuread_application" "client" {
++  display_name = "${var.name}-client-${var.environment}"
++
++  web {
++    redirect_uris = ["https://${azurerm_public_ip.sf.fqdn}:19080/Explorer/index.html"]
++  }
++
++  app_role {
++    id = random_uuid.admin.result
++
++    allowed_member_types = [
++      "User",
++    ]
++
++    description  = "Admins can manage roles and perform all task actions"
++    display_name = "Admin"
++    enabled      = true
++    value        = "Admin"
++  }
++
++  app_role {
++    id = random_uuid.reader.result
++
++    allowed_member_types = [
++      "User",
++    ]
++
++    description  = "ReadOnly roles have limited query access"
++    display_name = "ReadOnly"
++    enabled      = true
++    value        = "User"
++  }
++
++  required_resource_access {
++    resource_app_id = "00000003-0000-0000-c000-000000000000" # Microsoft Graph API
++
++    # DELEGATED PERMISSIONS: "Sign in and read user profile":
++    resource_access {
++      id   = "e1fe6dd8-ba31-4d61-89e7-88639da4683d"
++      type = "Scope"
++    }
++  }
++}
++
++resource "azuread_service_principal" "client" {
++  application_id = azuread_application.client.application_id
++}
++
++resource "random_string" "client_password" {
++  length  = 32
++  special = true
++}
++
++resource "azuread_service_principal_password" "client" {
++  service_principal_id = azuread_service_principal.client.id
++  end_date             = "2099-01-01T01:00:00Z"
++}
+diff --git a/quickstart/301-service-fabric/keyvault.tf b/quickstart/301-service-fabric/keyvault.tf
+new file mode 100644
+index 0000000..95ef09d
+--- /dev/null
++++ b/quickstart/301-service-fabric/keyvault.tf
+@@ -0,0 +1,174 @@
++resource "random_string" "kv_name_prefix" {
++  length  = 21
++  special = false
++  numeric = false
++}
++
++resource "azurerm_key_vault" "cluster" {
++  name                            = "${random_string.kv_name_prefix.result}-kv"
++  location                        = azurerm_resource_group.default.location
++  resource_group_name             = azurerm_resource_group.default.name
++  tenant_id                       = data.azurerm_client_config.current.tenant_id
++  enabled_for_deployment          = true
++  enabled_for_disk_encryption     = true
++  enabled_for_template_deployment = true
++  sku_name                        = "standard"
++
++  access_policy {
++    tenant_id = data.azurerm_subscription.current.tenant_id
++    object_id = var.client_object_id
++
++    certificate_permissions = [
++      "Create",
++      "Delete",
++      "DeleteIssuers",
++      "Get",
++      "GetIssuers",
++      "Import",
++      "List",
++      "ListIssuers",
++      "ManageContacts",
++      "ManageIssuers",
++      "SetIssuers",
++      "Update",
++    ]
++
++    key_permissions = [
++      "Backup",
++      "Create",
++      "Decrypt",
++      "Delete",
++      "Encrypt",
++      "Get",
++      "Import",
++      "List",
++      "Purge",
++      "Recover",
++      "Restore",
++      "Sign",
++      "UnwrapKey",
++      "Update",
++      "Verify",
++      "WrapKey",
++    ]
++
++    secret_permissions = [
++      "Backup",
++      "Delete",
++      "Get",
++      "List",
++      "Purge",
++      "Recover",
++      "Restore",
++      "Set",
++    ]
++  }
++}
++
++resource "azurerm_key_vault_certificate" "cluster" {
++  name         = "service-fabric-cluster"
++  key_vault_id = azurerm_key_vault.cluster.id
++
++  certificate_policy {
++    issuer_parameters {
++      name = "Self"
++    }
++
++    key_properties {
++      exportable = true
++      key_size   = 2048
++      key_type   = "RSA"
++      reuse_key  = true
++    }
++
++    lifetime_action {
++      action {
++        action_type = "AutoRenew"
++      }
++
++      trigger {
++        days_before_expiry = 30
++      }
++    }
++
++    secret_properties {
++      content_type = "application/x-pkcs12"
++    }
++
++    x509_certificate_properties {
++      # Server Authentication = 1.3.6.1.5.5.7.3.1
++      # Client Authentication = 1.3.6.1.5.5.7.3.2
++      extended_key_usage = ["1.3.6.1.5.5.7.3.1"]
++
++      key_usage = [
++        "cRLSign",
++        "dataEncipherment",
++        "digitalSignature",
++        "keyAgreement",
++        "keyCertSign",
++        "keyEncipherment",
++      ]
++
++      subject_alternative_names {
++        dns_names = ["sfdemosandbox.denvermtc.net"]
++      }
++
++      subject            = "CN=mtcdenver"
++      validity_in_months = 12
++    }
++  }
++}
++
++resource "azurerm_key_vault_certificate" "client" {
++  name         = "service-fabric-client"
++  key_vault_id = azurerm_key_vault.cluster.id
++
++  certificate_policy {
++    issuer_parameters {
++      name = "Self"
++    }
++
++    key_properties {
++      exportable = true
++      key_size   = 2048
++      key_type   = "RSA"
++      reuse_key  = true
++    }
++
++    lifetime_action {
++      action {
++        action_type = "AutoRenew"
++      }
++
++      trigger {
++        days_before_expiry = 30
++      }
++    }
++
++    secret_properties {
++      content_type = "application/x-pkcs12"
++    }
++
++    x509_certificate_properties {
++      # Server Authentication = 1.3.6.1.5.5.7.3.1
++      # Client Authentication = 1.3.6.1.5.5.7.3.2
++      extended_key_usage = ["1.3.6.1.5.5.7.3.1"]
++
++      key_usage = [
++        "cRLSign",
++        "dataEncipherment",
++        "digitalSignature",
++        "keyAgreement",
++        "keyCertSign",
++        "keyEncipherment",
++      ]
++
++      subject_alternative_names {
++        dns_names = ["sfdemosandbox.denvermtc.net"]
++      }
++
++      subject            = "CN=mtcdenver"
++      validity_in_months = 12
++    }
++  }
++}
+diff --git a/quickstart/301-service-fabric/main.tf b/quickstart/301-service-fabric/main.tf
+new file mode 100644
+index 0000000..66ff372
+--- /dev/null
++++ b/quickstart/301-service-fabric/main.tf
+@@ -0,0 +1,12 @@
++data "azurerm_subscription" "current" {}
++
++data "azurerm_client_config" "current" {}
++
++provider "azurerm" {
++  version = "=1.36.1"
++}
++
++resource "azurerm_resource_group" "default" {
++  name     = "${var.name}-${var.environment}-rg"
++  location = "${var.location}"
++}
+diff --git a/quickstart/301-service-fabric/network.tf b/quickstart/301-service-fabric/network.tf
+new file mode 100644
+index 0000000..525bea2
+--- /dev/null
++++ b/quickstart/301-service-fabric/network.tf
+@@ -0,0 +1,106 @@
++locals {
++  feip_config_name = "${var.name}-lb-fe-ipconfig"
++}
++
++resource "azurerm_virtual_network" "default" {
++  name                = "${var.name}-vnet"
++  address_space       = ["10.0.0.0/16"]
++  location            = azurerm_resource_group.default.location
++  resource_group_name = azurerm_resource_group.default.name
++}
++
++resource "azurerm_subnet" "default" {
++  name                 = "${var.name}-default-subnet"
++  resource_group_name  = azurerm_resource_group.default.name
++  virtual_network_name = azurerm_virtual_network.default.name
++  address_prefix       = "10.0.0.0/24"
++}
++
++resource "azurerm_subnet" "sf" {
++  name                 = "${var.name}-sf-subnet"
++  resource_group_name  = azurerm_resource_group.default.name
++  virtual_network_name = azurerm_virtual_network.default.name
++  address_prefix       = "10.0.1.0/24"
++}
++
++resource "random_string" "pip_name_prefix" {
++  length  = 17
++  special = false
++  numeric = false
++}
++
++resource "azurerm_public_ip" "sf" {
++  name                = "${random_string.pip_name_prefix.result}-pip"
++  location            = azurerm_resource_group.default.location
++  resource_group_name = azurerm_resource_group.default.name
++  allocation_method   = "Dynamic"
++  domain_name_label   = "${var.dns_prefix}-${var.name}-${var.environment_short}-sf"
++}
++
++resource "azurerm_lb" "sf" {
++  name                = "${var.name}-lb"
++  location            = azurerm_resource_group.default.location
++  resource_group_name = azurerm_resource_group.default.name
++
++  frontend_ip_configuration {
++    name                 = local.feip_config_name
++    public_ip_address_id = azurerm_public_ip.sf.id
++  }
++}
++
++resource "azurerm_lb_nat_pool" "sf" {
++  name                           = "${var.name}-nat-pool"
++  resource_group_name            = azurerm_resource_group.default.name
++  loadbalancer_id                = azurerm_lb.sf.id
++  count                          = "1"
++  protocol                       = "Tcp"
++  frontend_port_start            = 3389
++  frontend_port_end              = 4500
++  backend_port                   = 3389
++  frontend_ip_configuration_name = local.feip_config_name
++}
++
++resource "azurerm_lb_backend_address_pool" "sf" {
++  resource_group_name = azurerm_resource_group.default.name
++  loadbalancer_id     = azurerm_lb.sf.id
++  name                = "ServiceFabricAddressPool"
++}
++
++# Probes
++resource "azurerm_lb_probe" "fabric_gateway" {
++  resource_group_name = azurerm_resource_group.default.name
++  loadbalancer_id     = azurerm_lb.sf.id
++  name                = "${var.name}-probe-19000"
++  port                = 19000
++}
++
++resource "azurerm_lb_probe" "http" {
++  resource_group_name = azurerm_resource_group.default.name
++  loadbalancer_id     = azurerm_lb.sf.id
++  name                = "${var.name}-probe-19080"
++  port                = 19080
++}
++
++resource "azurerm_lb_rule" "http" {
++  resource_group_name            = azurerm_resource_group.default.name
++  loadbalancer_id                = azurerm_lb.sf.id
++  backend_address_pool_id        = azurerm_lb_backend_address_pool.sf.id
++  probe_id                       = azurerm_lb_probe.http.id
++  name                           = "http"
++  protocol                       = "Tcp"
++  frontend_port                  = 19080
++  backend_port                   = 19080
++  frontend_ip_configuration_name = local.feip_config_name
++}
++
++resource "azurerm_lb_rule" "fabric_gateway" {
++  resource_group_name            = azurerm_resource_group.default.name
++  loadbalancer_id                = azurerm_lb.sf.id
++  backend_address_pool_id        = azurerm_lb_backend_address_pool.sf.id
++  probe_id                       = azurerm_lb_probe.fabric_gateway.id
++  name                           = "fabric_gateway"
++  protocol                       = "Tcp"
++  frontend_port                  = 19000
++  backend_port                   = 19000
++  frontend_ip_configuration_name = local.feip_config_name
++}
+diff --git a/quickstart/301-service-fabric/readme.md b/quickstart/301-service-fabric/readme.md
+new file mode 100644
+index 0000000..62a690d
+--- /dev/null
++++ b/quickstart/301-service-fabric/readme.md
+@@ -0,0 +1,992 @@
++# Azure Service Fabric Cluster
++
++
++This template deploys an configured Service Fabric Cluster.  Service Fabric provides an application orchestration system on top of IaaS, and all necessary resources to run a cluster are configured within this template.
++
++## Resources
++
++| Terraform Resource Type | Description |
++| - | - |
++| `azurerm_resource_group` | The resource group all resources are deployed into |
++| `azuread_application` | The Service Fabric cluster application |
++| `azuread_service_principal` | A Service Principal for the Service Fabric Client |
++| `azuread_service_principal` | A Service principal for the Service Fabric Cluster |
++| `azurerm_key_vault` |  |
++| `azurerm_key_vault_certificate` | The Cluster Management Certificate |
++| `azurerm_key_vault_certificate` | The Client App Certificate |
++| `azurerm_lb` | A load balancer that sits in from of the VMs |
++| `azurerm_public_ip` | A public IP for the cluster |
++| `azurerm_service_fabric_cluster` | The Service Fabric cluster |
++| `azurerm_storage_account` | A storage Account for the cluster  |
++| `azurerm_storage_account` | A Storage Account for the cluster VMs |
++| `azurerm_virtual_network` | A Virtual Network for the cluster Nodes |
++| `azurerm_subnet` | A Subnet for the cluster nodes |
++| `azurerm_subnet` | A Default subnet for other endpoints that may talk with the cluster |
++| `azurerm_virtual_machine_scale_set` | The actual cluster nodes |
++| `random_string` | The client certificate password |
++| `random_string` | The cluster certificate passwords |
++
++## Variables
++
++| Name | Description |
++|-|-|
++| `name` | Name of the deployment |
++| `environment` | The depolyment environment name (used for postfixing resource names) |
++| `environment_short` | A 3 or 4 letter string to represent the environment |
++| `dns_prefix` | A prefix for globally-unique dns-based resources |
++| `cluster_size` | How many nodes to deploy |
++| `admin_username` | The Administrator username for the nodes |
++| `admin_password` | The Administrator password for the nodes |
++| `client_object_id` | A pre-created Client for SF from AAD |
++
++## Notes
++ - On first run you will have to add yourself to the access policy for keyvault as terraform has no way to know what your client ID is to create the policy dynamically unless you're running as a service principal (which I don't have currently configured to look for).  Just go to KeyVault, add an access policy for yourself, and run terraform apply again.
++ - NOTE: Vnet support in terraform for APIm does not yet exist - this script creates the network but you must manually join it to the vnet after
++ - Cert references between KeyVault and APIM are not automatic since the format is different.  Download client cert from keyvault and do the following to add a password to the key so you can import from the APIM portal:
++     ```
++     openssl pkcs12 -in mycert.pfx -out temp.pem
++     openssl pkcs12 -export -out mycert2.pfx -in temp.pem
++
++## Example
++
++```bash
++> terraform plan
++Refreshing Terraform state in-memory prior to plan...
++The refreshed state will be used to calculate this plan, but will not be
++persisted to local or remote state storage.
++
++data.azurerm_client_config.current: Refreshing state...
++data.azurerm_subscription.current: Refreshing state...
++
++------------------------------------------------------------------------
++
++An execution plan has been generated and is shown below.
++Resource actions are indicated with the following symbols:
++  + create
++
++Terraform will perform the following actions:
++
++  # azuread_application.client will be created
++  + resource "azuread_application" "client" {
++      + application_id  = (known after apply)
++      + homepage        = (known after apply)
++      + id              = (known after apply)
++      + identifier_uris = (known after apply)
++      + name            = "demo-tfquickstart-client-sandbox"
++      + object_id       = (known after apply)
++      + public_client   = (known after apply)
++      + reply_urls      = (known after apply)
++      + type            = "webapp/api"
++
++      + app_role {
++          + allowed_member_types = [
++              + "User",
++            ]
++          + description          = "Admins can manage roles and perform all task actions"
++          + display_name         = "Admin"
++          + id                   = (known after apply)
++          + is_enabled           = true
++          + value                = "Admin"
++        }
++      + app_role {
++          + allowed_member_types = [
++              + "User",
++            ]
++          + description          = "ReadOnly roles have limited query access"
++          + display_name         = "ReadOnly"
++          + id                   = (known after apply)
++          + is_enabled           = true
++          + value                = "User"
++        }
++
++      + oauth2_permissions {
++          + admin_consent_description  = (known after apply)
++          + admin_consent_display_name = (known after apply)
++          + id                         = (known after apply)
++          + is_enabled                 = (known after apply)
++          + type                       = (known after apply)
++          + user_consent_description   = (known after apply)
++          + user_consent_display_name  = (known after apply)
++          + value                      = (known after apply)
++        }
++
++      + required_resource_access {
++          + resource_app_id = "00000003-0000-0000-c000-000000000000"
++
++          + resource_access {
++              + id   = "e1fe6dd8-ba31-4d61-89e7-88639da4683d"
++              + type = "Scope"
++            }
++        }
++    }
++
++  # azuread_application.cluster will be created
++  + resource "azuread_application" "cluster" {
++      + application_id  = (known after apply)
++      + homepage        = (known after apply)
++      + id              = (known after apply)
++      + identifier_uris = (known after apply)
++      + name            = "demo-tfquickstart-cluster-sandbox"
++      + object_id       = (known after apply)
++      + public_client   = (known after apply)
++      + reply_urls      = (known after apply)
++      + type            = "webapp/api"
++
++      + oauth2_permissions {
++          + admin_consent_description  = (known after apply)
++          + admin_consent_display_name = (known after apply)
++          + id                         = (known after apply)
++          + is_enabled                 = (known after apply)
++          + type                       = (known after apply)
++          + user_consent_description   = (known after apply)
++          + user_consent_display_name  = (known after apply)
++          + value                      = (known after apply)
++        }
++    }
++
++  # azuread_service_principal.client will be created
++  + resource "azuread_service_principal" "client" {
++      + application_id = (known after apply)
++      + display_name   = (known after apply)
++      + id             = (known after apply)
++      + object_id      = (known after apply)
++
++      + oauth2_permissions {
++          + admin_consent_description  = (known after apply)
++          + admin_consent_display_name = (known after apply)
++          + id                         = (known after apply)
++          + is_enabled                 = (known after apply)
++          + type                       = (known after apply)
++          + user_consent_description   = (known after apply)
++          + user_consent_display_name  = (known after apply)
++          + value                      = (known after apply)
++        }
++    }
++
++  # azuread_service_principal.cluster will be created
++  + resource "azuread_service_principal" "cluster" {
++      + application_id = (known after apply)
++      + display_name   = (known after apply)
++      + id             = (known after apply)
++      + object_id      = (known after apply)
++
++      + oauth2_permissions {
++          + admin_consent_description  = (known after apply)
++          + admin_consent_display_name = (known after apply)
++          + id                         = (known after apply)
++          + is_enabled                 = (known after apply)
++          + type                       = (known after apply)
++          + user_consent_description   = (known after apply)
++          + user_consent_display_name  = (known after apply)
++          + value                      = (known after apply)
++        }
++    }
++
++  # azuread_service_principal_password.client will be created
++  + resource "azuread_service_principal_password" "client" {
++      + end_date             = "2099-01-01T01:00:00Z"
++      + id                   = (known after apply)
++      + key_id               = (known after apply)
++      + service_principal_id = (known after apply)
++      + start_date           = (known after apply)
++      + value                = (sensitive value)
++    }
++
++  # azuread_service_principal_password.cluster will be created
++  + resource "azuread_service_principal_password" "cluster" {
++      + end_date             = "2099-01-01T01:00:00Z"
++      + id                   = (known after apply)
++      + key_id               = (known after apply)
++      + service_principal_id = (known after apply)
++      + start_date           = (known after apply)
++      + value                = (sensitive value)
++    }
++
++  # azurerm_key_vault.cluster will be created
++  + resource "azurerm_key_vault" "cluster" {
++      + access_policy                   = [
++          + {
++              + application_id          = null
++              + certificate_permissions = [
++                  + "create",
++                  + "delete",
++                  + "deleteissuers",
++                  + "get",
++                  + "getissuers",
++                  + "import",
++                  + "list",
++                  + "listissuers",
++                  + "managecontacts",
++                  + "manageissuers",
++                  + "setissuers",
++                  + "update",
++                ]
++              + key_permissions         = [
++                  + "backup",
++                  + "create",
++                  + "decrypt",
++                  + "delete",
++                  + "encrypt",
++                  + "get",
++                  + "import",
++                  + "list",
++                  + "purge",
++                  + "recover",
++                  + "restore",
++                  + "sign",
++                  + "unwrapKey",
++                  + "update",
++                  + "verify",
++                  + "wrapKey",
++                ]
++              + object_id               = "0938d8bc-3351-4bcc-ddb5-113c2218ff0d"
++              + secret_permissions      = [
++                  + "backup",
++                  + "delete",
++                  + "get",
++                  + "list",
++                  + "purge",
++                  + "recover",
++                  + "restore",
++                  + "set",
++                ]
++              + storage_permissions     = null
++              + tenant_id               = "72f988bf-86f1-41af-91ab-2d7cd011db47"
++            },
++        ]
++      + enabled_for_deployment          = true
++      + enabled_for_disk_encryption     = true
++      + enabled_for_template_deployment = true
++      + id                              = (known after apply)
++      + location                        = "westus2"
++      + name                            = "tfq-demo-tfquick-sbx-kv"
++      + resource_group_name             = "demo-tfquickstart-sandbox-rg"
++      + sku_name                        = "standard"
++      + tags                            = (known after apply)
++      + tenant_id                       = "72f988bf-86f1-41af-91ab-2d7cd011db47"
++      + vault_uri                       = (known after apply)
++
++      + sku {
++          + name = (known after apply)
++        }
++    }
++
++  # azurerm_key_vault_certificate.client will be created
++  + resource "azurerm_key_vault_certificate" "client" {
++      + certificate_data = (known after apply)
++      + id               = (known after apply)
++      + key_vault_id     = (known after apply)
++      + name             = "service-fabric-client"
++      + secret_id        = (known after apply)
++      + tags             = (known after apply)
++      + thumbprint       = (known after apply)
++      + vault_uri        = (known after apply)
++      + version          = (known after apply)
++
++      + certificate_policy {
++          + issuer_parameters {
++              + name = "Self"
++            }
++
++          + key_properties {
++              + exportable = true
++              + key_size   = 2048
++              + key_type   = "RSA"
++              + reuse_key  = true
++            }
++
++          + lifetime_action {
++              + action {
++                  + action_type = "AutoRenew"
++                }
++
++              + trigger {
++                  + days_before_expiry = 30
++                }
++            }
++
++          + secret_properties {
++              + content_type = "application/x-pkcs12"
++            }
++
++          + x509_certificate_properties {
++              + extended_key_usage = [
++                  + "1.3.6.1.5.5.7.3.1",
++                ]
++              + key_usage          = [
++                  + "cRLSign",
++                  + "dataEncipherment",
++                  + "digitalSignature",
++                  + "keyAgreement",
++                  + "keyCertSign",
++                  + "keyEncipherment",
++                ]
++              + subject            = "CN=mtcdenver"
++              + validity_in_months = 12
++
++              + subject_alternative_names {
++                  + dns_names = [
++                      + "sfdemosandbox.denvermtc.net",
++                    ]
++                }
++            }
++        }
++    }
++
++  # azurerm_key_vault_certificate.cluster will be created
++  + resource "azurerm_key_vault_certificate" "cluster" {
++      + certificate_data = (known after apply)
++      + id               = (known after apply)
++      + key_vault_id     = (known after apply)
++      + name             = "service-fabric-cluster"
++      + secret_id        = (known after apply)
++      + tags             = (known after apply)
++      + thumbprint       = (known after apply)
++      + vault_uri        = (known after apply)
++      + version          = (known after apply)
++
++      + certificate_policy {
++          + issuer_parameters {
++              + name = "Self"
++            }
++
++          + key_properties {
++              + exportable = true
++              + key_size   = 2048
++              + key_type   = "RSA"
++              + reuse_key  = true
++            }
++
++          + lifetime_action {
++              + action {
++                  + action_type = "AutoRenew"
++                }
++
++              + trigger {
++                  + days_before_expiry = 30
++                }
++            }
++
++          + secret_properties {
++              + content_type = "application/x-pkcs12"
++            }
++
++          + x509_certificate_properties {
++              + extended_key_usage = [
++                  + "1.3.6.1.5.5.7.3.1",
++                ]
++              + key_usage          = [
++                  + "cRLSign",
++                  + "dataEncipherment",
++                  + "digitalSignature",
++                  + "keyAgreement",
++                  + "keyCertSign",
++                  + "keyEncipherment",
++                ]
++              + subject            = "CN=mtcdenver"
++              + validity_in_months = 12
++
++              + subject_alternative_names {
++                  + dns_names = [
++                      + "sfdemosandbox.denvermtc.net",
++                    ]
++                }
++            }
++        }
++    }
++
++  # azurerm_lb.sf will be created
++  + resource "azurerm_lb" "sf" {
++      + id                   = (known after apply)
++      + location             = "westus2"
++      + name                 = "demo-tfquickstart-lb"
++      + private_ip_address   = (known after apply)
++      + private_ip_addresses = (known after apply)
++      + resource_group_name  = "demo-tfquickstart-sandbox-rg"
++      + sku                  = "Basic"
++      + tags                 = (known after apply)
++
++      + frontend_ip_configuration {
++          + inbound_nat_rules             = (known after apply)
++          + load_balancer_rules           = (known after apply)
++          + name                          = "demo-tfquickstart-lb-fe-ipconfig"
++          + outbound_rules                = (known after apply)
++          + private_ip_address            = (known after apply)
++          + private_ip_address_allocation = (known after apply)
++          + public_ip_address_id          = (known after apply)
++          + public_ip_prefix_id           = (known after apply)
++          + subnet_id                     = (known after apply)
++        }
++    }
++
++  # azurerm_lb_backend_address_pool.sf will be created
++  + resource "azurerm_lb_backend_address_pool" "sf" {
++      + backend_ip_configurations = (known after apply)
++      + id                        = (known after apply)
++      + load_balancing_rules      = (known after apply)
++      + loadbalancer_id           = (known after apply)
++      + name                      = "ServiceFabricAddressPool"
++      + resource_group_name       = "demo-tfquickstart-sandbox-rg"
++    }
++
++  # azurerm_lb_nat_pool.sf[0] will be created
++  + resource "azurerm_lb_nat_pool" "sf" {
++      + backend_port                   = 3389
++      + frontend_ip_configuration_id   = (known after apply)
++      + frontend_ip_configuration_name = "demo-tfquickstart-lb-fe-ipconfig"
++      + frontend_port_end              = 4500
++      + frontend_port_start            = 3389
++      + id                             = (known after apply)
++      + loadbalancer_id                = (known after apply)
++      + name                           = "demo-tfquickstart-nat-pool"
++      + protocol                       = "tcp"
++      + resource_group_name            = "demo-tfquickstart-sandbox-rg"
++    }
++
++  # azurerm_lb_probe.fabric_gateway will be created
++  + resource "azurerm_lb_probe" "fabric_gateway" {
++      + id                  = (known after apply)
++      + interval_in_seconds = 15
++      + load_balancer_rules = (known after apply)
++      + loadbalancer_id     = (known after apply)
++      + name                = "demo-tfquickstart-probe-19000"
++      + number_of_probes    = 2
++      + port                = 19000
++      + protocol            = (known after apply)
++      + resource_group_name = "demo-tfquickstart-sandbox-rg"
++    }
++
++  # azurerm_lb_probe.http will be created
++  + resource "azurerm_lb_probe" "http" {
++      + id                  = (known after apply)
++      + interval_in_seconds = 15
++      + load_balancer_rules = (known after apply)
++      + loadbalancer_id     = (known after apply)
++      + name                = "demo-tfquickstart-probe-19080"
++      + number_of_probes    = 2
++      + port                = 19080
++      + protocol            = (known after apply)
++      + resource_group_name = "demo-tfquickstart-sandbox-rg"
++    }
++
++  # azurerm_lb_rule.fabric_gateway will be created
++  + resource "azurerm_lb_rule" "fabric_gateway" {
++      + backend_address_pool_id        = (known after apply)
++      + backend_port                   = 19000
++      + disable_outbound_snat          = false
++      + enable_floating_ip             = false
++      + frontend_ip_configuration_id   = (known after apply)
++      + frontend_ip_configuration_name = "demo-tfquickstart-lb-fe-ipconfig"
++      + frontend_port                  = 19000
++      + id                             = (known after apply)
++      + idle_timeout_in_minutes        = (known after apply)
++      + load_distribution              = (known after apply)
++      + loadbalancer_id                = (known after apply)
++      + name                           = "fabric_gateway"
++      + probe_id                       = (known after apply)
++      + protocol                       = "tcp"
++      + resource_group_name            = "demo-tfquickstart-sandbox-rg"
++    }
++
++  # azurerm_lb_rule.http will be created
++  + resource "azurerm_lb_rule" "http" {
++      + backend_address_pool_id        = (known after apply)
++      + backend_port                   = 19080
++      + disable_outbound_snat          = false
++      + enable_floating_ip             = false
++      + frontend_ip_configuration_id   = (known after apply)
++      + frontend_ip_configuration_name = "demo-tfquickstart-lb-fe-ipconfig"
++      + frontend_port                  = 19080
++      + id                             = (known after apply)
++      + idle_timeout_in_minutes        = (known after apply)
++      + load_distribution              = (known after apply)
++      + loadbalancer_id                = (known after apply)
++      + name                           = "http"
++      + probe_id                       = (known after apply)
++      + protocol                       = "tcp"
++      + resource_group_name            = "demo-tfquickstart-sandbox-rg"
++    }
++
++  # azurerm_public_ip.sf will be created
++  + resource "azurerm_public_ip" "sf" {
++      + allocation_method            = "Dynamic"
++      + domain_name_label            = "tfq-demo-tfquickstart-sbx-sf"
++      + fqdn                         = (known after apply)
++      + id                           = (known after apply)
++      + idle_timeout_in_minutes      = 4
++      + ip_address                   = (known after apply)
++      + ip_version                   = "IPv4"
++      + location                     = "westus2"
++      + name                         = "demo-tfquickstart-pip"
++      + public_ip_address_allocation = (known after apply)
++      + resource_group_name          = "demo-tfquickstart-sandbox-rg"
++      + sku                          = "Basic"
++      + tags                         = (known after apply)
++    }
++
++  # azurerm_resource_group.default will be created
++  + resource "azurerm_resource_group" "default" {
++      + id       = (known after apply)
++      + location = "westus2"
++      + name     = "demo-tfquickstart-sandbox-rg"
++      + tags     = (known after apply)
++    }
++
++  # azurerm_service_fabric_cluster.default will be created
++  + resource "azurerm_service_fabric_cluster" "default" {
++      + add_on_features      = [
++          + "DnsService",
++        ]
++      + cluster_code_version = (known after apply)
++      + cluster_endpoint     = (known after apply)
++      + id                   = (known after apply)
++      + location             = "westus2"
++      + management_endpoint  = (known after apply)
++      + name                 = "demo-tfquickstart-sf"
++      + reliability_level    = "Bronze"
++      + resource_group_name  = "demo-tfquickstart-sandbox-rg"
++      + tags                 = (known after apply)
++      + upgrade_mode         = "Automatic"
++      + vm_image             = "Windows"
++
++      + azure_active_directory {
++          + client_application_id  = (known after apply)
++          + cluster_application_id = (known after apply)
++          + tenant_id              = "72f988bf-86f1-41af-91ab-2d7cd011db47"
++        }
++
++      + certificate {
++          + thumbprint           = (known after apply)
++          + thumbprint_secondary = (known after apply)
++          + x509_store_name      = "My"
++        }
++
++      + client_certificate_thumbprint {
++          + is_admin   = true
++          + thumbprint = (known after apply)
++        }
++
++      + diagnostics_config {
++          + blob_endpoint              = (known after apply)
++          + protected_account_key_name = "StorageAccountKey1"
++          + queue_endpoint             = (known after apply)
++          + storage_account_name       = "tfqdemotfquickstartsfsbx"
++          + table_endpoint             = (known after apply)
++        }
++
++      + fabric_settings {
++          + name       = "Security"
++          + parameters = {
++              + "ClusterProtectionLevel" = "EncryptAndSign"
++            }
++        }
++      + fabric_settings {
++          + name       = "ClusterManager"
++          + parameters = {
++              + "EnableDefaultServicesUpgrade" = "True"
++            }
++        }
++
++      + node_type {
++          + client_endpoint_port = 19000
++          + durability_level     = "Bronze"
++          + http_endpoint_port   = 19080
++          + instance_count       = 3
++          + is_primary           = true
++          + name                 = "default"
++
++          + application_ports {
++              + end_port   = 30000
++              + start_port = 20000
++            }
++
++          + ephemeral_ports {
++              + end_port   = 65534
++              + start_port = 49152
++            }
++        }
++    }
++
++  # azurerm_storage_account.sf will be created
++  + resource "azurerm_storage_account" "sf" {
++      + access_tier                       = (known after apply)
++      + account_encryption_source         = "Microsoft.Storage"
++      + account_kind                      = "Storage"
++      + account_replication_type          = "LRS"
++      + account_tier                      = "Standard"
++      + account_type                      = (known after apply)
++      + enable_advanced_threat_protection = false
++      + enable_blob_encryption            = true
++      + enable_file_encryption            = true
++      + id                                = (known after apply)
++      + is_hns_enabled                    = false
++      + location                          = "westus2"
++      + name                              = "tfqdemotfquickstartsfsbx"
++      + primary_access_key                = (sensitive value)
++      + primary_blob_connection_string    = (sensitive value)
++      + primary_blob_endpoint             = (known after apply)
++      + primary_blob_host                 = (known after apply)
++      + primary_connection_string         = (sensitive value)
++      + primary_dfs_endpoint              = (known after apply)
++      + primary_dfs_host                  = (known after apply)
++      + primary_file_endpoint             = (known after apply)
++      + primary_file_host                 = (known after apply)
++      + primary_location                  = (known after apply)
++      + primary_queue_endpoint            = (known after apply)
++      + primary_queue_host                = (known after apply)
++      + primary_table_endpoint            = (known after apply)
++      + primary_table_host                = (known after apply)
++      + primary_web_endpoint              = (known after apply)
++      + primary_web_host                  = (known after apply)
++      + resource_group_name               = "demo-tfquickstart-sandbox-rg"
++      + secondary_access_key              = (sensitive value)
++      + secondary_blob_connection_string  = (sensitive value)
++      + secondary_blob_endpoint           = (known after apply)
++      + secondary_blob_host               = (known after apply)
++      + secondary_connection_string       = (sensitive value)
++      + secondary_dfs_endpoint            = (known after apply)
++      + secondary_dfs_host                = (known after apply)
++      + secondary_file_endpoint           = (known after apply)
++      + secondary_file_host               = (known after apply)
++      + secondary_location                = (known after apply)
++      + secondary_queue_endpoint          = (known after apply)
++      + secondary_queue_host              = (known after apply)
++      + secondary_table_endpoint          = (known after apply)
++      + secondary_table_host              = (known after apply)
++      + secondary_web_endpoint            = (known after apply)
++      + secondary_web_host                = (known after apply)
++      + tags                              = (known after apply)
++
++      + identity {
++          + principal_id = (known after apply)
++          + tenant_id    = (known after apply)
++          + type         = (known after apply)
++        }
++
++      + network_rules {
++          + bypass                     = (known after apply)
++          + default_action             = (known after apply)
++          + ip_rules                   = (known after apply)
++          + virtual_network_subnet_ids = (known after apply)
++        }
++
++      + queue_properties {
++          + cors_rule {
++              + allowed_headers    = (known after apply)
++              + allowed_methods    = (known after apply)
++              + allowed_origins    = (known after apply)
++              + exposed_headers    = (known after apply)
++              + max_age_in_seconds = (known after apply)
++            }
++
++          + hour_metrics {
++              + enabled               = (known after apply)
++              + include_apis          = (known after apply)
++              + retention_policy_days = (known after apply)
++              + version               = (known after apply)
++            }
++
++          + logging {
++              + delete                = (known after apply)
++              + read                  = (known after apply)
++              + retention_policy_days = (known after apply)
++              + version               = (known after apply)
++              + write                 = (known after apply)
++            }
++
++          + minute_metrics {
++              + enabled               = (known after apply)
++              + include_apis          = (known after apply)
++              + retention_policy_days = (known after apply)
++              + version               = (known after apply)
++            }
++        }
++    }
++
++  # azurerm_storage_account.vmss will be created
++  + resource "azurerm_storage_account" "vmss" {
++      + access_tier                       = (known after apply)
++      + account_encryption_source         = "Microsoft.Storage"
++      + account_kind                      = "Storage"
++      + account_replication_type          = "LRS"
++      + account_tier                      = "Standard"
++      + account_type                      = (known after apply)
++      + enable_advanced_threat_protection = false
++      + enable_blob_encryption            = true
++      + enable_file_encryption            = true
++      + id                                = (known after apply)
++      + is_hns_enabled                    = false
++      + location                          = "westus2"
++      + name                              = "tfqdemotfquicksvmsssbx"
++      + primary_access_key                = (sensitive value)
++      + primary_blob_connection_string    = (sensitive value)
++      + primary_blob_endpoint             = (known after apply)
++      + primary_blob_host                 = (known after apply)
++      + primary_connection_string         = (sensitive value)
++      + primary_dfs_endpoint              = (known after apply)
++      + primary_dfs_host                  = (known after apply)
++      + primary_file_endpoint             = (known after apply)
++      + primary_file_host                 = (known after apply)
++      + primary_location                  = (known after apply)
++      + primary_queue_endpoint            = (known after apply)
++      + primary_queue_host                = (known after apply)
++      + primary_table_endpoint            = (known after apply)
++      + primary_table_host                = (known after apply)
++      + primary_web_endpoint              = (known after apply)
++      + primary_web_host                  = (known after apply)
++      + resource_group_name               = "demo-tfquickstart-sandbox-rg"
++      + secondary_access_key              = (sensitive value)
++      + secondary_blob_connection_string  = (sensitive value)
++      + secondary_blob_endpoint           = (known after apply)
++      + secondary_blob_host               = (known after apply)
++      + secondary_connection_string       = (sensitive value)
++      + secondary_dfs_endpoint            = (known after apply)
++      + secondary_dfs_host                = (known after apply)
++      + secondary_file_endpoint           = (known after apply)
++      + secondary_file_host               = (known after apply)
++      + secondary_location                = (known after apply)
++      + secondary_queue_endpoint          = (known after apply)
++      + secondary_queue_host              = (known after apply)
++      + secondary_table_endpoint          = (known after apply)
++      + secondary_table_host              = (known after apply)
++      + secondary_web_endpoint            = (known after apply)
++      + secondary_web_host                = (known after apply)
++      + tags                              = (known after apply)
++
++      + identity {
++          + principal_id = (known after apply)
++          + tenant_id    = (known after apply)
++          + type         = (known after apply)
++        }
++
++      + network_rules {
++          + bypass                     = (known after apply)
++          + default_action             = (known after apply)
++          + ip_rules                   = (known after apply)
++          + virtual_network_subnet_ids = (known after apply)
++        }
++
++      + queue_properties {
++          + cors_rule {
++              + allowed_headers    = (known after apply)
++              + allowed_methods    = (known after apply)
++              + allowed_origins    = (known after apply)
++              + exposed_headers    = (known after apply)
++              + max_age_in_seconds = (known after apply)
++            }
++
++          + hour_metrics {
++              + enabled               = (known after apply)
++              + include_apis          = (known after apply)
++              + retention_policy_days = (known after apply)
++              + version               = (known after apply)
++            }
++
++          + logging {
++              + delete                = (known after apply)
++              + read                  = (known after apply)
++              + retention_policy_days = (known after apply)
++              + version               = (known after apply)
++              + write                 = (known after apply)
++            }
++
++          + minute_metrics {
++              + enabled               = (known after apply)
++              + include_apis          = (known after apply)
++              + retention_policy_days = (known after apply)
++              + version               = (known after apply)
++            }
++        }
++    }
++
++  # azurerm_subnet.apim will be created
++  + resource "azurerm_subnet" "apim" {
++      + address_prefix       = "10.0.2.0/24"
++      + id                   = (known after apply)
++      + ip_configurations    = (known after apply)
++      + name                 = "demo-tfquickstart-apim-subnet"
++      + resource_group_name  = "demo-tfquickstart-sandbox-rg"
++      + virtual_network_name = "demo-tfquickstart-vnet"
++    }
++
++  # azurerm_subnet.default will be created
++  + resource "azurerm_subnet" "default" {
++      + address_prefix       = "10.0.0.0/24"
++      + id                   = (known after apply)
++      + ip_configurations    = (known after apply)
++      + name                 = "demo-tfquickstart-default-subnet"
++      + resource_group_name  = "demo-tfquickstart-sandbox-rg"
++      + virtual_network_name = "demo-tfquickstart-vnet"
++    }
++
++  # azurerm_subnet.sf will be created
++  + resource "azurerm_subnet" "sf" {
++      + address_prefix       = "10.0.1.0/24"
++      + id                   = (known after apply)
++      + ip_configurations    = (known after apply)
++      + name                 = "demo-tfquickstart-sf-subnet"
++      + resource_group_name  = "demo-tfquickstart-sandbox-rg"
++      + virtual_network_name = "demo-tfquickstart-vnet"
++    }
++
++  # azurerm_virtual_machine_scale_set.default will be created
++  + resource "azurerm_virtual_machine_scale_set" "default" {
++      + automatic_os_upgrade   = false
++      + id                     = (known after apply)
++      + license_type           = (known after apply)
++      + location               = "westus2"
++      + name                   = "demo-tfquickstart-vmss"
++      + overprovision          = false
++      + resource_group_name    = "demo-tfquickstart-sandbox-rg"
++      + single_placement_group = true
++      + tags                   = (known after apply)
++      + upgrade_policy_mode    = "Automatic"
++
++      + boot_diagnostics {
++          + enabled     = true
++          + storage_uri = (known after apply)
++        }
++
++      + extension {
++          + name                       = "ServiceFabricNodeVmExt_vmDefault"
++          + protected_settings         = (sensitive value)
++          + provision_after_extensions = []
++          + publisher                  = "Microsoft.Azure.ServiceFabric"
++          + settings                   = (known after apply)
++          + type                       = "ServiceFabricNode"
++          + type_handler_version       = "1.0"
++        }
++
++      + identity {
++          + identity_ids = (known after apply)
++          + principal_id = (known after apply)
++          + type         = (known after apply)
++        }
++
++      + network_profile {
++          + ip_forwarding = false
++          + name          = "NetworkProfile"
++          + primary       = true
++
++          + ip_configuration {
++              + application_gateway_backend_address_pool_ids = []
++              + application_security_group_ids               = []
++              + load_balancer_backend_address_pool_ids       = (known after apply)
++              + load_balancer_inbound_nat_rules_ids          = (known after apply)
++              + name                                         = "IPConfiguration"
++              + primary                                      = true
++              + subnet_id                                    = (known after apply)
++            }
++        }
++
++      + os_profile {
++          + admin_password       = (sensitive value)
++          + admin_username       = "tfquickstart"
++          + computer_name_prefix = "sfvm"
++        }
++
++      + os_profile_linux_config {
++          + disable_password_authentication = (known after apply)
++
++          + ssh_keys {
++              + key_data = (known after apply)
++              + path     = (known after apply)
++            }
++        }
++
++      + os_profile_secrets {
++          + source_vault_id = (known after apply)
++
++          + vault_certificates {
++              + certificate_store = "My"
++              + certificate_url   = (known after apply)
++            }
++        }
++
++      + os_profile_windows_config {
++          + enable_automatic_upgrades = true
++          + provision_vm_agent        = true
++        }
++
++      + sku {
++          + capacity = 3
++          + name     = "Standard_D1_v2"
++          + tier     = "Standard"
++        }
++
++      + storage_profile_data_disk {
++          + caching           = "ReadWrite"
++          + create_option     = "Empty"
++          + disk_size_gb      = 10
++          + lun               = 0
++          + managed_disk_type = (known after apply)
++        }
++
++      + storage_profile_image_reference {
++          + offer     = "WindowsServer"
++          + publisher = "MicrosoftWindowsServer"
++          + sku       = "2019-Datacenter-with-Containers"
++          + version   = "latest"
++        }
++
++      + storage_profile_os_disk {
++          + caching           = "ReadWrite"
++          + create_option     = "FromImage"
++          + managed_disk_type = "Standard_LRS"
++          + vhd_containers    = []
++        }
++    }
++
++  # azurerm_virtual_network.default will be created
++  + resource "azurerm_virtual_network" "default" {
++      + address_space       = [
++          + "10.0.0.0/16",
++        ]
++      + id                  = (known after apply)
++      + location            = "westus2"
++      + name                = "demo-tfquickstart-vnet"
++      + resource_group_name = "demo-tfquickstart-sandbox-rg"
++      + tags                = (known after apply)
++
++      + subnet {
++          + address_prefix = (known after apply)
++          + id             = (known after apply)
++          + name           = (known after apply)
++          + security_group = (known after apply)
++        }
++    }
++
++  # random_string.client_password will be created
++  + resource "random_string" "client_password" {
++      + id          = (known after apply)
++      + length      = 32
++      + lower       = true
++      + min_lower   = 0
++      + min_numeric = 0
++      + min_special = 0
++      + min_upper   = 0
++      + number      = true
++      + result      = (known after apply)
++      + special     = true
++      + upper       = true
++    }
++
++  # random_string.cluster_password will be created
++  + resource "random_string" "cluster_password" {
++      + id          = (known after apply)
++      + length      = 32
++      + lower       = true
++      + min_lower   = 0
++      + min_numeric = 0
++      + min_special = 0
++      + min_upper   = 0
++      + number      = true
++      + result      = (known after apply)
++      + special     = true
++      + upper       = true
++    }
++
++Plan: 28 to add, 0 to change, 0 to destroy.
++
++------------------------------------------------------------------------
++```
+diff --git a/quickstart/301-service-fabric/service_fabric.tf b/quickstart/301-service-fabric/service_fabric.tf
+new file mode 100644
+index 0000000..c115cfb
+--- /dev/null
++++ b/quickstart/301-service-fabric/service_fabric.tf
+@@ -0,0 +1,85 @@
++resource "random_string" "sf_name_prefix" {
++  length  = 22
++  special = false
++  numeric = false
++  upper   = false
++}
++
++resource "azurerm_storage_account" "sf" {
++  name                     = "${random_string.sf_name_prefix.result}sf"
++  resource_group_name      = azurerm_resource_group.default.name
++  location                 = azurerm_resource_group.default.location
++  account_tier             = "Standard"
++  account_replication_type = "LRS"
++}
++
++resource "azurerm_service_fabric_cluster" "default" {
++  name                = "${var.name}-sf"
++  resource_group_name = azurerm_resource_group.default.name
++  location            = azurerm_resource_group.default.location
++  reliability_level   = "Bronze"
++  vm_image            = "Windows"
++  management_endpoint = "https://${azurerm_public_ip.sf.fqdn}:19080"
++  upgrade_mode        = "Automatic"
++
++  add_on_features = ["DnsService"]
++
++  node_type {
++    name                 = "default"
++    instance_count       = 3
++    is_primary           = true
++    client_endpoint_port = 19000
++    http_endpoint_port   = 19080
++
++    application_ports {
++      start_port = 20000
++      end_port   = 30000
++    }
++
++    ephemeral_ports {
++      start_port = 49152 # possibly open client ports
++      end_port   = 65534
++    }
++  }
++
++  azure_active_directory {
++    tenant_id              = data.azurerm_subscription.current.tenant_id
++    cluster_application_id = azuread_application.client.application_id
++    client_application_id  = azuread_application.cluster.application_id
++  }
++
++  fabric_settings {
++    name = "Security"
++
++    parameters = {
++      "ClusterProtectionLevel" = "EncryptAndSign"
++    }
++  }
++
++  fabric_settings {
++    name = "ClusterManager"
++
++    parameters = {
++      EnableDefaultServicesUpgrade = "True"
++    }
++  }
++
++  certificate {
++    thumbprint           = azurerm_key_vault_certificate.cluster.thumbprint
++    thumbprint_secondary = azurerm_key_vault_certificate.cluster.thumbprint
++    x509_store_name      = "My"
++  }
++
++  client_certificate_thumbprint {
++    thumbprint = azurerm_key_vault_certificate.client.thumbprint
++    is_admin   = true
++  }
++
++  diagnostics_config {
++    storage_account_name       = azurerm_storage_account.sf.name
++    protected_account_key_name = "StorageAccountKey1"
++    blob_endpoint              = azurerm_storage_account.sf.primary_blob_endpoint
++    queue_endpoint             = azurerm_storage_account.sf.primary_queue_endpoint
++    table_endpoint             = azurerm_storage_account.sf.primary_table_endpoint
++  }
++}
+diff --git a/quickstart/301-service-fabric/variables.tf b/quickstart/301-service-fabric/variables.tf
+new file mode 100644
+index 0000000..50b4504
+--- /dev/null
++++ b/quickstart/301-service-fabric/variables.tf
+@@ -0,0 +1,44 @@
++# ----------------------
++# General Settings
++# ----------------------
++variable "name" {
++  default = "demo-tfquickstart"
++}
++
++variable "location" {
++  default = "West US 2"
++}
++
++variable "dns_prefix" {
++  default = "tfq"
++}
++
++variable "environment" {
++  default = "sandbox"
++}
++
++variable "environment_short" {
++  default = "sbx"
++}
++
++# ----------------------
++# Service Fabric Cluster Settings
++# ----------------------
++variable "cluster_size" {
++  default = 3
++}
++
++variable "admin_username" {
++  default = "tfquickstart"
++}
++
++variable "admin_password" {
++  default = "password.1!"
++}
++
++# Your object_id in Azure Active Directory.
++# Has to be manually provided when deploying with azure-cli auth.
++# Used in creating KeyVault Access Policies
++variable "client_object_id" {
++  default = "0938d8bc-3351-4bcc-ddb5-113c2218ff0d" 
++}
+diff --git a/quickstart/301-service-fabric/vmss.tf b/quickstart/301-service-fabric/vmss.tf
+new file mode 100644
+index 0000000..70d2833
+--- /dev/null
++++ b/quickstart/301-service-fabric/vmss.tf
+@@ -0,0 +1,118 @@
++resource "random_string" "vmss_name_prefix" {
++  length  = 20
++  special = false
++  numeric = false
++  upper   = false
++}
++
++resource "azurerm_storage_account" "vmss" {
++  name                     = "${random_string.vmss_name_prefix.result}vmss"
++  resource_group_name      = azurerm_resource_group.default.name
++  location                 = azurerm_resource_group.default.location
++  account_tier             = "Standard"
++  account_replication_type = "LRS"
++}
++
++# Vm Scale Set
++resource "azurerm_virtual_machine_scale_set" "default" {
++  name                = "${var.name}-vmss"
++  location            = azurerm_resource_group.default.location
++  resource_group_name = azurerm_resource_group.default.name
++  upgrade_policy_mode = "Automatic"
++  overprovision       = false
++
++  sku {
++    name     = "Standard_D1_v2"
++    tier     = "Standard"
++    capacity = var.cluster_size
++  }
++
++  storage_profile_image_reference {
++    publisher = "MicrosoftWindowsServer"
++    offer     = "WindowsServer"
++    sku       = "2019-Datacenter-with-Containers"
++    version   = "latest"
++  }
++
++  storage_profile_os_disk {
++    name              = ""
++    caching           = "ReadWrite"
++    create_option     = "FromImage"
++    managed_disk_type = "Standard_LRS"
++  }
++
++  storage_profile_data_disk {
++    lun           = 0
++    caching       = "ReadWrite"
++    create_option = "Empty"
++    disk_size_gb  = 10
++  }
++
++  os_profile {
++    computer_name_prefix = "sfvm"
++    admin_username       = var.admin_username
++    admin_password       = var.admin_password
++  }
++
++  os_profile_secrets {
++    source_vault_id = azurerm_key_vault.cluster.id
++
++    vault_certificates {
++      certificate_url   = "${azurerm_key_vault.cluster.vault_uri}secrets/${azurerm_key_vault_certificate.cluster.name}/${azurerm_key_vault_certificate.cluster.version}"
++      certificate_store = "My"
++    }
++  }
++
++  # These default to on if not specified, causing terraform to always want to make changes
++  os_profile_windows_config {
++    enable_automatic_upgrades = true
++    provision_vm_agent        = true
++  }
++
++  boot_diagnostics {
++    enabled     = true
++    storage_uri = azurerm_storage_account.vmss.primary_blob_endpoint
++  }
++
++  network_profile {
++    name    = "NetworkProfile"
++    primary = true
++
++    ip_configuration {
++      primary                                = true
++      name                                   = "IPConfiguration"
++      subnet_id                              = azurerm_subnet.sf.id
++      load_balancer_backend_address_pool_ids = ["${azurerm_lb_backend_address_pool.sf.id}"]
++      load_balancer_inbound_nat_rules_ids    = ["${azurerm_lb_nat_pool.sf[0].id}"]
++    }
++  }
++
++  extension {
++    name                 = "ServiceFabricNodeVmExt_vmDefault" # This extension connects vms to the cluster.
++    publisher            = "Microsoft.Azure.ServiceFabric"
++    type                 = "ServiceFabricNode"
++    type_handler_version = "1.0"
++
++    settings = <<EOT
++      {
++        "certificate": {
++          "thumbprint": "${azurerm_key_vault_certificate.cluster.thumbprint}",
++          "x509StoreName": "My"
++        },
++        "clusterEndpoint": "${azurerm_service_fabric_cluster.default.cluster_endpoint}",
++        "nodeTypeRef": "default",
++        "dataPath": "D:\\SvcFab",
++        "enableParallelJobs": true,
++        "durabilityLevel": "Bronze",
++        "nicPrefixOverride": "10.0.1.0/24"
++      }
++    EOT
++
++    protected_settings = <<EOT
++      {
++        "StorageAccountKey1": "${azurerm_storage_account.sf.primary_access_key}"
++      }
++    EOT
++  }
++}
++

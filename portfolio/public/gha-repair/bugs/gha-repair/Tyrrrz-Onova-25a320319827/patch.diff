@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/CD.yml b/.github/workflows/CD.yml
+index d1cd0f3..25e751b 100644
+--- a/.github/workflows/CD.yml
++++ b/.github/workflows/CD.yml
+@@ -32,6 +32,6 @@ jobs:
+            -Uri "${{ secrets.DISCORD_WEBHOOK }}" `
+            -Method "POST" `
+            -ContentType "application/json; charset=UTF-8" `
+-           -Body "{`"content`":`"[**Onova** ver. ${{ github.ref }} released](https://github.com/Tyrrrz/Onova/releases/latest)`"}" `
++           -Body '{"content":"**Onova** new version released!\nRef: `${{ github.ref }}`\nChangelog: <https://github.com/Tyrrrz/Onova/blob/${{ github.sha }}/Changelog.md>"}' `
+            -UseBasicParsing
+         shell: pwsh

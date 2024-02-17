@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index a2c6740..8cb8098 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -98,8 +98,7 @@ jobs:
+ 
+       - name: Publish to Test PyPI
+         # only if working on develop
+-        # TODO change from master to develop
+-        if: github.ref == 'refs/head/master'
++        if: github.ref == 'refs/head/develop'
+         uses: pypa/gh-action-pypi-publish@master
+         with:
+           user: __token__

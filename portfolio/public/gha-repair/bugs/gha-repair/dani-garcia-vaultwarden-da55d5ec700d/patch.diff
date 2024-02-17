@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index e2084f9..81151f1 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -10,6 +10,15 @@ on:
+       - "docker/**"
+       - "hooks/**"
+       - "tools/**"
++  pull_request:
++    # Ignore when there are only changes done too one of these paths
++    paths-ignore:
++      - "**.md"
++      - "**.txt"
++      - "azure-pipelines.yml"
++      - "docker/**"
++      - "hooks/**"
++      - "tools/**"
+ 
+ jobs:
+   build:

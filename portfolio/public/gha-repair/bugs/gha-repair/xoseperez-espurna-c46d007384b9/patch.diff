@@ -1,0 +1,22 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index a7bf4af..354b395 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -89,7 +89,7 @@ jobs:
+       - name: Archive
+         run: |
+           pushd build
+-          zip \
++          time zip \
+             --quiet \
+             --recurse-paths \
+             ../Build_${{ matrix.thread }}.zip ./
+@@ -117,7 +117,7 @@ jobs:
+ 
+       - name: Prepare debug info
+         run: |
+-          zip \
++          time zip \
+             -9 \
+             --quiet \
+             --junk-paths \

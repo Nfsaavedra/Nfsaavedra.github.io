@@ -1,0 +1,85 @@
+diff --git a/.github/workflows/coverage.yml b/.github/workflows/coverage.yml
+deleted file mode 100644
+index 97737e5..0000000
+--- a/.github/workflows/coverage.yml
++++ /dev/null
+@@ -1,41 +0,0 @@
+-name: Coverage
+-
+-on:
+-  push:
+-    branches: [ master ]
+-  pull_request:
+-    branches: [ master ]
+-
+-jobs:
+-  coverage:
+-    name: Coveralls and Codecov
+-    runs-on: macos-latest
+-    steps:
+-      - uses: actions/checkout@v2.3.4
+-
+-      - name: Install required libraries
+-        run: brew install libgit2 boost libarchive
+-
+-      - run: mkdir build
+-
+-      - name: Build Poac
+-        run: cmake -DBUILD_TESTING=ON -DCMAKE_BUILD_TYPE=Coverage .. && make install
+-        working-directory: build
+-
+-      - name: Test Poac
+-        run: ctest --output-on-failure --verbose
+-        working-directory: build
+-
+-      - name: Upload coverage to Coveralls
+-        if: success()
+-        run: |
+-          pip3 install cpp-coveralls
+-          coveralls --gcov-options '\-lp' -t ${COVERALLS_TOKEN}
+-        env:
+-          COVERALLS_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
+-
+-      - name: Upload coverage to Codecov
+-        uses: codecov/codecov-action@v1
+-        if: success()
+-        with:
+-          token: ${{ secrets.CODECOV_TOKEN }}
+diff --git a/.github/workflows/linux.yml b/.github/workflows/linux.yml
+index 4bfd8cc..b8ae5db 100644
+--- a/.github/workflows/linux.yml
++++ b/.github/workflows/linux.yml
+@@ -46,6 +46,12 @@ jobs:
+             cc: gcc-10, cxx: g++-10,
+             pacakge: g++-10,
+           }
++        include:
++          - build_type: Coverage
++            compiler: {
++              cc: gcc-10, cxx: g++-10,
++              pacakge: g++-10,
++            }
+     env:
+       CC: ${{ matrix.compiler.cc }}
+       CXX: ${{ matrix.compiler.cxx }}
+@@ -159,3 +165,20 @@ jobs:
+         with:
+           name: ${{ github.job }}-${{ matrix.compiler.pacakge }}
+           path: poac
++
++      - uses: actions/setup-python@v1
++        if: success() && matrix.build_type == 'Coverage'
++
++      - name: Upload coverage to Coveralls
++        if: success() && matrix.build_type == 'Coverage'
++        run: |
++          pip install cpp-coveralls
++          coveralls --gcov-options '\-lp' -t ${COVERALLS_TOKEN}
++        env:
++          COVERALLS_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
++
++      - name: Upload coverage to Codecov
++        uses: codecov/codecov-action@v1
++        if: success() && matrix.build_type == 'Coverage'
++        with:
++          token: ${{ secrets.CODECOV_TOKEN }}

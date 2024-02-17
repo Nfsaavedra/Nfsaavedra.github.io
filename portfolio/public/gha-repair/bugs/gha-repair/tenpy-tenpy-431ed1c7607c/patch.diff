@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/publish-pypi.yml b/.github/workflows/publish-pypi.yml
+index 479cd9c..eb948e0 100644
+--- a/.github/workflows/publish-pypi.yml
++++ b/.github/workflows/publish-pypi.yml
+@@ -1,6 +1,8 @@
+ name: Upload Python Package to PyPI
+ 
+-on: [push]
++on:
++  release:
++    types: [created]
+ 
+ jobs:
+   build-n-publish:

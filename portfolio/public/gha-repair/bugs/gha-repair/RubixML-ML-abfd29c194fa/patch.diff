@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 49919d9..214fca1 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -9,7 +9,7 @@ jobs:
+     strategy:
+       matrix:
+         operating-system: [ubuntu-latest, macos-latest]
+-        php-versions: ['7.2', '7.3', '7.4']
++        php-versions: ['7.2', '7.3', '7.4', '8.0']
+ 
+     steps:
+       - name: Checkout

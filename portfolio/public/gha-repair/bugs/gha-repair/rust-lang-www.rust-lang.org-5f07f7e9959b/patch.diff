@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 1094c5f..e6f4b3f 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -8,6 +8,8 @@ jobs:
+     steps:
+       - uses: actions/checkout@v2
+ 
++      - uses: dtolnay/rust-toolchain@stable
++
+       - name: Formatting
+         run: |
+           # Install extra rustup components

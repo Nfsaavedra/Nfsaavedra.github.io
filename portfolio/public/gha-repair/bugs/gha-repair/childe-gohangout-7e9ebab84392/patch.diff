@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/create-github-release.yml b/.github/workflows/create-github-release.yml
+index 424c6e4..5b1072e 100644
+--- a/.github/workflows/create-github-release.yml
++++ b/.github/workflows/create-github-release.yml
+@@ -40,6 +40,7 @@ jobs:
+           cp build/gohangout-windows-arm64-${GITHUB_REF_NAME}.exe gohangout-windows-arm64.exe
+           cp build/gohangout-linux-x64-${GITHUB_REF_NAME} gohangout-linux-x64
+           cp build/gohangout-linux-386-${GITHUB_REF_NAME} gohangout-linux-386
++          cp build/gohangout-linux-arm64-${GITHUB_REF_NAME} gohangout-linux-arm64
+           cp build/gohangout-darwin-x64-${GITHUB_REF_NAME} gohangout-darwin-x64
+ 
+       - name: LS

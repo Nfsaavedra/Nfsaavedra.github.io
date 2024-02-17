@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index deef81e..a4f01c5 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -64,7 +64,7 @@ jobs:
+       - name: Deploy qView
+         shell: pwsh
+         run: |
+-          if (-Not ${{ matrix.skipPlugins }}) {
++          if ("${{ matrix.skipPlugins }}" == "true") {
+             Invoke-Expression "& 'dist/scripts/download-plugins.ps1'"
+           }
+           if ($IsWindows) {

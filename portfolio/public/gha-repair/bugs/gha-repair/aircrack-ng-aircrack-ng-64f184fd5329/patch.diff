@@ -1,0 +1,37 @@
+diff --git a/.github/workflows/check-release-ready.yml b/.github/workflows/check-release-ready.yml
+index 9cfab43..6031188 100644
+--- a/.github/workflows/check-release-ready.yml
++++ b/.github/workflows/check-release-ready.yml
+@@ -74,6 +74,20 @@ jobs:
+           done
+           set +e
+       -
++        name: Check for iw update
++        id: iw
++        run: |
++          IW_URL=$(grep -E '^IW_SOURCE=' scripts/airmon-ng.linux | awk -F\" '{print $2}' | xargs dirname)
++          wget ${IW_URL} -O index.html
++          CUR_IW=$(grep '<a href="iw' index.html | grep 'xz' | awk -F\" '{print $2}' | sort -V | tail -n 1)
++          AIRMON_IW=$(echo ${IW_URL} | xargs basename)
++
++          if [ "${CUR_IW}" = "${AIRMON_IW}" ]; then
++            echo "update=0" >> $GITHUB_OUTPUT
++          else
++            echo "update=1" >> $GITHUB_OUTPUT
++          fi
++      -
+         name: Check all the things
+         run: |
+           DO_FAIL=0
+@@ -127,6 +141,11 @@ jobs:
+             DO_FAIL=1
+           fi
+ 
++          if [ "${{steps.iw.outputs.update }}" -eq 1 ]; then
++            echo "[!] Airmon-ng: An updated version of iw is available"
++            DO_FAIL=1
++          fi
++
+           [ ${DO_FAIL} -eq 1 ] && exit 1
+ 
+   #build-other-linux:

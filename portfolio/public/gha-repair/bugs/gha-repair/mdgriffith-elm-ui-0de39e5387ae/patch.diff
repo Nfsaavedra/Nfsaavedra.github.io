@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/tests.yml b/.github/workflows/tests.yml
+index 1115cab..1a06204 100644
+--- a/.github/workflows/tests.yml
++++ b/.github/workflows/tests.yml
+@@ -27,7 +27,7 @@ jobs:
+           ${{ runner.os }}-node-
+ 
+     - name: Install
+-      run: npm install
++      run: npm ci
+     
+     - name: Elm test suite
+       run: npm run test

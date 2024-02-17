@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/linter.yml b/.github/workflows/linter.yml
+index 9844458..dd5bd7a 100644
+--- a/.github/workflows/linter.yml
++++ b/.github/workflows/linter.yml
+@@ -5,8 +5,6 @@ name: Linter
+ # Controls when the action will run. Triggers the workflow on push or pull request
+ # events but only for the master branch
+ on:
+-  push:
+-    branches: [ master ]
+   pull_request:
+     branches: [ master ]
+ 

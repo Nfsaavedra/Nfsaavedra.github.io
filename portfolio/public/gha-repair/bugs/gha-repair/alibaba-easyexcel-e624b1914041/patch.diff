@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 9701c68..86c3403 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -19,8 +19,7 @@ name: Publish to Maven
+ on:
+   push:
+     tags:
+-      - **
+-
++      - *
+ jobs:
+   publish:
+     runs-on: ubuntu-latest

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/docker.yml b/.github/workflows/docker.yml
+index ffd2860..a9a1d45 100644
+--- a/.github/workflows/docker.yml
++++ b/.github/workflows/docker.yml
+@@ -7,7 +7,7 @@ on:
+     branches: [master]
+ 
+ jobs:
+-  build:
++  build-and-push:
+     runs-on: ubuntu-latest
+     steps:
+       - name: checkout code

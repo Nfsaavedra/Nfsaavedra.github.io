@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/go.yml b/.github/workflows/go.yml
+index 0065213..791f496 100644
+--- a/.github/workflows/go.yml
++++ b/.github/workflows/go.yml
+@@ -24,5 +24,5 @@ jobs:
+     - name: Build
+       run: go build -v ./...
+ 
+-    - name: Test
+-      run: go test -v ./...
++    #- name: Test
++    #  run: go test -v ./...

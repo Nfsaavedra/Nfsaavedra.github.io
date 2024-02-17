@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/CI.yml b/.github/workflows/CI.yml
+index 743d5f9..f1086d3 100644
+--- a/.github/workflows/CI.yml
++++ b/.github/workflows/CI.yml
+@@ -26,10 +26,12 @@ jobs:
+         arch:
+           - x64
+         suite:
+-          - '["AlexNet", "VGG", "GoogLeNet", "SqueezeNet"]'
++          - '["AlexNet", "VGG"]'
++          - '["GoogLeNet", "SqueezeNet"]'
+           - '["EfficientNet", "MobileNet"]'
+           - '[r"/*/ResNet*", "ResNeXt"]'
+-          - '["Inception", "DenseNet"]'
++          - '"Inception"'
++          - '"DenseNet"'
+           - '"ConvNeXt"'
+           - '"ConvMixer"'
+           - '"ViT"'

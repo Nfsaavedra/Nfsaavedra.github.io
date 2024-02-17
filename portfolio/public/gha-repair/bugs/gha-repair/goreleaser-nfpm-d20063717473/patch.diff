@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 330b2f9..d251071 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -12,7 +12,7 @@ on:
+       - 'Taskfile.yml'
+       - 'Dockerfile'
+       - '.github/workflows/build.yml'
+-      - 'testdata/'
++      - 'testdata/**'
+   pull_request:
+     paths:
+       - 'go.*'

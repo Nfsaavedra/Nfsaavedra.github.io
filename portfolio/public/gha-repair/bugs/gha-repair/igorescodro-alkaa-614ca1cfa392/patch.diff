@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/android_tests.yml b/.github/workflows/android_tests.yml
+index 91ecdd3..c29f48d 100644
+--- a/.github/workflows/android_tests.yml
++++ b/.github/workflows/android_tests.yml
+@@ -16,5 +16,13 @@ jobs:
+           java-version: '11'
+           distribution: 'adopt'
+ 
+-      - name: Run instrumented tests
+-        run: ./gradlew alkaaDevicesGroupDebugAndroidTest -Pandroid.sdk.channel=3
++      - name: Android Emulator Runner
++        uses: ReactiveCircus/android-emulator-runner@v2.22.0
++        with:
++          api-level: 29
++          script: ./gradlew connectedCheck --stacktrace
++
++#     UTP disables due to some issues with GitHub Actions
++#     For more information: https://issuetracker.google.com/issues/193118030
++#      - name: Run instrumented tests
++#        run: ./gradlew alkaaDevicesGroupDebugAndroidTest -Pandroid.sdk.channel=3

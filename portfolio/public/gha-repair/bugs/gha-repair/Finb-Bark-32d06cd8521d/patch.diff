@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/testflight.yaml b/.github/workflows/testflight.yaml
+index 7675e36..37c4bf1 100644
+--- a/.github/workflows/testflight.yaml
++++ b/.github/workflows/testflight.yaml
+@@ -40,4 +40,5 @@ jobs:
+         APP_STORE_CONNECT_KEY_CONTENT: ${{ secrets.APP_STORE_CONNECT_KEY_CONTENT }}
+         BARK_KEY: ${{ secrets.BARK_KEY }}
+         BUILD_NUMBER: ${{ github.event.inputs.buildNumber }}
+-        MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}
+\ No newline at end of file
++        MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}
++        MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+\ No newline at end of file

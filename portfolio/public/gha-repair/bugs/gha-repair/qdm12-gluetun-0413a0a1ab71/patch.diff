@@ -1,0 +1,33 @@
+diff --git a/.github/workflows/dockerhub-description.yml b/.github/workflows/dockerhub-description.yml
+index d99d35a..57e65e4 100644
+--- a/.github/workflows/dockerhub-description.yml
++++ b/.github/workflows/dockerhub-description.yml
+@@ -1,18 +1,22 @@
+ name: Docker Hub description
+ on:
+   push:
+-    branches: [master]
++    branches:
++      - master
+     paths:
+       - README.md
+       - .github/workflows/dockerhub-description.yml
+ jobs:
+-  dockerHubDescription:
++  docker-hub-description:
++    if: github.repository == 'qdm12/gluetun'
+     runs-on: ubuntu-latest
++    permissions:
++      actions: read
++      contents: read
+     steps:
+-      - name: Checkout
+-        uses: actions/checkout@v3
+-      - name: Docker Hub Description
+-        uses: peter-evans/dockerhub-description@v3
++      - uses: actions/checkout@v3
++
++      - uses: peter-evans/dockerhub-description@v3
+         with:
+           username: qmcgaw
+           password: ${{ secrets.DOCKERHUB_PASSWORD }}

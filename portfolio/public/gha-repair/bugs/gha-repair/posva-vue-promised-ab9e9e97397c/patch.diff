@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 1b877f8..b222f22 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -67,4 +67,4 @@ jobs:
+       - name: Size
+         run: pnpm run size
+ 
+-      - uses: codecov/codecov-action@v3
++      - uses: codecov/codecov-action@v4

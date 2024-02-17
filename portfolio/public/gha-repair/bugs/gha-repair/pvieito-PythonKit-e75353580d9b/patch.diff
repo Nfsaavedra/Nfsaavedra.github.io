@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/continuous-integration.yml b/.github/workflows/continuous-integration.yml
+index 9145c7d..119dfe1 100644
+--- a/.github/workflows/continuous-integration.yml
++++ b/.github/workflows/continuous-integration.yml
+@@ -10,7 +10,7 @@ jobs:
+       matrix:
+         os:
+           - ubuntu-latest
+-          - macOS-latest
++          - macOS-11
+     runs-on: ${{ matrix.os }}
+     steps:
+       - uses: actions/checkout@v1

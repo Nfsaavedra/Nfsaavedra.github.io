@@ -1,0 +1,265 @@
+diff --git a/.github/workflows/build-android-toolchain.yml b/.github/workflows/build-android-toolchain.yml
+index e837a0a..92c7274 100644
+--- a/.github/workflows/build-android-toolchain.yml
++++ b/.github/workflows/build-android-toolchain.yml
+@@ -79,7 +79,7 @@ jobs:
+     - name: Install dependencies
+       run: sudo ./build/Linux/000-install-dependencies.sh
+     - name: Install NDK
+-      run: ./build/Linux/002-install-ndk.sh
++      run: ./build/Linux/002-install-ndk-25b.sh
+     - name: Define build folders
+       run: ./build/Linux/003-define-build-folders.sh
+     - uses: actions/download-artifact@v2
+@@ -116,7 +116,7 @@ jobs:
+     - name: Install dependencies
+       run: sudo ./build/Linux/000-install-dependencies.sh
+     - name: Install NDK
+-      run: ./build/Linux/002-install-ndk.sh
++      run: ./build/Linux/002-install-ndk-25b.sh
+     - name: Define build folders
+       run: ./build/Linux/003-define-build-folders.sh
+     - uses: actions/download-artifact@v2
+@@ -153,7 +153,7 @@ jobs:
+     - name: Install dependencies
+       run: sudo ./build/Linux/000-install-dependencies.sh
+     - name: Install NDK
+-      run: ./build/Linux/002-install-ndk.sh
++      run: ./build/Linux/002-install-ndk-25b.sh
+     - name: Define build folders
+       run: ./build/Linux/003-define-build-folders.sh
+     - uses: actions/download-artifact@v2
+@@ -190,7 +190,7 @@ jobs:
+     - name: Install dependencies
+       run: sudo ./build/Linux/000-install-dependencies.sh
+     - name: Install NDK
+-      run: ./build/Linux/002-install-ndk.sh
++      run: ./build/Linux/002-install-ndk-25b.sh
+     - name: Define build folders
+       run: ./build/Linux/003-define-build-folders.sh
+     - uses: actions/download-artifact@v2
+@@ -453,7 +453,7 @@ jobs:
+     steps:
+     - uses: actions/checkout@v1
+     - name: Install NDK
+-      run: ./build/Linux/002-install-ndk.sh
++      run: ./build/Linux/002-install-ndk-25b.sh
+     - uses: actions/download-artifact@v2
+       with:
+         name: swift-android-bin
+diff --git a/build/Linux/002-install-ndk.sh b/build/Linux/002-install-ndk.sh
+deleted file mode 100755
+index 89627d3..0000000
+--- a/build/Linux/002-install-ndk.sh
++++ /dev/null
+@@ -1,47 +0,0 @@
+-#!/bin/bash
+-
+-cd $HOME
+-
+-for version in 23b
+-do
+-    ndk=android-ndk-r$version
+-    ndk_zip=$ndk-linux.zip
+-
+-    wget --progress=bar:force https://dl.google.com/android/repository/$ndk_zip
+-
+-    unzip $ndk_zip -x \
+-        "$ndk/toolchains/mips64el-linux-android-4.9*" \
+-        "$ndk/toolchains/mipsel-linux-android-4.9*" \
+-        \
+-        "$ndk/platforms/android-9*" \
+-        "$ndk/platforms/android-12*" \
+-        "$ndk/platforms/android-13*" \
+-        "$ndk/platforms/android-14*" \
+-        "$ndk/platforms/android-15*" \
+-        "$ndk/platforms/android-16*" \
+-        "$ndk/platforms/android-17*" \
+-        "$ndk/platforms/android-18*" \
+-        "$ndk/platforms/android-19*" \
+-        "$ndk/platforms/android-22*" \
+-        "$ndk/platforms/android-23*" \
+-        "$ndk/platforms/android-24*" \
+-        "$ndk/platforms/android-25*" \
+-        "$ndk/platforms/android-26*" \
+-        "$ndk/platforms/android-27*" \
+-        "$ndk/platforms/android-28*" \
+-        "$ndk/platforms/android-29*" \
+-        "$ndk/platforms/android-30*" > /dev/null
+-
+-    rm $ndk_zip
+-done
+-
+-# libatomic >_<
+-cp "$ndk/toolchains/llvm/prebuilt/linux-x86_64/aarch64-linux-android/lib64/libatomic.a" "$ndk/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x"
+-cp "$ndk/toolchains/llvm/prebuilt/linux-x86_64/x86_64-linux-android/lib64/libatomic.a" "$ndk/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/x86_64-linux-android/4.9.x"
+-cp "$ndk/toolchains/llvm/prebuilt/linux-x86_64/arm-linux-androideabi/lib/libatomic.a" "$ndk/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/arm-linux-androideabi/4.9.x"
+-cp "$ndk/toolchains/llvm/prebuilt/linux-x86_64/i686-linux-android/lib/libatomic.a" "$ndk/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/i686-linux-android/4.9.x"
+-
+-# exports
+-echo "export ANDROID_NDK23=\$HOME/android-ndk-r23b" >> .build_env
+-echo "export ANDROID_NDK=\$ANDROID_NDK23" >> .build_env
+-echo "export ANDROID_NDK_HOME=\$ANDROID_NDK23" >> .build_env
+\ No newline at end of file
+diff --git a/patches/release/5.7/swift/0005-Disable-tests-acording-to-https-github.com-apple-swi.patch b/patches/release/5.7/swift/0005-Disable-tests-acording-to-https-github.com-apple-swi.patch
+deleted file mode 100644
+index 2c4626f..0000000
+--- a/patches/release/5.7/swift/0005-Disable-tests-acording-to-https-github.com-apple-swi.patch
++++ /dev/null
+@@ -1,26 +0,0 @@
+-From 06d2b3cfcf6242f936abb66095f789c021701e50 Mon Sep 17 00:00:00 2001
+-From: Anton Pogonets <apogonets@readdle.com>
+-Date: Thu, 1 Apr 2021 15:58:18 +0300
+-Subject: [PATCH 6/7] Disable tests acording to
+- https://github.com/apple/swift/pull/34491
+-
+----
+- test/Interop/Cxx/class/memory-layout-silgen.swift | 3 +++
+- 1 file changed, 3 insertions(+)
+-
+-diff --git a/test/Interop/Cxx/class/memory-layout-silgen.swift b/test/Interop/Cxx/class/memory-layout-silgen.swift
+-index 3567242c2ea..c0b531ca317 100644
+---- a/test/Interop/Cxx/class/memory-layout-silgen.swift
+-+++ b/test/Interop/Cxx/class/memory-layout-silgen.swift
+-@@ -1,5 +1,8 @@
+- // RUN: %target-swiftxx-frontend -I %S/Inputs -emit-ir -o - %s | %FileCheck %s
+- 
+-+// UNSUPPORTED: OS=linux-android
+-+// UNSUPPORTED: OS=linux-androideabi
+-+
+- import MemoryLayout
+- 
+- var v = PrivateMemberLayout()
+--- 
+-2.29.2
+-
+diff --git a/patches/release/5.7/swift/0006-Disable-tests-acording-to-https-github.com-apple-swi.patch b/patches/release/5.7/swift/0006-Disable-tests-acording-to-https-github.com-apple-swi.patch
+new file mode 100644
+index 0000000..2c4626f
+--- /dev/null
++++ b/patches/release/5.7/swift/0006-Disable-tests-acording-to-https-github.com-apple-swi.patch
+@@ -0,0 +1,26 @@
++From 06d2b3cfcf6242f936abb66095f789c021701e50 Mon Sep 17 00:00:00 2001
++From: Anton Pogonets <apogonets@readdle.com>
++Date: Thu, 1 Apr 2021 15:58:18 +0300
++Subject: [PATCH 6/7] Disable tests acording to
++ https://github.com/apple/swift/pull/34491
++
++---
++ test/Interop/Cxx/class/memory-layout-silgen.swift | 3 +++
++ 1 file changed, 3 insertions(+)
++
++diff --git a/test/Interop/Cxx/class/memory-layout-silgen.swift b/test/Interop/Cxx/class/memory-layout-silgen.swift
++index 3567242c2ea..c0b531ca317 100644
++--- a/test/Interop/Cxx/class/memory-layout-silgen.swift
+++++ b/test/Interop/Cxx/class/memory-layout-silgen.swift
++@@ -1,5 +1,8 @@
++ // RUN: %target-swiftxx-frontend -I %S/Inputs -emit-ir -o - %s | %FileCheck %s
++ 
+++// UNSUPPORTED: OS=linux-android
+++// UNSUPPORTED: OS=linux-androideabi
+++
++ import MemoryLayout
++ 
++ var v = PrivateMemberLayout()
++-- 
++2.29.2
++
+diff --git a/patches/release/5.7/swift/0007-Update-to-LTS-NDK-25b.patch b/patches/release/5.7/swift/0007-Update-to-LTS-NDK-25b.patch
+new file mode 100644
+index 0000000..25a50f0
+--- /dev/null
++++ b/patches/release/5.7/swift/0007-Update-to-LTS-NDK-25b.patch
+@@ -0,0 +1,92 @@
++From 7a0dd2385a4149ae2c2f1ba0b34afbe98ec33056 Mon Sep 17 00:00:00 2001
++From: buttaface <repo@butta.fastem.com>
++Date: Wed, 21 Sep 2022 23:16:29 +0530
++Subject: [PATCH] [android] Update to LTS NDK 25b (#60938)
++
++Also, remove `SWIFT_ANDROID_NDK_CLANG_VERSION` and just extract the
++resource directory from the NDK using `file(GLOB)`.
++---
++ CMakeLists.txt                            |  2 --
++ docs/Android.md                           | 10 +++++-----
++ stdlib/cmake/modules/AddSwiftStdlib.cmake |  3 ++-
++ 3 files changed, 7 insertions(+), 8 deletions(-)
++
++diff --git a/CMakeLists.txt b/CMakeLists.txt
++index c21c550c235..e5f3153797b 100644
++--- a/CMakeLists.txt
+++++ b/CMakeLists.txt
++@@ -315,8 +315,6 @@ set(SWIFT_ANDROID_API_LEVEL "" CACHE STRING
++ 
++ set(SWIFT_ANDROID_NDK_PATH "" CACHE STRING
++   "Path to the directory that contains the Android NDK tools that are executable on the build machine")
++-set(SWIFT_ANDROID_NDK_CLANG_VERSION "12.0.8" CACHE STRING
++-  "The Clang version to use when building for Android.")
++ set(SWIFT_ANDROID_DEPLOY_DEVICE_PATH "" CACHE STRING
++   "Path on an Android device where build products will be pushed. These are used when running the test suite against the device")
++ 
++diff --git a/docs/Android.md b/docs/Android.md
++index dd347c3425e..6cfc6b30161 100644
++--- a/docs/Android.md
+++++ b/docs/Android.md
++@@ -33,7 +33,7 @@ To follow along with this guide, you'll need:
++    Ubuntu 18.04 or Ubuntu 16.04. Before attempting to build for Android,
++    please make sure you are able to build for Linux by following the
++    instructions in the Swift project README.
++-2. The latest version of the Android NDK (r23b at the time of this writing),
+++3. The latest version of the Android LTS NDK (r25b at the time of this writing),
++    available to download here:
++    https://developer.android.com/ndk/downloads/index.html.
++ 3. An Android device with remote debugging enabled or the emulator. We require
++@@ -49,7 +49,7 @@ Enter your Swift directory, then run the build script, passing the path to the
++ Android NDK:
++ 
++ ```
++-$ NDK_PATH=path/to/android-ndk-r23b
+++$ NDK_PATH=path/to/android-ndk-r25b
++ $ utils/build-script \
++     -R \                                       # Build in ReleaseAssert mode.
++     --android \                                # Build for Android.
++@@ -70,7 +70,7 @@ Then use the built Swift compiler from the previous step to compile a Swift
++ source file, targeting Android:
++ 
++ ```
++-$ NDK_PATH="path/to/android-ndk-r23b"
+++$ NDK_PATH="path/to/android-ndk-r25b"
++ $ build/Ninja-ReleaseAssert/swift-linux-x86_64/bin/swiftc \          # The Swift compiler built in the previous step
++                                                                      # The location of the tools used to build Android binaries
++     -tools-directory ${NDK_PATH}/toolchains/llvm/prebuilt/linux-x86_64/bin/ \
++@@ -116,7 +116,7 @@ $ adb push build/Ninja-ReleaseAssert/swift-linux-x86_64/lib/swift/android/libswi
++ In addition, you'll also need to copy the Android NDK's libc++:
++ 
++ ```
++-$ adb push /path/to/android-ndk-r23b/sources/cxx-stl/llvm-libc++/libs/armeabi-v7a/libc++_shared.so /data/local/tmp
+++$ adb push /path/to/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/arm-linux-androideabi/libc++_shared.so /data/local/tmp
++ ```
++ 
++ Finally, you'll need to copy the `hello` executable you built in the
++@@ -159,7 +159,7 @@ $ utils/build-script \
++   -R \                               # Build in ReleaseAssert mode.
++   -T \                               # Run all tests, including on the Android device (add --host-test to only run Android tests on the linux host).
++   --android \                        # Build for Android.
++-  --android-ndk ~/android-ndk-r23b \  # Path to an Android NDK.
+++  --android-ndk ~/android-ndk-r25b \  # Path to an Android NDK.
++   --android-arch armv7 \             # Optionally specify Android architecture, alternately aarch64
++   --android-api-level 21
++ ```
++diff --git a/stdlib/cmake/modules/AddSwiftStdlib.cmake b/stdlib/cmake/modules/AddSwiftStdlib.cmake
++index f44b978c896..f4d55ab285f 100644
++--- a/stdlib/cmake/modules/AddSwiftStdlib.cmake
+++++ b/stdlib/cmake/modules/AddSwiftStdlib.cmake
++@@ -457,7 +457,8 @@ function(_add_target_variant_link_flags)
++     # We need to add the math library, which is linked implicitly by libc++
++     list(APPEND result "-lm")
++     if(NOT "${SWIFT_ANDROID_NDK_PATH}" STREQUAL "")
++-      list(APPEND result "-resource-dir=${SWIFT_SDK_ANDROID_ARCH_${LFLAGS_ARCH}_PATH}/../lib64/clang/${SWIFT_ANDROID_NDK_CLANG_VERSION}")
+++      file(GLOB RESOURCE_DIR ${SWIFT_SDK_ANDROID_ARCH_${LFLAGS_ARCH}_PATH}/../lib64/clang/*)
+++      list(APPEND result "-resource-dir=${RESOURCE_DIR}")
++     endif()
++ 
++     # link against the custom C++ library
++-- 
++2.37.0
++

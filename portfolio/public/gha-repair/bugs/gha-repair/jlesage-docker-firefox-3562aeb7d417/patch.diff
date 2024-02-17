@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build-image.yml b/.github/workflows/build-image.yml
+index b093170..68fc37f 100644
+--- a/.github/workflows/build-image.yml
++++ b/.github/workflows/build-image.yml
+@@ -147,7 +147,7 @@ jobs:
+     name: Notification
+     needs: [ build ]
+     runs-on: ubuntu-20.04
+-    if: ${{ always() }}
++    if: ${{ always() && github.event_name != 'pull_request' }}
+ 
+     steps:
+       - name: Pushover notification

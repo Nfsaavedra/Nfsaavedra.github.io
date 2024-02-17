@@ -1,0 +1,24 @@
+diff --git a/.github/workflows/ci.yaml b/.github/workflows/ci.yaml
+index 6a2ad59..1e4aa26 100644
+--- a/.github/workflows/ci.yaml
++++ b/.github/workflows/ci.yaml
+@@ -19,7 +19,8 @@ jobs:
+       - name: Install clang for Windows
+         if: runner.os == 'Windows'
+         run: |
+-          Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
++          iwr -useb get.scoop.sh -outfile 'install.ps1'
++          .\install.ps1 -RunAsAdmin
+           scoop install llvm --global
+ 
+           # Scoop modifies the PATH so we make the modified PATH global.
+@@ -61,7 +62,8 @@ jobs:
+       - name: Install clang for Windows
+         if: runner.os == 'Windows'
+         run: |
+-          Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
++          iwr -useb get.scoop.sh -outfile 'install.ps1'
++          .\install.ps1 -RunAsAdmin
+           scoop install llvm --global
+ 
+           # Scoop modifies the PATH so we make the modified PATH global.

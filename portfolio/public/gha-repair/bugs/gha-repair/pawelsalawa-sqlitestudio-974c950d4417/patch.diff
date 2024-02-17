@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/win_release.yml b/.github/workflows/win_release.yml
+index 91b06ae..3ae28f4 100644
+--- a/.github/workflows/win_release.yml
++++ b/.github/workflows/win_release.yml
+@@ -33,7 +33,7 @@ jobs:
+                 version: ${{ env.QT_VERSION }}
+                 host: 'windows'
+                 arch: ${{ env.QT_ARCH }}
+-                dir: '${{ github.workspace }}/../'
++                dir: '../'
+                 modules: 'qtscript'
+                 
+             - name: Install mingw

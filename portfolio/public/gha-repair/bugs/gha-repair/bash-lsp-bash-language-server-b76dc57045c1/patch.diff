@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/verify.yml b/.github/workflows/verify.yml
+index 41a8d14..b48d864 100644
+--- a/.github/workflows/verify.yml
++++ b/.github/workflows/verify.yml
+@@ -14,7 +14,7 @@ jobs:
+     steps:
+       - uses: actions/checkout@v3
+ 
+-      - name: Install xmllint
++      - name: Install shellcheck (used for testing)
+         run: sudo apt-get install -y shellcheck
+ 
+       - name: Use Node.js ${{ matrix.node-version }}

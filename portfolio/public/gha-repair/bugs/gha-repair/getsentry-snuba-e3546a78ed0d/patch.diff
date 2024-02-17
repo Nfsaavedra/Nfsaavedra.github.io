@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 6c48236..c7b2486 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -18,7 +18,7 @@ jobs:
+     name: 'Release a new version'
+     steps:
+       - name: Prepare release
+-        uses: getsentry/action-prepare-release@main
++        uses: getsentry/action-prepare-release@33507ed
+         with:
+           version: ${{ github.event.inputs.version }}
+           force: ${{ github.event.inputs.force }}

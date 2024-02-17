@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/stale.yml b/.github/workflows/stale.yml
+index a0a88ab..35e3b3c 100644
+--- a/.github/workflows/stale.yml
++++ b/.github/workflows/stale.yml
+@@ -15,3 +15,5 @@ jobs:
+           days-before-pr-close: -1
+           stale-issue-message: 'This issue has been automatically marked as stale because it has not had recent activity. It will be closed if no further activity occurs. Thank you for your contributions.'
+           exempt-issue-labels: 'bug, call for contribution, doc, enhancement, good first issue, help wanted, mxnet, question'
++          ascending: true
++          operations-per-run: 300

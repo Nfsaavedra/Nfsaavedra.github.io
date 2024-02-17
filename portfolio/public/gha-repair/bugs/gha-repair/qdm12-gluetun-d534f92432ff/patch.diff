@@ -1,0 +1,43 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+new file mode 100644
+index 0000000..116ebc6
+--- /dev/null
++++ b/.github/workflows/build.yml
+@@ -0,0 +1,12 @@
++name: Docker build
++on:
++  pull_request:
++    branches: [master]
++jobs:
++  security-analysis:
++    runs-on: ubuntu-latest
++    steps:
++      - name: Checkout
++        uses: actions/checkout@v2
++      - name: Build image
++        run: docker build .
+diff --git a/.github/workflows/buildx-latest.yml b/.github/workflows/buildx-latest.yml
+index 4f3cddb..de7ef5f 100644
+--- a/.github/workflows/buildx-latest.yml
++++ b/.github/workflows/buildx-latest.yml
+@@ -1,20 +1,5 @@
+ name: Buildx latest
+ on:
+-  pull_request:
+-    branches: [master]
+-    paths-ignore:
+-      - .github/workflows/buildx-release.yml
+-      - .github/workflows/dockerhub-description.yml
+-      - .github/workflows/greetings.yml
+-      - .github/workflows/labels.yml
+-      - .github/workflows/misspell.yml
+-      - .github/workflows/security.yml
+-      - .dockerignore
+-      - .gitignore
+-      - docker-compose.yml
+-      - LICENSE
+-      - README.md
+-      - title.svg
+   push:
+     branches: [master]
+     paths-ignore:

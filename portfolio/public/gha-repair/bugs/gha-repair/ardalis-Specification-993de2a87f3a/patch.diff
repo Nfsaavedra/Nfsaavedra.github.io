@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/publish.yml b/.github/workflows/publish.yml
+index 854b82d..0444409 100644
+--- a/.github/workflows/publish.yml
++++ b/.github/workflows/publish.yml
+@@ -2,7 +2,7 @@ name: publish Ardalis.Specification to nuget
+ on:
+   push:
+     branches:
+-      - master # Your default release branch
++      - main # Your default release branch
+     paths:
+       - 'ArdalisSpecification/src/**'
+ jobs:

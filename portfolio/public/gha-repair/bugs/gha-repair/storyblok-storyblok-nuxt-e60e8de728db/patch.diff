@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/tests.yml b/.github/workflows/tests.yml
+index 9d9e398..d5ca273 100644
+--- a/.github/workflows/tests.yml
++++ b/.github/workflows/tests.yml
+@@ -23,9 +23,9 @@ jobs:
+         run: npm run build
+       - name: Cypress run
+         run: npm run test:e2e
+-      # - name: Release
+-      #   working-directory: lib
+-      #   env:
+-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+-      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+-      #   run: npx semantic-release
++      - name: Release
++        working-directory: lib
++        env:
++          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
++          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
++        run: npx semantic-release

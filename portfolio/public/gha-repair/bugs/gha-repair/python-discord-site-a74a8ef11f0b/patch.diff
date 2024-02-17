@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/fixup-commit-blocker.yaml b/.github/workflows/fixup-commit-blocker.yaml
+index 18973d2..ca90a3d 100644
+--- a/.github/workflows/fixup-commit-blocker.yaml
++++ b/.github/workflows/fixup-commit-blocker.yaml
+@@ -10,4 +10,4 @@ concurrency:
+ jobs:
+   block-fixup-commits:
+     if: github.ref != 'refs/heads/main'
+-    uses: python-discord/.github/.github/workflows/block-fixup-commits.yaml@main
+\ No newline at end of file
++    uses: python-discord/.github/.github/workflows/block-fixup-commits.yaml@main

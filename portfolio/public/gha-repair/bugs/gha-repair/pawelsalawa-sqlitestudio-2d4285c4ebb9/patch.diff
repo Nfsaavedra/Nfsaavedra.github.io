@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/lin_release.yml b/.github/workflows/lin_release.yml
+index bd85562..0cdd8da 100644
+--- a/.github/workflows/lin_release.yml
++++ b/.github/workflows/lin_release.yml
+@@ -7,7 +7,7 @@ env:
+     ICU_VERSION: '73.1'
+     PORTABLE_DIR: ${{ github.workspace }}/output/portable/SQLiteStudio
+     INSTALLBUILDER_DIR: ../ib
+-    INSTALLBUILDER_URL: https://releases.bitrock.com/installbuilder/installbuilder-enterprise-23.1.0-linux-x64-installer.run
++    INSTALLBUILDER_URL: https://releases.installbuilder.com/installbuilder/installbuilder-enterprise-23.4.0-linux-x64-installer.run
+ 
+ name: Linux release build
+ 

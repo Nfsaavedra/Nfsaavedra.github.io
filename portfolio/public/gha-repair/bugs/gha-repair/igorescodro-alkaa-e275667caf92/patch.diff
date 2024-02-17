@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/android_tests.yml b/.github/workflows/android_tests.yml
+index 0ac51ba..2d452c2 100644
+--- a/.github/workflows/android_tests.yml
++++ b/.github/workflows/android_tests.yml
+@@ -53,7 +53,7 @@ jobs:
+           script: |
+             adb logcat -c
+             adb logcat > logcat.txt &
+-            ./gradlew app:connectedAndroidTest --stacktrace
++            ./gradlew connectedAndroidTest --stacktrace
+ 
+       - name: Save Test Results
+         uses: actions/upload-artifact@v3

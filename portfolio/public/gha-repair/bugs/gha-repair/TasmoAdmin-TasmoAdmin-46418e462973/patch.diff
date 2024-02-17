@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index e71e79d..7d85171 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -20,7 +20,7 @@ jobs:
+     - name: Read .nvmrc
+       run: echo ::set-output name=NODE_VERSION::$(cat tasmoadmin/.nvmrc)
+       id: nvm
+-    - uses: actions/setup-node@v3
++    - uses: actions/setup-node@v4
+       with:
+         node-version: ${{ steps.nvm.outputs.NODE_VERSION }}
+     - name: Prepare

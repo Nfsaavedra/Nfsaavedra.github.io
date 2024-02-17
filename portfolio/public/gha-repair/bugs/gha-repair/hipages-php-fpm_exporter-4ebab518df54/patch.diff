@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 5ec9c35..5015bdf 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -42,7 +42,7 @@ jobs:
+         id: go
+ 
+       - name: Login to DockerHub
+-        uses: docker/login-action@v1
++        uses: docker/login-action@v1.9.0
+         with:
+           username: ${{ secrets.DOCKER_USER }}
+           password: ${{ secrets.DOCKER_PASS }}

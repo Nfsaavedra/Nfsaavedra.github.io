@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 39f4aee..7ea34c9 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -11,7 +11,7 @@ jobs:
+   build:
+     strategy:
+       matrix:
+-        node-version: [12.x]
++        node-version: [14.x]
+         runtime: [ linux-x64, linux-arm64, win-x64, osx-x64 ]
+         include:
+         - runtime: linux-x64

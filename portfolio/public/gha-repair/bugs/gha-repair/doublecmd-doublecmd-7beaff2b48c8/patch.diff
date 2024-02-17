@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/winget.yml b/.github/workflows/winget.yml
+index ed27e31..fbab28c 100644
+--- a/.github/workflows/winget.yml
++++ b/.github/workflows/winget.yml
+@@ -9,5 +9,5 @@ jobs:
+       - uses: vedantmgoyal2009/winget-releaser@v2
+         with:
+           identifier: alexx2000.DoubleCommander
+-          installers-regex: '.(exe|msi)$'
++          installers-regex: '\.msi$'
+           token: ${{ secrets.WINGET_TOKEN }}

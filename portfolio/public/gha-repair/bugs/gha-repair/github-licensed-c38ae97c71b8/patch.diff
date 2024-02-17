@@ -1,0 +1,25 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 20823c9..f540ad0 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -167,17 +167,17 @@ jobs:
+         ruby-version: 2.6
+ 
+     - name: Download linux package
+-      uses: actions/download-artifact@v2
++      uses: actions/download-artifact@v3
+       with:
+         name: ${{needs.vars.outputs.version}}-linux
+ 
+     - name: Download macOS package
+-      uses: actions/download-artifact@v2
++      uses: actions/download-artifact@v3
+       with:
+         name: ${{needs.vars.outputs.version}}-darwin
+ 
+     - name: Download gem
+-      uses: actions/download-artifact@v2
++      uses: actions/download-artifact@v3
+       with:
+         name: ${{needs.vars.outputs.version}}-gem
+ 

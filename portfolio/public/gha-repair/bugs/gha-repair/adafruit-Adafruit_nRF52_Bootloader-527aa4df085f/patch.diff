@@ -1,0 +1,125 @@
+diff --git a/.github/workflows/githubci.yml b/.github/workflows/githubci.yml
+index 44da069..94cc987 100644
+--- a/.github/workflows/githubci.yml
++++ b/.github/workflows/githubci.yml
+@@ -50,7 +50,6 @@ jobs:
+           - 'pca10059'
+           - 'pca10100'
+           - 'pitaya_go'
+-          - 'raytac_mdbt50q_db_40'
+           - 'raytac_mdbt50q_rx'
+           - 'sparkfun_nrf52840_micromod'
+           - 'waveshare_nrf52840_eval'
+diff --git a/src/boards/raytac_mdbt50q_db_40/board.h b/src/boards/raytac_mdbt50q_db_40/board.h
+new file mode 100644
+index 0000000..81e07db
+--- /dev/null
++++ b/src/boards/raytac_mdbt50q_db_40/board.h
+@@ -0,0 +1,75 @@
++/*
++ * The MIT License (MIT)
++ *
++ * Copyright (c) 2018 Ha Thach for Adafruit Industries
++ *
++ * Permission is hereby granted, free of charge, to any person obtaining a copy
++ * of this software and associated documentation files (the "Software"), to deal
++ * in the Software without restriction, including without limitation the rights
++ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
++ * copies of the Software, and to permit persons to whom the Software is
++ * furnished to do so, subject to the following conditions:
++ *
++ * The above copyright notice and this permission notice shall be included in
++ * all copies or substantial portions of the Software.
++ *
++ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
++ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
++ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
++ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
++ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
++ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
++ * THE SOFTWARE.
++ */
++
++#ifndef RAYTAC_MDBT50Q_DB_40_H
++#define RAYTAC_MDBT50Q_DB_40_H
++
++#define _PINNUM(port, pin)      ((port)*32 + (pin))
++
++/*------------------------------------------------------------------*/
++/* LED
++ *------------------------------------------------------------------*/
++#define LEDS_NUMBER             3
++/* This is the Green led marked D1 on the board */
++#define LED_PRIMARY_PIN         _PINNUM(1, 13)
++/* This is the Red led marked D2 on the board */
++#define LED_SECONDARY_PIN  	_PINNUM(1, 14)
++/* This is the Blue led marked D3 on the board */
++#define LED_TERTIARY_PIN  	_PINNUM(1, 15)
++/* There are one more unpopulated LEDs, but for the purposes of bootloader that
++ * doesn't matter. */
++#define LED_STATE_ON            0
++
++/*------------------------------------------------------------------*/
++/* BUTTON
++ *------------------------------------------------------------------*/
++#define BUTTONS_NUMBER          4
++
++#define BUTTON_1                _PINNUM(0, 11)
++#define BUTTON_2                _PINNUM(0, 12)
++#define BUTTON_3                _PINNUM(0, 24)
++#define BUTTON_4                _PINNUM(0, 25)
++#define BUTTON_PULL             NRF_GPIO_PIN_PULLUP
++
++//--------------------------------------------------------------------+
++// BLE OTA
++//--------------------------------------------------------------------+
++#define BLEDIS_MANUFACTURER     "Raytac"
++#define BLEDIS_MODEL            "MDBT50Q-DB-40"
++
++//--------------------------------------------------------------------+
++// USB
++//--------------------------------------------------------------------+
++
++#define USB_DESC_VID           0x239A
++#define USB_DESC_UF2_PID       0x00BB
++#define USB_DESC_CDC_ONLY_PID  0x00BB
++
++//------------- UF2 -------------//
++#define UF2_PRODUCT_NAME        "Raytac MDBT50Q Demo Board 40"
++#define UF2_VOLUME_LABEL        "MDBT50QBOOT"
++#define UF2_BOARD_ID            "nRF52840-MDBT50Q-1MV2"
++#define UF2_INDEX_URL           "https://www.raytac.com/product/ins.php?index_id=81"
++
++#endif // RAYTAC_MDBT50Q_DB_40_H
+diff --git a/src/boards/raytac_mdbt50q_db_40/board.mk b/src/boards/raytac_mdbt50q_db_40/board.mk
+new file mode 100644
+index 0000000..9d29ac6
+--- /dev/null
++++ b/src/boards/raytac_mdbt50q_db_40/board.mk
+@@ -0,0 +1,1 @@
++MCU_SUB_VARIANT = nrf52840
+diff --git a/src/boards/raytac_mdbt50q_db_40/pinconfig.c b/src/boards/raytac_mdbt50q_db_40/pinconfig.c
+new file mode 100644
+index 0000000..a983e4a
+--- /dev/null
++++ b/src/boards/raytac_mdbt50q_db_40/pinconfig.c
+@@ -0,0 +1,19 @@
++#include "boards.h"
++#include "uf2/configkeys.h"
++
++__attribute__((used, section(".bootloaderConfig")))
++const uint32_t bootloaderConfig[] =
++{
++  /* CF2 START */
++  CFG_MAGIC0, CFG_MAGIC1,                       // magic
++  5, 100,                                       // used entries, total entries
++
++  204, 0x100000,                                // FLASH_BYTES = 0x100000
++  205, 0x40000,                                 // RAM_BYTES = 0x40000
++  208, (USB_DESC_VID << 16) | USB_DESC_UF2_PID, // BOOTLOADER_BOARD_ID = USB VID+PID, used for verification when updating bootloader via uf2
++  209, 0xada52840,                              // UF2_FAMILY = 0xada52840
++  210, 0x20,                                    // PINS_PORT_SIZE = PA_32
++
++  0, 0, 0, 0, 0, 0, 0, 0
++  /* CF2 END */
++};

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 89a53b8..3b40042 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -35,6 +35,7 @@ jobs:
+         uses: mxschmitt/action-tmate@v3
+         with:
+           limit-access-to-actor: true
++          detached: true
+       - uses: ruby/setup-ruby@v1
+         with:
+           ruby-version: 3.1

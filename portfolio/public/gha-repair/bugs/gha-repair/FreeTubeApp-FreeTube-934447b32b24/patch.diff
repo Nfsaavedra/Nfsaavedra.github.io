@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/flatpak.yml b/.github/workflows/flatpak.yml
+index 54a463c..ceee85d 100644
+--- a/.github/workflows/flatpak.yml
++++ b/.github/workflows/flatpak.yml
+@@ -27,7 +27,7 @@ jobs:
+         command: repos.getRelease
+         payload: >
+             {
+-              "owner": "FreeTubeApp",
++              "owner": "PrestonN",
+               "repo": "FreeTube",
+               "release_id": ${{ secrets.UPLOAD_ID }}
+             }

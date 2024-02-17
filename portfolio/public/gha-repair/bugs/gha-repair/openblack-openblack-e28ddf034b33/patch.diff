@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 69b4b5d..f00fb42 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -102,5 +102,3 @@ jobs:
+       - name: Show content of workspace at its completion
+         run: find $RUNNER_WORKSPACE
+         shell: bash
+-
+-      - run: echo hi

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 2d5b534..1078bd0 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -46,6 +46,7 @@ jobs:
+           
+       - name: install packages
+         run: |
++          npm install -g lerna@4.0.0
+           npm ci
+           lerna run autoinstall
+ 

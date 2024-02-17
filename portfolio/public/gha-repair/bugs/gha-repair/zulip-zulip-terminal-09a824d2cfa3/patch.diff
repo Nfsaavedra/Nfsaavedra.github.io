@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/lint-and-test.yml b/.github/workflows/lint-and-test.yml
+index 9898bf8..a8b1527 100644
+--- a/.github/workflows/lint-and-test.yml
++++ b/.github/workflows/lint-and-test.yml
+@@ -89,8 +89,8 @@ jobs:
+       - name: Install test dependencies
+         run: pip install .[testing]
+       - name: Run tests with pytest
+-        run: pytest 
++        run: pytest --cov-report=xml
+       - name: Upload coverage to Codecov
+-        uses: codecov/codecov-action@v1
++        uses: codecov/codecov-action@v2
+         # We avoid extra work by just running codecov on one python version
+         if: matrix.env.CODECOV

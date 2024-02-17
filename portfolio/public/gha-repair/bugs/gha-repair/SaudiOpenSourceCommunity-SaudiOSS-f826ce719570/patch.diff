@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/updatereadme.yaml b/.github/workflows/updatereadme.yaml
+index ffb3d7d..70b1364 100644
+--- a/.github/workflows/updatereadme.yaml
++++ b/.github/workflows/updatereadme.yaml
+@@ -10,6 +10,8 @@ jobs:
+   if_merged:
+     if: github.event.pull_request.merged == true
+     runs-on: ubuntu-latest
++    permissions:
++        contents: write
+     steps:
+       - name: checkout repo
+         uses: actions/checkout@v3

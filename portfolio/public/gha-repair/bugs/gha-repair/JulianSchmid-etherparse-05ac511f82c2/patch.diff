@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/coverage.yml b/.github/workflows/coverage.yml
+index 77452ce..b863b96 100644
+--- a/.github/workflows/coverage.yml
++++ b/.github/workflows/coverage.yml
+@@ -1,6 +1,10 @@
+ name: codecoverage 
+ 
+-on: [ push, pull_request ]
++on:
++  pull_request:
++  push:
++    branches:
++    - master
+ 
+ jobs:
+   codecoverage_test:

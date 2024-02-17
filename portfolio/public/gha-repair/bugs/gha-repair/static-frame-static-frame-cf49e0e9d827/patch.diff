@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 2bfa496..a2c276d 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -108,7 +108,7 @@ jobs:
+     name: Publish
+     if: github.event_name == 'release'
+ 
+-    needs: [test, quality, test_ex, package]
++    needs: [test, checks]
+     runs-on: ubuntu-22.04
+     steps:
+       - uses: actions/download-artifact@v3

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index fc2ede9..f7bcfaa 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -1,6 +1,6 @@
+-name: Tests
++name: Main
+ 
+-on: [push]
++on: [push, pull_request]
+ 
+ jobs:
+   Linting:

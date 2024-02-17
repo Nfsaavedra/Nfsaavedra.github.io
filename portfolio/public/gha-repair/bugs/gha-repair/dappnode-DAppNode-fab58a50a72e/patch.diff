@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index f6d88f5..f5a56af 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -32,7 +32,6 @@ jobs:
+     runs-on: ubuntu-latest
+ 
+     steps:
+-      - name: Get versions
+       - name: Check out installer
+         uses: actions/checkout@master
+         with:

@@ -1,0 +1,33 @@
+diff --git a/.github/workflows/nim.yml b/.github/workflows/nim.yml
+index dc2263c..3735b33 100644
+--- a/.github/workflows/nim.yml
++++ b/.github/workflows/nim.yml
+@@ -7,7 +7,7 @@ on:
+     branches: [ master ]
+ 
+ jobs:
+-  build:
++  build-latest:
+ 
+     runs-on: ubuntu-latest
+ 
+@@ -22,3 +22,19 @@ jobs:
+       run: nimble build
+     - name: Run tests
+       run: nimble test -d:prompt_no_history
++
++  build-devel:
++
++    runs-on: ubuntu-latest
++
++    container:
++      image: nimlang/nim:devel
++
++    steps:
++    - uses: actions/checkout@v2
++    - name: Update nimble
++      run: nimble update
++    - name: Build INim
++      run: nimble build
++    - name: Run tests
++      run: nimble test -d:prompt_no_history

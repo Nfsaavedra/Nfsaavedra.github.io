@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/gradle-wrapper-validation.yml b/.github/workflows/gradle-wrapper-validation.yml
+index 3e2042c..269fb4a 100644
+--- a/.github/workflows/gradle-wrapper-validation.yml
++++ b/.github/workflows/gradle-wrapper-validation.yml
+@@ -7,4 +7,4 @@ jobs:
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v3
+-      - uses: gradle/wrapper-validation-action@v1.0.6
++      - uses: gradle/wrapper-validation-action@v1.1.0

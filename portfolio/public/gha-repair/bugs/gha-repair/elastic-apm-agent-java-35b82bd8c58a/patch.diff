@@ -1,0 +1,424 @@
+diff --git a/.ci/jobs/apm-agent-java-mbp.yml b/.ci/jobs/apm-agent-java-mbp.yml
+deleted file mode 100644
+index 4c82fe4..0000000
+--- a/.ci/jobs/apm-agent-java-mbp.yml
++++ /dev/null
+@@ -1,46 +0,0 @@
+----
+-##### MBP JOB
+-- job:
+-    name: apm-agent-java/apm-agent-java-mbp
+-    display-name: APM Agent Java
+-    description: APM Agent Java
+-    script-path: Jenkinsfile
+-    project-type: multibranch
+-    scm:
+-        - github:
+-            branch-discovery: no-pr
+-            discover-pr-forks-strategy: merge-current
+-            discover-pr-forks-trust: permission
+-            discover-pr-origin: merge-current
+-            discover-tags: false
+-            head-filter-regex: '(main|PR-.*)'
+-            notification-context: 'apm-ci'
+-            repo: apm-agent-java
+-            repo-owner: elastic
+-            credentials-id: 2a9602aa-ab9f-4e52-baf3-b71ca88469c7-UserAndToken
+-            ssh-checkout:
+-            credentials: f6c7695a-671e-4f4f-a331-acdce44ff9ba
+-            build-strategies:
+-            - tags:
+-                ignore-tags-older-than: -1
+-                ignore-tags-newer-than: -1
+-            - regular-branches: true
+-            - change-request:
+-                ignore-target-only-changes: false
+-            clean:
+-            after: true
+-            before: true
+-            prune: true
+-            shallow-clone: false
+-            depth: 3
+-            do-not-fetch-tags: true
+-            submodule:
+-            disable: false
+-            recursive: true
+-            parent-credentials: true
+-            timeout: 120
+-            ## reference-repo is *Nix based so it causes problems when running for Windows
+-            ## reference-repo: /var/lib/jenkins/.git-references/apm-agent-java.git
+-            use-author: true
+-            wipe-workspace: true
+-    periodic-folder-trigger: 4h
+diff --git a/.ci/jobs/apm-agent-java-schedule-weekly.yml b/.ci/jobs/apm-agent-java-schedule-weekly.yml
+deleted file mode 100644
+index 53163d3..0000000
+--- a/.ci/jobs/apm-agent-java-schedule-weekly.yml
++++ /dev/null
+@@ -1,27 +0,0 @@
+----
+-- job:
+-    name: apm-agent-java/apm-schedule-weekly
+-    display-name: Jobs scheduled weekly (Monday)
+-    description: Jobs scheduled weekly (Monday)
+-    view: APM-CI
+-    project-type: pipeline
+-    parameters:
+-      - string:
+-          name: branch_specifier
+-          default: main
+-          description: the Git branch specifier to build
+-    pipeline-scm:
+-      script-path: .ci/schedule-weekly.groovy
+-      scm:
+-        - git:
+-            url: git@github.com:elastic/apm-agent-java.git
+-            refspec: +refs/heads/*:refs/remotes/origin/* +refs/pull/*/head:refs/remotes/origin/pr/*
+-            wipe-workspace: 'True'
+-            name: origin
+-            shallow-clone: true
+-            credentials-id: f6c7695a-671e-4f4f-a331-acdce44ff9ba
+-            reference-repo: /var/lib/jenkins/.git-references/apm-agent-java.git
+-            branches:
+-              - $branch_specifier
+-    triggers:
+-      - timed: 'H H(1-4) * * 1'
+diff --git a/.ci/schedule-weekly.groovy b/.ci/schedule-weekly.groovy
+deleted file mode 100644
+index d15e4c0..0000000
+--- a/.ci/schedule-weekly.groovy
++++ /dev/null
+@@ -1,41 +0,0 @@
+-@Library('apm@current') _
+-
+-pipeline {
+-  agent none
+-  environment {
+-    NOTIFY_TO = credentials('notify-to')
+-    PIPELINE_LOG_LEVEL='INFO'
+-  }
+-  options {
+-    timeout(time: 1, unit: 'HOURS')
+-    buildDiscarder(logRotator(numToKeepStr: '20', artifactNumToKeepStr: '20'))
+-    timestamps()
+-    ansiColor('xterm')
+-    disableResume()
+-    durabilityHint('PERFORMANCE_OPTIMIZED')
+-  }
+-  triggers {
+-    cron('H H(1-4) * * 1')
+-  }
+-  stages {
+-    stage('Agent weekly exhaustive test') {
+-      steps {
+-          build(job: 'apm-agent-java/apm-agent-java-mbp/main',
+-              parameters: [
+-                  booleanParam(name: 'jdk_compatibility_ci', value: true),
+-                  booleanParam(name: 'windows_ci', value: true),
+-                  booleanParam(name: 'end_to_end_tests_ci', value: true),
+-                  booleanParam(name: 'agent_integration_tests_ci', value: true),
+-              ],
+-              propagate: false,
+-              wait: false
+-          )
+-      }
+-    }
+-  }
+-  post {
+-    cleanup {
+-      notifyBuildResult()
+-    }
+-  }
+-}
+diff --git a/.ci/scripts/bench.sh b/.ci/scripts/bench.sh
+new file mode 100755
+index 0000000..db2d660
+--- /dev/null
++++ b/.ci/scripts/bench.sh
+@@ -0,0 +1,47 @@
++#!/usr/bin/env bash
++
++# Bash strict mode
++set -eo pipefail
++
++# Found current script directory
++RELATIVE_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
++
++# Found project directory
++BASE_PROJECT="$(dirname "$(dirname "${RELATIVE_DIR}")")"
++
++## Buildkite specific configuration
++if [ "${CI}" == "true" ] ; then
++  # If HOME is not set then use the Buildkite workspace
++  # that's normally happening when running in the CI
++  # owned by Elastic.
++  if [ -z "${HOME}" ] ; then
++    export HOME="${BUILDKITE_BUILD_CHECKOUT_PATH}"
++    export HOME
++  fi
++
++  # required when running the benchmark
++  PATH="${PATH}:${HOME}/.local/bin"
++  export PATH
++
++  echo 'Docker login is done in the Buildkite hooks'
++fi
++
++# Validate env vars
++[ -z "${ES_USER_SECRET}" ] && echo "Environment variable 'ES_USER_SECRET' must be defined" && exit 1;
++[ -z "${ES_PASS_SECRET}" ] && echo "Environment variable 'ES_PASS_SECRET' must be defined" && exit 1;
++[ -z "${ES_URL_SECRET}" ] && echo "Environment variable 'ES_URL_SECRET' must be defined" && exit 1;
++[ -z "${JAVA_VERSION}" ] && echo "Environment variable 'JAVA_VERSION' must be defined" && exit 1;
++
++# Debug env vars
++echo "Will run microbenchmarks with JAVA_VERSION=${JAVA_VERSION}"
++
++# Fetch sdk
++export JAVA_HOME=$("${BASE_PROJECT}/.ci/load/scripts/fetch_sdk.sh" "${JAVA_VERSION}")
++export PATH="${JAVA_HOME}/bin:${PATH}"
++
++# Run benchmark
++NOW_ISO_8601=$(date -u "+%Y-%m-%dT%H%M%SZ")
++NO_BUILD="" NOW_ISO_8601="${NOW_ISO_8601}" "${BASE_PROJECT}/.ci/run-benchmarks.sh"
++
++# Then we ship the data using the helper
++sendBenchmark "${ES_USER_SECRET}" "${ES_PASS_SECRET}" "${ES_URL_SECRET}" "${BASE_PROJECT}/apm-agent-bulk-${NOW_ISO_8601}.json"
+diff --git a/.github/workflows/microbenchmark.yml b/.github/workflows/microbenchmark.yml
+new file mode 100644
+index 0000000..c576f06
+--- /dev/null
++++ b/.github/workflows/microbenchmark.yml
+@@ -0,0 +1,56 @@
++name: microbenchmark
++
++on:
++  workflow_dispatch:
++    inputs:
++      stack_version:
++        description: "JVM, use values from: curl -s https://jvm-catalog.elastic.co/jdks/tags/linux,x86_64 | jq '.[] | .id'"
++        default: 'openjdk-17+35-linux'
++        required: false
++  push:
++    branches:
++      - main
++    paths-ignore:
++      - '**.md'
++      - '**.asciidoc'
++
++# limit the access of the generated GITHUB_TOKEN
++permissions:
++  contents: read
++
++jobs:
++  microbenchmark:
++    runs-on: ubuntu-latest
++    # wait up to 1 hour
++    timeout-minutes: 60
++    steps:
++      - id: buildkite
++        name: Run buildkite pipeline
++        uses: elastic/apm-pipeline-library/.github/actions/buildkite@current
++        env:
++          JAVA_VERSION: ${{ inputs.java_version || 'openjdk-17+35-linux' }}
++        with:
++          vaultUrl: ${{ secrets.VAULT_ADDR }}
++          vaultRoleId: ${{ secrets.VAULT_ROLE_ID }}
++          vaultSecretId: ${{ secrets.VAULT_SECRET_ID }}
++          pipeline: apm-agent-microbenchmark
++          triggerMessage: "${{ github.repository }}@${{ github.ref_name }}"
++          waitFor: true
++          printBuildLogs: true
++          buildEnvVars: |
++            script=.ci/scripts/bench.sh
++            repo=apm-agent-java
++            sha=${{ github.sha }}
++            JAVA_VERSION=${{ env.JAVA_VERSION }}
++            BRANCH_NAME=${{ github.ref_name }}
++
++      - if: ${{ failure() }}
++        uses: elastic/apm-pipeline-library/.github/actions/slack-message@current
++        with:
++          url: ${{ secrets.VAULT_ADDR }}
++          roleId: ${{ secrets.VAULT_ROLE_ID }}
++          secretId: ${{ secrets.VAULT_SECRET_ID }}
++          channel: "#apm-agent-java"
++          message: |
++            :ghost: [${{ github.repository }}] microbenchmark *${{ github.ref_name }}* failed to run in Buildkite.
++            Build: (<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|here>)
+diff --git a/.github/workflows/opentelemetry.yml b/.github/workflows/opentelemetry.yml
+index 83cd45d..53b4ab0 100644
+--- a/.github/workflows/opentelemetry.yml
++++ b/.github/workflows/opentelemetry.yml
+@@ -9,6 +9,7 @@ on:
+       - snapshot
+       - Snapshoty
+       - updatecli
++      - microbenchmark
+     types: [completed]
+ 
+ jobs:
+diff --git a/Jenkinsfile b/Jenkinsfile
+deleted file mode 100644
+index 9f804d6..0000000
+--- a/Jenkinsfile
++++ /dev/null
+@@ -1,159 +0,0 @@
+-#!/usr/bin/env groovy
+-
+-@Library('apm@current') _
+-
+-pipeline {
+-  agent { label 'linux && immutable' }
+-  environment {
+-    REPO = 'apm-agent-java'
+-    BASE_DIR = "src/github.com/elastic/${env.REPO}"
+-    NOTIFY_TO = credentials('notify-to')
+-    JOB_GCS_BUCKET = credentials('gcs-bucket')
+-    DOCKERHUB_SECRET = 'secret/apm-team/ci/elastic-observability-dockerhub'
+-    ELASTIC_DOCKER_SECRET = 'secret/apm-team/ci/docker-registry/prod'
+-    CODECOV_SECRET = 'secret/apm-team/ci/apm-agent-java-codecov'
+-    MAVEN_CONFIG = '-Dmaven.repo.local=.m2'
+-    JAVA_VERSION = "${params.JAVA_VERSION}"
+-    JOB_GCS_BUCKET_STASH = 'apm-ci-temp'
+-    JOB_GCS_CREDENTIALS = 'apm-ci-gcs-plugin'
+-  }
+-  options {
+-    timeout(time: 120, unit: 'MINUTES')
+-    buildDiscarder(logRotator(numToKeepStr: '20', artifactNumToKeepStr: '20', daysToKeepStr: '30'))
+-    timestamps()
+-    ansiColor('xterm')
+-    disableResume()
+-    durabilityHint('PERFORMANCE_OPTIMIZED')
+-    rateLimitBuilds(throttle: [count: 60, durationName: 'hour', userBoost: true])
+-    quietPeriod(10)
+-  }
+-  triggers {
+-    issueCommentTrigger("(${obltGitHubComments()}|^run benchmark tests)")
+-  }
+-  parameters {
+-    string(name: 'JAVA_VERSION', defaultValue: 'jdk17', description: 'Java version to build & test')
+-    string(name: 'MAVEN_CONFIG', defaultValue: '-V -B -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn -Dhttps.protocols=TLSv1.2 -Dmaven.wagon.http.retryHandler.count=3 -Dmaven.wagon.httpconnectionManager.ttlSeconds=25', description: 'Additional maven options.')
+-
+-    // Note about GH checks and optional steps
+-    //
+-    // All the steps executed by default are included in GH checks
+-    // All the mandatory steps not included by default need to be added in GH branch protection rules.
+-
+-    // disabled by default, not required for merge
+-    // opt-in with 'ci:benchmarks' tag on PR
+-    booleanParam(name: 'bench_ci', defaultValue: false, description: 'Enable benchmarks')
+-
+-  }
+-  stages {
+-    stage('Checkout') {
+-      options { skipDefaultCheckout() }
+-      steps {
+-        pipelineManager([ cancelPreviousRunningBuilds: [ when: 'PR' ] ])
+-        deleteDir()
+-        // reference repo causes issues while running on Windows with the git-commit-id-maven-plugin
+-        gitCheckout(basedir: "${BASE_DIR}", githubNotifyFirstTimeContributor: true, shallow: false)
+-        stash allowEmpty: true, name: 'source', useDefaultExcludes: false
+-        script {
+-          dir("${BASE_DIR}"){
+-            // Skip all the stages except docs for PR's with asciidoc and md changes only
+-            env.ONLY_DOCS = isGitRegionMatch(patterns: [ '.*\\.(asciidoc|md)' ], shouldMatchAll: true)
+-            // Prepare the env variables for the benchmark results
+-            env.COMMIT_ISO_8601 = sh(script: 'git log -1 -s --format=%cI', returnStdout: true).trim()
+-            env.NOW_ISO_8601 = sh(script: 'date -u "+%Y-%m-%dT%H%M%SZ"', returnStdout: true).trim()
+-            env.RESULT_FILE = "apm-agent-benchmark-results-${env.COMMIT_ISO_8601}.json"
+-            env.BULK_UPLOAD_FILE = "apm-agent-bulk-${env.NOW_ISO_8601}.json"
+-
+-            if (env.ONLY_DOCS == "true") {
+-              // those GH checks are required, and docs build skips them we artificially make them as OK
+-              githubCheck(name: "Application Server integration tests", status: 'neutral');
+-              githubCheck(name: "Non-Application Server integration tests", status: 'neutral');
+-            }
+-          }
+-        }
+-      }
+-    }
+-    stage('Builds') {
+-      options { skipDefaultCheckout() }
+-      environment {
+-        HOME = "${env.WORKSPACE}"
+-        JAVA_HOME = "${env.HUDSON_HOME}/.java/${env.JAVA_VERSION}"
+-        MAVEN_CONFIG = "${params.MAVEN_CONFIG} ${env.MAVEN_CONFIG}"
+-      }
+-      stages {
+-        /**
+-         * Build on a linux environment.
+-         */
+-        stage('Build') {
+-          when {
+-            beforeAgent true
+-            expression { return env.ONLY_DOCS == "false" }
+-          }
+-          environment {
+-            PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
+-          }
+-          steps {
+-            withGithubNotify(context: "${STAGE_NAME}", tab: 'artifacts') {
+-              deleteDir()
+-              unstash 'source'
+-              dir("${BASE_DIR}"){
+-                withOtelEnv() {
+-                  retryWithSleep(retries: 5, seconds: 10) {
+-                    sh label: 'mvn install', script: "./mvnw clean install -DskipTests=true -Dmaven.javadoc.skip=true"
+-                  }
+-                }
+-              }
+-              stashV2(name: 'build', bucket: "${JOB_GCS_BUCKET_STASH}", credentialsId: "${JOB_GCS_CREDENTIALS}")
+-            }
+-          }
+-        }
+-        stage('Benchmarks') {
+-          agent { label 'microbenchmarks-pool' }
+-          options { skipDefaultCheckout() }
+-          environment {
+-            NO_BUILD = "true"
+-            PATH = "${env.JAVA_HOME}/bin:${env.PATH}"
+-          }
+-          when {
+-            beforeAgent true
+-            allOf {
+-              expression { return env.ONLY_DOCS == "false" }
+-              anyOf {
+-                branch 'main'
+-                expression { return env.GITHUB_COMMENT?.contains('benchmark tests') }
+-                expression { matchesPrLabel(label: 'ci:benchmarks') }
+-                expression { return params.bench_ci }
+-              }
+-            }
+-          }
+-          steps {
+-            withGithubNotify(context: "${STAGE_NAME}", tab: 'artifacts') {
+-              deleteDir()
+-              unstashV2(name: 'build', bucket: "${JOB_GCS_BUCKET_STASH}", credentialsId: "${JOB_GCS_CREDENTIALS}")
+-              dir("${BASE_DIR}"){
+-                withOtelEnv() {
+-                  sh './.ci/run-benchmarks.sh'
+-                }
+-              }
+-            }
+-          }
+-          post {
+-            cleanup {
+-              deleteDir()
+-            }
+-            always {
+-              archiveArtifacts(allowEmptyArchive: true,
+-                artifacts: "${BASE_DIR}/${RESULT_FILE}",
+-                onlyIfSuccessful: false)
+-              sendBenchmarks(file: "${BASE_DIR}/${BULK_UPLOAD_FILE}", index: "benchmark-java")
+-            }
+-          }
+-        }
+-      }
+-    }
+-  }
+-  post {
+-    cleanup {
+-      notifyBuildResult(analyzeFlakey: !isTag(), flakyReportIdx: 'reporter-apm-agent-java-apm-agent-java-main', flakyDisableGHIssueCreation: true)
+-    }
+-  }
+-}

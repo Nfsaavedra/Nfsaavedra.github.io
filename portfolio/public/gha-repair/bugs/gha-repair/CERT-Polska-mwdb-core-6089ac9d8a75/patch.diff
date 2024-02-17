@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index ccbee41..ab3012c 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -363,7 +363,6 @@ jobs:
+         uses: docker/build-push-action@v4
+         with:
+           file: ./deploy/docker/Dockerfile-web-unit-test
+-          context: mwdb/web
+           tags: |
+             certpl/mwdb-web-unit-tests:${{ github.sha }}
+             certpl/mwdb-web-unit-tests:master
+@@ -371,4 +370,4 @@ jobs:
+             type=registry,ref=certpl/mwdb-web-unit-tests:buildcache
+           cache-to: |
+             type=registry,ref=certpl/mwdb-web-unit-tests:buildcache,mode=max
+-          push: true
+\ No newline at end of file
++          push: true

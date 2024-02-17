@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/dotnetcore.yml b/.github/workflows/dotnetcore.yml
+index e236592..ab7abaf 100644
+--- a/.github/workflows/dotnetcore.yml
++++ b/.github/workflows/dotnetcore.yml
+@@ -12,6 +12,6 @@ jobs:
+     - name: Setup .NET Core
+       uses: actions/setup-dotnet@v1
+       with:
+-        dotnet-version: 5.0
++        dotnet-version: 5.0.*
+     - name: Build with dotnet
+       run: dotnet build --configuration Release

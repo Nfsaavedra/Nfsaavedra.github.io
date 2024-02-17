@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/alpine.yml b/.github/workflows/alpine.yml
+index 9a43a8a..7350699 100644
+--- a/.github/workflows/alpine.yml
++++ b/.github/workflows/alpine.yml
+@@ -112,7 +112,7 @@ jobs:
+         name: Set up Docker Buildx
+         uses: docker/setup-buildx-action@v2
+       -
+-        name: Build and push on linux/amd64
++        name: Build and push on linux/amd64 and linux/386
+         uses: docker/build-push-action@v3
+         with:
+           platforms: linux/amd64, linux/386

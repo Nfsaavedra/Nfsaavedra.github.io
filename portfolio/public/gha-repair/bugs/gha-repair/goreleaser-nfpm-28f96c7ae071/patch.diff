@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/lock.yml b/.github/workflows/lock.yml
+index 447790e..f300bb0 100644
+--- a/.github/workflows/lock.yml
++++ b/.github/workflows/lock.yml
+@@ -14,6 +14,7 @@ permissions:
+ 
+ jobs:
+   lock:
++    if: github.repository == 'goreleaser/nfpm'
+     runs-on: ubuntu-latest
+     steps:
+       - uses: dessant/lock-threads@v3

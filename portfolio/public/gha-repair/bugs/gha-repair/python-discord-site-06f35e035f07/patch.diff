@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yaml b/.github/workflows/build.yaml
+index 9ebfa06..dccca6a 100644
+--- a/.github/workflows/build.yaml
++++ b/.github/workflows/build.yaml
+@@ -25,7 +25,7 @@ jobs:
+       - name: Checkout code
+         uses: actions/checkout@v3
+ 
+-      # The current version (v2) of Docker's build-push action uses
++      # The current version (v3) of Docker's build-push action uses
+       # buildx, which comes with BuildKit features that help us speed
+       # up our builds using additional cache features. Buildx also
+       # has a lot of other features that are not as relevant to us.

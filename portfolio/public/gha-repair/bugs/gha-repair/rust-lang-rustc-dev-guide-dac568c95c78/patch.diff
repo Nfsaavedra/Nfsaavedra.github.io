@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/date-check.yml b/.github/workflows/date-check.yml
+index c787da0..b808876 100644
+--- a/.github/workflows/date-check.yml
++++ b/.github/workflows/date-check.yml
+@@ -17,6 +17,10 @@ jobs:
+       - name: Checkout repo
+         uses: actions/checkout@v2
+ 
++      - name: Ensure Rust is up-to-date
++        run: |
++          rustup update stable
++
+       - name: Run `date-check`
+         working-directory: ci/date-check
+         run: |

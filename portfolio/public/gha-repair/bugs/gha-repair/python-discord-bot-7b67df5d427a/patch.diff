@@ -1,0 +1,49 @@
+diff --git a/.github/workflows/deploy.yml b/.github/workflows/deploy.yml
+index 90555a8..5a4aede 100644
+--- a/.github/workflows/deploy.yml
++++ b/.github/workflows/deploy.yml
+@@ -23,6 +23,9 @@ jobs:
+ 
+       - name: Checkout code
+         uses: actions/checkout@v2
++        with:
++          repository: python-discord/kubernetes
++          token: ${{ secrets.REPO_TOKEN }}
+ 
+       - name: Authenticate with Kubernetes
+         uses: azure/k8s-set-context@v1
+@@ -34,6 +37,6 @@ jobs:
+         uses: Azure/k8s-deploy@v1
+         with:
+           manifests: |
+-              deployment.yaml
++              bot/deployment.yaml
+           images: 'ghcr.io/python-discord/bot:${{ steps.sha_tag.outputs.tag }}'
+           kubectl-version: 'latest'
+diff --git a/deployment.yaml b/deployment.yaml
+deleted file mode 100644
+index ca5ff59..0000000
+--- a/deployment.yaml
++++ /dev/null
+@@ -1,21 +0,0 @@
+-apiVersion: apps/v1
+-kind: Deployment
+-metadata:
+-  name: bot
+-spec:
+-  replicas: 1
+-  selector:
+-    matchLabels:
+-      app: bot
+-  template:
+-    metadata:
+-      labels:
+-        app: bot
+-    spec:
+-      containers:
+-      - name: bot
+-        image: ghcr.io/python-discord/bot:latest
+-        imagePullPolicy: Always
+-        envFrom:
+-        - secretRef:
+-            name: bot-env

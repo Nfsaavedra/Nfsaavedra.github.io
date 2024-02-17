@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/android.yml b/.github/workflows/android.yml
+index 64d772e..eeac59c 100644
+--- a/.github/workflows/android.yml
++++ b/.github/workflows/android.yml
+@@ -16,7 +16,7 @@ jobs:
+           java-version: '11'
+ 
+       - name: Android Emulator Runner
+-        uses: ReactiveCircus/android-emulator-runner@v2.13.0
++        uses: ReactiveCircus/android-emulator-runner@v2.14.3
+         with:
+           api-level: 29
+           script: ./gradlew connectedCheck --stacktrace

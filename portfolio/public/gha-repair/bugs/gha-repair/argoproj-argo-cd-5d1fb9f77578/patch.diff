@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/image.yaml b/.github/workflows/image.yaml
+index a020674..a17394f 100644
+--- a/.github/workflows/image.yaml
++++ b/.github/workflows/image.yaml
+@@ -54,7 +54,6 @@ jobs:
+           echo "Building image for platforms: $IMAGE_PLATFORMS"
+           docker buildx build --platform $IMAGE_PLATFORMS --push="${{ github.event_name == 'push' }}" \
+             -t ghcr.io/argoproj/argocd:${{ steps.image.outputs.tag }} \
+-            -t argoproj/argocd:${{ steps.image.outputs.tag }} \
+             -t argoproj/argocd:latest .
+         working-directory: ./src/github.com/argoproj/argo-cd
+ 

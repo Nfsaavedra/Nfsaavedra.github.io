@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/lint.yml b/.github/workflows/lint.yml
+index 1253bc4..3aeaa15 100644
+--- a/.github/workflows/lint.yml
++++ b/.github/workflows/lint.yml
+@@ -5,10 +5,10 @@ on:
+   # but only for the main branch
+   push:
+     branches:
+-      - main
++      - master
+   pull_request:
+     branches:
+-      - main
++      - master
+ 
+ jobs:
+   run-linters:

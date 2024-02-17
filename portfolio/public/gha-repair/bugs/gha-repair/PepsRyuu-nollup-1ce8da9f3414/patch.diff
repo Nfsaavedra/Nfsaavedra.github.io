@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 8364b7d..bcbb743 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -33,4 +33,4 @@ jobs:
+     - name: npm install, build and test
+       run: |
+         npm install
+-        npm test
++        npm run test:mocha

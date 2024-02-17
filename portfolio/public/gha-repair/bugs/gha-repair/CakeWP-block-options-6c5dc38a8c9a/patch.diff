@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/development-zip.yml b/.github/workflows/development-zip.yml
+index 1f2ce0c..e80ae87 100644
+--- a/.github/workflows/development-zip.yml
++++ b/.github/workflows/development-zip.yml
+@@ -43,7 +43,7 @@ jobs:
+             - name: bootstrap, npm install, build, and test
+               run: |
+                   npm ci
+-                  npm run build
++                  npm run build-assets
+                   touch .devbuild
+               env:
+                   CI: true

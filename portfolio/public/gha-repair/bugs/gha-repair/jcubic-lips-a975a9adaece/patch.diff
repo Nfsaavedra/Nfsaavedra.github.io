@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yaml b/.github/workflows/build.yaml
+index 5f6e28e..cddc22d 100644
+--- a/.github/workflows/build.yaml
++++ b/.github/workflows/build.yaml
+@@ -14,7 +14,7 @@ jobs:
+         uses: actions/setup-node@v2
+         with:
+           node-version: '16'
+-      - run: npm install
++      - run: npm ci
+       - run: make
+       - run: make lint
+       - run: make test

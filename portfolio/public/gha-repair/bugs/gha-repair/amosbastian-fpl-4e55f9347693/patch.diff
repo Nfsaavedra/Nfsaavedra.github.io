@@ -1,0 +1,23 @@
+diff --git a/.github/workflows/pytest.yaml b/.github/workflows/pytest.yaml
+index d6b04b6..af35d7a 100644
+--- a/.github/workflows/pytest.yaml
++++ b/.github/workflows/pytest.yaml
+@@ -24,6 +24,7 @@ jobs:
+       - name: Install pipenv
+         run: |
+           python -m pip install --upgrade pipenv wheel
++
+       - id: cache-pipenv
+         uses: actions/cache@v1
+         with:
+@@ -33,8 +34,8 @@ jobs:
+       - name: Install dependencies
+         if: steps.cache-pipenv.outputs.cache-hit != 'true'
+         run: |
+-          pipenv install --deploy --dev
+-          
++          pipenv install --dev -e
++
+       - name: Run test suite
+         run: |
+           pipenv run python setup.py develop

@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/ci-cross-compile.yml b/.github/workflows/ci-cross-compile.yml
+index 69c561a..41f6e17 100644
+--- a/.github/workflows/ci-cross-compile.yml
++++ b/.github/workflows/ci-cross-compile.yml
+@@ -108,12 +108,12 @@ jobs:
+       - name: Run Gradle Configure CMake (Debug)
+         uses: gradle/gradle-build-action@v2
+         with:
+-          arguments: configureCMakeDebug
++          arguments: --configuration-cache configureCMakeDebug
+           build-root-directory: android
+       - name: Run Gradle Configure CMake (Release)
+         uses: gradle/gradle-build-action@v2
+         with:
+-          arguments: configureCMakeRelWithDebInfo
++          arguments: --configuration-cache configureCMakeRelWithDebInfo
+           build-root-directory: android
+       - name: Run Gradle Assemble (Debug)
+         uses: gradle/gradle-build-action@v2

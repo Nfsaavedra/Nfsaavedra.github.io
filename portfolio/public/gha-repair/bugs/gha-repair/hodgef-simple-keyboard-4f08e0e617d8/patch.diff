@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 36f7c1f..70baed0 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -1,8 +1,6 @@
+ name: Build
+ on:
+   push:
+-    branches:
+-      - master
+     paths-ignore:
+       - README.md
+       - .gitignore

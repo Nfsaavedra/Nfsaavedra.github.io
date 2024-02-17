@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/github-ci.yml b/.github/workflows/github-ci.yml
+index 4d663bc..5659001 100644
+--- a/.github/workflows/github-ci.yml
++++ b/.github/workflows/github-ci.yml
+@@ -67,7 +67,7 @@ jobs:
+         run: |
+           echo "上传打包到 CDN"
+           echo "VERSION: ${{ steps.version.outputs.value }}"
+-          ossutil cp -f -r build oss://$CDN_OSS_PROD/test/$VERESION/
++          ossutil cp -f -r build oss://$CDN_OSS_PROD/packages/authing-js-sdk/$VERESION/
+         env:
+           VERESION: ${{ steps.version.outputs.value }}
+ 

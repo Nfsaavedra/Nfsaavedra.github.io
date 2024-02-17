@@ -1,0 +1,31 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 8eac0bc..7c45e2a 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -23,7 +23,7 @@ jobs:
+     steps:
+       - id: get_version
+         name: Get package version
+-        uses: actions/github-script@v4.1
++        uses: actions/github-script@v5
+         with:
+           github-token: ${{ secrets.GITHUB_TOKEN }}
+           result-encoding: string
+@@ -41,7 +41,7 @@ jobs:
+ 
+       - id: get_url
+         name: Get release upload url
+-        uses: actions/github-script@v4.1
++        uses: actions/github-script@v5
+         with:
+           github-token: ${{ secrets.GITHUB_TOKEN }}
+           result-encoding: string
+@@ -65,7 +65,7 @@ jobs:
+ 
+       - id: get_ref
+         name: Get checkout ref for custom build scripts
+-        uses: actions/github-script@v4.1
++        uses: actions/github-script@v5
+         with:
+           github-token: ${{ secrets.GITHUB_TOKEN }}
+           result-encoding: string

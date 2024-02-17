@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test_forward.yml b/.github/workflows/test_forward.yml
+index 405548c..7450857 100644
+--- a/.github/workflows/test_forward.yml
++++ b/.github/workflows/test_forward.yml
+@@ -30,7 +30,7 @@ jobs:
+         python -m pip install --upgrade pip
+         pip install wheel==0.35.1
+         pip install numpy==1.22.3
+-        pip install Cython==0.29.13
++        pip install Cython==0.29.28
+         pip install setuptools==41.2.0
+         pip install -r requirements-test-forward.txt
+ 

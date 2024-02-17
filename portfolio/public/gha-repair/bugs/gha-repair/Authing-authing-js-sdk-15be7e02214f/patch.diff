@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index c04b292..69b4789 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -59,6 +59,11 @@ jobs:
+           lerna link
+           npm run transfer-miniprogram-libs
+ 
++      - name: commit legacy
++        run: |
++          git add .
++          git commit -m "feat: commit miniprogram frameworks"
++
+       - name: update version
+         run: |
+           lerna version $VERSION --yes

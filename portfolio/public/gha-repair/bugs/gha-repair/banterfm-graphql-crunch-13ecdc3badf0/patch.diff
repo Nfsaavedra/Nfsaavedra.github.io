@@ -1,0 +1,37 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index a9a9133..dce1e2e 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -1,18 +1,27 @@
+ name: Test
+ 
+-on: [push]
++on:
++  push:
++  release:
++    types:
++      - created
+ 
+ jobs:
+-  build:
+-
++  setup:
+     runs-on: ubuntu-latest
+-
+     steps:
+     - uses: actions/checkout@v2
+     - uses: actions/setup-node@v1
+       with:
+         node-version: '12.x'
++
++  dependencies:
++    needs: setup
++    steps:
+     - run: npm install -g yarn
+     - run: yarn install
+-    - run: yarn test
+ 
++  test:
++    needs: dependencies
++    steps:
++    - run: yarn test

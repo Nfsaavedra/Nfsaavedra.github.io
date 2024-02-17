@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/subsplit.yml b/.github/workflows/subsplit.yml
+index 2c3d0f8..6239ae7 100644
+--- a/.github/workflows/subsplit.yml
++++ b/.github/workflows/subsplit.yml
+@@ -9,7 +9,7 @@ on:
+ 
+ jobs:
+     subsplit:
+-        runs-on: ubuntu-18.04
++        runs-on: ubuntu-latest
+ 
+         steps:
+             - uses: actions/checkout@master

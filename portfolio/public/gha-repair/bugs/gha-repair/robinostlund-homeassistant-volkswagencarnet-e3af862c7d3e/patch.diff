@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yaml b/.github/workflows/release.yaml
+index f756c6d..ce95f4c 100644
+--- a/.github/workflows/release.yaml
++++ b/.github/workflows/release.yaml
+@@ -2,7 +2,7 @@ name: Release
+ 
+ on:
+   release:
+-    types: [published]
++    types: [prereleased,published]
+ 
+ jobs:
+   build:

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 618d3a9..a530791 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -15,7 +15,7 @@ jobs:
+         runtime: [ linux-x64, linux-arm64, win-x64, osx-x64 ]
+         include:
+         - runtime: linux-x64
+-          os: ubuntu-latest
++          os: ubuntu-18.04
+ 
+         - runtime: linux-arm64
+           os: ubuntu-latest

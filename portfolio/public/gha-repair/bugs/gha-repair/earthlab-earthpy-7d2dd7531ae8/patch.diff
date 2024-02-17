@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/lint-docs.yml b/.github/workflows/lint-docs.yml
+index 70fd381..9b31084 100644
+--- a/.github/workflows/lint-docs.yml
++++ b/.github/workflows/lint-docs.yml
+@@ -18,7 +18,7 @@ jobs:
+       fail-fast: false
+       matrix:
+         os: ["ubuntu-latest", "macos-latest"]
+-        python-version: [3.8]
++        python-version: [3.9]
+ 
+     steps:
+     - uses: actions/checkout@v2

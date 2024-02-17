@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 4c9545b..a0490dd 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -4,8 +4,8 @@ jobs:
+   build:
+     runs-on: ubuntu-latest
+     steps:
+-      - uses: actions/checkout@v3
+-      - uses: actions/setup-node@v3
++      - uses: actions/checkout@v4
++      - uses: actions/setup-node@v4
+       - run: npm install
+       - run: npm run build
+       - run: npm run lint

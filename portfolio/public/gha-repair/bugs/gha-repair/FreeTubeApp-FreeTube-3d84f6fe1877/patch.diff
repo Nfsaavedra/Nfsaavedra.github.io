@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/label-pr.yml b/.github/workflows/label-pr.yml
+index 9df23f2..5c9c992 100644
+--- a/.github/workflows/label-pr.yml
++++ b/.github/workflows/label-pr.yml
+@@ -11,7 +11,7 @@ jobs:
+     runs-on: ubuntu-latest
+     if: ${{ !github.event.pull_request.draft }}
+     steps:
+-    - uses: actions/labeler@v4
++    - uses: actions/labeler@v5
+       with:
+         repo-token: "${{ secrets.GITHUB_TOKEN }}"
+         configuration-path: .github/pr-labeler.yml

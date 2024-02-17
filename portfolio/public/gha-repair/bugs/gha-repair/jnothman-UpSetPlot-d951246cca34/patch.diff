@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/lint.yml b/.github/workflows/lint.yml
+index d5cbdee..e303ec1 100644
+--- a/.github/workflows/lint.yml
++++ b/.github/workflows/lint.yml
+@@ -1,4 +1,4 @@
+-name: Lintbb
++name: Lint
+ on: [push]
+ jobs:
+   lint:
+@@ -17,4 +17,4 @@ jobs:
+           run: |
+             pip install ruff
+             ruff --output-format=github .
+-          continue-on-error: true
+\ No newline at end of file
++          continue-on-error: true

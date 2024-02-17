@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/linux.yml b/.github/workflows/linux.yml
+index 738b9e3..7292a89 100644
+--- a/.github/workflows/linux.yml
++++ b/.github/workflows/linux.yml
+@@ -16,7 +16,7 @@ jobs:
+     strategy:
+       fail-fast: false
+       matrix:
+-        build_type: [ Debug ] # TODO: Release
++        build_type: [ Debug, Release ]
+         compiler:
+           - {
+             cc: clang-7, cxx: clang++-7,

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 88477c4..b8033fc 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -22,7 +22,7 @@ jobs:
+         os: [ubuntu-20.04, ubuntu-18.04]
+     
+     steps:
+-    - uses: actions/checkout@v2
++    - uses: actions/checkout@v3
+     - name: Prepare VM
+       run: |
+         unset LANG

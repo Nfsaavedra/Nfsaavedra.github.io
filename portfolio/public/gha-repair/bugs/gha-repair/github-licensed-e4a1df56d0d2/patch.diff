@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index ff896e9..73d4e93 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -366,7 +366,7 @@ jobs:
+     steps:
+     - uses: actions/checkout@v3
+     - name: Setup Swift
+-      uses: fwal/setup-swift@v1
++      uses: swift-actions/setup-swift@v1
+       with:
+         swift-version: ${{ matrix.swift }}
+     - name: Set up Ruby

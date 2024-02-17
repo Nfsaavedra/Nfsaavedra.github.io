@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/publish.yml b/.github/workflows/publish.yml
+index 043ad76..e81512e 100644
+--- a/.github/workflows/publish.yml
++++ b/.github/workflows/publish.yml
+@@ -31,7 +31,7 @@ jobs:
+           npm version patch
+           npm run build
+           git add . || true
+-          git commit -m "Build Update" || true
++          git commit -m "Build update" || true
+           git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY"
+         env:
+           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

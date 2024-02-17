@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/workflow.yml b/.github/workflows/workflow.yml
+index a42405a..52d3297 100644
+--- a/.github/workflows/workflow.yml
++++ b/.github/workflows/workflow.yml
+@@ -1,6 +1,6 @@
+ name: CMake
+ 
+-on: [pull_request]
++on: [push, pull_request]
+ 
+ env:
+   BUILD_TYPE: Release

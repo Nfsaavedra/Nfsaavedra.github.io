@@ -1,0 +1,32 @@
+diff --git a/.github/workflows/regression-tests-and-codegen.yaml b/.github/workflows/regression-tests-and-codegen.yaml
+index 7ead8bc..627c258 100644
+--- a/.github/workflows/regression-tests-and-codegen.yaml
++++ b/.github/workflows/regression-tests-and-codegen.yaml
+@@ -36,10 +36,18 @@ jobs:
+       uses: peaceiris/actions-hugo@v2
+       with:
+         hugo-version: '0.69.2'
++    - name: Detect Communinty PR
++      id: community-pr-check
++      if: ${{ github.event.pull_request.head.repo.full_name != 'solo-io/gloo' }}
++      shell: bash
++      run: |
++          echo "Pull Request is from a fork. Setting IS_COMMUNITY_PR to true"
++          echo "::set-output name=IS_COMMUNITY_PR::true"
+     - name: Generate versioned docs site
+       run: make -C docs build-site
+       env:
+         GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
++        SKIP_CHANGELOG_GENERATION: ${{ steps.community-pr-check.outputs.IS_COMMUNITY_PR }}
+   regression_tests:
+     name: k8s regression tests
+     runs-on: ubuntu-18.04
+diff --git a/changelog/v1.6.0-beta18/disable-community-docs-deploy.yaml b/changelog/v1.6.0-beta18/disable-community-docs-deploy.yaml
+new file mode 100644
+index 0000000..c90542c
+--- /dev/null
++++ b/changelog/v1.6.0-beta18/disable-community-docs-deploy.yaml
+@@ -0,0 +1,3 @@
++changelog:
++  - type: NON_USER_FACING
++    description: Disable enterprise docs gen for community PRs

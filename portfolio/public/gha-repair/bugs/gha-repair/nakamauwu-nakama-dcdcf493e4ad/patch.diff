@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/deploy.yml b/.github/workflows/deploy.yml
+index eaf3374..1c36122 100644
+--- a/.github/workflows/deploy.yml
++++ b/.github/workflows/deploy.yml
+@@ -60,4 +60,4 @@ jobs:
+           host: ${{ secrets.REMOTE_HOST }}
+           username: ${{ secrets.REMOTE_USER }}
+           key: ${{ secrets.SSH_PRIVATE_KEY }}
+-          script: docker-compose up -d --force-recreate
++          script: docker-compose pull && docker-compose up -d --force-recreate

@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index bddce48..9f3a190 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -18,9 +18,9 @@ jobs:
+     - name: Checkout code
+       uses: actions/checkout@v2
+     - name: Run linters
+-      uses: golangci/golangci-lint-action@v2
++      uses: golangci/golangci-lint-action@v3
+       with:
+-        version: v1.29
++        version: v1.45
+ 
+   test:
+     strategy:

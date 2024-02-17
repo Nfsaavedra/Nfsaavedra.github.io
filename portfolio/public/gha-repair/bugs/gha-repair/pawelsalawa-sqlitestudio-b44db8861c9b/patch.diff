@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/win32_release.yml b/.github/workflows/win32_release.yml
+index d4476fb..79750cb 100644
+--- a/.github/workflows/win32_release.yml
++++ b/.github/workflows/win32_release.yml
+@@ -25,8 +25,8 @@ jobs:
+             - name: Debug
+               shell: bash
+               run: |
+-                ls -l C:/ProgramData/Chocolatey/lib/mingw/tools/install/
+-        
++                ls -l C:/ProgramData/Chocolatey/lib/mingw/tools/install/mingw64/lib/gcc/
++
+             # - name: Cache Qt
+               # id: cache-qt
+               # uses: actions/cache@v1

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 00bdc5b..e8a7557 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -45,6 +45,6 @@ jobs:
+     needs: test
+     runs-on: ubuntu-latest
+     steps:
+-      - uses: fastify/github-action-merge-dependabot@v2.0.0
++      - uses: fastify/github-action-merge-dependabot@v2.1.0
+         with:
+           github-token: ${{ secrets.GITHUB_TOKEN }}

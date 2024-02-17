@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/workflow_ci.yml b/.github/workflows/workflow_ci.yml
+index 7ffdc2e..2855c98 100644
+--- a/.github/workflows/workflow_ci.yml
++++ b/.github/workflows/workflow_ci.yml
+@@ -62,7 +62,8 @@ jobs:
+       - name: build
+         run: dotnet publish src/compute.sln -c Release -p:PublishTrimmed=true --self-contained true -r win-x64
+       - name: artifacts
++        if: ${{ always() && format('refs/heads/{0}', ) == github.ref }}
+         uses: actions/upload-artifact@v2
+         with:
+           path: src/dist
+-          name: rhino.compute ${{ steps.revision.outputs.revision }}
+\ No newline at end of file
++          name: rhino.compute
+\ No newline at end of file

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/push_on_master.yml b/.github/workflows/push_on_master.yml
+index 056cdde..a4cb218 100644
+--- a/.github/workflows/push_on_master.yml
++++ b/.github/workflows/push_on_master.yml
+@@ -37,7 +37,7 @@ jobs:
+       - name: Unit Tests
+         run: make test-unit
+   SonarCloud:
+-    runs-on: ubuntu-latest
++    runs-on: ubuntu-20.04
+     steps:
+       - uses: actions/checkout@v2
+       - run: git submodule update --init

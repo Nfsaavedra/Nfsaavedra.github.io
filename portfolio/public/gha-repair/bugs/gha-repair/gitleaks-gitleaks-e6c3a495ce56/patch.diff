@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index bf982ae..9001aa7 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -22,7 +22,7 @@ jobs:
+       - name: Log in to Docker Hub
+         uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+         with:
+-          username: ${{ secrets.DOCKER_USERNAME }}
++          username: zricethezav
+           password: ${{ secrets.DOCKER_PASSWORD }}
+ 
+       - name: Log in to the Container registry

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/codeql-analysis.yml b/.github/workflows/codeql-analysis.yml
+index d585f16..6fb055d 100644
+--- a/.github/workflows/codeql-analysis.yml
++++ b/.github/workflows/codeql-analysis.yml
+@@ -52,7 +52,7 @@ jobs:
+       run: |
+         sudo sed -i '/deb-src/s/^# //' /etc/apt/sources.list
+         sudo apt update
+-        sudo apt install meson
++        sudo apt install meson python3-coverage python3-pytest python3-pytest-cov
+         sudo apt build-dep netplan.io
+ 
+     # Autobuild attempts to build any compiled languages  (C/C++, C#, or Java).

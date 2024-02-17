@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/CI.yml b/.github/workflows/CI.yml
+index 59ac977..b41c1f8 100644
+--- a/.github/workflows/CI.yml
++++ b/.github/workflows/CI.yml
+@@ -39,7 +39,8 @@ jobs:
+           - 'r"/*/SEResNet*"'
+           - '[r"Res2Net", r"Res2NeXt"]'
+           - '"Inception"'
+-          - '["UNet", "DenseNet"]'
++          - '"DenseNet"'
++          - '"UNet"'
+           - '["ConvNeXt", "ConvMixer"]'
+           - 'r"Mixers"'
+           - 'r"ViTs"'

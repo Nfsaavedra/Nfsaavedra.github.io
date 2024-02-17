@@ -1,0 +1,22 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index a49e029..ca9d681 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -22,10 +22,13 @@ jobs:
+       run: mkdir build && cd build && cmake ..
+     - name: Build
+       run: cd build && cmake --build . --config Release
+-    - name: Run unit tests
+-      run: cd build && cd bin && ls && ./smmalloc_test
+-    - name: Run performance tests
+-      run: cd build && cd bin && ls && ./smmalloc_perf
++    - name: Run tests
++      run: |
++        cd build
++        cd bin
++        ls
++        ./smmalloc_test
++        ./smmalloc_perf
+   build-windows:
+     runs-on: windows-latest
+     strategy:

@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/docker-image.yml b/.github/workflows/docker-image.yml
+index 6551b79..64c108e 100644
+--- a/.github/workflows/docker-image.yml
++++ b/.github/workflows/docker-image.yml
+@@ -17,6 +17,9 @@ jobs:
+       with:
+         go-version: 1.18
+ 
++    - name: Test
++      run: go test -v ./...
++
+     - name: Build
+       run: go build -ldflags "-X main.version=$(git rev-parse --short HEAD)" -v -o . ./...
+ 

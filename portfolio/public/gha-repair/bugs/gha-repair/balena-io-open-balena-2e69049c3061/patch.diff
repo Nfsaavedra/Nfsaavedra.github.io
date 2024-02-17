@@ -1,0 +1,26 @@
+diff --git a/.github/workflows/flowzone.yml b/.github/workflows/flowzone.yml
+index 1f34f77..02c5d0f 100644
+--- a/.github/workflows/flowzone.yml
++++ b/.github/workflows/flowzone.yml
+@@ -3,9 +3,11 @@ name: Flowzone
+ on:
+   pull_request:
+     types: [opened, synchronize, closed]
+-    branches:
+-      - "main"
+-      - "master"
++    branches: [main, master]
++  # allow external contributions to use secrets within trusted code
++  pull_request_target:
++    types: [opened, synchronize, closed]
++    branches: [main, master]
+ 
+ jobs:
+   flowzone:
+@@ -13,4 +15,4 @@ jobs:
+     uses: product-os/flowzone/.github/workflows/flowzone.yml@master
+     secrets: inherit
+     with:
+-      cloudflare_website: "open-balena"
+\ No newline at end of file
++      cloudflare_website: "open-balena"

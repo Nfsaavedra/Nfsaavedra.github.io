@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/gitleaks.yml b/.github/workflows/gitleaks.yml
+index af712a5..da8fe85 100644
+--- a/.github/workflows/gitleaks.yml
++++ b/.github/workflows/gitleaks.yml
+@@ -1,5 +1,5 @@
+ name: gitleaks
+-on: [pull_request, push, workflow_dispatch]
++on: [push, workflow_dispatch]
+ jobs:
+   scan:
+     name: gitleaks

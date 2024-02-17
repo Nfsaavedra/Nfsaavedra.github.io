@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/nodejs.yml b/.github/workflows/nodejs.yml
+index b7e3c22..a3f31c9 100644
+--- a/.github/workflows/nodejs.yml
++++ b/.github/workflows/nodejs.yml
+@@ -29,10 +29,10 @@ jobs:
+         with:
+           fetch-depth: 0
+ 
+-      - name: Use Node.js ${{ env.node-version }}
++      - name: Use Node.js ${{ matrix.node-version }}
+         uses: actions/setup-node@v1
+         with:
+-          node-version: ${{ env.node-version }}
++          node-version: ${{ matrix.node-version }}
+ 
+       - name: Use latest NPM
+         run: sudo npm i -g npm

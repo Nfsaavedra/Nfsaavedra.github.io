@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/publish.yaml b/.github/workflows/publish.yaml
+index 2118c28..cb58d22 100644
+--- a/.github/workflows/publish.yaml
++++ b/.github/workflows/publish.yaml
+@@ -19,4 +19,5 @@ jobs:
+         uses: anothrNick/github-tag-action@1.23.0
+         env:
+           GITHUB_TOKEN: ${{ secrets.MY_PERSONAL_ACCESS_TOKEN }}
++          DEFAULT_BUMP: patch
+           WITH_V: true
+\ No newline at end of file

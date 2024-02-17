@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/tests.yml b/.github/workflows/tests.yml
+index 59658df..3103f43 100644
+--- a/.github/workflows/tests.yml
++++ b/.github/workflows/tests.yml
+@@ -95,6 +95,7 @@ jobs:
+             - name: Compile Plugins
+               working-directory: output/build/Plugins
+               run: |
++                fine $pythonLocation -iname Python.h
+                 qmake CONFIG+=portable CONFIG+=debug DEFINES+=tests "INCLUDEPATH+=$pythonLocation/include" ../../../Plugins
+                 make -j 2
+ 

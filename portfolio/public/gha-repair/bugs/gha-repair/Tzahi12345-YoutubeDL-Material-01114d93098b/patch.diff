@@ -1,0 +1,18 @@
+diff --git a/.github/workflows/docker-release.yml b/.github/workflows/docker-release.yml
+index ff0e8d8..8ce86c6 100644
+--- a/.github/workflows/docker-release.yml
++++ b/.github/workflows/docker-release.yml
+@@ -68,6 +68,13 @@ jobs:
+           username: ${{ secrets.DOCKERHUB_USERNAME }}
+           password: ${{ secrets.DOCKERHUB_TOKEN }}
+ 
++      - name: Login to GitHub Container Registry
++        uses: docker/login-action@v2
++        with:
++          registry: ghcr.io
++          username: ${{ github.repository_owner }}
++          password: ${{ secrets.GHCR_TOKEN }}
++
+       - name: build & push images
+         uses: docker/build-push-action@v2
+         with:

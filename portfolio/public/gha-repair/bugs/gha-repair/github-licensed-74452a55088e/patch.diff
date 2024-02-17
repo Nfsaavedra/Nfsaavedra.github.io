@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 0608369..bb5b4df 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -182,8 +182,6 @@ jobs:
+       run: script/source-setup/go
+     - name: Run tests
+       run: script/test go
+-      env:
+-        GO111MODULE: "on"
+ 
+   gradle:
+     runs-on: ubuntu-latest

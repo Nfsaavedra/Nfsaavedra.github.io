@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci-vcpkg.yml b/.github/workflows/ci-vcpkg.yml
+index 5e474b7..d472993 100644
+--- a/.github/workflows/ci-vcpkg.yml
++++ b/.github/workflows/ci-vcpkg.yml
+@@ -168,6 +168,8 @@ jobs:
+           target: game-data
+       - name: Extract Game Data
+         run: 7z x -ogame-data/bw "$PWD/game-data/${{steps.game-data.outputs.filename}}"
++      - name: Add empty Audio directory
++        run: mkdir game-data/bw/Audio
+       - name: Enable execute permissions on binary
+         run: chmod +x ${{steps.download-binary.outputs.download-path}}/*/*
+         if: startsWith(matrix.os, 'ubuntu') || startsWith(matrix.os, 'macos')

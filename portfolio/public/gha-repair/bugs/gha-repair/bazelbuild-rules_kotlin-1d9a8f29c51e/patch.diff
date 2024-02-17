@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/release_prep.sh b/.github/workflows/release_prep.sh
+index 8632a5b..3077c94 100755
+--- a/.github/workflows/release_prep.sh
++++ b/.github/workflows/release_prep.sh
+@@ -34,6 +34,6 @@ http_archive(
+     name = "rules_kotlin",
+     sha256 = "${SHA}",
+     strip_prefix = "${PREFIX}",
+-    url = "https://github.com/buildfoundation/rules_kotlin/releases/download/${TAG}/${ARCHIVE}",
++    url = "https://github.com/bazelbuild/rules_kotlin/releases/download/${TAG}/${ARCHIVE}",
+ )
+ EOF

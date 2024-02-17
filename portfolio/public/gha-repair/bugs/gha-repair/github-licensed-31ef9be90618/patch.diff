@@ -1,0 +1,33 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 4fe1b43..329f31b 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -322,19 +322,12 @@ jobs:
+       with:
+         python-version: ${{ matrix.python }}
+         architecture: x64
++        cache: pip
+     - name: Set up Ruby
+       uses: ruby/setup-ruby@v1
+       with:
+         bundler-cache: true
+ 
+-    - uses: actions/cache@v3
+-      name: cache pip dependencies
+-      with:
+-        path: ~/.cache/pip
+-        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+-        restore-keys: |
+-          ${{ runner.os }}-pip-
+-
+     - name: Install virtualenv
+       run: pip install virtualenv
+     - name: Set up fixtures
+@@ -352,6 +345,7 @@ jobs:
+       with:
+         python-version: '3.x'
+         architecture: x64
++        cache: pipenv
+     - name: Set up Ruby
+       uses: ruby/setup-ruby@v1
+       with:

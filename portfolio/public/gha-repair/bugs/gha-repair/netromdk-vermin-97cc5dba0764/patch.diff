@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/analyze.yml b/.github/workflows/analyze.yml
+index 4cb90cd..007fec7 100644
+--- a/.github/workflows/analyze.yml
++++ b/.github/workflows/analyze.yml
+@@ -6,7 +6,7 @@ on:
+   pull_request:
+ 
+ jobs:
+-  build:
++  analyze:
+ 
+     runs-on: ubuntu-latest
+     strategy:

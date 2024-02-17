@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/rust.yml b/.github/workflows/rust.yml
+index b6d2f35..11c9ecd 100644
+--- a/.github/workflows/rust.yml
++++ b/.github/workflows/rust.yml
+@@ -18,9 +18,8 @@ jobs:
+           rustup component add clippy
+ 
+       - name: Init Submodules
+-        if: ${{ hashFiles('ffplayout-frontend/package.json') == '' }}
+         run: |
+-          git submodule update --init
++          git submodule update --init --recursive
+           
+       - name: Use ffmpeg on Linux
+         if: ${{ matrix.os == 'ubuntu-latest' }}

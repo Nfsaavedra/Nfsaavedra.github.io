@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/crankshaft.yml b/.github/workflows/crankshaft.yml
+index 8e96a3e..052d145 100644
+--- a/.github/workflows/crankshaft.yml
++++ b/.github/workflows/crankshaft.yml
+@@ -4,11 +4,11 @@ on:
+ #  schedule:
+ #    - cron: '0 10 * * *' # everyday at 10am
+   push:
+-    branches:
+-      - '**'
++#    branches:
++#      - '**'
+     tags:
+       - '*.*.*'
+-  pull_request:
++#  pull_request:
+ 
+ jobs:
+   docker:

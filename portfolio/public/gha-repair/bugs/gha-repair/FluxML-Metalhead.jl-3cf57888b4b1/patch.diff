@@ -1,0 +1,18 @@
+diff --git a/.github/workflows/CI.yml b/.github/workflows/CI.yml
+index 6b73e8c..ab24ad9 100644
+--- a/.github/workflows/CI.yml
++++ b/.github/workflows/CI.yml
+@@ -26,7 +26,12 @@ jobs:
+         arch:
+           - x64
+         suite:
+-          - '["AlexNext", "VGG"]'
++          - '["AlexNet", "VGG", "GoogLeNet", "SqueezeNet"]'
++          - '["EfficientNet", "MobileNet"]'
++          - '[r"ResNet$", r"ResNeXt$"]'
++          - '[r"Inception$", r"DenseNet$"]'
++          - '"ConvNeXt"'
++          - '"ConvMixer"'
+     steps:
+       - uses: actions/checkout@v2
+       - uses: julia-actions/setup-julia@v1

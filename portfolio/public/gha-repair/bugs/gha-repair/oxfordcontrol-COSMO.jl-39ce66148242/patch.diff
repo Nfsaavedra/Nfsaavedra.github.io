@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/Documentation.yml b/.github/workflows/Documentation.yml
+index cf0a23d..7a61121 100644
+--- a/.github/workflows/Documentation.yml
++++ b/.github/workflows/Documentation.yml
+@@ -14,7 +14,7 @@ jobs:
+       - uses: actions/checkout@v2
+       - uses: julia-actions/setup-julia@latest
+         with:
+-          version: '1.4'
++          version: '1'
+       - name: Install dependencies
+         run: julia --project=docs/ -e 'using Pkg; Pkg.develop(PackageSpec(path=pwd())); Pkg.instantiate()'
+       - name: Build and deploy

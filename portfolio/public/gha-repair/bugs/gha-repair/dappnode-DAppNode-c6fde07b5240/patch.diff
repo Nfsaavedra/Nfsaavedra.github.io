@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index e4e730a..e08acbc 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -33,6 +33,7 @@ jobs:
+         with:
+           repository: dappnode/DAppNode_Installer
+       - name: Define envs
++        run: echo "Defining envs vars"
+         env:
+           BIND_VERSION: ${{ inputs.bind }}
+           IPFS_VERSION: ${{ inputs.ipfs }}

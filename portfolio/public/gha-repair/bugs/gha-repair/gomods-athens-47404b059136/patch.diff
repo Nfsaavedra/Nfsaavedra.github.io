@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index f3b7e90..bde10a4 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -1,6 +1,11 @@
++---
+ name: continuous-integration
++
+ on:
+-  - pull_request
++  push:
++    branches: [main]
++  pull_request:
++    branches: [main]
+ 
+ jobs:
+   lint:

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/IntegrationTest.yml b/.github/workflows/IntegrationTest.yml
+index a2658af..8e8198d 100644
+--- a/.github/workflows/IntegrationTest.yml
++++ b/.github/workflows/IntegrationTest.yml
+@@ -20,6 +20,7 @@ jobs:
+           - {user: JuliaMath, repo: SpecialFunctions.jl}
+           - {user: invenia, repo: BlockDiagonals.jl}
+           - {user: invenia, repo: PDMatsExtras.jl}
++          - {user: PumasAI, repo: DataInterpolations.jl}
+ 
+     steps:
+       - uses: actions/checkout@v2

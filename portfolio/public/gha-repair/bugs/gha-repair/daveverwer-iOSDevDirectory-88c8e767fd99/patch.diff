@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/url-scanner.yml b/.github/workflows/url-scanner.yml
+index df91ade..3d77f88 100644
+--- a/.github/workflows/url-scanner.yml
++++ b/.github/workflows/url-scanner.yml
+@@ -1,6 +1,7 @@
+ name: Redirect Scan
+ 
+ on:
++  workflow_dispatch:
+   schedule:
+     - cron: "0 18 * * 5"
+ 

@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/3.2.yml b/.github/workflows/3.2.yml
+index dd4935b..71b2da8 100644
+--- a/.github/workflows/3.2.yml
++++ b/.github/workflows/3.2.yml
+@@ -85,7 +85,8 @@ jobs:
+               working-directory: output
+               run: |
+                 mkdir portable
+-                cp -R SQLiteStudio portable/
++                # cp -R SQLiteStudio portable/
++                mkdir portable/SQLiteStudio
+ 
+             - name: Clean-up portable dir
+               shell: bash

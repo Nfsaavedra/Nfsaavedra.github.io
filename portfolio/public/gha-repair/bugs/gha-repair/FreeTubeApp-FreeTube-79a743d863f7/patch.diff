@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/autoMerge.yml b/.github/workflows/autoMerge.yml
+index b7d5d3b..5b803a1 100644
+--- a/.github/workflows/autoMerge.yml
++++ b/.github/workflows/autoMerge.yml
+@@ -10,7 +10,7 @@ jobs:
+     steps:
+     - name: Auto Merge PR
+       run: |
+-        echo ${{ secrets.GITHUB_TOKEN }} >> auth.txt
++        echo ${{ secrets.GH_TOKEN }} >> auth.txt
+         gh auth login --with-token < auth.txt
+         rm auth.txt
+         gh pr merge https://github.com/FreeTubeApp/FreeTube/pull/${{ github.event.pull_request.number }} --auto --squash

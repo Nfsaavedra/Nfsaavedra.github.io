@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yaml b/.github/workflows/build.yaml
+index ec20187..96fc58d 100644
+--- a/.github/workflows/build.yaml
++++ b/.github/workflows/build.yaml
+@@ -22,7 +22,7 @@ jobs:
+           key: node-hashFiles('yarn.lock') }}
+ 
+       - run: yarn
+-      - run: node .github/script/rewrite-ref-path.js
++      - run: node .github/scripts/rewrite-ref-path.js
+ 
+       - run: node .github/scripts/write-date.js
+         env:

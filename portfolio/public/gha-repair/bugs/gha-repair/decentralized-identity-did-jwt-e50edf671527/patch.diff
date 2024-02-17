@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 7e0e3ea..b42261a 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -11,6 +11,7 @@ jobs:
+       - uses: actions/checkout@v2
+         with:
+           fetch-depth: 0
++          token: ${{ secrets.GH_TOKEN }}
+       - name: Use Node.js
+         uses: actions/setup-node@v2
+         with:

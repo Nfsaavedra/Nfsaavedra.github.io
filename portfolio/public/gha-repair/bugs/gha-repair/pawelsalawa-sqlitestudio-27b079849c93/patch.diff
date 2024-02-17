@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/3.2.yml b/.github/workflows/3.2.yml
+index b6b9af5..0e5b26e 100644
+--- a/.github/workflows/3.2.yml
++++ b/.github/workflows/3.2.yml
+@@ -40,7 +40,7 @@ jobs:
+               run: (new-object System.Net.WebClient).DownloadFile('https://www.dropbox.com/s/b5t6lb9e7riytq1/win64_deps.zip?dl=1', '..\win64_deps.zip')
+             
+             - name: Decompress dependencies
+-              run: 7z x -o.. ..\win64_deps.zip
++              run: 7z x -o".." ..\win64_deps.zip
+ 
+             - name: Debug pwd
+               run: pwd

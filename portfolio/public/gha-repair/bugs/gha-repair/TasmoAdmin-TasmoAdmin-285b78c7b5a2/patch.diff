@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index d10687d..fc7f7a3 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -58,7 +58,7 @@ jobs:
+     name: Release docker dev build
+     runs-on: ubuntu-20.04
+     needs: docker-test
+-    if: github.ref == 'refs/heads/master'
++    if: github.ref == 'refs/heads/master' && github.event.repository.fork == false
+     env:
+       BUILD_REF: ${{ github.sha }}
+       BUILD_VERSION: dev

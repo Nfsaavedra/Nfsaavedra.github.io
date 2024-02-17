@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/check-links.yml b/.github/workflows/check-links.yml
+index 253fd9d..0f921f9 100644
+--- a/.github/workflows/check-links.yml
++++ b/.github/workflows/check-links.yml
+@@ -7,8 +7,8 @@ on:
+     branches:
+       - master
+   schedule:
+-    # Runs every day at 9 am
+-    - cron: '0 9 * * *'
++    # Runs on the 1st of the month at 9 am
++    - cron: '0 9 1 * *'
+ 
+ jobs:
+   awesome_bot:

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build-on-commit.yml b/.github/workflows/build-on-commit.yml
+index 03ce24f..73d1ea6 100644
+--- a/.github/workflows/build-on-commit.yml
++++ b/.github/workflows/build-on-commit.yml
+@@ -7,6 +7,6 @@ jobs:
+       - uses: actions/checkout@v2
+       - uses: actions/setup-java@v1
+         with:
+-          java-version: 14
++          java-version: 15
+       - name: Build sources
+         run: ./gradlew build
+\ No newline at end of file

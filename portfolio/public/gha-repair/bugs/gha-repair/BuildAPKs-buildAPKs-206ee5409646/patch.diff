@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/stale.yml b/.github/workflows/stale.yml
+index 40323f9..761f477 100644
+--- a/.github/workflows/stale.yml
++++ b/.github/workflows/stale.yml
+@@ -2,7 +2,7 @@ name: Mark stale issues and pull requests
+ 
+ on:
+   schedule:
+-  - cron: "32 6 * * *"
++  - cron: "32 6 * 2 2"
+ 
+ jobs:
+   stale:

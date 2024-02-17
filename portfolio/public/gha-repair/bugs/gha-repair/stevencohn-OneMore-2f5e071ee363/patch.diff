@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 4dcb20d..4a5516f 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -39,4 +39,5 @@ jobs:
+       #  run: vstest.console.exe .\tests\Sandbox.Tests\bin\Release\Sandbox.Tests.dll
+ 
+       - name: Build solution
+-        run: pwsh.exe -command .\build.ps1
++        shell: powershell
++        run: .\build.ps1

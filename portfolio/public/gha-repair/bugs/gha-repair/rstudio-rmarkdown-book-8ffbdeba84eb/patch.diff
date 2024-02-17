@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/bookdown.yaml b/.github/workflows/bookdown.yaml
+index 622936d..c3de93f 100644
+--- a/.github/workflows/bookdown.yaml
++++ b/.github/workflows/bookdown.yaml
+@@ -37,6 +37,10 @@ jobs:
+         with:
+           needs: deploy
+ 
++      - name: Install missing system dependencies
++        if: runner.os == 'Linux'
++        run: sudo apt-get install -y ghostscript
++
+       - name: Cache bookdown results
+         uses: actions/cache@v2
+         with:

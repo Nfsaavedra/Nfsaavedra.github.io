@@ -1,0 +1,422 @@
+diff --git a/.bumpversion.cfg b/.bumpversion.cfg
+deleted file mode 100644
+index 8c7003d..0000000
+--- a/.bumpversion.cfg
++++ /dev/null
+@@ -1,16 +0,0 @@
+-[bumpversion]
+-current_version = 0.6.3
+-commit = True
+-tag = True
+-
+-[bumpversion:file:src/pyhf/utils.py]
+-
+-[bumpversion:file:README.rst]
+-
+-[bumpversion:file:src/pyhf/data/citation.bib]
+-
+-[bumpversion:file:.zenodo.json]
+-
+-[bumpversion:file:codemeta.json]
+-
+-[bumpversion:file:CITATION.cff]
+diff --git a/.github/workflows/bump-version.yml b/.github/workflows/bump-version.yml
+new file mode 100644
+index 0000000..cde765e
+--- /dev/null
++++ b/.github/workflows/bump-version.yml
+@@ -0,0 +1,244 @@
++name: Bump version
++
++on:
++  workflow_dispatch:
++    inputs:
++      part:
++        description: 'Semver type of new version (major | minor | patch)'
++        required: true
++        type: choice
++        options:
++        - patch
++        - minor
++        - major
++      release_candidate:
++        type: choice
++        description: 'Release candidate?'
++        options:
++        - false
++        - true
++      new_version:
++        description: 'New version to bump to'
++        required: true
++      force:
++        type: choice
++        description: 'Force override check?'
++        options:
++        - false
++        - true
++      dry_run:
++        type: choice
++        description: 'Perform a dry run to check?'
++        options:
++        - true
++        - false
++
++jobs:
++  bump-version:
++    runs-on: ubuntu-latest
++    if: github.repository == 'scikit-hep/pyhf'
++
++    steps:
++    # Use GitHub PAT to authenticate so other workflows trigger
++    - name: Checkout code
++      uses: actions/checkout@v3
++      with:
++        fetch-depth: 0
++        token: ${{ secrets.ACCESS_TOKEN }}
++
++    - name: Verify new version bump step is valid
++      if: github.event.inputs.force == 'false'
++      id: script
++      shell: bash
++      run: |
++        current_tag="$(git describe --tags --abbrev=0)"
++        current_tag="${current_tag:1}"
++
++        latest_stable_tag="$(git tag | grep --invert-match 'rc' | tail -n 1)"
++        latest_stable_tag="${latest_stable_tag:1}"
++
++        echo "* Current version: ${current_tag}"
++        echo "* Latest stable version: ${latest_stable_tag}"
++
++        if [ ${{ github.event.inputs.release_candidate }} == 'true' ]; then
++            echo "* Attempting a ${{ github.event.inputs.part }} version release candidate bump from ${current_tag} to: ${{ github.event.inputs.new_version }}"
++        else
++            # For ease of use, set current tag to latest stable
++            current_tag="${latest_stable_tag}"
++
++            echo "* Attempting a ${{ github.event.inputs.part }} version bump from ${current_tag} to: ${{ github.event.inputs.new_version }}"
++        fi
++
++        echo "* Validating bump target version matches SemVer..."
++
++        # IFS is single charecter, so split on the 'r' in "rc"
++        IFS='r' read current_tag_read current_rc <<EOF
++        ${current_tag}
++        EOF
++        current_rc="${current_rc:1}"
++
++        IFS='.' read current_major current_minor current_patch <<EOF
++        ${current_tag_read}
++        EOF
++        # current_tag_read is read only and no longer used
++        unset current_tag_read
++
++        # IFS is single charecter, so split on the 'r' in "rc"
++        IFS='r' read bump_version bump_rc <<EOF
++        ${{ github.event.inputs.new_version }}
++        EOF
++        bump_rc="${bump_rc:1}"
++
++        # bump_version is a read only variable
++        IFS='.' read bump_major bump_minor bump_patch <<EOF
++        ${bump_version}
++        EOF
++        unset bump_version
++
++        # Check release candidates are valid before proceeding
++        if [ ${{ github.event.inputs.release_candidate }} == 'true' ]; then
++            if [ -z "${current_rc}" ]; then
++                current_rc=0
++            fi
++            if [ "${bump_rc}" != "$((${current_rc} + 1))" ]; then
++                echo "ERROR: ${{ github.event.inputs.new_version }} is more than 1 release candidate version greater then ${current_tag}"
++                exit 1
++            fi
++        else
++            if [ ! -z "${bump_rc}" ]; then
++                echo "ERROR: ${{ github.event.inputs.new_version }} contains a release candidate signature rc${bump_rc} but was marked as stable release."
++                exit 1
++            fi
++        fi
++
++        if [ ${{ github.event.inputs.part }} == "major" ]; then
++            # Minor version should be zero
++            if [ "${bump_minor}" != "0" ]; then
++                echo "ERROR: ${{ github.event.inputs.part }} release attempted, ${{ github.event.inputs.new_version }} minor version should equal 0."
++                exit 1
++            fi
++            # Patch version should be zero
++            if [ "${bump_patch}" != "0" ]; then
++                echo "ERROR: ${{ github.event.inputs.part }} release attempted, ${{ github.event.inputs.new_version }} patch version should equal 0."
++                exit 1
++            fi
++            if [ "${bump_major}" != "$((${current_major} + 1))" ]; then
++                if ! ([ "${bump_major}" == "${current_major}" ] && [ ${{ github.event.inputs.release_candidate }} == 'true' ]); then
++                    echo "ERROR: ${{ github.event.inputs.part }} release candidate release attempted, but ${{ github.event.inputs.new_version }} is more than 1 ${{ github.event.inputs.part }} version greater then ${current_tag}."
++                    exit 1
++                fi
++            fi
++        fi
++
++        if [ ${{ github.event.inputs.part }} == "minor" ]; then
++            # Major versions should be equal
++            if [ "${bump_major}" != "${current_major}" ]; then
++                echo "ERROR: ${{ github.event.inputs.part }} release attempted, but ${{ github.event.inputs.new_version }} major version not equal to ${current_tag}."
++                exit 1
++            fi
++            # Patch version should be zero
++            if [ "${bump_patch}" != "0" ]; then
++                echo "ERROR: ${{ github.event.inputs.part }} release attempted, ${{ github.event.inputs.new_version }} patch version should equal 0."
++                exit 1
++            fi
++            if [ "${bump_minor}" != "$((${current_minor} + 1))" ]; then
++                if ! ([ "${bump_minor}" == "${current_minor}" ] && [ ${{ github.event.inputs.release_candidate }} == 'true' ]); then
++                    echo "ERROR: ${{ github.event.inputs.part }} release candidate release attempted, but ${{ github.event.inputs.new_version }} is more than 1 ${{ github.event.inputs.part }} version greater then ${current_tag}."
++                    exit 1
++                fi
++            fi
++        fi
++
++        if [ ${{ github.event.inputs.part }} == "patch" ]; then
++            # Major versions should be equal
++            if [ "${bump_major}" != "${current_major}" ]; then
++                echo "ERROR: ${{ github.event.inputs.part }} release attempted, but ${{ github.event.inputs.new_version }} major version not equal to ${current_tag}."
++                exit 1
++            fi
++            # Minor versions should be equal
++            if [ "${bump_minor}" != "${current_minor}" ]; then
++                echo "ERROR: ${{ github.event.inputs.part }} release attempted, but ${{ github.event.inputs.new_version }} minor version not equal to ${current_tag}."
++                exit 1
++            fi
++            if [ "${bump_patch}" != "$((${current_patch} + 1))" ]; then
++                if ! ([ "${bump_patch}" == "${current_patch}" ] && [ ${{ github.event.inputs.release_candidate }} == 'true' ]); then
++                    echo "ERROR: ${{ github.event.inputs.part }} release candidate release attempted, but ${{ github.event.inputs.new_version }} is more than 1 ${{ github.event.inputs.part }} version greater then ${current_tag}."
++                    exit 1
++                fi
++            fi
++        fi
++
++        echo "  ...version bump validated!"
++        if [ ${{ github.event.inputs.release_candidate }} == 'true' ]; then
++            echo "* Bumping version ${current_tag} to ${{ github.event.inputs.part }} version release candidate ${{ github.event.inputs.new_version }}"
++        else
++            echo "* Bumping version ${current_tag} to ${{ github.event.inputs.part }} version ${{ github.event.inputs.new_version }}"
++        fi
++
++        echo ::set-output name=old_tag::v${current_tag}
++
++    - name: Set up Python 3.10
++      if: success()
++      uses: actions/setup-python@v3
++      with:
++        python-version: '3.10'
++
++    - name: Install Python dependencies
++      run: |
++        python -m pip install --upgrade pip setuptools wheel
++        python -m pip install tbump
++        python -m pip list
++
++    - name: Setup Git user to push new tag
++      run: |
++        git config --local user.email "action@github.com"
++        git config --local user.name "GitHub Action"
++
++    - name: Bump version and push to GitHub
++      if: >-
++        github.event_name == 'workflow_dispatch'
++        && (
++          github.event.sender.login == 'lukasheinrich' ||
++          github.event.sender.login == 'matthewfeickert' ||
++          github.event.sender.login == 'kratsg'
++        )
++      shell: bash
++      run: |
++        tbump --non-interactive --no-push ${{ github.event.inputs.new_version }}
++
++    - name: Update the Git tag annotation
++      if: ${{ github.event.inputs.dry_run }} == 'false'
++      shell: bash
++      run: |
++        OLD_TAG=${{ steps.script.outputs.old_tag }}
++        git tag -n99 --list "${OLD_TAG}"
++
++        NEW_TAG=v${{ github.event.inputs.new_version }}
++        git tag -n99 --list "${NEW_TAG}"
++
++        CHANGES=$(git log --pretty=format:'%s' "${OLD_TAG}"..HEAD --regexp-ignore-case --extended-regexp --grep='^([a-z]*?):')
++        CHANGES_NEWLINE="$(echo "${CHANGES}" | sed -e 's/^/  - /')"
++        SANITIZED_CHANGES=$(echo "${CHANGES}" | sed -e 's/^/<li>/' -e 's|$|</li>|' -e 's/(#[0-9]\+)//' -e 's/"/'"'"'/g')
++        NUM_CHANGES=$(echo -n "${CHANGES}" | grep -c '^')
++
++        if [ ${{ github.event.inputs.release_candidate }} == 'true' ]; then
++            git tag "${NEW_TAG}" "${NEW_TAG}"^{} -f -m "$(printf "This is a ${{ github.event.inputs.part }} release candidate from ${OLD_TAG} → ${NEW_TAG}.\n\nChanges:\n${CHANGES_NEWLINE}")"
++        else
++            git tag "${NEW_TAG}" "${NEW_TAG}"^{} -f -m "$(printf "This is a ${{ github.event.inputs.part }} release from ${OLD_TAG} → ${NEW_TAG}.\n\nChanges:\n${CHANGES_NEWLINE}")"
++        fi
++
++        git tag -n99 --list "${NEW_TAG}"
++
++    - name: Show annotated Git tag
++      shell: bash
++      run: |
++        git show v${{ github.event.inputs.new_version }}
++
++    - name: Push new tag back to GitHub
++      shell: bash
++      run: |
++        if [ ${{ github.event.inputs.dry_run }} == 'true' ]; then
++            echo "# DRY RUN"
++        else
++            git push origin master --tags
++        fi
+diff --git a/.github/workflows/publish-package.yml b/.github/workflows/publish-package.yml
+index 070bcab..dfc87a6 100644
+--- a/.github/workflows/publish-package.yml
++++ b/.github/workflows/publish-package.yml
+@@ -102,7 +102,7 @@ jobs:
+         print_hash: true
+ 
+     - name: Publish distribution 📦 to PyPI
+-      if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags') && github.repository == 'scikit-hep/pyhf'
++      if: github.event_name == 'release' && github.event.action == 'published' && github.repository == 'scikit-hep/pyhf'
+       uses: pypa/gh-action-pypi-publish@v1.5.0
+       with:
+         password: ${{ secrets.pypi_password }}
+diff --git a/.github/workflows/tag.yml b/.github/workflows/tag.yml
+deleted file mode 100644
+index 72e39fb..0000000
+--- a/.github/workflows/tag.yml
++++ /dev/null
+@@ -1,131 +0,0 @@
+-# NB: release notes inspired by https://blogs.sap.com/2018/06/22/generating-release-notes-from-git-commit-messages-using-basic-shell-commands-gitgrep/
+-name: Tag Creator
+-on:
+-  pull_request:
+-    types: [labeled, closed]
+-env:
+-  IS_MAJOR: >-
+-      ${{ contains( github.event.pull_request.labels.*.name, 'bumpversion/major' ) }}
+-  IS_MINOR: >-
+-      ${{ contains( github.event.pull_request.labels.*.name, 'bumpversion/minor' ) }}
+-  IS_PATCH: >-
+-      ${{ contains( github.event.pull_request.labels.*.name, 'bumpversion/patch' ) }}
+-  PR_NUMBER: ${{ github.event.pull_request.number }}
+-  PR_TITLE: ${{ github.event.pull_request.title }}
+-  GITHUB_HEAD_REF: ${{ github.head_ref }}
+-jobs:
+-  bumpversion:
+-    if: >-
+-      (
+-        contains( github.event.pull_request.labels.*.name, 'bumpversion/major' ) ||
+-        contains( github.event.pull_request.labels.*.name, 'bumpversion/minor' ) ||
+-        contains( github.event.pull_request.labels.*.name, 'bumpversion/patch' )
+-      ) && (
+-        github.event.sender.login == 'lukasheinrich' ||
+-        github.event.sender.login == 'matthewfeickert' ||
+-        github.event.sender.login == 'kratsg'
+-      )
+-    runs-on: ubuntu-latest
+-    steps:
+-    - name: Dump GitHub context
+-      env:
+-        GITHUB_CONTEXT: ${{ toJson(github) }}
+-      run: echo "$GITHUB_CONTEXT"
+-    - name: Determine version part
+-      run: |
+-        if [ $IS_MAJOR == 'true' ]
+-        then
+-          echo "BV_PART=major" >> $GITHUB_ENV
+-        elif [ $IS_MINOR == 'true' ]
+-        then
+-          echo "BV_PART=minor" >> $GITHUB_ENV
+-        else
+-          echo "BV_PART=patch" >> $GITHUB_ENV
+-        fi
+-    - name: Checkout repository
+-      uses: actions/checkout@v2.2.0
+-      with:
+-        persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
+-        fetch-depth: 0
+-    - name: Set up git user
+-      run: |
+-        git config --local user.email "action@github.com"
+-        git config --local user.name "GitHub Action"
+-    - name: Checkout master
+-      run: git checkout master
+-    - name: Squash and merge PR#${{ github.event.pull_request.number }} to master
+-      if: github.event.action == 'labeled'
+-      run: |
+-        git merge --squash "origin/${GITHUB_HEAD_REF}"
+-        git commit -m "${PR_TITLE} (#${PR_NUMBER})"
+-    - name: Set up Python 3.10
+-      uses: actions/setup-python@v3
+-      with:
+-        python-version: '3.10'
+-    - name: Install bump2version
+-      run: |
+-        python -m pip install --upgrade pip setuptools wheel
+-        python -m pip install "bump2version~=1.0"
+-    - name: Run bump2version ${{ env['BV_PART'] }}
+-      run: |
+-        OLD_TAG=$(git describe --tags --abbrev=0)
+-        echo "OLD_TAG=${OLD_TAG}" >> $GITHUB_ENV
+-        bump2version $BV_PART --message "Bump version: {current_version} → {new_version}
+-
+-        Triggered by #${PR_NUMBER} via GitHub Actions."
+-        NEW_TAG=$(git describe --tags --abbrev=0)
+-        echo "NEW_TAG=${NEW_TAG}" >> $GITHUB_ENV
+-        git tag -n99 -l $NEW_TAG
+-
+-        CHANGES=$(git log --pretty=format:'%s' $OLD_TAG..HEAD -i -E --grep='^([a-z]*?):')
+-        CHANGES_NEWLINE="$(echo "${CHANGES}" | sed -e 's/^/  - /')"
+-        SANITIZED_CHANGES=$(echo "${CHANGES}" | sed -e 's/^/<li>/' -e 's|$|</li>|' -e 's/(#[0-9]\+)//' -e 's/"/'"'"'/g')
+-        echo "CHANGES=${SANITIZED_CHANGES//$'\n'/}" >> $GITHUB_ENV
+-        NUM_CHANGES=$(echo -n "$CHANGES" | grep -c '^')
+-        echo "NUM_CHANGES=${NUM_CHANGES}" >> $GITHUB_ENV
+-        git tag $NEW_TAG $NEW_TAG^{} -f -m "$(printf "This is a $BV_PART release from $OLD_TAG → $NEW_TAG.\n\nChanges:\n$CHANGES_NEWLINE")"
+-        git tag -n99 -l $NEW_TAG
+-    - name: Comment on issue
+-      if: >-
+-        github.event.action == 'labeled'
+-      uses: actions/github-script@v1.1.0
+-      with:
+-        github-token: ${{ secrets.GITHUB_TOKEN }}
+-        script: |
+-          github.issues.createComment({
+-              issue_number: context.issue.number,
+-              owner: context.repo.owner,
+-              repo: context.repo.repo,
+-              body: "I've queued this up. When it gets merged, I'll create a ${{ env['BV_PART'] }} release from ${{ env['OLD_TAG'] }} → ${{ env['NEW_TAG'] }} which includes the following ${{ env['NUM_CHANGES'] }} change(s) [including this PR]:<br />${{ env['CHANGES'] }}<br />If you make any more changes, you probably want to re-trigger me again by removing the `bumpversion/${{ env['BV_PART'] }}` label and then adding it back again."
+-            })
+-    - name: Push changes
+-      if: >-
+-        github.event.action == 'closed' && github.event.pull_request.merged
+-      uses: ad-m/github-push-action@v0.6.0
+-      with:
+-        github_token: ${{ secrets.GITHUB_PAT }}
+-    - name: Comment that something failed
+-      if: failure()
+-      uses: actions/github-script@v1.1.0
+-      with:
+-        github-token: ${{ secrets.GITHUB_TOKEN }}
+-        script: |
+-          github.issues.createComment({
+-              issue_number: context.issue.number,
+-              owner: context.repo.owner,
+-              repo: context.repo.repo,
+-              body: ":cry: Something went wrong. I am not able to push. Check the [Actions pipeline](https://github.com/${{ github.repository }}/actions?query=workflow%3A%22Tag+Creator%22) to see what happened. If you make any more changes, you probably want to re-trigger me again by adding the `bumpversion/${{ env['BV_PART'] }}` label again."
+-            })
+-          github.issues.removeLabel({
+-              issue_number: context.issue.number,
+-              owner: context.repo.owner,
+-              repo: context.repo.repo,
+-              name: "bumpversion/${{ env['BV_PART'] }}"
+-            })
+-
+-  always_job:
+-    name: Always run job
+-    runs-on: ubuntu-latest
+-    steps:
+-      - name: Always run
+-        run: echo "This job is used to prevent the workflow status from showing as failed when all other jobs are skipped. See https://github.community/t5/GitHub-Actions/Workflow-is-failing-if-no-job-can-be-ran-due-to-condition/m-p/38085 for more information."

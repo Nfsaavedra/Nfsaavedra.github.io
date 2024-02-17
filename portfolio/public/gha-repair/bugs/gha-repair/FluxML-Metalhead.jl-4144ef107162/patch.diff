@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/Publish.yml b/.github/workflows/Publish.yml
+index b0166f7..87276f4 100644
+--- a/.github/workflows/Publish.yml
++++ b/.github/workflows/Publish.yml
+@@ -11,6 +11,7 @@ jobs:
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v2
++      - uses: actions/checkout@v2
+         with:
+           ref: gh-pages
+           path: gh-pages

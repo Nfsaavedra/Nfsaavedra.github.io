@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index ec716b6..7d0ecda 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -16,4 +16,4 @@ jobs:
+         with:
+           java-version: 11
+       - name: Build with Gradle
+-        run: ./gradlew build
++        run: ./gradlew build --no-daemon

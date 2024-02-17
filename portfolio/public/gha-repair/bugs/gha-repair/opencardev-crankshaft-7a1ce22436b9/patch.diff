@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/crankshaft.yml b/.github/workflows/crankshaft.yml
+index 17493ac..58b339b 100644
+--- a/.github/workflows/crankshaft.yml
++++ b/.github/workflows/crankshaft.yml
+@@ -34,7 +34,7 @@ jobs:
+       -
+         name: Set up QEMU
+         id: qemu
+-        uses: docker/setup-qemu-action@v1
++        uses: docker/setup-qemu-action@v1.1.0
+         with:
+           image: tonistiigi/binfmt:latest
+           platforms: all

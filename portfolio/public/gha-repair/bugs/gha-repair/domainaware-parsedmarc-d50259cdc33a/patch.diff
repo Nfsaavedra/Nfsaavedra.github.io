@@ -1,0 +1,23 @@
+diff --git a/.github/workflows/python-tests.yml b/.github/workflows/python-tests.yml
+index 5186d43..13ccd29 100644
+--- a/.github/workflows/python-tests.yml
++++ b/.github/workflows/python-tests.yml
+@@ -19,12 +19,12 @@ jobs:
+         python-version: "3.6"
+     - name: Install Elasticsearch
+       run: |
+-      sudo apt-get update
+-      sudo apt-get install -y libemail-outlook-message-perl
+-      curl -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.16.2-amd64.deb
+-      sudo dpkg -i --force-confnew elasticsearch-*.deb
+-      sudo systemctl restart elasticsearch
+-      sudo systemctl --no-pager status elasticsearch
++        sudo apt-get update
++        sudo apt-get install -y libemail-outlook-message-perl
++        curl -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.16.2-amd64.deb
++        sudo dpkg -i --force-confnew elasticsearch-*.deb
++        sudo systemctl restart elasticsearch
++        sudo systemctl --no-pager status elasticsearch
+     - name: Install Python dependencies
+       run: |
+         python -m pip install --upgrade pip

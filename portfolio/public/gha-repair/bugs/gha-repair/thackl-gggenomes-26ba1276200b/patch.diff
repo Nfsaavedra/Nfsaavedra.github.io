@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/pkgdown.yaml b/.github/workflows/pkgdown.yaml
+index 866445b..4b987e4 100644
+--- a/.github/workflows/pkgdown.yaml
++++ b/.github/workflows/pkgdown.yaml
+@@ -20,7 +20,7 @@ jobs:
+       
+       - name: Install dependencies
+         run: |
+-          sudo apt-get install libcurl4-openssl-dev
++          sudo apt-get install libcurl4-openssl-dev libharfbuzz-dev libfribidi-dev
+       
+       - name: Install XQuartz
+         if: runner.os == 'macOS'

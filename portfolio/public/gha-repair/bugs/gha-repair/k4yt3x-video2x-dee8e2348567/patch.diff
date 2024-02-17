@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index e9d4972..dd741e3 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -15,7 +15,7 @@ jobs:
+     steps:
+       - name: Get tag
+         id: get_tag
+-        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
++        run: echo ::set-output name=tag::${GITHUB_REF/refs\/tags\//}
+ 
+   create-release:
+     name: Create release

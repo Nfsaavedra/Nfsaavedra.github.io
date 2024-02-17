@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/verify.yml b/.github/workflows/verify.yml
+index 0fd698c..17aab03 100644
+--- a/.github/workflows/verify.yml
++++ b/.github/workflows/verify.yml
+@@ -31,7 +31,7 @@ jobs:
+       - run: pnpm install --frozen-lockfile
+ 
+       - name: Verify changes
+-        run: pnpn verify:bail
++        run: pnpm verify:bail
+ 
+       - name: Publish coverage to codecov.io
+         uses: codecov/codecov-action@v3

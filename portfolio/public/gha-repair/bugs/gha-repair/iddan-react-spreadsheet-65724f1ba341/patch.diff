@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/website.yml b/.github/workflows/website.yml
+index db991e7..a6298d9 100644
+--- a/.github/workflows/website.yml
++++ b/.github/workflows/website.yml
+@@ -42,6 +42,7 @@ jobs:
+           git config --global user.name "Iddan Aaronsohn";
+           yarn install --frozen-lockfile;
+           yarn build-storybook;
++          mkdir -p website/static/storybook;
+           cp -r storybook-static/* website/static/storybook;
+           cd website;
+           yarn install --frozen-lockfile;

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/autoupdate.yaml b/.github/workflows/autoupdate.yaml
+index 3b8a4a9..30df1ef 100644
+--- a/.github/workflows/autoupdate.yaml
++++ b/.github/workflows/autoupdate.yaml
+@@ -10,7 +10,7 @@ jobs:
+     steps:
+       - uses: docker://chinthakagodawita/autoupdate-action:v1
+         env:
+-          GITHUB_TOKEN: "${{ secrets.NETCODE_BOT_KEY }}"
++          GITHUB_TOKEN: "${{ secrets.NETCODE_CI_SERVICE_TOKEN }}"
+           PR_FILTER: "auto_merge"
+           PR_READY_STATE: "ready_for_review"
+           MERGE_CONFLICT_ACTION: "ignore"

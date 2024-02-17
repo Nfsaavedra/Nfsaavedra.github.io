@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index bab63c8..eb83c30 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -10,7 +10,9 @@ jobs:
+     runs-on: ${{ matrix.os }}
+     steps:
+     - uses: actions/checkout@v2
+-    - uses: cachix/install-nix-action@v8
++    - uses: cachix/install-nix-action@v9
++      with:
++        skip_adding_nixpkgs_channel: true
+     - uses: cachix/cachix-action@v5
+       with:
+         name: cachix

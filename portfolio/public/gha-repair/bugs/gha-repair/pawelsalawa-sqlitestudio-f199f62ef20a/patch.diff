@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/win64_release.yml b/.github/workflows/win64_release.yml
+index b59fd77..d1893c6 100644
+--- a/.github/workflows/win64_release.yml
++++ b/.github/workflows/win64_release.yml
+@@ -110,8 +110,6 @@ jobs:
+                     echo "gcc.exe misc/$f.c $FLAGS -o ../../ext/$f.dll"
+                     gcc.exe misc/$f.c $FLAGS -o ../../ext/$f.dll
+                 done
+-                
+-                cp misc/*.dll ../../ext/
+                 ls -l ../../ext/
+                 
+             - name: Prepare output dir

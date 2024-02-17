@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/validate.yaml b/.github/workflows/validate.yaml
+index 0db70b4..c0d128b 100644
+--- a/.github/workflows/validate.yaml
++++ b/.github/workflows/validate.yaml
+@@ -7,8 +7,6 @@ on:
+   pull_request:
+     branches:
+       - main
+-  schedule:
+-    - cron: '0 0 * * *'
+ 
+ jobs:
+   validate-hassfest:

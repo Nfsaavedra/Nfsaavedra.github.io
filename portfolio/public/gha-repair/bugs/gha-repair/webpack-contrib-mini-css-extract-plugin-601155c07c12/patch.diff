@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/nodejs.yml b/.github/workflows/nodejs.yml
+index 4b23626..f1b7a02 100644
+--- a/.github/workflows/nodejs.yml
++++ b/.github/workflows/nodejs.yml
+@@ -54,7 +54,7 @@ jobs:
+         run: npm run security
+ 
+       - name: Check commit message
+-        uses: wagoid/commitlint-github-action@v4
++        uses: wagoid/commitlint-github-action@v5
+ 
+   test:
+     name: Test - ${{ matrix.os }} - Node v${{ matrix.node-version }}, Webpack ${{ matrix.webpack-version }}

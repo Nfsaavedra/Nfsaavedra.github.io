@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/aspnetcore.yml b/.github/workflows/aspnetcore.yml
+index fb24b57..4e0cb1f 100644
+--- a/.github/workflows/aspnetcore.yml
++++ b/.github/workflows/aspnetcore.yml
+@@ -15,5 +15,7 @@ jobs:
+         dotnet-version: 3.1.300
+     - name: Build with dotnet
+       run: dotnet build --configuration Release
++    - name: chmod
++      run: chmod 555 ./RunTests.sh
+     - name: Run integration tests with Docker
+       run: ./RunTests.sh

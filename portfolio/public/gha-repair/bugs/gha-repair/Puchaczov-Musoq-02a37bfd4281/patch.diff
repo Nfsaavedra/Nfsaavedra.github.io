@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/dotnetcore.yml b/.github/workflows/dotnetcore.yml
+index 75f3f00..5aa694b 100644
+--- a/.github/workflows/dotnetcore.yml
++++ b/.github/workflows/dotnetcore.yml
+@@ -1,4 +1,4 @@
+-name: .NET Core
++name: Unit Tests
+ 
+ on: [push]
+ 

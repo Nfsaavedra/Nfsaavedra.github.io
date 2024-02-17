@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/examples-build.yml b/.github/workflows/examples-build.yml
+index 8da6473..f13e60c 100644
+--- a/.github/workflows/examples-build.yml
++++ b/.github/workflows/examples-build.yml
+@@ -28,6 +28,7 @@ jobs:
+       with:
+         node-version: ${{ matrix.node-version }}
+         cache: 'npm'
++        cache-dependency-path: javascript/package-lock.json
+     - run: npm ci
+     - run: npm run build-examples
+ 

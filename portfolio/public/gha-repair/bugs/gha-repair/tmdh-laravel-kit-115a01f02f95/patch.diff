@@ -1,0 +1,24 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 5815751..05cfd7a 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -25,6 +25,19 @@ jobs:
+         with:
+           node-version: 14
+ 
++      - name: Get yarn cache directory path
++        id: yarn-cache-dir-path
++        run: echo "::set-output name=dir::$(yarn cache dir)"
++
++      - name: Cache node_modules
++        uses: actions/cache@v2
++        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
++        with:
++          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
++          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
++          restore-keys: |
++            ${{ runner.os }}-yarn-
++
+       - name: Install dependencies
+         run: yarn
+ 
