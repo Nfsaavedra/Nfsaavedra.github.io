@@ -360,6 +360,9 @@ angular.module('gha-repair-website', ['ngRoute', 'ui.bootstrap', 'anguFixedHeade
         $ctrl.previousPatch = function () {
             $rootScope.$emit('previous_bug', 'next');
         };
+        $ctrl.randomPatch = function () {
+            $rootScope.$emit('random_bug', 'next');
+        };
     })
     .controller('bugController', function ($scope, $http, $location, $rootScope, $routeParams, $uibModal) {
         var $ctrl = $scope;
@@ -435,6 +438,11 @@ angular.module('gha-repair-website', ['ngRoute', 'ui.bootstrap', 'anguFixedHeade
             $location.path("/bug/" + $ctrl.bugs[index].benchmark + "/" + $ctrl.bugs[index].bugId);
             return false;
         };
+        var randomPatch = function () {
+            var index = Math.floor(Math.random() * $ctrl.bugs.length);
+            $location.path("/bug/" + $ctrl.bugs[index].benchmark + "/" + $ctrl.bugs[index].bugId);
+            return false;
+        }
 
         $scope.$on('keypress:39', function () {
             $scope.$apply(function () {
@@ -448,6 +456,7 @@ angular.module('gha-repair-website', ['ngRoute', 'ui.bootstrap', 'anguFixedHeade
         });
         $rootScope.$on('next_bug', nextPatch);
         $rootScope.$on('previous_bug', previousPatch);
+        $rootScope.$on('random_bug', randomPatch);
     })
     .controller('mainController', async function ($scope, $location, $rootScope, $http, $timeout, $uibModal) {
         $scope.sortType = ['bugId']; // set the default sort type

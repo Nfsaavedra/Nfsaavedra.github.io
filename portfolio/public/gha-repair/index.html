@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 		
 		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/xterm/3.12.2/xterm.css">
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css" />
 		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/diff2html@3.4.35/bundles/css/diff2html.min.css">
 		<link rel="stylesheet" href="/gha-repair/website/style/style.css">
@@ -205,7 +205,7 @@
 	<script type="text/ng-template" id="modelPatch.html">
 		<div class="modal-header">
 			<h3 class="modal-title" id="modal-title">({{ $ctrl.bug.benchmark }}) {{ $ctrl.bug.bugId }}</h3>
-			<a ng-click="$ctrl.previousPatch()"><i class="fa fa-arrow-left" aria-hidden="true"></i> Previous Patch</a> | <a ng-click="$ctrl.nextPatch()">Next Patch <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+			<a ng-click="$ctrl.randomPatch()">Random Patch <i class="fa fa-shuffle" aria-hidden="true"></i></a> | <a ng-click="$ctrl.previousPatch()"><i class="fa fa-arrow-left" aria-hidden="true"></i> Previous Patch</a> | <a ng-click="$ctrl.nextPatch()">Next Patch <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 		</div>
 		<div class="modal-body" id="modal-body">
 			<p>
