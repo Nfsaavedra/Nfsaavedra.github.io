@@ -599,13 +599,19 @@ angular.module('gha-repair-website', ['ngRoute', 'ui.bootstrap', 'anguFixedHeade
 
         $scope.$watch('filteredBugs', function () {
             document.getElementById("loader").style.display = "none";
+            const path = $location.$$path;
+            $location.path("/");
+            $timeout(function () {
+                $location.path(path);
+            });
         })
 
         $scope.bugsFilter = function (bug, index, array) {
             if ($scope.search) {
                 var matchSearch =
                     bug.commit_message.indexOf($scope.search) != -1 ||
-                    bug.repo.indexOf($scope.search) != -1
+                    bug.repo.indexOf($scope.search) != -1 ||
+                    bug.bugId.indexOf($scope.search) != -1
                 if (matchSearch === false) {
                     return false
                 }
