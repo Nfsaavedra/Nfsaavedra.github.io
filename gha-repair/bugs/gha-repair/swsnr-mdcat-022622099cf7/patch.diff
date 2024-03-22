@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 5b2ff4d..f7bce2c 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -95,6 +95,7 @@ jobs:
+         with:
+           token: ${{ secrets.GITHUB_TOKEN }}
+           args: --all-targets --locked --target ${{ matrix.target }} ${{ matrix.flags }}
++          name: clippy-${{ matrix.rust}}-${{ matrix.target }}
+       # Test
+       - name: Test
+         uses: actions-rs/cargo@v1

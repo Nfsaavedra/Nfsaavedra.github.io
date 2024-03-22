@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/node.js.yml b/.github/workflows/node.js.yml
+index 70d659b..dc5cdde 100644
+--- a/.github/workflows/node.js.yml
++++ b/.github/workflows/node.js.yml
+@@ -41,7 +41,7 @@ jobs:
+       uses: actions/setup-node@v1
+       with:
+         node-version: ${{ matrix.node-version }}
+-    - run | docker run -i --rm \
++      run | docker run -i --rm \
+             -v /var/run/docker.sock:/var/run/docker.sock \
+             -v "$HOME:$HOME" \
+             -v "$PWD:$PWD" \

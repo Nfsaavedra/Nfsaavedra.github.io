@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index ab362f1..78bcbfa 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -29,7 +29,7 @@ jobs:
+           master=$(revision master)
+           echo "::set-output name=master::"$master
+ 
+-          date=$(date +'%Y%m%d')
++          date=$(date +'%y%m%d')
+           echo "::set-output name=date::"$date
+ 
+   build:

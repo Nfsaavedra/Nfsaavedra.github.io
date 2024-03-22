@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index c923907..d2d04f6 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -23,6 +23,10 @@ jobs:
+           components: rustfmt
+           override: true
+ 
++      - name: Install build headers
++        run: sudo apt-get install libstrophe-dev
++        if: ${{ matrix.os == 'ubuntu-latest' }}
++
+       - name: Verify versions
+         run: rustc --version && rustup --version && cargo --version
+ 

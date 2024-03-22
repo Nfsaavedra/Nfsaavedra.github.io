@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/code_coverage.yml b/.github/workflows/code_coverage.yml
+index a6b3be2..ab0c93e 100644
+--- a/.github/workflows/code_coverage.yml
++++ b/.github/workflows/code_coverage.yml
+@@ -25,6 +25,6 @@ jobs:
+           cargo +nightly tarpaulin --verbose --all-features --workspace --timeout 120 --out xml
+ 
+       - name: Upload to codecov.io
+-        uses: codecov/codecov-action@f30e4959ba63075080d4f7f90cacc18d9f3fafd7
++        uses: codecov/codecov-action@e0b68c6749509c5f83f984dd99a76a1c1a231044
+         with:
+           fail_ci_if_error: true
+\ No newline at end of file

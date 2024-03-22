@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/check-release-ready.yml b/.github/workflows/check-release-ready.yml
+index 47d3f5e..9cfab43 100644
+--- a/.github/workflows/check-release-ready.yml
++++ b/.github/workflows/check-release-ready.yml
+@@ -22,7 +22,7 @@ jobs:
+         name: Get last git tag
+         id: git
+         run: |
+-          CUR_TAG=$(git ls-remote --tags https://github.com/aircrack-ng/aircrack-ng | awk -F\/ '{print $3}' | grep -E '^[0-9]\.' | sort -V | tail -n 1)
++          CUR_TAG=$(git ls-remote --tags https://github.com/aircrack-ng/aircrack-ng | awk -F/ '{print $3}' | grep -E '^[0-9]\.' | sort -V | tail -n 1)
+           echo "LAST=${CUR_TAG}" >> $GITHUB_OUTPUT
+           echo "Tag: ${CUR_TAG} - Date: ${TAG_DATE}"
+ 

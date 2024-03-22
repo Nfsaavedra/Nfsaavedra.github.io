@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/nodejs.yml b/.github/workflows/nodejs.yml
+index 76a2e03..ca3cdbd 100644
+--- a/.github/workflows/nodejs.yml
++++ b/.github/workflows/nodejs.yml
+@@ -9,7 +9,11 @@ jobs:
+       matrix:
+         os: [ubuntu-latest, windows-latest, macos-latest]
+     steps:
+-    - uses: actions/checkout@v1
++    - name: Set git to use LF
++      run: |
++        git config --global core.autocrlf false
++        git config --global core.eol lf
++    - uses: actions/checkout@v2
+     - name: Use Node.js 12.x
+       uses: actions/setup-node@v1
+       with:

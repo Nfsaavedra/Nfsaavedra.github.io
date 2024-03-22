@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index b266624..7373177 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -4,6 +4,8 @@ on:
+   push:
+     branches: ['master']
+   pull_request:
++  schedule:
++    - cron: "37 6 * * 5"
+ 
+ jobs:
+   test:

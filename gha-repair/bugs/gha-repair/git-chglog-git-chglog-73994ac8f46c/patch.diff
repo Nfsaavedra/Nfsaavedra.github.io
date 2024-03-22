@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 1ba36fb..b147159 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -23,4 +23,4 @@ jobs:
+           version: latest
+           args: release --rm-dist
+         env:
+-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
++          GITHUB_TOKEN: ${{ secrets.GORELEASER_TOKEN }}

@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 5f6713a..d60370d 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -26,12 +26,6 @@ jobs:
+           command: check
+           args: --all-targets --features=cli,env-file
+ 
+-      - name: Build With All Features
+-        uses: actions-rs/cargo@v1
+-        with:
+-          command: build
+-          args: --all --all-features
+-
+   cross-compile:
+     name: Cross Compile
+     runs-on: ubuntu-latest

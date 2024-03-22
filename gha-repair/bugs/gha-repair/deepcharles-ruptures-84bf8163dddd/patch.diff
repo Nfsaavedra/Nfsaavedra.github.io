@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/publish-doc-to-remote.yml b/.github/workflows/publish-doc-to-remote.yml
+index 70197b1..93256a5 100644
+--- a/.github/workflows/publish-doc-to-remote.yml
++++ b/.github/workflows/publish-doc-to-remote.yml
+@@ -1,4 +1,5 @@
+-name: "Publish doc to site on new release"
++# Publish doc to website on new release (or manual trigger)
++name: "docs"
+ 
+ on:
+   release:

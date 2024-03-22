@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/publish.yml b/.github/workflows/publish.yml
+index 0813f57..648a4a9 100644
+--- a/.github/workflows/publish.yml
++++ b/.github/workflows/publish.yml
+@@ -32,6 +32,7 @@ jobs:
+           
+       - name: Bump version
+         run: |
++          git reset --hard
+           npm version patch
+           npm run build
+           git add . || true

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/win_release.yml b/.github/workflows/win_release.yml
+index 0e6554a..a4b334a 100644
+--- a/.github/workflows/win_release.yml
++++ b/.github/workflows/win_release.yml
+@@ -57,6 +57,7 @@ jobs:
+                 echo "::add-path::${{ github.workspace }}/../lib"
+  
+              - name: Install SQLite3
++               shell: bash
+                run: |
+                 curl -L http://sqlite.org/$SQLITE_RELEASE_YEAR/sqlite-amalgamation-$SQLITE_VERSION.zip --output ../sqlite-amalgamation-$SQLITE_VERSION.zip
+                 cd ..

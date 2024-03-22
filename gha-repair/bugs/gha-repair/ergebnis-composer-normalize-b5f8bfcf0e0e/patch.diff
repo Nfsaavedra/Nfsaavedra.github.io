@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/prune.yaml b/.github/workflows/prune.yaml
+index e563727..695ab34 100644
+--- a/.github/workflows/prune.yaml
++++ b/.github/workflows/prune.yaml
+@@ -18,7 +18,7 @@ jobs:
+ 
+     steps:
+       - name: "Prune issues and pull requests"
+-        uses: "actions/stale@v4.1.0"
++        uses: "actions/stale@v5"
+         with:
+           days-before-close: "${{ env.DAYS_BEFORE_CLOSE }}"
+           days-before-stale: "${{ env.DAYS_BEFORE_STALE }}"

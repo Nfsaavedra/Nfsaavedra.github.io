@@ -1,0 +1,21 @@
+diff --git a/src/test/java/org/jsoup/nodes/ElementTest.java b/src/test/java/org/jsoup/nodes/ElementTest.java
+index a0551f0..5c8b0b7 100644
+--- a/src/test/java/org/jsoup/nodes/ElementTest.java
++++ b/src/test/java/org/jsoup/nodes/ElementTest.java
+@@ -2369,4 +2369,15 @@ public class ElementTest {
+         Document doc = Jsoup.parse(html);
+         assertEquals("<div><a>Text</a>\n</div>", doc.body().html());
+     }
++
++    @Test void noDanglingSpaceAfterCustomElement() {
++        // https://github.com/jhy/jsoup/issues/1852
++        String html = "<bar><p/>\n</bar>";
++        Document doc = Jsoup.parse(html);
++        assertEquals("<bar>\n <p></p>\n</bar>", doc.body().html());
++
++        html = "<foo>\n  <bar />\n</foo>";
++        doc = Jsoup.parse(html);
++        assertEquals("<foo>\n <bar />\n</foo>", doc.body().html());
++    }
+ }
+\ No newline at end of file

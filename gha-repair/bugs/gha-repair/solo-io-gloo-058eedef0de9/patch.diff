@@ -1,0 +1,30 @@
+diff --git a/.github/workflows/issue_board.yaml b/.github/workflows/issue_board.yaml
+index d7dc045..dc49d7c 100644
+--- a/.github/workflows/issue_board.yaml
++++ b/.github/workflows/issue_board.yaml
+@@ -13,11 +13,11 @@ jobs:
+       - uses: actions/add-to-project@main
+         with:
+           project-url: https://github.com/orgs/solo-io/projects/22
+-          github-token: ${{ secrets.ORG_CROSS_REPO_DEUX }}
++          github-token: ${{ secrets.ORG_CROSS_REPO_TROIS }}
+           labeled: "Type: Enhancement,Type: Bug"
+           label-operator: OR
+       - uses: actions/add-to-project@main
+         with:
+           project-url: https://github.com/orgs/solo-io/projects/24
+-          github-token: ${{ secrets.ORG_CROSS_REPO_DEUX }}
++          github-token: ${{ secrets.ORG_CROSS_REPO_TROIS }}
+           labeled: "Type: Docs"
+diff --git a/changelog/v1.14.0-beta7/issue-board-repair.yaml b/changelog/v1.14.0-beta7/issue-board-repair.yaml
+new file mode 100644
+index 0000000..b4478b5
+--- /dev/null
++++ b/changelog/v1.14.0-beta7/issue-board-repair.yaml
+@@ -0,0 +1,5 @@
++changelog:
++  - type: NON_USER_FACING
++    issueLink: https://github.com/solo-io/solo-projects/issues/4374
++    description: Fix failing automation job for project assignments by updating secret
++    resolvesIssue: false
+\ No newline at end of file

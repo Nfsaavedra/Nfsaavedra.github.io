@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/unittest.yml b/.github/workflows/unittest.yml
+index ca51646..390110d 100644
+--- a/.github/workflows/unittest.yml
++++ b/.github/workflows/unittest.yml
+@@ -34,7 +34,7 @@
+            environment-file: ${{ matrix.environment-file }}
+            micromamba-version: 'latest'
+        - name: install spglm via pip
+-         run: pip install --upgrade git+https://github.com/pysal/spglm.git@main
++         run: pip install --upgrade --no-deps git+https://github.com/pysal/spglm.git@main
+ 
+        - name: install spreg via pip
+          run: pip install spreg

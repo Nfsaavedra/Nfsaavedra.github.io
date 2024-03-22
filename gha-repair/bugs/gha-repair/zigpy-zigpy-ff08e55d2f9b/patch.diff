@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/release-management.yml b/.github/workflows/release-management.yml
+index 40e9702..f1ad51a 100644
+--- a/.github/workflows/release-management.yml
++++ b/.github/workflows/release-management.yml
+@@ -4,6 +4,7 @@ on:
+   push:
+     # branches to consider in the event; optional, defaults to all
+     branches:
++      - dev
+       - master
+ 
+ jobs:

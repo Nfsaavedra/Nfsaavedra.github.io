@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/workflow_ci.yml b/.github/workflows/workflow_ci.yml
+index 5cb4620..f75b298 100644
+--- a/.github/workflows/workflow_ci.yml
++++ b/.github/workflows/workflow_ci.yml
+@@ -48,8 +48,6 @@ jobs:
+     steps:
+       - name: checkout
+         uses: actions/checkout@v2
+-          with:
+-            fetch-depth: 0
+       - name: revision
+         id: revision
+         run: git rev-list --count HEAD

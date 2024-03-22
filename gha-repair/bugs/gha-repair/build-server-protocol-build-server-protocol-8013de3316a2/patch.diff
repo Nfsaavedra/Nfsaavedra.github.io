@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/format.yml b/.github/workflows/format.yml
+index d6e9b90..9bae42f 100644
+--- a/.github/workflows/format.yml
++++ b/.github/workflows/format.yml
+@@ -1,6 +1,10 @@
+ name: Format
+ on:
+-  [pull_request]
++  push:
++    branches: [master]
++
++permissions:
++  contents: write
+ 
+ jobs:
+   website-prettier:

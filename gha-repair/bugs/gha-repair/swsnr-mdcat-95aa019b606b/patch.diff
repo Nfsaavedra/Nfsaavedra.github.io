@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index d0866c0..579aad2 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -48,7 +48,7 @@ jobs:
+         shell: bash
+         run: ./scripts/package '${{ steps.version.outputs.version }}' '${{ matrix.target }}' '${{ steps.build.outputs.outdir }}'
+       - name: Upload artifacts
+-        uses: actions/upload-artifact@v2
++        uses: actions/upload-artifact@v3
+         with:
+           name: ${{ steps.package.outputs.name }}
+           path: ${{ steps.package.outputs.file }}

@@ -1,0 +1,36 @@
+diff --git a/.github/workflows/fixup-commit-blocker.yaml b/.github/workflows/fixup-commit-blocker.yaml
+new file mode 100644
+index 0000000..18973d2
+--- /dev/null
++++ b/.github/workflows/fixup-commit-blocker.yaml
+@@ -0,0 +1,13 @@
++name: Block fixup commits
++
++on:
++  pull_request_target:
++
++concurrency:
++  group: ${{ github.workflow }}-${{ github.ref }}
++  cancel-in-progress: true
++
++jobs:
++  block-fixup-commits:
++    if: github.ref != 'refs/heads/main'
++    uses: python-discord/.github/.github/workflows/block-fixup-commits.yaml@main
+\ No newline at end of file
+diff --git a/.github/workflows/main.yaml b/.github/workflows/main.yaml
+index 7151c9a..6454737 100644
+--- a/.github/workflows/main.yaml
++++ b/.github/workflows/main.yaml
+@@ -14,11 +14,6 @@ jobs:
+   lint-test:
+     uses: ./.github/workflows/lint-test.yaml
+ 
+-  fixup-commit-blocker:
+-    if: github.ref != 'refs/heads/main'
+-    uses: python-discord/.github/.github/workflows/block-fixup-commits.yaml@main
+-    needs: lint-test
+-
+   generate-sha-tag:
+     runs-on: ubuntu-latest
+     outputs:

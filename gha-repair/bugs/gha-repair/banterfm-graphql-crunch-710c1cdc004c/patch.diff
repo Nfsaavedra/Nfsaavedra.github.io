@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/continuous.yml b/.github/workflows/continuous.yml
+index fda718e..0f25f0b 100644
+--- a/.github/workflows/continuous.yml
++++ b/.github/workflows/continuous.yml
+@@ -7,7 +7,7 @@ on:
+       - created
+ 
+ jobs:
+-  build-test-deploy:
++  build-test:
+     runs-on: ubuntu-latest
+ 
+     steps:

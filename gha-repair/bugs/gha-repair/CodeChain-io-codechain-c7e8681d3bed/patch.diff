@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/yarn-lint.yml b/.github/workflows/yarn-lint.yml
+index 0b68f96..69c98bf 100644
+--- a/.github/workflows/yarn-lint.yml
++++ b/.github/workflows/yarn-lint.yml
+@@ -8,10 +8,6 @@ jobs:
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v1
+-      - uses: actions/setup-node@v1
+-        with:
+-          node-version: '12.x'
+-      - run: npm install yarn
+       - working-directory: ./test
+         run: yarn
+       - working-directory: ./test

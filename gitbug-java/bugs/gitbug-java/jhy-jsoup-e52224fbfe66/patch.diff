@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/jsoup/nodes/TextNode.java b/src/main/java/org/jsoup/nodes/TextNode.java
+index eae444a..7a7f00a 100644
+--- a/src/main/java/org/jsoup/nodes/TextNode.java
++++ b/src/main/java/org/jsoup/nodes/TextNode.java
+@@ -98,7 +98,7 @@ public class TextNode extends LeafNode {
+             boolean isBlank = isBlank();
+             boolean couldSkip = (next instanceof Element && ((Element) next).shouldIndent(out)) // next will indent
+                 || (next instanceof TextNode && (((TextNode) next).isBlank())) // next is blank text, from re-parenting
+-                || (prev instanceof Element && ((Element) prev).isBlock())
++                || (prev instanceof Element && (((Element) prev).isBlock() || prev.isNode("br"))) // br is a bit special - make sure we don't get a dangling blank line, but not a block otherwise wraps in head
+                 ;
+             if (couldSkip && isBlank) return;
+ 

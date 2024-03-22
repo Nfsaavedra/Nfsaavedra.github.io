@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index a2ffce6..dbb725e 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -30,6 +30,7 @@ jobs:
+           - 2.5
+           - 2.6
+           - 3.0
++          - 3.1
+           - ruby-head
+           - jruby-9.2.13.0
+           - jruby-head

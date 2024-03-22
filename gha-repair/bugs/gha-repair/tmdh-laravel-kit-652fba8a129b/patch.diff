@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index c67cb9b..8bc9973 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -27,7 +27,7 @@ jobs:
+           cache: "yarn"
+ 
+       - name: Setup PHP Action
+-        uses: shivammathur/setup-php@2
++        uses: shivammathur/setup-php@v2
+         with:
+           php-version: "8.1"
+           tools: composer

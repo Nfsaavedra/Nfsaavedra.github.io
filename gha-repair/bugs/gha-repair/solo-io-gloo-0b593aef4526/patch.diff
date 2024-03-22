@@ -1,0 +1,32 @@
+diff --git a/.github/workflows/publish-docs.yaml b/.github/workflows/publish-docs.yaml
+index 3735ca0..156ddab 100644
+--- a/.github/workflows/publish-docs.yaml
++++ b/.github/workflows/publish-docs.yaml
+@@ -25,6 +25,8 @@ jobs:
+ 
+     - name: Generate versioned docs site
+       run: make -C docs build-site
++      env:
++        GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+ 
+     - name: Deploy to Firebase
+       uses: w9jds/firebase-action@master
+@@ -33,5 +35,4 @@ jobs:
+       env:
+         PROJECT_ID: solo-corp
+         PROJECT_PATH: ./docs/ci
+-        GCP_SA_KEY: ${{ secrets.FIREBASE_APPLICATION_CREDENTIALS }}
+-        GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+\ No newline at end of file
++        GCP_SA_KEY: ${{ secrets.FIREBASE_APPLICATION_CREDENTIALS }}
+\ No newline at end of file
+diff --git a/changelog/v1.6.0-beta10/fix-docs-push.yaml b/changelog/v1.6.0-beta10/fix-docs-push.yaml
+new file mode 100644
+index 0000000..44f614d
+--- /dev/null
++++ b/changelog/v1.6.0-beta10/fix-docs-push.yaml
+@@ -0,0 +1,3 @@
++changelog:
++  - type: NON_USER_FACING
++    description: Update env for docs push action
+\ No newline at end of file

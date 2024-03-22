@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 10b5c8e..0802899 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -52,7 +52,7 @@ jobs:
+       COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+     continue-on-error: ${{ endsWith(matrix.ruby, 'head') }}
+     steps:
+-      - uses: actions/checkout@v3
++      - uses: actions/checkout@v4
+       - name: Set up Ruby
+         uses: ruby/setup-ruby@v1
+         with:

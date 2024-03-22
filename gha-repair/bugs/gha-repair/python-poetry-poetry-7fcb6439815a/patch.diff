@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/docs.yml b/.github/workflows/docs.yml
+index cfa949d..73e701c 100644
+--- a/.github/workflows/docs.yml
++++ b/.github/workflows/docs.yml
+@@ -11,6 +11,7 @@ on:
+     # prevent execution when the workflow itself is modified from a fork
+     types:
+       - labeled
++      - synchronize
+     paths-ignore:
+       - "**"
+       - "!docs/**"

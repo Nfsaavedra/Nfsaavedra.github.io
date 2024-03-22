@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/pip-rating.yml b/.github/workflows/pip-rating.yml
+index a73d7b5..51350ab 100644
+--- a/.github/workflows/pip-rating.yml
++++ b/.github/workflows/pip-rating.yml
+@@ -16,7 +16,6 @@ jobs:
+       - name: Run pip-rating
+         uses: Nekmo/pip-rating@master
+         with:
+-          file: common-requirements.txt
+           create_badge: true
+           badge_style: flat-square
+           badge_branch: pip-rating-badge

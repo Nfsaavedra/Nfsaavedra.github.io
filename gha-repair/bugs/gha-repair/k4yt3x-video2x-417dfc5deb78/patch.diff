@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 2b93ec3..684fc32 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -1,4 +1,4 @@
+-name: Video2X Build Binaries
++name: Video2X Nightly Build
+ 
+ on:
+   push:

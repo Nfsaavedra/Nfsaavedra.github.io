@@ -1,0 +1,22 @@
+diff --git a/.github/workflows/labeler.yml b/.github/workflows/labeler.yml
+index da8a731..19963dd 100644
+--- a/.github/workflows/labeler.yml
++++ b/.github/workflows/labeler.yml
+@@ -12,7 +12,7 @@ jobs:
+     runs-on: ubuntu-latest
+     steps:
+     - name: Add agent-java label
+-      uses: actions/github-script@v6
++      uses: actions/github-script@v7
+       with:
+         script: |
+           github.rest.issues.addLabels({
+@@ -38,7 +38,7 @@ jobs:
+         echo "::debug::isExcluded: ${{ steps.checkUserMember.outputs.isExcluded }}"
+     - name: Add community and triage lables
+       if: steps.checkUserMember.outputs.isTeamMember != 'true' && steps.checkUserMember.outputs.isExcluded != 'true'
+-      uses: actions/github-script@v6
++      uses: actions/github-script@v7
+       with:
+         script: |
+           github.rest.issues.addLabels({

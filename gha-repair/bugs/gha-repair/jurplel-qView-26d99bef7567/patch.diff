@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index dd0bb55..7a376e8 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -65,7 +65,7 @@ jobs:
+           }
+ 
+       - name: 'Upload Artifact'
+-        uses: actions/upload-artifact@v2
++        uses: actions/upload-artifact@v3
+         with:
+           name: qView${{ env.nightlyString }}-${{ runner.os }}-${{ env.buildNumString }}
+           path: bin

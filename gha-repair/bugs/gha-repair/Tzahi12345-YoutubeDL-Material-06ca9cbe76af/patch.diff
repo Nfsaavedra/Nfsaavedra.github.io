@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/docker.yml b/.github/workflows/docker.yml
+index 165b51b..6cd9cc6 100644
+--- a/.github/workflows/docker.yml
++++ b/.github/workflows/docker.yml
+@@ -8,9 +8,9 @@ on:
+       - '.vscode/**'
+       - 'chrome-extension/**'
+       - 'releases/**'
++      - '**/**.md'
+       - '**.crx'
+       - '**.pem'
+-      - '**.md'
+       - '.dockerignore'
+       - '.gitignore'
+ 

@@ -1,0 +1,14 @@
+diff --git a/src/main/java/com/lmax/simpledsl/internal/DslParamsParser.java b/src/main/java/com/lmax/simpledsl/internal/DslParamsParser.java
+index f8a2631..45fdbb9 100644
+--- a/src/main/java/com/lmax/simpledsl/internal/DslParamsParser.java
++++ b/src/main/java/com/lmax/simpledsl/internal/DslParamsParser.java
+@@ -312,8 +312,7 @@ public class DslParamsParser
+                     break;
+                 }
+ 
+-                checkValidValue(arg, argument.value);
+-                argValues.add(argument.value);
++                SimpleArgumentProcessor.addValue(arg, argument.value, argValues);
+                 arguments.pollFirst();
+             }
+ 

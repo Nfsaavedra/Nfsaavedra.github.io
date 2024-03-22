@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/PullRequest.yml b/.github/workflows/PullRequest.yml
+index 47a1719..fc4090e 100644
+--- a/.github/workflows/PullRequest.yml
++++ b/.github/workflows/PullRequest.yml
+@@ -1,4 +1,4 @@
+-name: continuous integration
++name: pull request
+ 
+ on:
+   pull_request:

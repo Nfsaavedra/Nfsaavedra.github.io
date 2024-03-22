@@ -1,0 +1,23 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index fe836f5..d071623 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -1,6 +1,11 @@
+ name: build
+ 
+ on:
++  push:
++    tags:
++      - v*
++    branches:
++      - master
+   pull_request:
+ 
+ jobs:
+@@ -144,4 +149,4 @@ jobs:
+       -
+         name: Clear
+         run: |
+-          rm -f ${HOME}/.docker/config.json
+\ No newline at end of file
++          rm -f ${HOME}/.docker/config.json

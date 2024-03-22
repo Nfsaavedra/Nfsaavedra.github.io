@@ -1,0 +1,18 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 6a28203..b413c8e 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -113,3 +113,13 @@ jobs:
+         build_dir: docs/_build/html
+       env:
+         GITHUB_PAT: ${{ secrets.GITHUB_PAT }}
++
++  docker:
++
++    runs-on: ubuntu-latest
++
++    steps:
++    - uses: actions/checkout@v1.2.0
++    - name: Build Docker image
++      run: |
++        docker build . --file docker/Dockerfile --tag pyhf:$GITHUB_SHA

@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/issue_assignment.yml b/.github/workflows/issue_assignment.yml
+index e03e173..7ab5e6e 100644
+--- a/.github/workflows/issue_assignment.yml
++++ b/.github/workflows/issue_assignment.yml
+@@ -9,7 +9,7 @@ jobs:
+         runs-on: ubuntu-latest
+         steps:
+             - name: 'Auto-assign issue'
+-              uses: pozil/auto-assign-issue@v1
++              uses: pozil/auto-assign-issue@v1.1.0
+               with:
+-                  assignees: patrickfreed,kmahar,isabelatkinson,nspektor
++                  assignees: patrickfreed,kmahar,isabelatkinson
+                   numOfAssignee: 1

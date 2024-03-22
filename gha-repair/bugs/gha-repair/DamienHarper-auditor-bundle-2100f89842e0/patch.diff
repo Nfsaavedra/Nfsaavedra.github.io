@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci-4.x.yml b/.github/workflows/ci-4.x.yml
+index a83eaf6..9291a78 100644
+--- a/.github/workflows/ci-4.x.yml
++++ b/.github/workflows/ci-4.x.yml
+@@ -13,7 +13,7 @@ on:
+ jobs:
+   tests:
+     name: Tests PHP ${{ matrix.php }}, Symfony ${{ matrix.symfony }}
+-    runs-on: ubuntu-18.04
++    runs-on: ubuntu-latest
+ 
+     strategy:
+       matrix:

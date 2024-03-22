@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/mac_release.yml b/.github/workflows/mac_release.yml
+index 476115b..8c2a51d 100644
+--- a/.github/workflows/mac_release.yml
++++ b/.github/workflows/mac_release.yml
+@@ -83,7 +83,10 @@ jobs:
+               run: |
+                 make bundle
+                 make pkg
+-                ls -l
++                
++            - name: Upload package artifact
++              working-directory: output
++              run: ls -l SQLiteStudio
+ 
+ 
+ 

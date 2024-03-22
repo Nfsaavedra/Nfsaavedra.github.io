@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/deploy.yml b/.github/workflows/deploy.yml
+index 3b94ac5..e780dae 100644
+--- a/.github/workflows/deploy.yml
++++ b/.github/workflows/deploy.yml
+@@ -32,7 +32,7 @@ jobs:
+           username: ${{ secrets.REMOTE_USER }}
+           key: ${{ secrets.SSH_PRIVATE_KEY }}
+           source: "docker-compose.yaml"
+-          target: "docker-compose.yaml"
++          target: "."
+           
+       - name: docker-compose up
+         uses: appleboy/ssh-action@master

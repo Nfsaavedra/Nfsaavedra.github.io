@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/invalid_template.yml b/.github/workflows/invalid_template.yml
+index c98d317..647cdec 100644
+--- a/.github/workflows/invalid_template.yml
++++ b/.github/workflows/invalid_template.yml
+@@ -15,5 +15,5 @@ jobs:
+           issue-comment: >
+             :wave: @{issue-author}, please edit your issue and follow the template provided.
+           close-issue: false
+-          lock-issue: true
++          lock-issue: false
+           issue-lock-reason: 'resolved'

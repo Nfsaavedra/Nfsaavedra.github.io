@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 1e99950..7bb05f9 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -62,7 +62,7 @@ jobs:
+         uses: lukka/run-vcpkg@v7
+         if: runner.os == 'Windows'
+         with:
+-          vcpkgArguments: tesseract[cpu-independed] ecm qt5-base qt5-svg qt5-multimedia qt5-winextras qt5-tools --triplet x64-windows
++          vcpkgArguments: tesseract[cpu-independed] ecm qt5-svg qt5-multimedia qt5-winextras qt5-tools --triplet x64-windows
+           vcpkgGitCommitId: 5568f110b509a9fd90711978a7cb76bae75bb092
+         env:
+           VCPKG_DISABLE_METRICS: 1

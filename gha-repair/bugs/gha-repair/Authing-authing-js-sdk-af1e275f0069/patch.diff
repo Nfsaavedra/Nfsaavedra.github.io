@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index b639506..41d9b25 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -1,8 +1,8 @@
+ name: CI
+ 
+ on:
+-  push:
+-    branches:
++  pull_request:
++    branches: 
+       - master
+ 
+ jobs:

@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 2a797e3..375c9a0 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -1,13 +1,12 @@
+ name: Release
+ on:
+   push:
+-    branches:
+-      - master
+     tags:
+       - "*"
+ 
+ jobs:
+   setup:
++    if: github.event.base_ref == "refs/heads/master"
+     name: Setup
+     runs-on: ubuntu-latest
+     outputs:

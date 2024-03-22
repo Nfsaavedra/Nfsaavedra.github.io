@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 6dbc8df..58e5960 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -48,7 +48,7 @@ jobs:
+           password: ${{ secrets.DOCKER_PASS }}
+ 
+       - name: Run GoReleaser
+-        uses: goreleaser/goreleaser-action@v2.8.1
++        uses: goreleaser/goreleaser-action@v2.9.1
+         with:
+           version: latest
+           args: release --rm-dist

@@ -1,0 +1,39 @@
+diff --git a/.github/workflows/release.yaml b/.github/workflows/release.yaml
+index 7f856c7..49408bc 100644
+--- a/.github/workflows/release.yaml
++++ b/.github/workflows/release.yaml
+@@ -1,14 +1,14 @@
+ name: Upload Release Asset
+ 
+ on:
+-  # push:
+-  #   # Sequence of patterns matched against refs/tags
+-  #   tags:
+-  #     - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+-
+   push:
+-    branches:
+-      - development
++    # Sequence of patterns matched against refs/tags
++    tags:
++      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
++
++  # push:
++  #   branches:
++  #     - development
+ 
+ jobs:
+   build:
+@@ -25,12 +25,6 @@ jobs:
+           cd custom_components/volkswagencarnet
+           zip volkswagencarnet.zip -r ./
+ 
+-      # - name: Create Changelog
+-      #   uses: scottbrenner/generate-changelog-action@master
+-      #   id: changelog
+-      #   env:
+-      #     REPO: ${{ github.repository }}
+-
+       # - name: Create Release
+       #   id: create_release
+       #   uses: actions/create-release@v1

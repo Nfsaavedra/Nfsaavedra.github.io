@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 9d5243c..96c68c4 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -24,7 +24,7 @@ jobs:
+         run: yarn --frozen-lockfile --non-interactive
+       - name: PR or Publish
+         id: changesets
+-        uses: changesets/action@bfeb9e0
++        uses: changesets/action@b3300fad33b6ab794313da28d27424c0e2f78991
+         with:
+           publish: yarn changeset publish
+         env:

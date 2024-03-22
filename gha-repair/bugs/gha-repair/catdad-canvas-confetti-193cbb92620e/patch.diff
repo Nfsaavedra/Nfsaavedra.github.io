@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index afe41f9..93a851d 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -26,6 +26,7 @@ jobs:
+         env:
+           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+       - uses: actions/upload-artifact@v3
++        if: ${{ failure() }}
+         with:
+           name: test-screenshots
+           path: shots/

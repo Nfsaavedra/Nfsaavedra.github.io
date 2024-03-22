@@ -1,0 +1,9 @@
+diff --git a/.github/workflows/static-preview.yaml b/.github/workflows/static-preview.yaml
+index 06192f0..52d7df5 100644
+--- a/.github/workflows/static-preview.yaml
++++ b/.github/workflows/static-preview.yaml
+@@ -74,3 +74,4 @@ jobs:
+         with:
+           name: static-build
+           path: docker_build/app/build/
++          if-no-files-found: error

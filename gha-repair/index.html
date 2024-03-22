@@ -1,0 +1,276 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en" ng-app="gha-repair-website" ng-controller="mainController">
+	<head>
+		<meta charset="UTF-8">
+		<title>GitHub Actions Repair</title>
+
+		<!-- CSS -->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/xterm/3.12.2/xterm.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css" />
+		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/diff2html@3.4.35/bundles/css/diff2html.min.css">
+		<link rel="stylesheet" href="/gha-repair/website/style/style.css">
+
+
+		<!-- JS -->
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-animate.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-touch.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-route.js"></script>
+		<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.min.js"></script>
+		<script src="//cdn.jsdelivr.net/npm/angu-fixed-header-table@1.2.1/angu-fixed-header-table.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js"></script>
+		<script src="//cdn.jsdelivr.net/npm/diff2html@3.4.35/bundles/js/diff2html.min.js"></script>
+		<script src="//cdn.jsdelivr.net/npm/diff2html@3.4.35/bundles/js/diff2html-ui.min.js"></script>
+		<script src="//overset.github.io/javascript-natural-sort/naturalSort.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/xterm/3.12.2/xterm.min.js"></script>
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+		<script type="text/javascript" src="//jtblin.github.io/angular-chart.js/dist/angular-chart.min.js"></script>
+
+		<script src="/gha-repair/website/js/app.js"></script>
+	</head>
+	<body keypress-events>
+		<div 
+			id="loader" 
+			style="display: block; position: absolute; width: 100vw; height: 100vh;"
+		>
+			<div style="position: absolute; width: 100%; height: 100%; background-color: black; z-index: 1; opacity: 0.4;">
+			</div>
+			<span class="loader"></span>
+		</div>
+
+		<div id="wrapper">
+			<!-- Navigation -->
+			<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<h2>GitHub Actions Repair is showing {{filteredBugs.length}} bug-fixes</h2>
+				</div>
+				<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+				<div class="collapse navbar-collapse navbar-ex1-collapse">
+					<ul id="menu" class="nav navbar-nav side-nav">
+						<li>
+							<ul class="nav">
+								<li class="inline-block">
+									<input id="search" class="search" placeholder="Search project or commit message">
+									<button 
+										type="button" 
+										style="width: 14% !important; margin: 0 !important;" 
+										id="search-button"
+									>
+										<i class="fa fa-fw fa-search"></i>
+									</button>
+								</li>
+								<li>
+									<button type="button" ng-click="openStat()">
+										<i class="fa fa-fw fa-bar-chart"></i>
+										<span>Open Stat</span>
+									</button>
+								</li>
+								<li>
+									<a href="#" ng-click="submenuLang = !submenuLang">
+									<i class="fa fa-fw fa-search"></i>Languages <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+									<ul class="collapse" uib-collapse="submenuLang">
+										<button id="deselect-all" type="button" style="width: 44% !important; background-color: #dddddd;">
+											<span>Deselect all</span>
+										</button>
+										<button id="select-all" type="button" style="width: 44% !important; background-color: #dddddd;">
+											<span>Select all</span>
+										</button>
+										<li ng-repeat="language in languages">
+											<label 
+												for="{{ language }}" 
+												ng-class="{'actived': filters[language]}">
+												<input 
+													type="checkbox" 
+													id="{{ language }}" 
+													ng-model="filters[language]" 
+												>
+												{{ language }}
+											</label>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+
+			<div id="page-wrapper">
+				<div class="container-fluid">
+					<div class="row" id="main" >
+						<table fixed-header id="mainTable" class="table table-striped">
+							<thead>
+								<tr>
+									<th>
+										<a href="#" ng-click="sort('bugId')">
+											Bug id
+											<span ng-show="sortType == 'bugId' && sortReverse" class="fa fa-sort-alpha-desc"></span>
+											<span ng-show="sortType == 'bugId' && !sortReverse" class="fa fa-sort-alpha-asc"></span>
+										</a>
+									</th>
+									<th>
+										<a href="#" ng-click="sort('language')">
+											Language
+											<span ng-show="sortType == 'language' && sortReverse" class="fa fa-sort-alpha-desc"></span>
+											<span ng-show="sortType == 'language' && !sortReverse" class="fa fa-sort-alpha-asc"></span>
+										</a>
+									</th>
+									<th>	
+										<a href="#" ng-click="sort('files.added.length')">
+											# Added Files
+											<span ng-show="sortType == 'files.added.length' && sortReverse" class="fa fa fa-sort-amount-desc"></span>
+											<span ng-show="sortType == 'files.added.length' && !sortReverse" class="fa fa fa-sort-amount-asc"></span>
+										</a>
+									</th>
+									<th>	
+										<a href="#" ng-click="sort('files.deleted.length')">
+											# Removed Files
+											<span ng-show="sortType == 'files.deleted.length' && sortReverse" class="fa fa fa-sort-amount-desc"></span>
+											<span ng-show="sortType == 'files.deleted.length' && !sortReverse" class="fa fa fa-sort-amount-asc"></span>
+										</a>
+									</th>
+									<th>	
+										<a href="#" ng-click="sort('files.modified.length')">
+											# Modified Files
+											<span ng-show="sortType == 'files.modified.length' && sortReverse" class="fa fa fa-sort-amount-desc"></span>
+											<span ng-show="sortType == 'files.modified.length' && !sortReverse" class="fa fa fa-sort-amount-asc"></span>
+										</a>
+									</th>
+									<th>	
+										<a href="#" ng-click="sort('metrics.hunks')">
+											# Hunks
+											<span ng-show="sortType == 'metrics.hunks' && sortReverse" class="fa fa fa-sort-amount-desc"></span>
+											<span ng-show="sortType == 'metrics.hunks' && !sortReverse" class="fa fa fa-sort-amount-asc"></span>
+										</a>
+									</th>
+									<th>	
+										<a href="#" ng-click="sort('metrics.patchSize')">
+											# Lines
+											<span ng-show="sortType == 'metrics.patchSize' && sortReverse" class="fa fa fa-sort-amount-desc"></span>
+											<span ng-show="sortType == 'metrics.patchSize' && !sortReverse" class="fa fa fa-sort-amount-asc"></span>
+										</a>
+									</th>
+									<th>
+										<a href="#" ng-click="sort('metrics.addedLines')">
+											# Added
+											<span ng-show="sortType == 'metrics.addedLines' && sortReverse" class="fa fa fa-sort-amount-desc"></span>
+											<span ng-show="sortType == 'metrics.addedLines' && !sortReverse" class="fa fa fa-sort-amount-asc"></span>
+										</a>
+									</th>
+									<th>
+										<a href="#" ng-click="sort('metrics.removedLines')">
+											# Removed
+											<span ng-show="sortType == 'metrics.removedLines' && sortReverse" class="fa fa fa-sort-amount-desc"></span>
+											<span ng-show="sortType == 'metrics.removedLines' && !sortReverse" class="fa fa fa-sort-amount-asc"></span>
+										</a>
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="bug in bugs | filter:bugsFilter as filteredBugs" ng-click="openBug(bug)">
+									<td>{{ bug.bugId }}</td>
+									<td>{{ bug.language }}</td>
+									<td>{{ bug.files.added.length }}</td>
+									<td>{{ bug.files.deleted.length }}</td>
+									<td>{{ bug.files.modified.length }}</td>
+									<td>{{ bug.metrics.hunks }}</td>
+									<td>{{ bug.metrics.patchSize }}</td>
+									<td>{{ bug.metrics.addedLines }}</td>
+									<td>{{ bug.metrics.removedLines}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<!-- /.container-fluid -->
+			</div>
+			<!-- /#page-wrapper -->
+		</div><!-- /#wrapper -->
+		<span ng-controller="bugController"></span>
+	</body>
+	<script type="text/ng-template" id="modelPatch.html">
+		<div class="modal-header">
+			<h3 class="modal-title" id="modal-title">({{ $ctrl.bug.benchmark }}) {{ $ctrl.bug.bugId }}</h3>
+			<a ng-click="$ctrl.randomPatch()">Random Patch <i class="fa fa-shuffle" aria-hidden="true"></i></a> | <a ng-click="$ctrl.previousPatch()"><i class="fa fa-arrow-left" aria-hidden="true"></i> Previous Patch</a> | <a ng-click="$ctrl.nextPatch()">Next Patch <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+		</div>
+		<div class="modal-body" id="modal-body">
+			<p>
+				<h4>{{$ctrl.bug.commit_message}}</h4>
+				<h4><a href="https://github.com/{{$ctrl.bug.repo}}/compare/{{$ctrl.bug.previous_commit}}..{{$ctrl.bug.commit}}">{{$ctrl.bug.previous_commit.substring(0,8)}}..{{$ctrl.bug.commit.substring(0,8)}}</a> at {{$ctrl.bug.committed_at | date}}</h4>
+			</p>
+
+			<h3>Human Patch</h3>
+			<div diff="$ctrl.bug"></div>
+		</div>
+		
+		<div class="modal-footer">
+			<button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
+		</div>
+	</script>
+	<script type="text/ng-template" id="stat.html">
+		<div class="modal-header">
+			<h3 class="modal-title" id="modal-title">GitHub Actions Repair Stat</h3>
+		</div>
+		<div class="modal-body" id="modal-body">
+			<section>
+				<canvas class="chart chart-bar"
+					chart-options="$ctrl.optionsHunks" chart-data="$ctrl.hunks" chart-labels="$ctrl.hunksLabels" height="100">
+				</canvas>
+				<canvas class="chart chart-bar"
+					chart-options="$ctrl.options" chart-data="$ctrl.fixTimeDate" chart-labels="$ctrl.fixTimeLabels" height="100">
+				</canvas>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Metric</th>
+							<th ng-repeat="language in languages">{{ language }}</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th># Modified files</th>
+							<td ng-repeat="language in languages">{{$ctrl.fileStat[language].modified}}</td>
+						</tr>
+						<tr>
+							<th># Added files</th>
+							<td ng-repeat="language in languages">{{$ctrl.fileStat[language].added}}</td>
+						</tr>
+						<tr>
+							<th># Deleted files</th>
+							<td ng-repeat="language in languages">{{$ctrl.fileStat[language].deleted}}</td>
+						</tr>
+						<tr>
+							<th># Added lines</th>
+							<td ng-repeat="language in languages">{{$ctrl.patchSizeStat[language].added}}</td>
+						</tr>
+						<tr>
+							<th># Removed lines</th>
+							<td ng-repeat="language in languages">{{$ctrl.patchSizeStat[language].deleted}}</td>
+						</tr>
+						<tr>
+							<th># Changed lines</th>
+							<td ng-repeat="language in languages">{{$ctrl.patchSizeStat[language].added + $ctrl.patchSizeStat[language].deleted}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
+		</div>
+	</script>
+</html>

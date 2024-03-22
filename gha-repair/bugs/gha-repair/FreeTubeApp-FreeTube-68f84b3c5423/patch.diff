@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 9b84fad..27eeab6 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -50,6 +50,8 @@ jobs:
+           architecture: aarch64
+           distribution: ubuntu18.04
+           run: |
++            apt update
++            apt install -y snapd
+             snap install node
+             npm install
+             npm run lint

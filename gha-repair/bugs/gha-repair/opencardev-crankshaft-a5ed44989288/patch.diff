@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/stale.yml b/.github/workflows/stale.yml
+index 73cf9b2..d300d4a 100644
+--- a/.github/workflows/stale.yml
++++ b/.github/workflows/stale.yml
+@@ -1,7 +1,8 @@
+ name: 'Close stale issues and PRs'
+ on:
++  workflow_dispatch:
+   schedule:
+-    - cron: '* * * * *'
++    - cron: '30 1 * * *'
+ 
+ jobs:
+   stale:

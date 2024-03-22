@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/build_dev_image.yml b/.github/workflows/build_dev_image.yml
+index a5ed14d..5ac5c14 100644
+--- a/.github/workflows/build_dev_image.yml
++++ b/.github/workflows/build_dev_image.yml
+@@ -35,4 +35,14 @@ jobs:
+       run: |
+         docker login -u ${{secrets.DOCKERHUB_USER}} -p ${{secrets.DOCKERHUB_PASSWORD}}
+         docker push izderadicka/audioserve:unstable
+-    
++    - name: ssh to VM and redeploy
++      uses: appleboy/ssh-action@master
++      with:
++        host: audioserve.zderadicka.eu
++        username: ${{ secrets.AUDIOSERVE_USERNAME }}
++        key: ${{ secrets.AUDIOSERVE_KEY }}
++        script: |
++          docker rm -f audioserve || true
++          docker pull izderadicka/audioserve:unstable
++          ./run-audioserve.sh
++

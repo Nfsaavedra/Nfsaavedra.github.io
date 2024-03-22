@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/pull_request_dependabot.yml b/.github/workflows/pull_request_dependabot.yml
+index e017a04..8f1573b 100644
+--- a/.github/workflows/pull_request_dependabot.yml
++++ b/.github/workflows/pull_request_dependabot.yml
+@@ -20,6 +20,7 @@ jobs:
+           node-version: ${{ matrix.node_version }}
+       - name: npm install, build, and test
+         run: |
++          export NODE_OPTIONS=--openssl-legacy-provider
+           npm install
+           npm run coverage
+         env:

@@ -1,0 +1,24 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 5f77495..b6b021a 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -5,7 +5,7 @@ jobs:
+     strategy:
+       fail-fast: false
+       matrix:
+-        job_name: ['linux', 'windows']
++        job_name: ['linux', 'windows', 'macos']
+ 
+         include:
+         - job_name: linux
+@@ -16,6 +16,10 @@ jobs:
+           os: windows-latest
+           shell: msys2 {0}
+ 
++        - job_name: macos
++          os: macos-latest
++          shell: bash {0}
++
+     defaults:
+       run:
+         shell: ${{ matrix.shell }}

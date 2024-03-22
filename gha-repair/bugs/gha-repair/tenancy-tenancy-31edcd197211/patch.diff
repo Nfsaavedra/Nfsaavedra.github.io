@@ -1,0 +1,50 @@
+diff --git a/.github/opencollective.yml b/.github/opencollective.yml
+deleted file mode 100644
+index 66076d6..0000000
+--- a/.github/opencollective.yml
++++ /dev/null
+@@ -1,25 +0,0 @@
+-collective: tenancy
+-tiers:
+-  - tiers: "*"
+-    labels: ["backer"]
+-    message: |
+-      Hey <author>,
+-
+-      Thank you for backing our package :heart:. 
+-
+-      Issues opened by backers of our Open Collective will automatically labelled with
+-      the "backer" tag for priority response and resolve times :tada:.
+-
+-      <link>
+-invitation: |
+-  Hey :wave:,
+-
+-  Thank you for using our package. 
+-
+-  We firmly believe that open sourcing our code improves the developer experience.
+-  In a pursuit to continue our work, help us by donating to our collective! :heart:
+-
+-  Issues opened by backers of our Open Collective will automatically labelled with
+-  the "backer" tag for priority response and resolve times.
+-
+-  <link>
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 3335748..b8bb646 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -92,12 +92,8 @@ jobs:
+               uses: actions/cache@v2
+               with:
+                   path: ${{ steps.composer-cache.outputs.dir }}
+-                  key: ${{ runner.os }}-composer-${{ matrix.php }}-${{ hashFiles('**/composer.json') }}-${{ matrix.dependency-version }}-${{ github.sha }}
+-                  restore-keys: |
+-                      ${{ runner.os }}-composer-${{ matrix.php }}-${{ hashFiles('**/composer.json') }}-${{ matrix.dependency-version }}-
+-                      ${{ runner.os }}-composer-${{ matrix.php }}-${{ hashFiles('**/composer.json') }}-
+-                      ${{ runner.os }}-composer-${{ matrix.php }}-
+-                      ${{ runner.os }}-composer-
++                  key: ${{ runner.os }}-composer-${{ github.sha }}-${{ hashFiles('**/composer.json') }}
++                  restore-keys: ${{ runner.os }}-composer-
+ 
+             - name: Install Composer dependencies
+               if: ${{ ! matrix.experimental }}

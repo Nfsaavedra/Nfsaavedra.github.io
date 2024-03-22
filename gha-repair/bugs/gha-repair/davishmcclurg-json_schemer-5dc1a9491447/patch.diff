@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index fb877c5..b8013c1 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -9,6 +9,10 @@ jobs:
+         ruby: [2.4, 2.5, 2.6, 2.7, 3.0, head, jruby, jruby-head, truffleruby, truffleruby-head]
+         exclude:
+           - os: windows-latest
++            ruby: jruby
++          - os: windows-latest
++            ruby: jruby-head
++          - os: windows-latest
+             ruby: truffleruby
+           - os: windows-latest
+             ruby: truffleruby-head

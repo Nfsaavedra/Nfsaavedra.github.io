@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index e27f062..f382d21 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -4,7 +4,7 @@ on:
+   push:
+     # Don't run CI for tags; there's always a branch for the tag as well so
+     # there's no point in testing it separately
+-    tags_ignore: '*'
++    tags-ignore: '*'
+   pull_request:
+ 
+ jobs:

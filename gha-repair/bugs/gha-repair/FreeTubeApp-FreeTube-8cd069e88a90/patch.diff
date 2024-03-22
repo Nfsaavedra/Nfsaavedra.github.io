@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/autoMerge.yml b/.github/workflows/autoMerge.yml
+index 5b803a1..c91c163 100644
+--- a/.github/workflows/autoMerge.yml
++++ b/.github/workflows/autoMerge.yml
+@@ -1,6 +1,6 @@
+ name: Create Flatpak PR
+ on:
+-  pull_request:
++  pull_request_target:
+     types: [opened, synchronize, reopened]
+ 
+ jobs:

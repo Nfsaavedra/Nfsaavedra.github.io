@@ -1,0 +1,23 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 6c406db..d2de177 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -110,14 +110,14 @@ jobs:
+       shell: bash {0}
+       working-directory: example-kernels/runner
+ 
+-    - run: cargo xtest -Z doctest-xcompile
+-      working-directory: example-kernels/runner-doctest
+-      name: 'Run `cargo xtest -Z doctest-xcompile` for "runner-doctest" kernel'
+-
+     - run: cargo xtest
+       working-directory: example-kernels/runner-test
+       name: 'Run `cargo xtest` for "runner-test" kernel'
+ 
++    - run: cargo xtest -Z doctest-xcompile
++      working-directory: example-kernels/runner-doctest
++      name: 'Run `cargo xtest -Z doctest-xcompile` for "runner-doctest" kernel'
++
+   check_formatting:
+     name: "Check Formatting"
+     runs-on: ubuntu-latest

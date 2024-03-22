@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/ci-system-deps.yml b/.github/workflows/ci-system-deps.yml
+index fcfc73d..8ef5014 100644
+--- a/.github/workflows/ci-system-deps.yml
++++ b/.github/workflows/ci-system-deps.yml
+@@ -22,6 +22,7 @@ jobs:
+           sed -E -i "s|#? ?MAKEFLAGS=.*|MAKEFLAGS=-j$(nproc)|" /etc/makepkg.conf
+           useradd builduser -p ""
+           printf 'builduser ALL=(ALL) ALL\n' >> /etc/sudoers
++          git config --global --add safe.directory /__w/openblack/openblack
+ 
+       - uses: actions/checkout@v2
+ 

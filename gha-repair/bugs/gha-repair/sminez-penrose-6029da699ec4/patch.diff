@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/rust.yml b/.github/workflows/rust.yml
+index bbd0551..8f0734b 100644
+--- a/.github/workflows/rust.yml
++++ b/.github/workflows/rust.yml
+@@ -19,7 +19,7 @@ jobs:
+     steps:
+     - uses: actions/checkout@v2
+     - name: Install C deps
+-      run: sudo apt-get install -y libxrandr-dev libx11-xcb-dev libxcb-randr0-dev libpango1.0-dev libcairo2-dev
++      run: sudo apt-get update && sudo apt-get install -y libxrandr-dev libx11-xcb-dev libxcb-randr0-dev libpango1.0-dev libcairo2-dev --fix-missing
+     - name: Check Formatting
+       run: cargo fmt -- --check
+     - name: Build

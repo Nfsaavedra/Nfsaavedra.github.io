@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index e836e24..c08826f 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -42,7 +42,7 @@ jobs:
+         run: apk add bash ttf-dejavu --update-cache
+       - name: Setup dotnet (macOS 11)
+         if: runner.os == 'macOS'
+-        uses: actions/setup-dotnet@v1
++        uses: actions/setup-dotnet@v2
+         with:
+           dotnet-version: '6.0'
+       - name: Prepare environment (Alpine)

@@ -1,0 +1,21 @@
+diff --git a/.github/workflows/ci-build.yaml b/.github/workflows/ci-build.yaml
+index eafc4c0..c8263e4 100644
+--- a/.github/workflows/ci-build.yaml
++++ b/.github/workflows/ci-build.yaml
+@@ -11,6 +11,16 @@ on:
+       - 'master'
+ 
+ jobs:
++  build-docker:
++    name: Build Docker image
++    runs-on: ubuntu-latest
++    if: github.head_ref != ''
++    steps:
++      - name: Checkout code
++        uses: actions/checkout@v2
++      - name: Build Docker image
++        run: |
++          make image
+   check-go:
+     name: Ensure Go modules synchronicity
+     runs-on: ubuntu-latest

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/push-solo-apis-branch.yaml b/.github/workflows/push-solo-apis-branch.yaml
+index b2bd448..75d4c32 100644
+--- a/.github/workflows/push-solo-apis-branch.yaml
++++ b/.github/workflows/push-solo-apis-branch.yaml
+@@ -85,7 +85,7 @@ jobs:
+       - name: Set up Go
+         uses: actions/setup-go@v4
+         with:
+-          go-version-file: go.mod
++          go-version-file: gloo/go.mod
+         id: go
+       - name: Install Protoc
+         uses: arduino/setup-protoc@v1.1.2

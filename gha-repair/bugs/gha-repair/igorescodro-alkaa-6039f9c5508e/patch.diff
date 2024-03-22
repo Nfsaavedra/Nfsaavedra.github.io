@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/android_tests.yml b/.github/workflows/android_tests.yml
+index d8c6ead..c1c7283 100644
+--- a/.github/workflows/android_tests.yml
++++ b/.github/workflows/android_tests.yml
+@@ -37,7 +37,7 @@ jobs:
+       - name: Run instrumented tests
+         uses: reactivecircus/android-emulator-runner@v2
+         with:
+-          api-level: 24
++          api-level: 27
+           profile: Galaxy Nexus
+           disable-animations: true
+           disk-size: 2000M

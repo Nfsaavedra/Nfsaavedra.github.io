@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/book.yml b/.github/workflows/book.yml
+index 4d06b70..2266adc 100644
+--- a/.github/workflows/book.yml
++++ b/.github/workflows/book.yml
+@@ -31,7 +31,7 @@ jobs:
+       - name: Install mdbook
+         run: |
+           (test -x $HOME/.cargo/bin/cargo-install-update || cargo install cargo-update)
+-          (test -x $HOME/.cargo/bin/mdbook || cargo install --vers "^0.3" mdbook)
++          (test -x $HOME/.cargo/bin/mdbook || cargo install --vers "^0.4" mdbook)
+           cargo install-update -a
+ 
+       - name: Build book

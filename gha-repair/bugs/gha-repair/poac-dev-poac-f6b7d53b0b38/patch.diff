@@ -1,0 +1,33 @@
+diff --git a/.github/workflows/linux.yml b/.github/workflows/linux.yml
+index 969ffd8..f13f47c 100644
+--- a/.github/workflows/linux.yml
++++ b/.github/workflows/linux.yml
+@@ -39,11 +39,6 @@ jobs:
+             subpackage: lld-10,
+           }
+           - {
+-            cc: clang-11, cxx: clang++-11,
+-            package: clang-11,
+-            subpackage: lld-11,
+-          }
+-          - {
+             cc: gcc-8, cxx: g++-8,
+             package: g++-8,
+             subpackage: binutils,
+@@ -203,14 +198,14 @@ jobs:
+         working-directory: build
+ 
+       - name: Upload pre-built binary
+-        uses: actions/upload-artifact@v2.2.2
++        uses: actions/upload-artifact@v2.2.3
+         if: matrix.build_type == 'Release'
+         with:
+           name: ${{ github.job }}-${{ matrix.compiler.package }}
+           path: ./build/poac
+ 
+       - name: Upload build artifact for Coveralls
+-        uses: actions/upload-artifact@v2.2.2
++        uses: actions/upload-artifact@v2.2.3
+         if: >
+           success() &&
+           github.ref == 'refs/heads/main' &&

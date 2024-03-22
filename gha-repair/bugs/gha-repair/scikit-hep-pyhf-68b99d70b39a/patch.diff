@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/publish-package.yml b/.github/workflows/publish-package.yml
+index f77eade..33d78c1 100644
+--- a/.github/workflows/publish-package.yml
++++ b/.github/workflows/publish-package.yml
+@@ -8,6 +8,8 @@ on:
+   pull_request:
+     branches:
+     - master
++  release:
++    types: [published]
+   workflow_dispatch:
+     inputs:
+       publish:

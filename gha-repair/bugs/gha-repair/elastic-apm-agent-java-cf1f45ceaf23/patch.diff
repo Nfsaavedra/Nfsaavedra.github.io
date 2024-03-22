@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/labeler.yml b/.github/workflows/labeler.yml
+index 509dda0..da8a731 100644
+--- a/.github/workflows/labeler.yml
++++ b/.github/workflows/labeler.yml
+@@ -22,7 +22,7 @@ jobs:
+             labels: ["agent-java"]
+           })
+     - name: Check team membership for user
+-      uses: elastic/get-user-teams-membership@v1.1.0
++      uses: elastic/get-user-teams-membership@1.1.0
+       id: checkUserMember
+       with:
+         username: ${{ github.actor }}

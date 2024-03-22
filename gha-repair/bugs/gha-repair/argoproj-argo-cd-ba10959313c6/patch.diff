@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/update-snyk.yaml b/.github/workflows/update-snyk.yaml
+index 196ea6e..24d0f46 100644
+--- a/.github/workflows/update-snyk.yaml
++++ b/.github/workflows/update-snyk.yaml
+@@ -33,5 +33,5 @@ jobs:
+           git add docs/snyk/index.md
+           git add docs/snyk/*/*.html
+           git commit -m "[Bot] Update Snyk reports" --signoff
+-          git push --set-upstream origin
++          git push --set-upstream origin "$pr_branch"
+           gh pr create -B master -H "$pr_branch" --title '[Bot] docs: Update Snyk report' --body ''

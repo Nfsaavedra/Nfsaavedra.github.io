@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/smoketest.yml b/.github/workflows/smoketest.yml
+index 06a62c4..d783e83 100644
+--- a/.github/workflows/smoketest.yml
++++ b/.github/workflows/smoketest.yml
+@@ -15,7 +15,7 @@ jobs:
+       - name: Check out openvas-scanner
+         uses: actions/checkout@v3
+       - name: Setup go
+-        uses: actions/setup-go@v3
++        uses: actions/setup-go@v4
+         with:
+           go-version: '>=1.16.0'
+       - name: build

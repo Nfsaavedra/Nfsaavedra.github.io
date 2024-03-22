@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/labeler.yml b/.github/workflows/labeler.yml
+index e1343be..7bea2cb 100644
+--- a/.github/workflows/labeler.yml
++++ b/.github/workflows/labeler.yml
+@@ -14,7 +14,7 @@ jobs:
+         repo-token: "${{ secrets.GITHUB_TOKEN }}"
+         configuration-path: .github/labeler-config.yml
+         enable-versioned-regex: 0
+-    - uses: AlexanderWert/get-user-teams-membership@v1.0.2
++    - uses: AlexanderWert/get-user-teams-membership@v1.0.3
+       id: checkUserMember
+       with:
+         username: ${{ github.actor }}

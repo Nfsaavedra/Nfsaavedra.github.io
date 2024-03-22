@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 007c617..fb79af7 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -27,6 +27,9 @@ jobs:
+         with:
+           node-version: 14
+ 
++      - name: Install dependencies
++        run: yarn
++
+       - name: Bundle Electron app
+         run: yarn run prod
+ 

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/pkgdown.yaml b/.github/workflows/pkgdown.yaml
+index 1b60613..de8eff7 100644
+--- a/.github/workflows/pkgdown.yaml
++++ b/.github/workflows/pkgdown.yaml
+@@ -47,7 +47,7 @@ jobs:
+           install.packages("BiocManager")
+           BiocManager::install("IRanges")
+           remotes::install_dev("dplyr")
+-          remotes::install_dev("pkgdown")
++          devtools::install_github("YuLab-SMU/ggtree")
+         shell: Rscript {0}
+ 
+       - name: Install package

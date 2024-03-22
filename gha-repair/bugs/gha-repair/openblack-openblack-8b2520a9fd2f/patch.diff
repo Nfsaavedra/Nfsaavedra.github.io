@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 34c6d36..26a3be3 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -1,5 +1,5 @@
+ name: CI
+-on: [push, pull_request]
++on: [pull_request]
+ jobs:
+   job:
+     name: ${{ matrix.os }}

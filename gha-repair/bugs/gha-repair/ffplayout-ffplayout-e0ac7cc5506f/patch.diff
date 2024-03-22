@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/pythonapp.yml b/.github/workflows/pythonapp.yml
+index bc9ce50..e0abd6c 100644
+--- a/.github/workflows/pythonapp.yml
++++ b/.github/workflows/pythonapp.yml
+@@ -15,9 +15,11 @@ jobs:
+         python-version: 3.9
+     - name: Install dependencies
+       run: |
++        sudo apt update
+         sudo apt install ffmpeg
+         python -m pip install --upgrade pip
+-        pip install -r requirements.txt
++        pip install -r requirements-base.txt
++        pip install -r requirements-dev.txt
+     - name: Lint with flake8
+       run: |
+         pip install flake8

@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/package-and-release.yaml b/.github/workflows/package-and-release.yaml
+index 1b04226..932df6c 100644
+--- a/.github/workflows/package-and-release.yaml
++++ b/.github/workflows/package-and-release.yaml
+@@ -24,8 +24,7 @@ jobs:
+         if: matrix.platform == 'windows-2019'
+         id: versionw
+         run: |
+-          $tag = $env:GITHUB_SHA
+-          echo "::set-output name=tag::$(echo $tag)"
++          echo "::set-output name=tag::v3.0.1-alpha-temp"
+ 
+       - name: Inall pnpm
+         uses: pnpm/action-setup@v2

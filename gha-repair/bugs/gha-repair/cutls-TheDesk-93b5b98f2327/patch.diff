@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 6368642..ce6790a 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -19,7 +19,8 @@ jobs:
+         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+ 
+     steps:
+-    - uses: actions/checkout@v2
++    - name: Checkout
++      uses: actions/checkout@v2
+     - name: Setup
+       uses: actions/setup-node@v2
+       with:

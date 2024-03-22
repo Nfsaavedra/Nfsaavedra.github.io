@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/linter.yml b/.github/workflows/linter.yml
+index 61f7086..b52af5a 100644
+--- a/.github/workflows/linter.yml
++++ b/.github/workflows/linter.yml
+@@ -27,7 +27,7 @@ jobs:
+           fetch-depth: 0
+ 
+       - name: Lint Code Base
+-        uses: github/super-linter@v3
++        uses: github/super-linter@v3.17.0
+         env:
+           VALIDATE_ALL_CODEBASE: false
+           DEFAULT_BRANCH: master

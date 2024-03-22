@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/preconditions.yml b/.github/workflows/preconditions.yml
+index e9a8f0b..d80aa91 100644
+--- a/.github/workflows/preconditions.yml
++++ b/.github/workflows/preconditions.yml
+@@ -14,7 +14,7 @@
+ 
+ # Checks that don't run any template code and only on PRs.
+ 
+-name: Precondition Checks
++name: Preconditions
+ 
+ on:
+   pull_request:

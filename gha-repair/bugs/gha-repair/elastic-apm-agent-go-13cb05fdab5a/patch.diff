@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/snapshoty.yml b/.github/workflows/snapshoty.yml
+index be524d9..867c83d 100644
+--- a/.github/workflows/snapshoty.yml
++++ b/.github/workflows/snapshoty.yml
+@@ -19,7 +19,7 @@ jobs:
+       - uses: actions/checkout@v3
+       - uses: actions/setup-go@v3
+         with:
+-          go-version: ${{ matrix.go-version }}
++          go-version-file: go.mod
+           cache: true
+           cache-dependency-path: '**/go.sum'
+ 

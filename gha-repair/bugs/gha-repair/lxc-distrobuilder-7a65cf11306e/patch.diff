@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 879af9a..d44adc9 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -9,7 +9,8 @@ jobs:
+       fail-fast: false
+       matrix:
+         go:
+-          - 1.18.x
++          - 1.19.x
++          - 1.20.x
+         os:
+           - ubuntu-18.04
+           - ubuntu-20.04

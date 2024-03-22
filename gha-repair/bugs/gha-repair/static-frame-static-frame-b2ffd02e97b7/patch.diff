@@ -1,0 +1,455 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 2468933..4bbfce6 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -10,14 +10,71 @@ env:
+   CFLAGS: -Wno-error=implicit-function-declaration
+ 
+ jobs:
+-  build:
++  test_3_08:
++    name: Test / ${{ matrix.os }} / Python ${{ matrix.python-version }}
+     strategy:
+       fail-fast: false
+       matrix:
+         os: ['ubuntu-20.04', 'windows-2019', 'macos-11']
+-        # this is presently the same as test-backward; updated this and quality to new baseline
+         python-version: ['3.8']
++    runs-on: ${{ matrix.os }}
++
++    steps:
++    - uses: actions/checkout@v2
++
++    - name: Set up Python ${{ matrix.python-version }}
++      uses: actions/setup-python@v2
++      with:
++        python-version: ${{ matrix.python-version }}
+ 
++    - name: Restore cache (Ubuntu)
++      uses: actions/cache@v2
++      if: startsWith(matrix.os, 'ubuntu-')
++      with:
++        path: ~/.cache/pip
++        key: test-pip-${{ matrix.os }}-${{ matrix.python-version }}-${{ hashFiles('requirements-test-3_08.txt', '.github/workflows/test.yml') }}
++        restore-keys: test-pip-${{ matrix.os }}-${{ matrix.python-version }}-
++
++    - name: Restore cache (MacOS)
++      uses: actions/cache@v2
++      if: startsWith(matrix.os, 'macos-')
++      with:
++        path: ~/Library/Caches/pip
++        key: test-pip-${{ matrix.os }}-${{ matrix.python-version }}-${{ hashFiles('requirements-test-3_08.txt', '.github/workflows/test.yml') }}
++        restore-keys: test-pip-${{ matrix.os }}-${{ matrix.python-version }}-
++
++    - name: Restore cache (Windows)
++      uses: actions/cache@v2
++      if: startsWith(matrix.os, 'windows-')
++      with:
++        path: ~\AppData\Local\pip\Cache
++        key: test-pip-${{ matrix.os }}-${{ matrix.python-version }}-${{ hashFiles('requirements-test-3_08.txt', '.github/workflows/test.yml') }}
++        restore-keys: test-pip-${{ matrix.os }}-${{ matrix.python-version }}-
++
++    - name: Install dependencies
++      run: |
++        python -m pip install --upgrade pip
++        pip install -r requirements-test-3_08.txt
++
++    - name: Invoke Test
++      run: inv test --cov
++
++    - name: Upload coverage to Codecov
++      uses: codecov/codecov-action@v3
++      with:
++        token: 6de39346-7381-441d-80d3-a6c0c051be2d
++        files: coverage.xml
++        fail_ci_if_error: false
++        verbose: true
++
++
++  test_3_11:
++    name: Test / ${{ matrix.os }} / Python ${{ matrix.python-version }}
++    strategy:
++      fail-fast: false
++      matrix:
++        os: ['ubuntu-22.04', 'windows-2022', 'macos-13']
++        python-version: ['3.9', '3.10', '3.11']
+     runs-on: ${{ matrix.os }}
+ 
+     steps:
+@@ -33,7 +90,7 @@ jobs:
+       if: startsWith(matrix.os, 'ubuntu-')
+       with:
+         path: ~/.cache/pip
+-        key: test-pip-${{ matrix.os }}-${{ matrix.python-version }}-${{ hashFiles('requirements-test.txt', '.github/workflows/test.yml') }}
++        key: test-pip-${{ matrix.os }}-${{ matrix.python-version }}-${{ hashFiles('requirements-test-3_11.txt', '.github/workflows/test.yml') }}
+         restore-keys: test-pip-${{ matrix.os }}-${{ matrix.python-version }}-
+ 
+     - name: Restore cache (MacOS)
+@@ -41,7 +98,7 @@ jobs:
+       if: startsWith(matrix.os, 'macos-')
+       with:
+         path: ~/Library/Caches/pip
+-        key: test-pip-${{ matrix.os }}-${{ matrix.python-version }}-${{ hashFiles('requirements-test.txt', '.github/workflows/test.yml') }}
++        key: test-pip-${{ matrix.os }}-${{ matrix.python-version }}-${{ hashFiles('requirements-test-3_11.txt', '.github/workflows/test.yml') }}
+         restore-keys: test-pip-${{ matrix.os }}-${{ matrix.python-version }}-
+ 
+     - name: Restore cache (Windows)
+@@ -49,13 +106,13 @@ jobs:
+       if: startsWith(matrix.os, 'windows-')
+       with:
+         path: ~\AppData\Local\pip\Cache
+-        key: test-pip-${{ matrix.os }}-${{ matrix.python-version }}-${{ hashFiles('requirements-test.txt', '.github/workflows/test.yml') }}
++        key: test-pip-${{ matrix.os }}-${{ matrix.python-version }}-${{ hashFiles('requirements-test-3_11.txt', '.github/workflows/test.yml') }}
+         restore-keys: test-pip-${{ matrix.os }}-${{ matrix.python-version }}-
+ 
+     - name: Install dependencies
+       run: |
+         python -m pip install --upgrade pip
+-        pip install -r requirements-test.txt
++        pip install -r requirements-test-3_11.txt
+ 
+     - name: Invoke Test
+       run: inv test --cov
+@@ -67,3 +124,7 @@ jobs:
+         files: coverage.xml
+         fail_ci_if_error: false
+         verbose: true
++
++
++
++
+diff --git a/.github/workflows/test_backward.yml b/.github/workflows/test_backward.yml
+deleted file mode 100644
+index 29b2d28..0000000
+--- a/.github/workflows/test_backward.yml
++++ /dev/null
+@@ -1,48 +0,0 @@
+-name: TestBackward
+-
+-on:
+-  push:
+-    branches:
+-    - master
+-  pull_request:
+-
+-jobs:
+-  build:
+-    strategy:
+-      fail-fast: false
+-      matrix:
+-        os: ['ubuntu-20.04']
+-        python-version: ['3.8']
+-
+-    runs-on: ${{ matrix.os }}
+-
+-    steps:
+-    - uses: actions/checkout@v2
+-
+-    - name: Set up Python ${{ matrix.python-version }}
+-      uses: actions/setup-python@v2
+-      with:
+-        python-version: ${{ matrix.python-version }}
+-
+-    - name: Restore cache
+-      uses: actions/cache@v2
+-      with:
+-        path: ~/.cache/pip
+-        key: test-backward-pip-${{ hashFiles('requirements-test-backward.txt', '.github/workflows/test_backward.yml') }}
+-        restore-keys: test-backward-pip-
+-
+-    - name: Install dependencies
+-      run: |
+-        python -m pip install --upgrade pip
+-        pip install -r requirements-test-backward.txt
+-
+-    - name: Invoke Test
+-      run: inv test --cov
+-
+-    - name: Upload coverage to Codecov
+-      uses: codecov/codecov-action@v3
+-      with:
+-        token: 6de39346-7381-441d-80d3-a6c0c051be2d
+-        files: coverage.xml
+-        fail_ci_if_error: false
+-        verbose: true
+\ No newline at end of file
+diff --git a/.github/workflows/test_forward.yml b/.github/workflows/test_forward.yml
+deleted file mode 100644
+index a5672ef..0000000
+--- a/.github/workflows/test_forward.yml
++++ /dev/null
+@@ -1,48 +0,0 @@
+-name: TestForward
+-
+-on:
+-  push:
+-    branches:
+-    - master
+-  pull_request:
+-
+-jobs:
+-  build:
+-    strategy:
+-      fail-fast: false
+-      matrix:
+-        os: ['ubuntu-20.04']
+-        python-version: ['3.9', '3.10', '3.11']
+-    runs-on: ${{ matrix.os }}
+-
+-    steps:
+-    - uses: actions/checkout@v2
+-
+-    - name: Set up Python ${{ matrix.python-version }}
+-      uses: actions/setup-python@v2
+-      with:
+-        python-version: ${{ matrix.python-version }}
+-
+-    - name: Restore cache
+-      uses: actions/cache@v2
+-      with:
+-        path: ~/.cache/pip
+-        key: test-forward-pip-${{ hashFiles('requirements-test-forward.txt', '.github/workflows/test_forward.yml') }}
+-        restore-keys: test-forward-pip-
+-
+-    - name: Install dependencies
+-      run: |
+-        sudo apt-get install libhdf5-dev
+-        python -m pip install --upgrade pip
+-        pip install -r requirements-test-forward.txt
+-
+-    - name: Invoke Test
+-      run: inv test --cov
+-
+-    - name: Upload coverage to Codecov
+-      uses: codecov/codecov-action@v3
+-      with:
+-        token: 6de39346-7381-441d-80d3-a6c0c051be2d
+-        files: coverage.xml
+-        fail_ci_if_error: false
+-        verbose: true
+\ No newline at end of file
+diff --git a/requirements-dev-3_11.txt b/requirements-dev-3_11.txt
+new file mode 100644
+index 0000000..7664eeb
+--- /dev/null
++++ b/requirements-dev-3_11.txt
+@@ -0,0 +1,34 @@
++numpy==1.25.2
++arraymap==0.2.0
++arraykit==0.5.0
++typing-extensions>=4.7.1
++
++pytest==7.1.2
++pytest-cov==4.0.0
++hypothesis==6.40.0
++scipy==1.10.0
++invoke==2.2.0
++ipython==8.14.0
++
++pandas==2.0.3
++xlsxwriter==1.1.2
++openpyxl==3.0.9
++xarray==0.21.1
++tables==3.9.1
++pyarrow==14.0.1
++msgpack==1.0.4
++msgpack-numpy==0.4.8
++visidata==2.11
++frame-fixtures==0.2.1
++
++mypy==1.6.1
++pyright==1.1.331
++pylint==2.17.5
++isort==5.12.0
++memray==1.3.1 # only linux
++pyinstrument==3.4.1
++gprof2dot==2021.2.21
++line-profiler==4.0.3
++sphinx==7.2.6
++sphinx-jinja==2.0.2
++sphinx_rtd_theme==1.3.0
+diff --git a/requirements-dev.txt b/requirements-dev.txt
+deleted file mode 100644
+index 7664eeb..0000000
+--- a/requirements-dev.txt
++++ /dev/null
+@@ -1,34 +0,0 @@
+-numpy==1.25.2
+-arraymap==0.2.0
+-arraykit==0.5.0
+-typing-extensions>=4.7.1
+-
+-pytest==7.1.2
+-pytest-cov==4.0.0
+-hypothesis==6.40.0
+-scipy==1.10.0
+-invoke==2.2.0
+-ipython==8.14.0
+-
+-pandas==2.0.3
+-xlsxwriter==1.1.2
+-openpyxl==3.0.9
+-xarray==0.21.1
+-tables==3.9.1
+-pyarrow==14.0.1
+-msgpack==1.0.4
+-msgpack-numpy==0.4.8
+-visidata==2.11
+-frame-fixtures==0.2.1
+-
+-mypy==1.6.1
+-pyright==1.1.331
+-pylint==2.17.5
+-isort==5.12.0
+-memray==1.3.1 # only linux
+-pyinstrument==3.4.1
+-gprof2dot==2021.2.21
+-line-profiler==4.0.3
+-sphinx==7.2.6
+-sphinx-jinja==2.0.2
+-sphinx_rtd_theme==1.3.0
+diff --git a/requirements-test-3_08.txt b/requirements-test-3_08.txt
+new file mode 100644
+index 0000000..c70bff6
+--- /dev/null
++++ b/requirements-test-3_08.txt
+@@ -0,0 +1,23 @@
++numpy==1.19.5
++arraymap==0.2.0
++arraykit==0.5.0
++typing-extensions>=4.7.1
++
++pytest==7.1.2
++pytest-cov==4.0.0
++hypothesis==6.40.0
++scipy==1.10.0
++invoke==2.0.0
++ipython==7.16.3
++
++pandas==0.25.3 # keep pre 1 support
++xlsxwriter==1.1.2
++openpyxl==3.0.9
++xarray==0.13.0
++tables==3.6.1
++pyarrow==0.17.0
++msgpack==1.0.0
++msgpack-numpy==0.4.7
++visidata==2.4
++frame-fixtures==0.2.1
++
+diff --git a/requirements-test-3_11.txt b/requirements-test-3_11.txt
+new file mode 100644
+index 0000000..6ff7a69
+--- /dev/null
++++ b/requirements-test-3_11.txt
+@@ -0,0 +1,23 @@
++numpy==1.25.2
++arraymap==0.2.0
++arraykit==0.5.0
++typing-extensions>=4.7.1
++
++pytest==7.1.2
++pytest-cov==4.0.0
++hypothesis==6.40.0
++scipy==1.10.0
++invoke==2.2.0
++ipython==8.14.0
++
++pandas==2.0.3
++xlsxwriter==1.1.2
++openpyxl==3.0.10
++xarray==0.21.1
++tables==3.9.1
++pyarrow==10.0.1
++msgpack==1.0.4
++msgpack-numpy==0.4.8
++visidata==2.11
++frame-fixtures==0.2.1
++
+diff --git a/requirements-test-backward.txt b/requirements-test-backward.txt
+deleted file mode 100644
+index c70bff6..0000000
+--- a/requirements-test-backward.txt
++++ /dev/null
+@@ -1,23 +0,0 @@
+-numpy==1.19.5
+-arraymap==0.2.0
+-arraykit==0.5.0
+-typing-extensions>=4.7.1
+-
+-pytest==7.1.2
+-pytest-cov==4.0.0
+-hypothesis==6.40.0
+-scipy==1.10.0
+-invoke==2.0.0
+-ipython==7.16.3
+-
+-pandas==0.25.3 # keep pre 1 support
+-xlsxwriter==1.1.2
+-openpyxl==3.0.9
+-xarray==0.13.0
+-tables==3.6.1
+-pyarrow==0.17.0
+-msgpack==1.0.0
+-msgpack-numpy==0.4.7
+-visidata==2.4
+-frame-fixtures==0.2.1
+-
+diff --git a/requirements-test-forward.txt b/requirements-test-forward.txt
+deleted file mode 100644
+index 6ff7a69..0000000
+--- a/requirements-test-forward.txt
++++ /dev/null
+@@ -1,23 +0,0 @@
+-numpy==1.25.2
+-arraymap==0.2.0
+-arraykit==0.5.0
+-typing-extensions>=4.7.1
+-
+-pytest==7.1.2
+-pytest-cov==4.0.0
+-hypothesis==6.40.0
+-scipy==1.10.0
+-invoke==2.2.0
+-ipython==8.14.0
+-
+-pandas==2.0.3
+-xlsxwriter==1.1.2
+-openpyxl==3.0.10
+-xarray==0.21.1
+-tables==3.9.1
+-pyarrow==10.0.1
+-msgpack==1.0.4
+-msgpack-numpy==0.4.8
+-visidata==2.11
+-frame-fixtures==0.2.1
+-
+diff --git a/requirements-test.txt b/requirements-test.txt
+deleted file mode 100644
+index 2dc8466..0000000
+--- a/requirements-test.txt
++++ /dev/null
+@@ -1,23 +0,0 @@
+-numpy==1.19.5 # 1.20 np.typing incompatibilities
+-arraymap==0.2.0
+-arraykit==0.5.0
+-typing-extensions>=4.7.1
+-
+-pytest==7.1.2
+-pytest-cov==4.0.0
+-hypothesis==6.40.0
+-scipy==1.10.0
+-invoke==2.0.0
+-ipython==7.16.3
+-
+-pandas==1.3.5 # could be any > 1.0
+-xlsxwriter==1.1.2
+-openpyxl==3.0.9
+-xarray==0.13.0
+-tables==3.7.0
+-pyarrow==6.0.1
+-msgpack==1.0.0
+-msgpack-numpy==0.4.7
+-visidata==2.4
+-frame-fixtures==0.2.1
+-

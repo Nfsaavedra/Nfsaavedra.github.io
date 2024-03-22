@@ -1,0 +1,16 @@
+diff --git a/src/test/java/com/api/jsonata4java/test/expressions/OpOrderByTest.java b/src/test/java/com/api/jsonata4java/test/expressions/OpOrderByTest.java
+index 13bac7b..640c55e 100644
+--- a/src/test/java/com/api/jsonata4java/test/expressions/OpOrderByTest.java
++++ b/src/test/java/com/api/jsonata4java/test/expressions/OpOrderByTest.java
+@@ -61,4 +61,11 @@ public class OpOrderByTest {
+             "[{\"id\":\"1\",\"content\":\"1\"},{\"id\":\"2\",\"content\":\"1\"},{\"id\":\"2\",\"content\":\"2\"}]", null,
+             "[{\"id\":\"1\",\"content\":\"1\"},{\"id\":\"2\",\"content\":\"1\"},{\"id\":\"2\",\"content\":\"2\"}]");
+     }
++	
++    @Test
++    public void testOrderedNumeric() throws Exception {
++        test("$^(id, content)",
++                "[{\"id\":1,\"content\":\"1\"},{\"id\":2,\"content\":\"1\"},{\"id\":2,\"content\":\"2\"}]", null,
++                "[{\"id\":2,\"content\":\"2\"},{\"id\":2,\"content\":\"1\"},{\"id\":1,\"content\":\"1\"}]");
++     }
+ }

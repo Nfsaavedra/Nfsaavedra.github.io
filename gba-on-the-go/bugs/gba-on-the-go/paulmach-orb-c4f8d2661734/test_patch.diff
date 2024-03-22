@@ -1,0 +1,50 @@
+diff --git a/quadtree/maxheap_test.go b/quadtree/maxheap_test.go
+index 885438a..d48545c 100644
+--- a/quadtree/maxheap_test.go
++++ b/quadtree/maxheap_test.go
+@@ -14,9 +14,11 @@ func TestMaxHeap(t *testing.T) {
+ 			h.Push(nil, r.Float64())
+ 		}
+ 
+-		current := h.Pop().distance
++		current := h[0].distance
++		h.Pop()
+ 		for len(h) > 0 {
+-			next := h.Pop().distance
++			next := h[0].distance
++			h.Pop()
+ 			if next > current {
+ 				t.Errorf("incorrect")
+ 			}
+diff --git a/quadtree/quadtree_test.go b/quadtree/quadtree_test.go
+index a4dca3d..e443615 100644
+--- a/quadtree/quadtree_test.go
++++ b/quadtree/quadtree_test.go
+@@ -483,6 +483,27 @@ func TestQuadtreeKNearest_sorted(t *testing.T) {
+ 	}
+ }
+ 
++func TestQuadtreeKNearest_sorted2(t *testing.T) {
++	q := New(orb.Bound{Max: orb.Point{8, 8}})
++	q.Add(orb.Point{0, 0})
++	q.Add(orb.Point{1, 1})
++	q.Add(orb.Point{2, 2})
++	q.Add(orb.Point{3, 3})
++	q.Add(orb.Point{4, 4})
++	q.Add(orb.Point{5, 5})
++	q.Add(orb.Point{6, 6})
++	q.Add(orb.Point{7, 7})
++
++	nearest := q.KNearest(nil, orb.Point{5.25, 5.25}, 3)
++
++	expected := []orb.Point{{5, 5}, {6, 6}, {4, 4}}
++	for i, p := range expected {
++		if n := nearest[i].Point(); !n.Equal(p) {
++			t.Errorf("incorrect point %d: %v", i, n)
++		}
++	}
++}
++
+ func TestQuadtreeKNearest_DistanceLimit(t *testing.T) {
+ 	type dataPointer struct {
+ 		orb.Pointer

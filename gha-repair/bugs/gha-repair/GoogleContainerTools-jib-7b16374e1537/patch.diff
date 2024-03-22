@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/prepare-release.yml b/.github/workflows/prepare-release.yml
+index cf9d40c..82f83f5 100644
+--- a/.github/workflows/prepare-release.yml
++++ b/.github/workflows/prepare-release.yml
+@@ -66,7 +66,7 @@ jobs:
+           source_branch: ${{ github.event.inputs.project }}-release-v${{ github.event.inputs.release_version }}
+           pr_title: "${{ github.event.inputs.project }} release v${{ github.event.inputs.release_version }}"
+           pr_body: "To be merged after the release is complete."
+-          pr_label: "kokoro:run"
++          pr_label: "kokoro:run,PR: Merge After Release"
+ 
+       - name: Draft Maven/Gradle GitHub release
+         uses: actions/create-release@v1

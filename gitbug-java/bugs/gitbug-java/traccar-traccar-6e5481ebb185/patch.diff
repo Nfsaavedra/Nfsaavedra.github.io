@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/traccar/protocol/Gt06ProtocolDecoder.java b/src/main/java/org/traccar/protocol/Gt06ProtocolDecoder.java
+index f7cdd39..d6d9884 100644
+--- a/src/main/java/org/traccar/protocol/Gt06ProtocolDecoder.java
++++ b/src/main/java/org/traccar/protocol/Gt06ProtocolDecoder.java
+@@ -345,7 +345,7 @@ public class Gt06ProtocolDecoder extends BaseProtocolDecoder {
+             mnc = buf.readUnsignedByte();
+         }
+         int lac;
+-        if (type == MSG_LBS_ALARM) {
++        if (type == MSG_LBS_ALARM || type == MSG_GPS_LBS_7) {
+             lac = buf.readInt();
+         } else {
+             lac = buf.readUnsignedShort();

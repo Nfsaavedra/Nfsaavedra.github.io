@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/dart-flutter-package-analyzer.yml b/.github/workflows/dart-flutter-package-analyzer.yml
+index 2393a36..def964a 100644
+--- a/.github/workflows/dart-flutter-package-analyzer.yml
++++ b/.github/workflows/dart-flutter-package-analyzer.yml
+@@ -28,4 +28,5 @@ jobs:
+           if (( $PERCENTAGE < 50 ))
+           then
+             echo Score too low!
+-            exi
++            exit 1
++          fi

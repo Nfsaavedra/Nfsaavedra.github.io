@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index c04b178..86a9a88 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -58,6 +58,7 @@ jobs:
+           update: true
+           install: >-
+             autotools
++            autoconf-archive
+             base-devel
+             gcc
+             libiconv-devel

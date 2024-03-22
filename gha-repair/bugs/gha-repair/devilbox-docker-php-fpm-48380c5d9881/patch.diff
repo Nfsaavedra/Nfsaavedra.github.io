@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/linting.yml b/.github/workflows/linting.yml
+index dadde1b..21b97db 100644
+--- a/.github/workflows/linting.yml
++++ b/.github/workflows/linting.yml
+@@ -39,5 +39,5 @@ jobs:
+ 
+       - name: Diff generated Docker files
+         run: |
+-          make gen-readme
++          make gen-dockerfiles
+           git diff --quiet || { echo "Build Changes"; git diff; git status; false; }

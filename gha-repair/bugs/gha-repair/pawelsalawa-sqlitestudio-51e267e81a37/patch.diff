@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/3.2.yml b/.github/workflows/3.2.yml
+index c8fcdc7..c81444c 100644
+--- a/.github/workflows/3.2.yml
++++ b/.github/workflows/3.2.yml
+@@ -36,7 +36,7 @@ jobs:
+                 cached: ${{ steps.cache-qt.outputs.cache-hit }}
+                 version: ${{ env.QT_VERSION }}
+                 host: 'windows'
+-                arch: ${{ QT_ARCH }}
++                arch: ${{ env.QT_ARCH }}
+                 dir: '${{ github.workspace }}\..'
+                 modules: 'qtscript'
+                 

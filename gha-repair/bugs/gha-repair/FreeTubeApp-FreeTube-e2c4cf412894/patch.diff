@@ -1,0 +1,34 @@
+diff --git a/.github/workflows/conflicts.yml b/.github/workflows/conflicts.yml
+index c0f2210..cceb14d 100644
+--- a/.github/workflows/conflicts.yml
++++ b/.github/workflows/conflicts.yml
+@@ -7,9 +7,6 @@ on:
+   # In `pull_request` we wouldn't be able to change labels of fork PRs
+   pull_request_target:
+     types: [synchronize]
+-  workflow_run:
+-    workflows: ['Dummy workflow for conflicts']
+-    types: [requested]
+ 
+ jobs:
+   main:
+@@ -23,3 +20,4 @@ jobs:
+           repoToken: "${{ secrets.GITHUB_TOKEN }}"
+           commentOnDirty: "This pull request has conflicts, please resolve those before we can evaluate the pull request."
+           commentOnClean: "Conflicts have been resolved. A maintainer will review the pull request shortly."
++
+diff --git a/.github/workflows/dummy-conflicts.yml b/.github/workflows/dummy-conflicts.yml
+deleted file mode 100644
+index cc4ba42..0000000
+--- a/.github/workflows/dummy-conflicts.yml
++++ /dev/null
+@@ -1,9 +0,0 @@
+-name: Dummy workflow for conflicts
+-on:
+-  pull_request_review:
+-    types: [submitted]
+-jobs:
+-  dummy:
+-    runs-on: ubuntu-latest
+-    steps:
+-      - run: echo "this is a dummy workflow that triggers a workflow_run; it's necessary because otherwise the repo secrets will not be in scope for externally forked pull requests"

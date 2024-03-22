@@ -1,0 +1,21 @@
+diff --git a/.github/workflows/label-pr.yml b/.github/workflows/label-pr.yml
+index 492a3ab..dc2ce54 100644
+--- a/.github/workflows/label-pr.yml
++++ b/.github/workflows/label-pr.yml
+@@ -1,7 +1,7 @@
+ name: "Pull Request Labeler"
+ on:
+   pull_request_target:
+-    types: [opened, reopened]
++    types: [opened, reopened, ready_for_review]
+ 
+ jobs:
+   triage:
+@@ -9,6 +9,7 @@ jobs:
+       contents: read
+       pull-requests: write
+     runs-on: ubuntu-latest
++    if: ${{ !github.event.pull_request.draft }}
+     steps:
+     - uses: actions/labeler@v4
+       with:

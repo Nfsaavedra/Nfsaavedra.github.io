@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/nim.yml b/.github/workflows/nim.yml
+index 05fda22..47f45d1 100644
+--- a/.github/workflows/nim.yml
++++ b/.github/workflows/nim.yml
+@@ -10,6 +10,7 @@ jobs:
+   build-devel:
+ 
+     runs-on: ubuntu-latest
++    env:
+       PATH: /usr/share/rust/.cargo/bin:/home/runner/.config/composer/vendor/bin:/home/runner/.dotnet/tools:/snap/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/runner/.nimble/bin
+     steps:
+     - name: debug

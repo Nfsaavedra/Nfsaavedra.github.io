@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/build-image.yml b/.github/workflows/build-image.yml
+index 9ef3854..48fb8c6 100644
+--- a/.github/workflows/build-image.yml
++++ b/.github/workflows/build-image.yml
+@@ -131,6 +131,10 @@ jobs:
+         run: |
+           docker buildx imagetools inspect ${{ env.DOCKER_IMAGE_NAME }}:${{ steps.prep.outputs.version }}
+ 
++      - name: Checkout
++        uses: actions/checkout@v3
++        if: ${{ steps.prep.outputs.release_type == 'standard' }}
++
+       - name: Dockerhub description
+         if: ${{ steps.prep.outputs.release_type == 'standard' }}
+         uses: peter-evans/dockerhub-description@v3

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/nodejs.yml b/.github/workflows/nodejs.yml
+index f1b7a02..ccadd5b 100644
+--- a/.github/workflows/nodejs.yml
++++ b/.github/workflows/nodejs.yml
+@@ -62,7 +62,7 @@ jobs:
+     strategy:
+       matrix:
+         os: [ubuntu-latest, windows-latest, macos-latest]
+-        node-version: [12.x, 14.x, 16.x, 18.x]
++        node-version: [12.x, 14.x, 16.x, 18.x, 19.x]
+         webpack-version: [latest]
+ 
+     runs-on: ${{ matrix.os }}

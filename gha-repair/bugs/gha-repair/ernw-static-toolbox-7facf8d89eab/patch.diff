@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/build-nmap.yml b/.github/workflows/build-nmap.yml
+index 7fd648e..9772c2b 100644
+--- a/.github/workflows/build-nmap.yml
++++ b/.github/workflows/build-nmap.yml
+@@ -142,7 +142,7 @@ jobs:
+             path: /tmp/releases
+ 
+         - name: List Artifacts
+-          run: ls -la /tmp/releases
++          run: ls -laR /tmp/releases
+ 
+         - name: Tag Release
+           run: |
+@@ -154,5 +154,5 @@ jobs:
+           with:
+             name: Nmap v${{ needs.build-x86.outputs.version }}
+             tag: nmap-v${{ needs.build-x86.outputs.version }}
+-            artifacts: /tmp/releases/*
++            artifacts: "/tmp/releases/*/*"
+             token: ${{ secrets.GITHUB_TOKEN }}

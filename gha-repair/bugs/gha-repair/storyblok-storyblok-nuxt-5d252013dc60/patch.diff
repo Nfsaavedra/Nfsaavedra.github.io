@@ -1,0 +1,83 @@
+diff --git a/.github/dependabot.yml b/.github/dependabot.yml
+new file mode 100644
+index 0000000..cb7ca4c
+--- /dev/null
++++ b/.github/dependabot.yml
+@@ -0,0 +1,11 @@
++version: 2
++updates:
++  - package-ecosystem: "npm"
++    directory: "/"
++    schedule:
++      interval: "daily"
++      time: "05:00"
++    commit-message:
++      prefix: fix
++      prefix-development: chore
++      include: scope
+diff --git a/.github/workflows/dependabot-automerge.yml b/.github/workflows/dependabot-automerge.yml
+new file mode 100644
+index 0000000..d380059
+--- /dev/null
++++ b/.github/workflows/dependabot-automerge.yml
+@@ -0,0 +1,28 @@
++# **** AUTOMERGE ****
++# Merge automatically the PR that contain a minor or patch update on the dependency you define in env.DEPENDENCY
++#  - Inspiration: https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically/automating-dependabot-with-github-actions#enable-auto-merge-on-a-pull-request
++
++name: Dependabot auto-merge
++on: pull_request
++
++permissions:
++  pull-requests: write
++  contents: write
++
++jobs:
++  dependabot:
++    runs-on: ubuntu-latest
++    if: ${{ github.actor == 'dependabot[bot]' }}
++    steps:
++      - name: Dependabot metadata
++        id: metadata
++        uses: dependabot/fetch-metadata@v1.1.1
++        with:
++          github-token: "${{ secrets.GITHUB_TOKEN }}"
++      - name: Enable auto-merge for Dependabot PRs
++        if: ${{contains(steps.metadata.outputs.dependency-names, env.DEPENDENCY) && (steps.metadata.outputs.update-type == 'version-update:semver-patch' || steps.metadata.outputs.update-type == 'version-update:semver-minor')}}
++        run: gh pr merge --auto --merge "$PR_URL"
++        env:
++          DEPENDENCY: "@storyblok/vue"
++          PR_URL: ${{github.event.pull_request.html_url}}
++          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+diff --git a/.github/workflows/tests.yml b/.github/workflows/tests.yml
+index 4cc166f..5a7fed0 100644
+--- a/.github/workflows/tests.yml
++++ b/.github/workflows/tests.yml
+@@ -2,9 +2,9 @@ name: Tests CI
+ 
+ on:
+   push:
+-    branches: [master, next]
++    branches: [main]
+   pull_request:
+-    branches: [master, next]
++    branches: [main]
+ 
+ jobs:
+   release:
+@@ -21,9 +21,9 @@ jobs:
+         run: npm ci
+       - name: Cypress run
+         run: npm run test:e2e
+-      - name: Release
+-        working-directory: lib
+-        env:
+-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+-        run: npx semantic-release
++      # - name: Release
++      #   working-directory: lib
++      #   env:
++      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
++      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
++      #   run: npx semantic-release

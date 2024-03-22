@@ -1,0 +1,17 @@
+diff --git a/pkg/nodejs/yarn/parse_test.go b/pkg/nodejs/yarn/parse_test.go
+index 5cf7c57..8df0737 100644
+--- a/pkg/nodejs/yarn/parse_test.go
++++ b/pkg/nodejs/yarn/parse_test.go
+@@ -312,6 +312,12 @@ func TestParse(t *testing.T) {
+ 			wantDeps: yarnV2ManyDeps,
+ 		},
+ 		{
++			name:     "yarn with local dependency",
++			file:     "testdata/yarn_with_local.lock",
++			want:     yarnNormal,
++			wantDeps: yarnNormalDeps,
++		},
++		{
+ 			name:     "bad yarn file",
+ 			file:     "testdata/bad_yarn.lock",
+ 			wantErr:  true,

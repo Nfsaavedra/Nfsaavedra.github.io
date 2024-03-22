@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/rust.yml b/.github/workflows/rust.yml
+index e56ff7a..48f3956 100644
+--- a/.github/workflows/rust.yml
++++ b/.github/workflows/rust.yml
+@@ -59,7 +59,7 @@ jobs:
+         RUST_BACKTRACE: full  
+         
+   macos-nightly:
+-    runs-on: macos-11.0
++    runs-on: macos-10.15 # macos-11 is not yet supported by upstream honggfuzz
+     steps:
+     - uses: actions/checkout@v2
+     - uses: actions-rs/toolchain@v1

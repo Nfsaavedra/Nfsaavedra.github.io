@@ -1,0 +1,71 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index b73fde1..7499355 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -85,3 +85,31 @@ jobs:
+           tags: ${{ steps.metadata.outputs.tags }}
+           labels: ${{ steps.metadata.outputs.labels }}
+           push: true
++
++  build-docker-unsecure:
++    runs-on: ubuntu-latest
++
++    steps:
++      - name: Checkout code
++        uses: actions/checkout@v2
++
++      - name: Acquire Docker image metadata
++        id: metadata
++        uses: docker/metadata-action@v4
++        with:
++          images: valeriansaliou/vigil-unsecure
++
++      - name: Login to Docker Hub
++        uses: docker/login-action@v2
++        with:
++          username: ${{ secrets.DOCKERHUB_USERNAME }}
++          password: ${{ secrets.DOCKERHUB_TOKEN }}
++
++      - name: Build and push Docker image
++        uses: docker/build-push-action@v3
++        with:
++          context: .
++          file: Dockerfile.unsecure
++          tags: ${{ steps.metadata.outputs.tags }}
++          labels: ${{ steps.metadata.outputs.labels }}
++          push: true
+\ No newline at end of file
+diff --git a/Dockerfile.unsecure b/Dockerfile.unsecure
+new file mode 100644
+index 0000000..c9af169
+--- /dev/null
++++ b/Dockerfile.unsecure
+@@ -0,0 +1,28 @@
++FROM rustlang/rust:nightly-buster AS build
++
++RUN apt-get update
++RUN apt-get install -y musl-tools
++
++RUN rustup --version
++RUN rustup target add x86_64-unknown-linux-musl
++
++RUN rustc --version && \
++    rustup --version && \
++    cargo --version
++
++WORKDIR /app
++COPY . /app
++RUN cargo clean && cargo build --release --target x86_64-unknown-linux-musl
++RUN strip ./target/x86_64-unknown-linux-musl/release/vigil
++
++FROM alpine:3.17.1
++
++WORKDIR /usr/src/vigil
++
++COPY ./res/assets/ ./res/assets/
++COPY --from=build /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
++COPY --from=build /app/target/x86_64-unknown-linux-musl/release/vigil /usr/local/bin/vigil
++
++CMD [ "vigil", "-c", "/etc/vigil.cfg" ]
++
++EXPOSE 8080

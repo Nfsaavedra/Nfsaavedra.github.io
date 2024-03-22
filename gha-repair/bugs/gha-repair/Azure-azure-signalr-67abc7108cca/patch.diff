@@ -1,0 +1,18 @@
+diff --git a/.github/workflows/osx.yml b/.github/workflows/osx.yml
+index b9155bb..0ff023e 100644
+--- a/.github/workflows/osx.yml
++++ b/.github/workflows/osx.yml
+@@ -2,12 +2,7 @@ name: Gated-OSX
+ on:
+  push:
+    branches: 
+-    - master
+-    - dev
+- pull_request:
+-   branches: 
+-    - master
+-    - dev
++    - disable
+ jobs:
+   build_osx:
+     runs-on: macOS-latest

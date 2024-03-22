@@ -1,0 +1,18 @@
+diff --git a/.github/workflows/labels.yaml b/.github/workflows/labels.yaml
+index a37a502..228b2c5 100644
+--- a/.github/workflows/labels.yaml
++++ b/.github/workflows/labels.yaml
+@@ -12,7 +12,7 @@ jobs:
+       - name: Verify PR labels
+         uses: jesusvasquez333/verify-pr-label-action@v1.3.1
+         with:
+-            github-token: '${{ secrets.GITHUB_TOKEN }}'
+-            valid-labels: 'bug, enhancement'
+-            invalid-labels: 'help wanted, invalid, question'
+-            pull-request-number: '${{ github.event.pull_request.number }}'
+\ No newline at end of file
++          github-token: '${{ secrets.GITHUB_TOKEN }}'
++          valid-labels: 'bug, enhancement'
++          invalid-labels: 'help wanted, invalid, question'
++          pull-request-number: '${{ github.event.pull_request.number }}'
+\ No newline at end of file

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/greetings.yml b/.github/workflows/greetings.yml
+index f64a011..bae8fb4 100755
+--- a/.github/workflows/greetings.yml
++++ b/.github/workflows/greetings.yml
+@@ -1,6 +1,6 @@
+ name: Greetings
+ 
+-on: [pull_request, issues]
++on: [pull_request_target, issues]
+ 
+ jobs:
+   greeting:

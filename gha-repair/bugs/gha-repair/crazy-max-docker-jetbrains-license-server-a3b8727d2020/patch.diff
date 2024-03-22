@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 9744014..6e44aa1 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -30,7 +30,7 @@ jobs:
+       -
+         name: Docker meta
+         id: meta
+-        uses: docker/metadata-action@v4
++        uses: docker/metadata-action@v5
+         with:
+           images: |
+             ${{ env.DOCKERHUB_SLUG }}

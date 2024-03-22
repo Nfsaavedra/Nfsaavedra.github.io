@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 2421149..0de2f72 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -351,8 +351,6 @@ jobs:
+         uses: ./.github/actions/setup-sentry
+         with:
+           workdir: sentry
+-          cache-files-hash: ${{ hashFiles('sentry/requirements**.txt') }}
+-          python-version: 3.8
+           snuba: false
+           kafka: true
+           clickhouse: true

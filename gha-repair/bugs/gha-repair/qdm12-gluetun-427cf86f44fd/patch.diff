@@ -1,0 +1,23 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index fd5cb62..e44b060 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -64,12 +64,12 @@ jobs:
+       - name: Build final image
+         run: docker build -t final-image .
+ 
+-      - name: Image security analysis
+-        uses: snyk/actions/docker@master
+-        env:
+-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+-        with:
+-          image: final-image
++      # - name: Image security analysis
++      #   uses: snyk/actions/docker@master
++      #   env:
++      #     SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
++      #   with:
++      #     image: final-image
+ 
+   publish:
+     # Only run if it's a push event or if it's a PR from this repository

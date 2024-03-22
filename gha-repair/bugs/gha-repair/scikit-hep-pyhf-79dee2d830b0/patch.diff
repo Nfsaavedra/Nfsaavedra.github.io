@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/merged.yml b/.github/workflows/merged.yml
+index 811b2a6..475f6dc 100644
+--- a/.github/workflows/merged.yml
++++ b/.github/workflows/merged.yml
+@@ -8,9 +8,9 @@ jobs:
+   binder:
+     name: Trigger Binder build
+     runs-on: ubuntu-latest
++    if: github.event.pull_request.merged
+     steps:
+     - uses: actions/checkout@master
+-      if: github.event.pull_request.merged
+     - name: Trigger Binder build
+       run: |
+         # Use Binder build API to trigger repo2docker to build image on GKE and OVH Binder Federation clusters

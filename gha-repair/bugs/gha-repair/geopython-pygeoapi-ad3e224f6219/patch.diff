@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/containers.yml b/.github/workflows/containers.yml
+index 679b7b1..937b271 100644
+--- a/.github/workflows/containers.yml
++++ b/.github/workflows/containers.yml
+@@ -9,6 +9,7 @@ on:
+   workflow_run:
+     workflows: ["Build"]
+     types: [completed]
++    branches: [master]
+     
+ env:
+   DOCKER_REPOSITORY: geopython/pygeoapi

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/prs.yml b/.github/workflows/prs.yml
+index 35259cc..e537869 100644
+--- a/.github/workflows/prs.yml
++++ b/.github/workflows/prs.yml
+@@ -25,6 +25,6 @@ jobs:
+       - name: Install
+         run: npm install
+       - name: Test
+-        run: npm test
++        run: npm run test:once
+       - name: Lint
+         run: npm run lint

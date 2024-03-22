@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 7ba019a..297f1b9 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -49,7 +49,6 @@ jobs:
+         run: ./test2_libxls test/files/test2.xls
+   windows:
+     runs-on: windows-latest
+-    steps:
+     env:
+       MSYSTEM: MINGW64
+     steps:

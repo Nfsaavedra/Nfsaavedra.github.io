@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 3aa672a..6e51f1c 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -1,6 +1,8 @@
+ name: Test
+ 
+-on: push
++on: 
++  push:
++    tags: !*
+ 
+ jobs:
+   bower:

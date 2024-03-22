@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/mac_release.yml b/.github/workflows/mac_release.yml
+index 2fd419e..3aefc7f 100644
+--- a/.github/workflows/mac_release.yml
++++ b/.github/workflows/mac_release.yml
+@@ -20,9 +20,8 @@ jobs:
+         steps:
+              - name: debug
+                run: |
+-                SDK_PATH=$(xcrun --show-sdk-path)
+-                TCL_CONFIG=$SDK_PATH/System/Library/Frameworks/Tcl.framework/Versions/Current/tclConfig.sh
+-                cat $TCL_CONFIG
++                which sqlite3
++                sqlite3 --version
+         
+             # - name: Cache Qt
+               # id: cache-qt

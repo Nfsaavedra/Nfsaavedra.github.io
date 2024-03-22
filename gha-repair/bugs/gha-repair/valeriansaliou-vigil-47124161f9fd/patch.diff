@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index c971445..3e8a440 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -14,7 +14,7 @@ jobs:
+       - name: Install Rust Toolchain
+         uses: actions-rs/toolchain@v1
+         with:
+-          toolchain: nightly-2020-09-27
++          toolchain: nightly
+           override: true
+       - name: Install cargo-fmt
+         run: rustup component add rustfmt --toolchain nightly

@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 0de88e4..5d998ba 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -7,6 +7,9 @@ on:
+       - next
+   pull_request_review:
+     types: [submitted]
++  issues:
++    types:
++      - labeled
+ 
+ jobs:
+   build:

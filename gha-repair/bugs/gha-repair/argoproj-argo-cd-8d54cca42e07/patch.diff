@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/image.yaml b/.github/workflows/image.yaml
+index 9e0a037..1754bf7 100644
+--- a/.github/workflows/image.yaml
++++ b/.github/workflows/image.yaml
+@@ -78,7 +78,9 @@ jobs:
+       ghcr_password: ${{ secrets.GITHUB_TOKEN }}
+ 
+   build-and-publish-provenance: # Push attestations to GHCR, latest image is polluting quay.io
+-    needs: [build-and-publish]
++    needs:
++      - build-and-publish
++      - set-vars
+     permissions:
+       actions: read # for detecting the Github Actions environment.
+       id-token: write # for creating OIDC tokens for signing.

@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/workflow.yml b/.github/workflows/workflow.yml
+index feeb621..120fcda 100644
+--- a/.github/workflows/workflow.yml
++++ b/.github/workflows/workflow.yml
+@@ -7,8 +7,8 @@ on:
+   push:
+     branches:
+       - 'v4'
+-  schedule:
+-    - cron: '42 3 * * 0'
++#  schedule:
++#    - cron: '42 3 * * 0'
+ 
+ jobs:
+   build_test_maybe_release:

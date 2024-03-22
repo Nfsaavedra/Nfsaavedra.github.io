@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/lint-test.yml b/.github/workflows/lint-test.yml
+index 051ca22..b3e5831 100644
+--- a/.github/workflows/lint-test.yml
++++ b/.github/workflows/lint-test.yml
+@@ -83,7 +83,7 @@ jobs:
+       - name: Upload a Build Artifact
+         if: always() && steps.prepare-artifact.outcome == 'success'
+         continue-on-error: true
+-        uses: actions/upload-artifact@v2
++        uses: actions/upload-artifact@v3
+         with:
+           name: pull-request-payload
+           path: pull_request_payload.json

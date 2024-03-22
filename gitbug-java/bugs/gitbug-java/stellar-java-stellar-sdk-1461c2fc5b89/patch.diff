@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/stellar/sdk/Transaction.java b/src/main/java/org/stellar/sdk/Transaction.java
+index 316c88c..56beee7 100644
+--- a/src/main/java/org/stellar/sdk/Transaction.java
++++ b/src/main/java/org/stellar/sdk/Transaction.java
+@@ -402,7 +402,7 @@ public class Transaction extends AbstractTransaction {
+ 
+     Operation op = mOperations[0];
+     return op instanceof InvokeHostFunctionOperation
+-        || op instanceof BumpSequenceOperation
++        || op instanceof BumpFootprintExpirationOperation
+         || op instanceof RestoreFootprintOperation;
+   }
+ }

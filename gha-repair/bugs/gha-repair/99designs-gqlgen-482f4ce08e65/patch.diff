@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 14b7c3a..59016f5 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -7,7 +7,10 @@ env:
+ 
+ jobs:
+   test:
+-    runs-on: ubuntu-latest
++    strategy:
++      matrix:
++        os: [ubuntu-latest, windows-latest]
++    runs-on: ${{ matrix.os }}
+     steps:
+       - uses: actions/checkout@v3
+       - uses: actions/setup-go@v3

@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/docker.yml b/.github/workflows/docker.yml
+index e7ddb36..6011e60 100644
+--- a/.github/workflows/docker.yml
++++ b/.github/workflows/docker.yml
+@@ -1,4 +1,4 @@
+-name: Docker build git and push to DockerHub
++name: Docker (git) push to DockerHub
+ 
+ on:
+   push:

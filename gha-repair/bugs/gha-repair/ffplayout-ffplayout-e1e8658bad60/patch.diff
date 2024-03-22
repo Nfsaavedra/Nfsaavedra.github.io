@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/rust.yml b/.github/workflows/rust.yml
+index 735b5c7..46e12f6 100644
+--- a/.github/workflows/rust.yml
++++ b/.github/workflows/rust.yml
+@@ -13,11 +13,7 @@ jobs:
+       - run: rustup component add clippy
+       - name: cargo build
+         uses: actions/checkout@v3
+-#        with:
+-#          path: target
+-#          key: ${{ runner.os }}-cargo-build-target-${{ hashFiles('**/Cargo.lock') }}
+-#          key: ubuntu-latest-cargo-build-target-${{ hashFiles('**/Cargo.lock') }}
+-      - run: cargo build --all-features
+       - run: cargo test --all-features
+       - run: cargo fmt --all -- --check
+       - run: cargo clippy --all-features --all-targets -- --deny warnings
++      - run: cargo build --all-features

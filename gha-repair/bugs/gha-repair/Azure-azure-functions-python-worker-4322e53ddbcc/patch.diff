@@ -1,0 +1,24 @@
+diff --git a/.github/workflows/perf-testing-setup.yml b/.github/workflows/perf-testing-setup.yml
+index 66ecb10..b068308 100644
+--- a/.github/workflows/perf-testing-setup.yml
++++ b/.github/workflows/perf-testing-setup.yml
+@@ -1,6 +1,7 @@
+ name: Throughput testing workflow
+ 
+ on:
++  workflow_dispatch:
+   push:
+   pull_request:
+     branches: [ dev ]
+@@ -16,10 +17,7 @@ jobs:
+     strategy:
+       fail-fast: false
+       matrix:
+-        test_to_run: [ SyncHttpTriggerHelloWorld,
+-                       SyncHttpTriggerWithSyncRequests,
+-                       AsyncHttpTriggerWithAsyncRequest,
+-                       SyncHttpTriggerCPUIntensive ]
++        test_to_run: [ SyncHttpTriggerHelloWorld, SyncHttpTriggerWithSyncRequests, AsyncHttpTriggerWithAsyncRequest, SyncHttpTriggerCPUIntensive ]
+     steps:
+     - uses: actions/checkout@v2
+     - name: Set up Python ${{ env.PYTHON_VERSION }}

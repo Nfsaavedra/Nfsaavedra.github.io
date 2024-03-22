@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/copyright-update.yml b/.github/workflows/copyright-update.yml
+index b27f880..175316a 100644
+--- a/.github/workflows/copyright-update.yml
++++ b/.github/workflows/copyright-update.yml
+@@ -13,7 +13,7 @@ jobs:
+       contents: write # for peter-evans/create-pull-request to create branch
+       pull-requests: write # for peter-evans/create-pull-request to create a PR
+     name: copyright update
+-    if: github.repository == 'jhipster/jhipster-lite'
++    if: github.repository == 'jhipster/jhipster-kotlin'
+     runs-on: ubuntu-latest
+     timeout-minutes: 40
+     steps:

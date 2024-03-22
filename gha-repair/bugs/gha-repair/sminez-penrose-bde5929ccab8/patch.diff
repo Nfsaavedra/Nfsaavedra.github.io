@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/book.yml b/.github/workflows/book.yml
+index 5010198..d099ac4 100644
+--- a/.github/workflows/book.yml
++++ b/.github/workflows/book.yml
+@@ -25,4 +25,4 @@ jobs:
+         if: ${{ github.ref == 'refs/heads/develop' }}
+         with:
+           github_token: ${{ secrets.GITHUB_TOKEN }}
+-          publish_dir: ./docs
++          publish_dir: ./docs/book

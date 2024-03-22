@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/upgrade-tree-sitter.yml b/.github/workflows/upgrade-tree-sitter.yml
+index e8f6bcb..b33639f 100644
+--- a/.github/workflows/upgrade-tree-sitter.yml
++++ b/.github/workflows/upgrade-tree-sitter.yml
+@@ -23,7 +23,7 @@ jobs:
+         run: bash scripts/upgrade-tree-sitter.sh
+ 
+       - name: Verify file changes
+-        uses: tj-actions/verify-changed-files@v14
++        uses: tj-actions/verify-changed-files@v15
+         id: verify-changed-files
+         with:
+           files: |

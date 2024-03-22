@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/pypi.yml b/.github/workflows/pypi.yml
+index a9d682e..0c4baf3 100644
+--- a/.github/workflows/pypi.yml
++++ b/.github/workflows/pypi.yml
+@@ -20,5 +20,5 @@ jobs:
+         TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
+         TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+       run: |
+-        python setup.py sdist bdist_wheel
+-        twine upload dist/*
++        sudo python setup.py sdist bdist_wheel
++        sudo twine upload dist/*

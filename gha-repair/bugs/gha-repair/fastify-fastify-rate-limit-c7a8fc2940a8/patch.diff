@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 476c82a..0b5f12a 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -24,7 +24,7 @@ jobs:
+           persist-credentials: false
+ 
+       - name: Dependency review
+-        uses: actions/dependency-review-action@v1
++        uses: actions/dependency-review-action@v2
+ 
+   test:
+     runs-on: ubuntu-latest

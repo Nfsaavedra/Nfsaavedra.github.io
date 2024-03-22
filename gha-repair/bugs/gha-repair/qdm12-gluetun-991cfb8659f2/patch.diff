@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/labels.yml b/.github/workflows/labels.yml
+index 9c10823..c4d9153 100644
+--- a/.github/workflows/labels.yml
++++ b/.github/workflows/labels.yml
+@@ -7,6 +7,9 @@ on:
+       - .github/workflows/labels.yml
+ jobs:
+   labeler:
++    # Only run from pushes from this repository to avoid
++    # `Resource not accessible by integration` errors.
++    if: github.repository == 'qdm12/gluetun'
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v3

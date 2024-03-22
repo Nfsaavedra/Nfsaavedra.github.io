@@ -1,0 +1,21 @@
+diff --git a/.github/workflows/dev-hot-build.yml b/.github/workflows/dev-hot-build.yml
+index f0419de..623d9e7 100644
+--- a/.github/workflows/dev-hot-build.yml
++++ b/.github/workflows/dev-hot-build.yml
+@@ -126,6 +126,7 @@ jobs:
+ 
+   ## release jobs
+   release:
++    needs: build
+     runs-on: ${{ matrix.os }}
+     strategy:
+       matrix:
+@@ -136,7 +137,7 @@ jobs:
+         uses: actions/checkout@v2
+ 
+       - name: list artificats
+-        run: find ./out
++        run: find .
+ 
+       - name: Extract version
+         id: extract_version

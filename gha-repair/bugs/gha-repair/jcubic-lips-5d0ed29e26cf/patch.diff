@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/build.yaml b/.github/workflows/build.yaml
+index cddc22d..f599382 100644
+--- a/.github/workflows/build.yaml
++++ b/.github/workflows/build.yaml
+@@ -1,5 +1,5 @@
+ name: Build and test
+-on: [push]
++on: [push, pull_request]
+ jobs:
+   build:
+     runs-on: ubuntu-latest

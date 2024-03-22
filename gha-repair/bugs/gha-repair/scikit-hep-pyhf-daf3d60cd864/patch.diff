@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 28997e9..17d2d30 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -132,7 +132,6 @@ jobs:
+     steps:
+     - uses: actions/checkout@v2
+     - name: Build Docker image
+-      if: "!(startsWith(github.ref, 'refs/tags/'))"
+       uses: docker/build-push-action@v1
+       with:
+         repository: pyhf/pyhf

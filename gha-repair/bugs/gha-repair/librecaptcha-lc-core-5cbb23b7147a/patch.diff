@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/docker-latest.yml b/.github/workflows/docker-latest.yml
+index 7587fe8..6ceaf1e 100644
+--- a/.github/workflows/docker-latest.yml
++++ b/.github/workflows/docker-latest.yml
+@@ -54,6 +54,10 @@ jobs:
+           push: ${{ github.event_name != 'pull_request' }}
+           tags: ${{ steps.meta.outputs.tags }}
+           labels: ${{ steps.meta.outputs.labels }}
++          platforms: |
++            linux/amd64
++            linux/arm64
++            linux/arm/v7
+ 
+       - name: Image digest
+         run: echo ${{ steps.docker_build.outputs.digest }}

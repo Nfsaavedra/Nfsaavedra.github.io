@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 5ca113d..b7fc5bd 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -18,4 +18,4 @@ jobs:
+     - run: yarn
+     - run: yarn test
+     - run: yarn coverage
+-    - uses: codecov/codecov-action@v1
++    - uses: codecov/codecov-action@v2

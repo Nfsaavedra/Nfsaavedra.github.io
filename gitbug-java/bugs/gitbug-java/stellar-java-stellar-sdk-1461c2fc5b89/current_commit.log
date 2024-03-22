@@ -1,0 +1,92 @@
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test] 🚀  Start image=gitbugactions:latest
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   🐳  docker pull image=gitbugactions:latest platform= username= forcePull=false
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   🐳  docker create image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   🐳  docker run image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/7f8b5523-76a8-40cc-9f21-b6588b304c12] user=0 workdir=
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test] ⭐ Run Main Checkout code
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   🐳  docker cp src=/tmp/7f8b5523-76a8-40cc-9f21-b6588b304c12/. dst=/tmp/7f8b5523-76a8-40cc-9f21-b6588b304c12
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/7f8b5523-76a8-40cc-9f21-b6588b304c12] user=0 workdir=
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   ✅  Success - Main Checkout code
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test] ⭐ Run Main Set up JDK
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   🐳  docker cp src=/tmp/act-cache/62bc70ff-9746-495a-83b5-7d9f352fc8a3/act/actions-setup-java@v2/ dst=/var/run/act/actions/actions-setup-java@v2/
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v2/] user=0 workdir=
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/setup/index.js] user= workdir=
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | Trying to resolve the latest version from remote
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | Resolved latest version as 11.0.13
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | Trying to download...
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | Downloading Java 11.0.13 (Microsoft) from https://aka.ms/download-jdk/microsoft-jdk-11.0.13.8.1-linux-x64.tar.gz ...
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   💬  ::debug::Downloading https://aka.ms/download-jdk/microsoft-jdk-11.0.13.8.1-linux-x64.tar.gz
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   💬  ::debug::Destination /tmp/d867ed4d-6b25-4e8e-b562-2309210d1ba7
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   💬  ::debug::download complete
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | Extracting Java archive...
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   💬  ::debug::Checking tar --version
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   💬  ::debug::tar (GNU tar) 1.34%0ACopyright (C) 2021 Free Software Foundation, Inc.%0ALicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.%0AThis is free software: you are free to change and redistribute it.%0AThere is NO WARRANTY, to the extent permitted by law.%0A%0AWritten by John Gilmore and Jay Fenlason.
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/7a9f358a-a59a-4d10-b25d-9b66cb2fe20c -f /tmp/d867ed4d-6b25-4e8e-b562-2309210d1ba7
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   💬  ::debug::Caching tool Java_Microsoft_jdk 11.0.13 x64
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   💬  ::debug::source dir: /tmp/7a9f358a-a59a-4d10-b25d-9b66cb2fe20c/jdk-11.0.13+8
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   💬  ::debug::destination /opt/hostedtoolcache/Java_Microsoft_jdk/11.0.13/x64
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   💬  ::debug::finished caching tool
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | Java 11.0.13 was downloaded
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | Setting Java 11.0.13 as the default
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | 
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | Java configuration:
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   |   Distribution: microsoft
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   |   Version: 11.0.13
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   |   Path: /opt/hostedtoolcache/Java_Microsoft_jdk/11.0.13/x64
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | 
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   ❓ add-matcher /run/act/actions/actions-setup-java@v2/.github/java.json
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | Creating settings.xml with server-id: github
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | Writing to /home/runner/.m2/settings.xml
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   ✅  Success - Main Set up JDK
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   ⚙  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Microsoft_jdk/11.0.13/x64
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   ⚙  ::set-output:: distribution=Microsoft
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   ⚙  ::set-output:: path=/opt/hostedtoolcache/Java_Microsoft_jdk/11.0.13/x64
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   ⚙  ::set-output:: version=11.0.13
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   ⚙  ::add-path:: /opt/hostedtoolcache/Java_Microsoft_jdk/11.0.13/x64/bin
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test] ⭐ Run Main Test
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | Downloading https://services.gradle.org/distributions/gradle-7.4.1-bin.zip
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | ...........10%...........20%...........30%...........40%...........50%...........60%...........70%...........80%...........90%...........100%
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | 
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | Welcome to Gradle 7.4.1!
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | 
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | Here are the highlights of this release:
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   |  - Aggregated test and JaCoCo reports
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   |  - Marking additional test source directories as tests in IntelliJ
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   |  - Support for Adoptium JDKs in Java toolchains
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | 
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | For more details see https://docs.gradle.org/7.4.1/release-notes.html
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | 
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | Starting a Gradle Daemon (subsequent builds will be faster)
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | > Task :spotlessInternalRegisterDependencies
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | > Task :spotlessJava
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | > Task :spotlessJavaCheck
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | > Task :spotlessCheck
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | > Task :generateEffectiveLombokConfig
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | 
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | > Task :compileJava
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | Note: Some input files use or override a deprecated API.
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | Note: Recompile with -Xlint:deprecation for details.
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | Note: Some input files use unchecked or unsafe operations.
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | Note: Recompile with -Xlint:unchecked for details.
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | 
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | > Task :processResources NO-SOURCE
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | > Task :classes
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | > Task :generateTestEffectiveLombokConfig
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | 
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | > Task :compileTestJava
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | Note: Some input files use or override a deprecated API.
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | Note: Recompile with -Xlint:deprecation for details.
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | 
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | > Task :processTestResources NO-SOURCE
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | > Task :testClasses
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | > Task :test
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | > Task :check
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | 
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | BUILD SUCCESSFUL in 59s
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   | 8 actionable tasks: 8 executed
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   ✅  Success - Main Test
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test] ⭐ Run Post Set up JDK
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/cleanup/index.js] user= workdir=
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test]   ✅  Success - Post Set up JDK
+[16c92c74-925c-46ce-b172-a3eab17c9cbf/test] 🏁  Job succeeded

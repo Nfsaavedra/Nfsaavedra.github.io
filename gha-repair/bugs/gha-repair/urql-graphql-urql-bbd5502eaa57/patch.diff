@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 6b6299e..dcf976a 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -41,7 +41,7 @@ jobs:
+             ${{ runner.os }}-pnpm-
+ 
+       - name: Install Dependencies
+-        run: pnpm install --frozen-lockfile --prefer-offline
++        run: pnpm install
+ 
+       - name: PR or Publish
+         id: changesets

@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/coverage.yml b/.github/workflows/coverage.yml
+index 4233606..14dd9eb 100644
+--- a/.github/workflows/coverage.yml
++++ b/.github/workflows/coverage.yml
+@@ -37,10 +37,6 @@ jobs:
+             - name: Grant MySQL permissions
+               run: mysql -uroot -proot -e "grant all privileges on *.* to 'testing'@'%' with grant option;" --port 13306
+ 
+-            - name: Install newest version of Laravel
+-              run: |
+-                composer require "laravel/laravel:8.*" "laravel/framework:8.*" --no-interaction --no-update
+-
+             - name: Install Composer dependencies
+               run: composer install
+ 

@@ -1,0 +1,48 @@
+diff --git a/.coverityignore b/.coverityignore
+new file mode 100644
+index 0000000..47b4140
+--- /dev/null
++++ b/.coverityignore
+@@ -0,0 +1,22 @@
++apparmor/
++contrib/
++manpages/
++patches/
++scripts/
++.github/
++.vscode/
++.clang-format
++.editorconfig
++.gitignore
++.pre-commit-config.yaml
++AC_VERSION.in
++AUTHORS
++centos_autotools.sh
++ChangeLog
++docker_package_install.sh
++Dockerfile
++Dockerfile.release
++INSTALLING
++LICENSE.OpenSSL
++README
++SECURITY.md
+\ No newline at end of file
+diff --git a/.github/workflows/coverity.yml b/.github/workflows/coverity.yml
+index df87997..9b3a516 100644
+--- a/.github/workflows/coverity.yml
++++ b/.github/workflows/coverity.yml
+@@ -23,9 +23,12 @@ jobs:
+ 
+           CUR_REV=$(git rev-parse HEAD | cut -b 1-30)
+           echo "Current git revision: ${CUR_REV}"
+-          
++
+           SKIP=false
+-          [ ${COV_REV} == ${CUR_REV} ] && SKIP=true
++          if [ ${COV_REV} == ${CUR_REV} ] ||
++             [ -z "$(git diff --name-only ${COV_REV}..HEAD | grep -v -f .coverityignore)" ]; then
++             SKIP=true
++          fi
+           echo "skip=${SKIP}" >> $GITHUB_OUTPUT
+       -
+         name: Prepare build

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/dotnetcore.yml b/.github/workflows/dotnetcore.yml
+index 29f5e2e..75f3f00 100644
+--- a/.github/workflows/dotnetcore.yml
++++ b/.github/workflows/dotnetcore.yml
+@@ -6,7 +6,7 @@ jobs:
+   build:
+     strategy:
+       matrix:
+-        runs-on: [ubuntu-latest, windows-latest]
++        runs-on: [windows-latest]
+ 
+     runs-on: ${{ matrix.runs-on }}
+     name: Running tests on ${{ matrix.runs-on }}. 

@@ -1,0 +1,26 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 7306338..4480061 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -79,6 +79,10 @@ jobs:
+               if: ${{ ! matrix.experimental }}
+               run: composer require "laravel/laravel:${{ matrix.laravel }}" "laravel/framework:${{ matrix.laravel }}" --no-interaction --no-update
+ 
++            - name: Get Composer Cache Directory
++              id: composer-cache
++              run: echo "::set-output name=dir::$(composer config cache-files-dir)"
++
+             - name: Cache Composer Downloads
+               uses: actions/cache@v2
+               with:
+@@ -90,10 +94,6 @@ jobs:
+               if: ${{ matrix.experimental }}
+               run: composer require "laravel/laravel:${{ matrix.laravel }}" "laravel/framework:${{ matrix.laravel }}" --no-interaction --no-update --ignore-platform-reqs
+ 
+-            - name: Get Composer Cache Directory
+-              id: composer-cache
+-              run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+-
+             - name: Install Composer dependencies
+               if: ${{ ! matrix.experimental }}
+               run: composer install --no-ansi --no-interaction

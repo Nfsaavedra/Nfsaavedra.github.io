@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/win_release.yml b/.github/workflows/win_release.yml
+index c8f258d..1094955 100644
+--- a/.github/workflows/win_release.yml
++++ b/.github/workflows/win_release.yml
+@@ -104,6 +104,7 @@ jobs:
+                 mkdir portable
+                 cp -R SQLiteStudio portable/
+                 echo "PORTABLE_DIR=`pwd`/portable/SQLiteStudio" >> $GITHUB_ENV
++                echo "The dir: ${{ env.PORTABLE_DIR }}"
+ 
+             - name: Clean-up portable dir
+               shell: bash

@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/autoLabelDuplicate.yml b/.github/workflows/autoLabelDuplicate.yml
+index 756a982..4bbbc9b 100644
+--- a/.github/workflows/autoLabelDuplicate.yml
++++ b/.github/workflows/autoLabelDuplicate.yml
+@@ -7,7 +7,9 @@ jobs:
+   test:
+     runs-on: ubuntu-latest
+     steps:
+-      - uses: Amwam/issue-comment-action@v1.3.1
++      - name: Check Comment Author
++        if: github.event.comment.author_association == 'MEMBER' || github.event.comment.author_association == 'OWNER' 
++        uses: Amwam/issue-comment-action@v1.3.1
+         with:
+           keywords: '["duplicate of #", "duplicate of https://github.com/FreeTubeApp/FreeTube/issues/", "duplicate of https://github.com/FreeTubeApp/FreeTube/pulls/"]'
+           labels: '["U: duplicate"]'

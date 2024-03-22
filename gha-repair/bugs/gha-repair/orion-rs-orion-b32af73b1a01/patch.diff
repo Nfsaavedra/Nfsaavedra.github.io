@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/code_coverage.yml b/.github/workflows/code_coverage.yml
+index ebbf7b7..047bd3e 100644
+--- a/.github/workflows/code_coverage.yml
++++ b/.github/workflows/code_coverage.yml
+@@ -29,4 +29,5 @@ jobs:
+       - name: Upload to codecov.io
+         uses: codecov/codecov-action@v1
+         with:
++          token: ${{secrets.CODECOV_TOKEN}}
+           fail_ci_if_error: true
+\ No newline at end of file

@@ -1,0 +1,18 @@
+diff --git a/.github/workflows/workflow_ci.yml b/.github/workflows/workflow_ci.yml
+index b2d4993..66e4008 100644
+--- a/.github/workflows/workflow_ci.yml
++++ b/.github/workflows/workflow_ci.yml
+@@ -2,7 +2,12 @@
+ # https://github.com/actions/virtual-environments/tree/main/images
+ 
+ name: workflow ci
+-on: [push, pull_request, workflow_dispatch]
++on: 
++  push: 
++  pull_request: 
++  workflow_dispatch:
++  schedule:
++    - cron: '0 0 1 * *'
+ 
+ jobs:
+ 

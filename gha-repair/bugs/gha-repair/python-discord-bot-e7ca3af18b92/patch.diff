@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/sentry_release.yml b/.github/workflows/sentry_release.yml
+index b0e6876..b8d92e9 100644
+--- a/.github/workflows/sentry_release.yml
++++ b/.github/workflows/sentry_release.yml
+@@ -21,4 +21,4 @@ jobs:
+         with:
+           tagName: ${{ github.sha }}
+           environment: production
+-          releaseNamePrefix: pydis-bot@
++          releaseNamePrefix: bot@

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci-vcpkg.yml b/.github/workflows/ci-vcpkg.yml
+index 2c078a2..2a7930e 100644
+--- a/.github/workflows/ci-vcpkg.yml
++++ b/.github/workflows/ci-vcpkg.yml
+@@ -68,7 +68,7 @@ jobs:
+           buildPreset: 'ninja-multi-vcpkg-debug'
+           testPreset: 'ninja-multi-vcpkg-debug'
+ 
+-      - name: Run CMake+Ninja+CTest to build packages and build/test the code (Release).
++      - name: Run CMake+Ninja+CTest to build/test the code (Release).
+         uses: lukka/run-cmake@main
+         with:
+           configurePresetAdditionalArgs: "['-DOPENBLACK_WARNINGS_AS_ERRORS=ON']"

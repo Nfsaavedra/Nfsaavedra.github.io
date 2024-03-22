@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 3b18a39..349e246 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -6,7 +6,7 @@ on:
+       - "v*"
+ 
+ env:
+-  GOLANG_VERSION: 1.18
++  GOLANG_VERSION: 1.21
+ 
+ jobs:
+   build:

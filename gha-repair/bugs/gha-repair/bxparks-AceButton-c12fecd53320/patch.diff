@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/aunit_tests.yml b/.github/workflows/aunit_tests.yml
+index fa47db8..0585ef4 100644
+--- a/.github/workflows/aunit_tests.yml
++++ b/.github/workflows/aunit_tests.yml
+@@ -16,6 +16,7 @@ jobs:
+         git clone https://github.com/bxparks/EpoxyDuino
+         git clone https://github.com/bxparks/AceCommon
+         git clone https://github.com/bxparks/AUnit
++        git clone https://github.com/bxparks/AceSegment
+ 
+     - name: Verify examples
+       run: |

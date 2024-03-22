@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index fbad28e..27c2a86 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -15,6 +15,7 @@ jobs:
+     name: "Test"
+ 
+     strategy:
++      fail-fast: false
+       matrix:
+         platform: [
+           ubuntu-latest,

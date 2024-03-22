@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/schema.yml b/.github/workflows/schema.yml
+index 36c058d..26131c9 100644
+--- a/.github/workflows/schema.yml
++++ b/.github/workflows/schema.yml
+@@ -25,7 +25,7 @@ jobs:
+       - name: "Open pull request updating schema"
+         uses: "gr2m/create-or-update-pull-request-action@v1.2.9"
+         with:
+-          author: "<am+ergebnis+bot@localheinz.com>"
++          author: "<bot@ergebn.is>"
+           branch: "feature/schema"
+           body: |
+             This PR

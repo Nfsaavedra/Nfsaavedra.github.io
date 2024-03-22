@@ -1,0 +1,18 @@
+diff --git a/.github/workflows/nightly.yml b/.github/workflows/nightly.yml
+index 26e4a1c..cdc46e5 100644
+--- a/.github/workflows/nightly.yml
++++ b/.github/workflows/nightly.yml
+@@ -1,13 +1,10 @@
+ name: Rucky Nightly
+-
+ on:
+   push:
+     branches:
+       master
+-
+ jobs:
+   runs-on: ubuntu-latest
+-
+   steps:
+     - name: Checkout Code
+       uses: actions/checkout@v2

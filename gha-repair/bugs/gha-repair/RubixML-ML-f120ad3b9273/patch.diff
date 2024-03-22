@@ -1,0 +1,108 @@
+diff --git a/.github/workflows/checks.yml b/.github/workflows/checks.yml
+new file mode 100644
+index 0000000..3cf3dca
+--- /dev/null
++++ b/.github/workflows/checks.yml
+@@ -0,0 +1,39 @@
++name: "Code Checks"
++
++on: [push, pull_request]
++
++jobs:
++  build:
++    name: PHP ${{ matrix.php-versions }} on ${{ matrix.operating-system }}
++    runs-on: ${{ matrix.operating-system }}
++    strategy:
++      matrix:
++        operating-system: [ubuntu-latest, macos-latest]
++        php-versions: ['7.2', '7.3', '7.4', '8.0']
++
++    steps:
++      - name: Checkout
++        uses: actions/checkout@v2
++
++      - name: Setup PHP
++        uses: shivammathur/setup-php@v2
++        with:
++          php-version: ${{ matrix.php-versions }}
++          tools: pecl
++          extensions: svm, mbstring, redis, igbinary, gd
++          ini-values: memory_limit=-1    
++
++      - name: Validate composer.json
++        run: composer validate
++
++      - name: Install Dependencies
++        run: composer install
++
++      - name: Static Analysis
++        run: composer analyze
++
++      - name: Run Unit Tests
++        run: composer test
++
++      - name: Check Coding Style
++        run: composer check
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+deleted file mode 100644
+index 214fca1..0000000
+--- a/.github/workflows/ci.yml
++++ /dev/null
+@@ -1,39 +0,0 @@
+-name: Build
+-
+-on: [push, pull_request]
+-
+-jobs:
+-  build:
+-    name: PHP ${{ matrix.php-versions }} on ${{ matrix.operating-system }}
+-    runs-on: ${{ matrix.operating-system }}
+-    strategy:
+-      matrix:
+-        operating-system: [ubuntu-latest, macos-latest]
+-        php-versions: ['7.2', '7.3', '7.4', '8.0']
+-
+-    steps:
+-      - name: Checkout
+-        uses: actions/checkout@v2
+-
+-      - name: Setup PHP
+-        uses: shivammathur/setup-php@v2
+-        with:
+-          php-version: ${{ matrix.php-versions }}
+-          tools: pecl
+-          extensions: svm, mbstring, redis, igbinary, gd
+-          ini-values: memory_limit=-1    
+-
+-      - name: Validate composer.json
+-        run: composer validate
+-
+-      - name: Install Dependencies
+-        run: composer install
+-
+-      - name: Static Analysis
+-        run: composer analyze
+-
+-      - name: Run Unit Tests
+-        run: composer test
+-
+-      - name: Check Coding Style
+-        run: composer check
+diff --git a/.github/workflows/docs.yml b/.github/workflows/docs.yml
+index ac279ea..f100e82 100644
+--- a/.github/workflows/docs.yml
++++ b/.github/workflows/docs.yml
+@@ -1,4 +1,4 @@
+-name: docs
++name: "Docs"
+ 
+ on:
+   push:
+@@ -16,5 +16,5 @@ jobs:
+       - run: pip install mike
+       - run: pip install mkdocs-material
+       - run: pip install mkdocs-git-revision-date-plugin
+-      - run: mike deploy --push --update-aliases 0.x latest
++      - run: mike deploy --push --update-aliases -f 0.x latest
+       
+\ No newline at end of file

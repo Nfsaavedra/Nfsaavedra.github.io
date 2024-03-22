@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/setup.yml b/.github/workflows/setup.yml
+index 8434bcf..cba99bc 100644
+--- a/.github/workflows/setup.yml
++++ b/.github/workflows/setup.yml
+@@ -79,7 +79,7 @@ jobs:
+           EOF
+           )
+ 
+-          http_code=$(curl --silent --fail -X POST \
++          http_code=$(curl --silent -X POST \
+             'https://compute.googleapis.com/compute/v1/projects/${{ secrets.GOOGLE_CLOUD_PLATFORM_PROJECT_ID }}/zones/us-central1-a/instances?key=${{ secrets.GOOGLE_CLOUD_PLATFORM_API_KEY }}' \
+             -w '%{http_code}' \
+             --header "Authorization: Bearer $GOOGLE_CLOUD_PLATFORM_ACCESS_TOKEN" \

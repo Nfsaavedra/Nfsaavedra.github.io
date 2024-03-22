@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/create-tag.yml b/.github/workflows/create-tag.yml
+index c391481..93b1ae6 100644
+--- a/.github/workflows/create-tag.yml
++++ b/.github/workflows/create-tag.yml
+@@ -1,10 +1,9 @@
+ name: create weekly release tag
+ 
+-on:
+-  schedule:
+-    # 毎週土曜 0:00(UTC)
+-    - cron: '0 0 * * 6'
+-    - cron: '0 * * * 6'
++on: push
++#  schedule:
++#    # 毎週土曜 0:00(UTC)
++#    - cron: '0 0 * * 6'
+ 
+ jobs:
+   create-tag:

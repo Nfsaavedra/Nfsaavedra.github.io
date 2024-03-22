@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 00f8a5a..8ef72e2 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -56,7 +56,7 @@ jobs:
+             apt install -y nodejs
+             apt install -y build-essential
+             apt install -y npm
+-            npm ci
++            npm install
+             npm run lint
+             npm run build --if-present
+     - name: Upload Linux ARM64 .deb Artifact

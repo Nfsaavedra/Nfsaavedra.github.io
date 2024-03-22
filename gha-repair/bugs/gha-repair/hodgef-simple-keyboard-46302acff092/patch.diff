@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/publish.yml b/.github/workflows/publish.yml
+index c3828b2..c6e72d2 100644
+--- a/.github/workflows/publish.yml
++++ b/.github/workflows/publish.yml
+@@ -22,6 +22,8 @@ jobs:
+           git checkout master
+           git config user.email "$GH_EMAIL"
+           git config user.name "Francisco Hodge"
++          git add . || true
++          git commit -m "Build Update" || true
+         env:
+             GH_EMAIL: ${{secrets.GH_EMAIL}}
+           

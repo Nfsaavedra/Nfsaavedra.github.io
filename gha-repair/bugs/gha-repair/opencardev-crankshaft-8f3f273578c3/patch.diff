@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/crankshaft.yml b/.github/workflows/crankshaft.yml
+index 3c9ed47..378d420 100644
+--- a/.github/workflows/crankshaft.yml
++++ b/.github/workflows/crankshaft.yml
+@@ -127,7 +127,7 @@ jobs:
+       - 
+         name: Create Release
+         id: create_release
+-        uses: actions/create-release@v1
++        uses: actions/create-release@v1.1.4
+         env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         with:

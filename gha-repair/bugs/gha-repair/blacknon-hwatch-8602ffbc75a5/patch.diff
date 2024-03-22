@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index de9879b..950b84b 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -65,7 +65,7 @@ jobs:
+           override: true
+ 
+       - name: Build binary
+-        uses: actions-rs/cargo@v1.0.1
++        uses: actions-rs/cargo@v1
+         with:
+           command: build
+           args: --release --target=${{ matrix.target }}

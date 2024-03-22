@@ -1,0 +1,155 @@
+diff --git a/.github/workflows/nodejs.yml b/.github/workflows/nodejs.yml
+index 8cf9666..3ebbd67 100644
+--- a/.github/workflows/nodejs.yml
++++ b/.github/workflows/nodejs.yml
+@@ -43,8 +43,8 @@ jobs:
+       - name: Lint
+         run: npm run lint
+ 
+-      # - name: Security audit
+-      # run: npm run security
++      - name: Security audit
++        run: npm run security
+ 
+       - name: Check commit message
+         uses: wagoid/commitlint-github-action@v1
+@@ -55,7 +55,6 @@ jobs:
+     strategy:
+       matrix:
+         os: [ubuntu-latest, windows-latest, macos-latest]
+-        # css-loader doesn't support node@6
+         node-version: [10.x, 12.x, 14.x]
+         webpack-version: [latest, next]
+ 
+diff --git a/test/cases/devtool-source-map-no-source-maps-from-css-loader/expected/main.css b/test/cases/devtool-source-map-no-source-maps-from-css-loader/expected/main.css
+new file mode 100644
+index 0000000..8f8cf96
+--- /dev/null
++++ b/test/cases/devtool-source-map-no-source-maps-from-css-loader/expected/main.css
+@@ -0,0 +1,6 @@
++body {
++  background: red;
++}
++
++
++/*# sourceMappingURL=main.css.map*/
+\ No newline at end of file
+diff --git a/test/cases/devtool-source-map-no-source-maps-from-css-loader/expected/main.css.map b/test/cases/devtool-source-map-no-source-maps-from-css-loader/expected/main.css.map
+new file mode 100644
+index 0000000..5acba1b
+--- /dev/null
++++ b/test/cases/devtool-source-map-no-source-maps-from-css-loader/expected/main.css.map
+@@ -0,0 +1,1 @@
++{"version":3,"sources":["webpack:///./style.css"],"names":[],"mappings":"AAAA;AACA;AACA","file":"main.css","sourcesContent":["body {\n  background: red;\n}\n"],"sourceRoot":""}
+\ No newline at end of file
+diff --git a/test/cases/devtool-source-map-no-source-maps-from-css-loader/index.js b/test/cases/devtool-source-map-no-source-maps-from-css-loader/index.js
+new file mode 100644
+index 0000000..aa3357b
+--- /dev/null
++++ b/test/cases/devtool-source-map-no-source-maps-from-css-loader/index.js
+@@ -0,0 +1,1 @@
++import './style.css';
+diff --git a/test/cases/devtool-source-map-no-source-maps-from-css-loader/style.css b/test/cases/devtool-source-map-no-source-maps-from-css-loader/style.css
+new file mode 100644
+index 0000000..67ce83e
+--- /dev/null
++++ b/test/cases/devtool-source-map-no-source-maps-from-css-loader/style.css
+@@ -0,0 +1,3 @@
++body {
++  background: red;
++}
+diff --git a/test/cases/devtool-source-map-no-source-maps-from-css-loader/webpack.config.js b/test/cases/devtool-source-map-no-source-maps-from-css-loader/webpack.config.js
+new file mode 100644
+index 0000000..4fe65f6
+--- /dev/null
++++ b/test/cases/devtool-source-map-no-source-maps-from-css-loader/webpack.config.js
+@@ -0,0 +1,27 @@
++import Self from '../../../src';
++
++module.exports = {
++  entry: './index.js',
++  devtool: 'source-map',
++  module: {
++    rules: [
++      {
++        test: /\.css$/,
++        use: [
++          Self.loader,
++          {
++            loader: 'css-loader',
++            options: {
++              sourceMap: false,
++            },
++          },
++        ],
++      },
++    ],
++  },
++  plugins: [
++    new Self({
++      filename: '[name].css',
++    }),
++  ],
++};
+diff --git a/test/cases/devtool-source-map/expected/main.css b/test/cases/devtool-source-map/expected/main.css
+new file mode 100644
+index 0000000..8f8cf96
+--- /dev/null
++++ b/test/cases/devtool-source-map/expected/main.css
+@@ -0,0 +1,6 @@
++body {
++  background: red;
++}
++
++
++/*# sourceMappingURL=main.css.map*/
+\ No newline at end of file
+diff --git a/test/cases/devtool-source-map/expected/main.css.map b/test/cases/devtool-source-map/expected/main.css.map
+new file mode 100644
+index 0000000..d1983cd
+--- /dev/null
++++ b/test/cases/devtool-source-map/expected/main.css.map
+@@ -0,0 +1,1 @@
++{"version":3,"sources":["webpack:///style.css"],"names":[],"mappings":"AAAA;EACE,eAAe;AACjB","file":"main.css","sourcesContent":["body {\n  background: red;\n}\n"],"sourceRoot":""}
+\ No newline at end of file
+diff --git a/test/cases/devtool-source-map/index.js b/test/cases/devtool-source-map/index.js
+new file mode 100644
+index 0000000..aa3357b
+--- /dev/null
++++ b/test/cases/devtool-source-map/index.js
+@@ -0,0 +1,1 @@
++import './style.css';
+diff --git a/test/cases/devtool-source-map/style.css b/test/cases/devtool-source-map/style.css
+new file mode 100644
+index 0000000..67ce83e
+--- /dev/null
++++ b/test/cases/devtool-source-map/style.css
+@@ -0,0 +1,3 @@
++body {
++  background: red;
++}
+diff --git a/test/cases/devtool-source-map/webpack.config.js b/test/cases/devtool-source-map/webpack.config.js
+new file mode 100644
+index 0000000..27fdcc4
+--- /dev/null
++++ b/test/cases/devtool-source-map/webpack.config.js
+@@ -0,0 +1,19 @@
++import Self from '../../../src';
++
++module.exports = {
++  entry: './index.js',
++  devtool: 'source-map',
++  module: {
++    rules: [
++      {
++        test: /\.css$/,
++        use: [Self.loader, 'css-loader'],
++      },
++    ],
++  },
++  plugins: [
++    new Self({
++      filename: '[name].css',
++    }),
++  ],
++};

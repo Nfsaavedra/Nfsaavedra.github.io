@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/pythonapp.yml b/.github/workflows/pythonapp.yml
+index 185dccc..4324ee6 100644
+--- a/.github/workflows/pythonapp.yml
++++ b/.github/workflows/pythonapp.yml
+@@ -26,6 +26,6 @@ jobs:
+         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+     - name: Test with pytest
+       run: |
+-        apt install ffmpeg
++        sudo apt install ffmpeg
+         pip install pytest
+         pytest

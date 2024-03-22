@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index c47deeb..6b3e6f4 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -6,7 +6,7 @@ on:
+       - '*'
+ 
+ permissions:
+-  contents: read
++  contents: write
+   packages: write
+ 
+ jobs:

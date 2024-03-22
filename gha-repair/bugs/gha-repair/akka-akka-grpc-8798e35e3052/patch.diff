@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/build-test.yml b/.github/workflows/build-test.yml
+index 4b3cff2..19e8815 100644
+--- a/.github/workflows/build-test.yml
++++ b/.github/workflows/build-test.yml
+@@ -6,6 +6,11 @@ on:
+     branches: [ main ]
+     tags-ignore: [ v* ]
+ 
++concurrency:
++  # Only run once for latest commit per ref and cancel other (previous) runs.
++  group: ci-${{ github.ref }}
++  cancel-in-progress: true
++
+ jobs:
+   check-code-style:
+     name: Checks

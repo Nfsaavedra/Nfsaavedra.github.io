@@ -1,0 +1,53 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index de36b8f..96dfe46 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -86,19 +86,27 @@ jobs:
+           retention-days: 1
+ 
+   linux:
+-    runs-on: ubuntu-18.04
++    runs-on: ubuntu-latest
++    container: ubuntu:18.04
+     needs: tagname
+     env:
+       RELEASE_TAG_NAME: ${{ needs.tagname.outputs.tag_name }}
++      DEBIAN_FRONTEND: noninteractive
+ 
+     steps:
+       - uses: actions/checkout@v2
+       - name: Install dependencies
+         run: |
+-          sudo apt-get update
+-          sudo apt-get install cmake pkg-config libfontconfig-dev libgtk-3-dev
+-      - name: Update rust
+-        run: rustup update
++          apt-get -y update
++          apt-get -y install cmake pkg-config libfontconfig-dev libgtk-3-dev
++
++      - name: Install Rust toolchain
++        uses: actions-rs/toolchain@v1
++        with:
++          toolchain: stable
++          target: x86_64-unknown-linux-gnu
++          profile: minimal
++
+       - name: Build
+         run: cargo build --profile release-lto --bin lapce
+       - name: Gzip
+@@ -241,7 +249,7 @@ jobs:
+           
+   publish:
+     needs: [linux, linux-musl, windows, macos]
+-    runs-on: ubuntu-20.04
++    runs-on: ubuntu-latest
+     env:
+       GH_REPO: ${{ github.repository }}
+       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+@@ -276,4 +284,4 @@ jobs:
+         env:
+           DEBUG: api
+         run: |
+-          gh release create $TAG_NAME $PRERELEASE --title "$TAG_NAME" --target $GITHUB_SHA lapce-macos/* lapce-linux/* lapce-proxy-linux-*/* lapce-windows/*
+\ No newline at end of file
++          gh release create $TAG_NAME $PRERELEASE --title "$TAG_NAME" --target $GITHUB_SHA lapce-macos/* lapce-linux/* lapce-proxy-linux-*/* lapce-windows/*

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/dev.yml b/.github/workflows/dev.yml
+index 62f6df4..90f6a1b 100644
+--- a/.github/workflows/dev.yml
++++ b/.github/workflows/dev.yml
+@@ -106,7 +106,7 @@ jobs:
+             haos-builder make BUILDDIR=/build VERSION_DEV=${{ needs.prepare.outputs.version_dev }} ${{ matrix.board.defconfig }}
+ 
+       - name: Upload images
+-        uses: burnett01/rsync-deployments@4.1
++        uses: burnett01/rsync-deployments@5.2
+         with:
+           rsh: -q
+           switches: -aW

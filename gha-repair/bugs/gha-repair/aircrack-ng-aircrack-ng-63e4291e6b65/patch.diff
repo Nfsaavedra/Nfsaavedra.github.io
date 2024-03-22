@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/manual.yml b/.github/workflows/manual.yml
+index d7d3f7a..1ab371d 100644
+--- a/.github/workflows/manual.yml
++++ b/.github/workflows/manual.yml
+@@ -1,6 +1,14 @@
+ name: Other Linux testing
+ 
+ on:
++  push:
++    branches: [ master ]
++    paths:
++      - '.github/workflows/manual.yml'
++  pull_request:
++    branches: [ master ]
++    paths:
++      - '.github/workflows/manual.yml'
+   workflow_call:
+   workflow_dispatch:
+   schedule:

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/pytest.yaml b/.github/workflows/pytest.yaml
+index cd17d0c..5098df0 100644
+--- a/.github/workflows/pytest.yaml
++++ b/.github/workflows/pytest.yaml
+@@ -44,7 +44,7 @@ jobs:
+         shell: bash
+         env:
+           FPL_EMAIL: ${{ secrets.FPL_EMAIL }}
+-          FPL_PASSWWORD: ${{ secrets.FPL_PASSWORD }}
++          FPL_PASSWORD: ${{ secrets.FPL_PASSWORD }}
+         
+       - name: Run test suite
+         run: |

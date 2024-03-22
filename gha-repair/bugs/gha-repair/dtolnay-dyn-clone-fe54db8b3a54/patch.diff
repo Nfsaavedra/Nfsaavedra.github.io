@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index f2df473..ebeddbb 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -26,6 +26,14 @@ jobs:
+           toolchain: ${{matrix.rust}}
+       - run: cargo test
+ 
++  msrv:
++    name: Rust 1.45.0
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v3
++      - uses: dtolnay/rust-toolchain@1.45.0
++      - run: cargo check
++
+   miri:
+     name: Miri
+     runs-on: ubuntu-latest

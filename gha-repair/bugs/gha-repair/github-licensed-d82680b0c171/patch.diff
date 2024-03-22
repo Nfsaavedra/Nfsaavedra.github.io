@@ -1,0 +1,18 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index f9f102e..86905ca 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -505,11 +505,11 @@ jobs:
+       run: script/test pipenv
+ 
+   swift:
+-    runs-on: ubuntu-latest
++    runs-on: ubuntu-20.04
+     needs: core
+     strategy:
+       matrix:
+-        swift: [ "5.4", "5.3" ]
++        swift: [ "5.7", "5.6" ]
+     steps:
+     - uses: actions/checkout@v3
+     - name: Setup Swift

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/publish.yml b/.github/workflows/publish.yml
+index 6a6bfac..1401bfc 100644
+--- a/.github/workflows/publish.yml
++++ b/.github/workflows/publish.yml
+@@ -45,7 +45,6 @@ jobs:
+           echo "Current user.email: ${{ github.event.inputs.email }}"
+ 
+       - name: set git config
+-        if: ${{ github.ref_name == 'master' }}
+         run: |
+           git config --global user.email ${{ github.event.inputs.email }}
+           git config --global user.name ${{ github.event.inputs.name }}

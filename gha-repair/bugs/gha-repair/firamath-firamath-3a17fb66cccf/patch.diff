@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index d6128bd..d4ba0aa 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -13,7 +13,7 @@ jobs:
+           pip install -r requirements.txt
+       - name: Patch glyphsLib
+         run: |
+-          patch venv/lib/python3.9/site-packages/glyphsLib/builder/axes.py scripts/axes.py.diff
++          patch $(python -c "import os, glyphsLib; print(os.path.join(glyphsLib.__path__[0], 'builder', 'axes.py'))") scripts/axes.py.diff
+       - name: Build fonts
+         run: |
+           python scripts/build.py

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/publish-package.yml b/.github/workflows/publish-package.yml
+index 2f5b418..c45d90d 100644
+--- a/.github/workflows/publish-package.yml
++++ b/.github/workflows/publish-package.yml
+@@ -98,7 +98,7 @@ jobs:
+       run: python -m zipfile --list dist/pyhf-*.whl
+ 
+     - name: Upload distribution artifact
+-      uses: actions/upload-artifact@v3
++      uses: actions/upload-artifact@v4
+       with:
+         name: dist-artifact
+         path: dist

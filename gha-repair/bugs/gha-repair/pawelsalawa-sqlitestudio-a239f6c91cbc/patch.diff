@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/3.2.yml b/.github/workflows/3.2.yml
+index 0e5b26e..1aedb60 100644
+--- a/.github/workflows/3.2.yml
++++ b/.github/workflows/3.2.yml
+@@ -49,7 +49,7 @@ jobs:
+               run: tree
+               
+             - name: QMake
+-              run: qmake.exe --help
++              run: ${{ github.workspace }}\Qt\5.14.2\mingw73_64\bin\qmake.exe --help
+               
+             - name: Make
+               run: ${{ github.workspace }}\Qt\Tools\mingw730_64\bin\mingw32-make.exe --help

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/integrate.yaml b/.github/workflows/integrate.yaml
+index 287f8ed..54d007a 100644
+--- a/.github/workflows/integrate.yaml
++++ b/.github/workflows/integrate.yaml
+@@ -33,7 +33,7 @@ jobs:
+         uses: "actions/checkout@v2.3.3"
+ 
+       - name: "Lint YAML files"
+-        uses: "ibiqlik/action-yamllint@v1.0.0"
++        uses: "ibiqlik/action-yamllint@v2"
+         with:
+           config_file: ".yamllint.yaml"
+           file_or_dir: "."

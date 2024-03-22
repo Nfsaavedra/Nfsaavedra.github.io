@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/ci-tests.yml b/.github/workflows/ci-tests.yml
+index 22c2ec2..4571f34 100644
+--- a/.github/workflows/ci-tests.yml
++++ b/.github/workflows/ci-tests.yml
+@@ -28,6 +28,6 @@ jobs:
+         nosetests --with-coverage --cover-erase --cover-package=openrouteservice -v
+     - name: coveralls
+       run: |
+-        coveralls
++        coveralls --service=github
+       env:
+-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+\ No newline at end of file
++        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

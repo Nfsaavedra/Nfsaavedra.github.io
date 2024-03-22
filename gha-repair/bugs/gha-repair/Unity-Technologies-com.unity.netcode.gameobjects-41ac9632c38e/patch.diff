@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/conventional-pr.yml b/.github/workflows/conventional-pr.yml
+index ae8362a..e1dafc5 100644
+--- a/.github/workflows/conventional-pr.yml
++++ b/.github/workflows/conventional-pr.yml
+@@ -6,6 +6,7 @@ on:
+     branches:
+     - master
+     - develop
++    - release/**
+ 
+ # A workflow run is made up of one or more jobs that can run sequentially or in parallel
+ jobs:
+@@ -35,4 +36,4 @@ jobs:
+           # For work-in-progress PRs you can typically use draft pull requests from Github. However, private repositories on the free plan don't have this option and therefore this action allows you to opt-in to using the special '[WIP]' prefix to indicate this state. This will avoid the validation of the PR title and the pull request checks remain pending. Note that a second check will be reported if this is enabled.
+           #wip: # optional
+           # When using "Squash and merge" on a PR with only one commit, GitHub will suggest using that commit message instead of the PR title for the merge commit, and it's easy to commit this by mistake. Enable this option to also validate the commit message for one commit PRs.
+-          validateSingleCommit: true # optional
+\ No newline at end of file
++          validateSingleCommit: true # optional

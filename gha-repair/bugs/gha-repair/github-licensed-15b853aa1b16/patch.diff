@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index dee9e3e..9935093 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -234,7 +234,7 @@ jobs:
+         elixir: [1.8.x, 1.9.x]
+     steps:
+     - uses: actions/checkout@v2
+-    - uses: erlef/setup-elixir@v1.6
++    - uses: erlef/setup-elixir@v1.6.0
+       with:
+         otp-version: ${{matrix.otp}}
+         elixir-version: ${{matrix.elixir}}

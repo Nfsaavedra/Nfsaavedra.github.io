@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yaml b/.github/workflows/release.yaml
+index 17775f1..f5cff0d 100644
+--- a/.github/workflows/release.yaml
++++ b/.github/workflows/release.yaml
+@@ -111,7 +111,7 @@ jobs:
+ 
+       - name: "Create release"
+         id: "create-release"
+-        uses: "actions/create-release@v1"
++        uses: "actions/create-release@v1.1.1"
+         env:
+           GITHUB_TOKEN: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"
+         with:

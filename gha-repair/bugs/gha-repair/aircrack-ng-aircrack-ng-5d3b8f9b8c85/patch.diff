@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/manual.yml b/.github/workflows/manual.yml
+index 9a3fc87..48712e7 100644
+--- a/.github/workflows/manual.yml
++++ b/.github/workflows/manual.yml
+@@ -47,7 +47,7 @@ jobs:
+     strategy:
+       fail-fast: false
+       matrix:
+-        platform: [ 'clearlinux:base', 'rockylinux:9', 'almalinux:9', 'opensuse/leap:15', 'archlinux:base' ]
++        platform: [ 'clearlinux:base', 'rockylinux:9', 'almalinux:9', 'opensuse/leap:15', 'archlinux:base', 'manjarolinux/base', 'ubuntu:22.10', 'ubuntu:23.04' ]
+     steps:
+       -
+         name: Set up QEMU

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/run-test-repoutils.yml b/.github/workflows/run-test-repoutils.yml
+index 88dab2c..bacb6f9 100644
+--- a/.github/workflows/run-test-repoutils.yml
++++ b/.github/workflows/run-test-repoutils.yml
+@@ -5,6 +5,7 @@ on:
+   pull_request:
+     paths:
+     - 'libraries/botbuilder-repo-utils/**'
++    - '.github/workflows/run-test-repoutils.yml'
+     branches: 
+     - main
+ 

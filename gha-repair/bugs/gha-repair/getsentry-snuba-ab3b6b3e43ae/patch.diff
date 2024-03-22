@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 4d25666..4f4090b 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -257,6 +257,7 @@ jobs:
+         run: |
+           docker build . \
+             -t snuba-test \
++            --build-arg SHOULD_BUILD_RUST=false \
+             --cache-from ghcr.io/getsentry/snuba-ci:${{ github.sha }} \
+             --cache-from ghcr.io/getsentry/snuba-ci:${{ needs.snuba-image.outputs.branch }} \
+             --cache-from ghcr.io/getsentry/snuba-ci:latest \

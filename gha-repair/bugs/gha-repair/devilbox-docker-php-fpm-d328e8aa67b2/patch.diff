@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/php-ci.yml b/.github/workflows/php-ci.yml
+index 4f0ac20..a32b2a1 100644
+--- a/.github/workflows/php-ci.yml
++++ b/.github/workflows/php-ci.yml
+@@ -87,6 +87,8 @@ jobs:
+       # ------------------------------------------------------------
+       - name: Checkout repository
+         uses: actions/checkout@v2
++        with:
++          fetch-depth: 0
+ 
+       - name: Set variables
+         id: vars

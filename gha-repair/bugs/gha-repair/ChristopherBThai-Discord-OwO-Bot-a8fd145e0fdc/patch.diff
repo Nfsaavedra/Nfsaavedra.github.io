@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/lint.yml b/.github/workflows/lint.yml
+index e0389f9..5c9a002 100644
+--- a/.github/workflows/lint.yml
++++ b/.github/workflows/lint.yml
+@@ -14,10 +14,6 @@ jobs:
+   run-linters:
+     name: Run linters
+     runs-on: ubuntu-latest
+-    permissions:
+-      id-token: write
+-      contents: read
+-
+     steps:
+       - name: Check out Git repository
+         uses: actions/checkout@v2

@@ -1,0 +1,24 @@
+diff --git a/.github/workflows/python-publish.yml b/.github/workflows/python-publish.yml
+index 465d723..bd21e28 100644
+--- a/.github/workflows/python-publish.yml
++++ b/.github/workflows/python-publish.yml
+@@ -4,10 +4,8 @@
+ name: Upload Python Package
+ 
+ on:
+-  push:
+-    # Publish `master` as Docker `latest` image.
+-    branches:
+-      - ui
++  release:
++    types: [created]
+ jobs:
+   deploy:
+ 
+@@ -36,4 +34,4 @@ jobs:
+         TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+       run: |
+         python setup.py sdist bdist_wheel
+-        twine upload dist/*
+\ No newline at end of file
++        twine upload dist/*

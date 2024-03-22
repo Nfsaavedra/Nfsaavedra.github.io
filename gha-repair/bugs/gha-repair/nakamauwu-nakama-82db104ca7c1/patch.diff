@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/go.yml b/.github/workflows/go.yml
+index f80da7e..5045539 100644
+--- a/.github/workflows/go.yml
++++ b/.github/workflows/go.yml
+@@ -21,7 +21,7 @@ jobs:
+       uses: golangci/golangci-lint-action@v2
+       with:
+         version: v1.37.1
+-        skip-go-installation: true
++        # skip-go-installation: true
+ 
+     - name: Test
+       run: go test ./... -race -count 1

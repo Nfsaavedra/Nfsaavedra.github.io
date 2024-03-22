@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index c7024f1..fe399ac 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -13,6 +13,7 @@ jobs:
+         uses: actions/checkout@v2
+         with:
+           fetch-depth: 0
++          persist-credentials: false
+ 
+       - name: Setup Node
+         uses: actions/setup-node@v1

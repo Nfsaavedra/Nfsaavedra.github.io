@@ -1,0 +1,24 @@
+diff --git a/.github/workflows/debug_build.yml b/.github/workflows/debug_build.yml
+index fa26563..1b06617 100644
+--- a/.github/workflows/debug_build.yml
++++ b/.github/workflows/debug_build.yml
+@@ -13,10 +13,10 @@ jobs:
+ 
+     steps:
+       - uses: actions/checkout@v2
+-      - name: set up JDK 11
++      - name: set up JDK 19
+         uses: actions/setup-java@v2
+         with:
+-          java-version: '11'
++          java-version: '19'
+           distribution: 'adopt'
+           cache: gradle
+ 
+@@ -25,4 +25,4 @@ jobs:
+       - name: Clean
+         run: ./gradlew clean
+       - name: Build with Gradle
+-        run: ./gradlew assembleDebug
+\ No newline at end of file
++        run: ./gradlew assembleDebug

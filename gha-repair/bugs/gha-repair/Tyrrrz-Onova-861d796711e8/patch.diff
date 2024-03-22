@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 5e9411d..6c8f4db 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -4,8 +4,11 @@ on: [push, pull_request]
+ 
+ jobs:
+   main:
+-    uses: Tyrrrz/.github/.github/workflows/NuGet-WindowsOnly.yml@master
++    uses: Tyrrrz/.github/.github/workflows/nuget.yml@master
++    with:
++      windows-only: true
++      dotnet-version: 6.0.x
+     secrets:
+       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+       NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
+-      DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+\ No newline at end of file
++      DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}

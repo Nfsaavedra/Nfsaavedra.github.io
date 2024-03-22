@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/markdown.yml b/.github/workflows/markdown.yml
+index d364f40..b884ed0 100644
+--- a/.github/workflows/markdown.yml
++++ b/.github/workflows/markdown.yml
+@@ -20,7 +20,7 @@ jobs:
+     steps:
+       - uses: actions/checkout@v4
+ 
+-      - uses: DavidAnson/markdownlint-cli2-action@v13
++      - uses: DavidAnson/markdownlint-cli2-action@v14
+         with:
+           globs: "**.md"
+           config: .markdownlint.json

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 7289800..e4b6cde 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -64,7 +64,7 @@ jobs:
+ 
+     - name: Set Version Number Variable
+       id: versionNumber
+-      uses: actions/github-script@v3
++      uses: actions/github-script@v6
+       env:
+         IS_DEV: ${{ contains(github.ref, 'development') }}
+         IS_RC: ${{ contains(github.ref, 'RC') }}

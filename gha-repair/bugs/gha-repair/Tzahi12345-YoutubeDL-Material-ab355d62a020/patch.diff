@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/docker.yml b/.github/workflows/docker.yml
+index 9a8cc50..a94bdc0 100644
+--- a/.github/workflows/docker.yml
++++ b/.github/workflows/docker.yml
+@@ -28,5 +28,5 @@ jobs:
+           file: ./Dockerfile
+           platforms: linux/amd64,linux/arm,linux/arm64/v8
+           push: true
+-          tags: tzahi12345/youtubedl-material:latest
+-  
+\ No newline at end of file
++          tags: tzahi12345/youtubedl-material:nightly
++  

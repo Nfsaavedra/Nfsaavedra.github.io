@@ -1,0 +1,34 @@
+diff --git a/src/main/java/org/traccar/protocol/MiniFinderProtocolDecoder.java b/src/main/java/org/traccar/protocol/MiniFinderProtocolDecoder.java
+index f2e5eb9..1fdb1ec 100644
+--- a/src/main/java/org/traccar/protocol/MiniFinderProtocolDecoder.java
++++ b/src/main/java/org/traccar/protocol/MiniFinderProtocolDecoder.java
+@@ -143,7 +143,7 @@ public class MiniFinderProtocolDecoder extends BaseProtocolDecoder {
+         }
+ 
+         DeviceSession deviceSession = getDeviceSession(channel, remoteAddress);
+-        if (deviceSession == null || !sentence.matches("![35A-D],.*")) {
++        if (deviceSession == null || !sentence.matches("![345A-D],.*")) {
+             return null;
+         }
+ 
+@@ -161,6 +161,20 @@ public class MiniFinderProtocolDecoder extends BaseProtocolDecoder {
+ 
+             return position;
+ 
++        } else if (type.equals("4")) {
++
++            String[] values = sentence.split(",");
++
++            getLastLocation(position, null);
++
++            for (int i = 1; i <= 3; i++) {
++                if (!values[i + 1].isEmpty()) {
++                    position.set("phone" + i, values[i + 1]);
++                }
++            }
++
++            return position;
++
+         } else if (type.equals("5")) {
+ 
+             String[] values = sentence.split(",");

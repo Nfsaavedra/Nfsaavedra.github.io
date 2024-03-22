@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/container-release.yml b/.github/workflows/container-release.yml
+index 7787708..b21123d 100644
+--- a/.github/workflows/container-release.yml
++++ b/.github/workflows/container-release.yml
+@@ -30,6 +30,8 @@ jobs:
+       - name: Build and push
+         uses: docker/build-push-action@v2
+         with:
++          context: .
++          file: docker/Dockerfile
+           push: true
+           tags: quay.io/invidious/invidious:latest
+ 

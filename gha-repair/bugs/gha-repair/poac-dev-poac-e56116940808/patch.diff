@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/linux.yml b/.github/workflows/linux.yml
+index 4b2887b..08da2e5 100644
+--- a/.github/workflows/linux.yml
++++ b/.github/workflows/linux.yml
+@@ -59,7 +59,7 @@ jobs:
+     strategy:
+       matrix:
+         gcc_version: [ 8, 9, 10 ]
+-        build_type: [ Debug, Release ]
++        build_type: [ Debug ] # TODO: Release
+     env:
+       CC: gcc-${{ matrix.gcc_version }}
+       CXX: g++-${{ matrix.gcc_version }}

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/container-release.yml b/.github/workflows/container-release.yml
+index a6bd39e..77b92c6 100644
+--- a/.github/workflows/container-release.yml
++++ b/.github/workflows/container-release.yml
+@@ -27,7 +27,7 @@ jobs:
+       - name: Install Crystal
+         uses: oprypin/install-crystal@v1.2.4
+         with:
+-          crystal: ${{ matrix.crystal }}
++          crystal: 1.1.1
+         
+       - name: Run lint
+         run: |

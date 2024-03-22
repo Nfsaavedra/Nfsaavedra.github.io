@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build-cheats.yml b/.github/workflows/build-cheats.yml
+index 553beb8..df439f3 100644
+--- a/.github/workflows/build-cheats.yml
++++ b/.github/workflows/build-cheats.yml
+@@ -20,7 +20,7 @@ jobs:
+         python-version: ${{ matrix.python-version }}
+     - name: "Build Cheats"
+       run: |
+-        printf "" | python joiner.py
++        printf "\n\n" | python joiner.py
+     - name: "Upload Cheats"
+       uses: softprops/action-gh-release@v1
+       with:

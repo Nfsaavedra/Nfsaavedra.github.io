@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/docker.yaml b/.github/workflows/docker.yaml
+index 6d2c8cc..14dfafa 100644
+--- a/.github/workflows/docker.yaml
++++ b/.github/workflows/docker.yaml
+@@ -9,6 +9,7 @@ on:
+     tags:
+       - 'v*.*.*'
+     paths:
++      - '.github/workflows/docker.yaml'
+       - 'varken/**'
+       - 'Varken.py'
+       - 'Dockerfile'
+@@ -17,6 +18,7 @@ on:
+       - master
+       - develop
+     paths:
++      - '.github/workflows/docker.yaml'
+       - 'varken/**'
+       - 'Varken.py'
+       - 'Dockerfile'

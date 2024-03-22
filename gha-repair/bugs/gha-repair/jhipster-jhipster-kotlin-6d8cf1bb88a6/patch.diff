@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/webflux.yml b/.github/workflows/webflux.yml
+index 5eba8d9..9d470d4 100644
+--- a/.github/workflows/webflux.yml
++++ b/.github/workflows/webflux.yml
+@@ -119,6 +119,8 @@ jobs:
+               run: |
+                   sudo apt update
+                   sudo apt install google-chrome-stable
++            - name: 'Install Yarn'
++              run: npm i -g yarn
+             - uses: actions/setup-java@v1
+               with:
+                   java-version: '11.x'

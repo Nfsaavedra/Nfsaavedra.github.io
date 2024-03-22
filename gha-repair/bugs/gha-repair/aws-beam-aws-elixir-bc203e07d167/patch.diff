@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/codegen.yml b/.github/workflows/codegen.yml
+index 5607c9b..b45bebf 100644
+--- a/.github/workflows/codegen.yml
++++ b/.github/workflows/codegen.yml
+@@ -42,8 +42,7 @@ jobs:
+       - name: Set it to the output
+         id: latest-tag
+         run: |
+-          echo '${{ steps.latest-tag-request.outputs.data }}' >> latest.json
+-          tag_name=$(cat latest.json | jq -r '.tag_name')
++          tag_name="${{ fromJson(steps.latest-tag-request.outputs.data).tag_name }}"
+           echo "LATEST_TAG=${tag_name}" >> $GITHUB_OUTPUT
+ 
+   generate:

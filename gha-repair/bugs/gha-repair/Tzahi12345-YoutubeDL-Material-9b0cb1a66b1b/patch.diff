@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/docker-pr.yml b/.github/workflows/docker-pr.yml
+index 0c4f8bd..5baae36 100644
+--- a/.github/workflows/docker-pr.yml
++++ b/.github/workflows/docker-pr.yml
+@@ -26,7 +26,7 @@ jobs:
+       - name: setup platform emulator
+         uses: docker/setup-qemu-action@v2
+       - name: setup multi-arch docker build
+-        uses: docker/setup-buildx-action@v1
++        uses: docker/setup-buildx-action@v2
+       - name: build & push images
+         uses: docker/build-push-action@v4
+         with:

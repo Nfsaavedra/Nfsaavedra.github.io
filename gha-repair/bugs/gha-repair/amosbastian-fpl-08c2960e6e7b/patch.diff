@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/pytest.yaml b/.github/workflows/pytest.yaml
+index 5098df0..018a3fe 100644
+--- a/.github/workflows/pytest.yaml
++++ b/.github/workflows/pytest.yaml
+@@ -1,10 +1,6 @@
+ # GitHub Action for running 
+ name: PyTest
+ on:
+-  push:
+-    branches:
+-      - master
+-      - actions
+   pull_request:
+     branches:
+       - master

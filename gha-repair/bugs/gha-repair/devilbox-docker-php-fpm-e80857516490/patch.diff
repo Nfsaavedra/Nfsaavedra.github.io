@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/zzz-params.yml b/.github/workflows/zzz-params.yml
+index 20ec971..edb0997 100644
+--- a/.github/workflows/zzz-params.yml
++++ b/.github/workflows/zzz-params.yml
+@@ -15,7 +15,7 @@ env:
+       {
+         "NAME":    "PHP",
+         "VERSION": ["5.3", "5.4"],
+-        "FLAVOUR": [],
++        "FLAVOUR": ["default"],
+         "ARCH":    ["linux/amd64", "linux/arm64"]
+       }
+     ]

@@ -1,0 +1,266 @@
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] 🚀  Start image=gitbugactions:latest
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   🐳  docker pull image=gitbugactions:latest platform= username= forcePull=false
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   🐳  docker create image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   🐳  docker run image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d] user=0 workdir=
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] ⭐ Run Main actions/checkout@v2
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   🐳  docker cp src=/tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/. dst=/tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d] user=0 workdir=
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   ✅  Success - Main actions/checkout@v2
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] ⭐ Run Main Set up JDK 8
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   🐳  docker cp src=/tmp/act-cache/06808cf2-d56a-420e-96a1-16d880d4a01b/act/actions-setup-java@v2/ dst=/var/run/act/actions/actions-setup-java@v2/
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v2/] user=0 workdir=
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/setup/index.js] user= workdir=
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | Trying to resolve the latest version from remote
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | Resolved latest version as 8.0.392+8
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | Trying to download...
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | Downloading Java 8.0.392+8 (Adopt-Hotspot) from https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u392-b08/OpenJDK8U-jdk_x64_linux_hotspot_8u392b08.tar.gz ...
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Downloading https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u392-b08/OpenJDK8U-jdk_x64_linux_hotspot_8u392b08.tar.gz
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Destination /tmp/fdaf9501-006f-45a7-91b9-b60586813a78
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::download complete
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | Extracting Java archive...
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Checking tar --version
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::tar (GNU tar) 1.34%0ACopyright (C) 2021 Free Software Foundation, Inc.%0ALicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.%0AThis is free software: you are free to change and redistribute it.%0AThere is NO WARRANTY, to the extent permitted by law.%0A%0AWritten by John Gilmore and Jay Fenlason.
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/cbed9e4c-ece0-410e-8b3a-41dbf7ebba2b -f /tmp/fdaf9501-006f-45a7-91b9-b60586813a78
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Caching tool Java_Adopt_jdk 8.0.392-8 x64
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::source dir: /tmp/cbed9e4c-ece0-410e-8b3a-41dbf7ebba2b/jdk8u392-b08
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::destination /opt/hostedtoolcache/Java_Adopt_jdk/8.0.392-8/x64
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::finished caching tool
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | Java 8.0.392+8 was downloaded
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | Setting Java 8.0.392+8 as the default
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | 
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | Java configuration:
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   |   Distribution: adopt
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   |   Version: 8.0.392+8
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   |   Path: /opt/hostedtoolcache/Java_Adopt_jdk/8.0.392-8/x64
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | 
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   ❓ add-matcher /run/act/actions/actions-setup-java@v2/.github/java.json
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | Creating settings.xml with server-id: github
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | Writing to /home/runner/.m2/settings.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   ✅  Success - Main Set up JDK 8
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   ⚙  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Adopt_jdk/8.0.392-8/x64
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   ⚙  ::set-output:: distribution=Adopt-Hotspot
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   ⚙  ::set-output:: path=/opt/hostedtoolcache/Java_Adopt_jdk/8.0.392-8/x64
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   ⚙  ::set-output:: version=8.0.392+8
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   ⚙  ::add-path:: /opt/hostedtoolcache/Java_Adopt_jdk/8.0.392-8/x64/bin
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] ⭐ Run Main Grant execute permission for gradlew
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   ✅  Success - Main Grant execute permission for gradlew
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] ⭐ Run Main Build with Gradle
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | Downloading https://services.gradle.org/distributions/gradle-6.5.1-bin.zip
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | .........10%..........20%..........30%..........40%.........50%..........60%..........70%..........80%.........90%..........100%
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | 
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | Welcome to Gradle 6.5.1!
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | 
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | Here are the highlights of this release:
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   |  - Experimental file-system watching
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   |  - Improved version ordering
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   |  - New samples
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | 
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | For more details see https://docs.gradle.org/6.5.1/release-notes.html
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | 
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | Starting a Gradle Daemon (subsequent builds will be faster)
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | 
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | Note: Some input files use or override a deprecated API.
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | Note: Recompile with -Xlint:deprecation for details.
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | Note: Some input files use unchecked or unsafe operations.
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | Note: Recompile with -Xlint:unchecked for details.
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | > Task :compileJava
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | 
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | > Task :processResources NO-SOURCE
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | > Task :classes
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | > Task :jar
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | > Task :assemble
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | > Task :licenseMain UP-TO-DATE
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | > Task :licenseTest UP-TO-DATE
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | > Task :license UP-TO-DATE
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | 
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | > Task :compileTestJava
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferencePolicy.DYNAMIC
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   |   reason: class file for org.osgi.service.component.annotations.ReferencePolicy not found
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferencePolicyOption.GREEDY
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   |   reason: class file for org.osgi.service.component.annotations.ReferencePolicyOption not found
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferencePolicy.DYNAMIC
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferencePolicyOption.GREEDY
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferenceCardinality.MULTIPLE
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   |   reason: class file for org.osgi.service.component.annotations.ReferenceCardinality not found
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferencePolicy.DYNAMIC
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferencePolicy.DYNAMIC
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferencePolicyOption.GREEDY
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferencePolicy.DYNAMIC
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferencePolicyOption.GREEDY
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferencePolicy.DYNAMIC
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferencePolicyOption.GREEDY
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferencePolicy.DYNAMIC
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferencePolicyOption.GREEDY
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferencePolicy.DYNAMIC
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferencePolicyOption.GREEDY
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferencePolicy.DYNAMIC
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferencePolicyOption.GREEDY
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferencePolicy.DYNAMIC
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferencePolicyOption.GREEDY
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferenceCardinality.OPTIONAL
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferencePolicy.DYNAMIC
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferencePolicyOption.GREEDY
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferenceCardinality.OPTIONAL
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferencePolicy.DYNAMIC
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferencePolicyOption.GREEDY
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferenceCardinality.OPTIONAL
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferencePolicy.DYNAMIC
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferencePolicyOption.GREEDY
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferenceCardinality.OPTIONAL
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferencePolicy.DYNAMIC
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferencePolicyOption.GREEDY
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferenceCardinality.OPTIONAL
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferencePolicy.DYNAMIC
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferencePolicyOption.GREEDY
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferenceCardinality.OPTIONAL
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferencePolicy.DYNAMIC
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | warning: unknown enum constant ReferencePolicyOption.GREEDY
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | Note: Some input files use or override a deprecated API.
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | Note: Recompile with -Xlint:deprecation for details.
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | Note: Some input files use unchecked or unsafe operations.
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | Note: Recompile with -Xlint:unchecked for details.
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | 38 warnings
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | 
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | > Task :processTestResources NO-SOURCE
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | > Task :testClasses
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | > Task :test
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | > Task :check
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | > Task :build
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | 
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | Use '--warning-mode all' to show the individual deprecation warnings.
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | See https://docs.gradle.org/6.5.1/userguide/command_line_interface.html#sec:command_line_warnings
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | 
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | BUILD SUCCESSFUL in 55s
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | 6 actionable tasks: 4 executed, 2 up-to-date
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   ✅  Success - Main Build with Gradle
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] ⭐ Run Main Publish Test Report
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   🐳  docker cp src=/tmp/act-cache/06808cf2-d56a-420e-96a1-16d880d4a01b/act/mikepenz-action-junit-report@v2/ dst=/var/run/act/actions/mikepenz-action-junit-report@v2/
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/mikepenz-action-junit-report@v2/] user=0 workdir=
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   🐳  docker exec cmd=[node /var/run/act/actions/mikepenz-action-junit-report@v2/dist/index.js] user= workdir=
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   ❓  ::group::📘 Reading input values
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   ❓  ::endgroup::
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   ❓  ::group::📦 Process test results
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::followSymbolicLinks 'false'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::followSymbolicLinks 'false'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::implicitDescendants 'true'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::matchDirectories 'true'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::omitBrokenSymbolicLinks 'true'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Search path '/tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.AnnotationsSchemaCreatorTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.GraphQLDataFetcherTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.GraphQLDirectiveCreationTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.GraphQLDirectivesViaAnnotationDefinitionTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.GraphQLDirectivesViaClassDefinitionTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.GraphQLDirectivesViaMethodDefinitionTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.GraphQLEnumTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.GraphQLExtensionsTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.GraphQLFragmentTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.GraphQLInputTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.GraphQLInterfaceTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.GraphQLIterableAndArrayTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.GraphQLObjectTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.GraphQLSimpleSchemaTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.GraphQLUnionTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.MethodDataFetcherTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.RelayTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.connection.GraphQLConnectionTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.connection.GraphQLEnhancedConnectionTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.connection.GraphQLSimpleConnectionTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.directives.DirectiveSchemaVisitorTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.directives.DirectiveWiringMapRetrieverTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.directives.creation.DirectiveArgumentCreatorTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.directives.creation.DirectiveCreatorTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.processor.retrievers.fieldBuilders.DeprecateBuilderTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.processor.retrievers.fieldBuilders.DescriptionBuilderTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.processor.retrievers.fieldBuilders.DirectivesBuilderTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.processor.retrievers.fieldBuilders.field.FieldNameBuilderTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.processor.retrievers.fieldBuilders.method.MethodNameBuilderTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.processor.typeFunctions.BigDecimalFunctionTests.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.processor.typeFunctions.BigIntegerFunctionTests.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.processor.typeFunctions.BooleanFunctionTests.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.processor.typeFunctions.ByteFunctionTests.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.processor.typeFunctions.CharFunctionTests.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.processor.typeFunctions.DefaultTypeFunctionTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.processor.typeFunctions.FloatFunctionTests.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.processor.typeFunctions.IDFunctionTests.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.processor.typeFunctions.IntegerFunctionTests.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.processor.typeFunctions.LongFunctionTests.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.processor.typeFunctions.ShortFunctionTests.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.processor.typeFunctions.StringFunctionTests.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.processor.util.DataFetcherConstructorTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.processor.util.DirectiveJavaAnnotationUtilTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::Parsing file /tmp/63a43930-6bc1-451e-bd0c-884001fb4d7d/build/test-results/test/TEST-graphql.annotations.processor.util.NamingKitTest.xml
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | 
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   ⚙  ::set-output:: passed=0
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | 
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   ⚙  ::set-output:: failed=0
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | ℹ️ 221 tests run, 0 skipped, 0 failed.
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | ℹ️ Posting with conclusion 'success' to refs/heads/master (sha: 6d9d7a79de7b1a8f25aef7850e4666c864557ae9)
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   ❓  ::endgroup::
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   ❓  ::group::🚀 Publish results
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   💬  ::debug::{%0A  "owner": "Enigmatis",%0A  "repo": "graphql-java-annotations",%0A  "name": "JUnit Test Report",%0A  "head_sha": "6d9d7a79de7b1a8f25aef7850e4666c864557ae9",%0A  "status": "completed",%0A  "conclusion": "success",%0A  "output": {%0A    "title": "221 tests run, 0 skipped, 0 failed.",%0A    "summary": "",%0A    "annotations": []%0A  }%0A}
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   | ℹ️ Creating check
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   ❗  ::error::❌ Failed to create checks using the provided token. (HttpError: Resource not accessible by personal access token)
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   🚧  ::warning::⚠️ This usually indicates insufficient permissions. More details: https://github.com/mikepenz/action-junit-report/issues/23
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   ❓  ::endgroup::
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   ✅  Success - Main Publish Test Report
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] ⭐ Run Post Set up JDK 8
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/cleanup/index.js] user= workdir=
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build]   ✅  Success - Post Set up JDK 8
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] 🏁  Job succeeded
+[c9b63730-79c8-4996-8b27-c9dc8cbd342f/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '6d9d7a79de7b1a8f25aef7850e4666c864557ae9'

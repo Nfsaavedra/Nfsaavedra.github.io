@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/traccar/protocol/GatorProtocolEncoder.java b/src/main/java/org/traccar/protocol/GatorProtocolEncoder.java
+index 4a3e21d..895c68a 100644
+--- a/src/main/java/org/traccar/protocol/GatorProtocolEncoder.java
++++ b/src/main/java/org/traccar/protocol/GatorProtocolEncoder.java
+@@ -91,7 +91,7 @@ public class GatorProtocolEncoder extends BaseProtocolEncoder {
+                 String[] data = command.getString(Command.KEY_FREQUENCY).split(";");
+                 content.writeShort(Integer.valueOf(data[0]));
+                 content.writeShort(Integer.valueOf(data[1]));
+-                content.writeShort(Integer.valueOf(data[2]));
++                content.writeByte(Integer.valueOf(data[2]));
+                 return encodeContent(command.getDeviceId(), GatorProtocolDecoder.MSG_POSITION_PERIODIC, content);
+             default:
+                 return null;

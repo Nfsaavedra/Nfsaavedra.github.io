@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/master.yml b/.github/workflows/master.yml
+index 244b489..e0c1c63 100644
+--- a/.github/workflows/master.yml
++++ b/.github/workflows/master.yml
+@@ -4,8 +4,8 @@ on:
+   push:
+     branches:
+       - master
+-    paths:
+-      - workspaces/mammoth/**
++    # paths:
++    #   - workspaces/mammoth/**
+ 
+ jobs:
+   build:

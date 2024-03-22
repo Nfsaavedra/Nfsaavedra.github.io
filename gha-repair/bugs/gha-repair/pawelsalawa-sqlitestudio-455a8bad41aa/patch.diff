@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/mac_release.yml b/.github/workflows/mac_release.yml
+index e54876c..2249a7e 100644
+--- a/.github/workflows/mac_release.yml
++++ b/.github/workflows/mac_release.yml
+@@ -47,6 +47,7 @@ jobs:
+ 
+             - name: Install SQLite3
+               run: |
++                sudo rm -f /usr/local/lib/libsqlite3* /usr/local/include/sqlite3*
+                 wget http://sqlite.org/$SQLITE_RELEASE_YEAR/sqlite-amalgamation-$SQLITE_VERSION.zip
+                 unzip sqlite-amalgamation-$SQLITE_VERSION.zip
+                 cd sqlite-amalgamation-$SQLITE_VERSION

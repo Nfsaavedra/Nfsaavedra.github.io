@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index ff0d762..d9650b3 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -217,6 +217,8 @@ jobs:
+       uses: ruby/setup-ruby@v1
+       with:
+         ruby-version: 2.6
++    - name: Set up go dep
++      run: curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+     - run: bundle lock
+     - uses: actions/cache@v3
+       name: cache gem dependencies

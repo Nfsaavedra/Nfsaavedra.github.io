@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index ef90f2c..beba6a2 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -32,6 +32,7 @@ jobs:
+ 
+   integration:
+     runs-on: ubuntu-latest
++    timeout-minutes: 3
+     container: alpine:3.10
+     steps:
+       - uses: actions/checkout@v1

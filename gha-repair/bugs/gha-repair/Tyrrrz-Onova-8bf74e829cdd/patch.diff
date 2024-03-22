@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/CD.yml b/.github/workflows/CD.yml
+index d5ffffd..d1cd0f3 100644
+--- a/.github/workflows/CD.yml
++++ b/.github/workflows/CD.yml
+@@ -28,6 +28,10 @@ jobs:
+ 
+       - name: Notify Discord
+         run: |
+-          curl '${{ secrets.DISCORD_WEBHOOK }}' \
+-            --data-raw '{"content":"[**Onova** ver. ${{ github.ref }} released](https://github.com/Tyrrrz/Onova/releases/latest)"}' \
+-            -H 'content-type: application/json'
+\ No newline at end of file
++          Invoke-WebRequest `
++           -Uri "${{ secrets.DISCORD_WEBHOOK }}" `
++           -Method "POST" `
++           -ContentType "application/json; charset=UTF-8" `
++           -Body "{`"content`":`"[**Onova** ver. ${{ github.ref }} released](https://github.com/Tyrrrz/Onova/releases/latest)`"}" `
++           -UseBasicParsing
++        shell: pwsh

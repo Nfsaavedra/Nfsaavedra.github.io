@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 714919a..322a0d7 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -55,7 +55,7 @@ jobs:
+       fail-fast: false
+       matrix:
+         os: [ubuntu-latest, windows-latest, macos-latest]
+-        python-version: [3.5, 3.6, 3.7, 3.8]
++        python-version: [3.5, 3.6, 3.7, 3.8, 3.9]
+ 
+     steps:
+       - uses: actions/checkout@v2

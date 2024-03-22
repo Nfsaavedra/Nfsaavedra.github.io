@@ -1,0 +1,39 @@
+diff --git a/src/main/java/com/jitterted/mobreg/domain/Ensemble.java b/src/main/java/com/jitterted/mobreg/domain/Ensemble.java
+index e6826ce..138e67a 100644
+--- a/src/main/java/com/jitterted/mobreg/domain/Ensemble.java
++++ b/src/main/java/com/jitterted/mobreg/domain/Ensemble.java
+@@ -75,13 +75,20 @@ public class Ensemble {
+         return membersAsSpectators;
+     }
+ 
++    public void joinAsSpectator(MemberId memberId) {
++        membersAsSpectators.add(memberId);
++        membersWhoAccepted.remove(memberId);
++        membersWhoDeclined.remove(memberId);
++    }
++
+     public boolean isDeclined(MemberId memberId) {
+         return membersWhoDeclined.contains(memberId);
+     }
+ 
+     public void declinedBy(MemberId memberId) {
+-        membersWhoAccepted.remove(memberId);
+         membersWhoDeclined.add(memberId);
++        membersWhoAccepted.remove(memberId);
++        membersAsSpectators.remove(memberId);
+     }
+ 
+     public Stream<MemberId> declinedMembers() {
+@@ -94,12 +101,6 @@ public class Ensemble {
+         }
+     }
+ 
+-    public void joinAsSpectator(MemberId memberId) {
+-        membersAsSpectators.add(memberId);
+-        membersWhoAccepted.remove(memberId);
+-        membersWhoDeclined.remove(memberId);
+-    }
+-
+     private void requireHasSpace() {
+         if (isFull()) {
+             throw new EnsembleFullException("Currently have " + acceptedCount() + " registered.");

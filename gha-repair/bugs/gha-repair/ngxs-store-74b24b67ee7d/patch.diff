@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/trunk.yml b/.github/workflows/trunk.yml
+index 8fbf04f..3617706 100644
+--- a/.github/workflows/trunk.yml
++++ b/.github/workflows/trunk.yml
+@@ -140,6 +140,7 @@ jobs:
+ 
+   trunk-publish:
+     if: github.repository_owner == 'ngxs'
++    continue-on-error: true
+     runs-on: ubuntu-latest
+     environment: npm-publish-dev
+     needs: [trunk-build, trunk-test, trunk-integration-test, trunk-bundlemon]

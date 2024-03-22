@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/pvs-studio.yml b/.github/workflows/pvs-studio.yml
+index 7c8ec8a..30e397b 100644
+--- a/.github/workflows/pvs-studio.yml
++++ b/.github/workflows/pvs-studio.yml
+@@ -29,7 +29,7 @@ jobs:
+     runs-on: ubuntu-20.04
+ 
+     env:
+-      debfile: pvs-studio-7.13.48133.129-amd64.deb
++      debfile: pvs-studio-7.14.50353.142-amd64.deb
+ 
+     steps:
+       - uses: actions/checkout@v2

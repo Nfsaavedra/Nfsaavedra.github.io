@@ -1,0 +1,18 @@
+diff --git a/.github/workflows/linux.yml b/.github/workflows/linux.yml
+index 08da2e5..59c7035 100644
+--- a/.github/workflows/linux.yml
++++ b/.github/workflows/linux.yml
+@@ -115,7 +115,12 @@ jobs:
+         run: |
+           mkdir build
+           cd build
+-          cmake .. -Dpoac_BUILD_TEST=ON -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} -DBOOST_ROOT=${{ runner.temp }}/libs/boost -DBOOST_LIBRARYDIR=${{ runner.temp }}/libs/boost/lib
++          cmake
++            -Dpoac_BUILD_TEST=ON
++            -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
++            -DBOOST_ROOT=${{ runner.temp }}/libs/boost
++            -DBOOST_LIBRARYDIR=${{ runner.temp }}/libs/boost/lib
++            ..
+           make
+       - name: Test Poac
+         run: cd build && ctest --output-on-failure --verbose

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/image.yaml b/.github/workflows/image.yaml
+index 03780e3..f04498f 100644
+--- a/.github/workflows/image.yaml
++++ b/.github/workflows/image.yaml
+@@ -37,7 +37,7 @@ jobs:
+           path: src/github.com/argoproj/argo-cd
+ 
+       # get image tag
+-      - run: echo ::set-output name=tag::$(cat ./VERSION)-${GITHUB_SHA::8}
++      - run: echo "tag=$(cat ./VERSION)-${GITHUB_SHA::8}" >> $GITHUB_OUTPUT
+         working-directory: ./src/github.com/argoproj/argo-cd
+         id: image
+ 

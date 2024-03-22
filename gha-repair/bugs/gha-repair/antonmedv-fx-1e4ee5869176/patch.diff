@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.mjs b/.github/workflows/release.mjs
+index 64fd7e5..e329878 100644
+--- a/.github/workflows/release.mjs
++++ b/.github/workflows/release.mjs
+@@ -10,6 +10,8 @@ let goarch = [
+ 
+ let name = (GOOS, GOARCH) => `fx_${GOOS}_${GOARCH}` + (GOOS === 'windows' ? '.exe' : '')
+ 
++await $`go mod downloads`
++
+ await Promise.all(
+   goos.flatMap(GOOS =>
+     goarch.map(GOARCH =>

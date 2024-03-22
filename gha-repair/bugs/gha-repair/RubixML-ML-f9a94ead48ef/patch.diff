@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/docs.yml b/.github/workflows/docs.yml
+index 330f7bb..ac279ea 100644
+--- a/.github/workflows/docs.yml
++++ b/.github/workflows/docs.yml
+@@ -16,6 +16,5 @@ jobs:
+       - run: pip install mike
+       - run: pip install mkdocs-material
+       - run: pip install mkdocs-git-revision-date-plugin
+-      - run: mike set-default latest
+       - run: mike deploy --push --update-aliases 0.x latest
+       
+\ No newline at end of file

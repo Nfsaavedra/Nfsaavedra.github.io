@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/check-release-ready.yml b/.github/workflows/check-release-ready.yml
+index 79e930b..e6ed43e 100644
+--- a/.github/workflows/check-release-ready.yml
++++ b/.github/workflows/check-release-ready.yml
+@@ -116,5 +116,5 @@ jobs:
+ 
+           [ ${ERROR} -eq 1 ] && exit 1
+ 
+-  build-other-linux:
+-    uses: ./.github/workflows/manual.yml
+\ No newline at end of file
++  #build-other-linux:
++  #  uses: ./.github/workflows/manual.yml
+\ No newline at end of file

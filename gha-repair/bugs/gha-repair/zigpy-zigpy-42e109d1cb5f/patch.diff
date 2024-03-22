@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 54dde67..47ec24a 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -329,7 +329,7 @@ jobs:
+           COVERALLS_PARALLEL: true
+         run: |
+           . venv/bin/activate
+-          coveralls
++          coveralls --service=github
+ 
+ 
+   coverage:

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/python-tests.yml b/.github/workflows/python-tests.yml
+index 4df3865..41cd212 100644
+--- a/.github/workflows/python-tests.yml
++++ b/.github/workflows/python-tests.yml
+@@ -42,6 +42,7 @@ jobs:
+     - name: Run unit tests
+       run: |
+         coverage run tests.py
++        coverage json
+     - name: Test sample DMARC reports
+       continue-on-error: true
+       run: |

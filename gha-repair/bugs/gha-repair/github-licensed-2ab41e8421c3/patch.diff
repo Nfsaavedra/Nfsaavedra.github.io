@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index be93bd0..014681e 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -15,7 +15,7 @@ jobs:
+     steps:
+     - uses: actions/checkout@v3
+     - name: Set up Ruby
+-      uses: actions/setup-ruby@v1
++      uses: ruby/setup-ruby@v1
+ 
+     - name: Publish to GPR
+       run: |

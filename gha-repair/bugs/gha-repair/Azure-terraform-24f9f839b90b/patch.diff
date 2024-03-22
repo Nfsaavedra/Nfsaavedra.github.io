@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/weekly-e2e.yaml b/.github/workflows/weekly-e2e.yaml
+index f5ab199..f30df89 100644
+--- a/.github/workflows/weekly-e2e.yaml
++++ b/.github/workflows/weekly-e2e.yaml
+@@ -27,6 +27,7 @@ jobs:
+           cd .git
+           sudo chmod -R a+rwX .
+           sudo find . -type d -exec chmod g+s '{}' +
++          git config --global --add safe.directory '*'
+       - name: Commit & Push changes
+         uses: actions-js/push@master
+         with:

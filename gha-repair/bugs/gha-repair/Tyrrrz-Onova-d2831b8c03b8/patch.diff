@@ -1,0 +1,69 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 54ad241..710e421 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -1,6 +1,19 @@
+ name: main
+ 
+-on: [push, pull_request]
++on:
++  workflow_dispatch:
++    inputs:
++      package-version:
++        type: string
++        description: Package version
++        required: false
++      deploy:
++        type: boolean
++        description: Deploy package
++        required: false
++        default: false
++  push:
++  pull_request:
+ 
+ env:
+   TEST_GITHUB_TOKEN: ${{ secrets.TEST_GITHUB_TOKEN }}
+@@ -10,6 +23,9 @@ jobs:
+     uses: Tyrrrz/.github/.github/workflows/nuget.yml@master
+     with:
+       dotnet-version: 7.0.x
++      package-version: ${{ inputs.package-version }}
++      # Deploy only on tags by default, unless deploy is explicitly requested
++      deploy-on-tags-only: ${{ !(github.event_name == 'workflow_dispatch' && inputs.deploy) }}
+     secrets:
+       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+       NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
+diff --git a/.github/workflows/prerelease.yml b/.github/workflows/prerelease.yml
+deleted file mode 100644
+index de7c345..0000000
+--- a/.github/workflows/prerelease.yml
++++ /dev/null
+@@ -1,28 +0,0 @@
+-name: prerelease
+-
+-on:
+-  workflow_dispatch:
+-    inputs:
+-      package-version-base:
+-        type: string
+-        description: Package version base
+-        required: true
+-      package-version-suffix:
+-        type: string
+-        description: Package version suffix
+-        required: true
+-
+-env:
+-  TEST_GITHUB_TOKEN: ${{ secrets.TEST_GITHUB_TOKEN }}
+-
+-jobs:
+-  prerelease:
+-    uses: Tyrrrz/.github/.github/workflows/nuget.yml@master
+-    with:
+-      dotnet-version: 7.0.x
+-      package-version: ${{ format('{0}-{1}', inputs.package-version-base, inputs.package-version-suffix) }}
+-      deploy-on-tags-only: false
+-    secrets:
+-      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+-      NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
+-      DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}

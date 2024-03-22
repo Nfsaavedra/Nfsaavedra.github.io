@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/verify.yml b/.github/workflows/verify.yml
+index b25e2c3..4a3df3e 100644
+--- a/.github/workflows/verify.yml
++++ b/.github/workflows/verify.yml
+@@ -1,6 +1,6 @@
+ name: Verify changes
+ 
+-on: [push, pull_request]
++on: [pull_request]
+ 
+ jobs:
+   verify:

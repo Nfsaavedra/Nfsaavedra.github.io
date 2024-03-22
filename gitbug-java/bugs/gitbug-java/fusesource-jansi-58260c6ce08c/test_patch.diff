@@ -1,0 +1,32 @@
+diff --git a/src/test/java/org/fusesource/jansi/AnsiRendererTest.java b/src/test/java/org/fusesource/jansi/AnsiRendererTest.java
+index 05602bd..63dfaba 100644
+--- a/src/test/java/org/fusesource/jansi/AnsiRendererTest.java
++++ b/src/test/java/org/fusesource/jansi/AnsiRendererTest.java
+@@ -24,6 +24,7 @@ import static org.fusesource.jansi.Ansi.Color.*;
+ import static org.fusesource.jansi.AnsiRenderer.*;
+ import static org.junit.jupiter.api.Assertions.assertEquals;
+ import static org.junit.jupiter.api.Assertions.assertFalse;
++import static org.junit.jupiter.api.Assertions.assertThrows;
+ import static org.junit.jupiter.api.Assertions.assertTrue;
+ 
+ /**
+@@ -31,7 +32,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
+  *
+  */
+ public class AnsiRendererTest {
+-
+     @BeforeAll
+     static void setUp() {
+         Ansi.setEnabled(true);
+@@ -113,6 +113,11 @@ public class AnsiRendererTest {
+     }
+ 
+     @Test
++    public void testRenderInvalidEndBeforeStart() {
++        assertThrows(IllegalArgumentException.class, () -> render("@|@"));
++    }
++
++    @Test
+     public void testRenderInvalidMissingText() {
+         String str = render("@|bold|@");
+         assertEquals("@|bold|@", str);

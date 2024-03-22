@@ -1,0 +1,69 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index f0bfc95..fe044e1 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -46,28 +46,6 @@ jobs:
+       run: |
+         python -m pytest -r sx --benchmark-sort=mean tests/benchmarks/test_benchmark.py
+ 
+-  notebooks:
+-
+-    runs-on: ubuntu-latest
+-    strategy:
+-      matrix:
+-        python-version: [3.8]
+-
+-    steps:
+-    - uses: actions/checkout@v2
+-    - name: Set up Python 3.8
+-      uses: actions/setup-python@v2
+-      with:
+-        python-version: ${{ matrix.python-version }}
+-    - name: Install dependencies
+-      run: |
+-        python -m pip install --upgrade pip setuptools wheel
+-        python -m pip install --ignore-installed -U -q --no-cache-dir -e .[complete]
+-        python -m pip list
+-    - name: Test example notebooks
+-      run: |
+-        python -m pytest -r sx tests/test_notebooks.py
+-
+   docs:
+ 
+     runs-on: ubuntu-latest
+diff --git a/.github/workflows/notebooks.yml b/.github/workflows/notebooks.yml
+new file mode 100644
+index 0000000..e87f91b
+--- /dev/null
++++ b/.github/workflows/notebooks.yml
+@@ -0,0 +1,30 @@
++name: Notebooks
++
++on:
++  # Run daily at 0:01 UTC
++  schedule:
++  - cron:  '1 0 * * *'
++  workflow_dispatch:
++
++jobs:
++  test:
++
++    runs-on: ubuntu-latest
++    strategy:
++      matrix:
++        python-version: [3.8]
++
++    steps:
++    - uses: actions/checkout@v2
++    - name: Set up Python 3.8
++      uses: actions/setup-python@v2
++      with:
++        python-version: ${{ matrix.python-version }}
++    - name: Install dependencies
++      run: |
++        python -m pip install --upgrade pip setuptools wheel
++        python -m pip install --ignore-installed --upgrade -q --no-cache-dir -e .[complete]
++        python -m pip list
++    - name: Test example notebooks
++      run: |
++        python -m pytest -r sx tests/test_notebooks.py

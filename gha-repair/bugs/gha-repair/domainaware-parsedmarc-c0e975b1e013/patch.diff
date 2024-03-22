@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/python-tests.yml b/.github/workflows/python-tests.yml
+index 13ccd29..a594ea7 100644
+--- a/.github/workflows/python-tests.yml
++++ b/.github/workflows/python-tests.yml
+@@ -17,7 +17,7 @@ jobs:
+       uses: actions/setup-python@v2
+       with:
+         python-version: "3.6"
+-    - name: Install Elasticsearch
++    - name: Install system dependencies
+       run: |
+         sudo apt-get update
+         sudo apt-get install -y libemail-outlook-message-perl

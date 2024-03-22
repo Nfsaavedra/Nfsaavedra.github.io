@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/remove_labels.yml b/.github/workflows/remove_labels.yml
+index 8b027b6..9dc473b 100644
+--- a/.github/workflows/remove_labels.yml
++++ b/.github/workflows/remove_labels.yml
+@@ -6,9 +6,8 @@ on:
+     types: [created, edited]
+ jobs:
+   remove-labels:
+-    if: ${{ github.actor != 'bajanam' &&  github.actor != 'patrickfreed'
+-        && github.actor != 'abr-egn' && github.actor != 'isabelatkinson'
+-        && github.actor !='kmahar'}}
++    if: ${{ github.actor != 'Tom Selander' &&  github.actor != 'patrickfreed'
++        && github.actor != 'abr-egn' && github.actor != 'isabelatkinson'}}
+     runs-on: ubuntu-latest
+     steps:
+       - name: initial labeling

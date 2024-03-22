@@ -1,0 +1,24 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index eb882ff..ba77566 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -9,10 +9,10 @@ jobs:
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v3
+-      - name: Use Node.js 12.x
++      - name: Use Node.js 16.x
+         uses: actions/setup-node@v1
+         with:
+-          node-version: '12'
++          node-version: '16'
+       - name: Build web bundle
+         working-directory: mwdb/web
+         run: |
+@@ -95,4 +95,4 @@ jobs:
+             certpl/mwdb-web-tests:latest
+           cache-from: |
+             type=registry,ref=certpl/mwdb-web-tests:buildcache
+-          push: true
+\ No newline at end of file
++          push: true

@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/deploy.yml b/.github/workflows/deploy.yml
+index e889b6c..b97fb76 100644
+--- a/.github/workflows/deploy.yml
++++ b/.github/workflows/deploy.yml
+@@ -3,9 +3,7 @@ name: Deploy
+ on:
+   workflow_run:
+     workflows: ["Go Code Check"]
+-    branches: [ main ]
+-    types:
+-      - completed
++    types: [ completed ]
+   workflow_dispatch:
+   deployment:
+   release:

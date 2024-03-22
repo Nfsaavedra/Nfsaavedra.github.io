@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index a5106d6..d9ca426 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -22,10 +22,7 @@ jobs:
+ 
+       - name: setup release environment
+         run: |-
+-          echo 'GITHUB_TOKEN=${{secrets.GORELEASER_GITHUB_TOKEN }}' > .release-env
+-
+-      - name: release dry run
+-        run: make release-dry-run
++          echo 'GITHUB_TOKEN=${{secrets.GORELEASER_TOKEN }}' > .release-env
+       
+       - name: release publish
+         run: make release

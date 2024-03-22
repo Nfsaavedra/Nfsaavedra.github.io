@@ -1,0 +1,21 @@
+diff --git a/.github/workflows/nodejs.yml b/.github/workflows/nodejs.yml
+index 0b47e90..22081c6 100644
+--- a/.github/workflows/nodejs.yml
++++ b/.github/workflows/nodejs.yml
+@@ -3,15 +3,8 @@ name: Node CI
+ on: push
+ jobs:
+   build:
+-    runs-on: ${{ matrix.os }}
+-    strategy:
+-      fail-fast: false
+-      matrix:
+-        os: [ubuntu-latest, windows-latest, macos-latest]
++    runs-on: ubuntu-latest
+     steps:
+-    - name: Set git to not change EoL
+-      run: |
+-        git config --global core.autocrlf false
+     - uses: actions/checkout@v2
+     - name: Use Node.js 12.x
+       uses: actions/setup-node@v1

@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/build-image.yml b/.github/workflows/build-image.yml
+index 68fc37f..9ef3854 100644
+--- a/.github/workflows/build-image.yml
++++ b/.github/workflows/build-image.yml
+@@ -99,9 +99,6 @@ jobs:
+           echo "tags=${TAGS}" >> $GITHUB_OUTPUT
+           #echo "build_date=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" >> $GITHUB_OUTPUT
+ 
+-      - name: Checkout
+-        uses: actions/checkout@v3
+-
+       - name: Setup QEMU
+         uses: docker/setup-qemu-action@v2
+         with:

@@ -1,0 +1,46 @@
+diff --git a/.github/dependabot.yml b/.github/dependabot.yml
+deleted file mode 100644
+index 700707c..0000000
+--- a/.github/dependabot.yml
++++ /dev/null
+@@ -1,7 +0,0 @@
+-# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+-version: 2
+-updates:
+-  - package-ecosystem: "github-actions"
+-    directory: "/" # Location of package manifests
+-    schedule:
+-      interval: "weekly"
+diff --git a/.github/workflows/CI.yml b/.github/workflows/CI.yml
+index a965480..a173502 100644
+--- a/.github/workflows/CI.yml
++++ b/.github/workflows/CI.yml
+@@ -4,8 +4,6 @@ on:
+     branches: [main]
+     tags: [v*]
+   pull_request:
+-  schedule:
+-    - cron: '0 2 * * *'  # Daily at 2 AM UTC (8 PM CST)
+ 
+ jobs:
+   test:
+@@ -49,19 +47,3 @@ jobs:
+       - uses: codecov/codecov-action@v1
+         with:
+           file: lcov.info
+-          
+-  slack:
+-    name: Notify Slack Failure
+-    needs: test
+-    runs-on: ubuntu-latest
+-    if: always() && github.event_name == 'schedule'
+-    steps:
+-      - uses: technote-space/workflow-conclusion-action@v2
+-      - uses: voxmedia/github-action-slack-notify-build@v1
+-        if: env.WORKFLOW_CONCLUSION == 'failure'
+-        with:
+-          channel: nightly-rse
+-          status: FAILED
+-          color: danger
+-        env:
+-          SLACK_BOT_TOKEN: ${{ secrets.INVENIA_SLACK_BOT_TOKEN }}

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/3.2.yml b/.github/workflows/3.2.yml
+index 71b2da8..56f369b 100644
+--- a/.github/workflows/3.2.yml
++++ b/.github/workflows/3.2.yml
+@@ -102,7 +102,7 @@ jobs:
+                 echo 1
+                 for f in Qt5Core Qt5Gui Qt5Network Qt5PrintSupport Qt5Script Qt5Svg Qt5Widgets Qt5Xml; do cp bin/$f.dll "${{ env.PORTABLE_DIR }}"; done
+                 echo 2
+-                cp bin/qt.conf ${{ env.PORTABLE_DIR }}
++                cp bin/qt.conf "${{ env.PORTABLE_DIR }}"
+                 echo 3
+                 mkdir "${{ env.PORTABLE_DIR }}/iconengines"
+                 echo 4

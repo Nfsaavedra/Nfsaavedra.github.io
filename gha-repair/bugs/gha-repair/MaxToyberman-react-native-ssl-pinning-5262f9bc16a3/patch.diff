@@ -1,0 +1,26 @@
+diff --git a/.github/workflows/npm-publish.yml b/.github/workflows/npm-publish.yml
+index 31228de..0144057 100644
+--- a/.github/workflows/npm-publish.yml
++++ b/.github/workflows/npm-publish.yml
+@@ -8,6 +8,10 @@ jobs:
+     name: npm-publish
+     runs-on: ubuntu-latest
+     steps:
++    - name: Set ownership
++      run: |
++        # this is to fix GIT not liking owner of the checkout dir
++        chown -R $(id -u):$(id -g) $PWD
+     - name: Checkout repository
+       uses: actions/checkout@master
+     - name: Set up Node.js
+@@ -25,8 +29,4 @@ jobs:
+         publish_args: "--non-interactive"
+       env: # More info about the environment variables in the README
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this as is, it's automatically generated
+-        NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }} # You need to set this in your repo settings
+-    - name: Set ownership
+-      run: |
+-        # this is to fix GIT not liking owner of the checkout dir
+-        chown -R $(id -u):$(id -g) $PWD
++        NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }} # You need to set this in your repo settings
+\ No newline at end of file

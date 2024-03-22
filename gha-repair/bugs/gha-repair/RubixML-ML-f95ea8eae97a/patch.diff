@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/checks.yml b/.github/workflows/checks.yml
+index e0dbd94..bffd0ff 100644
+--- a/.github/workflows/checks.yml
++++ b/.github/workflows/checks.yml
+@@ -9,7 +9,7 @@ jobs:
+     strategy:
+       matrix:
+         operating-system: [ubuntu-latest, macos-latest]
+-        php-versions: ['7.2', '7.3', '7.4', '8.0']
++        php-versions: ['7.2', '7.3', '7.4']
+ 
+     steps:
+       - name: Checkout

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index a82c2ca..d168d5e 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -18,7 +18,7 @@ jobs:
+   # build rust binary
+   build:
+     strategy:
+-      max-parallel: 1
++      # max-parallel: 1
+       matrix:
+         target:
+           - x86_64-unknown-linux-gnu

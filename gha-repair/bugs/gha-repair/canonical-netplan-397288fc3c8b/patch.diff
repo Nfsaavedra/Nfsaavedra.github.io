@@ -1,0 +1,21 @@
+diff --git a/.github/workflows/coverity.yml b/.github/workflows/coverity.yml
+index 24eb0f8..ad40408 100644
+--- a/.github/workflows/coverity.yml
++++ b/.github/workflows/coverity.yml
+@@ -6,6 +6,7 @@ on:
+ 
+ jobs:
+   coverity:
++    if: github.repository == 'canonical/netplan'
+     runs-on: ubuntu-22.04
+ 
+     steps:
+@@ -29,4 +30,7 @@ jobs:
+           tar czf netplan.tar.gz cov-int
+       - name: Upload results
+         run: |
+-          curl --form token=${{ secrets.COVERITY_TOKEN }} --form email=${{ secrets.COVERITY_EMAIL }} --form file=@netplan.tar.gz --form version="0.106" --form description="Coverity scan" https://scan.coverity.com/builds?project=Netplan
++          TAG=$(git describe --tags $(git rev-list --tags --max-count=1))  # find latest (stable) tag
++          REV=$(git rev-parse --short HEAD)  # get current git revision
++          VER="$TAG+git~$REV"
++          curl --form token=${{ secrets.COVERITY_TOKEN }} --form email=${{ secrets.COVERITY_EMAIL }} --form file=@netplan.tar.gz --form version="${VER}" --form description="Coverity scan" https://scan.coverity.com/builds?project=Netplan

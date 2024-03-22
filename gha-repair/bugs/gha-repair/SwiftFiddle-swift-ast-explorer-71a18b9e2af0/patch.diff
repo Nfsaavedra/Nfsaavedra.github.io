@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/deploy.yml b/.github/workflows/deploy.yml
+index 3eced28..b9b03e2 100644
+--- a/.github/workflows/deploy.yml
++++ b/.github/workflows/deploy.yml
+@@ -1,7 +1,7 @@
+ name: Deploy
+ on:
+   push:
+-    branches: [main]
++    branches: [master]
+   workflow_dispatch:
+ 
+ jobs:

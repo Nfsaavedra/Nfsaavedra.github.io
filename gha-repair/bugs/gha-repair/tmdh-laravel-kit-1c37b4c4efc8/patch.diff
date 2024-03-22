@@ -1,0 +1,30 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 91df28b..dfddc70 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -2,13 +2,19 @@ name: build
+ 
+ on:
+   push:
+-    branches:
+-      - master
+-      - dev
++    paths:
++      - "*"
++      - "!screenshots/**"
++      - "!*.md"
++      - "!*.txt"
++      - "!*.json"
+   pull_request:
+-    branches:
+-      - master
+-      - dev
++    paths:
++      - "*"
++      - "!screenshots/**"
++      - "!*.md"
++      - "!*.txt"
++      - "!*.json"
+ 
+ jobs:
+   release:

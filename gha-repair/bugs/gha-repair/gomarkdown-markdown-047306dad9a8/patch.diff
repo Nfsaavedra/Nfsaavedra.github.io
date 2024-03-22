@@ -1,0 +1,45 @@
+diff --git a/.github/workflows/go.yml b/.github/workflows/go.yml
+index 883f4c9..575cf9b 100644
+--- a/.github/workflows/go.yml
++++ b/.github/workflows/go.yml
+@@ -22,10 +22,6 @@ jobs:
+       #- name: Coverage
+       #  run: ./s/test_with_codecoverage.sh
+ 
+-      # TODO: enable
+-      #- name: Fuzz
+-      #  run: ./s/ci_fuzzit.sh
+-
+       - name: Staticcheck
+         run: |
+           go get -u honnef.co/go/tools/cmd/staticcheck
+diff --git a/go.sum b/go.sum
+new file mode 100644
+index 0000000..1406b01
+--- /dev/null
++++ b/go.sum
+@@ -0,0 +1,1 @@
++golang.org/dl v0.0.0-20190829154251-82a15e2f2ead/go.mod h1:IUMfjQLJQd4UTqG1Z90tenwKoCX93Gn3MAQJMOSBsDQ=
+diff --git a/s/ci_fuzzit.sh b/s/ci_fuzzit.sh
+deleted file mode 100755
+index 9291ba6..0000000
+--- a/s/ci_fuzzit.sh
++++ /dev/null
+@@ -1,17 +0,0 @@
+-set -xe
+-
+-export GO111MODULE="off"
+-
+-## install go-fuzz
+-go get -u github.com/dvyukov/go-fuzz/go-fuzz github.com/dvyukov/go-fuzz/go-fuzz-build
+-
+-## build and send to fuzzit
+-go-fuzz-build -libfuzzer -o fuzzer.a .
+-clang -fsanitize=fuzzer fuzzer.a -o fuzzer
+-
+-wget -q -O fuzzit https://github.com/fuzzitdev/fuzzit/releases/download/v2.4.27/fuzzit_Linux_x86_64
+-chmod a+x fuzzit
+-
+-# TODO: create a target and re-enable
+-export TARGET=markdown
+-# ./fuzzit create job --type fuzzing  $TARGET ./fuzzer

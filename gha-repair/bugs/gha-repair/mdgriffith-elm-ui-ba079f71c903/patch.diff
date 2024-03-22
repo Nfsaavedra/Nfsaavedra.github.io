@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/tests.yml b/.github/workflows/tests.yml
+index b56fd81..1710238 100644
+--- a/.github/workflows/tests.yml
++++ b/.github/workflows/tests.yml
+@@ -31,5 +31,5 @@ jobs:
+     - name: Elm test suite
+       run: npm run test
+     
+-#     - name: Rendering test suite
+-#       run: npm run test-rendering
++    - name: Rendering test suite
++      run: npm run test-rendering

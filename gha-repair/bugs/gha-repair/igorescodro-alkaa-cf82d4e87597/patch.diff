@@ -1,0 +1,111 @@
+diff --git a/.github/workflows/android_tests_aer.yml b/.github/workflows/android_tests_aer.yml
+index e70572b..23cd0a8 100644
+--- a/.github/workflows/android_tests_aer.yml
++++ b/.github/workflows/android_tests_aer.yml
+@@ -1,4 +1,4 @@
+-name: Run instrumented tests (AER)
++name: Run instrumented tests
+ 
+ on:
+   push:
+@@ -13,7 +13,8 @@ concurrency:
+   cancel-in-progress: true
+ 
+ jobs:
+-  android-test:
++  android-test-aer:
++    name: "Android Emulator Runner"
+     runs-on: macos-latest
+     timeout-minutes: 80
+ 
+@@ -55,3 +56,37 @@ jobs:
+             /Users/runner/work/alkaa/alkaa/app/build/reports/androidTests/
+             ./logcat.txt
+           retention-days: 7
++
++  android-test-gmd:
++    name: "Gradle Managed Devices"
++    runs-on: macos-latest
++    timeout-minutes: 80
++
++    strategy:
++      fail-fast: false
++
++    steps:
++      - name: Checkout
++        uses: actions/checkout@v3
++
++      - name: Setup Java
++        uses: actions/setup-java@v3
++        with:
++          java-version: '11'
++          distribution: 'adopt'
++
++      - name: Setup Android SDK
++        uses: android-actions/setup-android@v2
++
++      - name: Run instrumented tests
++        run: ./gradlew alkaaDevicesGroupDebugAndroidTest -Pandroid.testoptions.manageddevices.emulator.gpu="swiftshader_indirect"
++
++      - name: Save Test Results
++        uses: actions/upload-artifact@v3
++        if: ${{ always() }}
++        with:
++          name: test-results
++          path: |
++            /Users/runner/work/alkaa/alkaa/app/build/reports/androidTests/
++            ./logcat.txt
++          retention-days: 7
+diff --git a/.github/workflows/android_tests_gmd.yml b/.github/workflows/android_tests_gmd.yml
+deleted file mode 100644
+index 0b95de3..0000000
+--- a/.github/workflows/android_tests_gmd.yml
++++ /dev/null
+@@ -1,47 +0,0 @@
+-name: Run instrumented tests (GMD)
+-
+-on:
+-  push:
+-    branches:
+-      - main
+-    paths-ignore:
+-      - '**.md'
+-  pull_request:
+-
+-concurrency:
+-  group: ${{ github.workflow }}-${{ github.ref }}
+-  cancel-in-progress: true
+-
+-jobs:
+-  android-test:
+-    runs-on: macos-latest
+-    timeout-minutes: 80
+-
+-    strategy:
+-      fail-fast: false
+-
+-    steps:
+-      - name: Checkout
+-        uses: actions/checkout@v3
+-
+-      - name: Setup Java
+-        uses: actions/setup-java@v3
+-        with:
+-          java-version: '11'
+-          distribution: 'adopt'
+-
+-      - name: Setup Android SDK
+-        uses: android-actions/setup-android@v2
+-
+-      - name: Run instrumented tests
+-        run: ./gradlew alkaaDevicesGroupDebugAndroidTest -Pandroid.testoptions.manageddevices.emulator.gpu="swiftshader_indirect"
+-
+-      - name: Save Test Results
+-        uses: actions/upload-artifact@v3
+-        if: ${{ always() }}
+-        with:
+-          name: test-results
+-          path: |
+-            /Users/runner/work/alkaa/alkaa/app/build/reports/androidTests/
+-            ./logcat.txt
+-          retention-days: 7

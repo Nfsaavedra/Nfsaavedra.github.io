@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ContinuousIntegration.yml b/.github/workflows/ContinuousIntegration.yml
+index 4e29734..e8f7f12 100644
+--- a/.github/workflows/ContinuousIntegration.yml
++++ b/.github/workflows/ContinuousIntegration.yml
+@@ -24,7 +24,7 @@ jobs:
+       run: dotnet tool install --tool-path . coverlet.console
+ 
+     - name: Create coverage file
+-      run: coverlet source\DefaultEcs.Test\bin\Release\netcoreapp2.2\DefaultEcs.Test.dll -t "dotnet" -a "vstest source\DefaultEcs.Test\bin\Release\netcoreapp2.2\DefaultEcs.Test.dll" -o coverage\lcov.info -f lcov
++      run: cmd coverlet source\DefaultEcs.Test\bin\Release\netcoreapp2.2\DefaultEcs.Test.dll -t "dotnet" -a "vstest source\DefaultEcs.Test\bin\Release\netcoreapp2.2\DefaultEcs.Test.dll" -o coverage\lcov.info -f lcov
+ 
+     - name: Upload to coverall
+       uses: coverallsapp/github-action@master

@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/autoMerge.yml b/.github/workflows/autoMerge.yml
+index fbb1308..0d110cb 100644
+--- a/.github/workflows/autoMerge.yml
++++ b/.github/workflows/autoMerge.yml
+@@ -15,9 +15,9 @@ jobs:
+ 
+     # Steps represent a sequence of tasks that will be executed as part of the job
+     steps:
+-      - name: Create auth.txt
++      - name: Enable Auto Merge
+         run: |
+-          echo ${{ secrets.MERGE_TOKEN }} >> auth.txt
++          echo ${{ secrets.PUSH_TOKEN }} >> auth.txt
+           ls -l
+           gh auth login --with-token < auth.txt
+           rm auth.txt

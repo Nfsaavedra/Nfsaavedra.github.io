@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/setup.yml b/.github/workflows/setup.yml
+index f5f56cd..062e629 100644
+--- a/.github/workflows/setup.yml
++++ b/.github/workflows/setup.yml
+@@ -92,7 +92,7 @@ jobs:
+             --header "Authorization: Bearer $GOOGLE_CLOUD_PLATFORM_ACCESS_TOKEN" \
+             --header 'Accept: application/json' \
+             --compressed \
+-            | jq  -r '.[].networkInterfaces[].accessConfigs[].natIP')
++            | jq  -r '.[].networkInterfaces[0].accessConfigs[0].natIP')
+ 
+ 
+           docker login --username ${{ secrets.DOCKER_HUB_USERNAME }} --password ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}

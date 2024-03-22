@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/auto-release.yml b/.github/workflows/auto-release.yml
+index 3023a85..0b33708 100644
+--- a/.github/workflows/auto-release.yml
++++ b/.github/workflows/auto-release.yml
+@@ -1,4 +1,4 @@
+-name: Release
++name: Auto Release
+ 
+ on:
+   push:

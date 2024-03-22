@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/mac_release.yml b/.github/workflows/mac_release.yml
+index 03de270..207817b 100644
+--- a/.github/workflows/mac_release.yml
++++ b/.github/workflows/mac_release.yml
+@@ -86,9 +86,9 @@ jobs:
+                 
+             - name: Determine SQLiteStudio version
+               working-directory: output/SQLiteStudio
+-              run: |
+ #                brew install tree
+ #                tree
++              run: |
+                 echo ::set-env name=SQLITESTUDIO_VERSION::$(SQLiteStudio.app/Contents/MacOS/sqlitestudiocli -v | awk '{print $2}')
+                 
+ 

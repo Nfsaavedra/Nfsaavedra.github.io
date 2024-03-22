@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index e70a527..a6c7203 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -7,6 +7,10 @@ on:
+ 
+ name: CI
+ 
++concurrency:
++  group: ${{ github.ref }}-${{ github.workflow }}
++  cancel-in-progress: true
++
+ jobs:
+   build:
+     name: Rust on ${{ matrix.os }}

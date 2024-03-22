@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 501355d..399056e 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -29,6 +29,9 @@ jobs:
+ 
+       - name: Checkout
+         uses: actions/checkout@v2.3.3
++        with:
++          token: ${{ secrets.CI_TOKEN }}
++          submodules: true
+ 
+       - name: Setup Node.js environment
+         uses: actions/setup-node@v2.1.2

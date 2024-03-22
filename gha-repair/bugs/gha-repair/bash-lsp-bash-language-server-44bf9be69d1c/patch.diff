@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/upgrade-tree-sitter.yml b/.github/workflows/upgrade-tree-sitter.yml
+index 117ed52..44d6c02 100644
+--- a/.github/workflows/upgrade-tree-sitter.yml
++++ b/.github/workflows/upgrade-tree-sitter.yml
+@@ -36,7 +36,7 @@ jobs:
+ 
+       - name: Create pull request
+         if: steps.verify-changed-files.outputs.files_changed == 'true'
+-        uses: peter-evans/create-pull-request@v4
++        uses: peter-evans/create-pull-request@v5
+         with:
+           add-paths: server
+           title: Auto upgrade tree-sitter-bash parser

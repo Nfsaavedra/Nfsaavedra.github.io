@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index a43e987..f1ecf82 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -69,7 +69,7 @@ jobs:
+     - uses: actions/upload-artifact@master
+       with:
+         name: licensed-${{github.event.ref}}.gem
+-        path: pkg/licensed-${{github.event.ref}}.gem
++        path: licensed-${{github.event.ref}}.gem
+   
+   create_release:
+     runs-on: ubuntu-latest

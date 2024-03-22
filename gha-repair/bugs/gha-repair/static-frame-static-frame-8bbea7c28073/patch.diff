@@ -1,0 +1,18 @@
+diff --git a/.github/workflows/test_forward.yml b/.github/workflows/test_forward.yml
+index c71a89d..ae34e1a 100644
+--- a/.github/workflows/test_forward.yml
++++ b/.github/workflows/test_forward.yml
+@@ -13,11 +13,11 @@ jobs:
+ 
+     steps:
+     - uses: actions/checkout@v2
+-    - name: Set up Python 3.8
++    - name: Set up Python 3.10
+ 
+       uses: actions/setup-python@v2
+       with:
+-        python-version: 3.8
++        python-version: 3.10
+ 
+     - name: Restore cache
+       uses: actions/cache@v2

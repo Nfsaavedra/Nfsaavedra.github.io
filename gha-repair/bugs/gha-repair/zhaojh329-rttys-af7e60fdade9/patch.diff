@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index b9ef50e..a4c04f7 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -18,7 +18,8 @@ jobs:
+         with:
+           node-version: '12'
+ 
+-      - uses: battila7/get-version-action@v2
++      - id: get-version
++        uses: battila7/get-version-action@v2
+ 
+       - uses: actions/checkout@v2
+ 

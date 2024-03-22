@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 43797d2..47d6633 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -98,8 +98,7 @@ jobs:
+       if: runner.os == 'Windows'
+ 
+     - name: Test (Windows)
+-      working-directory: ${{github.workspace}}/build
+-      run: ./${{matrix.config.cmake-build-type}}/tsl_sparse_map_tests.exe
++      run: ${{github.workspace}}/build/${{matrix.config.cmake-build-type}}/tsl_sparse_map_tests.exe
+       if: runner.os == 'Windows'
+ 
+     # Linux or macOS

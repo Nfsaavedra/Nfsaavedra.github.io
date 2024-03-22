@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/bump-version.yml b/.github/workflows/bump-version.yml
+index 9c4e6fb..fdcfa8b 100644
+--- a/.github/workflows/bump-version.yml
++++ b/.github/workflows/bump-version.yml
+@@ -66,7 +66,8 @@ jobs:
+ 
+         gh pr create --fill ${{ inputs.pr_options }}
+       env:
+-        GH_TOKEN: ${{ secrets.BUMP_SENTRY_TOKEN }}
++        # Using this instead of BUMP_SENTRY_TOKEN as per advice from asottile
++        GH_TOKEN: ${{ secrets.GETSENTRY_BOT_REVERT_TOKEN }}
+         PACKAGE: ${{ inputs.package }}
+         VERSION: ${{ inputs.version }}
+         SENDER: ${{ github.event.sender.login }}

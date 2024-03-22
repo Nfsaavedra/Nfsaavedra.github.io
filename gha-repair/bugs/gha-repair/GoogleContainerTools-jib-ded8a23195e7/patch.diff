@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/jib-cli-release.yml b/.github/workflows/jib-cli-release.yml
+index 0f6223f..101a3a8 100644
+--- a/.github/workflows/jib-cli-release.yml
++++ b/.github/workflows/jib-cli-release.yml
+@@ -52,7 +52,7 @@ jobs:
+         run: echo "::set-output name=hashes::$(cat zip.sha256 | base64 -w0)"
+ 
+       - name: Create pull request
+-        uses: repo-sync/pull-request@v2.6
++        uses: repo-sync/pull-request@v2.6.2
+         id: create-pr
+         with:
+           # Use a personal token to file a PR as a non-bot author to trigger other workflows (e.g., unit tests):

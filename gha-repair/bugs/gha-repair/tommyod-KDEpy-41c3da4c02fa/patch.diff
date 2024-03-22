@@ -1,0 +1,21 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index ea64bae..1917d52 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -50,5 +50,4 @@ jobs:
+         run: |
+           pip install cibuildwheel twine --upgrade;
+           python -m cibuildwheel --output-dir dist;
+-          echo "$PYPI_PASSWORD"
+           python -m twine upload dist/* -u tommyod -p "$PYPI_PASSWORD" --skip-existing;
+diff --git a/deploy.sh b/deploy.sh
+deleted file mode 100644
+index 1e21f9a..0000000
+--- a/deploy.sh
++++ /dev/null
+@@ -1,5 +0,0 @@
+-#!/bin/sh
+-$PIP install cibuildwheel;
+-$PYTHON -m cibuildwheel --output-dir wheelhouse;
+-$PIP install twine;
+-$PYTHON -m twine upload wheelhouse/* -u tommyod -p $TWINE_PASSWORD --skip-existing;

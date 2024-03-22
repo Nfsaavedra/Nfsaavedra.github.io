@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/update_messages.yml b/.github/workflows/update_messages.yml
+index b2b3be4..0d269c6 100644
+--- a/.github/workflows/update_messages.yml
++++ b/.github/workflows/update_messages.yml
+@@ -1,4 +1,4 @@
+-name: Run lupdate
++name: Update messages
+ 
+ on:
+     workflow_dispatch:

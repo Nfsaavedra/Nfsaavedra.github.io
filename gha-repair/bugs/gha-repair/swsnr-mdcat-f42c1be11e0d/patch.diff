@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 17ddd28..5171cc1 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -100,8 +100,6 @@ jobs:
+       - uses: hecrj/setup-rust-action@v1
+         with:
+           rust-version: stable
+-      - name: Setup target
+-        run: rustup target add x86_64-pc-windows-msvc
+       # Test code
+       - uses: actions/checkout@v1
+       - name: Test

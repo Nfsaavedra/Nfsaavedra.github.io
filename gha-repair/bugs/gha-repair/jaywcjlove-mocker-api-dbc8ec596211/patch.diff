@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index a939162..4607916 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -12,6 +12,7 @@ jobs:
+     - uses: actions/setup-node@v3
+       with:
+         node-version: 16
++        registry-url: 'https://registry.npmjs.org'
+ 
+     - name: Look Changelog
+       uses: jaywcjlove/changelog-generator@main

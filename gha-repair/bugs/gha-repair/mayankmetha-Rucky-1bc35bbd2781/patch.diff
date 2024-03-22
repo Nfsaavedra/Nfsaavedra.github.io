@@ -1,0 +1,29 @@
+diff --git a/.github/workflows/codeql-analysis.yml b/.github/workflows/codeql-analysis.yml
+index 2d07181..6edb3b6 100644
+--- a/.github/workflows/codeql-analysis.yml
++++ b/.github/workflows/codeql-analysis.yml
+@@ -53,8 +53,8 @@ jobs:
+ 
+     # Autobuild attempts to build any compiled languages  (C/C++, C#, or Java).
+     # If this step fails, then you should remove it and run the build manually (see below)
+-    - name: Autobuild
+-      uses: github/codeql-action/autobuild@v2
++    # - name: Autobuild
++    #  uses: github/codeql-action/autobuild@v2
+ 
+     # ℹ️ Command-line programs to run using the OS shell.
+     # 📚 https://git.io/JvXDl
+@@ -63,6 +63,13 @@ jobs:
+     #    and modify them (or add more) to build your code if your project
+     #    uses a compiled language
+ 
++    - if: matrix.language == 'java'
++      name: Build Java
++      run: |
++        chmod +x gradlew
++        ./gradlew clean
++        ./gradlew assembleDebug
++
+     #- run: |
+     #   make bootstrap
+     #   make release

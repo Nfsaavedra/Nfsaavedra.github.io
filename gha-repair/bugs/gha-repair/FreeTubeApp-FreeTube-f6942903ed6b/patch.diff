@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/stale.yml b/.github/workflows/stale.yml
+index 02a937f..0c0adba 100644
+--- a/.github/workflows/stale.yml
++++ b/.github/workflows/stale.yml
+@@ -19,3 +19,5 @@ jobs:
+           days-before-pr-close: 14
+           stale-issue-label: 'U: stale'
+           stale-pr-label: 'PR: stale'
++          exempt-pr-labels: 'PR: WIP'
++          exempt-issue-labels: 'U: skip-stale'

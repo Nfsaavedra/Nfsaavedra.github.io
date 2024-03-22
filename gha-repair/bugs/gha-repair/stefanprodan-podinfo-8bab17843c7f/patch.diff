@@ -1,0 +1,207 @@
+diff --git a/.github/actions/kubeconform/action.yml b/.github/actions/kubeconform/action.yml
+new file mode 100644
+index 0000000..752ec3c
+--- /dev/null
++++ b/.github/actions/kubeconform/action.yml
+@@ -0,0 +1,38 @@
++name: Setup kubeconform
++description: A GitHub Action for running kubeconform commands
++author: Stefan Prodan
++branding:
++  color: blue
++  icon: command
++inputs:
++  version:
++    description: "kubeconform version e.g. 0.5.0 (defaults to latest stable release)"
++    required: false
++  arch:
++    description: "arch can be amd64 or arm64"
++    required: true
++    default: "amd64"
++runs:
++  using: composite
++  steps:
++    - name: "Download binary to the GH runner cache"
++      shell: bash
++      run: |  
++        ARCH=${{ inputs.arch }}
++        VERSION=${{ inputs.version }}
++
++        if [ -z $VERSION ]; then
++          VERSION=$(curl https://api.github.com/repos/yannh/kubeconform/releases/latest -sL | grep tag_name | sed -E 's/.*"([^"]+)".*/\1/' | cut -c 2-)
++        fi
++        
++        BIN_URL="https://github.com/yannh/kubeconform/releases/download/v${VERSION}/kubeconform-linux-${ARCH}.tar.gz"
++        BIN_DIR=$RUNNER_TOOL_CACHE/kubeconform/$VERSION/$ARCH
++        
++        if [[ ! -x "$BIN_DIR/kind" ]]; then
++          mkdir -p $BIN_DIR
++          cd $BIN_DIR
++          curl -sL $BIN_URL | tar xz
++          chmod +x kubeconform
++        fi
++        
++        echo "$BIN_DIR" >> "$GITHUB_PATH"
+diff --git a/.github/policy/kubernetes.rego b/.github/policy/kubernetes.rego
+deleted file mode 100644
+index efdae6f..0000000
+--- a/.github/policy/kubernetes.rego
++++ /dev/null
+@@ -1,51 +0,0 @@
+-package kubernetes
+-
+-name = input.metadata.name
+-
+-kind = input.kind
+-
+-is_service {
+-	input.kind = "Service"
+-}
+-
+-is_deployment {
+-	input.kind = "Deployment"
+-}
+-
+-is_pod {
+-	input.kind = "Pod"
+-}
+-
+-split_image(image) = [image, "latest"] {
+-	not contains(image, ":")
+-}
+-
+-split_image(image) = [image_name, tag] {
+-	[image_name, tag] = split(image, ":")
+-}
+-
+-pod_containers(pod) = all_containers {
+-	keys = {"containers", "initContainers"}
+-	all_containers = [c | keys[k]; c = pod.spec[k][_]]
+-}
+-
+-containers[container] {
+-	pods[pod]
+-	all_containers = pod_containers(pod)
+-	container = all_containers[_]
+-}
+-
+-containers[container] {
+-	all_containers = pod_containers(input)
+-	container = all_containers[_]
+-}
+-
+-pods[pod] {
+-	is_deployment
+-	pod = input.spec.template
+-}
+-
+-pods[pod] {
+-	is_pod
+-	pod = input
+-}
+diff --git a/.github/policy/rules.rego b/.github/policy/rules.rego
+deleted file mode 100644
+index 84d578a..0000000
+--- a/.github/policy/rules.rego
++++ /dev/null
+@@ -1,43 +0,0 @@
+-package main
+-
+-import data.kubernetes
+-
+-name = input.metadata.name
+-
+-# Deny containers with latest image tag
+-deny[msg] {
+-	kubernetes.containers[container]
+-	[image_name, "latest"] = kubernetes.split_image(container.image)
+-	msg = sprintf("%s in the %s %s has an image %s, using the latest tag", [container.name, kubernetes.kind, kubernetes.name, image_name])
+-}
+-
+-# Deny services without app label selector
+-service_labels {
+-  input.spec.selector["app"]
+-}
+-deny[msg] {
+-  kubernetes.is_service
+-  not service_labels
+-  msg = sprintf("Service %s should set app label selector", [name])
+-}
+-
+-# Deny deployments without app label selector
+-match_labels {
+-  input.spec.selector.matchLabels["app"]
+-}
+-deny[msg] {
+-  kubernetes.is_deployment
+-  not match_labels
+-  msg = sprintf("Service %s should set app label selector", [name])
+-}
+-
+-# Warn if deployments have no prometheus pod annotations
+-annotations {
+-  input.spec.template.metadata.annotations["prometheus.io/scrape"]
+-  input.spec.template.metadata.annotations["prometheus.io/port"]
+-}
+-warn[msg] {
+-  kubernetes.is_deployment
+-  not annotations
+-  msg = sprintf("Deployment %s should set prometheus.io/scrape and prometheus.io/port pod annotations", [name])
+-}
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index f5a44b0..2843a46 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -9,6 +9,9 @@ on:
+ permissions:
+   contents: read
+ 
++env:
++  KUBERNETES_VERSION: 1.26.0
++
+ jobs:
+   test:
+     runs-on: ubuntu-latest
+@@ -25,6 +28,12 @@ jobs:
+         uses: actions/setup-go@v3
+         with:
+           go-version: 1.19.x
++      - name: Setup kubectl
++        uses: azure/setup-kubectl@v3
++        with:
++          version: v${{ env.KUBERNETES_VERSION }}
++      - name: Setup kubeconform
++        uses: ./.github/actions/kubeconform
+       - name: Setup Helm
+         uses: azure/setup-helm@v3
+         with:
+@@ -33,6 +42,13 @@ jobs:
+         uses: cue-lang/setup-cue@main
+       - name: Run unit tests
+         run: make test
++      - name: Validate Helm chart
++        run: |
++          helm lint ./charts/podinfo/
++          helm template ./charts/podinfo/ | kubeconform -strict -summary -kubernetes-version ${{ env.KUBERNETES_VERSION }}
++      - name: Validate Kustomize overlay
++        run: |
++          kubectl kustomize ./kustomize/ | kubeconform -strict -summary -kubernetes-version ${{ env.KUBERNETES_VERSION }}
+       - name: Generate CUE definitions
+         run: make cue-mod
+       - name: Verify CUE formatting
+@@ -48,12 +64,12 @@ jobs:
+           }
+       - name: Validate CUE
+         working-directory: ./cue
+-        run: cue vet --all-errors --concrete .
++        run: |
++          cue vet --all-errors --concrete .
++          cue gen | kubeconform -strict -summary -skip=ServiceMonitor -kubernetes-version ${{ env.KUBERNETES_VERSION }}
+       - name: Check if working tree is dirty
+         run: |
+           if [[ $(git diff --stat) != '' ]]; then
+             echo 'run make test and commit changes'
+             exit 1
+           fi
+-      - name: Validate Helm chart
+-        run: helm lint ./charts/podinfo/

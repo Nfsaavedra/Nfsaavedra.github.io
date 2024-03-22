@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/validate_pr.yaml b/.github/workflows/validate_pr.yaml
+index 62667e0..697da41 100644
+--- a/.github/workflows/validate_pr.yaml
++++ b/.github/workflows/validate_pr.yaml
+@@ -16,7 +16,7 @@ jobs:
+         uses: jesusvasquez333/verify-pr-label-action@v1.4.0
+         with:
+           github-token: '${{ secrets.GITHUB_TOKEN }}'
+-          valid-labels: 'bug, enhancement, dependencies'
++          valid-labels: 'bug, enhancement, dependencies, translation'
+           invalid-labels: 'help wanted, invalid, question'
+           pull-request-number: '${{ github.event.pull_request.number }}'
+-          disable-reviews: true
+\ No newline at end of file
++          disable-reviews: true

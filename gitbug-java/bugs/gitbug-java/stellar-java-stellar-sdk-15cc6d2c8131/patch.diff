@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/stellar/sdk/KeyPair.java b/src/main/java/org/stellar/sdk/KeyPair.java
+index ec7e490..97fdcc0 100644
+--- a/src/main/java/org/stellar/sdk/KeyPair.java
++++ b/src/main/java/org/stellar/sdk/KeyPair.java
+@@ -308,7 +308,7 @@ public class KeyPair {
+     }
+ 
+     KeyPair other = (KeyPair) object;
+-    return this.mPrivateKey.equals(other.mPrivateKey) &&
++    return Objects.equal(this.mPrivateKey, other.mPrivateKey) &&
+             this.mPublicKey.equals(other.mPublicKey);
+ 
+   }

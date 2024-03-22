@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index ecfbf50..3335748 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -92,8 +92,9 @@ jobs:
+               uses: actions/cache@v2
+               with:
+                   path: ${{ steps.composer-cache.outputs.dir }}
+-                  key: ${{ runner.os }}-composer-${{ matrix.php }}-${{ hashFiles('**/composer.json') }}-${{ github.sha }}
++                  key: ${{ runner.os }}-composer-${{ matrix.php }}-${{ hashFiles('**/composer.json') }}-${{ matrix.dependency-version }}-${{ github.sha }}
+                   restore-keys: |
++                      ${{ runner.os }}-composer-${{ matrix.php }}-${{ hashFiles('**/composer.json') }}-${{ matrix.dependency-version }}-
+                       ${{ runner.os }}-composer-${{ matrix.php }}-${{ hashFiles('**/composer.json') }}-
+                       ${{ runner.os }}-composer-${{ matrix.php }}-
+                       ${{ runner.os }}-composer-

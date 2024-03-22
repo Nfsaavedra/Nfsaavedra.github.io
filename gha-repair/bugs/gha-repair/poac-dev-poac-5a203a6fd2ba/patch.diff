@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/linux.yml b/.github/workflows/linux.yml
+index af87901..7ac8fc9 100644
+--- a/.github/workflows/linux.yml
++++ b/.github/workflows/linux.yml
+@@ -135,7 +135,7 @@ jobs:
+         working-directory: build
+ 
+       - name: Upload pre-built binary
+-        uses: actions/upload-artifact@v2.3.1
++        uses: actions/upload-artifact@v3
+         if: matrix.build_type == 'Release'
+         with:
+           name: ${{ github.job }}-${{ matrix.compiler.cc }}

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/irc.yml b/.github/workflows/irc.yml
+index 6f64bea..d0fff84 100644
+--- a/.github/workflows/irc.yml
++++ b/.github/workflows/irc.yml
+@@ -13,4 +13,5 @@ jobs:
+         channel: '#aircrack-ng'
+         nickname: git-aircrack-ng
+         message: |-
+-          GitHub (aircrack-ng/aircrack-ng) push by ${{ github.actor }}: ${{ github.event.ref }} ${{ github.event.description }}
+\ No newline at end of file
++          GitHub (aircrack-ng/aircrack-ng) push by ${{ github.actor }}: ${{ github.event.ref }} ${{ github.event.compare }}
++            ${{ join(github.event.commits.*.message) }}
+\ No newline at end of file

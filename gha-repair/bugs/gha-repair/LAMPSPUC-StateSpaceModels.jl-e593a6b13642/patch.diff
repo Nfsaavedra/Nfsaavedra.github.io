@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/documentation.yml b/.github/workflows/documentation.yml
+index 5a64298..dd49df8 100644
+--- a/.github/workflows/documentation.yml
++++ b/.github/workflows/documentation.yml
+@@ -19,5 +19,4 @@ jobs:
+       - name: Build and deploy
+         env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # For authentication with GitHub Actions token
+-          DOCUMENTER_KEY: ${{ secrets.DOCUMENTER_KEY }} # For authentication with SSH deploy key
+         run: julia --project=docs/ docs/make.jl
+\ No newline at end of file

@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/nightly.yml b/.github/workflows/nightly.yml
+index 9714fd7..64375cc 100644
+--- a/.github/workflows/nightly.yml
++++ b/.github/workflows/nightly.yml
+@@ -9,8 +9,8 @@ permissions:
+   contents: read
+ 
+ jobs:
+-  test-postgres:
+-    name: Run test with Postgres
++  test:
++    name: Run tests
+     runs-on: ubuntu-22.04
+     if: github.repository == 'akka/akka-grpc'
+     strategy:

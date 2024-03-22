@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/pythonapp.yml b/.github/workflows/pythonapp.yml
+index 7dfb367..fc2ec88 100644
+--- a/.github/workflows/pythonapp.yml
++++ b/.github/workflows/pythonapp.yml
+@@ -27,6 +27,8 @@ jobs:
+         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+     - name: Test with pytest
++      env:
++        robin_username: ${{ secrets.username }}
+       run: |
+         pip install pytest
+         pytest

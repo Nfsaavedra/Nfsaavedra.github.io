@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/cpush.yml b/.github/workflows/cpush.yml
+index d025aa8..7eec88d 100644
+--- a/.github/workflows/cpush.yml
++++ b/.github/workflows/cpush.yml
+@@ -2,9 +2,9 @@ name: C CI
+ 
+ on:
+   push:
+-    branches: [ "main" ]
++    branches: [ "master" ]
+   pull_request:
+-    branches: [ "main" ]
++    branches: [ "master" ]
+ 
+ jobs:
+   build:

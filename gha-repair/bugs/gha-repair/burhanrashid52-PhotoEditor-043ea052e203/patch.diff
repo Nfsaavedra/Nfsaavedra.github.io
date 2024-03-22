@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/app_build_and_test.yml b/.github/workflows/app_build_and_test.yml
+index 0666036..7b271a6 100644
+--- a/.github/workflows/app_build_and_test.yml
++++ b/.github/workflows/app_build_and_test.yml
+@@ -2,7 +2,7 @@ name: UI test in android emulator CI
+ 
+ on:
+   push:
+-    branches: [ test_in_emulator ]
++    branches: [ master ]
+   pull_request:
+     branches: [ master ]
+ 

@@ -1,0 +1,41 @@
+diff --git a/.github/workflows/copyright-check.yml b/.github/workflows/copyright-check.yml
+deleted file mode 100644
+index 39c5a2c..0000000
+--- a/.github/workflows/copyright-check.yml
++++ /dev/null
+@@ -1,19 +0,0 @@
+-name: Copyright Check
+-on:
+-  pull_request:
+-  push:
+-    tags:
+-    branches:
+-      - 'master'
+-jobs:
+-  copyright-check:
+-    runs-on: ubuntu-latest
+-    steps:
+-    - uses: actions/checkout@v2
+-    - name: Check License Lines
+-      uses: kt3k/license_checker@v1.0.6
+-
+-#  - name: Create Pull Request
+-#    uses: peter-evans/create-pull-request@v2
+-#    with:
+-#      token: ${{ secrets.GITHUB_TOKEN }}
+diff --git a/.github/workflows/format-check.yml b/.github/workflows/format-check.yml
+index a9c7ad4..3a77902 100644
+--- a/.github/workflows/format-check.yml
++++ b/.github/workflows/format-check.yml
+@@ -51,3 +51,11 @@ jobs:
+       - name: Linelint
+         uses: fernandrone/linelint@master
+         id: linelint
++
++  copyright-check:
++    name: Copyright Check
++    runs-on: ubuntu-latest
++    steps:
++    - uses: actions/checkout@v2
++    - name: Check License Lines
++      uses: kt3k/license_checker@v1.0.6

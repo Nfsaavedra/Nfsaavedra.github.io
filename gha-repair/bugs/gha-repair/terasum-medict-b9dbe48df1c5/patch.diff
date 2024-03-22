@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/dev-hot-build.yml b/.github/workflows/dev-hot-build.yml
+index 270ff89..6f50360 100644
+--- a/.github/workflows/dev-hot-build.yml
++++ b/.github/workflows/dev-hot-build.yml
+@@ -9,6 +9,7 @@ on:
+ jobs:
+   build:
+     runs-on: ${{ matrix.os }}
++    continue-on-error: ${{ matrix.allow-failure || true}}
+     env:
+       BAIDU_APPID: ${{ secrets.BAIDU_APPID }}
+       BAIDU_APP_KEY: ${{ secrets.BAIDU_APP_KEY }}
+@@ -16,6 +17,7 @@ jobs:
+       matrix:
+         os: [windows-latest, macos-latest, ubuntu-latest]
+         node-version: [12.x]
++      fail-fast: false   
+ 
+     steps:
+       # checkout source code

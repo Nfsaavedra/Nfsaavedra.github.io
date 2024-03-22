@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index e7e9e92..583add6 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -62,7 +62,6 @@ jobs:
+       - name: Set up PDM
+         uses: pdm-project/setup-pdm@v3
+         with:
+-          version: head # for --strategy direct_minimal_versions
+           python-version: ${{ matrix.python-version }}
+       - name: Generate lockfile
+         working-directory: ./software

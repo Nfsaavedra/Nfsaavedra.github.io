@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/3.2.yml b/.github/workflows/3.2.yml
+index e5c374f..21e2ed2 100644
+--- a/.github/workflows/3.2.yml
++++ b/.github/workflows/3.2.yml
+@@ -20,7 +20,7 @@ jobs:
+               run: dir
+ 
+             - name: Debug tree
+-              run: tree /A
++              run: tree ..\.. /A
+ 
+             # - name: Cache Qt
+               # id: cache-qt

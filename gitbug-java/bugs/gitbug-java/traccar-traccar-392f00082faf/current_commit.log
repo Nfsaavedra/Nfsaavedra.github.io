@@ -1,0 +1,143 @@
+[931ad450-a1eb-4202-afda-1244a29797ca/build] 🚀  Start image=gitbugactions:latest
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   🐳  docker pull image=gitbugactions:latest platform= username= forcePull=false
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   🐳  docker create image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   🐳  docker run image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/8d33901a-9af0-47ea-b8d6-6624cc9b409e] user=0 workdir=
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build] ⭐ Run Main actions/checkout@v3
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   🐳  docker cp src=/tmp/8d33901a-9af0-47ea-b8d6-6624cc9b409e/. dst=/tmp/8d33901a-9af0-47ea-b8d6-6624cc9b409e
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/8d33901a-9af0-47ea-b8d6-6624cc9b409e] user=0 workdir=
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   ✅  Success - Main actions/checkout@v3
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build] ⭐ Run Main actions/setup-java@v3
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   🐳  docker cp src=/tmp/act-cache/c488b012-dd0d-49a9-8316-81b6fa4eba08/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   ❓  ::group::Installed distributions
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | Trying to resolve the latest version from remote
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   💬  ::debug::Gathering available versions from 'https://api.azul.com/zulu/download/community/v1.0/bundles/?os=linux&ext=tar.gz&bundle_type=jdk&javafx=false&arch=x86&hw_bitness=64&release_status=ga'
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | Resolved latest version as 11.0.21+9
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | Trying to download...
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | Downloading Java 11.0.21+9 (Zulu) from https://cdn.azul.com/zulu/bin/zulu11.68.17-ca-jdk11.0.21-linux_x64.tar.gz ...
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   💬  ::debug::Downloading https://cdn.azul.com/zulu/bin/zulu11.68.17-ca-jdk11.0.21-linux_x64.tar.gz
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   💬  ::debug::Destination /tmp/8f297c0e-4601-4d8a-a539-22fb85aa0048
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   💬  ::debug::download complete
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | Extracting Java archive...
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   💬  ::debug::Checking tar --version
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   💬  ::debug::tar (GNU tar) 1.34%0ACopyright (C) 2021 Free Software Foundation, Inc.%0ALicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.%0AThis is free software: you are free to change and redistribute it.%0AThere is NO WARRANTY, to the extent permitted by law.%0A%0AWritten by John Gilmore and Jay Fenlason.
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/49dbccbc-ad45-41d3-99bb-640a32ef82aa -f /tmp/8f297c0e-4601-4d8a-a539-22fb85aa0048
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   💬  ::debug::Caching tool Java_Zulu_jdk 11.0.21-9 x64
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   💬  ::debug::source dir: /tmp/49dbccbc-ad45-41d3-99bb-640a32ef82aa/zulu11.68.17-ca-jdk11.0.21-linux_x64
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   💬  ::debug::destination /opt/hostedtoolcache/Java_Zulu_jdk/11.0.21-9/x64
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   💬  ::debug::finished caching tool
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | Java 11.0.21+9 was downloaded
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | Setting Java 11.0.21+9 as the default
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | Creating toolchains.xml for JDK version 11 from zulu
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | Writing to /home/runner/.m2/toolchains.xml
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | 
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | Java configuration:
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   |   Distribution: zulu
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   |   Version: 11.0.21+9
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   |   Path: /opt/hostedtoolcache/Java_Zulu_jdk/11.0.21-9/x64
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | 
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   ❓  ::endgroup::
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   ❓ add-matcher /run/act/actions/actions-setup-java@v3/.github/java.json
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | Creating settings.xml with server-id: github
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | Writing to /home/runner/.m2/settings.xml
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   ✅  Success - Main actions/setup-java@v3
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   ⚙  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Zulu_jdk/11.0.21-9/x64
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   ⚙  ::set-env:: JAVA_HOME_11_X64=/opt/hostedtoolcache/Java_Zulu_jdk/11.0.21-9/x64
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   ⚙  ::set-output:: path=/opt/hostedtoolcache/Java_Zulu_jdk/11.0.21-9/x64
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   ⚙  ::set-output:: version=11.0.21+9
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   ⚙  ::set-output:: distribution=Zulu
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   ⚙  ::add-path:: /opt/hostedtoolcache/Java_Zulu_jdk/11.0.21-9/x64/bin
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build] ⭐ Run Main ./gradlew build --no-daemon --warning-mode=fail
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | Downloading https://services.gradle.org/distributions/gradle-7.5.1-bin.zip
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | ...........10%............20%...........30%............40%...........50%............60%...........70%............80%...........90%............100%
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | 
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | Welcome to Gradle 7.5.1!
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | 
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | Here are the highlights of this release:
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   |  - Support for Java 18
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   |  - Support for building with Groovy 4
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   |  - Much more responsive continuous builds
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   |  - Improved diagnostics for dependency resolution
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | 
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | For more details see https://docs.gradle.org/7.5.1/release-notes.html
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | 
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | To honour the JVM settings for this build a single-use Daemon process will be forked. See https://docs.gradle.org/7.5.1/userguide/gradle_daemon.html#sec:disabling_the_daemon.
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | Daemon will be stopped at the end of the build 
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | 
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | > Configure project :
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | Kordamp Enforcer Gradle plugin 0.10.0. Consider becoming a patron at https://www.patreon.com/aalmiray
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | 
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | > Task :copyDependencies
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | > Task :extractIncludeProto
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | > Task :extractProto
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | > Task :generateProto
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | > Task :compileJava
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | Note: Some input files use or override a deprecated API.
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | Note: Recompile with -Xlint:deprecation for details.
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | Note: Some input files use unchecked or unsafe operations.
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | Note: Recompile with -Xlint:unchecked for details.
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | 
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | > Task :processResources
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | > Task :classes
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | > Task :jar
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | > Task :assemble
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | > Task :extractIncludeTestProto
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | > Task :extractTestProto
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | > Task :generateTestProto NO-SOURCE
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | 
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | > Task :compileTestJava
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | Note: Some input files use or override a deprecated API.
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | Note: Recompile with -Xlint:deprecation for details.
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | 
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | > Task :processTestResources NO-SOURCE
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | > Task :testClasses
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | > Task :checkstyleTest SKIPPED
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | > Task :test
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | > Task :checkstyleMain
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | > Task :check
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | > Task :build
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | 
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | BUILD SUCCESSFUL in 2m 25s
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   | 12 actionable tasks: 12 executed
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   ✅  Success - Main ./gradlew build --no-daemon --warning-mode=fail
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'
+[931ad450-a1eb-4202-afda-1244a29797ca/build] ⭐ Run Post actions/setup-java@v3
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=
+[931ad450-a1eb-4202-afda-1244a29797ca/build]   ✅  Success - Post actions/setup-java@v3
+[931ad450-a1eb-4202-afda-1244a29797ca/build] 🏁  Job succeeded
+[931ad450-a1eb-4202-afda-1244a29797ca/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '392f00082faff72c9948ed569e4c883a5fabe7d6'

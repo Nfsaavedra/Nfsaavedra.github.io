@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/addToProject.yml b/.github/workflows/addToProject.yml
+index 9814e20..789fc4a 100644
+--- a/.github/workflows/addToProject.yml
++++ b/.github/workflows/addToProject.yml
+@@ -20,10 +20,9 @@ jobs:
+       with:
+         project: 'https://github.com/orgs/elastic/projects/454'
+         column_name: 'Planned'
+-    steps:
+     - name: Assign new pull requests to project
+       uses: srggrs/assign-one-project-github-action@1.2.0
+       if: github.event.action == 'opened' && github.event.pull_request
+       with:
+         project: 'https://github.com/orgs/elastic/projects/454'
+-        column_name: 'In Progress'
+\ No newline at end of file
++        column_name: 'In Progress'

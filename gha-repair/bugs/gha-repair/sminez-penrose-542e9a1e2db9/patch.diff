@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/rust.yml b/.github/workflows/rust.yml
+index a3203f1..fca5d3d 100644
+--- a/.github/workflows/rust.yml
++++ b/.github/workflows/rust.yml
+@@ -3,10 +3,10 @@ name: Build
+ on:
+   push:
+     branches:
+-      - master
++      - develop
+   pull_request:
+     branches:
+-      - master
++      - develop
+ 
+ env:
+   CARGO_TERM_COLOR: always

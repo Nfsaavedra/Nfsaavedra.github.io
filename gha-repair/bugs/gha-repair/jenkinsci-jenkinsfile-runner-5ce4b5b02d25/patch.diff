@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/docker-cd.yml b/.github/workflows/docker-cd.yml
+index c9c6734..fac1fd2 100644
+--- a/.github/workflows/docker-cd.yml
++++ b/.github/workflows/docker-cd.yml
+@@ -18,7 +18,6 @@ jobs:
+       uses: actions/setup-java@v2
+       with:
+         java-version: '11'
+-        distribution: 'timurin'
+     - name: Build with Maven
+       working-directory: .
+       run: mvn -B package 

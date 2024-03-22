@@ -1,0 +1,25 @@
+diff --git a/.github/workflows/docs-gen.yaml b/.github/workflows/docs-gen.yaml
+index c573436..aa1266c 100644
+--- a/.github/workflows/docs-gen.yaml
++++ b/.github/workflows/docs-gen.yaml
+@@ -2,7 +2,7 @@ name: Docs
+ 
+ env:
+     SLACK_DEBUG_TESTING: false      # when set to "true", send notifications to #slack-integration-testing.  Otherwise, post to #edge-team-bots
+-    MIN_SCANNED_VERSION: 'v1.11.0'  # ⚠️ you should also change trivy-analysis-scheduled.yaml ⚠️
++    MIN_SCANNED_VERSION: 'v1.12.0'  # ⚠️ you should also change trivy-analysis-scheduled.yaml ⚠️
+ on:
+   push:
+     branches:
+diff --git a/changelog/v1.16.0-beta29/update-docs-gen-scanner-min-version-1.12.yaml b/changelog/v1.16.0-beta29/update-docs-gen-scanner-min-version-1.12.yaml
+new file mode 100644
+index 0000000..2beb8a4
+--- /dev/null
++++ b/changelog/v1.16.0-beta29/update-docs-gen-scanner-min-version-1.12.yaml
+@@ -0,0 +1,6 @@
++changelog:
++  - type: NON_USER_FACING
++    description: >-
++      Update the MIN_SCANNED_VERSION to v1.12 in docs-gen.yaml so v1.11 does not get scanned for vulnerabilities.
++      skipCI-kube-tests:true
++      skipCI-docs-build:true

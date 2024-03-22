@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 2fdf7d9..5ca113d 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -12,7 +12,7 @@ jobs:
+ 
+     steps:
+     - uses: actions/checkout@v2
+-    - uses: actions/setup-node@v1
++    - uses: actions/setup-node@v2
+       with:
+         node-version: 10.x
+     - run: yarn

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/lint-test-build.yml b/.github/workflows/lint-test-build.yml
+index 9101574..a6f7df4 100644
+--- a/.github/workflows/lint-test-build.yml
++++ b/.github/workflows/lint-test-build.yml
+@@ -79,7 +79,7 @@ jobs:
+       - name: Run flake8
+         uses: julianwachholz/flake8-action@v1
+         with:
+-          checkName: lint
++          checkName: lint-test
+         env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+ 

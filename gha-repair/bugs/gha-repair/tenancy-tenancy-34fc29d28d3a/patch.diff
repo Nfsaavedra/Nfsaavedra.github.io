@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/subsplit.yml b/.github/workflows/subsplit.yml
+index 26b0838..d9cc525 100644
+--- a/.github/workflows/subsplit.yml
++++ b/.github/workflows/subsplit.yml
+@@ -4,6 +4,8 @@ on:
+     push:
+         branches:
+             - master
++        tags:
++            - 'v*'
+ 
+ jobs:
+     subsplit:

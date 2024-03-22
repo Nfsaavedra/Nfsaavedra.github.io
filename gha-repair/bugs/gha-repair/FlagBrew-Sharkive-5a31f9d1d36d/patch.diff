@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/build-cheats.yml b/.github/workflows/build-cheats.yml
+index df439f3..548001c 100644
+--- a/.github/workflows/build-cheats.yml
++++ b/.github/workflows/build-cheats.yml
+@@ -24,7 +24,6 @@ jobs:
+     - name: "Upload Cheats"
+       uses: softprops/action-gh-release@v1
+       with:
+-        tag_name: cheat-db-${{ github.event.repository.updated_at}}
+         name: Sharkive DB ${{ github.event.repository.updated_at}}
+         draft: false
+         prerelease: false

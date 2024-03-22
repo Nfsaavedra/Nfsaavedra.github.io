@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 4018d88..a4cc95f 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -1,6 +1,12 @@
+ name: Release
+ 
+ on:
++  workflow_dispatch:
++    inputs:
++      tag_name:
++        description: 'Tag name for release'
++        required: false
++        default: nightly
+   push:
+     tags: ["v[0-9]+.[0-9]+.[0-9]+*"]
+ 

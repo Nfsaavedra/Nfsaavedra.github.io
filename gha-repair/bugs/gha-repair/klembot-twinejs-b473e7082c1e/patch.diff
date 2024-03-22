@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/create-release.yml b/.github/workflows/create-release.yml
+index 8582d35..ec05d18 100644
+--- a/.github/workflows/create-release.yml
++++ b/.github/workflows/create-release.yml
+@@ -32,4 +32,4 @@ jobs:
+             dist/electron/twine-*.exe
+             dist/electron/twine-*.zip
+         env:
+-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }
++          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

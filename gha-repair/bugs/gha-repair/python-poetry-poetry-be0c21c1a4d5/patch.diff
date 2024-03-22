@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/docs.yml b/.github/workflows/docs.yml
+index 820fa11..e8cc1e1 100644
+--- a/.github/workflows/docs.yml
++++ b/.github/workflows/docs.yml
+@@ -41,7 +41,7 @@ jobs:
+           python-version: "3.10"
+ 
+       - name: Setup Node
+-        uses: actions/setup-node@v3
++        uses: actions/setup-node@v4
+         with:
+           node-version: "18"
+ 

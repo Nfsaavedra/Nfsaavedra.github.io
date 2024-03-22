@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/build_macos_wheels.yml b/.github/workflows/build_macos_wheels.yml
+index a14c508..82ae5de 100644
+--- a/.github/workflows/build_macos_wheels.yml
++++ b/.github/workflows/build_macos_wheels.yml
+@@ -24,6 +24,7 @@ jobs:
+         # to supply options, put them in 'env', like:
+         env:
+           CIBW_SKIP: "pp*"
++          CIBW_ENVIRONMENT: "PIP_USE_PEP517=1"
+ 
+       - uses: actions/upload-artifact@v3
+         with:

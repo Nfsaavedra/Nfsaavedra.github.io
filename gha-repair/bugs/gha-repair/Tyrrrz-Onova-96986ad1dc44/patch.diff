@@ -1,0 +1,44 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 632b874..6175925 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -12,4 +12,4 @@ jobs:
+       NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
+       DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+       DYNAMIC: |
+-        TEST_GITHUB_TOKEN=${{ secrets.TEST_GITHUB_TOKEN }}
+\ No newline at end of file
++        TEST_GITHUB_TOKEN=${{ secrets.TEST_GITHUB_TOKEN }}
+diff --git a/.github/workflows/prerelease.yml b/.github/workflows/prerelease.yml
+new file mode 100644
+index 0000000..8d674c8
+--- /dev/null
++++ b/.github/workflows/prerelease.yml
+@@ -0,0 +1,27 @@
++name: prerelease
++
++on:
++  workflow_dispatch:
++    inputs:
++      package-version-base:
++        type: string
++        description: Package version base
++        required: true
++      package-version-suffix:
++        type: string
++        description: Package version suffix
++        required: true
++
++jobs:
++  prerelease:
++    uses: Tyrrrz/.github/.github/workflows/nuget.yml@master
++    with:
++      dotnet-version: 7.0.x
++      package-version: ${{ format('{0}-{1}', inputs.package-version-base, inputs.package-version-suffix) }}
++      deploy-on-tags-only: false
++    secrets:
++      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
++      NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
++      DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
++      DYNAMIC: |
++        TEST_GITHUB_TOKEN=${{ secrets.TEST_GITHUB_TOKEN }}

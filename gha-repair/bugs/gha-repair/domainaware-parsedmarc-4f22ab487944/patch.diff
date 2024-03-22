@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/python-tests.yml b/.github/workflows/python-tests.yml
+index 303658b..b656d17 100644
+--- a/.github/workflows/python-tests.yml
++++ b/.github/workflows/python-tests.yml
+@@ -32,10 +32,10 @@ jobs:
+     - name: Check README.rst syntax
+       run: |
+         rstcheck --report warning README.rst
+-        - name: Test building documentation
+-          run: |
+-            cd docs
+-            make html
++    - name: Test building documentation
++      run: |
++        cd docs
++        make html
+     - name: Run unit tests
+       run: |
+         coverage run tests.py

@@ -1,0 +1,127 @@
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build] 🚀  Start image=gitbugactions:latest
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   🐳  docker pull image=gitbugactions:latest platform= username= forcePull=false
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   🐳  docker create image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   🐳  docker run image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/00c3de35-4c33-454d-9783-b47d4e989d6a] user=0 workdir=
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build] ⭐ Run Main actions/checkout@v3
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   🐳  docker cp src=/tmp/00c3de35-4c33-454d-9783-b47d4e989d6a/. dst=/tmp/00c3de35-4c33-454d-9783-b47d4e989d6a
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/00c3de35-4c33-454d-9783-b47d4e989d6a] user=0 workdir=
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   ✅  Success - Main actions/checkout@v3
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build] ⭐ Run Main actions/setup-java@v3
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   🐳  docker cp src=/tmp/act-cache/3c7f50a5-98c4-45df-b392-4b52f8183502/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   ❓  ::group::Installed distributions
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | Trying to resolve the latest version from remote
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   💬  ::debug::Gathering available versions from 'https://api.azul.com/zulu/download/community/v1.0/bundles/?os=linux&ext=tar.gz&bundle_type=jdk&javafx=false&arch=x86&hw_bitness=64&release_status=ga'
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | Resolved latest version as 11.0.21+9
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | Trying to download...
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | Downloading Java 11.0.21+9 (Zulu) from https://cdn.azul.com/zulu/bin/zulu11.68.17-ca-jdk11.0.21-linux_x64.tar.gz ...
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   💬  ::debug::Downloading https://cdn.azul.com/zulu/bin/zulu11.68.17-ca-jdk11.0.21-linux_x64.tar.gz
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   💬  ::debug::Destination /tmp/b9592665-5b3a-48f6-9b59-b31967af2b7a
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   💬  ::debug::download complete
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | Extracting Java archive...
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   💬  ::debug::Checking tar --version
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   💬  ::debug::tar (GNU tar) 1.34%0ACopyright (C) 2021 Free Software Foundation, Inc.%0ALicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.%0AThis is free software: you are free to change and redistribute it.%0AThere is NO WARRANTY, to the extent permitted by law.%0A%0AWritten by John Gilmore and Jay Fenlason.
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/a1c013ed-cdcc-4cf6-ba02-e99a771006a5 -f /tmp/b9592665-5b3a-48f6-9b59-b31967af2b7a
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   💬  ::debug::Caching tool Java_Zulu_jdk 11.0.21-9 x64
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   💬  ::debug::source dir: /tmp/a1c013ed-cdcc-4cf6-ba02-e99a771006a5/zulu11.68.17-ca-jdk11.0.21-linux_x64
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   💬  ::debug::destination /opt/hostedtoolcache/Java_Zulu_jdk/11.0.21-9/x64
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   💬  ::debug::finished caching tool
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | Java 11.0.21+9 was downloaded
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | Setting Java 11.0.21+9 as the default
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | Creating toolchains.xml for JDK version 11 from zulu
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | Writing to /home/runner/.m2/toolchains.xml
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | 
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | Java configuration:
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   |   Distribution: zulu
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   |   Version: 11.0.21+9
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   |   Path: /opt/hostedtoolcache/Java_Zulu_jdk/11.0.21-9/x64
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | 
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   ❓  ::endgroup::
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   ❓ add-matcher /run/act/actions/actions-setup-java@v3/.github/java.json
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | Creating settings.xml with server-id: github
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | Writing to /home/runner/.m2/settings.xml
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   ✅  Success - Main actions/setup-java@v3
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   ⚙  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Zulu_jdk/11.0.21-9/x64
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   ⚙  ::set-env:: JAVA_HOME_11_X64=/opt/hostedtoolcache/Java_Zulu_jdk/11.0.21-9/x64
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   ⚙  ::set-output:: distribution=Zulu
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   ⚙  ::set-output:: path=/opt/hostedtoolcache/Java_Zulu_jdk/11.0.21-9/x64
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   ⚙  ::set-output:: version=11.0.21+9
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   ⚙  ::add-path:: /opt/hostedtoolcache/Java_Zulu_jdk/11.0.21-9/x64/bin
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build] ⭐ Run Main ./gradlew build --no-daemon --warning-mode=fail
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | Downloading https://services.gradle.org/distributions/gradle-7.5.1-bin.zip
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | ...........10%............20%...........30%............40%...........50%............60%...........70%............80%...........90%............100%
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | 
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | Welcome to Gradle 7.5.1!
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | 
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | Here are the highlights of this release:
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   |  - Support for Java 18
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   |  - Support for building with Groovy 4
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   |  - Much more responsive continuous builds
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   |  - Improved diagnostics for dependency resolution
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | 
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | For more details see https://docs.gradle.org/7.5.1/release-notes.html
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | 
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | To honour the JVM settings for this build a single-use Daemon process will be forked. See https://docs.gradle.org/7.5.1/userguide/gradle_daemon.html#sec:disabling_the_daemon.
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | Daemon will be stopped at the end of the build 
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | 
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | > Configure project :
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | Kordamp Enforcer Gradle plugin 0.13.0. Consider becoming a patron at https://www.patreon.com/aalmiray
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | 
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | > Task :copyDependencies
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | > Task :extractIncludeProto
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | > Task :extractProto
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | > Task :generateProto
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | > Task :compileJava
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | Note: Some input files use or override a deprecated API.
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | Note: Recompile with -Xlint:deprecation for details.
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | Note: Some input files use unchecked or unsafe operations.
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | Note: Recompile with -Xlint:unchecked for details.
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | 
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | > Task :processResources
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | > Task :classes
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | > Task :jar
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | > Task :assemble
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | > Task :extractIncludeTestProto
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | > Task :extractTestProto
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | > Task :generateTestProto NO-SOURCE
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | 
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | > Task :compileTestJava
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | Note: Some input files use or override a deprecated API.
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | Note: Recompile with -Xlint:deprecation for details.
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | 
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | > Task :processTestResources NO-SOURCE
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | > Task :testClasses
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | > Task :checkstyleTest SKIPPED
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | > Task :checkstyleMain
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | 
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | > Task :test FAILED
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | 
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | FreematicsProtocolDecoderTest > testDecode() FAILED
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   |     java.lang.NumberFormatException at FreematicsProtocolDecoderTest.java:13
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | 
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | 497 tests completed, 1 failed, 23 skipped
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | 
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | FAILURE: Build failed with an exception.
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | 
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | * What went wrong:
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | Execution failed for task ':test'.
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | > There were failing tests. See the report at: file:///tmp/00c3de35-4c33-454d-9783-b47d4e989d6a/build/reports/tests/test/index.html
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | 
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | * Try:
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | > Run with --stacktrace option to get the stack trace.
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | > Run with --info or --debug option to get more log output.
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | > Run with --scan to get full insights.
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | 
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | * Get more help at https://help.gradle.org
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | 
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | BUILD FAILED in 2m 58s
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   | 12 actionable tasks: 12 executed
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   ❌  Failure - Main ./gradlew build --no-daemon --warning-mode=fail
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build] exitcode '1': failure
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build] ⭐ Run Post actions/setup-java@v3
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build]   ✅  Success - Post actions/setup-java@v3
+[c9f21fa5-4c0d-4f14-a2e6-69c7faecb47c/build] 🏁  Job failed

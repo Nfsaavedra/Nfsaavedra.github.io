@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 344f4b7..c9cfd09 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -20,6 +20,7 @@ jobs:
+         with:
+           toolchain: nightly
+           components: rustfmt
++          override: true
+ 
+       - name: Verify versions
+         run: rustc --version && rustup --version && cargo --version

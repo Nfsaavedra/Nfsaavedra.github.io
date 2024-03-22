@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 6f3f364..e13fc95 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -19,3 +19,11 @@ jobs:
+         with:
+           toolchain: ${{matrix.rust}}
+       - run: cargo test
++
++  clippy:
++    name: Clippy
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v2
++      - uses: dtolnay/rust-toolchain@clippy
++      - run: cargo clippy -- -Dclippy::pedantic

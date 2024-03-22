@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 2d97e13..e9ab21d 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -17,4 +17,4 @@ jobs:
+     - run: npm install
+     - run: npm test
+     - run: npm run coverage
+-    - uses: codecov/codecov-action@v2
++    - uses: codecov/codecov-action@v3

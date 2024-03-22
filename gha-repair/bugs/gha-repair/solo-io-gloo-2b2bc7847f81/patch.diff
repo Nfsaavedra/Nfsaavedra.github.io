@@ -1,0 +1,32 @@
+diff --git a/.github/workflows/push-solo-apis-branch.yaml b/.github/workflows/push-solo-apis-branch.yaml
+index 3ac03e2..92be011 100644
+--- a/.github/workflows/push-solo-apis-branch.yaml
++++ b/.github/workflows/push-solo-apis-branch.yaml
+@@ -65,10 +65,12 @@ jobs:
+           repository: solo-io/gloo
+           path: gloo
+           ref: ${{ env.SOURCE_COMMIT }}
+-      - name: Prep Go Runner
+-        uses: ./gloo/.github/workflows/composite-actions/prep-go-runner
++      - name: Set up Go
++        uses: actions/setup-go@v4
+         with:
+-          working-directory: gloo
++          cache: false
++          go-version-file: gloo/go.mod
++        id: go
+       - name: Install Protoc
+         uses: arduino/setup-protoc@v1
+         with:
+diff --git a/changelog/v1.16.0-beta3/push-solo-apis.yaml b/changelog/v1.16.0-beta3/push-solo-apis.yaml
+new file mode 100644
+index 0000000..7ae316a
+--- /dev/null
++++ b/changelog/v1.16.0-beta3/push-solo-apis.yaml
+@@ -0,0 +1,6 @@
++changelog:
++  - type: NON_USER_FACING
++    description: >
++      Remove caching from the push-solo-apis-branch action.
++      skipCI-kube-tests:true
++      skipCI-docs-build:true

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/pytest.yaml b/.github/workflows/pytest.yaml
+index af35d7a..598b223 100644
+--- a/.github/workflows/pytest.yaml
++++ b/.github/workflows/pytest.yaml
+@@ -34,7 +34,7 @@ jobs:
+       - name: Install dependencies
+         if: steps.cache-pipenv.outputs.cache-hit != 'true'
+         run: |
+-          pipenv install --dev -e
++          pipenv install
+ 
+       - name: Run test suite
+         run: |

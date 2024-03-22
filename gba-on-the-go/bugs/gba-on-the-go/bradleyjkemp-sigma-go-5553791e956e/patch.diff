@@ -1,0 +1,25 @@
+diff --git a/rule_parser.go b/rule_parser.go
+index 2986b24..0b613c9 100644
+--- a/rule_parser.go
++++ b/rule_parser.go
+@@ -15,7 +15,7 @@ type Rule struct {
+ 	Detection Detection
+ 
+ 	ID          string
+-	Related     []string
++	Related     []RelatedRule
+ 	Status      string
+ 	Description string
+ 	Author      string
+@@ -27,6 +27,11 @@ type Rule struct {
+ 	AdditionalFields map[string]interface{} `yaml:",inline"`
+ }
+ 
++type RelatedRule struct {
++	ID   string
++	Type string
++}
++
+ type Logsource struct {
+ 	Category   string
+ 	Product    string

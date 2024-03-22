@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/run-tests.yml b/.github/workflows/run-tests.yml
+index 5768b97..83225d1 100644
+--- a/.github/workflows/run-tests.yml
++++ b/.github/workflows/run-tests.yml
+@@ -11,6 +11,6 @@ jobs:
+               uses: actions/setup-node@v1
+               with:
+                   node-version: '12.x'
+-            - run: yarn
+             - run: yarn example
++            - run: yarn
+             - run: yarn test

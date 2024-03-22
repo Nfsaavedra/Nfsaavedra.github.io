@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 7acefd6..a81d9a6 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -1,5 +1,10 @@
+ name: Release
+-on: [workflow_dispatch]
++on:
++  workflow_dispatch:
++  # Release patches and secruity updates on a schedule
++  schedule:
++    - cron: "0 0 1 * *"
++
+ jobs:
+   tag:
+     name: Tag

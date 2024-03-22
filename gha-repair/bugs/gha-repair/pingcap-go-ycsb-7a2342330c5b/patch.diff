@@ -1,0 +1,23 @@
+diff --git a/.github/workflows/go.yml b/.github/workflows/go.yml
+index 66f48d6..04f7745 100644
+--- a/.github/workflows/go.yml
++++ b/.github/workflows/go.yml
+@@ -28,4 +28,17 @@ jobs:
+         env:
+           GOOS: ${{ matrix.os }}
+           GOARCH: ${{ matrix.arch }}
+-        run: make
++        run: |
++          make
++          tar -C bin -zcf go-ycsb-$GOOS-$GOARCH.tar.gz go-ycsb
++
++      - name: Release latest build
++        # if: github.event_name == 'push'
++        uses: "marvinpinto/action-automatic-releases@latest"
++        with:
++          repo_token: "${{ secrets.GITHUB_TOKEN }}"
++          automatic_release_tag: "latest"
++          prerelease: true
++          title: "Latest Build"
++          files: |
++            *.tar.gz

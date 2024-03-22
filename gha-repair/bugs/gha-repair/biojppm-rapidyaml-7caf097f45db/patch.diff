@@ -1,0 +1,22 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 7a67165..5ff5b8f 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -557,7 +557,7 @@ jobs:
+                 source env/bin/activate
+                 ;;
+               windows*)
+-                Scripts/activate.bat
++                . env/Scripts/activate
+                 ;;
+             esac
+             cd api/python
+@@ -572,7 +572,7 @@ jobs:
+                 source env/bin/activate
+                 ;;
+               windows*)
+-                Scripts/activate.bat
++                . env/Scripts/activate
+                 ;;
+             esac
+             c4_build_target shared64 ryml-api-test-python3

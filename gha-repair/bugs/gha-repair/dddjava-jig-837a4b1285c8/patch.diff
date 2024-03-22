@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/build-main.yml b/.github/workflows/build-main.yml
+index 6daa106..f080be0 100644
+--- a/.github/workflows/build-main.yml
++++ b/.github/workflows/build-main.yml
+@@ -32,3 +32,6 @@ jobs:
+           name: test-reports-${{ runner.os }}
+           path: jig-core/build/reports/tests/test/
+           retention-days: 3
++      - name: Run Build
++        run: |
++          ./gradlew build

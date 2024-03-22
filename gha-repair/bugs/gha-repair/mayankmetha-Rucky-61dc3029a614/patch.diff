@@ -1,0 +1,21 @@
+diff --git a/.github/workflows/nightly.yml b/.github/workflows/nightly.yml
+index ec1dfd4..43ca4cf 100644
+--- a/.github/workflows/nightly.yml
++++ b/.github/workflows/nightly.yml
+@@ -11,11 +11,11 @@ jobs:
+   steps:
+     -uses: actions/checkout@v2
+ 
+-    -name: JDK
+-     uses: actions/setup-java@v2
+-     with:
+-       java-version: '11'
+-       distribution: 'adopt'
++    #-name: JDK
++    # uses: actions/setup-java@v2
++    # with:
++    #   java-version: '11'
++    #   distribution: 'adopt'
+ 
+     - name: Nightly Build
+       run: ./gradlew clean assembleNightly

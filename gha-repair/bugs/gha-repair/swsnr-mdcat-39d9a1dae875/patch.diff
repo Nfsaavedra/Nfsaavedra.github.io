@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 5e2d5a6..3509860 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -5,14 +5,11 @@ on: [push]
+ jobs:
+   lint:
+     runs-on: ubuntu-latest
+-    strategy:
+-      matrix:
+-        rust: [stable, beta]
+     steps:
+       - uses: actions/checkout@v1
+       - uses: actions-rs/toolchain@v1
+         with:
+-          toolchain: ${{ matrix.rust }}
++          toolchain: stable
+           override: true
+           components: rustfmt, clippy
+       - name: rustfmt --check

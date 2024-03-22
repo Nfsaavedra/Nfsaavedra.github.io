@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/ccpp.yml b/.github/workflows/ccpp.yml
+index 0f6fcc6..2f61bc5 100644
+--- a/.github/workflows/ccpp.yml
++++ b/.github/workflows/ccpp.yml
+@@ -3,7 +3,8 @@ name: C/C++ CI
+ on: [push, pull_request]
+ 
+ jobs:
+-  macOS:
++  macos:
++    name: macOS Catalina (10.15)
+     runs-on: macOS-latest
+     steps:
+       - uses: actions/checkout@v1

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 82d78ab..8046278 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -142,7 +142,7 @@ jobs:
+             ${{ runner.os }}-go-
+       -
+         name: Setup Sigstore
+-        uses: sigstore/cosign-installer@v1.3.0
++        uses: sigstore/cosign-installer@v1.3.1
+       -
+         name: Set up QEMU
+         uses: docker/setup-qemu-action@v1

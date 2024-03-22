@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/autopkgtest.yml b/.github/workflows/autopkgtest.yml
+index 85cd73b..fba590f 100644
+--- a/.github/workflows/autopkgtest.yml
++++ b/.github/workflows/autopkgtest.yml
+@@ -27,7 +27,7 @@ jobs:
+         run: |
+           sudo sed -i '/deb-src/s/^# //' /etc/apt/sources.list
+           sudo apt update
+-          sudo apt install autopkgtest ubuntu-dev-tools devscripts openvswitch-switch linux-modules-extra-azure
++          sudo apt install autopkgtest ubuntu-dev-tools devscripts openvswitch-switch linux-modules-extra-$(uname -r)
+           sudo snap install lxd
+           sudo lxd init --auto --storage-backend=dir
+       # work around LP: #1878225 as fallback

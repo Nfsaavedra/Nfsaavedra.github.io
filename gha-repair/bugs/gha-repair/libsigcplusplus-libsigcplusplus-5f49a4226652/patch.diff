@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/clang-format-check.yml b/.github/workflows/clang-format-check.yml
+index fd6fb3a..1d303b1 100644
+--- a/.github/workflows/clang-format-check.yml
++++ b/.github/workflows/clang-format-check.yml
+@@ -1,6 +1,7 @@
+ name: "CI: Check Code Formatting"
+ 
+-on: [push]
++# Triggered manually
++on: [workflow_dispatch]
+ 
+ jobs:
+   build:

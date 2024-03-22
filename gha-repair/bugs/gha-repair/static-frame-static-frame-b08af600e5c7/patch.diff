@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test_forward.yml b/.github/workflows/test_forward.yml
+index ce53ec7..9767d0b 100644
+--- a/.github/workflows/test_forward.yml
++++ b/.github/workflows/test_forward.yml
+@@ -34,7 +34,7 @@ jobs:
+         pip install Cython==0.29.13
+         pip install setuptools==41.2.0
+         pip install -r requirements-test.txt
+-        pip install numpy==1.19.4
++        pip install numpy==1.20.1
+         pip install pandas==1.1.4
+ 
+     - name: Invoke Test

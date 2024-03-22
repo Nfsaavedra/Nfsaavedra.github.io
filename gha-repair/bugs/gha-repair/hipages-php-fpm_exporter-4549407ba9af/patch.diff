@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/go.yml b/.github/workflows/go.yml
+index 6bf3da4..43f3268 100644
+--- a/.github/workflows/go.yml
++++ b/.github/workflows/go.yml
+@@ -20,4 +20,4 @@ jobs:
+       run: curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.23.7
+ 
+     - name: Lint
+-      run: golangci-lint run
++      run: $(go env GOPATH)/bin/golangci-lint run

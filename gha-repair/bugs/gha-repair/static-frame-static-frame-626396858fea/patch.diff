@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/test_forward.yml b/.github/workflows/test_forward.yml
+index c048bce..4ebb9bc 100644
+--- a/.github/workflows/test_forward.yml
++++ b/.github/workflows/test_forward.yml
+@@ -12,8 +12,7 @@ jobs:
+       fail-fast: false
+       matrix:
+         os: ['ubuntu-20.04']
+-        python-version: ['3.9', '3.10', '3.11']
+-
++        python-version: ['3.9', '3.10']
+     runs-on: ${{ matrix.os }}
+ 
+     steps:

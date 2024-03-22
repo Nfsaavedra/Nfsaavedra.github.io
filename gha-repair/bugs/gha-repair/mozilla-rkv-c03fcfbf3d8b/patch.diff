@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 532c2eb..bf9f658 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -25,6 +25,7 @@ jobs:
+           - { os: windows-latest, host: '-x86_64-pc-windows-msvc' }
+           - { os: windows-latest, host: '-i686-pc-windows-msvc' }
+         toolchain: [1.45.0, stable, beta, nightly]
++      fail-fast: false
+ 
+     runs-on: ${{ matrix.target.os }}
+ 

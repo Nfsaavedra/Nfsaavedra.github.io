@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/publish.yaml b/.github/workflows/publish.yaml
+index 95d0547..8ba2ce3 100644
+--- a/.github/workflows/publish.yaml
++++ b/.github/workflows/publish.yaml
+@@ -29,7 +29,7 @@ jobs:
+           git config --global user.email "runner@gha.local"
+           git config --global user.name "Github Action"
+ 
+-          chmod +x "${GITHUB_WORKSPACE}/tool/publish.sh"
++          chmod u+x "${GITHUB_WORKSPACE}/tools/publish.sh"
+ 
+           # Publishing crates
+-          "${GITHUB_WORKSPACE}/tool/publish.sh"
++          "${GITHUB_WORKSPACE}/tools/publish.sh"

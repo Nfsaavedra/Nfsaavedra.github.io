@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/stale.yml b/.github/workflows/stale.yml
+index 7bbc050..b7234b1 100644
+--- a/.github/workflows/stale.yml
++++ b/.github/workflows/stale.yml
+@@ -10,7 +10,7 @@ jobs:
+     runs-on: ubuntu-latest
+ 
+     steps:
+-    - uses: actions/stale@v1
++    - uses: actions/stale@v3
+       with:
+         repo-token: ${{ secrets.GITHUB_TOKEN }}
+         stale-issue-message: 'Stale issue message'

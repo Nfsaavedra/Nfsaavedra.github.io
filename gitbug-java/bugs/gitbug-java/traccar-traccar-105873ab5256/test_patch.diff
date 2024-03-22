@@ -1,0 +1,23 @@
+diff --git a/src/test/java/org/traccar/protocol/Minifinder2ProtocolDecoderTest.java b/src/test/java/org/traccar/protocol/Minifinder2ProtocolDecoderTest.java
+index 587a520..64d245a 100644
+--- a/src/test/java/org/traccar/protocol/Minifinder2ProtocolDecoderTest.java
++++ b/src/test/java/org/traccar/protocol/Minifinder2ProtocolDecoderTest.java
+@@ -2,6 +2,7 @@ package org.traccar.protocol;
+ 
+ import org.junit.jupiter.api.Test;
+ import org.traccar.ProtocolTest;
++import org.traccar.model.Position;
+ 
+ public class Minifinder2ProtocolDecoderTest extends ProtocolTest {
+ 
+@@ -15,6 +16,10 @@ public class Minifinder2ProtocolDecoderTest extends ProtocolTest {
+                 "barkCount", 12L);
+ 
+         verifyAttribute(decoder, binary(
++                "ab00030008c700007f0100"),
++                Position.KEY_RESULT, "0");
++
++        verifyAttribute(decoder, binary(
+                 "ab102600080f1400011001383633393231303339393833343736092429b347633003a96409020000008027b34763"),
+                 "bark", true);
+ 

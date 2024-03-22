@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/pifile.yml b/.github/workflows/pifile.yml
+index 73fb234..43db83f 100644
+--- a/.github/workflows/pifile.yml
++++ b/.github/workflows/pifile.yml
+@@ -85,7 +85,7 @@ jobs:
+           osname: ${{ matrix.config.osname }}
+       - 
+         name: Create Base Image
+-        uses: Nature40/pimod@v0.4.4
++        uses: Nature40/pimod@v0.5.0
+         with:
+           pifile: ${{ matrix.config.basefile }}.Pifile
+       - 

@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/tests.yml b/.github/workflows/tests.yml
+index a890ce5..20e6626 100644
+--- a/.github/workflows/tests.yml
++++ b/.github/workflows/tests.yml
+@@ -1,4 +1,4 @@
+-name: typesense-js tests
++name: tests
+ 
+ on: [push, pull_request]
+ 

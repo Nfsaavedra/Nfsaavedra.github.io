@@ -1,0 +1,31 @@
+diff --git a/.github/dependabot.yml b/.github/dependabot.yml
+new file mode 100644
+index 0000000..81bae9a
+--- /dev/null
++++ b/.github/dependabot.yml
+@@ -0,0 +1,7 @@
++version: 2
++
++updates:
++  - package-ecosystem: "github-actions"
++    directory: "/"
++    schedule:
++      interval: "daily"
+diff --git a/.github/workflows/push.yml b/.github/workflows/push.yml
+index 72afd4e..cf3ec1e 100644
+--- a/.github/workflows/push.yml
++++ b/.github/workflows/push.yml
+@@ -8,9 +8,12 @@ on:
+   workflow_dispatch:
+   pull_request:
+ 
++permissions:
++  contents: read
++
+ jobs:
+   unit_tests:
+-    name: "Unit Tests on ${{ matrix.target }}"
++    name: "unit tests"
+     runs-on: ubuntu-latest
+ 
+     steps:

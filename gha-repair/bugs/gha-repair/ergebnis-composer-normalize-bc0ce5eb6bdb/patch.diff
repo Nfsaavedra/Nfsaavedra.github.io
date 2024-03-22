@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/schema.yml b/.github/workflows/schema.yml
+index 25c643b..c2dcb43 100644
+--- a/.github/workflows/schema.yml
++++ b/.github/workflows/schema.yml
+@@ -19,6 +19,9 @@ jobs:
+       - name: "Download schema"
+         run: "wget --output-document=resource/schema.json https://getcomposer.org/schema.json"
+ 
++      - name: "Show diff"
++        run: "git diff resource/schema.json"
++
+       - name: "Commit updated schema"
+         uses: "stefanzweifel/git-auto-commit-action@v2.5.0"
+         with:

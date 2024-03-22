@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index dab5c51..da0b4fd 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -18,7 +18,7 @@ jobs:
+         run: |
+           python -m pip install --upgrade pip
+           pip install pyinstaller
+-          if [ -f src/requirements.txt ]; then pip install -r src/requirements.txt; fi
++          pip install -r src/requirements.txt
+       - name: Build Video2X CLI
+         run: |
+           pyinstaller --noconfirm --log-level=WARN \

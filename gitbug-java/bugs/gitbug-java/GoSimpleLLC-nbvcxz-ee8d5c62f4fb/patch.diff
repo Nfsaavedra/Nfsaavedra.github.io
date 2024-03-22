@@ -1,0 +1,124 @@
+diff --git a/src/main/java/me/gosimple/nbvcxz/matching/DictionaryMatcher.java b/src/main/java/me/gosimple/nbvcxz/matching/DictionaryMatcher.java
+index fab3689..17daaaa 100644
+--- a/src/main/java/me/gosimple/nbvcxz/matching/DictionaryMatcher.java
++++ b/src/main/java/me/gosimple/nbvcxz/matching/DictionaryMatcher.java
+@@ -298,27 +298,29 @@ public final class DictionaryMatcher implements PasswordMatcher
+                     }
+ 
+                     // Only do unleet if it's different than the regular lower.
+-                    final List<String> unleet_list = translateLeet(configuration, lower_part);
+-                    for (final String unleet_part : unleet_list)
++                    if (dictionary.getMaxLength() > split_password.length())
+                     {
+-                        final Integer unleet_rank = dictionary.getDictonary().get(unleet_part);
+-                        if (unleet_rank != null)
++                        final List<String> unleet_list = translateLeet(configuration, lower_part);
++                        for (final String unleet_part : unleet_list)
+                         {
+-                            final List<Character[]> subs = getLeetSub(lower_part, unleet_part);
+-                            matches.add(new DictionaryMatch(split_password, configuration, start, end - 1, unleet_part, unleet_rank, subs, dictionary.isExclusion(), false, dictionary.getDictionaryName(), 0));
+-                            continue;
+-                        }
+-
+-                        // Only do reversed if it's different than unleet.
+-                        final String reversed_unleet_part = new StringBuilder(unleet_part).reverse().toString();
+-                        {
+-                            final Integer reversed_unleet_rank = dictionary.getDictonary().get(reversed_unleet_part);
+-                            if (reversed_unleet_rank != null)
++                            final Integer unleet_rank = dictionary.getDictonary().get(unleet_part);
++                            if (unleet_rank != null)
+                             {
+-                                final List<Character[]> subs = getLeetSub(reversed_part, reversed_unleet_part);
+-                                matches.add(new DictionaryMatch(split_password, configuration, start, end - 1, reversed_unleet_part, reversed_unleet_rank, subs, dictionary.isExclusion(), true, dictionary.getDictionaryName(), 0));
++                                final List<Character[]> subs = getLeetSub(lower_part, unleet_part);
++                                matches.add(new DictionaryMatch(split_password, configuration, start, end - 1, unleet_part, unleet_rank, subs, dictionary.isExclusion(), false, dictionary.getDictionaryName(), 0));
+                                 continue;
+                             }
++
++                            // Only do reversed if it's different than unleet.
++                            final String reversed_unleet_part = new StringBuilder(unleet_part).reverse().toString();
++                            {
++                                final Integer reversed_unleet_rank = dictionary.getDictonary().get(reversed_unleet_part);
++                                if (reversed_unleet_rank != null)
++                                {
++                                    final List<Character[]> subs = getLeetSub(reversed_part, reversed_unleet_part);
++                                    matches.add(new DictionaryMatch(split_password, configuration, start, end - 1, reversed_unleet_part, reversed_unleet_rank, subs, dictionary.isExclusion(), true, dictionary.getDictionaryName(), 0));
++                                }
++                            }
+                         }
+                     }
+ 
+diff --git a/src/main/java/me/gosimple/nbvcxz/resources/ConfigurationBuilder.java b/src/main/java/me/gosimple/nbvcxz/resources/ConfigurationBuilder.java
+index 4fd9616..c76eea0 100644
+--- a/src/main/java/me/gosimple/nbvcxz/resources/ConfigurationBuilder.java
++++ b/src/main/java/me/gosimple/nbvcxz/resources/ConfigurationBuilder.java
+@@ -204,11 +204,12 @@ public class ConfigurationBuilder
+     }
+ 
+     /**
+-     * @return The default value for max length is 72.
++     * @return The default value for max length is 256.
++     * This should match the exact length your algorithm is limited to (72 for most bcrypt implementations).
+      */
+     public static int getDefaultMaxLength()
+     {
+-        return 72;
++        return 256;
+     }
+ 
+     /**
+@@ -349,6 +350,10 @@ public class ConfigurationBuilder
+      * Information will be available in the Result if the password was longer
+      * than maxLength.
+      *
++     * This should match the exact length your algorithm is limited to (72 for most bcrypt implementations).
++     * If you arbitrarily limit the input for passwords, ensure the passed in value is either already truncated to
++     * the correct length, or this value is set to the same length you will truncate to.
++     *
+      * @param maxLength Value for maxLength (should be a positive value)
+      * @return Builder
+      */
+diff --git a/src/main/java/me/gosimple/nbvcxz/resources/Dictionary.java b/src/main/java/me/gosimple/nbvcxz/resources/Dictionary.java
+index c84b6bf..2e44f04 100644
+--- a/src/main/java/me/gosimple/nbvcxz/resources/Dictionary.java
++++ b/src/main/java/me/gosimple/nbvcxz/resources/Dictionary.java
+@@ -17,6 +17,7 @@ public class Dictionary
+     private final ArrayList<String> sorted_dictionary;
+     private final Map<Integer, Integer> sorted_dictionary_length_lookup;
+     private final boolean exclusion;
++    private final int max_length;
+ 
+ 
+     /**
+@@ -57,7 +58,7 @@ public class Dictionary
+                 sorted_dictionary_length_lookup.put(key.length(), i);
+             }
+         }
+-
++        int i_max_length = 0;
+         for (int i = 0; i < sorted_dictionary_length_lookup.size(); i++)
+         {
+             if (!sorted_dictionary_length_lookup.containsKey(i))
+@@ -69,7 +70,9 @@ public class Dictionary
+                 }
+                 sorted_dictionary_length_lookup.put(i, sorted_dictionary_length_lookup.get(next_key));
+             }
++            i_max_length = i;
+         }
++        max_length = i_max_length;
+     }
+ 
+     /**
+@@ -123,4 +126,12 @@ public class Dictionary
+     {
+         return this.dictionary_name;
+     }
++
++    /**
++     * The longest length of an entry we should check with this dictionary
++     * @return the longest value this dictionary contains
++     */
++    public int getMaxLength() {
++        return max_length;
++    }
+ }

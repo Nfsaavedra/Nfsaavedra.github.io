@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 25bfdbf..359969b 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -57,7 +57,6 @@ jobs:
+         uses: actions-rs/cargo@v1
+         with:
+           command: test
+-          args: "-- --test-threads 1"
+ 
+       - name: "Example: `basic`"
+         working-directory: examples/basic

@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/test.yaml b/.github/workflows/test.yaml
+index ee1ca07..4d500bb 100644
+--- a/.github/workflows/test.yaml
++++ b/.github/workflows/test.yaml
+@@ -14,6 +14,11 @@ jobs:
+         go-version: ${{ matrix.go-version }}
+     - name: Checkout code
+       uses: actions/checkout@v2
++    - name: Build GOARCH=386
++      if: ${{ matrix.os != 'macos-latest' }}
++      env:
++        GOARCH: "386"
++      run: go build
+     - name: Test
+       run: go test ./... -race -coverprofile=coverage.txt -covermode=atomic
+     - name: Upload coverage to Codecov

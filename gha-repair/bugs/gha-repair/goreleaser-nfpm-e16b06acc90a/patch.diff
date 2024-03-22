@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 03cf123..cfe4541 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -77,8 +77,10 @@ jobs:
+         env:
+           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
++          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+         run: |
+           echo "${DOCKER_PASSWORD}" | docker login --username "${DOCKER_USERNAME}" --password-stdin
++          echo "${GITHUB_TOKEN}" | docker login ghcr.io --username $GITHUB_ACTOR --password-stdin
+       -
+         name: Run GoReleaser
+         uses: goreleaser/goreleaser-action@v2

@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/binaries.yml b/.github/workflows/binaries.yml
+index d4fd00d..2c317e1 100644
+--- a/.github/workflows/binaries.yml
++++ b/.github/workflows/binaries.yml
+@@ -14,9 +14,6 @@ jobs:
+         uses: docker/bake-action@v2
+         with:
+           targets: binaries
+-          set: |
+-            *.cache-from=type=gha,scope=binaries
+-            *.cache-to=type=gha,scope=binaries
+       - name: Rename binaries
+         run: |
+           mkdir bin

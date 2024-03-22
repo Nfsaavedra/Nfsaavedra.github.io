@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/maven-package.yml b/.github/workflows/maven-package.yml
+index 0e68da1..86c2781 100644
+--- a/.github/workflows/maven-package.yml
++++ b/.github/workflows/maven-package.yml
+@@ -18,6 +18,6 @@ jobs:
+       uses: actions/setup-java@v2
+       with:
+         java-version: '11'
+-        distribution: 'adopt'
++        distribution: 'temurin'
+     - name: Build with Maven
+       run: mvn -B package --file pom.xml

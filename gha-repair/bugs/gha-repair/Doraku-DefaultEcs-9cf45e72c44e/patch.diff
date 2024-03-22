@@ -1,0 +1,21 @@
+diff --git a/.github/workflows/ContinuousIntegration.yml b/.github/workflows/ContinuousIntegration.yml
+index c2ff8be..0ef2964 100644
+--- a/.github/workflows/ContinuousIntegration.yml
++++ b/.github/workflows/ContinuousIntegration.yml
+@@ -5,8 +5,14 @@ on:
+     branches:    
+       - master
+     paths:
+-      - 'source/DefaultEcs/**'
+-      - 'source/DefaultEcs.Test/**'
++      - 'source/DefaultEcs/*'
++      - 'source/DefaultEcs/*/*'
++      - 'source/DefaultEcs/*/*/*'
++      - 'source/DefaultEcs/*/*/*/*'
++      - 'source/DefaultEcs.Test/*'
++      - 'source/DefaultEcs.Test/*/*'
++      - 'source/DefaultEcs.Test/*/*/*'
++      - 'source/DefaultEcs.Test/*/*/*/*'
+ 
+ jobs:
+   continuous_integration:

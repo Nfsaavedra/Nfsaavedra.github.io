@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 3d2c348..c9c4e5b 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -91,7 +91,7 @@ jobs:
+ 
+             - name: Install Composer dependencies (ignore-platform-req)
+               if: matrix.php == '8.0'
+-              run: composer install --no-ansi --no-interaction --ignore-platform-req=php
++              run: composer install --no-ansi --no-interaction --ignore-platform-reqs
+ 
+             - name: Run tests
+               run: ./vendor/bin/phpunit

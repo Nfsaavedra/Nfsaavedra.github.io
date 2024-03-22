@@ -1,0 +1,50 @@
+diff --git a/.github/workflows/linux.yml b/.github/workflows/linux.yml
+index bed719c..d2d639a 100644
+--- a/.github/workflows/linux.yml
++++ b/.github/workflows/linux.yml
+@@ -18,28 +18,25 @@ jobs:
+       matrix:
+         build_type: [ Debug, Release ]
+         compiler:
+-          - {
+-            cc: clang-10, cxx: clang++-10,
+-            package: clang-10,
+-            subpackage: lld-10,
+-          }
+-          - {
+-            cc: clang-11, cxx: clang++-11,
+-            package: clang-11,
+-            subpackage: lld-11,
+-          }
+-          - {
+-            cc: gcc-10, cxx: g++-10,
+-            package: g++-10,
+-            subpackage: binutils,
+-          }
++          - cc: clang-10
++            cxx: clang++-10
++            package: clang-10
++            subpackage: lld-10
++          - cc: clang-11
++            cxx: clang++-11
++            package: clang-11
++            subpackage: lld-11
++          - cc: gcc-10
++            cxx: g++-10
++            package: g++-10
++            subpackage: binutils
+         include:
+           - build_type: Coverage
+-            compiler: {
+-              cc: gcc-10, cxx: g++-10,
+-              package: g++-10,
+-              subpackage: binutils,
+-            }
++            compiler:
++              cc: gcc-10
++              cxx: g++-10
++              package: g++-10
++              subpackage: binutils
+     env:
+       CC: ${{ matrix.compiler.cc }}
+       CXX: ${{ matrix.compiler.cxx }}

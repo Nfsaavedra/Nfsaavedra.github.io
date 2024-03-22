@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/autoMerge.yml b/.github/workflows/autoMerge.yml
+index 00ce763..3f3b186 100644
+--- a/.github/workflows/autoMerge.yml
++++ b/.github/workflows/autoMerge.yml
+@@ -1,7 +1,7 @@
+ name: Auto Merge PR
+ on:
+   pull_request_target:
+-    types: [opened, synchronize, reopened]
++    types: [opened, synchronize, reopened, auto_merge_disabled]
+ 
+ jobs:
+   build:

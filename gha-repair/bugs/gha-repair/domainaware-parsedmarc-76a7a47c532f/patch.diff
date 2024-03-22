@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/python-tests.yml b/.github/workflows/python-tests.yml
+index ef2c901..76c93fa 100644
+--- a/.github/workflows/python-tests.yml
++++ b/.github/workflows/python-tests.yml
+@@ -23,7 +23,7 @@ jobs:
+         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+     - name: Run tests
+       run: |
+-        tests.py
++        python3 tests.py
+     - name: Build docs
+       run: |
+         cd docs

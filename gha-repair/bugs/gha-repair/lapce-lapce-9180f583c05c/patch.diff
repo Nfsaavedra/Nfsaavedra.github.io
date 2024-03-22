@@ -1,0 +1,126 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index c6b2617..33aa6bd 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -9,6 +9,47 @@ env:
+   CARGO_TERM_COLOR: always
+ 
+ jobs:
++  windows:
++    runs-on: windows-latest
++
++    defaults:
++      run:
++        shell: bash
++
++    steps:
++      - uses: actions/checkout@v2
++      - name: Build
++        run: cargo build --release
++      - name: Rename
++        run: |
++          cp ./target/release/lapce.exe ./Lapce.exe
++      - name: Upload portable executable
++        uses: svenstaro/upload-release-action@v2
++        with:
++          repo_token: ${{ secrets.GITHUB_TOKEN }}
++          file: ./target/release/Lapce.exe
++          file_glob: true
++          tag: ${{ github.ref }}
++          overwrite: true
++          
++      - name: Install WiX
++        run: nuget install WiX
++      - name: Crate msi installer
++        run: |
++          ./WiX.*/tools/candle.exe -nologo -arch "x64" -ext WixUIExtension -ext WixUtilExtension \
++            -out "./lapce.wixobj" "extra/windows/wix/lapce.wxs"
++          ./WiX.*/tools/light.exe -nologo -ext WixUIExtension -ext WixUtilExtension \
++            -out "./Lapce-installer.msi" -sice:ICE61 -sice:ICE91 \
++            "./lapce.wixobj"
++      - name: Upload msi installer
++        uses: svenstaro/upload-release-action@v2
++        with:
++          repo_token: ${{ secrets.GITHUB_TOKEN }}
++          file: ./Lapce-installer.msi
++          file_glob: true
++          tag: ${{ github.ref }}
++          overwrite: true
++
+   macos:
+     runs-on: macos-11
+ 
+diff --git a/extra/windows/lapce.ico b/extra/windows/lapce.ico
+new file mode 100644
+index 0000000..6c4bb0b
+Binary files /dev/null and b/extra/windows/lapce.ico differ
+diff --git a/extra/windows/wix/lapce.wxs b/extra/windows/wix/lapce.wxs
+new file mode 100644
+index 0000000..2056bef
+--- /dev/null
++++ b/extra/windows/wix/lapce.wxs
+@@ -0,0 +1,63 @@
++<?xml version="1.0" encoding="windows-1252"?>
++<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
++    <Product Name="Lapce" Id="*" UpgradeCode="87c21c74-dbd5-4584-89d5-46d9cd0c40a7" Language="1033" Codepage="1252" Version="0.0.1" Manufacturer="Lapce">
++        <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine"/>
++        <MajorUpgrade AllowSameVersionUpgrades="yes" DowngradeErrorMessage="A newer version of [ProductName] is already installed."/>
++        <Icon Id="LapceIco" SourceFile=".\extra\windows\lapce.ico"/>
++        <Property Id="ARPPRODUCTICON" Value="LapceIco"/>
++        <MediaTemplate EmbedCab="yes"/>
++        <UIRef Id="WixUI_Minimal"/>
++
++        <Feature Id="ProductFeature" Title="ConsoleApp" Level="1">
++            <ComponentRef Id="LapceExe"/>
++            <ComponentRef Id="LapceShortcut"/>
++            <ComponentRef Id="ModifyPathEnv"/>
++            <ComponentRef Id="ContextMenu"/>
++        </Feature>
++
++        <!-- Create directories -->
++        <Directory Id="TARGETDIR" Name="SourceDir">
++            <Directory Id="ProgramFiles64Folder">
++                <Directory Id="LapceProgramFiles" Name="Lapce"/>
++            </Directory>
++            <Directory Id="ProgramMenuFolder">
++                <Directory Id="LapceProgramMenu" Name="Lapce"/>
++            </Directory>
++        </Directory>
++
++        <!-- Application binaries -->
++        <DirectoryRef Id="LapceProgramFiles">
++            <Component Id="LapceExe" Guid="*">
++                <File Id="LapceExeFile" Source=".\target\release\lapce.exe" Name="lapce.exe" KeyPath="yes"/>
++            </Component>
++        </DirectoryRef>
++
++        <DirectoryRef Id="LapceProgramMenu">
++            <!-- Application shortcut -->
++            <Component Id="LapceShortcut" Guid="aa36e61a-23cd-4383-b744-2f78e912f0dc">
++                <Shortcut Id="LapceShortcutFile" Name="Lapce" Description="Lightning-fast and Powerful Code Editor" Target="[LapceProgramFiles]lapce.exe"/>
++                <RemoveFolder Id="LapceProgramMenu" On="uninstall"/>
++                <RegistryValue Root="HKCU" Key="Software\Microsoft\Lapce" Name="installed" Type="integer" Value="1" KeyPath="yes"/>
++            </Component>
++        </DirectoryRef>
++
++        <DirectoryRef Id="LapceProgramFiles">
++            <!-- Add to PATH -->
++            <Component Id="ModifyPathEnv" Guid="edf0b679-9eb6-46f7-a5d1-5160f30acb34" KeyPath="yes">
++                <Environment Id="PathEnv" Value="[LapceProgramFiles]" Name="PATH" Permanent="no" Part="first" Action="set" System="yes"/>
++            </Component>
++        </DirectoryRef>
++
++        <DirectoryRef Id="TARGETDIR">
++            <!-- Add context menu -->
++            <Component Id="ContextMenu" Guid="449f9121-f7b9-41fe-82da-52349ea8ff91">
++                <RegistryKey Root="HKCU" Key="Software\Classes\Directory\Background\shell\Open Lapce here\command">
++                    <RegistryValue Type="string" Value="[LapceProgramFiles]lapce.exe --working-directory &quot;%V&quot;" KeyPath="yes"/>
++                </RegistryKey>
++                <RegistryKey Root="HKCU" Key="Software\Classes\Directory\Background\shell\Open Lapce here">
++                    <RegistryValue Type="string" Name="Icon" Value="[LapceProgramFiles]lapce.exe"/>
++                </RegistryKey>
++            </Component>
++        </DirectoryRef>
++    </Product>
++</Wix>
+\ No newline at end of file

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/build.yaml b/.github/workflows/build.yaml
+index 6960c15..b77413a 100644
+--- a/.github/workflows/build.yaml
++++ b/.github/workflows/build.yaml
+@@ -26,7 +26,6 @@ jobs:
+           TZ: "Asia/Shanghai"
+ 
+       - run: yarn
+-        if: steps.cache-primes.outputs.cache-hit != 'true'
+ 
+       - run: yarn build
+ 

@@ -1,0 +1,145 @@
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build] 🚀  Start image=gitbugactions:latest
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   🐳  docker pull image=gitbugactions:latest platform= username= forcePull=false
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   🐳  docker create image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   🐳  docker run image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/16248287-a9ee-4fb9-b7ca-71d95c1ca86c] user=0 workdir=
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build] ⭐ Run Main actions/checkout@v3
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   🐳  docker cp src=/tmp/16248287-a9ee-4fb9-b7ca-71d95c1ca86c/. dst=/tmp/16248287-a9ee-4fb9-b7ca-71d95c1ca86c
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/16248287-a9ee-4fb9-b7ca-71d95c1ca86c] user=0 workdir=
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   ✅  Success - Main actions/checkout@v3
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build] ⭐ Run Main actions/setup-java@v3
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   🐳  docker cp src=/tmp/act-cache/345ba2d3-ce1d-409b-9611-0e8edd489a56/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   ❓  ::group::Installed distributions
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   💬  ::debug::isExplicit: 11.0.20-1
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   💬  ::debug::explicit? true
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   💬  ::debug::isExplicit: 17.0.8-1
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   💬  ::debug::explicit? true
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   💬  ::debug::isExplicit: 21.0.0-35
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   💬  ::debug::explicit? true
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   💬  ::debug::isExplicit: 8.0.382-5
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   💬  ::debug::explicit? true
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | Resolved Java 8.0.382+5 from tool-cache
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | Setting Java 8.0.382+5 as the default
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | Creating toolchains.xml for JDK version 8 from temurin
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | Writing to /home/runner/.m2/toolchains.xml
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | 
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | Java configuration:
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   |   Distribution: temurin
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   |   Version: 8.0.382+5
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   |   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.382-5/x64
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | 
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   ❓  ::endgroup::
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   ❓ add-matcher /run/act/actions/actions-setup-java@v3/.github/java.json
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | Creating settings.xml with server-id: github
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | Writing to /home/runner/.m2/settings.xml
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   ✅  Success - Main actions/setup-java@v3
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   ⚙  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.382-5/x64
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   ⚙  ::set-env:: JAVA_HOME_8_X64=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.382-5/x64
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   ⚙  ::set-output:: distribution=Temurin-Hotspot
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   ⚙  ::set-output:: path=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.382-5/x64
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   ⚙  ::set-output:: version=8.0.382+5
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   ⚙  ::add-path:: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.382-5/x64/bin
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build] ⭐ Run Main Setup Gradle
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   🐳  docker cp src=/tmp/act-cache/345ba2d3-ce1d-409b-9611-0e8edd489a56/act/gradle-gradle-build-action@v2/ dst=/var/run/act/actions/gradle-gradle-build-action@v2/
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/gradle-gradle-build-action@v2/] user=0 workdir=
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   🐳  docker exec cmd=[node /var/run/act/actions/gradle-gradle-build-action@v2/dist/main/index.js] user= workdir=
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   💬  ::debug::Determined user.home from java -version output: '/home/runner'
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | Cache is disabled: will not restore state from previous builds.
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   ✅  Success - Main Setup Gradle
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   ⚙  ::set-env:: GRADLE_BUILD_ACTION_SETUP_COMPLETED=true
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   ⚙  ::set-env:: GRADLE_BUILD_ACTION_CACHE_RESTORED=true
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build] ⭐ Run Main Execute Gradle build
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | Downloading https://services.gradle.org/distributions/gradle-6.2.2-bin.zip
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | .............................................................................................
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | Unzipping /home/runner/.gradle/wrapper/dists/gradle-6.2.2-bin/byfcpklxknejjsdmgq0rkga/gradle-6.2.2-bin.zip to /home/runner/.gradle/wrapper/dists/gradle-6.2.2-bin/byfcpklxknejjsdmgq0rkga
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | Set executable permissions for: /home/runner/.gradle/wrapper/dists/gradle-6.2.2-bin/byfcpklxknejjsdmgq0rkga/gradle-6.2.2/bin/gradle
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | 
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | Welcome to Gradle 6.2.2!
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | 
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | Here are the highlights of this release:
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   |  - Dependency checksum and signature verification
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   |  - Shareable read-only dependency cache
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   |  - Documentation links in deprecation messages
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | 
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | For more details see https://docs.gradle.org/6.2.2/release-notes.html
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | 
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | Starting a Gradle Daemon (subsequent builds will be faster)
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | 
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | > Task :compileJava
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | Note: Some input files use unchecked or unsafe operations.
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | Note: Recompile with -Xlint:unchecked for details.
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | 
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | > Task :processResources NO-SOURCE
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | > Task :classes
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | > Task :jar
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | > Task :assemble
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | 
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | > Task :compileTestJava
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | Note: Some input files use or override a deprecated API.
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | Note: Recompile with -Xlint:deprecation for details.
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | Note: Some input files use unchecked or unsafe operations.
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | Note: Recompile with -Xlint:unchecked for details.
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | 
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | > Task :processTestResources
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | > Task :testClasses
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | 
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | > Task :test
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | 
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | BundlesApiTest > downloadBundleTest() FAILED
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   |     org.opentest4j.AssertionFailedError at BundlesApiTest.java:126
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | 
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | GlossariesApiTest > getConceptTest() FAILED
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   |     org.opentest4j.AssertionFailedError at GlossariesApiTest.java:96
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | 
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | GlossariesApiTest > listTermsTest() FAILED
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   |     org.opentest4j.AssertionFailedError at GlossariesApiTest.java:212
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | 
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | ReportsApiTest > generateReportTest() FAILED
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   |     org.opentest4j.AssertionFailedError at ReportsApiTest.java:71
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | 
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | ScreenshotsApiTest > updateScreenshotTest() FAILED
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   |     org.opentest4j.AssertionFailedError at ScreenshotsApiTest.java:91
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | 
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | SourceFilesApiTest > getDirectoryTest() FAILED
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   |     org.opentest4j.AssertionFailedError at SourceFilesApiTest.java:141
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | 
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | TasksApiTest > getTaskTest() FAILED
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   |     org.opentest4j.AssertionFailedError at TasksApiTest.java:104
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | 
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | 221 tests completed, 7 failed
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | 
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | > Task :test FAILED
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | Got buildFinished: org.gradle.BuildResult@2280b0ff
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | 
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | Use '--warning-mode all' to show the individual deprecation warnings.
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | See https://docs.gradle.org/6.2.2/userguide/command_line_interface.html#sec:command_line_warnings
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | 5 actionable tasks: 5 executed
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | 
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | FAILURE: Build failed with an exception.
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | 
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | * What went wrong:
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | Execution failed for task ':test'.
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | > There were failing tests. See the report at: file:///tmp/16248287-a9ee-4fb9-b7ca-71d95c1ca86c/build/reports/tests/test/index.html
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | 
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | * Try:
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | 
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | * Get more help at https://help.gradle.org
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | 
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | BUILD FAILED in 1m 8s
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   ❌  Failure - Main Execute Gradle build
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build] exitcode '1': failure
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build] ⭐ Run Post Setup Gradle
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   🐳  docker exec cmd=[node /var/run/act/actions/gradle-gradle-build-action@v2/dist/post/index.js] user= workdir=
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | In final post-action step, saving state and writing summary
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | Cache is disabled: will not save state for later builds.
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   | Writing job summary
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   ✅  Success - Post Setup Gradle
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build] ⭐ Run Post actions/setup-java@v3
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build]   ✅  Success - Post actions/setup-java@v3
+[0abb67ec-39cb-47c8-a417-86614f64b1ba/build] 🏁  Job failed

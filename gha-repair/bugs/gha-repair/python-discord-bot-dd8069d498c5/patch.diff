@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index a512f28..42b6295 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -13,6 +13,10 @@ concurrency:
+ 
+ 
+ jobs:
++
++  fixup-commit-blocker:
++    uses: python-discord/.github/.github/workflows/block-fixup-commits.yaml@main
++
+   lint-test:
+     uses: ./.github/workflows/lint-test.yml
+ 

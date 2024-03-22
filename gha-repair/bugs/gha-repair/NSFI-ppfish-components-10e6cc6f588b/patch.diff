@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/doc-site.yml b/.github/workflows/doc-site.yml
+index 4395b72..2aeb281 100644
+--- a/.github/workflows/doc-site.yml
++++ b/.github/workflows/doc-site.yml
+@@ -6,6 +6,7 @@ name: Doc Site
+ on:
+   push:
+     branches: [ master ]
++  workflow_dispatch:
+ 
+ jobs:
+   build-and-deploy-site:

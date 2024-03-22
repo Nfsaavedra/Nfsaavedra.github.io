@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/jsoup/nodes/Element.java b/src/main/java/org/jsoup/nodes/Element.java
+index 8b27637..05ee2e7 100644
+--- a/src/main/java/org/jsoup/nodes/Element.java
++++ b/src/main/java/org/jsoup/nodes/Element.java
+@@ -1844,7 +1844,7 @@ public class Element extends Node {
+     }
+ 
+     private boolean isFormatAsBlock(Document.OutputSettings out) {
+-        return tag.formatAsBlock() || (parent() != null && parent().tag().formatAsBlock()) || out.outline();
++        return tag.isBlock() || (parent() != null && parent().tag().formatAsBlock()) || out.outline();
+     }
+ 
+     private boolean isInlineable(Document.OutputSettings out) {

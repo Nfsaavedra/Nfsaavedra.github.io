@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/win64_release.yml b/.github/workflows/win64_release.yml
+index 7705e39..99e6bec 100644
+--- a/.github/workflows/win64_release.yml
++++ b/.github/workflows/win64_release.yml
+@@ -140,8 +140,8 @@ jobs:
+                 pythonPath=${pythonPath//\\/\/}
+                 pythonPath=${pythonPath/c:/\/c}
+                 ver=${{ env.PYTHON_VERSION }}
+-                7z a -r output/SQLiteStudio/python${ver//./).zip $pythonPath/lib/encodings
+-                7z a output/SQLiteStudio/python${ver//./).zip \
++                7z a -r output/SQLiteStudio/python${ver//./}.zip $pythonPath/lib/encodings
++                7z a output/SQLiteStudio/python${ver//./}.zip \
+                     $pythonPath/lib/_collections_abc.py \
+                     $pythonPath/lib/_sitebuiltins.py \
+                     $pythonPath/lib/abc.py \

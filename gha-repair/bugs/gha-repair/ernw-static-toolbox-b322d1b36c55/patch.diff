@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/build-socat.yml b/.github/workflows/build-socat.yml
+index 882a1a2..bee15b4 100644
+--- a/.github/workflows/build-socat.yml
++++ b/.github/workflows/build-socat.yml
+@@ -1,8 +1,6 @@
+ name: socat
+ on:
+-  push:
+-    branches:
+-      - socat-ppc
++  workflow_dispatch
+ jobs:
+     build-x86:
+       name: Build socat x86

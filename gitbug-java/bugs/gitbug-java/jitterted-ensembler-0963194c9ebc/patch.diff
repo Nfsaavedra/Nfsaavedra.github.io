@@ -1,0 +1,13 @@
+diff --git a/src/main/java/com/jitterted/mobreg/adapter/in/web/member/EnsembleSummaryView.java b/src/main/java/com/jitterted/mobreg/adapter/in/web/member/EnsembleSummaryView.java
+index a733adb..f2285ea 100644
+--- a/src/main/java/com/jitterted/mobreg/adapter/in/web/member/EnsembleSummaryView.java
++++ b/src/main/java/com/jitterted/mobreg/adapter/in/web/member/EnsembleSummaryView.java
+@@ -129,7 +129,7 @@ record ParticipantAction(String actionUrl, String buttonText, boolean disabled) 
+                     false); // can always leave
+             case SPECTATOR -> new ParticipantAction(
+                     "/member/accept",
+-                    "Switch to Participant &#x1f44b;",
++                    "Switch to Participant &#x2328;",
+                     disabled);
+         };
+     }

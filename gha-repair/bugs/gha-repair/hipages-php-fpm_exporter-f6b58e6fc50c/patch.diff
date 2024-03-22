@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index a9bbd84..450b7f0 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -8,7 +8,7 @@ jobs:
+     steps:
+ 
+     - name: Setup Node.js for use with actions
+-      uses: actions/setup-node@v2.1.5
++      uses: actions/setup-node@v2.3.0
+ 
+     - name: Checkout
+       uses: actions/checkout@v2.3.4

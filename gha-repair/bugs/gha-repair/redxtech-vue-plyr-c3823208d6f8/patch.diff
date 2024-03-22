@@ -1,0 +1,31 @@
+diff --git a/.github/workflows/npm.yml b/.github/workflows/npm.yml
+index 5cdcc14..3678040 100644
+--- a/.github/workflows/npm.yml
++++ b/.github/workflows/npm.yml
+@@ -15,10 +15,8 @@ jobs:
+         run: yarn install
+       - name: Lint code
+         run: yarn lint
+-      - name: Test and build package
+-        run: |
+-          - yarn test
+-          - yarn build
++      - name: Build package
++        run: yarn build
+       - name: Publish to NPM
+         run: yarn publish
+         env:
+diff --git a/jest.config.js b/jest.config.js
+deleted file mode 100644
+index d273206..0000000
+--- a/jest.config.js
++++ /dev/null
+@@ -1,8 +0,0 @@
+-module.exports = {
+-	moduleFileExtensions: ['js', 'json', 'vue'],
+-	testEnvironment: 'jest-environment-jsdom',
+-	transform: {
+-		'.*\\.(vue)$': '<rootDir>/node_modules/vue-jest',
+-		'^.+\\.js$': '<rootDir>/node_modules/babel-jest'
+-	}
+-}

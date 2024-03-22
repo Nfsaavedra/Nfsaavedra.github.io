@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 093dc03..4a17217 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -366,10 +366,6 @@ jobs:
+     runs-on: ubuntu-latest
+     steps:
+     - uses: actions/checkout@v2
+-    - name: Setup Swift
+-      uses: fwal/setup-swift@v1
+-      with:
+-        swift-version: "5.4"
+     - name: Set up Ruby
+       uses: ruby/setup-ruby@v1
+       with:

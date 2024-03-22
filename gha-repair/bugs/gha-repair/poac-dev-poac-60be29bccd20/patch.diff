@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/macos.yml b/.github/workflows/macos.yml
+index 5508297..0ac2c1d 100644
+--- a/.github/workflows/macos.yml
++++ b/.github/workflows/macos.yml
+@@ -12,7 +12,7 @@ jobs:
+     strategy:
+       fail-fast: false
+       matrix:
+-        os: [ macos-10.15, macos-11 ]
++        os: [ macos-11 ]
+         build_type: [ Debug, Release ]
+     env:
+       CACHE_KEY_PREFIX: ${{ matrix.os }}-${{ matrix.build_type }}

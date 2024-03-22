@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 33b5bc4..70ab157 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -42,4 +42,4 @@ jobs:
+         env:
+           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
+-        run: mvn --batch-mode -Dgpg.passphrase=${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }} clean deploy
+\ No newline at end of file
++        run: mvn --batch-mode -Dgpg.passphrase=${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }} clean deploy -Dmaven.test.skip=false -Dmaven.javadoc.skip=false -Dgpg.skip=false
+\ No newline at end of file

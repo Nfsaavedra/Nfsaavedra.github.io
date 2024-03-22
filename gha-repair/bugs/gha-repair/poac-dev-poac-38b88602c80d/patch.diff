@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/linux.yml b/.github/workflows/linux.yml
+index 83abf1f..c1fb54b 100644
+--- a/.github/workflows/linux.yml
++++ b/.github/workflows/linux.yml
+@@ -42,7 +42,7 @@ jobs:
+           mkdir build
+           cd build
+           cmake -DCMAKE_BUILD_TYPE=Release -Dtoml11_BUILD_TEST=OFF ..
+-          make install
++          sudo make install
+           cd ../../
+           rm -rf toml11
+       - name: Build Poac

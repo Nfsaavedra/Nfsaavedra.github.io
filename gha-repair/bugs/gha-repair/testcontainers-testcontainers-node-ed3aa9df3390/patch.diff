@@ -1,0 +1,22 @@
+diff --git a/.github/workflows/npm-publish.yml b/.github/workflows/npm-publish.yml
+index ffc93e5..d9cf1eb 100644
+--- a/.github/workflows/npm-publish.yml
++++ b/.github/workflows/npm-publish.yml
+@@ -16,7 +16,7 @@ jobs:
+           ref: main
+       - uses: actions/setup-node@v3
+         with:
+-          node-version: 12
++          node-version: 18
+       - run: |
+           git config user.name github-actions
+           git config user.email github-actions@github.com
+@@ -35,7 +35,7 @@ jobs:
+           ref: main
+       - uses: actions/setup-node@v3
+         with:
+-          node-version: 12
++          node-version: 18
+           registry-url: https://registry.npmjs.org/
+       - run: npm ci --no-optional
+       - run: npm publish

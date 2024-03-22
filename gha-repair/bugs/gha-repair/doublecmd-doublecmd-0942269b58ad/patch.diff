@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/snapshots.yml b/.github/workflows/snapshots.yml
+index 7b34c58..b231210 100644
+--- a/.github/workflows/snapshots.yml
++++ b/.github/workflows/snapshots.yml
+@@ -1,6 +1,7 @@
+ name: build-snapshot
+ 
+ on:
++  workflow_dispatch:
+   push:
+     paths:
+     - 'components/**'

@@ -1,0 +1,48 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index d3b911e..53f2818 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -15,7 +15,10 @@ jobs:
+       - name: checkout code
+         uses: actions/checkout@v2
+       - name: setup node
+-        uses: actions/setup-node@v1
++        uses: actions/setup-node@v2
++        with:
++          node-version: '12'
++          cache: 'npm'
+       - name: install dependencies
+         run: |
+           npm install
+diff --git a/.vscode/tasks.json b/.vscode/tasks.json
+new file mode 100644
+index 0000000..6db05be
+--- /dev/null
++++ b/.vscode/tasks.json
+@@ -0,0 +1,25 @@
++{
++	"version": "2.0.0",
++	"tasks": [
++		{
++			"type": "npm",
++			"script": "start",
++			"problemMatcher": [],
++			"label": "Dev: start frontend",
++			"detail": "ng serve"
++		},
++		{
++			"label": "Dev: start backend",
++			"type": "shell",
++			"command": "set YTDL_MODE=debug && node app.js",
++			"options": {
++				"cwd": "./backend"
++			},
++			"presentation": {
++				"reveal": "always",
++				"panel": "new"
++			},
++			"problemMatcher": []
++		}
++	]
++}
+\ No newline at end of file

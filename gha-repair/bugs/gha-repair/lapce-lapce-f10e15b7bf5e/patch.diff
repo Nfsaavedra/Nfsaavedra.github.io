@@ -1,0 +1,36 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 16029bf..4e2611d 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -32,6 +32,7 @@ jobs:
+           profile: minimal
+           toolchain: ${{ matrix.toolchain }}
+           override: true
++          components: llvm-tools-preview
+ 
+       - name: Cache Rust dependencies
+         uses: Swatinem/rust-cache@v1
+@@ -41,11 +42,19 @@ jobs:
+         with:
+           command: build
+ 
+-      - name: Run tests
+-        uses: actions-rs/cargo@v1
++      - name: Install cargo-llvm-cov
++        uses: taiki-e/install-action@cargo-llvm-cov
++
++      - uses: actions-rs/cargo@v1
++        name: Run tests and coverage
++        with:
++          command: llvm-cov
++          args: --all-features --workspace --lcov --output-path lcov.info
++
++      - name: Upload coverage
++        uses: codecov/codecov-action@v2
+         with:
+-          command: test
+-          args: --workspace
++          files: lcov.info
+ 
+   fmt:
+     name: Rustfmt

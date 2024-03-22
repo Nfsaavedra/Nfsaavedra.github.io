@@ -1,0 +1,27 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 9b69a7f..51765b2 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -29,7 +29,7 @@ jobs:
+     strategy:
+       fail-fast: false
+       matrix:
+-        python-version: ["3.7", "3.8", "3.9", "3.10", "3.11"]
++        python-version: ["3.7", "3.8", "3.9", "3.10"]
+     steps:
+       - uses: actions/checkout@v3
+       - uses: actions/setup-python@v4
+diff --git a/.markdownlint.yaml b/.markdownlint.yaml
+new file mode 100644
+index 0000000..808d2a6
+--- /dev/null
++++ b/.markdownlint.yaml
+@@ -0,0 +1,8 @@
++# https://github.com/DavidAnson/markdownlint/blob/main/schema/.markdownlint.yaml
++default: true   # enable all by default
++MD007:          # unordered list indentation
++  indent: 2
++MD013: false    # do not validate line length
++MD014: false    # allow $ before command output
++MD029:          # ordered list prefix
++  style: "one"

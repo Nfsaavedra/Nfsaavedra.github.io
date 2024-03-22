@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index df177bd..9701c68 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -14,7 +14,7 @@
+ #    limitations under the License.
+ #
+ 
+-name: Publish package to the Maven Central Repository
++name: Publish to Maven
+ 
+ on:
+   push:

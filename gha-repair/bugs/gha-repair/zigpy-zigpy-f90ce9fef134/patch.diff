@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 23a2add..2393380 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -355,7 +355,7 @@ jobs:
+           . venv/bin/activate
+           pytest \
+             -qq \
+-            --timeout=9 \
++            --timeout=15 \
+             --durations=10 \
+             --cov zigpy \
+             -o console_output_style=count \

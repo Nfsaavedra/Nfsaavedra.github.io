@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/lock.yml b/.github/workflows/lock.yml
+index 83c9040..8878031 100644
+--- a/.github/workflows/lock.yml
++++ b/.github/workflows/lock.yml
+@@ -17,4 +17,4 @@ jobs:
+           pr-lock-reason: 'resolved'
+ 
+           issue-lock-comment: 'This issue has been automatically locked since there has not been any recent activity after it was closed. Please open a new issue for related bugs.'
+-          pr-lock-comment: 'This pull request has been automatically locked since there has not been any recent activity after it was closed. Please open a new pull request for related changes.'
+\ No newline at end of file
++          pr-lock-comment: 'This pull request has been automatically locked since there has not been any recent activity after it was closed. Please open a new pull request for related changes.'

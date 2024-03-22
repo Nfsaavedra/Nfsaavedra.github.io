@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index b38602c..e910d7e 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -60,7 +60,7 @@ jobs:
+ 
+       - name: Bump formulae
+         run: |
+-          brew bump-formula-pr --no-fork --no-browse \
++          brew bump-formula-pr --no-browse \
+           --url "https://github.com/antonmedv/fx/archive/refs/tags/${RELEASE_VERSION}.tar.gz" \
+           --version "${RELEASE_VERSION}" fx
+         env:

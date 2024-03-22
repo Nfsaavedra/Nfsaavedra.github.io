@@ -1,0 +1,85 @@
+diff --git a/.github/semantic.yml b/.github/semantic.yml
+new file mode 100644
+index 0000000..8d5fcec
+--- /dev/null
++++ b/.github/semantic.yml
+@@ -0,0 +1,18 @@
++# Always validate the PR title, and ignore the commits
++titleOnly: true
++
++# By default types specified in commitizen/conventional-commit-types is used.
++# See: https://github.com/commitizen/conventional-commit-types/blob/v3.0.0/index.json
++# You can override the valid types
++types:
++  - feat
++  - fix
++  - docs
++  - style
++  - refactor
++  - perf
++  - test
++  - build
++  - ci
++  - chore
++  - revert
+diff --git a/.github/workflows/lint-pr.yml b/.github/workflows/lint-pr.yml
+deleted file mode 100644
+index be60796..0000000
+--- a/.github/workflows/lint-pr.yml
++++ /dev/null
+@@ -1,38 +0,0 @@
+-name: "Lint PR"
+-
+-on:
+-  pull_request_target:
+-    types:
+-      - opened
+-      - edited
+-      - synchronize
+-
+-jobs:
+-  main:
+-    runs-on: ubuntu-latest
+-    steps:
+-      - uses: amannn/action-semantic-pull-request@v2.1.0
+-        env:
+-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+-        # Optionally, you can provide options for further constraints.
+-        with:
+-          # Configure which types are allowed.
+-          # Default: https://github.com/commitizen/conventional-commit-types
+-          types: |
+-            feat
+-            fix
+-            build
+-            docs
+-            style
+-            refactor
+-            chore
+-            ci
+-            perf
+-            revert
+-            test
+-          # Configure which scopes are allowed.
+-          # scopes: |
+-            # core
+-            # ui
+-          # Configure that a scope must always be provided.
+-          # requireScope: true
+\ No newline at end of file
+diff --git a/.github/workflows/release-drafter.yml b/.github/workflows/release-drafter.yml
+index c6c66bf..c45d6f2 100644
+--- a/.github/workflows/release-drafter.yml
++++ b/.github/workflows/release-drafter.yml
+@@ -12,8 +12,8 @@ jobs:
+     steps:
+       # Drafts your next Release notes as Pull Requests are merged into "master"
+       - uses: release-drafter/release-drafter@v5
+-        with:
++        # with:
+           # (Optional) specify config name to use, relative to .github/. Default: release-drafter.yml
+           # config-name: my-config.yml
+         env:
+-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+\ No newline at end of file
++          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

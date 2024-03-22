@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/re-sort.yml b/.github/workflows/re-sort.yml
+index d3fb2ce..bee31f0 100644
+--- a/.github/workflows/re-sort.yml
++++ b/.github/workflows/re-sort.yml
+@@ -9,7 +9,7 @@ jobs:
+   validate:
+     runs-on: ubuntu-latest
+     steps:
+-      - uses: actions/checkout@v2
++      - uses: actions/checkout@v3
+       - uses: ruby/setup-ruby@v1
+         with:
+           bundler-cache: true

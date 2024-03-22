@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 9c585d0..dd7d712 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -17,7 +17,8 @@ jobs:
+ 
+     - uses: sol/haskell-autotag@v1
+       id: autotag
+-      package-path: cachix
++      with:
++        package-path: cachix
+     
+     - run: cabal sdist
+     - run: cd cachix-api && cabal sdist

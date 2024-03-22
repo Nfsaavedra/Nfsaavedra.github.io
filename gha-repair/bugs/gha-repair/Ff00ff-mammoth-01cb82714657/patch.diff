@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/next.yml b/.github/workflows/next.yml
+index 4836574..68aaf60 100644
+--- a/.github/workflows/next.yml
++++ b/.github/workflows/next.yml
+@@ -34,7 +34,11 @@ jobs:
+ 
+       - run: yarn install
+       - run: yarn build
+-      - run: yarn test
++      - run: yarn test --coverage
+         env:
+           DATABASE_URL: postgres://postgres@localhost:5432/postgres
+           NODE_ENV: test
++      - name: Coveralls
++        uses: coverallsapp/github-action@master
++        with:
++          github-token: ${{ secrets.GITHUB_TOKEN }}

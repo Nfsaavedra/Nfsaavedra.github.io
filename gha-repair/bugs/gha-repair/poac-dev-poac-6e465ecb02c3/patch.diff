@@ -1,0 +1,21 @@
+diff --git a/.github/workflows/linux.yml b/.github/workflows/linux.yml
+index 182a06b..0d47d38 100644
+--- a/.github/workflows/linux.yml
++++ b/.github/workflows/linux.yml
+@@ -101,11 +101,11 @@ jobs:
+ 
+       - name: Build Poac
+         run: |
+-          cmake ..                                      \
+-            -G Ninja                                    \
+-            -DBUILD_TESTING=ON                          \
+-            -DPOAC_ENABLE_COVERAGE=${{ matrix.coverage }}    \
+-            -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} \
++          cmake ..                                        \
++            -G Ninja                                      \
++            -DBUILD_TESTING=ON                            \
++            -DPOAC_ENABLE_COVERAGE=${{ matrix.coverage }} \
++            -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}   \
+             -DPOAC_DEPS_DIR=${{ runner.temp }}/libs
+           ninja
+         working-directory: build

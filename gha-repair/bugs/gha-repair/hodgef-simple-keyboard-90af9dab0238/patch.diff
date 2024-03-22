@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/dependabot.yml b/.github/workflows/dependabot.yml
+index bfa671c..03e43a3 100644
+--- a/.github/workflows/dependabot.yml
++++ b/.github/workflows/dependabot.yml
+@@ -22,3 +22,8 @@ jobs:
+         env:
+           PR_URL: ${{github.event.pull_request.html_url}}
+           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
++      - name: Reject PR
++        if: failure()
++        uses: superbrothers/close-pull-request@v3
++        with:
++          comment: "PR closed due to failing tests."

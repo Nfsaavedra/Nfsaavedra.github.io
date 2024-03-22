@@ -1,0 +1,45 @@
+diff --git a/.dependabot/config.yml b/.dependabot/config.yml
+deleted file mode 100644
+index cae63e3..0000000
+--- a/.dependabot/config.yml
++++ /dev/null
+@@ -1,5 +0,0 @@
+-version: 1
+-update_configs:
+-  - package_manager: "javascript"
+-    directory: "/"
+-    update_schedule: "daily"
+diff --git a/.github/dependabot.yml b/.github/dependabot.yml
+new file mode 100644
+index 0000000..6cab366
+--- /dev/null
++++ b/.github/dependabot.yml
+@@ -0,0 +1,8 @@
++version: 2
++updates:
++  - package-ecosystem: npm
++    directory: '/'
++    schedule:
++      interval: daily
++    open-pull-requests-limit: 10
++
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index ae589bb..9dc4583 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -21,4 +21,13 @@ jobs:
+     - name: Install Dependencies
+       run: npm install --ignore-scripts
+     - name: Test
+-      run: npm test
+\ No newline at end of file
++      run: npm test
++
++  automerge:
++    needs: test
++    runs-on: ubuntu-latest
++    steps:
++      - uses: fastify/github-action-merge-dependabot@v1
++        if: ${{ github.actor == 'dependabot[bot]' && github.event_name == 'pull_request' }}
++        with:
++          github-token: ${{secrets.github_token}}

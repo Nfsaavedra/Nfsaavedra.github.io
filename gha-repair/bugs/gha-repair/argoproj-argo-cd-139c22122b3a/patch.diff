@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/update-snyk.yaml b/.github/workflows/update-snyk.yaml
+index 3ea8913..1458ab7 100644
+--- a/.github/workflows/update-snyk.yaml
++++ b/.github/workflows/update-snyk.yaml
+@@ -4,6 +4,7 @@ on:
+     - cron: '0 0 * * 0' # midnight every Sunday
+ jobs:
+   snyk-report:
++    if: github.repository == 'argoproj/argo-cd'
+     name: Update Snyk report in the docs directory
+     runs-on: ubuntu-22.04
+     steps:

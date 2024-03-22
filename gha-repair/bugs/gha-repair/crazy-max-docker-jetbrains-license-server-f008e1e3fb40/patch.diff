@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/label-sponsor.yml b/.github/workflows/label-sponsor.yml
+index beec442..15194f0 100644
+--- a/.github/workflows/label-sponsor.yml
++++ b/.github/workflows/label-sponsor.yml
+@@ -1,9 +1,6 @@
+ name: label-sponsor
+ 
+ on:
+-  pull_request:
+-    types:
+-      - 'opened'
+   issues:
+     types:
+       - 'opened'

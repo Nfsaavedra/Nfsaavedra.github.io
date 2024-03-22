@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 2362173..34380b5 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -13,8 +13,8 @@ jobs:
+     - name: Build client
+       working-directory: ./FluentTerminal.Client
+       run: |
+-        npm install
+-        npm run build
++        yarn
++        yarn build
+ 
+     - name: Setup MSBuild.exe
+       uses: warrenbuckley/Setup-MSBuild@v1

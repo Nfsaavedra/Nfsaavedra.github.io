@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 2752f34..5d82869 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -54,7 +54,7 @@ jobs:
+       contents: read
+     strategy:
+       matrix:
+-        node-version: [14, 16, 18]
++        node-version: [14, 16, 18, 20]
+     services:
+       redis:
+         image: redis

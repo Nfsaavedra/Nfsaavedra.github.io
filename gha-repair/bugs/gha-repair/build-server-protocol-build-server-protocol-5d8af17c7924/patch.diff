@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index e0f013c..74b3608 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -3,6 +3,7 @@ on:
+   push:
+     branches: [master]
+     tags: ["*"]
++  workflow_dispatch:
+ jobs:
+   publish:
+     runs-on: ubuntu-latest

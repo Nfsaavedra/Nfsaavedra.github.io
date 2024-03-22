@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/fetch-extendify-latest.yml b/.github/workflows/fetch-extendify-latest.yml
+index fd874ca..42ed28d 100644
+--- a/.github/workflows/fetch-extendify-latest.yml
++++ b/.github/workflows/fetch-extendify-latest.yml
+@@ -1,7 +1,7 @@
+ name: Fetch Extendify and create PR
+ on: workflow_dispatch
+ jobs:
+-    Fetch and PR:
++    fetch-and-pr:
+         runs-on: ubuntu-latest
+         steps:
+             - name: Checkout code

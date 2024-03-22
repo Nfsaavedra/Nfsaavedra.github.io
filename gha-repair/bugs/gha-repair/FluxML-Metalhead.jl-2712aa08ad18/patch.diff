@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/Publish.yml b/.github/workflows/Publish.yml
+index 41e299c..b4939e8 100644
+--- a/.github/workflows/Publish.yml
++++ b/.github/workflows/Publish.yml
+@@ -3,7 +3,7 @@ name: Publish
+ 
+ on:
+   push:
+-    branches: ['main', 'master']
++    branches: 'master'
+ 
+ jobs:
+   publish:

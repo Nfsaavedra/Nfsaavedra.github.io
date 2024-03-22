@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/3.2_ubuntu_release.yml b/.github/workflows/3.2_ubuntu_release.yml
+index a8b0295..44a4272 100644
+--- a/.github/workflows/3.2_ubuntu_release.yml
++++ b/.github/workflows/3.2_ubuntu_release.yml
+@@ -54,7 +54,7 @@ jobs:
+               
+             - name: Install other tools/dependencies
+               run: |
+-                sudo apt install chrpath libreadline libreadline-dev 
++                sudo apt install chrpath libreadline-dev 
+                 echo "::add-path::${{ github.workspace }}/../Qt/${{ env.QT_VERSION }}/gcc_64/bin"
+  
+             - name: Prepare output dir

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/android_tests.yml b/.github/workflows/android_tests.yml
+index 7b4efaa..a98c3b0 100644
+--- a/.github/workflows/android_tests.yml
++++ b/.github/workflows/android_tests.yml
+@@ -32,7 +32,7 @@ jobs:
+           script: ./gradlew app:connectedAndroidTest
+ 
+       - name: Save Test Results
+-        uses: actions/upload-artifact@v2
++        uses: actions/upload-artifact@v3
+         if: ${{ always() }}
+         with:
+           name: test-results

@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 61be7c0..7925f2e 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -13,7 +13,11 @@ on:
+         required: false
+         default: false
+   push:
++    branches:
++      - master
+   pull_request:
++    branches:
++      - master
+ 
+ env:
+   TEST_GITHUB_TOKEN: ${{ secrets.TEST_GITHUB_TOKEN }}

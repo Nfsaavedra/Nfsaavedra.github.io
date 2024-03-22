@@ -1,0 +1,18 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 434e594..9395e95 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -49,10 +49,9 @@ jobs:
+ 
+       - name: Install latest nightly Rust toolchain
+         if: steps.mdbook-cache.outputs.cache-hit != 'true'
+-        uses: actions-rs/toolchain@v1
+-        with:
+-            toolchain: nightly
+-            override: true
++        run: |
++          rustup update nightly
++          rustup override set nightly
+ 
+       - name: Install Dependencies
+         if: steps.mdbook-cache.outputs.cache-hit != 'true'

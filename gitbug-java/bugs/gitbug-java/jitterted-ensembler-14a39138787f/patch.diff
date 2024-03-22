@@ -1,0 +1,12 @@
+diff --git a/src/main/java/com/jitterted/mobreg/domain/Ensemble.java b/src/main/java/com/jitterted/mobreg/domain/Ensemble.java
+index c01327f..e6826ce 100644
+--- a/src/main/java/com/jitterted/mobreg/domain/Ensemble.java
++++ b/src/main/java/com/jitterted/mobreg/domain/Ensemble.java
+@@ -68,6 +68,7 @@ public class Ensemble {
+         requireHasSpace();
+         membersWhoAccepted.add(memberId);
+         membersWhoDeclined.remove(memberId);
++        membersAsSpectators.remove(memberId);
+     }
+ 
+     public Set<MemberId> spectators() {

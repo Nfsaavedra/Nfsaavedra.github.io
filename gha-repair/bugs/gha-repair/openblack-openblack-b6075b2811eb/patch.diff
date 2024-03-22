@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index b718980..cc4f072 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -34,7 +34,7 @@ jobs:
+     steps:
+       - uses: actions/checkout@v2
+         with:
+-          submodules: true
++          submodules: recursive
+ 
+       - name: Install Linux dependencies
+         run: |

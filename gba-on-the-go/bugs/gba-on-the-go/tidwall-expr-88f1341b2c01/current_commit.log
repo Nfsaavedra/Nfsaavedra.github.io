@@ -1,0 +1,147 @@
+[3f906104-3952-44d5-a30f-d72da388b2ae/build] 🚀  Start image=crawlergpt:latest
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   🐳  docker pull image=crawlergpt:latest platform= username= forcePull=false
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   🐳  docker create image=crawlergpt:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   🐳  docker run image=crawlergpt:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/878bd486-d2fc-4b5a-9e05-80a1d23cbf2a] user=0 workdir=
+[3f906104-3952-44d5-a30f-d72da388b2ae/build] ⭐ Run Main actions/checkout@v3
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   🐳  docker cp src=/tmp/878bd486-d2fc-4b5a-9e05-80a1d23cbf2a/. dst=/tmp/878bd486-d2fc-4b5a-9e05-80a1d23cbf2a
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/878bd486-d2fc-4b5a-9e05-80a1d23cbf2a] user=0 workdir=
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   ✅  Success - Main actions/checkout@v3
+[3f906104-3952-44d5-a30f-d72da388b2ae/build] ⭐ Run Main Set up Go
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   🐳  docker cp src=/tmp/act-cache/fcabb212-a521-41ae-b73c-59c308f1401e/act/actions-setup-go@v3/ dst=/var/run/act/actions/actions-setup-go@v3/
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-go@v3/] user=0 workdir=
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-go@v3/dist/setup/index.js] user= workdir=
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | Setup go version spec 1.18
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::isExplicit: 
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::explicit? false
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::isExplicit: 1.14.15
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::explicit? true
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::isExplicit: 1.15.15
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::explicit? true
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::isExplicit: 1.16.7
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::explicit? true
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::evaluating 3 versions
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::match not found
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | Attempting to download 1.18...
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::No manifest cached
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::set auth
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | matching 1.18...
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::check 1.21.3 satisfies 1.18
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::check 1.21.2 satisfies 1.18
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::check 1.21.1 satisfies 1.18
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::check 1.21.0 satisfies 1.18
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::check 1.20.10 satisfies 1.18
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::check 1.20.9 satisfies 1.18
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::check 1.20.8 satisfies 1.18
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::check 1.20.7 satisfies 1.18
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::check 1.20.6 satisfies 1.18
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::check 1.20.5 satisfies 1.18
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::check 1.20.4 satisfies 1.18
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::check 1.20.3 satisfies 1.18
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::check 1.20.2 satisfies 1.18
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::check 1.20.1 satisfies 1.18
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::check 1.20.0 satisfies 1.18
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::check 1.19.13 satisfies 1.18
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::check 1.19.12 satisfies 1.18
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::check 1.19.11 satisfies 1.18
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::check 1.19.10 satisfies 1.18
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::check 1.19.9 satisfies 1.18
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::check 1.19.8 satisfies 1.18
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::check 1.19.7 satisfies 1.18
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::check 1.19.6 satisfies 1.18
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::check 1.19.5 satisfies 1.18
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::check 1.19.4 satisfies 1.18
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::check 1.19.3 satisfies 1.18
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::check 1.19.2 satisfies 1.18
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::check 1.19.1 satisfies 1.18
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::check 1.19.0 satisfies 1.18
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::check 1.18.10 satisfies 1.18
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::x64===x64 && darwin===linux
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::x64===x64 && linux===linux
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::matched 1.18.10
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | Acquiring 1.18.10 from https://github.com/actions/go-versions/releases/download/1.18.10-3890634278/go-1.18.10-linux-x64.tar.gz
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::Downloading https://github.com/actions/go-versions/releases/download/1.18.10-3890634278/go-1.18.10-linux-x64.tar.gz
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::Destination /tmp/432bd226-578e-4332-b6b1-8d40cc13bccf
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::set auth
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::download complete
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | Extracting Go...
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::Checking tar --version
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::tar (GNU tar) 1.30%0ACopyright (C) 2017 Free Software Foundation, Inc.%0ALicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.%0AThis is free software: you are free to change and redistribute it.%0AThere is NO WARRANTY, to the extent permitted by law.%0A%0AWritten by John Gilmore and Jay Fenlason.
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /tmp/37ea58be-e129-4d40-8054-dad9bc328d44 -f /tmp/432bd226-578e-4332-b6b1-8d40cc13bccf
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | Successfully extracted go to /tmp/37ea58be-e129-4d40-8054-dad9bc328d44
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | Adding to the cache ...
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::Caching tool go 1.18.10 x64
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::source dir: /tmp/37ea58be-e129-4d40-8054-dad9bc328d44
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::destination /opt/hostedtoolcache/go/1.18.10/x64
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::finished caching tool
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | Successfully cached go to /opt/hostedtoolcache/go/1.18.10/x64
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | Added go to the path
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::which go :/opt/hostedtoolcache/go/1.18.10/x64/bin/go:
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::go env GOPATH :/home/runneradmin/go:
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::creating /home/runneradmin/go
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::creating /home/runneradmin/go/bin
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   💬  ::debug::add bin true
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | Successfully set up Go version 1.18
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   ❓ add-matcher /run/act/actions/actions-setup-go@v3/matchers.json
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | go version go1.18.10 linux/amd64
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | 
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   ❓  ::group::go env
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | GO111MODULE=""
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | GOARCH="amd64"
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | GOBIN=""
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | GOCACHE="/home/runneradmin/.cache/go-build"
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | GOENV="/home/runneradmin/.config/go/env"
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | GOEXE=""
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | GOEXPERIMENT=""
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | GOFLAGS=""
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | GOHOSTARCH="amd64"
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | GOHOSTOS="linux"
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | GOINSECURE=""
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | GOMODCACHE="/home/runneradmin/go/pkg/mod"
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | GONOPROXY=""
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | GONOSUMDB=""
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | GOOS="linux"
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | GOPATH="/home/runneradmin/go"
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | GOPRIVATE=""
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | GOPROXY="https://proxy.golang.org,direct"
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | GOROOT="/opt/hostedtoolcache/go/1.18.10/x64"
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | GOSUMDB="sum.golang.org"
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | GOTMPDIR=""
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | GOTOOLDIR="/opt/hostedtoolcache/go/1.18.10/x64/pkg/tool/linux_amd64"
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | GOVCS=""
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | GOVERSION="go1.18.10"
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | GCCGO="gccgo"
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | GOAMD64="v1"
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | AR="ar"
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | CC="gcc"
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | CXX="g++"
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | CGO_ENABLED="1"
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | GOMOD="/tmp/878bd486-d2fc-4b5a-9e05-80a1d23cbf2a/go.mod"
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | GOWORK=""
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | CGO_CFLAGS="-g -O2"
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | CGO_CPPFLAGS=""
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | CGO_CXXFLAGS="-g -O2"
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | CGO_FFLAGS="-g -O2"
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | CGO_LDFLAGS="-g -O2"
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | PKG_CONFIG="pkg-config"
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | GOGCCFLAGS="-fPIC -m64 -pthread -fmessage-length=0 -fdebug-prefix-map=/tmp/go-build2571127367=/tmp/go-build -gno-record-gcc-switches"
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | 
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   ❓  ::endgroup::
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   ✅  Success - Main Set up Go
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   ⚙  ::set-output:: go-version=1.18.10
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   ⚙  ::add-path:: /opt/hostedtoolcache/go/1.18.10/x64/bin
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   ⚙  ::add-path:: /home/runneradmin/go/bin
+[3f906104-3952-44d5-a30f-d72da388b2ae/build] ⭐ Run Main Build
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | go: downloading github.com/tidwall/conv v0.1.0
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | github.com/tidwall/conv
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | github.com/tidwall/expr
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   ✅  Success - Main Build
+[3f906104-3952-44d5-a30f-d72da388b2ae/build] ⭐ Run Main Test
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   | go: downloading github.com/jstemmer/go-junit-report/v2 v2.0.0
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   ✅  Success - Main Test
+[3f906104-3952-44d5-a30f-d72da388b2ae/build] ⭐ Run Post Set up Go
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-go@v3/dist/cache-save/index.js] user= workdir=
+[3f906104-3952-44d5-a30f-d72da388b2ae/build]   ✅  Success - Post Set up Go
+[3f906104-3952-44d5-a30f-d72da388b2ae/build] 🏁  Job succeeded

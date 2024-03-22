@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/validate-json.yml b/.github/workflows/validate-json.yml
+index 74c1f6d..d32f9cb 100644
+--- a/.github/workflows/validate-json.yml
++++ b/.github/workflows/validate-json.yml
+@@ -10,7 +10,7 @@ jobs:
+   validate:
+     runs-on: ubuntu-latest
+     steps:
+-      - uses: actions/checkout@v2
++      - uses: actions/checkout@v3
+       - uses: ruby/setup-ruby@v1
+         with:
+           bundler-cache: true

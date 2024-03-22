@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/CI.yml b/.github/workflows/CI.yml
+index 33105f5..bf51f96 100644
+--- a/.github/workflows/CI.yml
++++ b/.github/workflows/CI.yml
+@@ -52,8 +52,8 @@ jobs:
+           - 'DenseNet'
+           - 'UNet'
+           - 'ConvNeXt|ConvMixer'
+-          - 'Mixers'
+-          - 'ViTs'
++          - 'MLP-Mixer|ResMLP|gMLP'
++          - 'ViT'
+     steps:
+       - uses: actions/checkout@v3
+       - uses: julia-actions/setup-julia@v1

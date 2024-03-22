@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/zzz-reuse-build.yml b/.github/workflows/zzz-reuse-build.yml
+index dce6b93..7553b09 100644
+--- a/.github/workflows/zzz-reuse-build.yml
++++ b/.github/workflows/zzz-reuse-build.yml
+@@ -202,7 +202,7 @@ jobs:
+             path: ${{ steps.set-artifact-name.outputs.base }}
+           attempt_limit: 20
+           attempt_delay: 10000
+-        if: ${{ inputs.flavour == 'mods' }}
++        if: ${{ inputs.flavour == 'base' }}
+ 
+       ###
+       ### Export and Upload mods

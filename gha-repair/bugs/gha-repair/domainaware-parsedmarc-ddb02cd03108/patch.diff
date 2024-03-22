@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/python-tests.yml b/.github/workflows/python-tests.yml
+index 96000af..3565fd3 100644
+--- a/.github/workflows/python-tests.yml
++++ b/.github/workflows/python-tests.yml
+@@ -34,7 +34,7 @@ jobs:
+         flake8 *.py parsedmarc/*.py
+     - name: Check README.rst syntax
+       run: |
+-      rstcheck --report warning README.rst
++        rstcheck --report warning README.rst
+     - name: Test building documentation
+       run: |
+         cd docs

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build-and-test.yml b/.github/workflows/build-and-test.yml
+index ef2e1f1..4eead77 100644
+--- a/.github/workflows/build-and-test.yml
++++ b/.github/workflows/build-and-test.yml
+@@ -30,7 +30,7 @@ jobs:
+               graphviz \
+               llvm-11 \
+               lzip \
+-              qt4-dev-tools \
++              qhelpgenerator-qt5 \
+               qtchooser
+ 
+       - name: Build, test and install

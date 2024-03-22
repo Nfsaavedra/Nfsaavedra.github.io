@@ -1,0 +1,263 @@
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] 🚀  Start image=gitbugactions:latest
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   🐳  docker pull image=gitbugactions:latest platform= username= forcePull=false
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   🐳  docker create image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   🐳  docker run image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/dbbb31ab-ddd6-41fa-b948-97104eb063be] user=0 workdir=
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] ⭐ Run Main actions/checkout@v2
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   🐳  docker cp src=/tmp/dbbb31ab-ddd6-41fa-b948-97104eb063be/. dst=/tmp/dbbb31ab-ddd6-41fa-b948-97104eb063be
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/dbbb31ab-ddd6-41fa-b948-97104eb063be] user=0 workdir=
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   ✅  Success - Main actions/checkout@v2
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] ⭐ Run Main Set up JDK 17
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   🐳  docker cp src=/tmp/act-cache/62bc70ff-9746-495a-83b5-7d9f352fc8a3/act/actions-setup-java@v2/ dst=/var/run/act/actions/actions-setup-java@v2/
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v2/] user=0 workdir=
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/setup/index.js] user= workdir=
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   💬  ::debug::isExplicit: 11.0.20-1
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   💬  ::debug::explicit? true
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   💬  ::debug::isExplicit: 17.0.8-1
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   💬  ::debug::explicit? true
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   💬  ::debug::isExplicit: 21.0.0-35
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   💬  ::debug::explicit? true
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   💬  ::debug::isExplicit: 8.0.382-5
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   💬  ::debug::explicit? true
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | Resolved Java 17.0.8+1 from tool-cache
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | Setting Java 17.0.8+1 as the default
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | Java configuration:
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   |   Distribution: temurin
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   |   Version: 17.0.8+1
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   |   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.8-1/x64
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   ❓ add-matcher /run/act/actions/actions-setup-java@v2/.github/java.json
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | Creating settings.xml with server-id: github
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | Writing to /home/runner/.m2/settings.xml
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   ✅  Success - Main Set up JDK 17
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   ⚙  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.8-1/x64
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   ⚙  ::set-output:: distribution=Temurin-Hotspot
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   ⚙  ::set-output:: path=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.8-1/x64
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   ⚙  ::set-output:: version=17.0.8+1
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   ⚙  ::add-path:: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.8-1/x64/bin
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] ⭐ Run Main Test with Gradle
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | Downloading https://services.gradle.org/distributions/gradle-7.5.1-bin.zip
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | ...........10%............20%...........30%............40%...........50%............60%...........70%............80%...........90%............100%
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | Welcome to Gradle 7.5.1!
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | Here are the highlights of this release:
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   |  - Support for Java 18
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   |  - Support for building with Groovy 4
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   |  - Much more responsive continuous builds
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   |  - Improved diagnostics for dependency resolution
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | For more details see https://docs.gradle.org/7.5.1/release-notes.html
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | Starting a Gradle Daemon (subsequent builds will be faster)
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | > Configure project :
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | Project : => 'network.brightspots.rcv' Java module
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | > Task :compileJava
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | > Task :processResources
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | > Task :classes
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | warning: [options] module name in --add-exports option not found: org.junit.platform.engine
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 1 warning
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | > Task :compileTestJava
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | > Task :processTestResources
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | > Task :testClasses
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | > Task :mergeClasses SKIPPED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | > Task :test
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > multi-seat fractional number threshold PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > unisyn_xml_cdf_city_council_member PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | > Task :checkstyleTest
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | > Task :spotbugsTest
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | > Task :checkstyleMain
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | > Task :test
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > 2017 Minneapolis Mayor PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > unisyn_xml_cdf_county_sheriff PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > test invalid params in config file PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > overvote delimiter test PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > multi-cvr file dominion test PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > treat blank as undeclared write-in PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > Dominion test - Wyoming test data PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | > Task :spotbugsMain
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | > Task :test
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > test sequential multi-seat logic PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > Dominion - No Precinct Data PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > unisyn_xml_cdf_city_coroner PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > 2013 Minneapolis Mayor Scale PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > tiebreak using previousRoundCountsThenRandom PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > unisyn_xml_cdf_city_chief_of_police PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > Dominion test - Alaska test data PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > tiebreak using permutation in config PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > test tiebreak seed PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > test allow only one winner per round logic PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > Continue Until Two Candidates Remain PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > Dominion test - Kansas test data PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > NIST XML CDF 2 PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > test invalid source files PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > test excluding candidates in config file PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > Hart - Travis County Officers PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > undeclared write-in (UWI) cannot win test PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > sequential with continue until two test PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > skipped first choice PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > exhaust at overvote rule PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > overvote skips to next rank PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > skipped choice exhausts option PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > skipped choice next option PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > two skipped ranks exhausts option PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > duplicate rank exhausts PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > duplicate rank skips to next option PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > multi-cdf tabulation PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > test skipping to next candidate after overvote PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > multi-seat UWI test PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > test bottoms-up multi-seat with threshold logic PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > test minimum vote threshold setting PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > 2018 Maine Governor Democratic Primary PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > test Hare quota PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > Continue Until Two Candidates Remain with Batch Elimination PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > sequential with batch elimination test PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > first round determine threshold test PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > multi-seat whole number threshold PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > tiebreak using generated permutation PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > aliases (CDF JSON format) PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > aliases (ES&S XLSX format) PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > no one meets minimum test PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > missing precinct example PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > test bottoms-up multi-seat logic PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > unisyn_xml_cdf_city_tax_collector PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > 2013 Minneapolis Mayor PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > unisyn_xml_cdf_county_coroner PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > testMinneapolisMultiSeatThreshold PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > overvote exhaust if multiple continuing test PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > first round determine threshold and tiebreaker runs test PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > 2015 Portland Mayor Candidate Codes PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > gracefully fail when tabulate-by-precinct option set without any precincts in CVR PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > Clear Ballot - Kansas Primary PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > unisyn_xml_cdf_city_mayor PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > Hart - Cedar Park School Board PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > 2013 Minneapolis Park PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > generic CSV test PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > test for overvotes PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > 2015 Portland Mayor PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > test stopping tabulation early PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | TabulatorTests > precinct example PASSED
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | > Task :check
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | BUILD SUCCESSFUL in 2m 59s
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   | 9 actionable tasks: 9 executed
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   ✅  Success - Main Test with Gradle
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] ⭐ Run Post Set up JDK 17
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/cleanup/index.js] user= workdir=
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build]   ✅  Success - Post Set up JDK 17
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] 🏁  Job succeeded
+[7dbe06f9-a5ad-40c1-a5e3-d7b44bf28cb9/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'

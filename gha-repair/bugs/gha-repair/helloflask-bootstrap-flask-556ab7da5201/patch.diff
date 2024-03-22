@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 8df0359..c1dfb53 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -35,7 +35,6 @@ jobs:
+         run: >
+           gh release create --draft --repo ${{ github.repository }}
+           ${{ github.ref_name }}
+-          *.intoto.jsonl/* artifact/*
+         env:
+           GH_TOKEN: ${{ github.token }}
+   publish-pypi:

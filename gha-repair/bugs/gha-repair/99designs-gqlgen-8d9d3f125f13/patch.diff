@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/security.yml b/.github/workflows/security.yml
+index 48a26ac..4c55831 100644
+--- a/.github/workflows/security.yml
++++ b/.github/workflows/security.yml
+@@ -12,5 +12,5 @@ jobs:
+       - uses: actions/setup-go@v3
+         with:
+           go-version: ${{ env.GO_VERSION }}
+-      - run: go mod download && go list -json -m all > go.list
++      - run: go mod download && go list -json -deps all > go.list
+       - uses: sonatype-nexus-community/nancy-github-action@main

@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/tests.yml b/.github/workflows/tests.yml
+index 7d9f0f8..8476a00 100644
+--- a/.github/workflows/tests.yml
++++ b/.github/workflows/tests.yml
+@@ -101,4 +101,5 @@ jobs:
+               working-directory: output/SQLiteStudio
+               run: |
+                 export LD_LIBRARY_PATH="./lib:/usr/local/lib/"
++                ldd tst_tablemodifiertest
+                 for f in tst_*; do ./$f; done

@@ -1,0 +1,21 @@
+diff --git a/.github/workflows/update-branch.yaml b/.github/workflows/update-branch.yaml
+index eb5ebf5..73884ec 100644
+--- a/.github/workflows/update-branch.yaml
++++ b/.github/workflows/update-branch.yaml
+@@ -6,11 +6,15 @@ on:
+       - main
+   pull_request:
+ 
+-  # Allows you to run this workflow manually from the Actions tab
+   workflow_dispatch:
+ 
++
++permissions: read-all
++
+ jobs:
+   update-branch:
++   # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#permissions
++    permissions: write-all
+     runs-on: ubuntu-latest
+     steps:
+       - uses: lcdsmao/update-branch@v3

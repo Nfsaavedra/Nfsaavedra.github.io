@@ -1,0 +1,23 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 63e5fad..55275a3 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -88,4 +88,15 @@ jobs:
+             ghcr.io/${{ github.repository_owner }}/jms_${{ matrix.component }}:${{ env.version }}
+             ghcr.io/${{ github.repository_owner }}/jms_${{ matrix.component }}:latest
+           cache-from: type=gha
+-          cache-to: type=gha,mode=max
+\ No newline at end of file
++          cache-to: type=gha,mode=max
++
++      - name: Create Release
++        id: create_release
++        uses: actions/create-release@v1
++        env:
++          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
++        with:
++          tag_name: ${{ env.version }}
++          release_name: Release ${{ env.version }}
++          draft: false
++          prerelease: false
+\ No newline at end of file

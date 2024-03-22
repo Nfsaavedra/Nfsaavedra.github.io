@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/run-test.yml b/.github/workflows/run-test.yml
+index 3b18d74..7eb3448 100644
+--- a/.github/workflows/run-test.yml
++++ b/.github/workflows/run-test.yml
+@@ -33,4 +33,4 @@ jobs:
+         python -m pip install .[test]
+     - name: Test with pytest
+       run: |
+-        python -m pytest
+\ No newline at end of file
++        python -m pytest --no-cov
+\ No newline at end of file

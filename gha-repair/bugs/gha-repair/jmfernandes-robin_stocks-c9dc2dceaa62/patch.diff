@@ -1,0 +1,46 @@
+diff --git a/.github/workflows/pythonapp.yml b/.github/workflows/pythonapp.yml
+index 7caa6ab..7af62dc 100644
+--- a/.github/workflows/pythonapp.yml
++++ b/.github/workflows/pythonapp.yml
+@@ -30,4 +30,4 @@ jobs:
+         robin_password: ${{ secrets.password }}
+       run: |
+         pip install pytest
+-        pytest test_robin.py
++        pytest tests/test_github_actions.py
+diff --git a/test_robin.py b/test_robin.py
+deleted file mode 100644
+index 1420a54..0000000
+--- a/test_robin.py
++++ /dev/null
+@@ -1,12 +0,0 @@
+-# Used by git Actions
+-import os
+-import robin_stocks as r
+-
+-class TestStocks:
+-    def test_quotes(self):
+-        profile_info = r.get_quotes('spy')
+-        assert profile_info
+-
+-    def test_name_apple(self):
+-        name = r.get_name_by_symbol('aapl')
+-        assert name == "Apple"
+diff --git a/tests/test_github_actions.py b/tests/test_github_actions.py
+new file mode 100644
+index 0000000..1420a54
+--- /dev/null
++++ b/tests/test_github_actions.py
+@@ -0,0 +1,12 @@
++# Used by git Actions
++import os
++import robin_stocks as r
++
++class TestStocks:
++    def test_quotes(self):
++        profile_info = r.get_quotes('spy')
++        assert profile_info
++
++    def test_name_apple(self):
++        name = r.get_name_by_symbol('aapl')
++        assert name == "Apple"

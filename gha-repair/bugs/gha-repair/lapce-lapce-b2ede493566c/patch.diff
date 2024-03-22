@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index cf5c109..74502fc 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -28,5 +28,5 @@ jobs:
+           repo_token: ${{ secrets.GITHUB_TOKEN }}
+           file: ./target/release/osx/Lapce.dmg
+           file_glob: true
+-          tag: ${{ GITHUB_REF##*/ }}
++          tag: ${{ github.ref }}
+           overwrite: true

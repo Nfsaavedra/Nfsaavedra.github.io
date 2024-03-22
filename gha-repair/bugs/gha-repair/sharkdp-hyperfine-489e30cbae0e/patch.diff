@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/CICD.yml b/.github/workflows/CICD.yml
+index 8816238..f83e0ca 100644
+--- a/.github/workflows/CICD.yml
++++ b/.github/workflows/CICD.yml
+@@ -150,7 +150,7 @@ jobs:
+       run: |
+         # test only library unit tests and binary for arm-type targets
+         unset CARGO_TEST_OPTIONS
+-        unset CARGO_TEST_OPTIONS ; case ${{ matrix.job.target }} in arm-* | aarch64-*) CARGO_TEST_OPTIONS="--lib --bin ${PROJECT_NAME}" ;; esac;
++        unset CARGO_TEST_OPTIONS ; case ${{ matrix.job.target }} in arm-* | aarch64-*) CARGO_TEST_OPTIONS="--bin ${PROJECT_NAME}" ;; esac;
+         echo ::set-output name=CARGO_TEST_OPTIONS::${CARGO_TEST_OPTIONS}
+ 
+     - name: Run tests

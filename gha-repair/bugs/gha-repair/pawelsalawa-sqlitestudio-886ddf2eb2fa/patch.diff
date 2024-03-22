@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/win32_release.yml b/.github/workflows/win32_release.yml
+index 6048894..c1bd6d1 100644
+--- a/.github/workflows/win32_release.yml
++++ b/.github/workflows/win32_release.yml
+@@ -96,7 +96,7 @@ jobs:
+               run: |
+                 cd ..
+                 curl -L "$ICU_URL" | tar -xf - --zstd
+-                mv mingw64 icu
++                mv mingw32 icu
+ 
+             - name: Compile additional SQLite3 extensions
+               shell: bash

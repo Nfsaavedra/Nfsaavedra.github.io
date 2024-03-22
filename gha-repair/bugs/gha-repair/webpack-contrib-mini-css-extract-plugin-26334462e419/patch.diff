@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/cancel.yml b/.github/workflows/cancel.yml
+index 1913e49..9fb6d03 100644
+--- a/.github/workflows/cancel.yml
++++ b/.github/workflows/cancel.yml
+@@ -17,7 +17,7 @@ jobs:
+     runs-on: ubuntu-latest
+     timeout-minutes: 3
+     steps:
+-      - uses: styfle/cancel-workflow-action@0.10.0
++      - uses: styfle/cancel-workflow-action@0.11.0
+         with:
+           workflow_id: nodejs.yml
+           access_token: ${{ github.token }}

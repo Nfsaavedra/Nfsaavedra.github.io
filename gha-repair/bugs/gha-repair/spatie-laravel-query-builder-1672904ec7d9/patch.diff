@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/dependabot-auto-merge.yml b/.github/workflows/dependabot-auto-merge.yml
+index f2e85e7..4c8e4c3 100644
+--- a/.github/workflows/dependabot-auto-merge.yml
++++ b/.github/workflows/dependabot-auto-merge.yml
+@@ -13,7 +13,7 @@ jobs:
+ 
+       - name: Dependabot metadata
+         id: metadata
+-        uses: dependabot/fetch-metadata@v1.3.6
++        uses: dependabot/fetch-metadata@v1.4.0
+         with:
+           github-token: "${{ secrets.GITHUB_TOKEN }}"
+           compat-lookup: true

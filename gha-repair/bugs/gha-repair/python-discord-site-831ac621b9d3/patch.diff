@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yaml b/.github/workflows/main.yaml
+index 9762ad7..357777d 100644
+--- a/.github/workflows/main.yaml
++++ b/.github/workflows/main.yaml
+@@ -27,7 +27,7 @@ jobs:
+         run: |
+           tag=$(cut -c 1-7 <<< $GITHUB_SHA)
+           echo "sha-tag=$tag" >> $GITHUB_OUTPUT
+-          
++
+   publish-static-preview:
+     uses: ./.github/workflows/static-preview.yaml
+     with:

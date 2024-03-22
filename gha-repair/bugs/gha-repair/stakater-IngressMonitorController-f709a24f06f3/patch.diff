@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/push.yml b/.github/workflows/push.yml
+index ba51f77..38d7265 100644
+--- a/.github/workflows/push.yml
++++ b/.github/workflows/push.yml
+@@ -163,7 +163,7 @@ jobs:
+           repository: stakater-charts
+           target_dir: docs
+           token: ${{ secrets.STAKATER_GITHUB_TOKEN }}
+-          charts_dir: deploy/chart/
++          charts_dir: charts/
+           charts_url: ${{ env.HELM_REGISTRY_URL }}
+           owner: stakater
+           linting: on

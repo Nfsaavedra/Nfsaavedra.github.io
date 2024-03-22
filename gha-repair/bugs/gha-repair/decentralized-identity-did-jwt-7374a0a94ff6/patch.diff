@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 50148a3..5c080b4 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -1,5 +1,5 @@
+ name: Build and Test NODE
+-on: [pull_request, workflow_dispatch]
++on: [pull_request, workflow_dispatch, push]
+ jobs:
+   build-test:
+     runs-on: ubuntu-18.04

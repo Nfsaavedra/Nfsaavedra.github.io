@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/python-package.yml b/.github/workflows/python-package.yml
+index f1abc2f..e4e48e0 100644
+--- a/.github/workflows/python-package.yml
++++ b/.github/workflows/python-package.yml
+@@ -28,6 +28,9 @@ jobs:
+         python -m pip install --upgrade pip
+         pip install flake8 pytest
+         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
++    - name: Install ruptures
++      run: |
++        pip install -e .
+     - name: Lint with flake8
+       run: |
+         # stop the build if there are Python syntax errors or undefined names

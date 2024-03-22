@@ -1,0 +1,344 @@
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] 🚀  Start image=gitbugactions:latest
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   🐳  docker pull image=gitbugactions:latest platform= username= forcePull=false
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   🐳  docker create image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   🐳  docker run image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/dbbb31ab-ddd6-41fa-b948-97104eb063be] user=0 workdir=
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] ⭐ Run Main actions/checkout@v2
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   🐳  docker cp src=/tmp/dbbb31ab-ddd6-41fa-b948-97104eb063be/. dst=/tmp/dbbb31ab-ddd6-41fa-b948-97104eb063be
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/dbbb31ab-ddd6-41fa-b948-97104eb063be] user=0 workdir=
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   ✅  Success - Main actions/checkout@v2
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] ⭐ Run Main Set up JDK 17
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   🐳  docker cp src=/tmp/act-cache/62bc70ff-9746-495a-83b5-7d9f352fc8a3/act/actions-setup-java@v2/ dst=/var/run/act/actions/actions-setup-java@v2/
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v2/] user=0 workdir=
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/setup/index.js] user= workdir=
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   💬  ::debug::isExplicit: 11.0.20-1
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   💬  ::debug::explicit? true
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   💬  ::debug::isExplicit: 17.0.8-1
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   💬  ::debug::explicit? true
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   💬  ::debug::isExplicit: 21.0.0-35
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   💬  ::debug::explicit? true
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   💬  ::debug::isExplicit: 8.0.382-5
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   💬  ::debug::explicit? true
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | Resolved Java 17.0.8+1 from tool-cache
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | Setting Java 17.0.8+1 as the default
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | Java configuration:
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |   Distribution: temurin
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |   Version: 17.0.8+1
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.8-1/x64
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   ❓ add-matcher /run/act/actions/actions-setup-java@v2/.github/java.json
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | Creating settings.xml with server-id: github
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | Writing to /home/runner/.m2/settings.xml
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   ✅  Success - Main Set up JDK 17
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   ⚙  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.8-1/x64
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   ⚙  ::set-output:: distribution=Temurin-Hotspot
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   ⚙  ::set-output:: path=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.8-1/x64
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   ⚙  ::set-output:: version=17.0.8+1
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   ⚙  ::add-path:: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.8-1/x64/bin
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] ⭐ Run Main Test with Gradle
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | Downloading https://services.gradle.org/distributions/gradle-7.5.1-bin.zip
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | ...........10%............20%...........30%............40%...........50%............60%...........70%............80%...........90%............100%
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | Welcome to Gradle 7.5.1!
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | Here are the highlights of this release:
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |  - Support for Java 18
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |  - Support for building with Groovy 4
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |  - Much more responsive continuous builds
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |  - Improved diagnostics for dependency resolution
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | For more details see https://docs.gradle.org/7.5.1/release-notes.html
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | Starting a Gradle Daemon (subsequent builds will be faster)
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | > Configure project :
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | Project : => 'network.brightspots.rcv' Java module
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | > Task :compileJava
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | > Task :processResources
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | > Task :classes
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | > Task :compileTestJava
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | warning: [options] module name in --add-exports option not found: org.junit.platform.engine
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 1 warning
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | > Task :processTestResources
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | > Task :testClasses
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | > Task :mergeClasses SKIPPED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | > Task :test
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > multi-seat fractional number threshold FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > unisyn_xml_cdf_city_council_member FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | > Task :checkstyleTest
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | > Task :checkstyleMain
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | > Task :spotbugsTest
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | > Task :test
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > 2017 Minneapolis Mayor FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > unisyn_xml_cdf_county_sheriff FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > test invalid params in config file PASSED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > overvote delimiter test FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > multi-cvr file dominion test FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | > Task :spotbugsMain
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | > Task :test
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > treat blank as undeclared write-in FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > Dominion test - Wyoming test data FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > test sequential multi-seat logic FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > Dominion - No Precinct Data FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > unisyn_xml_cdf_city_coroner FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > 2013 Minneapolis Mayor Scale FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > tiebreak using previousRoundCountsThenRandom FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > unisyn_xml_cdf_city_chief_of_police FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > Dominion test - Alaska test data FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > tiebreak using permutation in config FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > test tiebreak seed FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > test allow only one winner per round logic FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > Continue Until Two Candidates Remain FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > Dominion test - Kansas test data FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > NIST XML CDF 2 FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > test invalid source files PASSED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > test excluding candidates in config file FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > Hart - Travis County Officers FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > undeclared write-in (UWI) cannot win test FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > sequential with continue until two test FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > skipped first choice FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > exhaust at overvote rule FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > overvote skips to next rank FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > skipped choice exhausts option FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > skipped choice next option FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > two skipped ranks exhausts option FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > duplicate rank exhausts FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > duplicate rank skips to next option FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > multi-cdf tabulation FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > test skipping to next candidate after overvote FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > multi-seat UWI test FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > test bottoms-up multi-seat with threshold logic FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > test minimum vote threshold setting FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > 2018 Maine Governor Democratic Primary FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > test Hare quota FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > Continue Until Two Candidates Remain with Batch Elimination FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > sequential with batch elimination test FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > first round determine threshold test FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > multi-seat whole number threshold FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > tiebreak using generated permutation FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > aliases (CDF JSON format) FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > aliases (ES&S XLSX format) FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > no one meets minimum test PASSED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > missing precinct example FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > test bottoms-up multi-seat logic FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > unisyn_xml_cdf_city_tax_collector FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > 2013 Minneapolis Mayor FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > unisyn_xml_cdf_county_coroner FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > testMinneapolisMultiSeatThreshold FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > overvote exhaust if multiple continuing test FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > first round determine threshold and tiebreaker runs test FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > 2015 Portland Mayor Candidate Codes FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > gracefully fail when tabulate-by-precinct option set without any precincts in CVR PASSED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > Clear Ballot - Kansas Primary FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > unisyn_xml_cdf_city_mayor FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > Hart - Cedar Park School Board FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > 2013 Minneapolis Park FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > generic CSV test FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > test for overvotes FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > 2015 Portland Mayor FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > test stopping tabulation early FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | TabulatorTests > precinct example FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   |     org.opentest4j.AssertionFailedError at TabulatorTests.java:148
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 69 tests completed, 65 failed
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | > Task :test FAILED
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | FAILURE: Build failed with an exception.
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | * What went wrong:
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | Execution failed for task ':test'.
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | > There were failing tests. See the report at: file:///tmp/dbbb31ab-ddd6-41fa-b948-97104eb063be/build/reports/tests/test/index.html
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | * Try:
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | > Run with --stacktrace option to get the stack trace.
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | > Run with --info or --debug option to get more log output.
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | > Run with --scan to get full insights.
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | * Get more help at https://help.gradle.org
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | BUILD FAILED in 2m 37s
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   | 9 actionable tasks: 9 executed
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   ❌  Failure - Main Test with Gradle
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] exitcode '1': failure
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] ⭐ Run Post Set up JDK 17
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v2/dist/cleanup/index.js] user= workdir=
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build]   ✅  Success - Post Set up JDK 17
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] 🏁  Job failed
+[f856243b-e4d3-431e-8c7e-f8d4b93c9ae2/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '558b63d5c43b4522c0fd13868b1f146cf3c4f799'

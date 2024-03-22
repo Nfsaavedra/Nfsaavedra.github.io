@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/aunit_tests.yml b/.github/workflows/aunit_tests.yml
+index c7f32a6..1509099 100644
+--- a/.github/workflows/aunit_tests.yml
++++ b/.github/workflows/aunit_tests.yml
+@@ -16,6 +16,10 @@ jobs:
+         git clone https://github.com/bxparks/UnixHostDuino
+         git clone https://github.com/bxparks/AUnit
+ 
++    - name: Verify examples
++      run: |
++        make -C examples
++
+     - name: Run tests
+       run: |
+         make -C tests

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/rust.yml b/.github/workflows/rust.yml
+index 38cb36b..36a84c8 100644
+--- a/.github/workflows/rust.yml
++++ b/.github/workflows/rust.yml
+@@ -16,6 +16,8 @@ jobs:
+ 
+     steps:
+     - uses: actions/checkout@v2
++    - name: Install Deps
++      run: sudo apt-get install --no-install-recommends binutils-dev libunwind8-dev
+     - name: Test
+       run: ./test.sh
+ 

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/publish.yml b/.github/workflows/publish.yml
+index 71e5352..c3828b2 100644
+--- a/.github/workflows/publish.yml
++++ b/.github/workflows/publish.yml
+@@ -14,7 +14,7 @@ jobs:
+         with:
+           node-version: 12
+       - run: npm install
+-      - run: npm run test -- --watchAll
++      - run: npm run test -- --coverage --watchAll=false
+         
+       - name: Setup GIT
+         run: |

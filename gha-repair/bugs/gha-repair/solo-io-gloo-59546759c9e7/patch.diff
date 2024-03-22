@@ -1,0 +1,18 @@
+diff --git a/.github/workflows/issue_board.yaml b/.github/workflows/issue_board.yaml
+index 764fc8d..8a720cb 100644
+--- a/.github/workflows/issue_board.yaml
++++ b/.github/workflows/issue_board.yaml
+@@ -14,10 +14,10 @@ jobs:
+         with:
+           project-url: https://github.com/orgs/solo-io/projects/22
+           github-token: ${{ secrets.ORG_CROSS_REPO }}
+-          labeled: "Type: Enhancement", "Type: Bug"
++          labeled: "Type: Enhancement,Type: Bug"
+           label-operator: OR
+       - uses: actions/add-to-project@main
+         with:
+           project-url: https://github.com/orgs/solo-io/projects/24
+           github-token: ${{ secrets.ORG_CROSS_REPO }}
+-          labeled: "Type: Docs"
+\ No newline at end of file
++          labeled: "Type: Docs"

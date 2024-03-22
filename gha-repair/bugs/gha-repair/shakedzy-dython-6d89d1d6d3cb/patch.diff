@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 20e2cde..971974a 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -15,6 +15,7 @@ jobs:
+       run: |
+         python -m pip install --upgrade pip
+         pip install -r requirements.txt
++        pip install .
+     - name: Test with pytest
+       run: |
+         pip install pytest hypothesis

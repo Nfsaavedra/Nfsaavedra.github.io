@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 3cca775..3fe115b 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -154,7 +154,7 @@ jobs:
+           git diff --no-patch .dappnode_profile && echo '::set-output name=HAS_CHANGED::true' || echo '::set-output name=HAS_CHANGED::false'
+ 
+       - name: Create Pull Request
+-        if: steps.git_diff.HAS_CHANGED == 'true'
++        if: steps.git_diff.outputs.HAS_CHANGED == 'true'
+         uses: peter-evans/create-pull-request@v3
+         with:
+           add-paths: ".dappnode_profile"

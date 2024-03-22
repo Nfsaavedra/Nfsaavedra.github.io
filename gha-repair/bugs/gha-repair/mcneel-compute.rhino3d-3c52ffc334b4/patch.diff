@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/workflow_ci.yml b/.github/workflows/workflow_ci.yml
+index 1a8b728..293cbc3 100644
+--- a/.github/workflows/workflow_ci.yml
++++ b/.github/workflows/workflow_ci.yml
+@@ -58,7 +58,8 @@ jobs:
+         shell: pwsh
+         run: |
+           echo "Revision: ${{ steps.revision.outputs.revision }}"
+-          (get-content .\src\compute.geometry\FixedEndpoints.cs).replace('git_sha = null', 'git_sha = "' + ${{GITHUB_SHA:0:8}} + '"') | set-content .\src\compute.geometry\FixedEndpoints.cs
++          echo $GITHUB_SHA:0:8
++          (get-content .\src\compute.geometry\FixedEndpoints.cs).replace('git_sha = null', 'git_sha = "' + $GITHUB_SHA:0:8 + '"') | set-content .\src\compute.geometry\FixedEndpoints.cs
+       - name: build
+         run: dotnet publish src/compute.sln -c Release -p:PublishTrimmed=true --self-contained true -r win-x64
+       - name: artifacts

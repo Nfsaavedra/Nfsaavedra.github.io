@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release-apidocs.yml b/.github/workflows/release-apidocs.yml
+index 9d5c6b6..b6b8885 100644
+--- a/.github/workflows/release-apidocs.yml
++++ b/.github/workflows/release-apidocs.yml
+@@ -12,7 +12,7 @@ jobs:
+       - name: Checkout current repository
+         uses: actions/checkout@v3.4.0
+         with:
+-          fetch-depth: 100
++          fetch-depth: 0
+ 
+ 
+       - uses: actions/setup-java@v3

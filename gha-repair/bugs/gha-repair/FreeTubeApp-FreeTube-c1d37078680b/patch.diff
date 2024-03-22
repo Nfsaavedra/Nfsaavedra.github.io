@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/flatpak.yml b/.github/workflows/flatpak.yml
+index 83ad8fe..f94292c 100644
+--- a/.github/workflows/flatpak.yml
++++ b/.github/workflows/flatpak.yml
+@@ -103,7 +103,7 @@ jobs:
+         rm freetube-${{ steps.sub.outputs.result }}-linux-portable-x64.zip
+         rm freetube-${{ steps.sub.outputs.result }}-linux-portable-arm64.zip
+     - name: Commit Files
+-      uses: stefanzweifel/git-auto-commit-action@v4
++      uses: stefanzweifel/git-auto-commit-action@v5
+       with:
+         # Optional but recommended
+         # Defaults to "Apply automatic changes"

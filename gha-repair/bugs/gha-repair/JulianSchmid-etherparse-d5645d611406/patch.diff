@@ -1,0 +1,24 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index d026088..b6091da 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -84,3 +84,19 @@ jobs:
+         use-cross: true
+         command: test
+         args: --target ${{ matrix.target }}
++
++  no_std_build:
++    name: no_std build
++    runs-on: ubuntu-latest
++    defaults:
++      run:
++        working-directory: ./etherparse/ensure_no_std
++    steps:
++    - uses: actions/checkout@v2
++    - uses: actions-rs/toolchain@v1
++      with:
++        profile: minimal
++        toolchain: stable
++        target: x86_64-unknown-none
++        override: true
++    - run: cargo build --target x86_64-unknown-none

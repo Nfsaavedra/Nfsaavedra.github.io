@@ -1,0 +1,24 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 4e7a0f9..d5ca388 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -30,7 +30,7 @@ jobs:
+       - name: Install dependencies
+         run: |
+           python -m pip install --upgrade pip
+-          pip install black 'pylint<3'
++          pip install black 'pylint<3' 'isort<6'
+           pip install --editable .
+ 
+       - name: black check
+@@ -41,6 +41,10 @@ jobs:
+         run: |
+           python -m pylint gstools/
+ 
++      - name: isort check
++        run: |
++          python -m isort --check --diff --color .
++
+   build_wheels:
+     name: wheels on ${{ matrix.os }}
+     runs-on: ${{ matrix.os }}

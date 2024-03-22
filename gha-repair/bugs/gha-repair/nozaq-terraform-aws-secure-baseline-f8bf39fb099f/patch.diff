@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 4d762d1..22fadb3 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -1,7 +1,7 @@
+ name: Terraform
+ on: [push, pull_request]
+ env:
+-  TF_ACTIONS_VERSION: 0.12.18
++  TF_ACTIONS_VERSION: latest
+ jobs:
+   check-format:
+     name: Check format

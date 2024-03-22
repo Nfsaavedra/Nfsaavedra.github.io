@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/update_messages.yml b/.github/workflows/update_messages.yml
+index 816fde4..17fe0a8 100644
+--- a/.github/workflows/update_messages.yml
++++ b/.github/workflows/update_messages.yml
+@@ -64,4 +64,4 @@ jobs:
+                 git config user.email github-actions@github.com
+                 git add .
+                 git commit -m "Automated update of translation files."
+-                #git push
++                git push

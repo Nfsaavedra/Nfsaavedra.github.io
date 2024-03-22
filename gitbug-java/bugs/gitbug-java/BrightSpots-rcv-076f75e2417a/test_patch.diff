@@ -1,0 +1,1161 @@
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/missing_precinct_example/missing_precinct_example_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/missing_precinct_example/missing_precinct_example_expected_summary.csv
+index 2bc4497..a6c86c7 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/missing_precinct_example/missing_precinct_example_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/missing_precinct_example/missing_precinct_example_expected_summary.csv
+@@ -7,7 +7,7 @@ Jurisdiction,"Minneapolis, MN"
+ Office,Mayor
+ Date,2017-11-07
+ Winner(s),Jacob Frey
+-Final Threshold,2
++Final Threshold,3
+ 
+ Contest Summary
+ Number to be Elected,1
+@@ -15,32 +15,32 @@ Number of Candidates,19
+ Total Number of Ballots,4
+ Number of Undervotes,0
+ 
+-Rounds,Round 1 Votes,% of vote,transfer,Round 2 Votes,% of vote,transfer,Round 3 Votes,% of vote,transfer,Round 4 Votes,% of vote,transfer,Round 5 Votes,% of vote,transfer
+-Eliminated,Aswar Rahman; David Rosenfeld; Raymond Dehn; L.A. Nik; Undeclared Write-ins; Christopher Zimmerman; Ronald Lischeid; Ian Simpson; Charlie Gers; Captain Jack Sparrow; Theron Preston Washington; David John Wilson; Gregg A. Iverson; Troy Benjegerdes; Al Flowers,,,Nekima Levy-Pounds,,,Tom Hoch,,,Betsy Hodges,,,,,
+-Elected,,,,,,,,,,,,,Jacob Frey,,
+-Tom Hoch,1,25.0%,0,1,25.0%,0,1,25.0%,-1,0,0.0%,0,0,0.0%,0
+-Betsy Hodges,1,25.0%,0,1,25.0%,1,2,50.0%,0,2,50.0%,-2,0,0.0%,0
+-Jacob Frey,1,25.0%,0,1,25.0%,0,1,25.0%,1,2,50.0%,0,2,100.0%,0
+-Nekima Levy-Pounds,1,25.0%,0,1,25.0%,-1,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Aswar Rahman,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-David Rosenfeld,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Raymond Dehn,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-L.A. Nik,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Christopher Zimmerman,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Ronald Lischeid,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Ian Simpson,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Charlie Gers,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Captain Jack Sparrow,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Theron Preston Washington,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-David John Wilson,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Gregg A. Iverson,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Troy Benjegerdes,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Al Flowers,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Undeclared Write-ins,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Active Ballots,4,,,4,,,4,,,4,,,2,,
+-Current Round Threshold,3,,,3,,,3,,,3,,,2,,
+-Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0,0,,0
+-Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0
+-Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,2,2,,0
+-Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0
+-Inactive Ballots Total,0,,0,0,,0,0,,0,0,,2,2,,0
++Rounds,Round 1 Votes,% of vote,transfer,Round 2 Votes,% of vote,transfer,Round 3 Votes,% of vote,transfer,Round 4 Votes,% of vote,transfer
++Eliminated,Aswar Rahman; David Rosenfeld; Raymond Dehn; L.A. Nik; Undeclared Write-ins; Christopher Zimmerman; Ronald Lischeid; Ian Simpson; Charlie Gers; Captain Jack Sparrow; Theron Preston Washington; David John Wilson; Gregg A. Iverson; Troy Benjegerdes; Al Flowers,,,Nekima Levy-Pounds,,,Tom Hoch,,,,,
++Elected,,,,,,,,,,Jacob Frey,,
++Tom Hoch,1,25.0%,0,1,25.0%,0,1,25.0%,-1,0,0.0%,0
++Betsy Hodges,1,25.0%,0,1,25.0%,1,2,50.0%,0,2,50.0%,0
++Jacob Frey,1,25.0%,0,1,25.0%,0,1,25.0%,1,2,50.0%,0
++Nekima Levy-Pounds,1,25.0%,0,1,25.0%,-1,0,0.0%,0,0,0.0%,0
++Aswar Rahman,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
++David Rosenfeld,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
++Raymond Dehn,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
++L.A. Nik,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
++Christopher Zimmerman,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
++Ronald Lischeid,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
++Ian Simpson,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
++Charlie Gers,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
++Captain Jack Sparrow,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
++Theron Preston Washington,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
++David John Wilson,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
++Gregg A. Iverson,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
++Troy Benjegerdes,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
++Al Flowers,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
++Undeclared Write-ins,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
++Active Ballots,4,,,4,,,4,,,4,,
++Current Round Threshold,3,,,3,,,3,,,3,,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,0,0,,0,0,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/missing_precinct_example/missing_precinct_example_expected_summary.json b/src/test/resources/network/brightspots/rcv/test_data/missing_precinct_example/missing_precinct_example_expected_summary.json
+index ae3b5dd..c25dea1 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/missing_precinct_example/missing_precinct_example_expected_summary.json
++++ b/src/test/resources/network/brightspots/rcv/test_data/missing_precinct_example/missing_precinct_example_expected_summary.json
+@@ -137,31 +137,13 @@
+       "Jacob Frey" : "2"
+     },
+     "tallyResults" : [ {
+-      "eliminated" : "Betsy Hodges",
+-      "transfers" : {
+-        "exhausted" : "2"
+-      }
+-    } ],
+-    "threshold" : "3"
+-  }, {
+-    "inactiveBallots" : {
+-      "exhaustedChoices" : "2",
+-      "overvotes" : "0",
+-      "repeatedRankings" : "0",
+-      "skippedRankings" : "0"
+-    },
+-    "round" : 5,
+-    "tally" : {
+-      "Jacob Frey" : "2"
+-    },
+-    "tallyResults" : [ {
+       "elected" : "Jacob Frey",
+       "transfers" : { }
+     } ],
+-    "threshold" : "2"
++    "threshold" : "3"
+   } ],
+   "summary" : {
+-    "finalThreshold" : "2",
++    "finalThreshold" : "3",
+     "numCandidates" : 19,
+     "numWinners" : 1,
+     "totalNumBallots" : "4",
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/nist_xml_cdf_2/nist_xml_cdf_2_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/nist_xml_cdf_2/nist_xml_cdf_2_expected_summary.csv
+index d93f9ce..e0398f4 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/nist_xml_cdf_2/nist_xml_cdf_2_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/nist_xml_cdf_2/nist_xml_cdf_2_expected_summary.csv
+@@ -6,7 +6,7 @@ Contest,For Governor and Lieutenant Governor
+ Jurisdiction,
+ Office,
+ Date,2019-03-06
+-Winner(s),Edward FitzGerald and Sharen Swartz Neuhardt
++Winner(s),Anita Rios and Bob Fitrakis
+ Final Threshold,1
+ 
+ Contest Summary
+@@ -15,16 +15,16 @@ Number of Candidates,3
+ Total Number of Ballots,1
+ Number of Undervotes,1
+ 
+-Rounds,Round 1 Votes,% of vote,transfer,Round 2 Votes,% of vote,transfer,Round 3 Votes,% of vote,transfer
+-Eliminated,John Kasich and Mary Taylor,,,Anita Rios and Bob Fitrakis,,,,,
+-Elected,,,,,,,Edward FitzGerald and Sharen Swartz Neuhardt,,
+-Edward FitzGerald and Sharen Swartz Neuhardt,0,,0,0,,0,0,,0
+-John Kasich and Mary Taylor,0,,0,0,,0,0,,0
+-Anita Rios and Bob Fitrakis,0,,0,0,,0,0,,0
+-Active Ballots,0,,,0,,,0,,
+-Current Round Threshold,1,,,1,,,1,,
+-Inactive Ballots by Overvotes,0,,0,0,,0,0,,0
+-Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0
+-Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0
+-Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0
+-Inactive Ballots Total,0,,0,0,,0,0,,0
++Rounds,Round 1 Votes,% of vote,transfer,Round 2 Votes,% of vote,transfer
++Eliminated,John Kasich and Mary Taylor,,,,,
++Elected,,,,Anita Rios and Bob Fitrakis,,
++Edward FitzGerald and Sharen Swartz Neuhardt,0,,0,0,,0
++John Kasich and Mary Taylor,0,,0,0,,0
++Anita Rios and Bob Fitrakis,0,,0,0,,0
++Active Ballots,0,,,0,,
++Current Round Threshold,1,,,1,,
++Inactive Ballots by Overvotes,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/nist_xml_cdf_2/nist_xml_cdf_2_expected_summary.json b/src/test/resources/network/brightspots/rcv/test_data/nist_xml_cdf_2/nist_xml_cdf_2_expected_summary.json
+index e7594ab..428ea31 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/nist_xml_cdf_2/nist_xml_cdf_2_expected_summary.json
++++ b/src/test/resources/network/brightspots/rcv/test_data/nist_xml_cdf_2/nist_xml_cdf_2_expected_summary.json
+@@ -38,23 +38,7 @@
+       "Edward FitzGerald and Sharen Swartz Neuhardt" : "0"
+     },
+     "tallyResults" : [ {
+-      "eliminated" : "Anita Rios and Bob Fitrakis",
+-      "transfers" : { }
+-    } ],
+-    "threshold" : "1"
+-  }, {
+-    "inactiveBallots" : {
+-      "exhaustedChoices" : "0",
+-      "overvotes" : "0",
+-      "repeatedRankings" : "0",
+-      "skippedRankings" : "0"
+-    },
+-    "round" : 3,
+-    "tally" : {
+-      "Edward FitzGerald and Sharen Swartz Neuhardt" : "0"
+-    },
+-    "tallyResults" : [ {
+-      "elected" : "Edward FitzGerald and Sharen Swartz Neuhardt",
++      "elected" : "Anita Rios and Bob Fitrakis",
+       "transfers" : { }
+     } ],
+     "threshold" : "1"
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/sequential_with_batch/sequential_with_batch_2_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/sequential_with_batch/sequential_with_batch_2_expected_summary.csv
+index 1bc914c..15275fc 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/sequential_with_batch/sequential_with_batch_2_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/sequential_with_batch/sequential_with_batch_2_expected_summary.csv
+@@ -7,7 +7,7 @@ Jurisdiction,
+ Office,
+ Date,
+ Winner(s),B
+-Final Threshold,2
++Final Threshold,3
+ 
+ Contest Summary
+ Number to be Elected,1
+@@ -15,18 +15,18 @@ Number of Candidates,5
+ Total Number of Ballots,9
+ Number of Undervotes,0
+ 
+-Rounds,Round 1 Votes,% of vote,transfer,Round 2 Votes,% of vote,transfer,Round 3 Votes,% of vote,transfer
+-Eliminated,D; E; F,,,C,,,,,
+-Elected,,,,,,,B,,
+-B,2,40.0%,0,2,50.0%,0,2,100.0%,0
+-C,2,40.0%,0,2,50.0%,-2,0,0.0%,0
+-D,1,20.0%,-1,0,0.0%,0,0,0.0%,0
+-E,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-F,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Active Ballots,5,,,4,,,2,,
+-Current Round Threshold,3,,,3,,,2,,
+-Inactive Ballots by Overvotes,0,,0,0,,0,0,,0
+-Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0
+-Inactive Ballots by Exhausted Choices,4,,1,5,,2,7,,0
+-Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0
+-Inactive Ballots Total,4,,1,5,,2,7,,0
++Rounds,Round 1 Votes,% of vote,transfer,Round 2 Votes,% of vote,transfer
++Eliminated,D; E; F,,,,,
++Elected,,,,B,,
++B,2,40.0%,0,2,50.0%,0
++C,2,40.0%,0,2,50.0%,0
++D,1,20.0%,-1,0,0.0%,0
++E,0,0.0%,0,0,0.0%,0
++F,0,0.0%,0,0,0.0%,0
++Active Ballots,5,,,4,,
++Current Round Threshold,3,,,3,,
++Inactive Ballots by Overvotes,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,4,,1,5,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0
++Inactive Ballots Total,4,,1,5,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/sequential_with_batch/sequential_with_batch_2_expected_summary.json b/src/test/resources/network/brightspots/rcv/test_data/sequential_with_batch/sequential_with_batch_2_expected_summary.json
+index bbf8a8f..5392339 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/sequential_with_batch/sequential_with_batch_2_expected_summary.json
++++ b/src/test/resources/network/brightspots/rcv/test_data/sequential_with_batch/sequential_with_batch_2_expected_summary.json
+@@ -48,31 +48,13 @@
+       "C" : "2"
+     },
+     "tallyResults" : [ {
+-      "eliminated" : "C",
+-      "transfers" : {
+-        "exhausted" : "2"
+-      }
+-    } ],
+-    "threshold" : "3"
+-  }, {
+-    "inactiveBallots" : {
+-      "exhaustedChoices" : "7",
+-      "overvotes" : "0",
+-      "repeatedRankings" : "0",
+-      "skippedRankings" : "0"
+-    },
+-    "round" : 3,
+-    "tally" : {
+-      "B" : "2"
+-    },
+-    "tallyResults" : [ {
+       "elected" : "B",
+       "transfers" : { }
+     } ],
+-    "threshold" : "2"
++    "threshold" : "3"
+   } ],
+   "summary" : {
+-    "finalThreshold" : "2",
++    "finalThreshold" : "3",
+     "numCandidates" : 6,
+     "numWinners" : 1,
+     "totalNumBallots" : "9",
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/sequential_with_continue_until_two/sequential_with_continue_until_two_2_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/sequential_with_continue_until_two/sequential_with_continue_until_two_2_expected_summary.csv
+index 205bd26..d6b20ec 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/sequential_with_continue_until_two/sequential_with_continue_until_two_2_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/sequential_with_continue_until_two/sequential_with_continue_until_two_2_expected_summary.csv
+@@ -7,7 +7,7 @@ Jurisdiction,
+ Office,
+ Date,
+ Winner(s),B
+-Final Threshold,2
++Final Threshold,3
+ 
+ Contest Summary
+ Number to be Elected,1
+@@ -15,18 +15,18 @@ Number of Candidates,5
+ Total Number of Ballots,9
+ Number of Undervotes,0
+ 
+-Rounds,Round 1 Votes,% of vote,transfer,Round 2 Votes,% of vote,transfer,Round 3 Votes,% of vote,transfer,Round 4 Votes,% of vote,transfer,Round 5 Votes,% of vote,transfer
+-Eliminated,F,,,E,,,D,,,C,,,,,
+-Elected,,,,,,,,,,,,,B,,
+-B,2,40.0%,0,2,40.0%,0,2,40.0%,0,2,50.0%,0,2,100.0%,0
+-C,2,40.0%,0,2,40.0%,0,2,40.0%,0,2,50.0%,-2,0,0.0%,0
+-D,1,20.0%,0,1,20.0%,0,1,20.0%,-1,0,0.0%,0,0,0.0%,0
+-E,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-F,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Active Ballots,5,,,5,,,5,,,4,,,2,,
+-Current Round Threshold,3,,,3,,,3,,,3,,,2,,
+-Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0,0,,0
+-Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0
+-Inactive Ballots by Exhausted Choices,4,,0,4,,0,4,,1,5,,2,7,,0
+-Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0
+-Inactive Ballots Total,4,,0,4,,0,4,,1,5,,2,7,,0
++Rounds,Round 1 Votes,% of vote,transfer,Round 2 Votes,% of vote,transfer,Round 3 Votes,% of vote,transfer,Round 4 Votes,% of vote,transfer
++Eliminated,F,,,E,,,D,,,,,
++Elected,,,,,,,,,,B,,
++B,2,40.0%,0,2,40.0%,0,2,40.0%,0,2,50.0%,0
++C,2,40.0%,0,2,40.0%,0,2,40.0%,0,2,50.0%,0
++D,1,20.0%,0,1,20.0%,0,1,20.0%,-1,0,0.0%,0
++E,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
++F,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
++Active Ballots,5,,,5,,,5,,,4,,
++Current Round Threshold,3,,,3,,,3,,,3,,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,4,,0,4,,0,4,,1,5,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,4,,0,4,,0,4,,1,5,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/sequential_with_continue_until_two/sequential_with_continue_until_two_2_expected_summary.json b/src/test/resources/network/brightspots/rcv/test_data/sequential_with_continue_until_two/sequential_with_continue_until_two_2_expected_summary.json
+index a8c553d..809e32d 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/sequential_with_continue_until_two/sequential_with_continue_until_two_2_expected_summary.json
++++ b/src/test/resources/network/brightspots/rcv/test_data/sequential_with_continue_until_two/sequential_with_continue_until_two_2_expected_summary.json
+@@ -79,31 +79,13 @@
+       "C" : "2"
+     },
+     "tallyResults" : [ {
+-      "eliminated" : "C",
+-      "transfers" : {
+-        "exhausted" : "2"
+-      }
+-    } ],
+-    "threshold" : "3"
+-  }, {
+-    "inactiveBallots" : {
+-      "exhaustedChoices" : "7",
+-      "overvotes" : "0",
+-      "repeatedRankings" : "0",
+-      "skippedRankings" : "0"
+-    },
+-    "round" : 5,
+-    "tally" : {
+-      "B" : "2"
+-    },
+-    "tallyResults" : [ {
+       "elected" : "B",
+       "transfers" : { }
+     } ],
+-    "threshold" : "2"
++    "threshold" : "3"
+   } ],
+   "summary" : {
+-    "finalThreshold" : "2",
++    "finalThreshold" : "3",
+     "numCandidates" : 6,
+     "numWinners" : 1,
+     "totalNumBallots" : "9",
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/stop_tabulation_early_test/stop_tabulation_early_test_config.json b/src/test/resources/network/brightspots/rcv/test_data/stop_tabulation_early_test/stop_tabulation_early_test_config.json
+index e69cb7b..58fbc65 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/stop_tabulation_early_test/stop_tabulation_early_test_config.json
++++ b/src/test/resources/network/brightspots/rcv/test_data/stop_tabulation_early_test/stop_tabulation_early_test_config.json
+@@ -50,6 +50,6 @@
+     "batchElimination": true,
+     "exhaustOnDuplicateCandidate": false,
+     "rulesDescription": "Doyle Rules",
+-    "stopTabulationEarlyAfterRound": "2"
++    "stopTabulationEarlyAfterRound": "1"
+   }
+ }
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/stop_tabulation_early_test/stop_tabulation_early_test_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/stop_tabulation_early_test/stop_tabulation_early_test_expected_summary.csv
+index f1e7343..e462a09 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/stop_tabulation_early_test/stop_tabulation_early_test_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/stop_tabulation_early_test/stop_tabulation_early_test_expected_summary.csv
+@@ -7,7 +7,7 @@ Jurisdiction,"Funkytown, USA"
+ Office,Sergeant-at-Arms
+ Date,2023-03-14
+ Winner(s),
+-Final Threshold,4
++Final Threshold,5
+ 
+ Contest Summary
+ Number to be Elected,1
+@@ -15,16 +15,16 @@ Number of Candidates,3
+ Total Number of Ballots,9
+ Number of Undervotes,0
+ 
+-Rounds,Round 1 Votes,% of vote,transfer,Round 2 Votes,% of vote,transfer
+-Eliminated,Yinka Dare,,,George Gervin,,
+-Elected,,,,,,
+-Yinka Dare,3,33.33%,-3,0,0.0%,0
+-George Gervin,3,33.33%,0,3,50.0%,0
+-Mookie Blaylock,3,33.33%,0,3,50.0%,0
+-Active Ballots,9,,,6,,
+-Current Round Threshold,5,,,4,,
+-Inactive Ballots by Overvotes,0,,0,0,,0
+-Inactive Ballots by Skipped Rankings,0,,0,0,,0
+-Inactive Ballots by Exhausted Choices,0,,0,0,,0
+-Inactive Ballots by Repeated Rankings,0,,0,0,,0
+-Inactive Ballots Total,0,,3,3,,0
++Rounds,Round 1 Votes,% of vote,transfer
++Eliminated,Yinka Dare,,
++Elected,,,
++Yinka Dare,3,33.33%,0
++George Gervin,3,33.33%,0
++Mookie Blaylock,3,33.33%,0
++Active Ballots,9,,
++Current Round Threshold,5,,
++Inactive Ballots by Overvotes,0,,0
++Inactive Ballots by Skipped Rankings,0,,0
++Inactive Ballots by Exhausted Choices,0,,0
++Inactive Ballots by Repeated Rankings,0,,0
++Inactive Ballots Total,0,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/stop_tabulation_early_test/stop_tabulation_early_test_expected_summary.json b/src/test/resources/network/brightspots/rcv/test_data/stop_tabulation_early_test/stop_tabulation_early_test_expected_summary.json
+index 48a8f43..3e9c40b 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/stop_tabulation_early_test/stop_tabulation_early_test_expected_summary.json
++++ b/src/test/resources/network/brightspots/rcv/test_data/stop_tabulation_early_test/stop_tabulation_early_test_expected_summary.json
+@@ -22,31 +22,12 @@
+     },
+     "tallyResults" : [ {
+       "eliminated" : "Yinka Dare",
+-      "transfers" : {
+-        "exhausted" : "3"
+-      }
+-    } ],
+-    "threshold" : "5"
+-  }, {
+-    "inactiveBallots" : {
+-      "exhaustedChoices" : "0",
+-      "overvotes" : "0",
+-      "repeatedRankings" : "0",
+-      "skippedRankings" : "0"
+-    },
+-    "round" : 2,
+-    "tally" : {
+-      "George Gervin" : "3",
+-      "Mookie Blaylock" : "3"
+-    },
+-    "tallyResults" : [ {
+-      "eliminated" : "George Gervin",
+       "transfers" : { }
+     } ],
+-    "threshold" : "4"
++    "threshold" : "5"
+   } ],
+   "summary" : {
+-    "finalThreshold" : "4",
++    "finalThreshold" : "5",
+     "numCandidates" : 3,
+     "numWinners" : 1,
+     "totalNumBallots" : "9",
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/test_set_treat_blank_as_undeclared_write_in/test_set_treat_blank_as_undeclared_write_in_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/test_set_treat_blank_as_undeclared_write_in/test_set_treat_blank_as_undeclared_write_in_expected_summary.csv
+index 7da15b2..fc3a7ae 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/test_set_treat_blank_as_undeclared_write_in/test_set_treat_blank_as_undeclared_write_in_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/test_set_treat_blank_as_undeclared_write_in/test_set_treat_blank_as_undeclared_write_in_expected_summary.csv
+@@ -6,8 +6,8 @@ Contest,treatBlankAsUndeclaredWriteIn test
+ Jurisdiction,
+ Office,
+ Date,2019-03-06
+-Winner(s),B
+-Final Threshold,5
++Winner(s),C
++Final Threshold,7
+ 
+ Contest Summary
+ Number to be Elected,1
+@@ -15,18 +15,18 @@ Number of Candidates,5
+ Total Number of Ballots,12
+ Number of Undervotes,0
+ 
+-Rounds,Round 1 Votes,% of vote,transfer,Round 2 Votes,% of vote,transfer,Round 3 Votes,% of vote,transfer,Round 4 Votes,% of vote,transfer,Round 5 Votes,% of vote,transfer
+-Eliminated,Undeclared Write-ins,,,D,,,A,,,C,,,,,
+-Elected,,,,,,,,,,,,,B,,
+-A,2,16.66%,1,3,25.0%,0,3,25.0%,-3,0,0.0%,0,0,0.0%,0
+-B,2,16.66%,2,4,33.33%,1,5,41.66%,1,6,50.0%,3,9,100.0%,0
+-C,2,16.66%,2,4,33.33%,0,4,33.33%,2,6,50.0%,-6,0,0.0%,0
+-D,1,8.33%,0,1,8.33%,-1,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Undeclared Write-ins,5,41.66%,-5,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Active Ballots,12,,,12,,,12,,,12,,,9,,
+-Current Round Threshold,7,,,7,,,7,,,7,,,5,,
+-Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,1,1,,0
+-Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0
+-Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,2,2,,0
+-Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0
+-Inactive Ballots Total,0,,0,0,,0,0,,0,0,,3,3,,0
++Rounds,Round 1 Votes,% of vote,transfer,Round 2 Votes,% of vote,transfer,Round 3 Votes,% of vote,transfer,Round 4 Votes,% of vote,transfer
++Eliminated,Undeclared Write-ins,,,D,,,A,,,,,
++Elected,,,,,,,,,,C,,
++A,2,16.66%,1,3,25.0%,0,3,25.0%,-3,0,0.0%,0
++B,2,16.66%,2,4,33.33%,1,5,41.66%,1,6,50.0%,0
++C,2,16.66%,2,4,33.33%,0,4,33.33%,2,6,50.0%,0
++D,1,8.33%,0,1,8.33%,-1,0,0.0%,0,0,0.0%,0
++Undeclared Write-ins,5,41.66%,-5,0,0.0%,0,0,0.0%,0,0,0.0%,0
++Active Ballots,12,,,12,,,12,,,12,,
++Current Round Threshold,7,,,7,,,7,,,7,,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,0,0,,0,0,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/test_set_treat_blank_as_undeclared_write_in/test_set_treat_blank_as_undeclared_write_in_expected_summary.json b/src/test/resources/network/brightspots/rcv/test_data/test_set_treat_blank_as_undeclared_write_in/test_set_treat_blank_as_undeclared_write_in_expected_summary.json
+index 25e4d0b..7c409e5 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/test_set_treat_blank_as_undeclared_write_in/test_set_treat_blank_as_undeclared_write_in_expected_summary.json
++++ b/src/test/resources/network/brightspots/rcv/test_data/test_set_treat_blank_as_undeclared_write_in/test_set_treat_blank_as_undeclared_write_in_expected_summary.json
+@@ -86,32 +86,13 @@
+       "C" : "6"
+     },
+     "tallyResults" : [ {
+-      "eliminated" : "C",
+-      "transfers" : {
+-        "B" : "3",
+-        "exhausted" : "3"
+-      }
+-    } ],
+-    "threshold" : "7"
+-  }, {
+-    "inactiveBallots" : {
+-      "exhaustedChoices" : "2",
+-      "overvotes" : "1",
+-      "repeatedRankings" : "0",
+-      "skippedRankings" : "0"
+-    },
+-    "round" : 5,
+-    "tally" : {
+-      "B" : "9"
+-    },
+-    "tallyResults" : [ {
+-      "elected" : "B",
++      "elected" : "C",
+       "transfers" : { }
+     } ],
+-    "threshold" : "5"
++    "threshold" : "7"
+   } ],
+   "summary" : {
+-    "finalThreshold" : "5",
++    "finalThreshold" : "7",
+     "numCandidates" : 5,
+     "numWinners" : 1,
+     "totalNumBallots" : "12",
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/tiebreak_generate_permutation_test/tiebreak_generate_permutation_test_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/tiebreak_generate_permutation_test/tiebreak_generate_permutation_test_expected_summary.csv
+index f44c2a8..80b9ab5 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/tiebreak_generate_permutation_test/tiebreak_generate_permutation_test_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/tiebreak_generate_permutation_test/tiebreak_generate_permutation_test_expected_summary.csv
+@@ -7,7 +7,7 @@ Jurisdiction,"Funkytown, USA"
+ Office,Sergeant-at-Arms
+ Date,2017-12-03
+ Winner(s),George Gervin
+-Final Threshold,2
++Final Threshold,3
+ 
+ Contest Summary
+ Number to be Elected,1
+@@ -15,17 +15,17 @@ Number of Candidates,4
+ Total Number of Ballots,8
+ Number of Undervotes,0
+ 
+-Rounds,Round 1 Votes,% of vote,transfer,Round 2 Votes,% of vote,transfer,Round 3 Votes,% of vote,transfer,Round 4 Votes,% of vote,transfer
+-Eliminated,Mookie Blaylock,,,Yinka Dare,,,Sedale Threatt,,,,,
+-Elected,,,,,,,,,,George Gervin,,
+-Sedale Threatt,2,25.0%,0,2,33.33%,0,2,50.0%,-2,0,0.0%,0
+-Yinka Dare,2,25.0%,0,2,33.33%,-2,0,0.0%,0,0,0.0%,0
+-George Gervin,2,25.0%,0,2,33.33%,0,2,50.0%,0,2,100.0%,0
+-Mookie Blaylock,2,25.0%,-2,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Active Ballots,8,,,6,,,4,,,2,,
+-Current Round Threshold,5,,,4,,,3,,,2,,
+-Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0
+-Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0
+-Inactive Ballots by Exhausted Choices,0,,2,2,,2,4,,2,6,,0
+-Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0
+-Inactive Ballots Total,0,,2,2,,2,4,,2,6,,0
++Rounds,Round 1 Votes,% of vote,transfer,Round 2 Votes,% of vote,transfer,Round 3 Votes,% of vote,transfer
++Eliminated,Mookie Blaylock,,,Yinka Dare,,,,,
++Elected,,,,,,,George Gervin,,
++Sedale Threatt,2,25.0%,0,2,33.33%,0,2,50.0%,0
++Yinka Dare,2,25.0%,0,2,33.33%,-2,0,0.0%,0
++George Gervin,2,25.0%,0,2,33.33%,0,2,50.0%,0
++Mookie Blaylock,2,25.0%,-2,0,0.0%,0,0,0.0%,0
++Active Ballots,8,,,6,,,4,,
++Current Round Threshold,5,,,4,,,3,,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,2,2,,2,4,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,2,2,,2,4,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/tiebreak_generate_permutation_test/tiebreak_generate_permutation_test_expected_summary.json b/src/test/resources/network/brightspots/rcv/test_data/tiebreak_generate_permutation_test/tiebreak_generate_permutation_test_expected_summary.json
+index 5dac64a..a4303b8 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/tiebreak_generate_permutation_test/tiebreak_generate_permutation_test_expected_summary.json
++++ b/src/test/resources/network/brightspots/rcv/test_data/tiebreak_generate_permutation_test/tiebreak_generate_permutation_test_expected_summary.json
+@@ -61,31 +61,13 @@
+       "Sedale Threatt" : "2"
+     },
+     "tallyResults" : [ {
+-      "eliminated" : "Sedale Threatt",
+-      "transfers" : {
+-        "exhausted" : "2"
+-      }
+-    } ],
+-    "threshold" : "3"
+-  }, {
+-    "inactiveBallots" : {
+-      "exhaustedChoices" : "6",
+-      "overvotes" : "0",
+-      "repeatedRankings" : "0",
+-      "skippedRankings" : "0"
+-    },
+-    "round" : 4,
+-    "tally" : {
+-      "George Gervin" : "2"
+-    },
+-    "tallyResults" : [ {
+       "elected" : "George Gervin",
+       "transfers" : { }
+     } ],
+-    "threshold" : "2"
++    "threshold" : "3"
+   } ],
+   "summary" : {
+-    "finalThreshold" : "2",
++    "finalThreshold" : "3",
+     "numCandidates" : 4,
+     "numWinners" : 1,
+     "totalNumBallots" : "8",
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/tiebreak_previous_round_counts_then_random_test/tiebreak_previous_round_counts_then_random_test_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/tiebreak_previous_round_counts_then_random_test/tiebreak_previous_round_counts_then_random_test_expected_summary.csv
+index c4fb5ce..2775757 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/tiebreak_previous_round_counts_then_random_test/tiebreak_previous_round_counts_then_random_test_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/tiebreak_previous_round_counts_then_random_test/tiebreak_previous_round_counts_then_random_test_expected_summary.csv
+@@ -6,8 +6,8 @@ Contest,Tiebreak test
+ Jurisdiction,"Funkytown, USA"
+ Office,Sergeant-at-Arms
+ Date,2017-12-03
+-Winner(s),Dopey
+-Final Threshold,2
++Winner(s),Sneezy
++Final Threshold,4
+ 
+ Contest Summary
+ Number to be Elected,1
+@@ -15,17 +15,17 @@ Number of Candidates,4
+ Total Number of Ballots,9
+ Number of Undervotes,0
+ 
+-Rounds,Round 1 Votes,% of vote,transfer,Round 2 Votes,% of vote,transfer,Round 3 Votes,% of vote,transfer,Round 4 Votes,% of vote,transfer
+-Eliminated,Happy,,,Grumpy,,,Sneezy,,,,,
+-Elected,,,,,,,,,,Dopey,,
+-Sneezy,3,33.33%,0,3,33.33%,0,3,50.0%,-3,0,0.0%,0
+-Dopey,3,33.33%,0,3,33.33%,0,3,50.0%,0,3,100.0%,0
+-Grumpy,2,22.22%,1,3,33.33%,-3,0,0.0%,0,0,0.0%,0
+-Happy,1,11.11%,-1,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Active Ballots,9,,,9,,,6,,,3,,
+-Current Round Threshold,5,,,5,,,4,,,2,,
+-Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0
+-Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0
+-Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,0
+-Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0
+-Inactive Ballots Total,0,,0,0,,3,3,,3,6,,0
++Rounds,Round 1 Votes,% of vote,transfer,Round 2 Votes,% of vote,transfer,Round 3 Votes,% of vote,transfer
++Eliminated,Happy,,,Grumpy,,,,,
++Elected,,,,,,,Sneezy,,
++Sneezy,3,33.33%,0,3,33.33%,0,3,50.0%,0
++Dopey,3,33.33%,0,3,33.33%,0,3,50.0%,0
++Grumpy,2,22.22%,1,3,33.33%,-3,0,0.0%,0
++Happy,1,11.11%,-1,0,0.0%,0,0,0.0%,0
++Active Ballots,9,,,9,,,6,,
++Current Round Threshold,5,,,5,,,4,,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,3,3,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/tiebreak_previous_round_counts_then_random_test/tiebreak_previous_round_counts_then_random_test_expected_summary.json b/src/test/resources/network/brightspots/rcv/test_data/tiebreak_previous_round_counts_then_random_test/tiebreak_previous_round_counts_then_random_test_expected_summary.json
+index 4a39fd6..0b1751e 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/tiebreak_previous_round_counts_then_random_test/tiebreak_previous_round_counts_then_random_test_expected_summary.json
++++ b/src/test/resources/network/brightspots/rcv/test_data/tiebreak_previous_round_counts_then_random_test/tiebreak_previous_round_counts_then_random_test_expected_summary.json
+@@ -61,31 +61,13 @@
+       "Sneezy" : "3"
+     },
+     "tallyResults" : [ {
+-      "eliminated" : "Sneezy",
+-      "transfers" : {
+-        "exhausted" : "3"
+-      }
+-    } ],
+-    "threshold" : "4"
+-  }, {
+-    "inactiveBallots" : {
+-      "exhaustedChoices" : "0",
+-      "overvotes" : "0",
+-      "repeatedRankings" : "0",
+-      "skippedRankings" : "0"
+-    },
+-    "round" : 4,
+-    "tally" : {
+-      "Dopey" : "3"
+-    },
+-    "tallyResults" : [ {
+-      "elected" : "Dopey",
++      "elected" : "Sneezy",
+       "transfers" : { }
+     } ],
+-    "threshold" : "2"
++    "threshold" : "4"
+   } ],
+   "summary" : {
+-    "finalThreshold" : "2",
++    "finalThreshold" : "4",
+     "numCandidates" : 4,
+     "numWinners" : 1,
+     "totalNumBallots" : "9",
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/tiebreak_seed_test/tiebreak_seed_test_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/tiebreak_seed_test/tiebreak_seed_test_expected_summary.csv
+index 0063996..1cbd4a9 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/tiebreak_seed_test/tiebreak_seed_test_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/tiebreak_seed_test/tiebreak_seed_test_expected_summary.csv
+@@ -6,8 +6,8 @@ Contest,Tiebreak test
+ Jurisdiction,"Funkytown, USA"
+ Office,Sergeant-at-Arms
+ Date,2017-12-03
+-Winner(s),Mookie Blaylock
+-Final Threshold,2
++Winner(s),George Gervin
++Final Threshold,4
+ 
+ Contest Summary
+ Number to be Elected,1
+@@ -15,16 +15,16 @@ Number of Candidates,3
+ Total Number of Ballots,9
+ Number of Undervotes,0
+ 
+-Rounds,Round 1 Votes,% of vote,transfer,Round 2 Votes,% of vote,transfer,Round 3 Votes,% of vote,transfer
+-Eliminated,Yinka Dare,,,George Gervin,,,,,
+-Elected,,,,,,,Mookie Blaylock,,
+-Yinka Dare,3,33.33%,-3,0,0.0%,0,0,0.0%,0
+-George Gervin,3,33.33%,0,3,50.0%,-3,0,0.0%,0
+-Mookie Blaylock,3,33.33%,0,3,50.0%,0,3,100.0%,0
+-Active Ballots,9,,,6,,,3,,
+-Current Round Threshold,5,,,4,,,2,,
+-Inactive Ballots by Overvotes,0,,0,0,,0,0,,0
+-Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0
+-Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0
+-Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0
+-Inactive Ballots Total,0,,3,3,,3,6,,0
++Rounds,Round 1 Votes,% of vote,transfer,Round 2 Votes,% of vote,transfer
++Eliminated,Yinka Dare,,,,,
++Elected,,,,George Gervin,,
++Yinka Dare,3,33.33%,-3,0,0.0%,0
++George Gervin,3,33.33%,0,3,50.0%,0
++Mookie Blaylock,3,33.33%,0,3,50.0%,0
++Active Ballots,9,,,6,,
++Current Round Threshold,5,,,4,,
++Inactive Ballots by Overvotes,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0
++Inactive Ballots Total,0,,3,3,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/tiebreak_seed_test/tiebreak_seed_test_expected_summary.json b/src/test/resources/network/brightspots/rcv/test_data/tiebreak_seed_test/tiebreak_seed_test_expected_summary.json
+index baf42cf..eacfb91 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/tiebreak_seed_test/tiebreak_seed_test_expected_summary.json
++++ b/src/test/resources/network/brightspots/rcv/test_data/tiebreak_seed_test/tiebreak_seed_test_expected_summary.json
+@@ -40,31 +40,13 @@
+       "Mookie Blaylock" : "3"
+     },
+     "tallyResults" : [ {
+-      "eliminated" : "George Gervin",
+-      "transfers" : {
+-        "exhausted" : "3"
+-      }
+-    } ],
+-    "threshold" : "4"
+-  }, {
+-    "inactiveBallots" : {
+-      "exhaustedChoices" : "0",
+-      "overvotes" : "0",
+-      "repeatedRankings" : "0",
+-      "skippedRankings" : "0"
+-    },
+-    "round" : 3,
+-    "tally" : {
+-      "Mookie Blaylock" : "3"
+-    },
+-    "tallyResults" : [ {
+-      "elected" : "Mookie Blaylock",
++      "elected" : "George Gervin",
+       "transfers" : { }
+     } ],
+-    "threshold" : "2"
++    "threshold" : "4"
+   } ],
+   "summary" : {
+-    "finalThreshold" : "2",
++    "finalThreshold" : "4",
+     "numCandidates" : 3,
+     "numWinners" : 1,
+     "totalNumBallots" : "9",
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/tiebreak_use_permutation_in_config_test/tiebreak_use_permutation_in_config_test_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/tiebreak_use_permutation_in_config_test/tiebreak_use_permutation_in_config_test_expected_summary.csv
+index de8b753..64eb3e9 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/tiebreak_use_permutation_in_config_test/tiebreak_use_permutation_in_config_test_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/tiebreak_use_permutation_in_config_test/tiebreak_use_permutation_in_config_test_expected_summary.csv
+@@ -7,7 +7,7 @@ Jurisdiction,"Funkytown, USA"
+ Office,Sergeant-at-Arms
+ Date,2017-12-03
+ Winner(s),Mookie Blaylock
+-Final Threshold,3
++Final Threshold,5
+ 
+ Contest Summary
+ Number to be Elected,1
+@@ -15,17 +15,17 @@ Number of Candidates,4
+ Total Number of Ballots,10
+ Number of Undervotes,0
+ 
+-Rounds,Round 1 Votes,% of vote,transfer,Round 2 Votes,% of vote,transfer,Round 3 Votes,% of vote,transfer,Round 4 Votes,% of vote,transfer
+-Eliminated,Sedale Threatt,,,George Gervin,,,Yinka Dare,,,,,
+-Elected,,,,,,,,,,Mookie Blaylock,,
+-Mookie Blaylock,4,40.0%,0,4,40.0%,0,4,50.0%,0,4,100.0%,0
+-Yinka Dare,3,30.0%,0,3,30.0%,1,4,50.0%,-4,0,0.0%,0
+-George Gervin,2,20.0%,1,3,30.0%,-3,0,0.0%,0,0,0.0%,0
+-Sedale Threatt,1,10.0%,-1,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Active Ballots,10,,,10,,,8,,,4,,
+-Current Round Threshold,6,,,6,,,5,,,3,,
+-Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0
+-Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0
+-Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,0
+-Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0
+-Inactive Ballots Total,0,,0,0,,2,2,,4,6,,0
++Rounds,Round 1 Votes,% of vote,transfer,Round 2 Votes,% of vote,transfer,Round 3 Votes,% of vote,transfer
++Eliminated,Sedale Threatt,,,George Gervin,,,,,
++Elected,,,,,,,Mookie Blaylock,,
++Mookie Blaylock,4,40.0%,0,4,40.0%,0,4,50.0%,0
++Yinka Dare,3,30.0%,0,3,30.0%,1,4,50.0%,0
++George Gervin,2,20.0%,1,3,30.0%,-3,0,0.0%,0
++Sedale Threatt,1,10.0%,-1,0,0.0%,0,0,0.0%,0
++Active Ballots,10,,,10,,,8,,
++Current Round Threshold,6,,,6,,,5,,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,2,2,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/tiebreak_use_permutation_in_config_test/tiebreak_use_permutation_in_config_test_expected_summary.json b/src/test/resources/network/brightspots/rcv/test_data/tiebreak_use_permutation_in_config_test/tiebreak_use_permutation_in_config_test_expected_summary.json
+index 3e2babe..072ca2c 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/tiebreak_use_permutation_in_config_test/tiebreak_use_permutation_in_config_test_expected_summary.json
++++ b/src/test/resources/network/brightspots/rcv/test_data/tiebreak_use_permutation_in_config_test/tiebreak_use_permutation_in_config_test_expected_summary.json
+@@ -62,31 +62,13 @@
+       "Yinka Dare" : "4"
+     },
+     "tallyResults" : [ {
+-      "eliminated" : "Yinka Dare",
+-      "transfers" : {
+-        "exhausted" : "4"
+-      }
+-    } ],
+-    "threshold" : "5"
+-  }, {
+-    "inactiveBallots" : {
+-      "exhaustedChoices" : "0",
+-      "overvotes" : "0",
+-      "repeatedRankings" : "0",
+-      "skippedRankings" : "0"
+-    },
+-    "round" : 4,
+-    "tally" : {
+-      "Mookie Blaylock" : "4"
+-    },
+-    "tallyResults" : [ {
+       "elected" : "Mookie Blaylock",
+       "transfers" : { }
+     } ],
+-    "threshold" : "3"
++    "threshold" : "5"
+   } ],
+   "summary" : {
+-    "finalThreshold" : "3",
++    "finalThreshold" : "5",
+     "numCandidates" : 4,
+     "numWinners" : 1,
+     "totalNumBallots" : "10",
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_city_council_member/unisyn_xml_cdf_city_council_member_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_city_council_member/unisyn_xml_cdf_city_council_member_expected_summary.csv
+index c85b2c1..b8adcc6 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_city_council_member/unisyn_xml_cdf_city_council_member_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_city_council_member/unisyn_xml_cdf_city_council_member_expected_summary.csv
+@@ -6,8 +6,8 @@ Contest,For City C Council Member (1/3)
+ Jurisdiction,
+ Office,
+ Date,2019-03-06
+-Winner(s),Stephen Miller
+-Final Threshold,7
++Winner(s),Terry Williams
++Final Threshold,11
+ 
+ Contest Summary
+ Number to be Elected,1
+@@ -15,22 +15,22 @@ Number of Candidates,9
+ Total Number of Ballots,35
+ Number of Undervotes,6
+ 
+-Rounds,Round 1 Votes,% of vote,transfer,Round 2 Votes,% of vote,transfer,Round 3 Votes,% of vote,transfer,Round 4 Votes,% of vote,transfer,Round 5 Votes,% of vote,transfer,Round 6 Votes,% of vote,transfer,Round 7 Votes,% of vote,transfer,Round 8 Votes,% of vote,transfer,Round 9 Votes,% of vote,transfer
+-Eliminated,Undeclared Write-ins,,,Sylvia Vaugn,,,Nolan Ryder,,,Carrie Underwood,,,Hal Newman,,,Fred Wallace,,,Lonnie Alsup,,,Terry Williams,,,,,
+-Elected,,,,,,,,,,,,,,,,,,,,,,,,,Stephen Miller,,
+-Stephen Miller,5,17.24%,1,6,20.68%,0,6,20.68%,1,7,24.13%,1,8,27.58%,0,8,27.58%,2,10,37.03%,0,10,50.0%,2,12,100.0%,0
+-Terry Williams,4,13.79%,0,4,13.79%,0,4,13.79%,1,5,17.24%,2,7,24.13%,3,10,34.48%,0,10,37.03%,0,10,50.0%,-10,0,0.0%,0
+-Hal Newman,4,13.79%,0,4,13.79%,0,4,13.79%,0,4,13.79%,0,4,13.79%,-4,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Carrie Underwood,4,13.79%,0,4,13.79%,0,4,13.79%,0,4,13.79%,-4,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Lonnie Alsup,4,13.79%,0,4,13.79%,0,4,13.79%,0,4,13.79%,1,5,17.24%,1,6,20.68%,1,7,25.92%,-7,0,0.0%,0,0,0.0%,0
+-Fred Wallace,3,10.34%,0,3,10.34%,1,4,13.79%,1,5,17.24%,0,5,17.24%,0,5,17.24%,-5,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Nolan Ryder,2,6.89%,0,2,6.89%,1,3,10.34%,-3,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Sylvia Vaugn,2,6.89%,0,2,6.89%,-2,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Undeclared Write-ins,1,3.44%,-1,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Active Ballots,29,,,29,,,29,,,29,,,29,,,29,,,27,,,20,,,12,,
+-Current Round Threshold,15,,,15,,,15,,,15,,,15,,,15,,,14,,,11,,,7,,
+-Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
+-Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
+-Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,0,0,,0,0,,2,2,,7,9,,8,17,,0
+-Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
+-Inactive Ballots Total,0,,0,0,,0,0,,0,0,,0,0,,0,0,,2,2,,7,9,,8,17,,0
++Rounds,Round 1 Votes,% of vote,transfer,Round 2 Votes,% of vote,transfer,Round 3 Votes,% of vote,transfer,Round 4 Votes,% of vote,transfer,Round 5 Votes,% of vote,transfer,Round 6 Votes,% of vote,transfer,Round 7 Votes,% of vote,transfer,Round 8 Votes,% of vote,transfer
++Eliminated,Undeclared Write-ins,,,Sylvia Vaugn,,,Nolan Ryder,,,Carrie Underwood,,,Hal Newman,,,Fred Wallace,,,Lonnie Alsup,,,,,
++Elected,,,,,,,,,,,,,,,,,,,,,,Terry Williams,,
++Stephen Miller,5,17.24%,1,6,20.68%,0,6,20.68%,1,7,24.13%,1,8,27.58%,0,8,27.58%,2,10,37.03%,0,10,50.0%,0
++Terry Williams,4,13.79%,0,4,13.79%,0,4,13.79%,1,5,17.24%,2,7,24.13%,3,10,34.48%,0,10,37.03%,0,10,50.0%,0
++Hal Newman,4,13.79%,0,4,13.79%,0,4,13.79%,0,4,13.79%,0,4,13.79%,-4,0,0.0%,0,0,0.0%,0,0,0.0%,0
++Carrie Underwood,4,13.79%,0,4,13.79%,0,4,13.79%,0,4,13.79%,-4,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
++Lonnie Alsup,4,13.79%,0,4,13.79%,0,4,13.79%,0,4,13.79%,1,5,17.24%,1,6,20.68%,1,7,25.92%,-7,0,0.0%,0
++Fred Wallace,3,10.34%,0,3,10.34%,1,4,13.79%,1,5,17.24%,0,5,17.24%,0,5,17.24%,-5,0,0.0%,0,0,0.0%,0
++Nolan Ryder,2,6.89%,0,2,6.89%,1,3,10.34%,-3,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
++Sylvia Vaugn,2,6.89%,0,2,6.89%,-2,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
++Undeclared Write-ins,1,3.44%,-1,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
++Active Ballots,29,,,29,,,29,,,29,,,29,,,29,,,27,,,20,,
++Current Round Threshold,15,,,15,,,15,,,15,,,15,,,15,,,14,,,11,,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,0,0,,0,0,,2,2,,7,9,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,0,0,,0,0,,0,0,,0,0,,2,2,,7,9,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_city_council_member/unisyn_xml_cdf_city_council_member_expected_summary.json b/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_city_council_member/unisyn_xml_cdf_city_council_member_expected_summary.json
+index 993926b..ed9caa5 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_city_council_member/unisyn_xml_cdf_city_council_member_expected_summary.json
++++ b/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_city_council_member/unisyn_xml_cdf_city_council_member_expected_summary.json
+@@ -189,32 +189,13 @@
+       "Terry Williams" : "10"
+     },
+     "tallyResults" : [ {
+-      "eliminated" : "Terry Williams",
+-      "transfers" : {
+-        "Stephen Miller" : "2",
+-        "exhausted" : "8"
+-      }
+-    } ],
+-    "threshold" : "11"
+-  }, {
+-    "inactiveBallots" : {
+-      "exhaustedChoices" : "17",
+-      "overvotes" : "0",
+-      "repeatedRankings" : "0",
+-      "skippedRankings" : "0"
+-    },
+-    "round" : 9,
+-    "tally" : {
+-      "Stephen Miller" : "12"
+-    },
+-    "tallyResults" : [ {
+-      "elected" : "Stephen Miller",
++      "elected" : "Terry Williams",
+       "transfers" : { }
+     } ],
+-    "threshold" : "7"
++    "threshold" : "11"
+   } ],
+   "summary" : {
+-    "finalThreshold" : "7",
++    "finalThreshold" : "11",
+     "numCandidates" : 9,
+     "numWinners" : 1,
+     "totalNumBallots" : "35",
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_county_coroner/unisyn_xml_cdf_county_coroner_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_county_coroner/unisyn_xml_cdf_county_coroner_expected_summary.csv
+index 495c196..9b2a3ca 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_county_coroner/unisyn_xml_cdf_county_coroner_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_county_coroner/unisyn_xml_cdf_county_coroner_expected_summary.csv
+@@ -6,8 +6,8 @@ Contest,For County Coroner (1/2)
+ Jurisdiction,
+ Office,
+ Date,2019-03-06
+-Winner(s),Niels Larson
+-Final Threshold,5
++Winner(s),Willy Wonka
++Final Threshold,10
+ 
+ Contest Summary
+ Number to be Elected,1
+@@ -15,22 +15,22 @@ Number of Candidates,9
+ Total Number of Ballots,35
+ Number of Undervotes,6
+ 
+-Rounds,Round 1 Votes,% of vote,transfer,Round 2 Votes,% of vote,transfer,Round 3 Votes,% of vote,transfer,Round 4 Votes,% of vote,transfer,Round 5 Votes,% of vote,transfer,Round 6 Votes,% of vote,transfer,Round 7 Votes,% of vote,transfer,Round 8 Votes,% of vote,transfer,Round 9 Votes,% of vote,transfer
+-Eliminated,Undeclared Write-ins,,,Laura Brown,,,Andrea Doria,,,Kay Daniels,,,Walter Gerber,,,Emily Steffan,,,Jimmy Hendriks,,,Willy Wonka,,,,,
+-Elected,,,,,,,,,,,,,,,,,,,,,,,,,Niels Larson,,
+-Willy Wonka,5,17.24%,0,5,17.24%,1,6,20.68%,0,6,20.68%,0,6,20.68%,0,6,24.0%,3,9,37.5%,0,9,50.0%,-9,0,0.0%,0
+-Niels Larson,5,17.24%,0,5,17.24%,0,5,17.24%,1,6,20.68%,2,8,27.58%,0,8,32.0%,0,8,33.33%,1,9,50.0%,0,9,100.0%,0
+-Emily Steffan,4,13.79%,0,4,13.79%,0,4,13.79%,0,4,13.79%,0,4,13.79%,0,4,16.0%,-4,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Laura Brown,3,10.34%,0,3,10.34%,-3,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Kay Daniels,3,10.34%,0,3,10.34%,0,3,10.34%,0,3,10.34%,-3,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Andrea Doria,3,10.34%,0,3,10.34%,0,3,10.34%,-3,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Jimmy Hendriks,3,10.34%,0,3,10.34%,1,4,13.79%,2,6,20.68%,1,7,24.13%,0,7,28.0%,0,7,29.16%,-7,0,0.0%,0,0,0.0%,0
+-Walter Gerber,3,10.34%,0,3,10.34%,1,4,13.79%,0,4,13.79%,0,4,13.79%,-4,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Undeclared Write-ins,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Active Ballots,29,,,29,,,29,,,29,,,29,,,25,,,24,,,18,,,9,,
+-Current Round Threshold,15,,,15,,,15,,,15,,,15,,,13,,,13,,,10,,,5,,
+-Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
+-Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
+-Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,0,0,,4,4,,1,5,,6,11,,9,20,,0
+-Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
+-Inactive Ballots Total,0,,0,0,,0,0,,0,0,,0,0,,4,4,,1,5,,6,11,,9,20,,0
++Rounds,Round 1 Votes,% of vote,transfer,Round 2 Votes,% of vote,transfer,Round 3 Votes,% of vote,transfer,Round 4 Votes,% of vote,transfer,Round 5 Votes,% of vote,transfer,Round 6 Votes,% of vote,transfer,Round 7 Votes,% of vote,transfer,Round 8 Votes,% of vote,transfer
++Eliminated,Undeclared Write-ins,,,Laura Brown,,,Andrea Doria,,,Kay Daniels,,,Walter Gerber,,,Emily Steffan,,,Jimmy Hendriks,,,,,
++Elected,,,,,,,,,,,,,,,,,,,,,,Willy Wonka,,
++Willy Wonka,5,17.24%,0,5,17.24%,1,6,20.68%,0,6,20.68%,0,6,20.68%,0,6,24.0%,3,9,37.5%,0,9,50.0%,0
++Niels Larson,5,17.24%,0,5,17.24%,0,5,17.24%,1,6,20.68%,2,8,27.58%,0,8,32.0%,0,8,33.33%,1,9,50.0%,0
++Emily Steffan,4,13.79%,0,4,13.79%,0,4,13.79%,0,4,13.79%,0,4,13.79%,0,4,16.0%,-4,0,0.0%,0,0,0.0%,0
++Laura Brown,3,10.34%,0,3,10.34%,-3,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
++Kay Daniels,3,10.34%,0,3,10.34%,0,3,10.34%,0,3,10.34%,-3,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
++Andrea Doria,3,10.34%,0,3,10.34%,0,3,10.34%,-3,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
++Jimmy Hendriks,3,10.34%,0,3,10.34%,1,4,13.79%,2,6,20.68%,1,7,24.13%,0,7,28.0%,0,7,29.16%,-7,0,0.0%,0
++Walter Gerber,3,10.34%,0,3,10.34%,1,4,13.79%,0,4,13.79%,0,4,13.79%,-4,0,0.0%,0,0,0.0%,0,0,0.0%,0
++Undeclared Write-ins,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
++Active Ballots,29,,,29,,,29,,,29,,,29,,,25,,,24,,,18,,
++Current Round Threshold,15,,,15,,,15,,,15,,,15,,,13,,,13,,,10,,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,0,0,,4,4,,1,5,,6,11,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,0,0,,0,0,,0,0,,4,4,,1,5,,6,11,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_county_coroner/unisyn_xml_cdf_county_coroner_expected_summary.json b/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_county_coroner/unisyn_xml_cdf_county_coroner_expected_summary.json
+index 8546c2a..b2f7810 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_county_coroner/unisyn_xml_cdf_county_coroner_expected_summary.json
++++ b/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_county_coroner/unisyn_xml_cdf_county_coroner_expected_summary.json
+@@ -185,31 +185,13 @@
+       "Willy Wonka" : "9"
+     },
+     "tallyResults" : [ {
+-      "eliminated" : "Willy Wonka",
+-      "transfers" : {
+-        "exhausted" : "9"
+-      }
+-    } ],
+-    "threshold" : "10"
+-  }, {
+-    "inactiveBallots" : {
+-      "exhaustedChoices" : "20",
+-      "overvotes" : "0",
+-      "repeatedRankings" : "0",
+-      "skippedRankings" : "0"
+-    },
+-    "round" : 9,
+-    "tally" : {
+-      "Niels Larson" : "9"
+-    },
+-    "tallyResults" : [ {
+-      "elected" : "Niels Larson",
++      "elected" : "Willy Wonka",
+       "transfers" : { }
+     } ],
+-    "threshold" : "5"
++    "threshold" : "10"
+   } ],
+   "summary" : {
+-    "finalThreshold" : "5",
++    "finalThreshold" : "10",
+     "numCandidates" : 9,
+     "numWinners" : 1,
+     "totalNumBallots" : "35",
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_county_sheriff/unisyn_xml_cdf_county_sheriff_expected_summary.csv b/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_county_sheriff/unisyn_xml_cdf_county_sheriff_expected_summary.csv
+index a05d552..31b7d4a 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_county_sheriff/unisyn_xml_cdf_county_sheriff_expected_summary.csv
++++ b/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_county_sheriff/unisyn_xml_cdf_county_sheriff_expected_summary.csv
+@@ -6,8 +6,8 @@ Contest,For County Sheriff (1/3)
+ Jurisdiction,
+ Office,
+ Date,2019-03-06
+-Winner(s),Terry Baker
+-Final Threshold,9
++Winner(s),Warren Norell
++Final Threshold,13
+ 
+ Contest Summary
+ Number to be Elected,1
+@@ -15,21 +15,21 @@ Number of Candidates,8
+ Total Number of Ballots,35
+ Number of Undervotes,6
+ 
+-Rounds,Round 1 Votes,% of vote,transfer,Round 2 Votes,% of vote,transfer,Round 3 Votes,% of vote,transfer,Round 4 Votes,% of vote,transfer,Round 5 Votes,% of vote,transfer,Round 6 Votes,% of vote,transfer,Round 7 Votes,% of vote,transfer,Round 8 Votes,% of vote,transfer
+-Eliminated,Undeclared Write-ins,,,Beth Small,,,Thomas Soto,,,Sandra Williams,,,John Wayne Jr.,,,Tony Seiler,,,Warren Norell,,,,,
+-Elected,,,,,,,,,,,,,,,,,,,,,,Terry Baker,,
+-Terry Baker,5,17.24%,0,5,17.24%,2,7,24.13%,0,7,24.13%,0,7,24.13%,3,10,34.48%,2,12,50.0%,5,17,100.0%,0
+-John Wayne Jr.,5,17.24%,1,6,20.68%,0,6,20.68%,1,7,24.13%,0,7,24.13%,-7,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Tony Seiler,5,17.24%,1,6,20.68%,0,6,20.68%,0,6,20.68%,1,7,24.13%,2,9,31.03%,-9,0,0.0%,0,0,0.0%,0
+-Warren Norell,4,13.79%,0,4,13.79%,0,4,13.79%,2,6,20.68%,2,8,27.58%,2,10,34.48%,2,12,50.0%,-12,0,0.0%,0
+-Thomas Soto,3,10.34%,0,3,10.34%,0,3,10.34%,-3,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Sandra Williams,3,10.34%,0,3,10.34%,0,3,10.34%,0,3,10.34%,-3,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Beth Small,2,6.89%,0,2,6.89%,-2,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Undeclared Write-ins,2,6.89%,-2,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
+-Active Ballots,29,,,29,,,29,,,29,,,29,,,29,,,24,,,17,,
+-Current Round Threshold,15,,,15,,,15,,,15,,,15,,,15,,,13,,,9,,
+-Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
+-Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
+-Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,0,0,,0,0,,5,5,,7,12,,0
+-Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
+-Inactive Ballots Total,0,,0,0,,0,0,,0,0,,0,0,,0,0,,5,5,,7,12,,0
++Rounds,Round 1 Votes,% of vote,transfer,Round 2 Votes,% of vote,transfer,Round 3 Votes,% of vote,transfer,Round 4 Votes,% of vote,transfer,Round 5 Votes,% of vote,transfer,Round 6 Votes,% of vote,transfer,Round 7 Votes,% of vote,transfer
++Eliminated,Undeclared Write-ins,,,Beth Small,,,Thomas Soto,,,Sandra Williams,,,John Wayne Jr.,,,Tony Seiler,,,,,
++Elected,,,,,,,,,,,,,,,,,,,Warren Norell,,
++Terry Baker,5,17.24%,0,5,17.24%,2,7,24.13%,0,7,24.13%,0,7,24.13%,3,10,34.48%,2,12,50.0%,0
++John Wayne Jr.,5,17.24%,1,6,20.68%,0,6,20.68%,1,7,24.13%,0,7,24.13%,-7,0,0.0%,0,0,0.0%,0
++Tony Seiler,5,17.24%,1,6,20.68%,0,6,20.68%,0,6,20.68%,1,7,24.13%,2,9,31.03%,-9,0,0.0%,0
++Warren Norell,4,13.79%,0,4,13.79%,0,4,13.79%,2,6,20.68%,2,8,27.58%,2,10,34.48%,2,12,50.0%,0
++Thomas Soto,3,10.34%,0,3,10.34%,0,3,10.34%,-3,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
++Sandra Williams,3,10.34%,0,3,10.34%,0,3,10.34%,0,3,10.34%,-3,0,0.0%,0,0,0.0%,0,0,0.0%,0
++Beth Small,2,6.89%,0,2,6.89%,-2,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
++Undeclared Write-ins,2,6.89%,-2,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0,0,0.0%,0
++Active Ballots,29,,,29,,,29,,,29,,,29,,,29,,,24,,
++Current Round Threshold,15,,,15,,,15,,,15,,,15,,,15,,,13,,
++Inactive Ballots by Overvotes,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Skipped Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots by Exhausted Choices,0,,0,0,,0,0,,0,0,,0,0,,0,0,,5,5,,0
++Inactive Ballots by Repeated Rankings,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0,0,,0
++Inactive Ballots Total,0,,0,0,,0,0,,0,0,,0,0,,0,0,,5,5,,0
+diff --git a/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_county_sheriff/unisyn_xml_cdf_county_sheriff_expected_summary.json b/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_county_sheriff/unisyn_xml_cdf_county_sheriff_expected_summary.json
+index ac8d06a..565f50d 100644
+--- a/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_county_sheriff/unisyn_xml_cdf_county_sheriff_expected_summary.json
++++ b/src/test/resources/network/brightspots/rcv/test_data/unisyn_xml_cdf_county_sheriff/unisyn_xml_cdf_county_sheriff_expected_summary.json
+@@ -162,32 +162,13 @@
+       "Warren Norell" : "12"
+     },
+     "tallyResults" : [ {
+-      "eliminated" : "Warren Norell",
+-      "transfers" : {
+-        "Terry Baker" : "5",
+-        "exhausted" : "7"
+-      }
+-    } ],
+-    "threshold" : "13"
+-  }, {
+-    "inactiveBallots" : {
+-      "exhaustedChoices" : "12",
+-      "overvotes" : "0",
+-      "repeatedRankings" : "0",
+-      "skippedRankings" : "0"
+-    },
+-    "round" : 8,
+-    "tally" : {
+-      "Terry Baker" : "17"
+-    },
+-    "tallyResults" : [ {
+-      "elected" : "Terry Baker",
++      "elected" : "Warren Norell",
+       "transfers" : { }
+     } ],
+-    "threshold" : "9"
++    "threshold" : "13"
+   } ],
+   "summary" : {
+-    "finalThreshold" : "9",
++    "finalThreshold" : "13",
+     "numCandidates" : 8,
+     "numWinners" : 1,
+     "totalNumBallots" : "35",

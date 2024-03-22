@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/push-deploy.yml b/.github/workflows/push-deploy.yml
+index a9f2b0b..eb4bbd4 100644
+--- a/.github/workflows/push-deploy.yml
++++ b/.github/workflows/push-deploy.yml
+@@ -11,7 +11,7 @@ jobs:
+       uses: actions/checkout@v2
+     - name: Build
+       run: |
+-        npm install
++        npm ci
+         npm run build
+     - name: WordPress Plugin Deploy
+       id: deploy
+@@ -29,4 +29,4 @@ jobs:
+         upload_url: ${{ github.event.release.upload_url }}
+         asset_path: ${{ steps.deploy.outputs.zip-path }}
+         asset_name: ${{ github.event.repository.name }}.zip
+-        asset_content_type: application/zip
+\ No newline at end of file
++        asset_content_type: application/zip

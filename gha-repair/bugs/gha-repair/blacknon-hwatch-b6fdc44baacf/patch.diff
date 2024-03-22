@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 56ad73b..de9879b 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -72,7 +72,7 @@ jobs:
+           use-cross: true
+ 
+       - name: Check release binary
+-        run: ls -la target/${{ matrix.target }}/release/
++        run: find target/${{ matrix.target }}/release/ -type f | sort
+ 
+       - name: Create zip file
+         run: |

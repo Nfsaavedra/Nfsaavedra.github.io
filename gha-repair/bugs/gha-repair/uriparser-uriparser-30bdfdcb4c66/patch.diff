@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build-and-test.yml b/.github/workflows/build-and-test.yml
+index a95545d..83c92df 100644
+--- a/.github/workflows/build-and-test.yml
++++ b/.github/workflows/build-and-test.yml
+@@ -24,7 +24,7 @@ jobs:
+               -fno-sanitize-recover=all
+               -fno-omit-frame-pointer
+             ldflags: >-
+-              -fsanitize=address
++              -fsanitize=address,undefined,leak
+           - name: MingGW on Linux
+             cmake_args: >-
+               -DCMAKE_C_COMPILER=i686-w64-mingw32-gcc

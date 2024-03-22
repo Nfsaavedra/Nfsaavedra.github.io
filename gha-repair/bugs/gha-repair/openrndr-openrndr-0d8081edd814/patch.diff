@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/release-apidocs.yml b/.github/workflows/release-apidocs.yml
+index f6cf610..2ef4f4d 100644
+--- a/.github/workflows/release-apidocs.yml
++++ b/.github/workflows/release-apidocs.yml
+@@ -15,6 +15,7 @@ jobs:
+         run: ./gradlew dokka
+       - name: Publish to gh-pages
+         run: |
++          git remote -v
+           cd build/docs/openrndr
+           git config --global user.email "actions@openrndr.org"
+           git config --global user.name "OPENRNDR Actions"

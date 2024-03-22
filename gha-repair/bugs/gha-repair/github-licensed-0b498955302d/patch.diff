@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index dc1f0df..b2ca671 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -28,7 +28,7 @@ jobs:
+     needs: core
+     strategy:
+       matrix:
+-        bundler: [ '~> 2.1.0', '~> 2.2.0', '~> 2.3.0' ]
++        bundler: [ '2.1', '2.2', '2.3' ]
+     steps:
+     - uses: actions/checkout@v3
+     - name: Set up Ruby

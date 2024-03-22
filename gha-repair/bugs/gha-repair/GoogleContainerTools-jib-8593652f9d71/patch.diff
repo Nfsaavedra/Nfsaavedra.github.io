@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test_pr_creation.yml b/.github/workflows/test_pr_creation.yml
+index bcb26db..0bd15b2 100644
+--- a/.github/workflows/test_pr_creation.yml
++++ b/.github/workflows/test_pr_creation.yml
+@@ -24,7 +24,7 @@ jobs:
+         with:
+           # Provided by Actions. No need to create a token.
+           github_token: ${{ secrets.GA_SECRET }}
+-          source_branch: release-pr-test
++          source_branch: fix-2195-tar-npe
+           pr_title: "Test Release PR Creation"
+           pr_body: "To be merged after the release is complete."
+           pr_label: "kokoro:run,PR: Merge After Release"

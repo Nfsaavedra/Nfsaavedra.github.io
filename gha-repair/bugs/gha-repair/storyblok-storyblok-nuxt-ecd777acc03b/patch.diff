@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/dependabot-automerge.yml b/.github/workflows/dependabot-automerge.yml
+index d380059..56bbbe2 100644
+--- a/.github/workflows/dependabot-automerge.yml
++++ b/.github/workflows/dependabot-automerge.yml
+@@ -25,4 +25,4 @@ jobs:
+         env:
+           DEPENDENCY: "@storyblok/vue"
+           PR_URL: ${{github.event.pull_request.html_url}}
+-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
++          GITHUB_TOKEN: ${{secrets.DEPENDABOT_TOKEN}}

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/mac_release.yml b/.github/workflows/mac_release.yml
+index 94d4bc1..9c8abd3 100644
+--- a/.github/workflows/mac_release.yml
++++ b/.github/workflows/mac_release.yml
+@@ -20,8 +20,6 @@ jobs:
+         steps:
+             - name: Debug
+               run: |
+-                sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
+-                locate rand.h
+                 ls -l /usr/local/
+                 ls -l /usr/local/include
+                 ls -l /usr/local/opt/

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/manual.yml b/.github/workflows/manual.yml
+index 62035c7..91690a8 100644
+--- a/.github/workflows/manual.yml
++++ b/.github/workflows/manual.yml
+@@ -61,6 +61,4 @@ jobs:
+         with:
+           platforms: linux/amd64
+           build-args: IMAGE_BASE=${{ matrix.platform }}
+-          push: false
+-          build-args: IMAGE_BASE=opensuse/leap:15
+           push: false
+\ No newline at end of file

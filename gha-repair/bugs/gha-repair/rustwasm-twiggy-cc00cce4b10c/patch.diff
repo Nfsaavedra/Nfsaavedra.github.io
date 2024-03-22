@@ -1,0 +1,18 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 7e0c607..d7ba127 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -38,4 +38,13 @@ jobs:
+         toolchain: stable
+     - name: Build
+       run: cargo build
++  test:
++    runs-on: ubuntu-latest
++    steps:
++    - uses: actions/checkout@v2
++    - uses: actions-rs/toolchain@v1
++      with:
++       toolchain: stable
++    - name: Run test script
++      run: ./ci/script.sh
+     

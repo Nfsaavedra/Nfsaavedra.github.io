@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/rust.yml b/.github/workflows/rust.yml
+index a328b2b..b95f00e 100644
+--- a/.github/workflows/rust.yml
++++ b/.github/workflows/rust.yml
+@@ -377,7 +377,7 @@ jobs:
+           version: "0.18.0"
+           args: --workspace
+       - name: Upload to codecov.io
+-        uses: codecov/codecov-action@v3.1.6
++        uses: codecov/codecov-action@v4.0.0
+         with:
+           token: ${{secrets.CODECOV_TOKEN}}
+       - name: Archive code coverage results

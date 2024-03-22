@@ -1,0 +1,18 @@
+diff --git a/src/main/java/com/fishercoder/solutions/_235.java b/src/main/java/com/fishercoder/solutions/_235.java
+index 97b70d3..d470efd 100644
+--- a/src/main/java/com/fishercoder/solutions/_235.java
++++ b/src/main/java/com/fishercoder/solutions/_235.java
+@@ -9,10 +9,9 @@ public class _235 {
+             if (root == null || p == root || q == root) {
+                 return root;
+             }
+-            if ((root.val - p.val) * (root.val - q.val) > 0) {
+-                if (root.val - p.val > 0) {
+-                    return lowestCommonAncestor(root.left, p, q);
+-                }
++            if (root.val > p.val && root.val > q.val) {
++                return lowestCommonAncestor(root.left, p, q);
++            } else if (root.val < p.val && root.val < q.val) {
+                 return lowestCommonAncestor(root.right, p, q);
+             }
+             return root;

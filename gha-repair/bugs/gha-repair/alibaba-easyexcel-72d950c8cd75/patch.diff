@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/sync2gitee.yml b/.github/workflows/sync2gitee.yml
+index 5dd0700..cc88d58 100644
+--- a/.github/workflows/sync2gitee.yml
++++ b/.github/workflows/sync2gitee.yml
+@@ -1,6 +1,6 @@
+ # 通过 Github action， 在仓库的每一次 commit 后自动同步到 Gitee 上
+ name: Mirror the Github organization repos to Gitee
+-on: [ push ]
++on: [push, pull_request]
+ 
+ jobs:
+   repo-sync:

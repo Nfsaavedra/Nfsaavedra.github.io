@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index b95c71b..08882dc 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -187,7 +187,6 @@ jobs:
+         instance: [0, 1]
+ 
+     env:
+-      USE_INDEXER: 1
+       # XXX: MATRIX_INSTANCE_TOTAL must be hardcoded to the length of strategy.matrix.instance.
+       MATRIX_INSTANCE_TOTAL: 2
+       MIGRATIONS_TEST_MIGRATE: 1

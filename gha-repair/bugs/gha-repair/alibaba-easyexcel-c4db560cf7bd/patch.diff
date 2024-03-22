@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 757a684..b007fdb 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -31,6 +31,10 @@ jobs:
+         with:
+           java-version: 8
+           distribution: 'adopt'
++          server-id: sonatype-nexus-staging
++          server-username: ${{ secrets.NEXUS_USERNAME }}
++          server-password: ${{ secrets.NEXUS_PASSWORD }}
++          gpg-passphrase: ${{ secrets.GPG_PASSPHRASE }}
+       - name: Release Maven package
+         uses: samuelmeuli/action-maven-publish@v1
+         with:

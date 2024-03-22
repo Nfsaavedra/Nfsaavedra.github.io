@@ -1,0 +1,35 @@
+diff --git a/.github/workflows/check-linting b/.github/workflows/check-linting
+deleted file mode 100755
+index b7b771b..0000000
+--- a/.github/workflows/check-linting
++++ /dev/null
+@@ -1,8 +0,0 @@
+-#!/bin/bash
+-
+-set -euo pipefail
+-
+-mkdir /tmp/golangci
+-curl -sL --fail https://github.com/golangci/golangci-lint/releases/download/v1.29.0/golangci-lint-1.29.0-linux-amd64.tar.gz | tar zxv --strip-components=1 --dir=/tmp/golangci
+-
+-/tmp/golangci/golangci-lint run
+diff --git a/.github/workflows/lint.yml b/.github/workflows/lint.yml
+index 44695d1..0c2e462 100644
+--- a/.github/workflows/lint.yml
++++ b/.github/workflows/lint.yml
+@@ -5,13 +5,14 @@ jobs:
+   lint:
+     runs-on: ubuntu-latest
+     steps:
+-      - uses: actions/checkout@v1
++      - uses: actions/checkout@v2
+       - uses: actions/setup-go@v2
+         with: { go-version: 1.17 }
+       - run: go mod download
+       - run: .github/workflows/check-fmt
+-      - run: .github/workflows/check-linting
+       - run: .github/workflows/check-generate
++      - name: golangci-lint
++        uses: golangci/golangci-lint-action@v2
+ 
+   coverage:
+     runs-on: ubuntu-latest

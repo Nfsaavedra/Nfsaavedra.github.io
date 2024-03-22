@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/book.yml b/.github/workflows/book.yml
+index 5b66f20..5010198 100644
+--- a/.github/workflows/book.yml
++++ b/.github/workflows/book.yml
+@@ -4,8 +4,6 @@ on:
+   push:
+     branches:
+       - develop
+-    paths:
+-      - 'docs'
+     pull_request:
+ 
+ jobs:

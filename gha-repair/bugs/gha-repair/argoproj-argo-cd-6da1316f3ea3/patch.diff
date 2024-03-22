@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/image-reuse.yaml b/.github/workflows/image-reuse.yaml
+index 0a6c8bd..511c023 100644
+--- a/.github/workflows/image-reuse.yaml
++++ b/.github/workflows/image-reuse.yaml
+@@ -74,7 +74,7 @@ jobs:
+           go-version: ${{ inputs.go-version }}
+ 
+       - name: Install cosign
+-        uses: sigstore/cosign-installer@6e04d228eb30da1757ee4e1dd75a0ec73a653e06 # v3.1.1
++        uses: sigstore/cosign-installer@11086d25041f77fe8fe7b9ea4e48e3b9192b8f19 # v3.1.2
+         with:
+           cosign-release: 'v2.0.0'
+ 

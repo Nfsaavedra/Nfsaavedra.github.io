@@ -1,0 +1,53 @@
+diff --git a/.github/workflows/build-socat.yml b/.github/workflows/build-socat.yml
+index c5224a7..c54f758 100644
+--- a/.github/workflows/build-socat.yml
++++ b/.github/workflows/build-socat.yml
+@@ -6,6 +6,8 @@ jobs:
+       name: Build socat x86
+       runs-on: ubuntu-latest
+       container: muslcc/x86_64:i686-linux-musl
++      outputs:
++        version: ${{ steps.build_socat.outputs.PACKAGED_NAME }}
+       steps:
+         - name: Checkout
+           uses: actions/checkout@v2
+@@ -112,4 +114,36 @@ jobs:
+             uses: actions/upload-artifact@v2
+             with:
+                 name: ${{ steps.build_socat.outputs.PACKAGED_NAME }}
+-                path: ${{ steps.build_socat.outputs.PACKAGED_NAME_PATH }}
+\ No newline at end of file
++                path: ${{ steps.build_socat.outputs.PACKAGED_NAME_PATH }}
++
++    create-release:
++      name: Create socat Release
++      runs-on: ubuntu-latest
++      needs: [build-x86, build-x86_64, build-armhf, build-aarch64]
++      steps:
++        - name: Checkout
++          uses: actions/checkout@v2
++
++        - name: Prepare Environment
++          run: mkdir /tmp/releases
++
++        - name: Download Artifacts
++          uses: actions/download-artifact@v2
++          with:
++            path: /tmp/releases
++
++        - name: List Artifacts
++          run: ls -laR /tmp/releases
++
++        - name: Tag Release
++          run: |
++            git tag "${{ needs.build-x86.outputs.version }}"
++            git push origin "${{ needs.build-x86.outputs.version }}"
++
++        - name: Create Release
++          uses: ncipollo/release-action@v1
++          with:
++            name: ${{ needs.build-x86.outputs.version }}
++            tag: ${{ needs.build-x86.outputs.version }}
++            artifacts: "/tmp/releases/*/*"
++            token: ${{ secrets.GITHUB_TOKEN }}
+\ No newline at end of file

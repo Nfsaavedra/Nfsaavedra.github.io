@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/release-pontos-manually.yml b/.github/workflows/release-pontos-manually.yml
+index ce93bc3..247e9f3 100644
+--- a/.github/workflows/release-pontos-manually.yml
++++ b/.github/workflows/release-pontos-manually.yml
+@@ -1,4 +1,4 @@
+-name: Manually release gvm-libs with pontos
++name: Manually release openvas-scanner with pontos
+ 
+ on:
+   workflow_dispatch:

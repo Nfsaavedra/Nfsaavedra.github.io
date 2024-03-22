@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index ef2e2ce..8ce0dc7 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -110,7 +110,7 @@ jobs:
+           restore-keys: |
+             ${{ runner.os }}-go-
+       - uses: sigstore/cosign-installer@v2.5.1
+-      - uses: anchore/sbom-action/download-syft@v0.11.0
++      - uses: anchore/sbom-action/download-syft@v0.12.0
+       - uses: docker/setup-qemu-action@v2
+       - uses: docker/setup-buildx-action@v2
+       - run: task setup

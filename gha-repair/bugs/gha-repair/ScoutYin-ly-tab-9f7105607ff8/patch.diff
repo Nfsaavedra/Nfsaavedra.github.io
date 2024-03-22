@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/create-relaease.yml b/.github/workflows/create-relaease.yml
+index e0a1dfa..de8a3dd 100644
+--- a/.github/workflows/create-relaease.yml
++++ b/.github/workflows/create-relaease.yml
+@@ -19,5 +19,5 @@ jobs:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         with:
+           tag_name: ${{ github.ref }}
+-					body: |
+-						更新内容请参见 [CHANGELOG](https://github.com/ScoutYin/ly-tab/blob/master/CHANGELOG_CN.md)。
++          body: |
++            更新内容请参见 [CHANGELOG](https://github.com/ScoutYin/ly-tab/blob/master/CHANGELOG_CN.md)。

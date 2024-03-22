@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/jsoup/nodes/Element.java b/src/main/java/org/jsoup/nodes/Element.java
+index ab1b748..5142fa2 100644
+--- a/src/main/java/org/jsoup/nodes/Element.java
++++ b/src/main/java/org/jsoup/nodes/Element.java
+@@ -1851,6 +1851,7 @@ public class Element extends Node {
+             return false;
+         return (parent() == null || parent().isBlock())
+             && !isEffectivelyFirst()
+-            && !out.outline();
++            && !out.outline()
++            && !isNode("br");
+     }
+ }

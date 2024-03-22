@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/pytest.yaml b/.github/workflows/pytest.yaml
+index 8d2c35e..1d45316 100644
+--- a/.github/workflows/pytest.yaml
++++ b/.github/workflows/pytest.yaml
+@@ -8,7 +8,7 @@ on:
+     - cron: '0 12 * * SUN'
+ 
+ jobs:
+-  build:
++  pytest:
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v2

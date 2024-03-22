@@ -1,0 +1,32 @@
+diff --git a/.github/workflows/nodejs.yml b/.github/workflows/nodejs.yml
+index 7991e3f..129b4b2 100644
+--- a/.github/workflows/nodejs.yml
++++ b/.github/workflows/nodejs.yml
+@@ -40,11 +40,9 @@ jobs:
+         with:
+           node-version: 12
+           registry-url: https://registry.npmjs.org/
+-      - run: |
+-        npm install
+-        npm publish
+-      env:
+-        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
++      - run: npm install && npm publish
++        env:
++          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+ 
+   publish-gpr:
+     needs: build
+@@ -56,9 +54,7 @@ jobs:
+           node-version: 12
+           registry-url: https://npm.pkg.github.com/
+           scope: '@hodgef'
+-      - run: |
+-        npm install
+-        npm publish
+-      env:
+-        NODE_AUTH_TOKEN: ${{secrets.GH_TOKEN}}
++      - run: npm install && npm publish
++        env:
++          NODE_AUTH_TOKEN: ${{secrets.GH_TOKEN}}
+         

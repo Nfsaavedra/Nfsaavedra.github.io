@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index f971696..60317ff 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -9,7 +9,7 @@ jobs:
+   deploy:
+     name: Build
+     if: "!contains(github.event.commits[0].message, 'ci skip')"
+-    runs-on: ubuntu-20.04
++    runs-on: ubuntu-latest
+     steps:
+     - name: Setup golang v1.x
+       uses: actions/setup-go@v2

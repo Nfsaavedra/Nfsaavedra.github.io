@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/pifile.yml b/.github/workflows/pifile.yml
+index 0c91c3e..00b6698 100644
+--- a/.github/workflows/pifile.yml
++++ b/.github/workflows/pifile.yml
+@@ -123,7 +123,7 @@ jobs:
+       - 
+         name: Build Changelog
+         id: github_release
+-        uses: mikepenz/release-changelog-builder-action@v1
++        uses: mikepenz/release-changelog-builder-action@v2.4.1
+         with:
+           configuration: ".github/workflows/releasecfg/configuration.json"
+         env:

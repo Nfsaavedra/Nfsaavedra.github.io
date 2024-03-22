@@ -1,0 +1,99 @@
+diff --git a/.github/workflows/build-tcpdump-x86_64.yml b/.github/workflows/build-tcpdump-x86_64.yml
+index 58b6d0d..dc60964 100644
+--- a/.github/workflows/build-tcpdump-x86_64.yml
++++ b/.github/workflows/build-tcpdump-x86_64.yml
+@@ -8,32 +8,24 @@ jobs:
+         container: muslcc/x86_64:x86_64-linux-musl
+         steps:
+ 
++          - name: Install dependencies
++            run: apk update && apk add bash git perl make cmake flex bison automake autoconf libtool qemu-arm qemu-aarch64 file texinfo zip wget
++
++          - name: Checkout
++            uses: actions/checkout@v2
++
+           - name: Build tcpdump
+-            run: |
+-              cd
+-              apk update && apk add flex bison wget make
+-              wget https://www.tcpdump.org/release/libpcap-1.9.1.tar.gz
+-              tar xzf libpcap-1.9.1.tar.gz
+-              cd libpcap-1.9.1/
+-              ./configure --with-pcap=linux
+-              make -j2
+-              export LIBPCAP_PATH=$(pwd)
+-              cd
+-              wget https://www.tcpdump.org/release/tcpdump-4.9.3.tar.gz
+-              tar xzf tcpdump-4.9.3.tar.gz
+-              cd tcpdump-4.9.3/
+-              export CFLAGS="-static -I${LIBPCAP_PATH} -L${LIBPCAP_PATH}"
+-              export CPPFLAGS=-static
+-              export LDFLAGS=-static
+-              ./configure
+-              make -j2
+-              pwd
++            id: build_tcpdump
++            run: $GITHUB_WORKSPACE/build/targets/build_tcpdump.sh x86_64
++
++          - name: List build directory
++            run: ls -la /build
+ 
+-          - name: List build dir
+-            run: ls -la
++          - name: List build artifacts
++            run: ls -la /output
+ 
+           - name: Upload artifacts
+             uses: actions/upload-artifact@v2
+             with:
+-                name: tcpdump-4.9.3
+-                path: /github/home/tcpdump-4.9.3/tcpdump
++                name: ${{ steps.build_tcpdump.outputs.PACKAGED_NAME }}
++                path: ${{ steps.build_tcpdump.outputs.PACKAGED_NAME_PATH }}
+diff --git a/build/targets/build_tcpdump.sh b/build/targets/build_tcpdump.sh
+new file mode 100755
+index 0000000..730954f
+--- /dev/null
++++ b/build/targets/build_tcpdump.sh
+@@ -0,0 +1,41 @@
++#!/bin/bash
++set -e
++set -x
++set -o pipefail
++if [ "$#" -ne 1 ];then
++    echo "Usage: ${0} [x86|x86_64|armhf|aarch64]"
++    echo "Example: ${0} x86_64"
++    exit 1
++fi
++source $GITHUB_WORKSPACE/build/lib.sh
++init_lib "$1"
++
++build_tcpdump() {
++    fetch "https://github.com/the-tcpdump-group/tcpdump.git" "${BUILD_DIRECTORY}/tcpdump" git
++    cd "${BUILD_DIRECTORY}/tcpdump"
++    git clean -fdx
++    git checkout tcpdump-4.9.3
++    export LIBPCAP_PATH="${BUILD_DIRECTORY}/libpcap"
++    CFLAGS="${GCC_OPTS} -I${LIBPCAP_PATH} -L${LIBPCAP_PATH}" \
++        CXXFLAGS="${GXX_OPTS}" \
++        CPPFLAGS="-static" \
++        LDFLAGS="-static" \
++        ./configure \
++            --host="$(get_host_triple)"
++    make -j4
++    strip tcpdump
++}
++
++main() {
++    lib_build_libpcap
++    build_tcpdump
++    local version
++    version=$(get_version "${BUILD_DIRECTORY}/tcpdump/tcpdump --version 2>&1 | head -n1 | awk '{print \$3}'")
++    cp "${BUILD_DIRECTORY}/tcpdump/tcpdump" "${OUTPUT_DIRECTORY}/tcpdump"
++    echo "[+] Finished building tcpdump ${CURRENT_ARCH}"
++
++    echo ::set-output name=PACKAGED_NAME::"tcpdump${version}"
++    echo ::set-output name=PACKAGED_NAME_PATH::"${OUTPUT_DIRECTORY}/*"
++}
++
++main

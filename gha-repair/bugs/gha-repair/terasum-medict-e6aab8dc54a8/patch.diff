@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/build-release.yml b/.github/workflows/build-release.yml
+index 4486a0a..b497922 100644
+--- a/.github/workflows/build-release.yml
++++ b/.github/workflows/build-release.yml
+@@ -60,7 +60,11 @@ jobs:
+         run: yarn run publish
+       
+       - name: list artificats
++        if: ${{ matrix.os != 'windows-latest' }}
+         run: find ./out
++      - name: list artificats (windows)
++        if: ${{ matrix.os == 'windows-latest' }}
++        run: TREE /A out
+       # - name: Update Release
+         # You may pin to the exact commit or the version.
+         # uses: johnwbyrd/update-release@1d5ec4791e40507e5eca3b4dbf90f0b27e7e4979

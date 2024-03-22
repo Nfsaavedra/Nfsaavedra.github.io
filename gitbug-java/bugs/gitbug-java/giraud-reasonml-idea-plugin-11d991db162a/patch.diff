@@ -1,0 +1,68 @@
+diff --git a/src/main/java/com/reason/ide/structure/StructureViewElement.java b/src/main/java/com/reason/ide/structure/StructureViewElement.java
+index 9ad2ec7..72d20b1 100644
+--- a/src/main/java/com/reason/ide/structure/StructureViewElement.java
++++ b/src/main/java/com/reason/ide/structure/StructureViewElement.java
+@@ -85,9 +85,8 @@ public class StructureViewElement implements StructureViewTreeElement, SortableT
+                     return m_viewElement.getText();
+                 }
+ 
+-                @Nullable
+                 @Override
+-                public String getLocationString() {
++                public @Nullable String getLocationString() {
+                     if (myElement instanceof RPsiLet && ((RPsiLet) myElement).isDeconstruction()) {
+                         return "";
+                     }
+@@ -96,9 +95,8 @@ public class StructureViewElement implements StructureViewTreeElement, SortableT
+                             : "";
+                 }
+ 
+-                @Nullable
+                 @Override
+-                public Icon getIcon(boolean unused) {
++                public @Nullable Icon getIcon(boolean unused) {
+                     return PsiIconUtil.getProvidersIcon(myElement, 0);
+                 }
+             };
+@@ -177,7 +175,14 @@ public class StructureViewElement implements StructureViewTreeElement, SortableT
+ 
+         RPsiModuleSignature moduleSignature = moduleElement.getModuleSignature();
+         if (moduleSignature != null) {
+-            treeElements.add(new StructureViewElement(moduleSignature, myLevel + 1));
++            RPsiUpperSymbol nameIdentifier = moduleSignature.getNameIdentifier();
++            if (nameIdentifier != null) {
++                // module type of ...
++                treeElements.add(new StructureViewElement(moduleSignature, myLevel + 1));
++            } else {
++                // sig ... end
++                moduleSignature.acceptChildren(new ElementVisitor(treeElements, myLevel));
++            }
+         }
+ 
+         if (moduleSignature == null) {
+diff --git a/src/main/java/com/reason/lang/core/psi/impl/RPsiModuleSignature.java b/src/main/java/com/reason/lang/core/psi/impl/RPsiModuleSignature.java
+index d7d175a..212d153 100644
+--- a/src/main/java/com/reason/lang/core/psi/impl/RPsiModuleSignature.java
++++ b/src/main/java/com/reason/lang/core/psi/impl/RPsiModuleSignature.java
+@@ -20,7 +20,6 @@ public class RPsiModuleSignature extends ORCompositePsiElement<ORLangTypes> impl
+     @Override
+     public String @Nullable [] getPath() {
+         return ORUtil.getQualifiedPath(this);
+-
+     }
+ 
+     public @Nullable RPsiUpperSymbol getNameIdentifier() {
+diff --git a/src/main/java/com/reason/lang/ocaml/OclParser.java b/src/main/java/com/reason/lang/ocaml/OclParser.java
+index 7e98b2d..8642e0b 100644
+--- a/src/main/java/com/reason/lang/ocaml/OclParser.java
++++ b/src/main/java/com/reason/lang/ocaml/OclParser.java
+@@ -557,6 +557,9 @@ public class OclParser extends CommonPsiParser {
+             if (is(myTypes.C_MODULE_BINDING)) { // This is the body of a module type
+                 // module type X = |>sig<| ...
+                 updateScopeToken(myTypes.SIG);
++            } else if (is(myTypes.C_MODULE_SIGNATURE)) {
++                // module X : |>sig<| ...
++                markDummyScope(myTypes.C_SCOPED_EXPR, myTypes.SIG);
+             } else {
+                 markScope(myTypes.C_SIG_EXPR, myTypes.SIG);
+             }

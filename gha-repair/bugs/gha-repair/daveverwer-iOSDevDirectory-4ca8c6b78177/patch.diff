@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ruby.yml b/.github/workflows/ruby.yml
+index 6ec91cb..985d2ef 100644
+--- a/.github/workflows/ruby.yml
++++ b/.github/workflows/ruby.yml
+@@ -7,7 +7,7 @@ on:
+     branches: [master]
+ 
+ jobs:
+-  build:
++  validate:
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v2

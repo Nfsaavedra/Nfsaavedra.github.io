@@ -1,0 +1,18 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 60ee81a..d54a38e 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -37,13 +37,3 @@ jobs:
+           GH_TOKEN: ${{ secrets.gh_token }}
+         run: yarn run release
+ 
+-      - uses: actions/upload-artifact@v3
+-        name: Upload artifacts
+-        if: ${{ startsWith(github.event.head_commit.message, '[artifacts]') }}
+-        with:
+-          path: |
+-            release/*.exe
+-            release/*.dmg
+-            release/*.AppImage
+-            release/*.zip
+-            release/*.deb

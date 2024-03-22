@@ -1,0 +1,55 @@
+diff --git a/src/test/java/io/github/vmzakharov/ecdataframe/ScriptFromStringTest.java b/src/test/java/io/github/vmzakharov/ecdataframe/ScriptFromStringTest.java
+index 4fd6e45..61311b7 100644
+--- a/src/test/java/io/github/vmzakharov/ecdataframe/ScriptFromStringTest.java
++++ b/src/test/java/io/github/vmzakharov/ecdataframe/ScriptFromStringTest.java
+@@ -173,4 +173,16 @@ public class ScriptFromStringTest
+         Assert.assertEquals(1, ((LongValue) result).longValue());
+     }
+ 
++    @Test
++    public void scriptWithMixedQuotes()
++    {
++        String scriptText =
++                "x = 'ba\"r'\n"
++                + "x in (\"qux\", 'ba\"r', 'baz', \"wal'do\")";
++
++        AnonymousScript script = ExpressionTestUtil.toScript(scriptText);
++        Value result = script.evaluate(new InMemoryEvaluationVisitor());
++        Assert.assertTrue(result.isBoolean());
++        Assert.assertTrue(((BooleanValue) result).isTrue());
++    }
+ }
+diff --git a/src/test/java/io/github/vmzakharov/ecdataframe/StandaloneExpressionFromStringTest.java b/src/test/java/io/github/vmzakharov/ecdataframe/StandaloneExpressionFromStringTest.java
+index f900bd9..7afefb4 100644
+--- a/src/test/java/io/github/vmzakharov/ecdataframe/StandaloneExpressionFromStringTest.java
++++ b/src/test/java/io/github/vmzakharov/ecdataframe/StandaloneExpressionFromStringTest.java
+@@ -105,6 +105,7 @@ public class StandaloneExpressionFromStringTest
+         Assert.assertTrue(ExpressionTestUtil.evaluateToBoolean("\"foo\" in (\"foo\", \"bar\", \"baz\")"));
+         Assert.assertFalse(ExpressionTestUtil.evaluateToBoolean("\"foo\" in (\"qux\", \"bar\", \"baz\")"));
+         Assert.assertFalse(ExpressionTestUtil.evaluateToBoolean("'foo' in ('qux', 'bar', 'baz')"));
++        Assert.assertFalse(ExpressionTestUtil.evaluateToBoolean("'foo' in (\"qux\", 'ba\"r', 'baz', \"wal'do\")"));
+         Assert.assertTrue(ExpressionTestUtil.evaluateToBoolean("123 in (456, 567, 123)"));
+         Assert.assertFalse(ExpressionTestUtil.evaluateToBoolean("123 in (456, 567, 789)"));
+         Assert.assertFalse(ExpressionTestUtil.evaluateToBoolean("123 in ()"));
+diff --git a/src/test/java/io/github/vmzakharov/ecdataframe/dsl/PrettyPrintingTest.java b/src/test/java/io/github/vmzakharov/ecdataframe/dsl/PrettyPrintingTest.java
+index e6fb679..95eca01 100644
+--- a/src/test/java/io/github/vmzakharov/ecdataframe/dsl/PrettyPrintingTest.java
++++ b/src/test/java/io/github/vmzakharov/ecdataframe/dsl/PrettyPrintingTest.java
+@@ -160,6 +160,17 @@ public class PrettyPrintingTest
+     }
+ 
+     @Test
++    public void nestedQuotes()
++    {
++        String  expressionAsString = "'foo' in (\"qux\", 'ba\"r', 'baz', \"wal'do\")";
++        Expression expression = ExpressionTestUtil.toExpression(expressionAsString);
++
++        String result = PrettyPrintVisitor.exprToString(expression);
++
++        Assert.assertEquals("(\"foo\" in (\"qux\", 'ba\"r', \"baz\", \"wal'do\"))", result);
++    }
++
++    @Test
+     public void expressionToString()
+     {
+         String expressionAsString = "(1 + 2)/ (7.0 +9)";

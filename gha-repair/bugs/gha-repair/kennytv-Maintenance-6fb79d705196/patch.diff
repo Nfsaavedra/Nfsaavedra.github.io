@@ -1,0 +1,18 @@
+diff --git a/.github/workflows/maven.yml b/.github/workflows/maven.yml
+index 394b5ca..3da3580 100644
+--- a/.github/workflows/maven.yml
++++ b/.github/workflows/maven.yml
+@@ -28,8 +28,8 @@ jobs:
+         with:
+           name: artifact
+           path: |
+-            "**/Maintenance.jar"
+-            "**/MaintenanceSpigot.jar"
+-            "**/MaintenanceBungee.jar"
+-            "**/MaintenanceVelocity.jar"
+-            "**/MaintenanceSponge.jar"
++            **/Maintenance.jar
++            **/MaintenanceSpigot.jar
++            **/MaintenanceBungee.jar
++            **/MaintenanceVelocity.jar
++            **/MaintenanceSponge.jar

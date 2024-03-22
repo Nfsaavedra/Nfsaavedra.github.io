@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/publish.yml b/.github/workflows/publish.yml
+index 3555615..d7c5dba 100644
+--- a/.github/workflows/publish.yml
++++ b/.github/workflows/publish.yml
+@@ -4,10 +4,6 @@ on:
+   push:
+     branches:
+       - master
+-    paths-ignore:
+-      - README.md
+-      - .gitignore
+-      - .github/**
+ 
+ jobs:
+   publish:

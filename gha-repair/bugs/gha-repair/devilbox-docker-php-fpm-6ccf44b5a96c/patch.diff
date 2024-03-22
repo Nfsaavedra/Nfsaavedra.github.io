@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/arm64.yml b/.github/workflows/arm64.yml
+index 5388c76..b5f016a 100644
+--- a/.github/workflows/arm64.yml
++++ b/.github/workflows/arm64.yml
+@@ -290,7 +290,7 @@ jobs:
+       # ------------------------------------------------------------
+       - name: Diff README.md
+         run: |
+-          make gen-readme VERSION=${VERSION}
++          make gen-readme VERSION=${VERSION} ARCH=linux/arm64
+           git diff --quiet || { echo "Build Changes"; git diff; git status; false; }
+         env:
+           VERSION: ${{ matrix.version }}

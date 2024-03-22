@@ -1,0 +1,104 @@
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build] 🚀  Start image=crawlergpt:latest
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   🐳  docker pull image=crawlergpt:latest platform= username= forcePull=false
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   🐳  docker create image=crawlergpt:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   🐳  docker run image=crawlergpt:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/64653571-ac37-4f4c-abd3-4397e77e65d7] user=0 workdir=
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build] ⭐ Run Main Set up Go 1.x
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   🐳  docker cp src=/tmp/act-cache/d9184f96-76cc-4f2c-8d5b-6b7ca3337471/act/actions-setup-go@v2/ dst=/var/run/act/actions/actions-setup-go@v2/
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-go@v2/] user=0 workdir=
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-go@v2/dist/index.js] user= workdir=
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | Setup go stable version spec ^1.13
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   💬  ::debug::isExplicit: 
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   💬  ::debug::explicit? false
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   💬  ::debug::isExplicit: 1.14.15
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   💬  ::debug::explicit? true
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   💬  ::debug::isExplicit: 1.15.15
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   💬  ::debug::explicit? true
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   💬  ::debug::isExplicit: 1.16.7
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   💬  ::debug::explicit? true
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   💬  ::debug::evaluating 3 versions
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   💬  ::debug::matched: 1.16.7
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   💬  ::debug::checking cache: /opt/hostedtoolcache/go/1.16.7/x64
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   💬  ::debug::Found tool in cache go 1.16.7 x64
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | Found in cache @ /opt/hostedtoolcache/go/1.16.7/x64
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | Added go to the path
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   💬  ::debug::which go :/opt/hostedtoolcache/go/1.16.7/x64/bin/go:
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   💬  ::debug::go env GOPATH :/home/runneradmin/go:
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   💬  ::debug::creating /home/runneradmin/go
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   💬  ::debug::creating /home/runneradmin/go/bin
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   💬  ::debug::add bin true
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | Successfully setup go version ^1.13
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   ❓ add-matcher /run/act/actions/actions-setup-go@v2/matchers.json
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | go version go1.16.7 linux/amd64
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | 
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   ❓  ::group::go env
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | GO111MODULE=""
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | GOARCH="amd64"
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | GOBIN=""
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | GOCACHE="/home/runneradmin/.cache/go-build"
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | GOENV="/home/runneradmin/.config/go/env"
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | GOEXE=""
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | GOFLAGS=""
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | GOHOSTARCH="amd64"
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | GOHOSTOS="linux"
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | GOINSECURE=""
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | GOMODCACHE="/home/runneradmin/go/pkg/mod"
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | GONOPROXY=""
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | GONOSUMDB=""
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | GOOS="linux"
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | GOPATH="/home/runneradmin/go"
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | GOPRIVATE=""
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | GOPROXY="https://proxy.golang.org,direct"
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | GOROOT="/opt/hostedtoolcache/go/1.16.7/x64"
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | GOSUMDB="sum.golang.org"
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | GOTMPDIR=""
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | GOTOOLDIR="/opt/hostedtoolcache/go/1.16.7/x64/pkg/tool/linux_amd64"
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | GOVCS=""
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | GOVERSION="go1.16.7"
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | GCCGO="gccgo"
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | AR="ar"
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | CC="gcc"
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | CXX="g++"
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | CGO_ENABLED="1"
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | GOMOD="/dev/null"
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | CGO_CFLAGS="-g -O2"
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | CGO_CPPFLAGS=""
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | CGO_CXXFLAGS="-g -O2"
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | CGO_FFLAGS="-g -O2"
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | CGO_LDFLAGS="-g -O2"
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | PKG_CONFIG="pkg-config"
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | GOGCCFLAGS="-fPIC -m64 -pthread -fmessage-length=0 -fdebug-prefix-map=/tmp/go-build2141563655=/tmp/go-build -gno-record-gcc-switches"
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | 
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   ❓  ::endgroup::
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   ✅  Success - Main Set up Go 1.x
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   ⚙  ::set-env:: GOROOT=/opt/hostedtoolcache/go/1.16.7/x64
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   ⚙  ::add-path:: /opt/hostedtoolcache/go/1.16.7/x64/bin
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   ⚙  ::add-path:: /home/runneradmin/go/bin
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build] ⭐ Run Main Check out code into the Go module directory
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   🐳  docker cp src=/tmp/64653571-ac37-4f4c-abd3-4397e77e65d7/. dst=/tmp/64653571-ac37-4f4c-abd3-4397e77e65d7
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/64653571-ac37-4f4c-abd3-4397e77e65d7] user=0 workdir=
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   ✅  Success - Main Check out code into the Go module directory
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build] ⭐ Run Main Get dependencies
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | go: downloading github.com/alecthomas/participle v0.7.1
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | go: downloading github.com/bradleyjkemp/cupaloy/v2 v2.6.0
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | go: downloading gopkg.in/yaml.v3 v3.0.0-20200615113413-eeeca48fe776
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | go: downloading github.com/PaesslerAG/jsonpath v0.1.1
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | go: downloading github.com/pmezard/go-difflib v1.0.0
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | go: downloading github.com/davecgh/go-spew v1.1.1
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | go: downloading github.com/PaesslerAG/gval v1.0.0
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   ✅  Success - Main Get dependencies
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build] ⭐ Run Main Build
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | github.com/bradleyjkemp/sigma-go/internal/grammar
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | github.com/alecthomas/participle/lexer
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | gopkg.in/yaml.v3
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | github.com/alecthomas/participle
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | github.com/bradleyjkemp/sigma-go
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   ✅  Success - Main Build
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build] ⭐ Run Main Test
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   | go: downloading github.com/jstemmer/go-junit-report/v2 v2.0.0
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build]   ❌  Failure - Main Test
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build] exitcode '1': failure
+[a54dc71f-49e5-4ddb-b45a-c9a4881c4d3b/Build] 🏁  Job failed

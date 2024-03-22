@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/container-release.yml b/.github/workflows/container-release.yml
+index 3d61928..c8b2e56 100644
+--- a/.github/workflows/container-release.yml
++++ b/.github/workflows/container-release.yml
+@@ -45,6 +45,3 @@ jobs:
+           file: docker/Dockerfile
+           push: true
+           tags: quay.io/invidious/invidious:${{ github.sha }}
+-
+-      - name: Image digest
+-        run: echo ${{ steps.docker_build.outputs.digest }}

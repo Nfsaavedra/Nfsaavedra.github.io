@@ -1,0 +1,74 @@
+diff --git a/.github/workflows/generate_tag.yml b/.github/workflows/generate_tag.yml
+deleted file mode 100644
+index b54e16d..0000000
+--- a/.github/workflows/generate_tag.yml
++++ /dev/null
+@@ -1,26 +0,0 @@
+-name: create tag
+-
+-on:
+-  workflow_dispatch:
+-    inputs:
+-      tagname:
+-        description: 'Tag name'
+-        required: true
+-        default: 'v1.0.0'
+-        type: string
+-
+-jobs:
+-  create-tag:
+-    runs-on: ubuntu-latest
+-
+-    steps:
+-      - name: Create tag
+-        uses: actions/github-script@v6
+-        with:
+-          script: |
+-            github.rest.git.createRef({
+-              owner: context.repo.owner,
+-              repo: context.repo.repo,
+-              ref: 'refs/tags/${{ github.event.inputs.tagname }}',
+-              sha: context.sha
+-            })
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 9c1b9de..8d55df8 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -1,8 +1,12 @@
+ name: Release Alkaa
+ on:
+-  push:
+-    tags:
+-      - '*'
++  workflow_dispatch:
++    inputs:
++      tagname:
++        description: 'Version name'
++        required: true
++        default: 'v1.0.0'
++        type: string
+ 
+ env:
+   ALKAA_KEY_ALIAS: ${{ secrets.ALKAA_KEY_ALIAS }}
+@@ -10,6 +14,21 @@ env:
+   ALKAA_KEY_STORE_PASSWORD: ${{ secrets.ALKAA_KEY_STORE_PASSWORD }}
+ 
+ jobs:
++  create-tag:
++    runs-on: ubuntu-latest
++
++    steps:
++      - name: Create tag
++        uses: actions/github-script@v6
++        with:
++          script: |
++            github.rest.git.createRef({
++              owner: context.repo.owner,
++              repo: context.repo.repo,
++              ref: 'refs/tags/${{ github.event.inputs.tagname }}',
++              sha: context.sha
++            })
++
+   github-release:
+     name: "Release on GitHub"
+     runs-on: "ubuntu-latest"

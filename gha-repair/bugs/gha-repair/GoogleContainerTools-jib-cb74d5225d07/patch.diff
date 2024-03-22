@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/unit-tests.yml b/.github/workflows/unit-tests.yml
+index b958de7..98de952 100644
+--- a/.github/workflows/unit-tests.yml
++++ b/.github/workflows/unit-tests.yml
+@@ -24,7 +24,7 @@ jobs:
+         with:
+           distribution: 'adopt'
+           java-version: ${{ matrix.java }}
+-      - uses: actions/cache@v2.1.4
++      - uses: actions/cache@v2.1.5
+         with:
+           path: |
+             ~/.m2/repository

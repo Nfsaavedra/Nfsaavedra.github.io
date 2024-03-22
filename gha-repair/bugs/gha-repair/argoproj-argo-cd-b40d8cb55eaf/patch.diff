@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/ci-build.yaml b/.github/workflows/ci-build.yaml
+index 82bf8d3..0b98231 100644
+--- a/.github/workflows/ci-build.yaml
++++ b/.github/workflows/ci-build.yaml
+@@ -360,8 +360,8 @@ jobs:
+     name: Run end-to-end tests
+     runs-on: ubuntu-22.04
+     strategy:
++      fail-fast: false
+       matrix:
+-        fail-fast: false
+         k3s-version: [v1.27.2, v1.26.0, v1.25.4, v1.24.3]
+     needs: 
+       - build-go

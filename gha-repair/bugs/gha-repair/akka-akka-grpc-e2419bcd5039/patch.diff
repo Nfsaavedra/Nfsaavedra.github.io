@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/build-test.yml b/.github/workflows/build-test.yml
+index 65070b9..5a99319 100644
+--- a/.github/workflows/build-test.yml
++++ b/.github/workflows/build-test.yml
+@@ -217,12 +217,12 @@ jobs:
+       - name: Test Maven Java
+         run: |-
+           cd plugin-tester-java
+-          mvn -Dakka.grpc.project.version=`cat ~/.version` compile
++          mvn -nsu -ntp -Dakka.grpc.project.version=`cat ~/.version` compile
+ 
+       - name: Test Maven Scala
+         run: |-
+           cd plugin-tester-scala
+-          mvn -Dakka.grpc.project.version=`cat ~/.version` akka-grpc:generate scala:compile
++          mvn -nsu -ntp -Dakka.grpc.project.version=`cat ~/.version` akka-grpc:generate scala:compile
+ 
+   test-docs:
+     name: Docs

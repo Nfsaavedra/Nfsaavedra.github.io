@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 43bc01a..1b58277 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -12,7 +12,7 @@ jobs:
+     - name: Setup node
+       uses: actions/setup-node@v1
+       with:
+-        version: 8
++        node-version: 8
+     - name: Install deps
+       run: |
+         npm install eslint

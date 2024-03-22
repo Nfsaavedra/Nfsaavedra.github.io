@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/rust.yml b/.github/workflows/rust.yml
+index 481162c..1be6758 100644
+--- a/.github/workflows/rust.yml
++++ b/.github/workflows/rust.yml
+@@ -25,5 +25,5 @@ jobs:
+           cargo clippy --all-features --all-targets -- --deny warnings
+           cargo fmt --all -- --check
+ 
+-      - name: Run build on all Systems
++      - name: Run build on ${{ matrix.os }}
+         run: cargo build --all-features

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index b9d4111..f94e895 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -92,6 +92,8 @@ jobs:
+     needs: [build]
+     runs-on: ubuntu-latest
+     steps:
++      - uses: actions/checkout@v1
++
+       - id: package_version
+         name: Get version.
+         shell: bash

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index f46ec70..c8e8d82 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -16,7 +16,7 @@ jobs:
+       matrix:
+         include:
+           - pair:
+-              elixir: 1.12.4
++              elixir: 1.12.3
+               otp: 23.3
+           - pair:
+               elixir: 1.15.7

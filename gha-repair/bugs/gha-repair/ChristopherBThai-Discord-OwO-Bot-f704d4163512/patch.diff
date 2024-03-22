@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/lint.yml b/.github/workflows/lint.yml
+index 6ea2561..4173866 100644
+--- a/.github/workflows/lint.yml
++++ b/.github/workflows/lint.yml
+@@ -33,7 +33,7 @@ jobs:
+ 
+       # ESLint and Prettier must be in `package.json`
+       - name: Install Node.js dependencies
+-        run: npm ci
++        run: npm install prettier@2.8.0 eslint@8.29.0 eslint-config-prettier@8.5.0
+ 
+       - name: Run linters
+         uses: wearerequired/lint-action@v2

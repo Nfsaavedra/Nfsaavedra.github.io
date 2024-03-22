@@ -1,0 +1,2950 @@
+diff --git a/.github/workflows/matrix.json b/.github/workflows/matrix.json
+index 3faa087..1c81604 100644
+--- a/.github/workflows/matrix.json
++++ b/.github/workflows/matrix.json
+@@ -72,6 +72,12 @@
+     "label": "board/raspberrypi"
+   },
+   {
++    "id": "yellow",
++    "defconfig": "yellow",
++    "runner": "aarch64-runner",
++    "label": "board/yellow"
++  },
++  {
+     "id": "tinker",
+     "defconfig": "tinker",
+     "runner": "arm-runner",
+diff --git a/buildroot-external/board/raspberrypi/amber/cmdline.txt b/buildroot-external/board/raspberrypi/amber/cmdline.txt
+deleted file mode 100644
+index 7284969..0000000
+--- a/buildroot-external/board/raspberrypi/amber/cmdline.txt
++++ /dev/null
+@@ -1,1 +0,0 @@
+-dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200n8 console=ttyAMA2,115200n8
+diff --git a/buildroot-external/board/raspberrypi/amber/config.txt b/buildroot-external/board/raspberrypi/amber/config.txt
+deleted file mode 100644
+index 9ba9349..0000000
+--- a/buildroot-external/board/raspberrypi/amber/config.txt
++++ /dev/null
+@@ -1,77 +0,0 @@
+-# For more options and information see
+-# http://rpf.io/configtxt
+-# Some settings may impact device functionality. See link above for details
+-
+-# HAOS - don't change it!
+-disable_splash=1
+-kernel=u-boot.bin
+-arm_64bit=1
+-
+-# uncomment to enable primary UART console
+-enable_uart=1
+-
+-# uncomment if you get no picture on HDMI for a default "safe" mode
+-#hdmi_safe=1
+-
+-# uncomment this if your display has a black border of unused pixels visible
+-# and your display can output without overscan
+-#disable_overscan=1
+-
+-# uncomment the following to adjust overscan. Use positive numbers if console
+-# goes off screen, and negative if there is too much border
+-#overscan_left=16
+-#overscan_right=16
+-#overscan_top=16
+-#overscan_bottom=16
+-
+-# uncomment to force a console size. By default it will be display's size minus
+-# overscan.
+-#framebuffer_width=1280
+-#framebuffer_height=720
+-
+-# uncomment if hdmi display is not detected and composite is being output
+-#hdmi_force_hotplug=1
+-
+-# uncomment to force a specific HDMI mode (this will force VGA)
+-#hdmi_group=1
+-#hdmi_mode=1
+-
+-# uncomment to force a HDMI mode rather than DVI. This can make audio work in
+-# DMT (computer monitor) modes
+-#hdmi_drive=2
+-
+-# uncomment to increase signal to HDMI, if you have interference, blanking, or
+-# no display
+-#config_hdmi_boost=4
+-
+-# uncomment for composite PAL
+-#sdtv_mode=2
+-
+-# Uncomment to disable continous SD-card poll (for USB SSD)
+-#dtparam=sd_poll_once=on
+-
+-# Uncomment some or all of these to enable the optional hardware interfaces
+-#dtparam=i2c_arm=on
+-#dtparam=i2s=on
+-#dtparam=spi=on
+-
+-# Uncomment this to enable the lirc-rpi module
+-#dtoverlay=lirc-rpi
+-
+-# Uncomment this to enable GPIO support for RPI-RF-MOD/HM-MOD-RPI-PCB
+-#enable_uart=1
+-#dtparam=i2c_arm=on
+-#dtoverlay=miniuart-bt
+-#dtoverlay=rpi-rf-mod
+-
+-# Additional overlays and parameters are documented /boot/overlays/README
+-
+-# Enable audio (loads snd_bcm2835)
+-dtparam=audio=on
+-
+-[all]
+-#dtoverlay=vc4-fkms-v3d
+-#max_framebuffers=2
+-device_tree=bcm2711-rpi-cm4-ha-amber.dtb
+-dtoverlay=dwc2,dr_mode=host
+-
+diff --git a/buildroot-external/board/raspberrypi/amber/meta b/buildroot-external/board/raspberrypi/amber/meta
+deleted file mode 100644
+index 44398ad..0000000
+--- a/buildroot-external/board/raspberrypi/amber/meta
++++ /dev/null
+@@ -1,10 +0,0 @@
+-BOARD_ID=amber
+-BOARD_NAME="Amber"
+-CHASSIS=embedded
+-BOOTLOADER=uboot
+-KERNEL_FILE=Image
+-BOOT_SYS=hybrid
+-BOOT_SPL=false
+-BOOT_ENV_SIZE=0x4000
+-SUPERVISOR_MACHINE=raspberrypi4-64
+-SUPERVISOR_ARCH=aarch64
+diff --git a/buildroot-external/board/raspberrypi/amber/patches/linux/0001-ARM-dts-bcm2711-Add-device-tree-for-Home-Assistant-A.patch b/buildroot-external/board/raspberrypi/amber/patches/linux/0001-ARM-dts-bcm2711-Add-device-tree-for-Home-Assistant-A.patch
+deleted file mode 100644
+index b7eed06..0000000
+--- a/buildroot-external/board/raspberrypi/amber/patches/linux/0001-ARM-dts-bcm2711-Add-device-tree-for-Home-Assistant-A.patch
++++ /dev/null
+@@ -1,721 +0,0 @@
+-From a08d21ffe9957db5f00b1ee8f0d1667b11a25cb9 Mon Sep 17 00:00:00 2001
+-Message-Id: <a08d21ffe9957db5f00b1ee8f0d1667b11a25cb9.1636734839.git.stefan@agner.ch>
+-From: Stefan Agner <stefan@agner.ch>
+-Date: Wed, 3 Nov 2021 00:00:45 +0100
+-Subject: [PATCH 1/8] ARM: dts: bcm2711: Add device tree for Home Assistant
+- Amber
+-
+-Add device tree for Home Assistant Amber, a Compute Module 4 based I/O
+-board.
+-
+-Signed-off-by: Stefan Agner <stefan@agner.ch>
+----
+- arch/arm/boot/dts/Makefile                    |   3 +-
+- .../arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts | 659 ++++++++++++++++++
+- arch/arm64/boot/dts/broadcom/Makefile         |   1 +
+- .../dts/broadcom/bcm2711-rpi-cm4-ha-amber.dts |   1 +
+- 4 files changed, 663 insertions(+), 1 deletion(-)
+- create mode 100644 arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts
+- create mode 100644 arch/arm64/boot/dts/broadcom/bcm2711-rpi-cm4-ha-amber.dts
+-
+-diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
+-index 12cd8bf582e1..4fa8c7be516a 100644
+---- a/arch/arm/boot/dts/Makefile
+-+++ b/arch/arm/boot/dts/Makefile
+-@@ -14,7 +14,8 @@ dtb-$(CONFIG_ARCH_BCM2835) += \
+- 	bcm2711-rpi-4-b.dtb \
+- 	bcm2711-rpi-400.dtb \
+- 	bcm2710-rpi-cm3.dtb \
+--	bcm2711-rpi-cm4.dtb
+-+	bcm2711-rpi-cm4.dtb \
+-+	bcm2711-rpi-cm4-ha-amber.dtb
+- 
+- dtb-$(CONFIG_ARCH_ALPINE) += \
+- 	alpine-db.dtb
+-diff --git a/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts
+-new file mode 100644
+-index 000000000000..855da2b029a4
+---- /dev/null
+-+++ b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts
+-@@ -0,0 +1,659 @@
+-+// SPDX-License-Identifier: GPL-2.0
+-+/dts-v1/;
+-+#include "bcm2711.dtsi"
+-+#include "bcm2835-rpi.dtsi"
+-+
+-+#include <dt-bindings/reset/raspberrypi,firmware-reset.h>
+-+
+-+/ {
+-+	compatible = "raspberrypi,4-compute-module-ha-amber", "brcm,bcm2711";
+-+	model = "Raspberry Pi Compute Module 4 on Home Assistant Amber";
+-+
+-+	chosen {
+-+		/* 8250 auxiliary UART instead of pl011 */
+-+		stdout-path = "serial1:115200n8";
+-+	};
+-+
+-+	/* Will be filled by the bootloader */
+-+	memory@0 {
+-+		device_type = "memory";
+-+		reg = <0 0 0>;
+-+	};
+-+
+-+	aliases {
+-+		emmc2bus = &emmc2bus;
+-+		ethernet0 = &genet;
+-+		pcie0 = &pcie0;
+-+		blconfig = &blconfig;
+-+	};
+-+
+-+	leds {
+-+		led-act {
+-+			gpios = <&gpio 42 GPIO_ACTIVE_HIGH>;
+-+		};
+-+
+-+		led-pwr {
+-+			label = "PWR";
+-+			gpios = <&expgpio 2 GPIO_ACTIVE_LOW>;
+-+			default-state = "keep";
+-+			linux,default-trigger = "default-on";
+-+		};
+-+	};
+-+
+-+	wifi_pwrseq: wifi-pwrseq {
+-+		compatible = "mmc-pwrseq-simple";
+-+		reset-gpios = <&expgpio 1 GPIO_ACTIVE_LOW>;
+-+	};
+-+
+-+	sd_io_1v8_reg: sd_io_1v8_reg {
+-+		compatible = "regulator-gpio";
+-+		regulator-name = "vdd-sd-io";
+-+		regulator-min-microvolt = <1800000>;
+-+		regulator-max-microvolt = <3300000>;
+-+		regulator-boot-on;
+-+		regulator-always-on;
+-+		regulator-settling-time-us = <5000>;
+-+		gpios = <&expgpio 4 GPIO_ACTIVE_HIGH>;
+-+		states = <1800000 0x1
+-+			  3300000 0x0>;
+-+		status = "okay";
+-+	};
+-+
+-+	sd_vcc_reg: sd_vcc_reg {
+-+		compatible = "regulator-fixed";
+-+		regulator-name = "vcc-sd";
+-+		regulator-min-microvolt = <3300000>;
+-+		regulator-max-microvolt = <3300000>;
+-+		regulator-boot-on;
+-+		enable-active-high;
+-+		gpio = <&expgpio 6 GPIO_ACTIVE_HIGH>;
+-+	};
+-+};
+-+
+-+&ddc0 {
+-+	status = "okay";
+-+};
+-+
+-+&ddc1 {
+-+	status = "okay";
+-+};
+-+
+-+&firmware {
+-+	firmware_clocks: clocks {
+-+		compatible = "raspberrypi,firmware-clocks";
+-+		#clock-cells = <1>;
+-+	};
+-+
+-+	expgpio: gpio {
+-+		compatible = "raspberrypi,firmware-gpio";
+-+		gpio-controller;
+-+		#gpio-cells = <2>;
+-+		gpio-line-names = "BT_ON",
+-+				  "WL_ON",
+-+				  "PWR_LED_OFF",
+-+				  "ANT1",
+-+				  "VDD_SD_IO_SEL",
+-+				  "CAM_GPIO",
+-+				  "SD_PWR_ON",
+-+				  "ANT2";
+-+		status = "okay";
+-+
+-+		ant1: ant1 {
+-+			gpio-hog;
+-+			gpios = <3 GPIO_ACTIVE_HIGH>;
+-+			output-high;
+-+		};
+-+
+-+		ant2: ant2 {
+-+			gpio-hog;
+-+			gpios = <7 GPIO_ACTIVE_HIGH>;
+-+			output-low;
+-+		};
+-+	};
+-+
+-+	reset: reset {
+-+		compatible = "raspberrypi,firmware-reset";
+-+		#reset-cells = <1>;
+-+	};
+-+};
+-+
+-+&gpio {
+-+	/*
+-+	 * Parts taken from rpi_SCH_4b_4p0_reduced.pdf and
+-+	 * the official GPU firmware DT blob.
+-+	 *
+-+	 * Legend:
+-+	 * "FOO" = GPIO line named "FOO" on the schematic
+-+	 * "FOO_N" = GPIO line named "FOO" on schematic, active low
+-+	 */
+-+	gpio-line-names = "ID_SDA",
+-+			  "ID_SCL",
+-+			  "SDA1",
+-+			  "SCL1",
+-+			  "GPIO_GCLK",
+-+			  "GPIO5",
+-+			  "GPIO6",
+-+			  "SPI_CE1_N",
+-+			  "SPI_CE0_N",
+-+			  "SPI_MISO",
+-+			  "SPI_MOSI",
+-+			  "SPI_SCLK",
+-+			  "GPIO12",
+-+			  "GPIO13",
+-+			  /* Serial port */
+-+			  "TXD1",
+-+			  "RXD1",
+-+			  "GPIO16",
+-+			  "GPIO17",
+-+			  "GPIO18",
+-+			  "GPIO19",
+-+			  "GPIO20",
+-+			  "GPIO21",
+-+			  "GPIO22",
+-+			  "GPIO23",
+-+			  "GPIO24",
+-+			  "GPIO25",
+-+			  "GPIO26",
+-+			  "GPIO27",
+-+			  "RGMII_MDIO",
+-+			  "RGMIO_MDC",
+-+			  /* Used by BT module */
+-+			  "CTS0",
+-+			  "RTS0",
+-+			  "TXD0",
+-+			  "RXD0",
+-+			  /* Used by Wifi */
+-+			  "SD1_CLK",
+-+			  "SD1_CMD",
+-+			  "SD1_DATA0",
+-+			  "SD1_DATA1",
+-+			  "SD1_DATA2",
+-+			  "SD1_DATA3",
+-+			  /* Shared with SPI flash */
+-+			  "PWM0_MISO",
+-+			  "PWM1_MOSI",
+-+			  "STATUS_LED_G_CLK",
+-+			  "SPIFLASH_CE_N",
+-+			  "SDA0",
+-+			  "SCL0",
+-+			  "RGMII_RXCLK",
+-+			  "RGMII_RXCTL",
+-+			  "RGMII_RXD0",
+-+			  "RGMII_RXD1",
+-+			  "RGMII_RXD2",
+-+			  "RGMII_RXD3",
+-+			  "RGMII_TXCLK",
+-+			  "RGMII_TXCTL",
+-+			  "RGMII_TXD0",
+-+			  "RGMII_TXD1",
+-+			  "RGMII_TXD2",
+-+			  "RGMII_TXD3";
+-+};
+-+
+-+&hdmi0 {
+-+	clocks = <&firmware_clocks 13>, <&firmware_clocks 14>, <&dvp 0>, <&clk_27MHz>;
+-+	clock-names = "hdmi", "bvb", "audio", "cec";
+-+	wifi-2.4ghz-coexistence;
+-+	status = "okay";
+-+};
+-+
+-+&hdmi1 {
+-+	clocks = <&firmware_clocks 13>, <&firmware_clocks 14>, <&dvp 1>, <&clk_27MHz>;
+-+	clock-names = "hdmi", "bvb", "audio", "cec";
+-+	wifi-2.4ghz-coexistence;
+-+	status = "okay";
+-+};
+-+
+-+&hvs {
+-+	clocks = <&firmware_clocks 4>;
+-+};
+-+
+-+&pixelvalve0 {
+-+	status = "okay";
+-+};
+-+
+-+&pixelvalve1 {
+-+	status = "okay";
+-+};
+-+
+-+&pixelvalve2 {
+-+	status = "okay";
+-+};
+-+
+-+&pixelvalve4 {
+-+	status = "okay";
+-+};
+-+
+-+&pwm1 {
+-+	pinctrl-names = "default";
+-+	pinctrl-0 = <&pwm1_0_gpio40 &pwm1_1_gpio41>;
+-+	status = "okay";
+-+};
+-+
+-+&rmem {
+-+	/*
+-+	 * RPi4's co-processor will copy the board's bootloader configuration
+-+	 * into memory for the OS to consume. It'll also update this node with
+-+	 * its placement information.
+-+	 */
+-+	blconfig: nvram@0 {
+-+		compatible = "raspberrypi,bootloader-config", "nvmem-rmem";
+-+		#address-cells = <1>;
+-+		#size-cells = <1>;
+-+		reg = <0x0 0x0 0x0>;
+-+		no-map;
+-+		status = "disabled";
+-+	};
+-+};
+-+
+-+/* SDHCI is used to control the SDIO for wireless */
+-+&sdhci {
+-+	#address-cells = <1>;
+-+	#size-cells = <0>;
+-+	pinctrl-names = "default";
+-+	pinctrl-0 = <&emmc_gpio34>;
+-+	bus-width = <4>;
+-+	non-removable;
+-+	mmc-pwrseq = <&wifi_pwrseq>;
+-+	status = "okay";
+-+
+-+	brcmf: wifi@1 {
+-+		reg = <1>;
+-+		compatible = "brcm,bcm4329-fmac";
+-+	};
+-+};
+-+
+-+/* EMMC2 is used to drive the EMMC card */
+-+&emmc2 {
+-+	bus-width = <8>;
+-+	vqmmc-supply = <&sd_io_1v8_reg>;
+-+	vmmc-supply = <&sd_vcc_reg>;
+-+	broken-cd;
+-+	status = "okay";
+-+};
+-+
+-+&genet {
+-+	phy-handle = <&phy1>;
+-+	phy-mode = "rgmii-rxid";
+-+	status = "okay";
+-+};
+-+
+-+&genet_mdio {
+-+	phy1: ethernet-phy@0 {
+-+		/* No PHY interrupt */
+-+		reg = <0x0>;
+-+	};
+-+};
+-+
+-+&pcie0 {
+-+	pci@1,0 {
+-+		#address-cells = <3>;
+-+		#size-cells = <2>;
+-+		ranges;
+-+
+-+		reg = <0 0 0 0 0>;
+-+
+-+		usb@1,0 {
+-+			reg = <0x10000 0 0 0 0>;
+-+			resets = <&reset RASPBERRYPI_FIRMWARE_RESET_ID_USB>;
+-+		};
+-+	};
+-+};
+-+
+-+/* uart0 communicates with the BT module */
+-+&uart0 {
+-+	pinctrl-names = "default";
+-+	pinctrl-0 = <&uart0_ctsrts_gpio30 &uart0_gpio32>;
+-+	uart-has-rtscts;
+-+	status = "okay";
+-+
+-+	bluetooth {
+-+		compatible = "brcm,bcm43438-bt";
+-+		max-speed = <2000000>;
+-+		shutdown-gpios = <&expgpio 0 GPIO_ACTIVE_HIGH>;
+-+	};
+-+};
+-+
+-+/* uart1 is mapped to the pin header */
+-+&uart1 {
+-+	pinctrl-names = "default";
+-+	pinctrl-0 = <&uart1_gpio14>;
+-+	status = "okay";
+-+};
+-+
+-+&vchiq {
+-+	interrupts = <GIC_SPI 34 IRQ_TYPE_LEVEL_HIGH>;
+-+};
+-+
+-+&vc4 {
+-+	status = "okay";
+-+};
+-+
+-+&vec {
+-+	status = "disabled";
+-+};
+-+
+-+// =============================================
+-+// Downstream rpi- changes
+-+
+-+#define BCM2711
+-+
+-+#include "bcm270x.dtsi"
+-+#include "bcm271x-rpi-bt.dtsi"
+-+
+-+/ {
+-+	soc {
+-+		/delete-node/ pixelvalve@7e807000;
+-+		/delete-node/ hdmi@7e902000;
+-+	};
+-+};
+-+
+-+#include "bcm2711-rpi.dtsi"
+-+#include "bcm283x-rpi-csi0-2lane.dtsi"
+-+#include "bcm283x-rpi-csi1-4lane.dtsi"
+-+#include "bcm283x-rpi-i2c0mux_0_44.dtsi"
+-+#include "bcm283x-rpi-cam1-regulator.dtsi"
+-+
+-+/ {
+-+	chosen {
+-+		bootargs = "coherent_pool=1M 8250.nr_uarts=1 snd_bcm2835.enable_compat_alsa=0 snd_bcm2835.enable_hdmi=1";
+-+	};
+-+
+-+	aliases {
+-+		serial0 = &uart1;
+-+		serial1 = &uart0;
+-+		mmc0 = &emmc2;
+-+		mmc1 = &mmcnr;
+-+		mmc2 = &sdhost;
+-+		i2c3 = &i2c3;
+-+		i2c4 = &i2c4;
+-+		i2c5 = &i2c5;
+-+		i2c6 = &i2c6;
+-+		i2c20 = &ddc0;
+-+		i2c21 = &ddc1;
+-+		spi3 = &spi3;
+-+		spi4 = &spi4;
+-+		spi5 = &spi5;
+-+		spi6 = &spi6;
+-+		/delete-property/ intc;
+-+	};
+-+
+-+	/delete-node/ wifi-pwrseq;
+-+};
+-+
+-+&mmcnr {
+-+	pinctrl-names = "default";
+-+	pinctrl-0 = <&sdio_pins>;
+-+	bus-width = <4>;
+-+	status = "okay";
+-+};
+-+
+-+&uart0 {
+-+	pinctrl-0 = <&uart0_pins &bt_pins>;
+-+	status = "okay";
+-+};
+-+
+-+&uart1 {
+-+	pinctrl-0 = <&uart1_pins>;
+-+};
+-+
+-+&spi0 {
+-+	pinctrl-names = "default";
+-+	pinctrl-0 = <&spi0_pins &spi0_cs_pins>;
+-+	cs-gpios = <&gpio 8 1>, <&gpio 7 1>;
+-+
+-+	spidev0: spidev@0{
+-+		compatible = "spidev";
+-+		reg = <0>;	/* CE0 */
+-+		#address-cells = <1>;
+-+		#size-cells = <0>;
+-+		spi-max-frequency = <125000000>;
+-+	};
+-+
+-+	spidev1: spidev@1{
+-+		compatible = "spidev";
+-+		reg = <1>;	/* CE1 */
+-+		#address-cells = <1>;
+-+		#size-cells = <0>;
+-+		spi-max-frequency = <125000000>;
+-+	};
+-+};
+-+
+-+&gpio {
+-+	spi0_pins: spi0_pins {
+-+		brcm,pins = <9 10 11>;
+-+		brcm,function = <BCM2835_FSEL_ALT0>;
+-+	};
+-+
+-+	spi0_cs_pins: spi0_cs_pins {
+-+		brcm,pins = <8 7>;
+-+		brcm,function = <BCM2835_FSEL_GPIO_OUT>;
+-+	};
+-+
+-+	spi3_pins: spi3_pins {
+-+		brcm,pins = <1 2 3>;
+-+		brcm,function = <BCM2835_FSEL_ALT3>;
+-+	};
+-+
+-+	spi3_cs_pins: spi3_cs_pins {
+-+		brcm,pins = <0 24>;
+-+		brcm,function = <BCM2835_FSEL_GPIO_OUT>;
+-+	};
+-+
+-+	spi4_pins: spi4_pins {
+-+		brcm,pins = <5 6 7>;
+-+		brcm,function = <BCM2835_FSEL_ALT3>;
+-+	};
+-+
+-+	spi4_cs_pins: spi4_cs_pins {
+-+		brcm,pins = <4 25>;
+-+		brcm,function = <BCM2835_FSEL_GPIO_OUT>;
+-+	};
+-+
+-+	spi5_pins: spi5_pins {
+-+		brcm,pins = <13 14 15>;
+-+		brcm,function = <BCM2835_FSEL_ALT3>;
+-+	};
+-+
+-+	spi5_cs_pins: spi5_cs_pins {
+-+		brcm,pins = <12 26>;
+-+		brcm,function = <BCM2835_FSEL_GPIO_OUT>;
+-+	};
+-+
+-+	spi6_pins: spi6_pins {
+-+		brcm,pins = <19 20 21>;
+-+		brcm,function = <BCM2835_FSEL_ALT3>;
+-+	};
+-+
+-+	spi6_cs_pins: spi6_cs_pins {
+-+		brcm,pins = <18 27>;
+-+		brcm,function = <BCM2835_FSEL_GPIO_OUT>;
+-+	};
+-+
+-+	i2c0_pins: i2c0 {
+-+		brcm,pins = <0 1>;
+-+		brcm,function = <BCM2835_FSEL_ALT0>;
+-+		brcm,pull = <BCM2835_PUD_UP>;
+-+	};
+-+
+-+	i2c1_pins: i2c1 {
+-+		brcm,pins = <2 3>;
+-+		brcm,function = <BCM2835_FSEL_ALT0>;
+-+		brcm,pull = <BCM2835_PUD_UP>;
+-+	};
+-+
+-+	i2c3_pins: i2c3 {
+-+		brcm,pins = <4 5>;
+-+		brcm,function = <BCM2835_FSEL_ALT5>;
+-+		brcm,pull = <BCM2835_PUD_UP>;
+-+	};
+-+
+-+	i2c4_pins: i2c4 {
+-+		brcm,pins = <8 9>;
+-+		brcm,function = <BCM2835_FSEL_ALT5>;
+-+		brcm,pull = <BCM2835_PUD_UP>;
+-+	};
+-+
+-+	i2c5_pins: i2c5 {
+-+		brcm,pins = <12 13>;
+-+		brcm,function = <BCM2835_FSEL_ALT5>;
+-+		brcm,pull = <BCM2835_PUD_UP>;
+-+	};
+-+
+-+	i2c6_pins: i2c6 {
+-+		brcm,pins = <22 23>;
+-+		brcm,function = <BCM2835_FSEL_ALT5>;
+-+		brcm,pull = <BCM2835_PUD_UP>;
+-+	};
+-+
+-+	i2s_pins: i2s {
+-+		brcm,pins = <18 19 20 21>;
+-+		brcm,function = <BCM2835_FSEL_ALT0>;
+-+	};
+-+
+-+	sdio_pins: sdio_pins {
+-+		brcm,pins =     <34 35 36 37 38 39>;
+-+		brcm,function = <BCM2835_FSEL_ALT3>; // alt3 = SD1
+-+		brcm,pull =     <0 2 2 2 2 2>;
+-+	};
+-+
+-+	bt_pins: bt_pins {
+-+		brcm,pins = "-"; // non-empty to keep btuart happy, //4 = 0
+-+				 // to fool pinctrl
+-+		brcm,function = <0>;
+-+		brcm,pull = <2>;
+-+	};
+-+
+-+	uart0_pins: uart0_pins {
+-+		brcm,pins = <32 33>;
+-+		brcm,function = <BCM2835_FSEL_ALT3>;
+-+		brcm,pull = <0 2>;
+-+	};
+-+
+-+	uart1_pins: uart1_pins {
+-+		brcm,pins;
+-+		brcm,function;
+-+		brcm,pull;
+-+	};
+-+
+-+	uart2_pins: uart2_pins {
+-+		brcm,pins = <0 1>;
+-+		brcm,function = <BCM2835_FSEL_ALT4>;
+-+		brcm,pull = <0 2>;
+-+	};
+-+
+-+	uart3_pins: uart3_pins {
+-+		brcm,pins = <4 5>;
+-+		brcm,function = <BCM2835_FSEL_ALT4>;
+-+		brcm,pull = <0 2>;
+-+	};
+-+
+-+	uart4_pins: uart4_pins {
+-+		brcm,pins = <8 9>;
+-+		brcm,function = <BCM2835_FSEL_ALT4>;
+-+		brcm,pull = <0 2>;
+-+	};
+-+
+-+	uart5_pins: uart5_pins {
+-+		brcm,pins = <12 13>;
+-+		brcm,function = <BCM2835_FSEL_ALT4>;
+-+		brcm,pull = <0 2>;
+-+	};
+-+};
+-+
+-+&i2c0if {
+-+	clock-frequency = <100000>;
+-+};
+-+
+-+&i2c1 {
+-+	pinctrl-names = "default";
+-+	pinctrl-0 = <&i2c1_pins>;
+-+	clock-frequency = <100000>;
+-+};
+-+
+-+&i2s {
+-+	pinctrl-names = "default";
+-+	pinctrl-0 = <&i2s_pins>;
+-+};
+-+
+-+// =============================================
+-+// Board specific stuff here
+-+
+-+&pcie0 {
+-+       brcm,enable-l1ss;
+-+};
+-+
+-+&sdhost {
+-+	status = "disabled";
+-+};
+-+
+-+&phy1 {
+-+	led-modes = <0x00 0x08>; /* link/activity link */
+-+};
+-+
+-+&gpio {
+-+	audio_pins: audio_pins {
+-+		brcm,pins = <>;
+-+		brcm,function = <>;
+-+	};
+-+};
+-+
+-+&leds {
+-+	act_led: led-act {
+-+		label = "led0";
+-+		linux,default-trigger = "mmc0";
+-+		gpios = <&gpio 42 GPIO_ACTIVE_HIGH>;
+-+	};
+-+
+-+	pwr_led: led-pwr {
+-+		label = "led1";
+-+		linux,default-trigger = "default-on";
+-+		gpios = <&expgpio 2 GPIO_ACTIVE_LOW>;
+-+	};
+-+};
+-+
+-+&pwm1 {
+-+	status = "disabled";
+-+};
+-+
+-+&audio {
+-+	pinctrl-names = "default";
+-+	pinctrl-0 = <&audio_pins>;
+-+	brcm,disable-headphones = <1>;
+-+};
+-+
+-+cam0_reg: &cam1_reg {
+-+	gpio = <&expgpio 5 GPIO_ACTIVE_HIGH>;
+-+};
+-+
+-+/ {
+-+	__overrides__ {
+-+		act_led_gpio = <&act_led>,"gpios:4";
+-+		act_led_activelow = <&act_led>,"gpios:8";
+-+		act_led_trigger = <&act_led>,"linux,default-trigger";
+-+
+-+		pwr_led_gpio = <&pwr_led>,"gpios:4";
+-+		pwr_led_activelow = <&pwr_led>,"gpios:8";
+-+		pwr_led_trigger = <&pwr_led>,"linux,default-trigger";
+-+
+-+		eth_led0 = <&phy1>,"led-modes:0";
+-+		eth_led1 = <&phy1>,"led-modes:4";
+-+
+-+		ant1 =  <&ant1>,"output-high?=on",
+-+			<&ant1>, "output-low?=off",
+-+			<&ant2>, "output-high?=off",
+-+			<&ant2>, "output-low?=on";
+-+		ant2 =  <&ant1>,"output-high?=off",
+-+			<&ant1>, "output-low?=on",
+-+			<&ant2>, "output-high?=on",
+-+			<&ant2>, "output-low?=off";
+-+		noant = <&ant1>,"output-high?=off",
+-+			<&ant1>, "output-low?=on",
+-+			<&ant2>, "output-high?=off",
+-+			<&ant2>, "output-low?=on";
+-+
+-+		sd_poll_once = <&emmc2>, "non-removable?";
+-+		spi_dma4 = <&spi0>, "dmas:0=", <&dma40>,
+-+			   <&spi0>, "dmas:8=", <&dma40>;
+-+	};
+-+};
+-diff --git a/arch/arm64/boot/dts/broadcom/Makefile b/arch/arm64/boot/dts/broadcom/Makefile
+-index 69809bf2f45d..aef509d06d14 100644
+---- a/arch/arm64/boot/dts/broadcom/Makefile
+-+++ b/arch/arm64/boot/dts/broadcom/Makefile
+-@@ -10,6 +10,7 @@ dtb-$(CONFIG_ARCH_BCM2835) += bcm2711-rpi-4-b.dtb
+- dtb-$(CONFIG_ARCH_BCM2835) += bcm2711-rpi-400.dtb
+- dtb-$(CONFIG_ARCH_BCM2835) += bcm2710-rpi-cm3.dtb
+- dtb-$(CONFIG_ARCH_BCM2835) += bcm2711-rpi-cm4.dtb
+-+dtb-$(CONFIG_ARCH_BCM2835) += bcm2711-rpi-cm4-ha-amber.dtb
+- 
+- subdir-y	+= northstar2
+- subdir-y	+= stingray
+-diff --git a/arch/arm64/boot/dts/broadcom/bcm2711-rpi-cm4-ha-amber.dts b/arch/arm64/boot/dts/broadcom/bcm2711-rpi-cm4-ha-amber.dts
+-new file mode 100644
+-index 000000000000..728975338bf0
+---- /dev/null
+-+++ b/arch/arm64/boot/dts/broadcom/bcm2711-rpi-cm4-ha-amber.dts
+-@@ -0,0 +1 @@
+-+#include "../../../../arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts"
+--- 
+-2.33.1
+-
+diff --git a/buildroot-external/board/raspberrypi/amber/patches/linux/0002-ARM-dts-bcm2711-amber-Mux-UART4-for-SiLabs-radio-mod.patch b/buildroot-external/board/raspberrypi/amber/patches/linux/0002-ARM-dts-bcm2711-amber-Mux-UART4-for-SiLabs-radio-mod.patch
+deleted file mode 100644
+index 0ed11c6..0000000
+--- a/buildroot-external/board/raspberrypi/amber/patches/linux/0002-ARM-dts-bcm2711-amber-Mux-UART4-for-SiLabs-radio-mod.patch
++++ /dev/null
+@@ -1,58 +0,0 @@
+-From c2cd4c6be5337c1998e789f5eab755c8a71030d9 Mon Sep 17 00:00:00 2001
+-Message-Id: <c2cd4c6be5337c1998e789f5eab755c8a71030d9.1636734839.git.stefan@agner.ch>
+-In-Reply-To: <a08d21ffe9957db5f00b1ee8f0d1667b11a25cb9.1636734839.git.stefan@agner.ch>
+-References: <a08d21ffe9957db5f00b1ee8f0d1667b11a25cb9.1636734839.git.stefan@agner.ch>
+-From: Stefan Agner <stefan@agner.ch>
+-Date: Thu, 4 Mar 2021 14:33:09 +0100
+-Subject: [PATCH 2/8] ARM: dts: bcm2711: amber: Mux UART4 for SiLabs radio
+- module
+-
+-Enable UART4 by default and mux pins including hardware flow control.
+-
+-Signed-off-by: Stefan Agner <stefan@agner.ch>
+----
+- arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts | 13 +++++++++++--
+- 1 file changed, 11 insertions(+), 2 deletions(-)
+-
+-diff --git a/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts
+-index 855da2b029a4..ba4116cdffc4 100644
+---- a/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts
+-+++ b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts
+-@@ -21,6 +21,7 @@ memory@0 {
+- 	};
+- 
+- 	aliases {
+-+		serial4 = &uart4;
+- 		emmc2bus = &emmc2bus;
+- 		ethernet0 = &genet;
+- 		pcie0 = &pcie0;
+-@@ -321,6 +322,14 @@ &uart1 {
+- 	status = "okay";
+- };
+- 
+-+/* uart4 for Zigbee */
+-+&uart4 {
+-+	pinctrl-names = "default";
+-+	pinctrl-0 = <&uart4_pins>;
+-+	uart-has-rtscts;
+-+	status = "okay";
+-+};
+-+
+- &vchiq {
+- 	interrupts = <GIC_SPI 34 IRQ_TYPE_LEVEL_HIGH>;
+- };
+-@@ -549,9 +558,9 @@ uart3_pins: uart3_pins {
+- 	};
+- 
+- 	uart4_pins: uart4_pins {
+--		brcm,pins = <8 9>;
+-+		brcm,pins = <8 9 10 11>;
+- 		brcm,function = <BCM2835_FSEL_ALT4>;
+--		brcm,pull = <0 2>;
+-+		brcm,pull = <0 2 2 0>;
+- 	};
+- 
+- 	uart5_pins: uart5_pins {
+--- 
+-2.33.1
+-
+diff --git a/buildroot-external/board/raspberrypi/amber/patches/linux/0003-ARM-dts-bcm2711-amber-Mux-debug-UART5.patch b/buildroot-external/board/raspberrypi/amber/patches/linux/0003-ARM-dts-bcm2711-amber-Mux-debug-UART5.patch
+deleted file mode 100644
+index 97a46f3..0000000
+--- a/buildroot-external/board/raspberrypi/amber/patches/linux/0003-ARM-dts-bcm2711-amber-Mux-debug-UART5.patch
++++ /dev/null
+@@ -1,50 +0,0 @@
+-From 34ad3ae858d00c68703bea3b94dfb59c8bb928d9 Mon Sep 17 00:00:00 2001
+-Message-Id: <34ad3ae858d00c68703bea3b94dfb59c8bb928d9.1636734839.git.stefan@agner.ch>
+-In-Reply-To: <a08d21ffe9957db5f00b1ee8f0d1667b11a25cb9.1636734839.git.stefan@agner.ch>
+-References: <a08d21ffe9957db5f00b1ee8f0d1667b11a25cb9.1636734839.git.stefan@agner.ch>
+-From: Stefan Agner <stefan@agner.ch>
+-Date: Thu, 4 Mar 2021 14:44:23 +0100
+-Subject: [PATCH 3/8] ARM: dts: bcm2711: amber: Mux debug UART5
+-
+-Signed-off-by: Stefan Agner <stefan@agner.ch>
+----
+- arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts | 9 +++++++++
+- 1 file changed, 9 insertions(+)
+-
+-diff --git a/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts
+-index ba4116cdffc4..4c2fe964eb72 100644
+---- a/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts
+-+++ b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts
+-@@ -22,6 +22,7 @@ memory@0 {
+- 
+- 	aliases {
+- 		serial4 = &uart4;
+-+		serial5 = &uart5;
+- 		emmc2bus = &emmc2bus;
+- 		ethernet0 = &genet;
+- 		pcie0 = &pcie0;
+-@@ -330,6 +331,13 @@ &uart4 {
+- 	status = "okay";
+- };
+- 
+-+/* uart5 default Debug UART */
+-+&uart5 {
+-+	pinctrl-names = "default";
+-+	pinctrl-0 = <&uart5_pins>;
+-+	status = "okay";
+-+};
+-+
+- &vchiq {
+- 	interrupts = <GIC_SPI 34 IRQ_TYPE_LEVEL_HIGH>;
+- };
+-@@ -366,6 +374,7 @@ soc {
+- / {
+- 	chosen {
+- 		bootargs = "coherent_pool=1M 8250.nr_uarts=1 snd_bcm2835.enable_compat_alsa=0 snd_bcm2835.enable_hdmi=1";
+-+		stdout-path = "serial5:115200n8";
+- 	};
+- 
+- 	aliases {
+--- 
+-2.33.1
+-
+diff --git a/buildroot-external/board/raspberrypi/amber/patches/linux/0004-ARM-dts-bcm2711-amber-Enable-I2C6-by-default.patch b/buildroot-external/board/raspberrypi/amber/patches/linux/0004-ARM-dts-bcm2711-amber-Enable-I2C6-by-default.patch
+deleted file mode 100644
+index 23d0490..0000000
+--- a/buildroot-external/board/raspberrypi/amber/patches/linux/0004-ARM-dts-bcm2711-amber-Enable-I2C6-by-default.patch
++++ /dev/null
+@@ -1,35 +0,0 @@
+-From 494a018160133dc908c7ceb42daa016d147e488c Mon Sep 17 00:00:00 2001
+-Message-Id: <494a018160133dc908c7ceb42daa016d147e488c.1636734839.git.stefan@agner.ch>
+-In-Reply-To: <a08d21ffe9957db5f00b1ee8f0d1667b11a25cb9.1636734839.git.stefan@agner.ch>
+-References: <a08d21ffe9957db5f00b1ee8f0d1667b11a25cb9.1636734839.git.stefan@agner.ch>
+-From: Stefan Agner <stefan@agner.ch>
+-Date: Thu, 4 Mar 2021 14:48:48 +0100
+-Subject: [PATCH 4/8] ARM: dts: bcm2711: amber: Enable I2C6 by default
+-
+-The main I2C bus used on Amber is I2C6. Enable it by default.
+-
+-Signed-off-by: Stefan Agner <stefan@agner.ch>
+----
+- arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts | 6 ++++++
+- 1 file changed, 6 insertions(+)
+-
+-diff --git a/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts
+-index 4c2fe964eb72..a95c3f96044a 100644
+---- a/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts
+-+++ b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts
+-@@ -589,6 +589,12 @@ &i2c1 {
+- 	clock-frequency = <100000>;
+- };
+- 
+-+&i2c6 {
+-+	pinctrl-names = "default";
+-+	pinctrl-0 = <&i2c6_pins>;
+-+	status = "okay";
+-+};
+-+
+- &i2s {
+- 	pinctrl-names = "default";
+- 	pinctrl-0 = <&i2s_pins>;
+--- 
+-2.33.1
+-
+diff --git a/buildroot-external/board/raspberrypi/amber/patches/linux/0005-ARM-dts-bcm2711-amber-add-I2S-audio-codec.patch b/buildroot-external/board/raspberrypi/amber/patches/linux/0005-ARM-dts-bcm2711-amber-add-I2S-audio-codec.patch
+deleted file mode 100644
+index e012773..0000000
+--- a/buildroot-external/board/raspberrypi/amber/patches/linux/0005-ARM-dts-bcm2711-amber-add-I2S-audio-codec.patch
++++ /dev/null
+@@ -1,67 +0,0 @@
+-From 4311662759cc1a652859d61b62e2bf1e388a3bee Mon Sep 17 00:00:00 2001
+-Message-Id: <4311662759cc1a652859d61b62e2bf1e388a3bee.1636734839.git.stefan@agner.ch>
+-In-Reply-To: <a08d21ffe9957db5f00b1ee8f0d1667b11a25cb9.1636734839.git.stefan@agner.ch>
+-References: <a08d21ffe9957db5f00b1ee8f0d1667b11a25cb9.1636734839.git.stefan@agner.ch>
+-From: Stefan Agner <stefan@agner.ch>
+-Date: Thu, 4 Mar 2021 17:19:01 +0100
+-Subject: [PATCH 5/8] ARM: dts: bcm2711: amber: add I2S audio codec
+-
+-Add TI PCM5122 I2S audio codec.
+-
+-Signed-off-by: Stefan Agner <stefan@agner.ch>
+----
+- .../arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts | 26 +++++++++++++++++++
+- 1 file changed, 26 insertions(+)
+-
+-diff --git a/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts
+-index a95c3f96044a..637ce01618d8 100644
+---- a/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts
+-+++ b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts
+-@@ -593,11 +593,22 @@ &i2c6 {
+- 	pinctrl-names = "default";
+- 	pinctrl-0 = <&i2c6_pins>;
+- 	status = "okay";
+-+
+-+	card_codec: pcm5121@4c {
+-+		#sound-dai-cells = <0>;
+-+		compatible = "ti,pcm5121";
+-+		reg = <0x4c>;
+-+		AVDD-supply = <&vdd_3v3_reg>;
+-+		DVDD-supply = <&vdd_3v3_reg>;
+-+		CPVDD-supply = <&vdd_3v3_reg>;
+-+		status = "okay";
+-+	};
+- };
+- 
+- &i2s {
+- 	pinctrl-names = "default";
+- 	pinctrl-0 = <&i2s_pins>;
+-+	status = "okay";
+- };
+- 
+- // =============================================
+-@@ -640,6 +651,21 @@ &pwm1 {
+- 	status = "disabled";
+- };
+- 
+-+&sound {
+-+	compatible = "simple-audio-card";
+-+	simple-audio-card,format = "i2s";
+-+	simple-audio-card,name = "pcm5521-sound";
+-+	status = "okay";
+-+
+-+	simple-audio-card,cpu {
+-+		sound-dai = <&i2s>;
+-+	};
+-+
+-+	dailink0_slave: simple-audio-card,codec {
+-+		sound-dai = <&card_codec>;
+-+	};
+-+};
+-+
+- &audio {
+- 	pinctrl-names = "default";
+- 	pinctrl-0 = <&audio_pins>;
+--- 
+-2.33.1
+-
+diff --git a/buildroot-external/board/raspberrypi/amber/patches/linux/0006-ARM-dts-bcm2711-amber-enable-GPIO-keys.patch b/buildroot-external/board/raspberrypi/amber/patches/linux/0006-ARM-dts-bcm2711-amber-enable-GPIO-keys.patch
+deleted file mode 100644
+index 82cf037..0000000
+--- a/buildroot-external/board/raspberrypi/amber/patches/linux/0006-ARM-dts-bcm2711-amber-enable-GPIO-keys.patch
++++ /dev/null
+@@ -1,71 +0,0 @@
+-From a5961a4bdb240848bcce5129a587fde6ce1fce9a Mon Sep 17 00:00:00 2001
+-Message-Id: <a5961a4bdb240848bcce5129a587fde6ce1fce9a.1636734839.git.stefan@agner.ch>
+-In-Reply-To: <a08d21ffe9957db5f00b1ee8f0d1667b11a25cb9.1636734839.git.stefan@agner.ch>
+-References: <a08d21ffe9957db5f00b1ee8f0d1667b11a25cb9.1636734839.git.stefan@agner.ch>
+-From: Stefan Agner <stefan@agner.ch>
+-Date: Tue, 9 Mar 2021 15:02:53 +0100
+-Subject: [PATCH 6/8] ARM: dts: bcm2711: amber: enable GPIO keys
+-
+-Signed-off-by: Stefan Agner <stefan@agner.ch>
+----
+- .../arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts | 30 +++++++++++++++++++
+- 1 file changed, 30 insertions(+)
+-
+-diff --git a/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts
+-index 637ce01618d8..a2cbb8510491 100644
+---- a/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts
+-+++ b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts
+-@@ -2,6 +2,7 @@
+- /dts-v1/;
+- #include "bcm2711.dtsi"
+- #include "bcm2835-rpi.dtsi"
+-+#include <dt-bindings/input/input.h>
+- 
+- #include <dt-bindings/reset/raspberrypi,firmware-reset.h>
+- 
+-@@ -29,6 +30,29 @@ aliases {
+- 		blconfig = &blconfig;
+- 	};
+- 
+-+	keys: gpio-keys {
+-+		compatible = "gpio-keys";
+-+
+-+		pinctrl-names = "default";
+-+		pinctrl-0 = <&gpio_button_pins>;
+-+
+-+		status = "okay";
+-+
+-+		power {
+-+			label = "Power Button";
+-+			linux,code = <KEY_POWER>;
+-+			gpios = <&gpio 26 GPIO_ACTIVE_LOW>;
+-+			debounce-interval = <100>; // ms
+-+		};
+-+
+-+		user {
+-+			label = "User Button";
+-+			linux,code = <KEY_MACRO>;
+-+			gpios = <&gpio 27 GPIO_ACTIVE_LOW>;
+-+			debounce-interval = <100>; // ms
+-+		};
+-+	};
+-+
+- 	leds {
+- 		led-act {
+- 			gpios = <&gpio 42 GPIO_ACTIVE_HIGH>;
+-@@ -438,6 +462,12 @@ spidev1: spidev@1{
+- };
+- 
+- &gpio {
+-+	gpio_button_pins: gpio_button_pins {
+-+		brcm,pins = <26 27>;
+-+		brcm,function = <BCM2835_FSEL_GPIO_IN>;
+-+		brcm,pull = <BCM2835_PUD_UP>;
+-+	};
+-+
+- 	spi0_pins: spi0_pins {
+- 		brcm,pins = <9 10 11>;
+- 		brcm,function = <BCM2835_FSEL_ALT0>;
+--- 
+-2.33.1
+-
+diff --git a/buildroot-external/board/raspberrypi/amber/patches/linux/0007-ARM-dts-bcm2711-amber-add-user-LED.patch b/buildroot-external/board/raspberrypi/amber/patches/linux/0007-ARM-dts-bcm2711-amber-add-user-LED.patch
+deleted file mode 100644
+index e8a88fb..0000000
+--- a/buildroot-external/board/raspberrypi/amber/patches/linux/0007-ARM-dts-bcm2711-amber-add-user-LED.patch
++++ /dev/null
+@@ -1,35 +0,0 @@
+-From 702c3ef370741afce83cfb9a2fb166da0a94fdc7 Mon Sep 17 00:00:00 2001
+-Message-Id: <702c3ef370741afce83cfb9a2fb166da0a94fdc7.1636734839.git.stefan@agner.ch>
+-In-Reply-To: <a08d21ffe9957db5f00b1ee8f0d1667b11a25cb9.1636734839.git.stefan@agner.ch>
+-References: <a08d21ffe9957db5f00b1ee8f0d1667b11a25cb9.1636734839.git.stefan@agner.ch>
+-From: Stefan Agner <stefan@agner.ch>
+-Date: Thu, 28 Oct 2021 19:38:04 +0200
+-Subject: [PATCH 7/8] ARM: dts: bcm2711: amber: add user LED
+-
+-Add yellow user LED.
+-
+-Signed-off-by: Stefan Agner <stefan@agner.ch>
+----
+- arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts | 6 ++++++
+- 1 file changed, 6 insertions(+)
+-
+-diff --git a/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts
+-index a2cbb8510491..3b69185ef840 100644
+---- a/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts
+-+++ b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts
+-@@ -675,6 +675,12 @@ pwr_led: led-pwr {
+- 		linux,default-trigger = "default-on";
+- 		gpios = <&expgpio 2 GPIO_ACTIVE_LOW>;
+- 	};
+-+
+-+	user_led: led-user {
+-+		label = "led2";
+-+		linux,default-trigger = "heartbeat";
+-+		gpios = <&gpio 44 GPIO_ACTIVE_LOW>;
+-+	};
+- };
+- 
+- &pwm1 {
+--- 
+-2.33.1
+-
+diff --git a/buildroot-external/board/raspberrypi/amber/patches/linux/0008-ARM-dts-bcm2711-amber-Add-NXP-PCF85063A-RTC.patch b/buildroot-external/board/raspberrypi/amber/patches/linux/0008-ARM-dts-bcm2711-amber-Add-NXP-PCF85063A-RTC.patch
+deleted file mode 100644
+index d3aa719..0000000
+--- a/buildroot-external/board/raspberrypi/amber/patches/linux/0008-ARM-dts-bcm2711-amber-Add-NXP-PCF85063A-RTC.patch
++++ /dev/null
+@@ -1,32 +0,0 @@
+-From 1cb48f353aab457185274b734063fbdd2fc0f3df Mon Sep 17 00:00:00 2001
+-Message-Id: <1cb48f353aab457185274b734063fbdd2fc0f3df.1636734839.git.stefan@agner.ch>
+-In-Reply-To: <a08d21ffe9957db5f00b1ee8f0d1667b11a25cb9.1636734839.git.stefan@agner.ch>
+-References: <a08d21ffe9957db5f00b1ee8f0d1667b11a25cb9.1636734839.git.stefan@agner.ch>
+-From: Stefan Agner <stefan@agner.ch>
+-Date: Fri, 12 Nov 2021 17:33:32 +0100
+-Subject: [PATCH 8/8] ARM: dts: bcm2711: amber: Add NXP PCF85063A RTC
+-
+-Signed-off-by: Stefan Agner <stefan@agner.ch>
+----
+- arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts | 5 +++++
+- 1 file changed, 5 insertions(+)
+-
+-diff --git a/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts
+-index 3b69185ef840..01d98b05517f 100644
+---- a/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts
+-+++ b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-amber.dts
+-@@ -633,6 +633,11 @@ card_codec: pcm5121@4c {
+- 		CPVDD-supply = <&vdd_3v3_reg>;
+- 		status = "okay";
+- 	};
+-+
+-+	pcf85063a: rtc@51 {
+-+		compatible = "nxp,pcf85063a";
+-+		reg = <0x51>;
+-+	};
+- };
+- 
+- &i2s {
+--- 
+-2.33.1
+-
+diff --git a/buildroot-external/board/raspberrypi/amber/uboot-boot64.ush b/buildroot-external/board/raspberrypi/amber/uboot-boot64.ush
+deleted file mode 100644
+index 85180e7..0000000
+--- a/buildroot-external/board/raspberrypi/amber/uboot-boot64.ush
++++ /dev/null
+@@ -1,79 +0,0 @@
+-
+-part start ${devtype} ${devnum} 6 dev_env
+-${devtype} dev ${devnum}
+-
+-setenv loadbootstate " \
+-    echo 'loading env...'; \
+-    ${devtype} read ${ramdisk_addr_r} ${dev_env} 0x20; \
+-    env import -c ${ramdisk_addr_r} 0x4000;"
+-
+-setenv storebootstate " \
+-    echo 'storing env...'; \
+-    env export -c -s 0x4000 ${ramdisk_addr_r} BOOT_ORDER BOOT_A_LEFT BOOT_B_LEFT MACHINE_ID; \
+-    ${devtype} write ${ramdisk_addr_r} ${dev_env} 0x20;"
+-
+-run loadbootstate
+-test -n "${BOOT_ORDER}" || setenv BOOT_ORDER "A B"
+-test -n "${BOOT_A_LEFT}" || setenv BOOT_A_LEFT 3
+-test -n "${BOOT_B_LEFT}" || setenv BOOT_B_LEFT 3
+-
+-# HassOS bootargs
+-setenv bootargs_hassos "zram.enabled=1 zram.num_devices=3 apparmor=1 security=apparmor rootwait systemd.machine_id=${MACHINE_ID} cgroup_enable=memory fsck.repair=yes"
+-
+-if gpio input GPIO27; then
+-  sleep 1
+-  if gpio input GPIO27; then
+-    echo "Device wipe button has been pressed, setting wipe flag..."
+-    setenv bootargs_hassos "${bootargs_hassos} haos.wipe=1"
+-  fi
+-fi
+-
+-# HassOS system A/B
+-setenv bootargs_a "root=PARTUUID=8d3d53e3-6d49-4c38-8349-aff6859e82fd rootfstype=squashfs ro"
+-setenv bootargs_b "root=PARTUUID=a3ec664e-32ce-4665-95ea-7ae90ce9aa20 rootfstype=squashfs ro"
+-
+-# Preserve origin bootargs
+-setenv bootargs_rpi
+-setenv fdt_org ${fdt_addr}
+-fdt addr ${fdt_org}
+-fdt get value bootargs_rpi /chosen bootargs
+-
+-setenv bootargs
+-for BOOT_SLOT in "${BOOT_ORDER}"; do
+-  if test "x${bootargs}" != "x"; then
+-    # skip remaining slots
+-  elif test "x${BOOT_SLOT}" = "xA"; then
+-    if test ${BOOT_A_LEFT} -gt 0; then
+-      setexpr BOOT_A_LEFT ${BOOT_A_LEFT} - 1
+-      echo "Trying to boot slot A, ${BOOT_A_LEFT} attempts remaining. Loading kernel ..."
+-      if load ${devtype} ${devnum}:2 ${kernel_addr_r} Image; then
+-          setenv bootargs "${bootargs_hassos} ${bootargs_rpi} ${bootargs_a} rauc.slot=A"
+-      fi
+-    fi
+-  elif test "x${BOOT_SLOT}" = "xB"; then
+-    if test ${BOOT_B_LEFT} -gt 0; then
+-      setexpr BOOT_B_LEFT ${BOOT_B_LEFT} - 1
+-      echo "Trying to boot slot B, ${BOOT_B_LEFT} attempts remaining. Loading kernel ..."
+-      if load ${devtype} ${devnum}:4 ${kernel_addr_r} Image; then
+-          setenv bootargs "${bootargs_hassos} ${bootargs_rpi} ${bootargs_b} rauc.slot=B"
+-      fi
+-    fi
+-  fi
+-done
+-
+-setenv fdt_addr
+-if test -n "${bootargs}"; then
+-  run storebootstate
+-else
+-  echo "No valid slot found, resetting tries to 3"
+-  setenv BOOT_A_LEFT 3
+-  setenv BOOT_B_LEFT 3
+-  run storebootstate
+-  reset
+-fi
+-
+-echo "Starting kernel"
+-booti ${kernel_addr_r} - ${fdt_org}
+-
+-echo "Boot failed, resetting..."
+-reset
+diff --git a/buildroot-external/board/raspberrypi/amber/uboot.config b/buildroot-external/board/raspberrypi/amber/uboot.config
+deleted file mode 100644
+index 82b4d33..0000000
+--- a/buildroot-external/board/raspberrypi/amber/uboot.config
++++ /dev/null
+@@ -1,2 +0,0 @@
+-CONFIG_CMD_NVME=y
+-CONFIG_NVME=y
+diff --git a/buildroot-external/board/raspberrypi/yellow/cmdline.txt b/buildroot-external/board/raspberrypi/yellow/cmdline.txt
+new file mode 100644
+index 0000000..7284969
+--- /dev/null
++++ b/buildroot-external/board/raspberrypi/yellow/cmdline.txt
+@@ -0,0 +1,1 @@
++dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200n8 console=ttyAMA2,115200n8
+diff --git a/buildroot-external/board/raspberrypi/yellow/config.txt b/buildroot-external/board/raspberrypi/yellow/config.txt
+new file mode 100644
+index 0000000..ff6a437
+--- /dev/null
++++ b/buildroot-external/board/raspberrypi/yellow/config.txt
+@@ -0,0 +1,76 @@
++# For more options and information see
++# http://rpf.io/configtxt
++# Some settings may impact device functionality. See link above for details
++
++# HAOS - don't change it!
++disable_splash=1
++kernel=u-boot.bin
++arm_64bit=1
++
++# uncomment to enable primary UART console
++enable_uart=1
++
++# uncomment if you get no picture on HDMI for a default "safe" mode
++#hdmi_safe=1
++
++# uncomment this if your display has a black border of unused pixels visible
++# and your display can output without overscan
++#disable_overscan=1
++
++# uncomment the following to adjust overscan. Use positive numbers if console
++# goes off screen, and negative if there is too much border
++#overscan_left=16
++#overscan_right=16
++#overscan_top=16
++#overscan_bottom=16
++
++# uncomment to force a console size. By default it will be display's size minus
++# overscan.
++#framebuffer_width=1280
++#framebuffer_height=720
++
++# uncomment if hdmi display is not detected and composite is being output
++#hdmi_force_hotplug=1
++
++# uncomment to force a specific HDMI mode (this will force VGA)
++#hdmi_group=1
++#hdmi_mode=1
++
++# uncomment to force a HDMI mode rather than DVI. This can make audio work in
++# DMT (computer monitor) modes
++#hdmi_drive=2
++
++# uncomment to increase signal to HDMI, if you have interference, blanking, or
++# no display
++#config_hdmi_boost=4
++
++# uncomment for composite PAL
++#sdtv_mode=2
++
++# Uncomment to disable continous SD-card poll (for USB SSD)
++#dtparam=sd_poll_once=on
++
++# Uncomment some or all of these to enable the optional hardware interfaces
++#dtparam=i2c_arm=on
++#dtparam=i2s=on
++#dtparam=spi=on
++
++# Uncomment this to enable the lirc-rpi module
++#dtoverlay=lirc-rpi
++
++# Uncomment this to enable GPIO support for RPI-RF-MOD/HM-MOD-RPI-PCB
++#enable_uart=1
++#dtparam=i2c_arm=on
++#dtoverlay=miniuart-bt
++#dtoverlay=rpi-rf-mod
++
++# Additional overlays and parameters are documented /boot/overlays/README
++
++# Enable audio (loads snd_bcm2835)
++dtparam=audio=on
++
++[all]
++#dtoverlay=vc4-fkms-v3d
++#max_framebuffers=2
++device_tree=bcm2711-rpi-cm4-ha-yellow.dtb
++
+diff --git a/buildroot-external/board/raspberrypi/yellow/meta b/buildroot-external/board/raspberrypi/yellow/meta
+new file mode 100644
+index 0000000..00440f8
+--- /dev/null
++++ b/buildroot-external/board/raspberrypi/yellow/meta
+@@ -0,0 +1,10 @@
++BOARD_ID=yellow
++BOARD_NAME="Yellow"
++CHASSIS=embedded
++BOOTLOADER=uboot
++KERNEL_FILE=Image
++BOOT_SYS=hybrid
++BOOT_SPL=false
++BOOT_ENV_SIZE=0x4000
++SUPERVISOR_MACHINE=raspberrypi4-64
++SUPERVISOR_ARCH=aarch64
+diff --git a/buildroot-external/board/raspberrypi/yellow/patches/linux/0001-ARM-dts-bcm2711-Add-device-tree-for-Home-Assistant-Y.patch b/buildroot-external/board/raspberrypi/yellow/patches/linux/0001-ARM-dts-bcm2711-Add-device-tree-for-Home-Assistant-Y.patch
+new file mode 100644
+index 0000000..96e97a4
+--- /dev/null
++++ b/buildroot-external/board/raspberrypi/yellow/patches/linux/0001-ARM-dts-bcm2711-Add-device-tree-for-Home-Assistant-Y.patch
+@@ -0,0 +1,721 @@
++From 9d68dedb813f942286856c9d8c2eed01b55bb473 Mon Sep 17 00:00:00 2001
++Message-Id: <9d68dedb813f942286856c9d8c2eed01b55bb473.1641573384.git.stefan@agner.ch>
++From: Stefan Agner <stefan@agner.ch>
++Date: Wed, 3 Nov 2021 00:00:45 +0100
++Subject: [PATCH 1/9] ARM: dts: bcm2711: Add device tree for Home Assistant
++ Yellow
++
++Add device tree for Home Assistant Yellow, a Compute Module 4 based I/O
++board.
++
++Signed-off-by: Stefan Agner <stefan@agner.ch>
++---
++ arch/arm/boot/dts/Makefile                    |   3 +-
++ .../boot/dts/bcm2711-rpi-cm4-ha-yellow.dts    | 659 ++++++++++++++++++
++ arch/arm64/boot/dts/broadcom/Makefile         |   1 +
++ .../broadcom/bcm2711-rpi-cm4-ha-yellow.dts    |   1 +
++ 4 files changed, 663 insertions(+), 1 deletion(-)
++ create mode 100644 arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts
++ create mode 100644 arch/arm64/boot/dts/broadcom/bcm2711-rpi-cm4-ha-yellow.dts
++
++diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
++index 12cd8bf582e1..de739b68635b 100644
++--- a/arch/arm/boot/dts/Makefile
+++++ b/arch/arm/boot/dts/Makefile
++@@ -14,7 +14,8 @@ dtb-$(CONFIG_ARCH_BCM2835) += \
++ 	bcm2711-rpi-4-b.dtb \
++ 	bcm2711-rpi-400.dtb \
++ 	bcm2710-rpi-cm3.dtb \
++-	bcm2711-rpi-cm4.dtb
+++	bcm2711-rpi-cm4.dtb \
+++	bcm2711-rpi-cm4-ha-yellow.dtb
++ 
++ dtb-$(CONFIG_ARCH_ALPINE) += \
++ 	alpine-db.dtb
++diff --git a/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts
++new file mode 100644
++index 000000000000..5d4e058cac43
++--- /dev/null
+++++ b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts
++@@ -0,0 +1,659 @@
+++// SPDX-License-Identifier: GPL-2.0
+++/dts-v1/;
+++#include "bcm2711.dtsi"
+++#include "bcm2835-rpi.dtsi"
+++
+++#include <dt-bindings/reset/raspberrypi,firmware-reset.h>
+++
+++/ {
+++	compatible = "raspberrypi,4-compute-module-ha-yellow", "brcm,bcm2711";
+++	model = "Raspberry Pi Compute Module 4 on Home Assistant Yellow";
+++
+++	chosen {
+++		/* 8250 auxiliary UART instead of pl011 */
+++		stdout-path = "serial1:115200n8";
+++	};
+++
+++	/* Will be filled by the bootloader */
+++	memory@0 {
+++		device_type = "memory";
+++		reg = <0 0 0>;
+++	};
+++
+++	aliases {
+++		emmc2bus = &emmc2bus;
+++		ethernet0 = &genet;
+++		pcie0 = &pcie0;
+++		blconfig = &blconfig;
+++	};
+++
+++	leds {
+++		led-act {
+++			gpios = <&gpio 42 GPIO_ACTIVE_HIGH>;
+++		};
+++
+++		led-pwr {
+++			label = "PWR";
+++			gpios = <&expgpio 2 GPIO_ACTIVE_LOW>;
+++			default-state = "keep";
+++			linux,default-trigger = "default-on";
+++		};
+++	};
+++
+++	wifi_pwrseq: wifi-pwrseq {
+++		compatible = "mmc-pwrseq-simple";
+++		reset-gpios = <&expgpio 1 GPIO_ACTIVE_LOW>;
+++	};
+++
+++	sd_io_1v8_reg: sd_io_1v8_reg {
+++		compatible = "regulator-gpio";
+++		regulator-name = "vdd-sd-io";
+++		regulator-min-microvolt = <1800000>;
+++		regulator-max-microvolt = <3300000>;
+++		regulator-boot-on;
+++		regulator-always-on;
+++		regulator-settling-time-us = <5000>;
+++		gpios = <&expgpio 4 GPIO_ACTIVE_HIGH>;
+++		states = <1800000 0x1
+++			  3300000 0x0>;
+++		status = "okay";
+++	};
+++
+++	sd_vcc_reg: sd_vcc_reg {
+++		compatible = "regulator-fixed";
+++		regulator-name = "vcc-sd";
+++		regulator-min-microvolt = <3300000>;
+++		regulator-max-microvolt = <3300000>;
+++		regulator-boot-on;
+++		enable-active-high;
+++		gpio = <&expgpio 6 GPIO_ACTIVE_HIGH>;
+++	};
+++};
+++
+++&ddc0 {
+++	status = "okay";
+++};
+++
+++&ddc1 {
+++	status = "okay";
+++};
+++
+++&firmware {
+++	firmware_clocks: clocks {
+++		compatible = "raspberrypi,firmware-clocks";
+++		#clock-cells = <1>;
+++	};
+++
+++	expgpio: gpio {
+++		compatible = "raspberrypi,firmware-gpio";
+++		gpio-controller;
+++		#gpio-cells = <2>;
+++		gpio-line-names = "BT_ON",
+++				  "WL_ON",
+++				  "PWR_LED_OFF",
+++				  "ANT1",
+++				  "VDD_SD_IO_SEL",
+++				  "CAM_GPIO",
+++				  "SD_PWR_ON",
+++				  "ANT2";
+++		status = "okay";
+++
+++		ant1: ant1 {
+++			gpio-hog;
+++			gpios = <3 GPIO_ACTIVE_HIGH>;
+++			output-high;
+++		};
+++
+++		ant2: ant2 {
+++			gpio-hog;
+++			gpios = <7 GPIO_ACTIVE_HIGH>;
+++			output-low;
+++		};
+++	};
+++
+++	reset: reset {
+++		compatible = "raspberrypi,firmware-reset";
+++		#reset-cells = <1>;
+++	};
+++};
+++
+++&gpio {
+++	/*
+++	 * Parts taken from rpi_SCH_4b_4p0_reduced.pdf and
+++	 * the official GPU firmware DT blob.
+++	 *
+++	 * Legend:
+++	 * "FOO" = GPIO line named "FOO" on the schematic
+++	 * "FOO_N" = GPIO line named "FOO" on schematic, active low
+++	 */
+++	gpio-line-names = "ID_SDA",
+++			  "ID_SCL",
+++			  "SDA1",
+++			  "SCL1",
+++			  "GPIO_GCLK",
+++			  "GPIO5",
+++			  "GPIO6",
+++			  "SPI_CE1_N",
+++			  "SPI_CE0_N",
+++			  "SPI_MISO",
+++			  "SPI_MOSI",
+++			  "SPI_SCLK",
+++			  "GPIO12",
+++			  "GPIO13",
+++			  /* Serial port */
+++			  "TXD1",
+++			  "RXD1",
+++			  "GPIO16",
+++			  "GPIO17",
+++			  "GPIO18",
+++			  "GPIO19",
+++			  "GPIO20",
+++			  "GPIO21",
+++			  "GPIO22",
+++			  "GPIO23",
+++			  "GPIO24",
+++			  "GPIO25",
+++			  "GPIO26",
+++			  "GPIO27",
+++			  "RGMII_MDIO",
+++			  "RGMIO_MDC",
+++			  /* Used by BT module */
+++			  "CTS0",
+++			  "RTS0",
+++			  "TXD0",
+++			  "RXD0",
+++			  /* Used by Wifi */
+++			  "SD1_CLK",
+++			  "SD1_CMD",
+++			  "SD1_DATA0",
+++			  "SD1_DATA1",
+++			  "SD1_DATA2",
+++			  "SD1_DATA3",
+++			  /* Shared with SPI flash */
+++			  "PWM0_MISO",
+++			  "PWM1_MOSI",
+++			  "STATUS_LED_G_CLK",
+++			  "SPIFLASH_CE_N",
+++			  "SDA0",
+++			  "SCL0",
+++			  "RGMII_RXCLK",
+++			  "RGMII_RXCTL",
+++			  "RGMII_RXD0",
+++			  "RGMII_RXD1",
+++			  "RGMII_RXD2",
+++			  "RGMII_RXD3",
+++			  "RGMII_TXCLK",
+++			  "RGMII_TXCTL",
+++			  "RGMII_TXD0",
+++			  "RGMII_TXD1",
+++			  "RGMII_TXD2",
+++			  "RGMII_TXD3";
+++};
+++
+++&hdmi0 {
+++	clocks = <&firmware_clocks 13>, <&firmware_clocks 14>, <&dvp 0>, <&clk_27MHz>;
+++	clock-names = "hdmi", "bvb", "audio", "cec";
+++	wifi-2.4ghz-coexistence;
+++	status = "okay";
+++};
+++
+++&hdmi1 {
+++	clocks = <&firmware_clocks 13>, <&firmware_clocks 14>, <&dvp 1>, <&clk_27MHz>;
+++	clock-names = "hdmi", "bvb", "audio", "cec";
+++	wifi-2.4ghz-coexistence;
+++	status = "okay";
+++};
+++
+++&hvs {
+++	clocks = <&firmware_clocks 4>;
+++};
+++
+++&pixelvalve0 {
+++	status = "okay";
+++};
+++
+++&pixelvalve1 {
+++	status = "okay";
+++};
+++
+++&pixelvalve2 {
+++	status = "okay";
+++};
+++
+++&pixelvalve4 {
+++	status = "okay";
+++};
+++
+++&pwm1 {
+++	pinctrl-names = "default";
+++	pinctrl-0 = <&pwm1_0_gpio40 &pwm1_1_gpio41>;
+++	status = "okay";
+++};
+++
+++&rmem {
+++	/*
+++	 * RPi4's co-processor will copy the board's bootloader configuration
+++	 * into memory for the OS to consume. It'll also update this node with
+++	 * its placement information.
+++	 */
+++	blconfig: nvram@0 {
+++		compatible = "raspberrypi,bootloader-config", "nvmem-rmem";
+++		#address-cells = <1>;
+++		#size-cells = <1>;
+++		reg = <0x0 0x0 0x0>;
+++		no-map;
+++		status = "disabled";
+++	};
+++};
+++
+++/* SDHCI is used to control the SDIO for wireless */
+++&sdhci {
+++	#address-cells = <1>;
+++	#size-cells = <0>;
+++	pinctrl-names = "default";
+++	pinctrl-0 = <&emmc_gpio34>;
+++	bus-width = <4>;
+++	non-removable;
+++	mmc-pwrseq = <&wifi_pwrseq>;
+++	status = "okay";
+++
+++	brcmf: wifi@1 {
+++		reg = <1>;
+++		compatible = "brcm,bcm4329-fmac";
+++	};
+++};
+++
+++/* EMMC2 is used to drive the EMMC card */
+++&emmc2 {
+++	bus-width = <8>;
+++	vqmmc-supply = <&sd_io_1v8_reg>;
+++	vmmc-supply = <&sd_vcc_reg>;
+++	broken-cd;
+++	status = "okay";
+++};
+++
+++&genet {
+++	phy-handle = <&phy1>;
+++	phy-mode = "rgmii-rxid";
+++	status = "okay";
+++};
+++
+++&genet_mdio {
+++	phy1: ethernet-phy@0 {
+++		/* No PHY interrupt */
+++		reg = <0x0>;
+++	};
+++};
+++
+++&pcie0 {
+++	pci@1,0 {
+++		#address-cells = <3>;
+++		#size-cells = <2>;
+++		ranges;
+++
+++		reg = <0 0 0 0 0>;
+++
+++		usb@1,0 {
+++			reg = <0x10000 0 0 0 0>;
+++			resets = <&reset RASPBERRYPI_FIRMWARE_RESET_ID_USB>;
+++		};
+++	};
+++};
+++
+++/* uart0 communicates with the BT module */
+++&uart0 {
+++	pinctrl-names = "default";
+++	pinctrl-0 = <&uart0_ctsrts_gpio30 &uart0_gpio32>;
+++	uart-has-rtscts;
+++	status = "okay";
+++
+++	bluetooth {
+++		compatible = "brcm,bcm43438-bt";
+++		max-speed = <2000000>;
+++		shutdown-gpios = <&expgpio 0 GPIO_ACTIVE_HIGH>;
+++	};
+++};
+++
+++/* uart1 is mapped to the pin header */
+++&uart1 {
+++	pinctrl-names = "default";
+++	pinctrl-0 = <&uart1_gpio14>;
+++	status = "okay";
+++};
+++
+++&vchiq {
+++	interrupts = <GIC_SPI 34 IRQ_TYPE_LEVEL_HIGH>;
+++};
+++
+++&vc4 {
+++	status = "okay";
+++};
+++
+++&vec {
+++	status = "disabled";
+++};
+++
+++// =============================================
+++// Downstream rpi- changes
+++
+++#define BCM2711
+++
+++#include "bcm270x.dtsi"
+++#include "bcm271x-rpi-bt.dtsi"
+++
+++/ {
+++	soc {
+++		/delete-node/ pixelvalve@7e807000;
+++		/delete-node/ hdmi@7e902000;
+++	};
+++};
+++
+++#include "bcm2711-rpi.dtsi"
+++#include "bcm283x-rpi-csi0-2lane.dtsi"
+++#include "bcm283x-rpi-csi1-4lane.dtsi"
+++#include "bcm283x-rpi-i2c0mux_0_44.dtsi"
+++#include "bcm283x-rpi-cam1-regulator.dtsi"
+++
+++/ {
+++	chosen {
+++		bootargs = "coherent_pool=1M 8250.nr_uarts=1 snd_bcm2835.enable_compat_alsa=0 snd_bcm2835.enable_hdmi=1";
+++	};
+++
+++	aliases {
+++		serial0 = &uart1;
+++		serial1 = &uart0;
+++		mmc0 = &emmc2;
+++		mmc1 = &mmcnr;
+++		mmc2 = &sdhost;
+++		i2c3 = &i2c3;
+++		i2c4 = &i2c4;
+++		i2c5 = &i2c5;
+++		i2c6 = &i2c6;
+++		i2c20 = &ddc0;
+++		i2c21 = &ddc1;
+++		spi3 = &spi3;
+++		spi4 = &spi4;
+++		spi5 = &spi5;
+++		spi6 = &spi6;
+++		/delete-property/ intc;
+++	};
+++
+++	/delete-node/ wifi-pwrseq;
+++};
+++
+++&mmcnr {
+++	pinctrl-names = "default";
+++	pinctrl-0 = <&sdio_pins>;
+++	bus-width = <4>;
+++	status = "okay";
+++};
+++
+++&uart0 {
+++	pinctrl-0 = <&uart0_pins &bt_pins>;
+++	status = "okay";
+++};
+++
+++&uart1 {
+++	pinctrl-0 = <&uart1_pins>;
+++};
+++
+++&spi0 {
+++	pinctrl-names = "default";
+++	pinctrl-0 = <&spi0_pins &spi0_cs_pins>;
+++	cs-gpios = <&gpio 8 1>, <&gpio 7 1>;
+++
+++	spidev0: spidev@0{
+++		compatible = "spidev";
+++		reg = <0>;	/* CE0 */
+++		#address-cells = <1>;
+++		#size-cells = <0>;
+++		spi-max-frequency = <125000000>;
+++	};
+++
+++	spidev1: spidev@1{
+++		compatible = "spidev";
+++		reg = <1>;	/* CE1 */
+++		#address-cells = <1>;
+++		#size-cells = <0>;
+++		spi-max-frequency = <125000000>;
+++	};
+++};
+++
+++&gpio {
+++	spi0_pins: spi0_pins {
+++		brcm,pins = <9 10 11>;
+++		brcm,function = <BCM2835_FSEL_ALT0>;
+++	};
+++
+++	spi0_cs_pins: spi0_cs_pins {
+++		brcm,pins = <8 7>;
+++		brcm,function = <BCM2835_FSEL_GPIO_OUT>;
+++	};
+++
+++	spi3_pins: spi3_pins {
+++		brcm,pins = <1 2 3>;
+++		brcm,function = <BCM2835_FSEL_ALT3>;
+++	};
+++
+++	spi3_cs_pins: spi3_cs_pins {
+++		brcm,pins = <0 24>;
+++		brcm,function = <BCM2835_FSEL_GPIO_OUT>;
+++	};
+++
+++	spi4_pins: spi4_pins {
+++		brcm,pins = <5 6 7>;
+++		brcm,function = <BCM2835_FSEL_ALT3>;
+++	};
+++
+++	spi4_cs_pins: spi4_cs_pins {
+++		brcm,pins = <4 25>;
+++		brcm,function = <BCM2835_FSEL_GPIO_OUT>;
+++	};
+++
+++	spi5_pins: spi5_pins {
+++		brcm,pins = <13 14 15>;
+++		brcm,function = <BCM2835_FSEL_ALT3>;
+++	};
+++
+++	spi5_cs_pins: spi5_cs_pins {
+++		brcm,pins = <12 26>;
+++		brcm,function = <BCM2835_FSEL_GPIO_OUT>;
+++	};
+++
+++	spi6_pins: spi6_pins {
+++		brcm,pins = <19 20 21>;
+++		brcm,function = <BCM2835_FSEL_ALT3>;
+++	};
+++
+++	spi6_cs_pins: spi6_cs_pins {
+++		brcm,pins = <18 27>;
+++		brcm,function = <BCM2835_FSEL_GPIO_OUT>;
+++	};
+++
+++	i2c0_pins: i2c0 {
+++		brcm,pins = <0 1>;
+++		brcm,function = <BCM2835_FSEL_ALT0>;
+++		brcm,pull = <BCM2835_PUD_UP>;
+++	};
+++
+++	i2c1_pins: i2c1 {
+++		brcm,pins = <2 3>;
+++		brcm,function = <BCM2835_FSEL_ALT0>;
+++		brcm,pull = <BCM2835_PUD_UP>;
+++	};
+++
+++	i2c3_pins: i2c3 {
+++		brcm,pins = <4 5>;
+++		brcm,function = <BCM2835_FSEL_ALT5>;
+++		brcm,pull = <BCM2835_PUD_UP>;
+++	};
+++
+++	i2c4_pins: i2c4 {
+++		brcm,pins = <8 9>;
+++		brcm,function = <BCM2835_FSEL_ALT5>;
+++		brcm,pull = <BCM2835_PUD_UP>;
+++	};
+++
+++	i2c5_pins: i2c5 {
+++		brcm,pins = <12 13>;
+++		brcm,function = <BCM2835_FSEL_ALT5>;
+++		brcm,pull = <BCM2835_PUD_UP>;
+++	};
+++
+++	i2c6_pins: i2c6 {
+++		brcm,pins = <22 23>;
+++		brcm,function = <BCM2835_FSEL_ALT5>;
+++		brcm,pull = <BCM2835_PUD_UP>;
+++	};
+++
+++	i2s_pins: i2s {
+++		brcm,pins = <18 19 20 21>;
+++		brcm,function = <BCM2835_FSEL_ALT0>;
+++	};
+++
+++	sdio_pins: sdio_pins {
+++		brcm,pins =     <34 35 36 37 38 39>;
+++		brcm,function = <BCM2835_FSEL_ALT3>; // alt3 = SD1
+++		brcm,pull =     <0 2 2 2 2 2>;
+++	};
+++
+++	bt_pins: bt_pins {
+++		brcm,pins = "-"; // non-empty to keep btuart happy, //4 = 0
+++				 // to fool pinctrl
+++		brcm,function = <0>;
+++		brcm,pull = <2>;
+++	};
+++
+++	uart0_pins: uart0_pins {
+++		brcm,pins = <32 33>;
+++		brcm,function = <BCM2835_FSEL_ALT3>;
+++		brcm,pull = <0 2>;
+++	};
+++
+++	uart1_pins: uart1_pins {
+++		brcm,pins;
+++		brcm,function;
+++		brcm,pull;
+++	};
+++
+++	uart2_pins: uart2_pins {
+++		brcm,pins = <0 1>;
+++		brcm,function = <BCM2835_FSEL_ALT4>;
+++		brcm,pull = <0 2>;
+++	};
+++
+++	uart3_pins: uart3_pins {
+++		brcm,pins = <4 5>;
+++		brcm,function = <BCM2835_FSEL_ALT4>;
+++		brcm,pull = <0 2>;
+++	};
+++
+++	uart4_pins: uart4_pins {
+++		brcm,pins = <8 9>;
+++		brcm,function = <BCM2835_FSEL_ALT4>;
+++		brcm,pull = <0 2>;
+++	};
+++
+++	uart5_pins: uart5_pins {
+++		brcm,pins = <12 13>;
+++		brcm,function = <BCM2835_FSEL_ALT4>;
+++		brcm,pull = <0 2>;
+++	};
+++};
+++
+++&i2c0if {
+++	clock-frequency = <100000>;
+++};
+++
+++&i2c1 {
+++	pinctrl-names = "default";
+++	pinctrl-0 = <&i2c1_pins>;
+++	clock-frequency = <100000>;
+++};
+++
+++&i2s {
+++	pinctrl-names = "default";
+++	pinctrl-0 = <&i2s_pins>;
+++};
+++
+++// =============================================
+++// Board specific stuff here
+++
+++&pcie0 {
+++       brcm,enable-l1ss;
+++};
+++
+++&sdhost {
+++	status = "disabled";
+++};
+++
+++&phy1 {
+++	led-modes = <0x00 0x08>; /* link/activity link */
+++};
+++
+++&gpio {
+++	audio_pins: audio_pins {
+++		brcm,pins = <>;
+++		brcm,function = <>;
+++	};
+++};
+++
+++&leds {
+++	act_led: led-act {
+++		label = "led0";
+++		linux,default-trigger = "mmc0";
+++		gpios = <&gpio 42 GPIO_ACTIVE_HIGH>;
+++	};
+++
+++	pwr_led: led-pwr {
+++		label = "led1";
+++		linux,default-trigger = "default-on";
+++		gpios = <&expgpio 2 GPIO_ACTIVE_LOW>;
+++	};
+++};
+++
+++&pwm1 {
+++	status = "disabled";
+++};
+++
+++&audio {
+++	pinctrl-names = "default";
+++	pinctrl-0 = <&audio_pins>;
+++	brcm,disable-headphones = <1>;
+++};
+++
+++cam0_reg: &cam1_reg {
+++	gpio = <&expgpio 5 GPIO_ACTIVE_HIGH>;
+++};
+++
+++/ {
+++	__overrides__ {
+++		act_led_gpio = <&act_led>,"gpios:4";
+++		act_led_activelow = <&act_led>,"gpios:8";
+++		act_led_trigger = <&act_led>,"linux,default-trigger";
+++
+++		pwr_led_gpio = <&pwr_led>,"gpios:4";
+++		pwr_led_activelow = <&pwr_led>,"gpios:8";
+++		pwr_led_trigger = <&pwr_led>,"linux,default-trigger";
+++
+++		eth_led0 = <&phy1>,"led-modes:0";
+++		eth_led1 = <&phy1>,"led-modes:4";
+++
+++		ant1 =  <&ant1>,"output-high?=on",
+++			<&ant1>, "output-low?=off",
+++			<&ant2>, "output-high?=off",
+++			<&ant2>, "output-low?=on";
+++		ant2 =  <&ant1>,"output-high?=off",
+++			<&ant1>, "output-low?=on",
+++			<&ant2>, "output-high?=on",
+++			<&ant2>, "output-low?=off";
+++		noant = <&ant1>,"output-high?=off",
+++			<&ant1>, "output-low?=on",
+++			<&ant2>, "output-high?=off",
+++			<&ant2>, "output-low?=on";
+++
+++		sd_poll_once = <&emmc2>, "non-removable?";
+++		spi_dma4 = <&spi0>, "dmas:0=", <&dma40>,
+++			   <&spi0>, "dmas:8=", <&dma40>;
+++	};
+++};
++diff --git a/arch/arm64/boot/dts/broadcom/Makefile b/arch/arm64/boot/dts/broadcom/Makefile
++index 69809bf2f45d..22327ed93238 100644
++--- a/arch/arm64/boot/dts/broadcom/Makefile
+++++ b/arch/arm64/boot/dts/broadcom/Makefile
++@@ -10,6 +10,7 @@ dtb-$(CONFIG_ARCH_BCM2835) += bcm2711-rpi-4-b.dtb
++ dtb-$(CONFIG_ARCH_BCM2835) += bcm2711-rpi-400.dtb
++ dtb-$(CONFIG_ARCH_BCM2835) += bcm2710-rpi-cm3.dtb
++ dtb-$(CONFIG_ARCH_BCM2835) += bcm2711-rpi-cm4.dtb
+++dtb-$(CONFIG_ARCH_BCM2835) += bcm2711-rpi-cm4-ha-yellow.dtb
++ 
++ subdir-y	+= northstar2
++ subdir-y	+= stingray
++diff --git a/arch/arm64/boot/dts/broadcom/bcm2711-rpi-cm4-ha-yellow.dts b/arch/arm64/boot/dts/broadcom/bcm2711-rpi-cm4-ha-yellow.dts
++new file mode 100644
++index 000000000000..fdc5ec5bc956
++--- /dev/null
+++++ b/arch/arm64/boot/dts/broadcom/bcm2711-rpi-cm4-ha-yellow.dts
++@@ -0,0 +1 @@
+++#include "../../../../arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts"
++-- 
++2.34.1
++
+diff --git a/buildroot-external/board/raspberrypi/yellow/patches/linux/0002-ARM-dts-bcm2711-yellow-Mux-UART4-for-SiLabs-radio-mo.patch b/buildroot-external/board/raspberrypi/yellow/patches/linux/0002-ARM-dts-bcm2711-yellow-Mux-UART4-for-SiLabs-radio-mo.patch
+new file mode 100644
+index 0000000..430c950
+--- /dev/null
++++ b/buildroot-external/board/raspberrypi/yellow/patches/linux/0002-ARM-dts-bcm2711-yellow-Mux-UART4-for-SiLabs-radio-mo.patch
+@@ -0,0 +1,58 @@
++From e2b56e7d8786f7000c3159346b6cf2360ad3c8c3 Mon Sep 17 00:00:00 2001
++Message-Id: <e2b56e7d8786f7000c3159346b6cf2360ad3c8c3.1641573384.git.stefan@agner.ch>
++In-Reply-To: <9d68dedb813f942286856c9d8c2eed01b55bb473.1641573384.git.stefan@agner.ch>
++References: <9d68dedb813f942286856c9d8c2eed01b55bb473.1641573384.git.stefan@agner.ch>
++From: Stefan Agner <stefan@agner.ch>
++Date: Thu, 4 Mar 2021 14:33:09 +0100
++Subject: [PATCH 2/9] ARM: dts: bcm2711: yellow: Mux UART4 for SiLabs radio
++ module
++
++Enable UART4 by default and mux pins including hardware flow control.
++
++Signed-off-by: Stefan Agner <stefan@agner.ch>
++---
++ arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts | 13 +++++++++++--
++ 1 file changed, 11 insertions(+), 2 deletions(-)
++
++diff --git a/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts
++index 5d4e058cac43..6b702d66ac55 100644
++--- a/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts
+++++ b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts
++@@ -21,6 +21,7 @@ memory@0 {
++ 	};
++ 
++ 	aliases {
+++		serial4 = &uart4;
++ 		emmc2bus = &emmc2bus;
++ 		ethernet0 = &genet;
++ 		pcie0 = &pcie0;
++@@ -321,6 +322,14 @@ &uart1 {
++ 	status = "okay";
++ };
++ 
+++/* uart4 for Zigbee */
+++&uart4 {
+++	pinctrl-names = "default";
+++	pinctrl-0 = <&uart4_pins>;
+++	uart-has-rtscts;
+++	status = "okay";
+++};
+++
++ &vchiq {
++ 	interrupts = <GIC_SPI 34 IRQ_TYPE_LEVEL_HIGH>;
++ };
++@@ -549,9 +558,9 @@ uart3_pins: uart3_pins {
++ 	};
++ 
++ 	uart4_pins: uart4_pins {
++-		brcm,pins = <8 9>;
+++		brcm,pins = <8 9 10 11>;
++ 		brcm,function = <BCM2835_FSEL_ALT4>;
++-		brcm,pull = <0 2>;
+++		brcm,pull = <0 2 2 0>;
++ 	};
++ 
++ 	uart5_pins: uart5_pins {
++-- 
++2.34.1
++
+diff --git a/buildroot-external/board/raspberrypi/yellow/patches/linux/0003-ARM-dts-bcm2711-yellow-Mux-debug-UART5.patch b/buildroot-external/board/raspberrypi/yellow/patches/linux/0003-ARM-dts-bcm2711-yellow-Mux-debug-UART5.patch
+new file mode 100644
+index 0000000..0edd6a8
+--- /dev/null
++++ b/buildroot-external/board/raspberrypi/yellow/patches/linux/0003-ARM-dts-bcm2711-yellow-Mux-debug-UART5.patch
+@@ -0,0 +1,50 @@
++From 6b48f11add95190d8148a4a4689b35f41b5167bb Mon Sep 17 00:00:00 2001
++Message-Id: <6b48f11add95190d8148a4a4689b35f41b5167bb.1641573384.git.stefan@agner.ch>
++In-Reply-To: <9d68dedb813f942286856c9d8c2eed01b55bb473.1641573384.git.stefan@agner.ch>
++References: <9d68dedb813f942286856c9d8c2eed01b55bb473.1641573384.git.stefan@agner.ch>
++From: Stefan Agner <stefan@agner.ch>
++Date: Thu, 4 Mar 2021 14:44:23 +0100
++Subject: [PATCH 3/9] ARM: dts: bcm2711: yellow: Mux debug UART5
++
++Signed-off-by: Stefan Agner <stefan@agner.ch>
++---
++ arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts | 9 +++++++++
++ 1 file changed, 9 insertions(+)
++
++diff --git a/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts
++index 6b702d66ac55..3f611d90093d 100644
++--- a/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts
+++++ b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts
++@@ -22,6 +22,7 @@ memory@0 {
++ 
++ 	aliases {
++ 		serial4 = &uart4;
+++		serial5 = &uart5;
++ 		emmc2bus = &emmc2bus;
++ 		ethernet0 = &genet;
++ 		pcie0 = &pcie0;
++@@ -330,6 +331,13 @@ &uart4 {
++ 	status = "okay";
++ };
++ 
+++/* uart5 default Debug UART */
+++&uart5 {
+++	pinctrl-names = "default";
+++	pinctrl-0 = <&uart5_pins>;
+++	status = "okay";
+++};
+++
++ &vchiq {
++ 	interrupts = <GIC_SPI 34 IRQ_TYPE_LEVEL_HIGH>;
++ };
++@@ -366,6 +374,7 @@ soc {
++ / {
++ 	chosen {
++ 		bootargs = "coherent_pool=1M 8250.nr_uarts=1 snd_bcm2835.enable_compat_alsa=0 snd_bcm2835.enable_hdmi=1";
+++		stdout-path = "serial5:115200n8";
++ 	};
++ 
++ 	aliases {
++-- 
++2.34.1
++
+diff --git a/buildroot-external/board/raspberrypi/yellow/patches/linux/0004-ARM-dts-bcm2711-yellow-Enable-I2C6-by-default.patch b/buildroot-external/board/raspberrypi/yellow/patches/linux/0004-ARM-dts-bcm2711-yellow-Enable-I2C6-by-default.patch
+new file mode 100644
+index 0000000..334d0bb
+--- /dev/null
++++ b/buildroot-external/board/raspberrypi/yellow/patches/linux/0004-ARM-dts-bcm2711-yellow-Enable-I2C6-by-default.patch
+@@ -0,0 +1,35 @@
++From 60ea1895f939eec8bd8615325af3aa7b70827c2e Mon Sep 17 00:00:00 2001
++Message-Id: <60ea1895f939eec8bd8615325af3aa7b70827c2e.1641573384.git.stefan@agner.ch>
++In-Reply-To: <9d68dedb813f942286856c9d8c2eed01b55bb473.1641573384.git.stefan@agner.ch>
++References: <9d68dedb813f942286856c9d8c2eed01b55bb473.1641573384.git.stefan@agner.ch>
++From: Stefan Agner <stefan@agner.ch>
++Date: Thu, 4 Mar 2021 14:48:48 +0100
++Subject: [PATCH 4/9] ARM: dts: bcm2711: yellow: Enable I2C6 by default
++
++The main I2C bus used on Yellow is I2C6. Enable it by default.
++
++Signed-off-by: Stefan Agner <stefan@agner.ch>
++---
++ arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts | 6 ++++++
++ 1 file changed, 6 insertions(+)
++
++diff --git a/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts
++index 3f611d90093d..822644185466 100644
++--- a/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts
+++++ b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts
++@@ -589,6 +589,12 @@ &i2c1 {
++ 	clock-frequency = <100000>;
++ };
++ 
+++&i2c6 {
+++	pinctrl-names = "default";
+++	pinctrl-0 = <&i2c6_pins>;
+++	status = "okay";
+++};
+++
++ &i2s {
++ 	pinctrl-names = "default";
++ 	pinctrl-0 = <&i2s_pins>;
++-- 
++2.34.1
++
+diff --git a/buildroot-external/board/raspberrypi/yellow/patches/linux/0005-ARM-dts-bcm2711-yellow-add-I2S-audio-codec.patch b/buildroot-external/board/raspberrypi/yellow/patches/linux/0005-ARM-dts-bcm2711-yellow-add-I2S-audio-codec.patch
+new file mode 100644
+index 0000000..161f590
+--- /dev/null
++++ b/buildroot-external/board/raspberrypi/yellow/patches/linux/0005-ARM-dts-bcm2711-yellow-add-I2S-audio-codec.patch
+@@ -0,0 +1,67 @@
++From 7b33c54f4b768175ccddf746a828bf462a67494b Mon Sep 17 00:00:00 2001
++Message-Id: <7b33c54f4b768175ccddf746a828bf462a67494b.1641573384.git.stefan@agner.ch>
++In-Reply-To: <9d68dedb813f942286856c9d8c2eed01b55bb473.1641573384.git.stefan@agner.ch>
++References: <9d68dedb813f942286856c9d8c2eed01b55bb473.1641573384.git.stefan@agner.ch>
++From: Stefan Agner <stefan@agner.ch>
++Date: Thu, 4 Mar 2021 17:19:01 +0100
++Subject: [PATCH 5/9] ARM: dts: bcm2711: yellow: add I2S audio codec
++
++Add TI PCM5122 I2S audio codec.
++
++Signed-off-by: Stefan Agner <stefan@agner.ch>
++---
++ .../boot/dts/bcm2711-rpi-cm4-ha-yellow.dts    | 26 +++++++++++++++++++
++ 1 file changed, 26 insertions(+)
++
++diff --git a/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts
++index 822644185466..f3967b67368a 100644
++--- a/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts
+++++ b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts
++@@ -593,11 +593,22 @@ &i2c6 {
++ 	pinctrl-names = "default";
++ 	pinctrl-0 = <&i2c6_pins>;
++ 	status = "okay";
+++
+++	card_codec: pcm5121@4c {
+++		#sound-dai-cells = <0>;
+++		compatible = "ti,pcm5121";
+++		reg = <0x4c>;
+++		AVDD-supply = <&vdd_3v3_reg>;
+++		DVDD-supply = <&vdd_3v3_reg>;
+++		CPVDD-supply = <&vdd_3v3_reg>;
+++		status = "okay";
+++	};
++ };
++ 
++ &i2s {
++ 	pinctrl-names = "default";
++ 	pinctrl-0 = <&i2s_pins>;
+++	status = "okay";
++ };
++ 
++ // =============================================
++@@ -640,6 +651,21 @@ &pwm1 {
++ 	status = "disabled";
++ };
++ 
+++&sound {
+++	compatible = "simple-audio-card";
+++	simple-audio-card,format = "i2s";
+++	simple-audio-card,name = "pcm5521-sound";
+++	status = "okay";
+++
+++	simple-audio-card,cpu {
+++		sound-dai = <&i2s>;
+++	};
+++
+++	dailink0_slave: simple-audio-card,codec {
+++		sound-dai = <&card_codec>;
+++	};
+++};
+++
++ &audio {
++ 	pinctrl-names = "default";
++ 	pinctrl-0 = <&audio_pins>;
++-- 
++2.34.1
++
+diff --git a/buildroot-external/board/raspberrypi/yellow/patches/linux/0006-ARM-dts-bcm2711-yellow-enable-GPIO-keys.patch b/buildroot-external/board/raspberrypi/yellow/patches/linux/0006-ARM-dts-bcm2711-yellow-enable-GPIO-keys.patch
+new file mode 100644
+index 0000000..77b9ddb
+--- /dev/null
++++ b/buildroot-external/board/raspberrypi/yellow/patches/linux/0006-ARM-dts-bcm2711-yellow-enable-GPIO-keys.patch
+@@ -0,0 +1,71 @@
++From 8571b271c3e0b861cf666b2588eed380c0b79791 Mon Sep 17 00:00:00 2001
++Message-Id: <8571b271c3e0b861cf666b2588eed380c0b79791.1641573384.git.stefan@agner.ch>
++In-Reply-To: <9d68dedb813f942286856c9d8c2eed01b55bb473.1641573384.git.stefan@agner.ch>
++References: <9d68dedb813f942286856c9d8c2eed01b55bb473.1641573384.git.stefan@agner.ch>
++From: Stefan Agner <stefan@agner.ch>
++Date: Tue, 9 Mar 2021 15:02:53 +0100
++Subject: [PATCH 6/9] ARM: dts: bcm2711: yellow: enable GPIO keys
++
++Signed-off-by: Stefan Agner <stefan@agner.ch>
++---
++ .../boot/dts/bcm2711-rpi-cm4-ha-yellow.dts    | 30 +++++++++++++++++++
++ 1 file changed, 30 insertions(+)
++
++diff --git a/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts
++index f3967b67368a..6a0c89d1f4c8 100644
++--- a/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts
+++++ b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts
++@@ -2,6 +2,7 @@
++ /dts-v1/;
++ #include "bcm2711.dtsi"
++ #include "bcm2835-rpi.dtsi"
+++#include <dt-bindings/input/input.h>
++ 
++ #include <dt-bindings/reset/raspberrypi,firmware-reset.h>
++ 
++@@ -29,6 +30,29 @@ aliases {
++ 		blconfig = &blconfig;
++ 	};
++ 
+++	keys: gpio-keys {
+++		compatible = "gpio-keys";
+++
+++		pinctrl-names = "default";
+++		pinctrl-0 = <&gpio_button_pins>;
+++
+++		status = "okay";
+++
+++		power {
+++			label = "Power Button";
+++			linux,code = <KEY_POWER>;
+++			gpios = <&gpio 26 GPIO_ACTIVE_LOW>;
+++			debounce-interval = <100>; // ms
+++		};
+++
+++		user {
+++			label = "User Button";
+++			linux,code = <KEY_MACRO>;
+++			gpios = <&gpio 27 GPIO_ACTIVE_LOW>;
+++			debounce-interval = <100>; // ms
+++		};
+++	};
+++
++ 	leds {
++ 		led-act {
++ 			gpios = <&gpio 42 GPIO_ACTIVE_HIGH>;
++@@ -438,6 +462,12 @@ spidev1: spidev@1{
++ };
++ 
++ &gpio {
+++	gpio_button_pins: gpio_button_pins {
+++		brcm,pins = <26 27>;
+++		brcm,function = <BCM2835_FSEL_GPIO_IN>;
+++		brcm,pull = <BCM2835_PUD_UP>;
+++	};
+++
++ 	spi0_pins: spi0_pins {
++ 		brcm,pins = <9 10 11>;
++ 		brcm,function = <BCM2835_FSEL_ALT0>;
++-- 
++2.34.1
++
+diff --git a/buildroot-external/board/raspberrypi/yellow/patches/linux/0007-ARM-dts-bcm2711-yellow-add-user-LED.patch b/buildroot-external/board/raspberrypi/yellow/patches/linux/0007-ARM-dts-bcm2711-yellow-add-user-LED.patch
+new file mode 100644
+index 0000000..428d26c
+--- /dev/null
++++ b/buildroot-external/board/raspberrypi/yellow/patches/linux/0007-ARM-dts-bcm2711-yellow-add-user-LED.patch
+@@ -0,0 +1,35 @@
++From 5cebd1b1689f9b4c60ae53340fe3cbf96244f51b Mon Sep 17 00:00:00 2001
++Message-Id: <5cebd1b1689f9b4c60ae53340fe3cbf96244f51b.1641573384.git.stefan@agner.ch>
++In-Reply-To: <9d68dedb813f942286856c9d8c2eed01b55bb473.1641573384.git.stefan@agner.ch>
++References: <9d68dedb813f942286856c9d8c2eed01b55bb473.1641573384.git.stefan@agner.ch>
++From: Stefan Agner <stefan@agner.ch>
++Date: Thu, 28 Oct 2021 19:38:04 +0200
++Subject: [PATCH 7/9] ARM: dts: bcm2711: yellow: add user LED
++
++Add yellow user LED.
++
++Signed-off-by: Stefan Agner <stefan@agner.ch>
++---
++ arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts | 6 ++++++
++ 1 file changed, 6 insertions(+)
++
++diff --git a/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts
++index 6a0c89d1f4c8..1ab98c499ba7 100644
++--- a/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts
+++++ b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts
++@@ -675,6 +675,12 @@ pwr_led: led-pwr {
++ 		linux,default-trigger = "default-on";
++ 		gpios = <&expgpio 2 GPIO_ACTIVE_LOW>;
++ 	};
+++
+++	user_led: led-user {
+++		label = "led2";
+++		linux,default-trigger = "heartbeat";
+++		gpios = <&gpio 44 GPIO_ACTIVE_LOW>;
+++	};
++ };
++ 
++ &pwm1 {
++-- 
++2.34.1
++
+diff --git a/buildroot-external/board/raspberrypi/yellow/patches/linux/0008-ARM-dts-bcm2711-yellow-add-NXP-PCF85063A-RTC.patch b/buildroot-external/board/raspberrypi/yellow/patches/linux/0008-ARM-dts-bcm2711-yellow-add-NXP-PCF85063A-RTC.patch
+new file mode 100644
+index 0000000..05031d6
+--- /dev/null
++++ b/buildroot-external/board/raspberrypi/yellow/patches/linux/0008-ARM-dts-bcm2711-yellow-add-NXP-PCF85063A-RTC.patch
+@@ -0,0 +1,32 @@
++From bee908533513bacf315aac99b084bccde05ab251 Mon Sep 17 00:00:00 2001
++Message-Id: <bee908533513bacf315aac99b084bccde05ab251.1641573384.git.stefan@agner.ch>
++In-Reply-To: <9d68dedb813f942286856c9d8c2eed01b55bb473.1641573384.git.stefan@agner.ch>
++References: <9d68dedb813f942286856c9d8c2eed01b55bb473.1641573384.git.stefan@agner.ch>
++From: Stefan Agner <stefan@agner.ch>
++Date: Fri, 12 Nov 2021 17:33:32 +0100
++Subject: [PATCH 8/9] ARM: dts: bcm2711: yellow: add NXP PCF85063A RTC
++
++Signed-off-by: Stefan Agner <stefan@agner.ch>
++---
++ arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts | 5 +++++
++ 1 file changed, 5 insertions(+)
++
++diff --git a/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts
++index 1ab98c499ba7..999a71f31d89 100644
++--- a/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts
+++++ b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts
++@@ -633,6 +633,11 @@ card_codec: pcm5121@4c {
++ 		CPVDD-supply = <&vdd_3v3_reg>;
++ 		status = "okay";
++ 	};
+++
+++	pcf85063a: rtc@51 {
+++		compatible = "nxp,pcf85063a";
+++		reg = <0x51>;
+++	};
++ };
++ 
++ &i2s {
++-- 
++2.34.1
++
+diff --git a/buildroot-external/board/raspberrypi/yellow/patches/linux/0009-ARM-dts-bcm2711-yellow-enable-USB-host-mode-by-defau.patch b/buildroot-external/board/raspberrypi/yellow/patches/linux/0009-ARM-dts-bcm2711-yellow-enable-USB-host-mode-by-defau.patch
+new file mode 100644
+index 0000000..a73ba93
+--- /dev/null
++++ b/buildroot-external/board/raspberrypi/yellow/patches/linux/0009-ARM-dts-bcm2711-yellow-enable-USB-host-mode-by-defau.patch
+@@ -0,0 +1,40 @@
++From 23b7b5424150f81c7a4d7d8310ee7692fa7b9146 Mon Sep 17 00:00:00 2001
++Message-Id: <23b7b5424150f81c7a4d7d8310ee7692fa7b9146.1641573384.git.stefan@agner.ch>
++In-Reply-To: <9d68dedb813f942286856c9d8c2eed01b55bb473.1641573384.git.stefan@agner.ch>
++References: <9d68dedb813f942286856c9d8c2eed01b55bb473.1641573384.git.stefan@agner.ch>
++From: Stefan Agner <stefan@agner.ch>
++Date: Fri, 7 Jan 2022 17:10:00 +0100
++Subject: [PATCH 9/9] ARM: dts: bcm2711: yellow: enable USB host mode by
++ default
++
++The DWC2 controller is disable by default. Enable it since Home
++Assistant Yellow has a USB hub and USB ports connected to it.
++
++Signed-off-by: Stefan Agner <stefan@agner.ch>
++---
++ arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts | 9 +++++++++
++ 1 file changed, 9 insertions(+)
++
++diff --git a/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts
++index 999a71f31d89..5b9bd5b9ee0a 100644
++--- a/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts
+++++ b/arch/arm/boot/dts/bcm2711-rpi-cm4-ha-yellow.dts
++@@ -362,6 +362,15 @@ &uart5 {
++ 	status = "okay";
++ };
++ 
+++&usb {
+++	compatible = "brcm,bcm2835-usb";
+++	dr_mode = "host";
+++	g-np-tx-fifo-size = <32>;
+++	g-rx-fifo-size = <558>;
+++	g-tx-fifo-size = <512 512 512 512 512 256 256>;
+++	status = "okay";
+++};
+++
++ &vchiq {
++ 	interrupts = <GIC_SPI 34 IRQ_TYPE_LEVEL_HIGH>;
++ };
++-- 
++2.34.1
++
+diff --git a/buildroot-external/board/raspberrypi/yellow/uboot-boot64.ush b/buildroot-external/board/raspberrypi/yellow/uboot-boot64.ush
+new file mode 100644
+index 0000000..85180e7
+--- /dev/null
++++ b/buildroot-external/board/raspberrypi/yellow/uboot-boot64.ush
+@@ -0,0 +1,79 @@
++
++part start ${devtype} ${devnum} 6 dev_env
++${devtype} dev ${devnum}
++
++setenv loadbootstate " \
++    echo 'loading env...'; \
++    ${devtype} read ${ramdisk_addr_r} ${dev_env} 0x20; \
++    env import -c ${ramdisk_addr_r} 0x4000;"
++
++setenv storebootstate " \
++    echo 'storing env...'; \
++    env export -c -s 0x4000 ${ramdisk_addr_r} BOOT_ORDER BOOT_A_LEFT BOOT_B_LEFT MACHINE_ID; \
++    ${devtype} write ${ramdisk_addr_r} ${dev_env} 0x20;"
++
++run loadbootstate
++test -n "${BOOT_ORDER}" || setenv BOOT_ORDER "A B"
++test -n "${BOOT_A_LEFT}" || setenv BOOT_A_LEFT 3
++test -n "${BOOT_B_LEFT}" || setenv BOOT_B_LEFT 3
++
++# HassOS bootargs
++setenv bootargs_hassos "zram.enabled=1 zram.num_devices=3 apparmor=1 security=apparmor rootwait systemd.machine_id=${MACHINE_ID} cgroup_enable=memory fsck.repair=yes"
++
++if gpio input GPIO27; then
++  sleep 1
++  if gpio input GPIO27; then
++    echo "Device wipe button has been pressed, setting wipe flag..."
++    setenv bootargs_hassos "${bootargs_hassos} haos.wipe=1"
++  fi
++fi
++
++# HassOS system A/B
++setenv bootargs_a "root=PARTUUID=8d3d53e3-6d49-4c38-8349-aff6859e82fd rootfstype=squashfs ro"
++setenv bootargs_b "root=PARTUUID=a3ec664e-32ce-4665-95ea-7ae90ce9aa20 rootfstype=squashfs ro"
++
++# Preserve origin bootargs
++setenv bootargs_rpi
++setenv fdt_org ${fdt_addr}
++fdt addr ${fdt_org}
++fdt get value bootargs_rpi /chosen bootargs
++
++setenv bootargs
++for BOOT_SLOT in "${BOOT_ORDER}"; do
++  if test "x${bootargs}" != "x"; then
++    # skip remaining slots
++  elif test "x${BOOT_SLOT}" = "xA"; then
++    if test ${BOOT_A_LEFT} -gt 0; then
++      setexpr BOOT_A_LEFT ${BOOT_A_LEFT} - 1
++      echo "Trying to boot slot A, ${BOOT_A_LEFT} attempts remaining. Loading kernel ..."
++      if load ${devtype} ${devnum}:2 ${kernel_addr_r} Image; then
++          setenv bootargs "${bootargs_hassos} ${bootargs_rpi} ${bootargs_a} rauc.slot=A"
++      fi
++    fi
++  elif test "x${BOOT_SLOT}" = "xB"; then
++    if test ${BOOT_B_LEFT} -gt 0; then
++      setexpr BOOT_B_LEFT ${BOOT_B_LEFT} - 1
++      echo "Trying to boot slot B, ${BOOT_B_LEFT} attempts remaining. Loading kernel ..."
++      if load ${devtype} ${devnum}:4 ${kernel_addr_r} Image; then
++          setenv bootargs "${bootargs_hassos} ${bootargs_rpi} ${bootargs_b} rauc.slot=B"
++      fi
++    fi
++  fi
++done
++
++setenv fdt_addr
++if test -n "${bootargs}"; then
++  run storebootstate
++else
++  echo "No valid slot found, resetting tries to 3"
++  setenv BOOT_A_LEFT 3
++  setenv BOOT_B_LEFT 3
++  run storebootstate
++  reset
++fi
++
++echo "Starting kernel"
++booti ${kernel_addr_r} - ${fdt_org}
++
++echo "Boot failed, resetting..."
++reset
+diff --git a/buildroot-external/board/raspberrypi/yellow/uboot.config b/buildroot-external/board/raspberrypi/yellow/uboot.config
+new file mode 100644
+index 0000000..82b4d33
+--- /dev/null
++++ b/buildroot-external/board/raspberrypi/yellow/uboot.config
+@@ -0,0 +1,2 @@
++CONFIG_CMD_NVME=y
++CONFIG_NVME=y
+diff --git a/buildroot-external/configs/amber_defconfig b/buildroot-external/configs/amber_defconfig
+deleted file mode 100644
+index 9dbbe0c..0000000
+--- a/buildroot-external/configs/amber_defconfig
++++ /dev/null
+@@ -1,122 +0,0 @@
+-BR2_aarch64=y
+-BR2_cortex_a72=y
+-BR2_ARM_FPU_NEON_VFPV4=y
+-BR2_DL_DIR="/cache/dl"
+-BR2_CCACHE=y
+-BR2_CCACHE_DIR="/cache/cc"
+-BR2_GLOBAL_PATCH_DIR="$(BR2_EXTERNAL_HASSOS_PATH)/patches $(BR2_EXTERNAL_HASSOS_PATH)/board/raspberrypi/patches $(BR2_EXTERNAL_HASSOS_PATH)/board/raspberrypi/amber/patches"
+-BR2_TOOLCHAIN_BUILDROOT_GLIBC=y
+-BR2_GCC_VERSION_9_X=y
+-BR2_OPTIMIZE_2=y
+-BR2_SSP_REGULAR=y
+-BR2_SSP_OPTION="-fstack-protector"
+-BR2_TOOLCHAIN_BUILDROOT_CXX=y
+-BR2_BINUTILS_ENABLE_LTO=y
+-BR2_GCC_ENABLE_LTO=y
+-BR2_TARGET_GENERIC_HOSTNAME="homeassistant"
+-BR2_TARGET_GENERIC_ISSUE="Welcome to Home Assistant"
+-BR2_INIT_SYSTEMD=y
+-# BR2_TARGET_GENERIC_REMOUNT_ROOTFS_RW is not set
+-BR2_ROOTFS_OVERLAY="$(BR2_EXTERNAL_HASSOS_PATH)/rootfs-overlay $(BR2_EXTERNAL_HASSOS_PATH)/board/raspberrypi/rootfs-overlay"
+-BR2_ROOTFS_POST_BUILD_SCRIPT="$(BR2_EXTERNAL_HASSOS_PATH)/scripts/post-build.sh"
+-BR2_ROOTFS_POST_IMAGE_SCRIPT="$(BR2_EXTERNAL_HASSOS_PATH)/scripts/post-image.sh"
+-BR2_ROOTFS_POST_SCRIPT_ARGS="$(BR2_EXTERNAL_HASSOS_PATH)/board/raspberrypi/amber $(BR2_EXTERNAL_HASSOS_PATH)/board/raspberrypi/hassos-hook.sh"
+-BR2_LINUX_KERNEL=y
+-BR2_LINUX_KERNEL_CUSTOM_TARBALL=y
+-BR2_LINUX_KERNEL_CUSTOM_TARBALL_LOCATION="https://github.com/raspberrypi/linux/archive/1.20211029.tar.gz"
+-BR2_LINUX_KERNEL_DEFCONFIG="bcm2711"
+-BR2_LINUX_KERNEL_CONFIG_FRAGMENT_FILES="$(BR2_EXTERNAL_HASSOS_PATH)/kernel/hassos.config $(BR2_EXTERNAL_HASSOS_PATH)/kernel/docker.config $(BR2_EXTERNAL_HASSOS_PATH)/kernel/device-support.config $(BR2_EXTERNAL_HASSOS_PATH)/board/raspberrypi/kernel.config"
+-BR2_LINUX_KERNEL_LZ4=y
+-BR2_LINUX_KERNEL_DTS_SUPPORT=y
+-BR2_LINUX_KERNEL_INTREE_DTS_NAME="broadcom/bcm2711-rpi-cm4-ha-amber"
+-BR2_LINUX_KERNEL_NEEDS_HOST_OPENSSL=y
+-BR2_LINUX_KERNEL_NEEDS_HOST_LIBELF=y
+-BR2_PACKAGE_BUSYBOX_CONFIG="$(BR2_EXTERNAL_HASSOS_PATH)/busybox.config"
+-BR2_PACKAGE_BUSYBOX_INDIVIDUAL_BINARIES=y
+-BR2_PACKAGE_PROCPS_NG=y
+-BR2_PACKAGE_JQ=y
+-BR2_PACKAGE_E2FSPROGS=y
+-BR2_PACKAGE_E2FSPROGS_E2IMAGE=y
+-BR2_PACKAGE_SQUASHFS=y
+-BR2_PACKAGE_OS_AGENT=y
+-BR2_PACKAGE_UDISKS2=y
+-# BR2_PACKAGE_LVM2_STANDARD_INSTALL is not set
+-BR2_PACKAGE_LINUX_FIRMWARE=y
+-BR2_PACKAGE_LINUX_FIRMWARE_MEDIATEK_MT7601U=y
+-BR2_PACKAGE_LINUX_FIRMWARE_RALINK_RT2XX=y
+-BR2_PACKAGE_LINUX_FIRMWARE_RALINK_RT73=y
+-BR2_PACKAGE_LINUX_FIRMWARE_RTL_87XX_BT=y
+-BR2_PACKAGE_LINUX_FIRMWARE_RTL_88XX_BT=y
+-BR2_PACKAGE_LINUX_FIRMWARE_USB_NIC_RTL_815X=y
+-BR2_PACKAGE_LINUX_FIRMWARE_USB_SERIAL_TI=y
+-BR2_PACKAGE_RPI_FIRMWARE=y
+-BR2_PACKAGE_RPI_FIRMWARE_VARIANT_PI4=y
+-BR2_PACKAGE_RPI_WIFI_FIRMWARE=y
+-BR2_PACKAGE_GPTFDISK=y
+-BR2_PACKAGE_GPTFDISK_SGDISK=y
+-BR2_PACKAGE_UBOOT_TOOLS=y
+-BR2_PACKAGE_CA_CERTIFICATES=y
+-BR2_PACKAGE_LIBDNET=y
+-BR2_PACKAGE_LIBCGROUP=y
+-BR2_PACKAGE_LIBCGROUP_TOOLS=y
+-BR2_PACKAGE_BLUEZ5_UTILS=y
+-BR2_PACKAGE_BLUEZ5_UTILS_CLIENT=y
+-BR2_PACKAGE_DHCP=y
+-BR2_PACKAGE_DHCP_CLIENT=y
+-BR2_PACKAGE_WIREGUARD_LINUX_COMPAT=y
+-BR2_PACKAGE_DROPBEAR=y
+-BR2_PACKAGE_DROPBEAR_CLIENT=y
+-# BR2_PACKAGE_IFUPDOWN_SCRIPTS is not set
+-BR2_PACKAGE_NETWORK_MANAGER=y
+-BR2_PACKAGE_WIRELESS_REGDB=y
+-BR2_PACKAGE_NVME=y
+-BR2_PACKAGE_STRESS_NG=y
+-BR2_PACKAGE_TINI=y
+-BR2_PACKAGE_DOCKER_ENGINE=y
+-BR2_PACKAGE_DOCKER_CLI=y
+-BR2_PACKAGE_RAUC=y
+-BR2_PACKAGE_RAUC_NETWORK=y
+-BR2_PACKAGE_RNG_TOOLS=y
+-# BR2_PACKAGE_SYSTEMD_HWDB is not set
+-# BR2_PACKAGE_SYSTEMD_NETWORKD is not set
+-BR2_PACKAGE_SYSTEMD_RANDOMSEED=y
+-BR2_PACKAGE_SYSTEMD_RESOLVED=y
+-BR2_PACKAGE_SYSTEMD_COREDUMP=y
+-BR2_PACKAGE_SYSTEMD_LOGIND=y
+-BR2_PACKAGE_UTIL_LINUX_PARTX=y
+-BR2_PACKAGE_UTIL_LINUX_ZRAMCTL=y
+-BR2_PACKAGE_UTIL_LINUX_LOGIN=y
+-BR2_PACKAGE_UTIL_LINUX_NOLOGIN=y
+-BR2_PACKAGE_UTIL_LINUX_SULOGIN=y
+-BR2_PACKAGE_USB_MODESWITCH=y
+-BR2_PACKAGE_USB_MODESWITCH_DATA=y
+-BR2_PACKAGE_INPUT_EVENT_DAEMON=y
+-BR2_TARGET_ROOTFS_SQUASHFS=y
+-BR2_TARGET_ROOTFS_SQUASHFS4_LZ4=y
+-# BR2_TARGET_ROOTFS_TAR is not set
+-BR2_TARGET_UBOOT=y
+-BR2_TARGET_UBOOT_BUILD_SYSTEM_KCONFIG=y
+-BR2_TARGET_UBOOT_CUSTOM_VERSION=y
+-BR2_TARGET_UBOOT_CUSTOM_VERSION_VALUE="2021.10-rc5"
+-BR2_TARGET_UBOOT_BOARD_DEFCONFIG="rpi_4"
+-BR2_TARGET_UBOOT_CONFIG_FRAGMENT_FILES="$(BR2_EXTERNAL_HASSOS_PATH)/bootloader/uboot.config $(BR2_EXTERNAL_HASSOS_PATH)/board/raspberrypi/uboot.config $(BR2_EXTERNAL_HASSOS_PATH)/board/raspberrypi/amber/uboot.config"
+-BR2_PACKAGE_HOST_UBOOT_TOOLS=y
+-BR2_PACKAGE_HOST_UBOOT_TOOLS_BOOT_SCRIPT=y
+-BR2_PACKAGE_HOST_UBOOT_TOOLS_BOOT_SCRIPT_SOURCE="$(BR2_EXTERNAL_HASSOS_PATH)/board/raspberrypi/amber/uboot-boot64.ush"
+-BR2_PACKAGE_HOST_LINUX_HEADERS_CUSTOM_5_10=y
+-BR2_PACKAGE_HOST_DOSFSTOOLS=y
+-BR2_PACKAGE_HOST_E2FSPROGS=y
+-BR2_PACKAGE_HOST_GPTFDISK=y
+-BR2_PACKAGE_HOST_MTOOLS=y
+-BR2_PACKAGE_HOST_RAUC=y
+-BR2_PACKAGE_HASSIO=y
+-BR2_PACKAGE_HASSIO_ARCH="aarch64"
+-BR2_PACKAGE_HASSIO_MACHINE="raspberrypi4-64"
+-BR2_PACKAGE_APPARMOR=y
+-BR2_PACKAGE_APPARMOR_PROFILES=y
+-BR2_PACKAGE_LIBCURL_CURL=y
+-BR2_PACKAGE_BLUETOOTH_BCM43XX=y
+-BR2_PACKAGE_DOSFSTOOLS=y
+-BR2_PACKAGE_DOSFSTOOLS_FSCK_FAT=y
+-BR2_PACKAGE_RPI_RF_MOD=y
+-BR2_PACKAGE_RPI_RF_MOD_DTS=y
+diff --git a/buildroot-external/configs/yellow_defconfig b/buildroot-external/configs/yellow_defconfig
+new file mode 100644
+index 0000000..206d609
+--- /dev/null
++++ b/buildroot-external/configs/yellow_defconfig
+@@ -0,0 +1,122 @@
++BR2_aarch64=y
++BR2_cortex_a72=y
++BR2_ARM_FPU_NEON_VFPV4=y
++BR2_DL_DIR="/cache/dl"
++BR2_CCACHE=y
++BR2_CCACHE_DIR="/cache/cc"
++BR2_GLOBAL_PATCH_DIR="$(BR2_EXTERNAL_HASSOS_PATH)/patches $(BR2_EXTERNAL_HASSOS_PATH)/board/raspberrypi/patches $(BR2_EXTERNAL_HASSOS_PATH)/board/raspberrypi/yellow/patches"
++BR2_TOOLCHAIN_BUILDROOT_GLIBC=y
++BR2_GCC_VERSION_9_X=y
++BR2_OPTIMIZE_2=y
++BR2_SSP_REGULAR=y
++BR2_SSP_OPTION="-fstack-protector"
++BR2_TOOLCHAIN_BUILDROOT_CXX=y
++BR2_BINUTILS_ENABLE_LTO=y
++BR2_GCC_ENABLE_LTO=y
++BR2_TARGET_GENERIC_HOSTNAME="homeassistant"
++BR2_TARGET_GENERIC_ISSUE="Welcome to Home Assistant"
++BR2_INIT_SYSTEMD=y
++# BR2_TARGET_GENERIC_REMOUNT_ROOTFS_RW is not set
++BR2_ROOTFS_OVERLAY="$(BR2_EXTERNAL_HASSOS_PATH)/rootfs-overlay $(BR2_EXTERNAL_HASSOS_PATH)/board/raspberrypi/rootfs-overlay"
++BR2_ROOTFS_POST_BUILD_SCRIPT="$(BR2_EXTERNAL_HASSOS_PATH)/scripts/post-build.sh"
++BR2_ROOTFS_POST_IMAGE_SCRIPT="$(BR2_EXTERNAL_HASSOS_PATH)/scripts/post-image.sh"
++BR2_ROOTFS_POST_SCRIPT_ARGS="$(BR2_EXTERNAL_HASSOS_PATH)/board/raspberrypi/yellow $(BR2_EXTERNAL_HASSOS_PATH)/board/raspberrypi/hassos-hook.sh"
++BR2_LINUX_KERNEL=y
++BR2_LINUX_KERNEL_CUSTOM_TARBALL=y
++BR2_LINUX_KERNEL_CUSTOM_TARBALL_LOCATION="https://github.com/raspberrypi/linux/archive/1.20211029.tar.gz"
++BR2_LINUX_KERNEL_DEFCONFIG="bcm2711"
++BR2_LINUX_KERNEL_CONFIG_FRAGMENT_FILES="$(BR2_EXTERNAL_HASSOS_PATH)/kernel/hassos.config $(BR2_EXTERNAL_HASSOS_PATH)/kernel/docker.config $(BR2_EXTERNAL_HASSOS_PATH)/kernel/device-support.config $(BR2_EXTERNAL_HASSOS_PATH)/board/raspberrypi/kernel.config"
++BR2_LINUX_KERNEL_LZ4=y
++BR2_LINUX_KERNEL_DTS_SUPPORT=y
++BR2_LINUX_KERNEL_INTREE_DTS_NAME="broadcom/bcm2711-rpi-cm4-ha-yellow"
++BR2_LINUX_KERNEL_NEEDS_HOST_OPENSSL=y
++BR2_LINUX_KERNEL_NEEDS_HOST_LIBELF=y
++BR2_PACKAGE_BUSYBOX_CONFIG="$(BR2_EXTERNAL_HASSOS_PATH)/busybox.config"
++BR2_PACKAGE_BUSYBOX_INDIVIDUAL_BINARIES=y
++BR2_PACKAGE_PROCPS_NG=y
++BR2_PACKAGE_JQ=y
++BR2_PACKAGE_E2FSPROGS=y
++BR2_PACKAGE_E2FSPROGS_E2IMAGE=y
++BR2_PACKAGE_SQUASHFS=y
++BR2_PACKAGE_OS_AGENT=y
++BR2_PACKAGE_UDISKS2=y
++# BR2_PACKAGE_LVM2_STANDARD_INSTALL is not set
++BR2_PACKAGE_LINUX_FIRMWARE=y
++BR2_PACKAGE_LINUX_FIRMWARE_MEDIATEK_MT7601U=y
++BR2_PACKAGE_LINUX_FIRMWARE_RALINK_RT2XX=y
++BR2_PACKAGE_LINUX_FIRMWARE_RALINK_RT73=y
++BR2_PACKAGE_LINUX_FIRMWARE_RTL_87XX_BT=y
++BR2_PACKAGE_LINUX_FIRMWARE_RTL_88XX_BT=y
++BR2_PACKAGE_LINUX_FIRMWARE_USB_NIC_RTL_815X=y
++BR2_PACKAGE_LINUX_FIRMWARE_USB_SERIAL_TI=y
++BR2_PACKAGE_RPI_FIRMWARE=y
++BR2_PACKAGE_RPI_FIRMWARE_VARIANT_PI4=y
++BR2_PACKAGE_RPI_WIFI_FIRMWARE=y
++BR2_PACKAGE_GPTFDISK=y
++BR2_PACKAGE_GPTFDISK_SGDISK=y
++BR2_PACKAGE_UBOOT_TOOLS=y
++BR2_PACKAGE_CA_CERTIFICATES=y
++BR2_PACKAGE_LIBDNET=y
++BR2_PACKAGE_LIBCGROUP=y
++BR2_PACKAGE_LIBCGROUP_TOOLS=y
++BR2_PACKAGE_BLUEZ5_UTILS=y
++BR2_PACKAGE_BLUEZ5_UTILS_CLIENT=y
++BR2_PACKAGE_DHCP=y
++BR2_PACKAGE_DHCP_CLIENT=y
++BR2_PACKAGE_WIREGUARD_LINUX_COMPAT=y
++BR2_PACKAGE_DROPBEAR=y
++BR2_PACKAGE_DROPBEAR_CLIENT=y
++# BR2_PACKAGE_IFUPDOWN_SCRIPTS is not set
++BR2_PACKAGE_NETWORK_MANAGER=y
++BR2_PACKAGE_WIRELESS_REGDB=y
++BR2_PACKAGE_NVME=y
++BR2_PACKAGE_STRESS_NG=y
++BR2_PACKAGE_TINI=y
++BR2_PACKAGE_DOCKER_ENGINE=y
++BR2_PACKAGE_DOCKER_CLI=y
++BR2_PACKAGE_RAUC=y
++BR2_PACKAGE_RAUC_NETWORK=y
++BR2_PACKAGE_RNG_TOOLS=y
++# BR2_PACKAGE_SYSTEMD_HWDB is not set
++# BR2_PACKAGE_SYSTEMD_NETWORKD is not set
++BR2_PACKAGE_SYSTEMD_RANDOMSEED=y
++BR2_PACKAGE_SYSTEMD_RESOLVED=y
++BR2_PACKAGE_SYSTEMD_COREDUMP=y
++BR2_PACKAGE_SYSTEMD_LOGIND=y
++BR2_PACKAGE_UTIL_LINUX_PARTX=y
++BR2_PACKAGE_UTIL_LINUX_ZRAMCTL=y
++BR2_PACKAGE_UTIL_LINUX_LOGIN=y
++BR2_PACKAGE_UTIL_LINUX_NOLOGIN=y
++BR2_PACKAGE_UTIL_LINUX_SULOGIN=y
++BR2_PACKAGE_USB_MODESWITCH=y
++BR2_PACKAGE_USB_MODESWITCH_DATA=y
++BR2_PACKAGE_INPUT_EVENT_DAEMON=y
++BR2_TARGET_ROOTFS_SQUASHFS=y
++BR2_TARGET_ROOTFS_SQUASHFS4_LZ4=y
++# BR2_TARGET_ROOTFS_TAR is not set
++BR2_TARGET_UBOOT=y
++BR2_TARGET_UBOOT_BUILD_SYSTEM_KCONFIG=y
++BR2_TARGET_UBOOT_CUSTOM_VERSION=y
++BR2_TARGET_UBOOT_CUSTOM_VERSION_VALUE="2021.10-rc5"
++BR2_TARGET_UBOOT_BOARD_DEFCONFIG="rpi_4"
++BR2_TARGET_UBOOT_CONFIG_FRAGMENT_FILES="$(BR2_EXTERNAL_HASSOS_PATH)/bootloader/uboot.config $(BR2_EXTERNAL_HASSOS_PATH)/board/raspberrypi/uboot.config $(BR2_EXTERNAL_HASSOS_PATH)/board/raspberrypi/yellow/uboot.config"
++BR2_PACKAGE_HOST_UBOOT_TOOLS=y
++BR2_PACKAGE_HOST_UBOOT_TOOLS_BOOT_SCRIPT=y
++BR2_PACKAGE_HOST_UBOOT_TOOLS_BOOT_SCRIPT_SOURCE="$(BR2_EXTERNAL_HASSOS_PATH)/board/raspberrypi/yellow/uboot-boot64.ush"
++BR2_PACKAGE_HOST_LINUX_HEADERS_CUSTOM_5_10=y
++BR2_PACKAGE_HOST_DOSFSTOOLS=y
++BR2_PACKAGE_HOST_E2FSPROGS=y
++BR2_PACKAGE_HOST_GPTFDISK=y
++BR2_PACKAGE_HOST_MTOOLS=y
++BR2_PACKAGE_HOST_RAUC=y
++BR2_PACKAGE_HASSIO=y
++BR2_PACKAGE_HASSIO_ARCH="aarch64"
++BR2_PACKAGE_HASSIO_MACHINE="raspberrypi4-64"
++BR2_PACKAGE_APPARMOR=y
++BR2_PACKAGE_APPARMOR_PROFILES=y
++BR2_PACKAGE_LIBCURL_CURL=y
++BR2_PACKAGE_BLUETOOTH_BCM43XX=y
++BR2_PACKAGE_DOSFSTOOLS=y
++BR2_PACKAGE_DOSFSTOOLS_FSCK_FAT=y
++BR2_PACKAGE_RPI_RF_MOD=y
++BR2_PACKAGE_RPI_RF_MOD_DTS=y

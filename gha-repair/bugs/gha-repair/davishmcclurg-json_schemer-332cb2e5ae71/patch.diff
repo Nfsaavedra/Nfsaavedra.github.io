@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 5530418..1476139 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -14,7 +14,7 @@ jobs:
+             ruby: truffleruby-head
+     runs-on: ${{ matrix.os }}
+     steps:
+-    - uses: actions/checkout@v2
++    - uses: actions/checkout@v4
+     - uses: ruby/setup-ruby@v1
+       with:
+         ruby-version: ${{ matrix.ruby }}

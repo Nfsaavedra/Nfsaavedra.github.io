@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/pkgdown.yaml b/.github/workflows/pkgdown.yaml
+index 49d7268..f275cf1 100644
+--- a/.github/workflows/pkgdown.yaml
++++ b/.github/workflows/pkgdown.yaml
+@@ -45,7 +45,8 @@ jobs:
+         run: |
+           install.packages("remotes")
+           remotes::install_deps(dependencies = TRUE)
+-          remotes::install_dev("pkgdown")
++          install.packages('pkgdown')
++          #remotes::install_dev("pkgdown")
+         shell: Rscript {0}
+ 
+       - name: Install package

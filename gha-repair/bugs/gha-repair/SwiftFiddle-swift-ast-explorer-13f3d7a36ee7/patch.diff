@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/spm.yml b/.github/workflows/spm.yml
+index 8895951..60f9f41 100644
+--- a/.github/workflows/spm.yml
++++ b/.github/workflows/spm.yml
+@@ -6,7 +6,7 @@ on:
+ 
+ jobs:
+   run:
+-    runs-on: macos-latest
++    runs-on: macos-13
+     steps:
+       - uses: actions/checkout@v3
+       - name: Update Package.resolved

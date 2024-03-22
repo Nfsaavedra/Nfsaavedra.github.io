@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build-test-ef6.yml b/.github/workflows/build-test-ef6.yml
+index 1e391c0..053f6a9 100644
+--- a/.github/workflows/build-test-ef6.yml
++++ b/.github/workflows/build-test-ef6.yml
+@@ -24,7 +24,7 @@ jobs:
+     - name: Setup dotnet
+       uses: actions/setup-dotnet@v1
+       with:
+-        dotnet-version: 5.0.x
++        dotnet-version: 6.0.x
+     - name: Setup MSBuild.exe
+       uses: microsoft/setup-msbuild@v1.0.2
+     - name: Build with dotnet

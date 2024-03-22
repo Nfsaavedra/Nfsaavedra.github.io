@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 4e09a95..f06dbf8 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -13,7 +13,7 @@ jobs:
+ 
+     steps:
+     - name: setup-xcode
+-      uses: maxim-lobanov/setup-xcode@1
++      uses: maxim-lobanov/setup-xcode@1.2.1
+       with:
+         xcode-version: latest-stable
+         

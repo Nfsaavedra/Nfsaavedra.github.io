@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/release-apidocs.yml b/.github/workflows/release-apidocs.yml
+index a0608b3..ac655cf 100644
+--- a/.github/workflows/release-apidocs.yml
++++ b/.github/workflows/release-apidocs.yml
+@@ -18,7 +18,7 @@ jobs:
+           cd build/docs/openrndr
+           git init .
+           git checkout --orphan gh-pages
+-          git remote add https://github.com/openrndr/openrndr
++          git remote add origin https://github.com/openrndr/openrndr
+           git add .
+           git commit -m "Add automatically generated API docs"
+-          git push origin gh-pages --force
+\ No newline at end of file
++          git push origin gh-pages --force

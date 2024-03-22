@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/image.yaml b/.github/workflows/image.yaml
+index b23af42..d254d1e 100644
+--- a/.github/workflows/image.yaml
++++ b/.github/workflows/image.yaml
+@@ -47,7 +47,7 @@ jobs:
+           docker login quay.io --username "$DOCKER_USERNAME" --password-stdin <<< "$DOCKER_TOKEN"
+         if: github.event_name == 'push'
+         env:
+-          USERNAME: ${{ secrets.USERNAME }}
++          USERNAME: ${{ github.actor }}
+           PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+           DOCKER_USERNAME: ${{ secrets.RELEASE_QUAY_USERNAME }}
+           DOCKER_TOKEN: ${{ secrets.RELEASE_QUAY_TOKEN }}

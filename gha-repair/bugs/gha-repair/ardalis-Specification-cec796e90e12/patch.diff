@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/publishefcore.yml b/.github/workflows/publishefcore.yml
+index e170e66..0667cb7 100644
+--- a/.github/workflows/publishefcore.yml
++++ b/.github/workflows/publishefcore.yml
+@@ -4,7 +4,7 @@ on:
+     branches:
+       - master # Your default release branch
+     paths:
+-      - 'ArdalisSpecificationEF/src/**'
++      - 'ArdalisSpecificationEF/src/Ardalis.Specification.EF/**'
+ jobs:
+   publish:
+     name: list on nuget

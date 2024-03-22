@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/docker-cd.yml b/.github/workflows/docker-cd.yml
+index b89a5ca..daaf174 100644
+--- a/.github/workflows/docker-cd.yml
++++ b/.github/workflows/docker-cd.yml
+@@ -51,7 +51,7 @@ jobs:
+   deploy:
+     if: ${{ github.ref == 'refs/heads/master' }}
+     runs-on: ubuntu-latest
+-    name: "Deploy FaaScinator: ${{ github.ref }}"
++    name: "Deploy Docker Image: ${{ github.ref }}"
+     needs:
+       - build-maven
+       - build-docker

@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 0d1fbe4..f6e2cd3 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -58,6 +58,10 @@ jobs:
+         if: ${{ join(matrix.features, ',') != '' }}
+         run: cargo build --frozen --features ${{ join(matrix.features, ',') }}
+ 
++      - name: Free space
++        if: startsWith(matrix.os, 'windows')
++        run: cargo clean
++
+       - name: Install cargo-llvm-cov
+         uses: taiki-e/install-action@cargo-llvm-cov
+ 

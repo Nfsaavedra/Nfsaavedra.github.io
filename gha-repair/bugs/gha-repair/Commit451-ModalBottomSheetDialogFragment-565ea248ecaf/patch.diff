@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 170f790..bd0ce05 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -7,4 +7,4 @@ jobs:
+       - name: Checkout the code
+         uses: actions/checkout@v2
+       - name: Build the app
+-        run: ./gradlew build
++        run: chmod +x gradlew && ./gradlew build

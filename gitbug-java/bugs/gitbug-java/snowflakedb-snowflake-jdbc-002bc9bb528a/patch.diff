@@ -1,0 +1,36 @@
+diff --git a/src/main/java/net/snowflake/client/jdbc/SnowflakeConnectString.java b/src/main/java/net/snowflake/client/jdbc/SnowflakeConnectString.java
+index 878e68c..e75a41e 100644
+--- a/src/main/java/net/snowflake/client/jdbc/SnowflakeConnectString.java
++++ b/src/main/java/net/snowflake/client/jdbc/SnowflakeConnectString.java
+@@ -7,6 +7,7 @@ import com.google.common.base.Strings;
+ import java.io.Serializable;
+ import java.io.UnsupportedEncodingException;
+ import java.net.URI;
++import java.net.URISyntaxException;
+ import java.net.URLDecoder;
+ import java.net.URLEncoder;
+ import java.util.*;
+@@ -153,6 +154,10 @@ public class SnowflakeConnectString implements Serializable {
+       }
+ 
+       return new SnowflakeConnectString(scheme, host, port, parameters, account);
++    } catch (URISyntaxException uriEx) {
++      logger.warn(
++          "Exception thrown while parsing Snowflake connect string. Illegal character in url.");
++      return INVALID_CONNECT_STRING;
+     } catch (Exception ex) {
+       logger.warn("Exception thrown while parsing Snowflake connect string", ex);
+       return INVALID_CONNECT_STRING;
+diff --git a/src/main/java/net/snowflake/client/jdbc/SnowflakeDriver.java b/src/main/java/net/snowflake/client/jdbc/SnowflakeDriver.java
+index c642975..2021224 100644
+--- a/src/main/java/net/snowflake/client/jdbc/SnowflakeDriver.java
++++ b/src/main/java/net/snowflake/client/jdbc/SnowflakeDriver.java
+@@ -175,7 +175,7 @@ public class SnowflakeDriver implements Driver {
+   public Connection connect(String url, Properties info) throws SQLException {
+     SnowflakeConnectString conStr = SnowflakeConnectString.parse(url, info);
+     if (!conStr.isValid()) {
+-      return null;
++      throw new SnowflakeSQLException("Connection string is invalid. Unable to parse.");
+     }
+     return new SnowflakeConnectionV1(url, info);
+   }

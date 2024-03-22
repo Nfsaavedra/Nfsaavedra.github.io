@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/nodejs.yml b/.github/workflows/nodejs.yml
+index fca69be..8a5f616 100644
+--- a/.github/workflows/nodejs.yml
++++ b/.github/workflows/nodejs.yml
+@@ -17,6 +17,7 @@ jobs:
+         node-version: [12.x, 14.x, 16.x]
+ 
+     steps:
++      - run: git config --global core.autocrlf false
+       - uses: actions/checkout@v2
+         with: { submodules: true }
+       - name: Use Node.js ${{ matrix.node-version }}

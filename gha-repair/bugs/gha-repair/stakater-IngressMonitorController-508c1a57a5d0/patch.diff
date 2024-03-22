@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/pull_request.yml b/.github/workflows/pull_request.yml
+index c744e5c..f4059ae 100644
+--- a/.github/workflows/pull_request.yml
++++ b/.github/workflows/pull_request.yml
+@@ -1,7 +1,7 @@
+ name: Pull Request
+ 
+ on:
+-  pull_request:
++  pull_request_target:
+     branches:
+       - 'master'
+     paths-ignore:

@@ -1,0 +1,157 @@
+diff --git a/.ci/update-specs.yml b/.ci/update-specs.yml
+new file mode 100644
+index 0000000..81b67ae
+--- /dev/null
++++ b/.ci/update-specs.yml
+@@ -0,0 +1,101 @@
++name: update-specs
++
++title: synchronize schema specs
++
++scms:
++  default:
++    kind: github
++    spec:
++      user: '{{ requiredEnv "GIT_USER" }}'
++      email: '{{ requiredEnv "GIT_EMAIL" }}'
++      owner: elastic
++      repository: apm-agent-java
++      token: '{{ requiredEnv "GITHUB_TOKEN" }}'
++      username: '{{ requiredEnv "GIT_USER" }}'
++      branch: main
++
++sources:
++  sha:
++    kind: file
++    spec:
++      file: 'https://github.com/elastic/apm-data/commit/main.patch'
++      matchpattern: "^From\\s([0-9a-f]{40})\\s"
++  error.json:
++    kind: file
++    spec:
++      file: https://raw.githubusercontent.com/elastic/apm-data/main/input/elasticapm/docs/spec/v2/error.json
++  metadata.json:
++    kind: file
++    spec:
++      file: https://raw.githubusercontent.com/elastic/apm-data/main/input/elasticapm/docs/spec/v2/metadata.json
++  metricset.json:
++    kind: file
++    spec:
++      file: https://raw.githubusercontent.com/elastic/apm-data/main/input/elasticapm/docs/spec/v2/metricset.json
++  span.json:
++    kind: file
++    spec:
++      file: https://raw.githubusercontent.com/elastic/apm-data/main/input/elasticapm/docs/spec/v2/span.json
++  transaction.json:
++    kind: file
++    spec:
++      file: https://raw.githubusercontent.com/elastic/apm-data/main/input/elasticapm/docs/spec/v2/transaction.json
++
++actions:
++  pr:
++    kind: "github/pullrequest"
++    scmid: default
++    sourceid: sha
++    spec:
++      automerge: false
++      draft: false
++      labels:
++        - "automation"
++      description: |-
++        ### What
++        APM agent json schema automatic sync
++        ### Why
++        *Changeset*
++        * https://github.com/elastic/apm-data/commit/{{ source "sha" }}
++
++targets:
++  error.json:
++    name: error.json
++    scmid: default
++    sourceid: error.json
++    kind: file
++    spec:
++      file: apm-agent-core/src/test/resources/apm-server-schema/current/error.json
++      forcecreate: true
++  metadata.json:
++    name: metadata.json
++    scmid: default
++    sourceid: metadata.json
++    kind: file
++    spec:
++      file: apm-agent-core/src/test/resources/apm-server-schema/current/metadata.json
++      forcecreate: true
++  metricset.json:
++    name: metricset.json
++    scmid: default
++    sourceid: metricset.json
++    kind: file
++    spec:
++      file: apm-agent-core/src/test/resources/apm-server-schema/current/metricset.json
++      forcecreate: true
++  span.json:
++    name: span.json
++    scmid: default
++    sourceid: span.json
++    kind: file
++    spec:
++      file: apm-agent-core/src/test/resources/apm-server-schema/current/span.json
++      forcecreate: true
++  transaction.json:
++    name: transaction.json
++    scmid: default
++    sourceid: transaction.json
++    kind: file
++    spec:
++      file: apm-agent-core/src/test/resources/apm-server-schema/current/transaction.json
++      forcecreate: true
+diff --git a/.github/workflows/opentelemetry.yml b/.github/workflows/opentelemetry.yml
+index 143d4fa..f1e39a6 100644
+--- a/.github/workflows/opentelemetry.yml
++++ b/.github/workflows/opentelemetry.yml
+@@ -6,6 +6,7 @@ on:
+     workflows:
+       - test
+       - test-reporter
++      - update-specs
+     types: [completed]
+ 
+ jobs:
+diff --git a/.github/workflows/update-specs.yml b/.github/workflows/update-specs.yml
+new file mode 100644
+index 0000000..94759a2
+--- /dev/null
++++ b/.github/workflows/update-specs.yml
+@@ -0,0 +1,32 @@
++name: update-specs
++
++on:
++  workflow_dispatch: ~
++  schedule:
++    - cron: '0 6 * * *'
++
++permissions:
++  pull-requests: write
++  contents: write
++
++jobs:
++  bump:
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v3
++      - name: Setup Git
++        uses: elastic/apm-pipeline-library/.github/actions/setup-git@current
++      - name: Install Updatecli in the runner
++        uses: updatecli/updatecli-action@453502948b442d7b9a923de7b40cc7ce8628505c
++      - name: Run Updatecli
++        env:
++          GITHUB_TOKEN: ${{ github.token }}
++          BRANCH_NAME: ${{ github.ref_name }}
++        run: updatecli apply --config ./.ci/update-specs.yml
++      - if: failure()
++        uses: elastic/apm-pipeline-library/.github/actions/notify-build-status@current
++        with:
++          vaultUrl: ${{ secrets.VAULT_ADDR }}
++          vaultRoleId: ${{ secrets.VAULT_ROLE_ID }}
++          vaultSecretId: ${{ secrets.VAULT_SECRET_ID }}
++          slackChannel: "#apm-agent-java"

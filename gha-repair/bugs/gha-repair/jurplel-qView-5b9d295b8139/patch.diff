@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 2486e96..0831c99 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -20,7 +20,7 @@ jobs:
+             qtVersion: '6.2.2'
+             qtModules: 'qtimageformats'
+           - runner: 'macos-latest'
+-            qtVersion: '5.12.12'
++            qtVersion: '5.12.2'
+             osSuffix: '_legacy'
+             skipHardPlugins: 'true'
+           - runner: 'windows-2019'

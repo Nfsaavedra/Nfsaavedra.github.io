@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/plugin-assets-deploy.yml b/.github/workflows/plugin-assets-deploy.yml
+index 82df1e1..b668623 100644
+--- a/.github/workflows/plugin-assets-deploy.yml
++++ b/.github/workflows/plugin-assets-deploy.yml
+@@ -15,4 +15,4 @@ jobs:
+       env:
+         SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+         SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+-        SLUG: editorplus
+\ No newline at end of file
++        SLUG: block-options
+\ No newline at end of file

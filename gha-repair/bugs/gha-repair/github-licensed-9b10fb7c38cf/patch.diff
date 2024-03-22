@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index e49b501..698a2e0 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -116,7 +116,7 @@ jobs:
+     runs-on: ubuntu-latest
+     strategy:
+       matrix:
+-        ruby: [ 2.4.x, 2.5.x, 2.6.x ]
++        ruby: [ 2.4.x, 2.5.x, 2.6.x, 2.7.x ]
+     steps:
+     - uses: actions/checkout@v2
+     - name: Set up Ruby

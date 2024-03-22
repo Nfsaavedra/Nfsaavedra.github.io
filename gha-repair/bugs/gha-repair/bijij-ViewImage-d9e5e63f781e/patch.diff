@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/publish.yml b/.github/workflows/publish.yml
+index f2974aa..87ba081 100644
+--- a/.github/workflows/publish.yml
++++ b/.github/workflows/publish.yml
+@@ -24,7 +24,7 @@ jobs:
+     - name: Deploy to Firefox
+       env:
+         WEB_EXT_API_KEY: ${{ secrets.MOZ_DEPLOY_JWT_ISSUER }}
+-        WEB_EXT_API_SECRE: ${{ secrets.MOZ_DEPLOY_JWT_SECRET }}
++        WEB_EXT_API_SECRET: ${{ secrets.MOZ_DEPLOY_JWT_SECRET }}
+       run: |
+         web-ext-submit
+   

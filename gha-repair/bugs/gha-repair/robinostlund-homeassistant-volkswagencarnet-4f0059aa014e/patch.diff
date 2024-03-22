@@ -1,0 +1,36 @@
+diff --git a/.github/workflows/publish.yaml b/.github/workflows/publish.yaml
+index f41e7b4..1a8f911 100644
+--- a/.github/workflows/publish.yaml
++++ b/.github/workflows/publish.yaml
+@@ -35,8 +35,7 @@ jobs:
+           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         run: |
+           DEBUG='*' semantic-release publish
+-      # Pack the alexa_media_player dir as a zip and upload to the release
+-      - name: Zip alexa_media dir
++      - name: Zip volkswagencarnet dir
+         run: |
+           cd /home/runner/work/homeassistant-volkswagencarnet/homeassistant-volkswagencarnet/custom_components/volkswagencarnet
+           zip volkswagencarnet.zip -r ./
+diff --git a/.github/workflows/release_drafter.yaml b/.github/workflows/release_drafter.yaml
+new file mode 100644
+index 0000000..75cacab
+--- /dev/null
++++ b/.github/workflows/release_drafter.yaml
+@@ -0,0 +1,15 @@
++name: Release Drafter
++
++on:
++  push:
++    branches:
++      - master
++
++jobs:
++  update_release_draft:
++    runs-on: ubuntu-latest
++    steps:
++      # Drafts your next Release notes as Pull Requests are merged into "master"
++      - uses: release-drafter/release-drafter@v5
++        env:
++          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+\ No newline at end of file

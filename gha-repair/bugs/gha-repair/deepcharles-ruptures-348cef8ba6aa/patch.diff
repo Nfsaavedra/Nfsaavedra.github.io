@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build-wheels.yml b/.github/workflows/build-wheels.yml
+index b4d12d5..a224590 100644
+--- a/.github/workflows/build-wheels.yml
++++ b/.github/workflows/build-wheels.yml
+@@ -57,7 +57,7 @@ jobs:
+       - uses: actions/upload-artifact@v2
+         with:
+           path: wheelhouse/*.whl
+-  
++
+   deploy_sdist:
+     runs-on: ubuntu-latest
+     steps:

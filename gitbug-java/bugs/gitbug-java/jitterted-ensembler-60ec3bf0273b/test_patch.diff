@@ -1,0 +1,25 @@
+diff --git a/src/test/java/com/jitterted/mobreg/domain/EnsembleMembersTest.java b/src/test/java/com/jitterted/mobreg/domain/EnsembleMembersTest.java
+index 66d90e5..569a35a 100644
+--- a/src/test/java/com/jitterted/mobreg/domain/EnsembleMembersTest.java
++++ b/src/test/java/com/jitterted/mobreg/domain/EnsembleMembersTest.java
+@@ -46,6 +46,20 @@ public class EnsembleMembersTest {
+     }
+ 
+     @Test
++    void declinedMemberWhenJoinAsSpectatorRemovesFromDeclined() {
++        Ensemble ensemble = EnsembleFactory.withStartTimeNow();
++        MemberId memberId = MemberId.of(123);
++        ensemble.declinedBy(memberId);
++
++        ensemble.joinAsSpectator(memberId);
++
++        assertThat(ensemble.declinedMembers())
++                .isEmpty();
++        assertThat(ensemble.spectators())
++                .containsExactly(memberId);
++    }
++
++    @Test
+     public void acceptMemberByIdWithEnsembleRemembersTheMember() throws Exception {
+         Ensemble ensemble = EnsembleFactory.withStartTimeNow();
+         MemberId memberId = MemberId.of(123);

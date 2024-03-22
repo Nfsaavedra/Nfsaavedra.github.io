@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 041d8c3..da87b07 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -26,10 +26,6 @@ jobs:
+           node-version: 14
+           cache: 'yarn'
+ 
+-      - name: Get yarn cache directory path
+-        id: yarn-cache-dir-path
+-        run: echo "::set-output name=dir::$(yarn cache dir)"
+-
+       - name: Install dependencies
+         run: yarn
+ 

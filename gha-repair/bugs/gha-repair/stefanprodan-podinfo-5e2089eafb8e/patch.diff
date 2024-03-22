@@ -1,0 +1,90 @@
+diff --git a/.cosign/README.md b/.cosign/README.md
+new file mode 100644
+index 0000000..a687bea
+--- /dev/null
++++ b/.cosign/README.md
+@@ -0,0 +1,39 @@
++# Podinfo signed releases
++
++Podinfo deployment manifests are published to GitHub Container Registry as OCI artifacts
++and are signed using [cosign](https://github.com/sigstore/cosign).
++
++## Verify the artifacts with cosign
++
++Install the [cosign](https://github.com/sigstore/cosign) CLI:
++
++```sh
++brew install sigstore/tap/cosign
++```
++
++Verify a podinfo release with cosign CLI:
++
++```sh
++cosign verify -key https://raw.githubusercontent.com/stefanprodan/podinfo/master/cosign/cosign.pub \
++ghcr.io/stefanprodan/podinfo-config:latest
++```
++
++## Download the artifacts with crane
++
++Install the [crane](https://github.com/google/go-containerregistry/tree/main/cmd/crane) CLI:
++
++```sh
++brew install crane
++```
++
++Download the podinfo deployment manifests with crane CLI:
++
++```console
++$ crane export ghcr.io/stefanprodan/podinfo-deploy:latest -| tar -xf - 
++
++$ ls -1
++deployment.yaml
++hpa.yaml
++kustomization.yaml
++service.yaml
++```
+diff --git a/.cosign/cosign.pub b/.cosign/cosign.pub
+new file mode 100644
+index 0000000..5ce1048
+--- /dev/null
++++ b/.cosign/cosign.pub
+@@ -0,0 +1,4 @@
++-----BEGIN PUBLIC KEY-----
++MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEST+BqQ1XZhhVYx0YWQjdUJYIG5Lt
++iz2+UxRIqmKBqNmce2T+l45qyqOs99qfD7gLNGmkVZ4vtJ9bM7FxChFczg==
++-----END PUBLIC KEY-----
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 57b3ddd..ad36b2c 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -9,6 +9,8 @@ jobs:
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v2
++      - uses: imjasonh/setup-crane@v0.1
++      - uses: sigstore/cosign-installer@main
+       - name: Setup QEMU
+         uses: docker/setup-qemu-action@v1
+         with:
+@@ -71,6 +73,21 @@ jobs:
+         uses: stefanprodan/helm-gh-pages@master
+         with:
+           token: ${{ secrets.GITHUB_TOKEN }}
++      - name: Publish config artifact
++        run: |
++          cd kustomize
++          tar -cf config.tar * --numeric-owner --owner=0 --group=0
++          crane append -f config.tar -t ghcr.io/stefanprodan/podinfo-config:${{ steps.prep.outputs.VERSION }}
++          crane tag ghcr.io/stefanprodan/podinfo-config:${{ steps.prep.outputs.VERSION }} latest
++          rm config.tar
++      - name: Sign config artifact
++        run: |
++          echo "$COSIGN_KEY" > /tmp/cosign.key
++          cosign sign -key /tmp/cosign.key ghcr.io/stefanprodan/podinfo-config:${{ steps.prep.outputs.VERSION }}
++          cosign sign -key /tmp/cosign.key ghcr.io/stefanprodan/podinfo-config:latest
++        env:
++          COSIGN_PASSWORD: ${{secrets.COSIGN_PASSWORD}}
++          COSIGN_KEY: ${{secrets.COSIGN_KEY}}
+       - uses: ./.github/actions/release-notes
+       - name: Generate release notes
+         run: |

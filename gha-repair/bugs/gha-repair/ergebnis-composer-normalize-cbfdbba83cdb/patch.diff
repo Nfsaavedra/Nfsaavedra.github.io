@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/schema.yml b/.github/workflows/schema.yml
+index ec9ae82..36c058d 100644
+--- a/.github/workflows/schema.yml
++++ b/.github/workflows/schema.yml
+@@ -35,4 +35,4 @@ jobs:
+           path: "resource/"
+           title: "Enhancement: Update schema.json"
+         env:
+-          GITHUB_TOKEN: "${{ secrets.ERGEBNIS_BOT__TOKEN }}"
++          GITHUB_TOKEN: "${{ secrets.ERGEBNIS_BOT_TOKEN }}"

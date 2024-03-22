@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 06efbb9..4afa3bd 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -51,7 +51,7 @@ jobs:
+           registry: ghcr.io
+           username: ${{ github.repository_owner }}
+           password: ${{ secrets.GITHUB_TOKEN }}
+-      - uses: goreleaser/goreleaser-action@v4
++      - uses: goreleaser/goreleaser-action@v5
+         if: success()
+         with:
+           version: latest

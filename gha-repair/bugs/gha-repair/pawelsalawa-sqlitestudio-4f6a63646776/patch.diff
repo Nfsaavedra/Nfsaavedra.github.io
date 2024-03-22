@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/lin_release.yml b/.github/workflows/lin_release.yml
+index e8a73b9..e8642f9 100644
+--- a/.github/workflows/lin_release.yml
++++ b/.github/workflows/lin_release.yml
+@@ -41,6 +41,12 @@ jobs:
+               run: |
+                 wget http://sqlite.org/$SQLITE_RELEASE_YEAR/sqlite-amalgamation-$SQLITE_VERSION.zip
+                 unzip sqlite-amalgamation-$SQLITE_VERSION.zip
++                ls -l
++
++            - name: Get SQLite3 p2
++              working-directory: '${{ github.workspace }}/sqlite-amalgamation-$SQLITE_VERSION'
++              run: |
++                ls -l
+ 
+             - name: Install SQLite3
+               working-directory: '${{ github.workspace }}/sqlite-amalgamation-$SQLITE_VERSION'

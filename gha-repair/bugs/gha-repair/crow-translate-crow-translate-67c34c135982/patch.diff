@@ -1,0 +1,26 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 0ac8e81..330aafe 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -1,7 +1,6 @@
+ name: Main
+ on:
+   push:
+-  pull_request:
+     branches-ignore:
+       - 'releases/**'
+     paths-ignore:
+@@ -10,6 +9,13 @@ on:
+     - '.gitignore'
+     - 'crowdin.yml'
+     - 'data/translations/**'
++  pull_request:
++    paths-ignore:
++    - '**.md'
++    - '.github/workflows/release.yml'
++    - '.gitignore'
++    - 'crowdin.yml'
++    - 'data/translations/**'
+ jobs:
+   Main:
+     runs-on: ${{ matrix.os }}

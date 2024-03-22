@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build-socat.yml b/.github/workflows/build-socat.yml
+index 500a8b4..545eb3d 100644
+--- a/.github/workflows/build-socat.yml
++++ b/.github/workflows/build-socat.yml
+@@ -139,7 +139,7 @@ jobs:
+           id: tag_release
+           run: |
+             set +e
+-            if git tag "socat-v${{ needs.build-x86.outputs.version }}";then
++            if [ $(git tag "socat-v${{ needs.build-x86.outputs.version }}") ];then
+               git push origin "socat-v${{ needs.build-x86.outputs.version }}"
+               echo ::set-output name=NEW_RELEASE::"true"
+             else

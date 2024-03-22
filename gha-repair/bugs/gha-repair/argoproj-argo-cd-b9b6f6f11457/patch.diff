@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/ci-build.yaml b/.github/workflows/ci-build.yaml
+index 08fe2a2..7272c42 100644
+--- a/.github/workflows/ci-build.yaml
++++ b/.github/workflows/ci-build.yaml
+@@ -9,6 +9,7 @@ on:
+   pull_request:
+     branches:
+       - 'master'
++      - 'release-*'
+ 
+ env:
+   # Golang version to use across CI steps

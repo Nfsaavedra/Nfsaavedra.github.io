@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/docker.yml b/.github/workflows/docker.yml
+index 6011e60..a3fcfa3 100644
+--- a/.github/workflows/docker.yml
++++ b/.github/workflows/docker.yml
+@@ -72,12 +72,12 @@ jobs:
+         uses: actions/checkout@v3
+       - 
+         name: Lint Dockerfile
+-        uses: hadolint/hadolint-action@v2.1.0
++        uses: hadolint/hadolint-action@v3.0.0
+         with:
+           dockerfile: Dockerfile
+       - 
+         name: Lint Release Dockerfile
+-        uses: hadolint/hadolint-action@v2.1.0
++        uses: hadolint/hadolint-action@v3.0.0
+         with:
+           dockerfile: './Dockerfile.release'
+       - 

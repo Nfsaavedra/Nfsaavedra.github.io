@@ -1,0 +1,55 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index b4cdecc..83c81a2 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -1,4 +1,4 @@
+-name: Test Exporter
++name: CI
+ 
+ on:
+   push:
+@@ -12,18 +12,19 @@ jobs:
+   build:
+     runs-on: ubuntu-latest
+     name: Ruby ${{ matrix.ruby }} AR ${{ matrix.activerecord }}
++    timeout-minutes: 10
++
++    env:
++      BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/ar_${{ matrix.activerecord }}.gemfile
++
+     strategy:
+       fail-fast: false
+       matrix:
+-        ruby: ['3.0', '2.7', '2.6']
+-        activerecord: ['61', '60']
+-    env:
+-      BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/ar_${{ matrix.activerecord }}.gemfile
++        ruby: [2.6, 2.7, 3.0]
++        activerecord: [60, 61]
+ 
+     steps:
+       - uses: actions/checkout@v2
+-        with:
+-          fetch-depth: 1
+ 
+       - uses: ruby/setup-ruby@v1
+         with:
+@@ -35,3 +36,18 @@ jobs:
+ 
+       - name: Run tests
+         run: bundle exec rake
++
++  publish:
++    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
++    needs: build
++    runs-on: ubuntu-latest
++
++    steps:
++      - uses: actions/checkout@v2
++
++      - name: Release gem
++        uses: discourse/publish-rubygems-action@v2
++        env:
++          RUBYGEMS_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
++          GIT_EMAIL: team@discourse.org
++          GIT_NAME: discoursebot

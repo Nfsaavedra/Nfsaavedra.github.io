@@ -1,0 +1,14 @@
+diff --git a/src/main/java/org/traccar/protocol/FifotrackProtocolDecoder.java b/src/main/java/org/traccar/protocol/FifotrackProtocolDecoder.java
+index 14b33b6..c30398d 100644
+--- a/src/main/java/org/traccar/protocol/FifotrackProtocolDecoder.java
++++ b/src/main/java/org/traccar/protocol/FifotrackProtocolDecoder.java
+@@ -235,8 +235,8 @@ public class FifotrackProtocolDecoder extends BaseProtocolDecoder {
+ 
+             position.setValid(parser.next().equals("A"));
+             position.setFixTime(position.getDeviceTime());
+-            position.set(Position.KEY_SATELLITES, parser.nextInt());
+             position.setSpeed(UnitsConverter.knotsFromKph(parser.nextInt()));
++            position.set(Position.KEY_SATELLITES, parser.nextInt());
+             position.setLatitude(parser.nextDouble());
+             position.setLongitude(parser.nextDouble());
+ 

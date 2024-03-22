@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index cb743a9..df1864d 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -48,7 +48,7 @@ jobs:
+       - name: Install poetry
+         shell: bash
+         run: |
+-          python get-poetry.py -y
++          python get-poetry.py -y --preview
+           echo "::set-env name=PATH::$HOME/.poetry/bin:$PATH"
+ 
+       - name: Configure poetry

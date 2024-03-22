@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 201ec90..d729225 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -32,6 +32,7 @@ jobs:
+             -out "./Lapce-windows.msi" -sice:ICE61 -sice:ICE91 \
+             "./lapce.wixobj"
+       - name: Create portable 
++        shell: pwsh
+         run: |
+           Compress-Archive ./target/release/lapce.exe ./Lapce-portable.zip
+       - name: Upload msi installer

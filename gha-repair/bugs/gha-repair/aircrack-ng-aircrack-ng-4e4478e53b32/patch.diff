@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/pvs-studio.yml b/.github/workflows/pvs-studio.yml
+index 109b801..e889f5c 100644
+--- a/.github/workflows/pvs-studio.yml
++++ b/.github/workflows/pvs-studio.yml
+@@ -129,6 +129,6 @@ jobs:
+ 
+       - name: Summarize report
+         env:
+-          MAX_BUGS: 69
++          MAX_BUGS: 0
+         run: |
+           ./build/count-pvs-bugs.py pvs-report.csv "${MAX_BUGS}"

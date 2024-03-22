@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 4c33ea7..986b857 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -33,7 +33,9 @@ jobs:
+         uses: actions/cache@v2.1.6
+         with:
+           path: ~/.m2
+-      - name: CI
++      - name: Chmod
++        run:  chmod +x mvnw
++      - name: Maven Build
+         run: ./mvnw install -B -V -Dmaven.test.skip=true
+       - name: Java Doc
+         run: ./mvnw javadoc:javadoc

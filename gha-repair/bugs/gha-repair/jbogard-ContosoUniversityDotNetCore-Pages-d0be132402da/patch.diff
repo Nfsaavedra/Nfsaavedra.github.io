@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/main.yaml b/.github/workflows/main.yaml
+index cd9ffa9..904e09f 100644
+--- a/.github/workflows/main.yaml
++++ b/.github/workflows/main.yaml
+@@ -40,10 +40,10 @@ jobs:
+ #      uses: actions/setup-dotnet@v1
+ #      with:
+ #        dotnet-version: '2.1.804'
+-    - name: Install .NET 5.0 rc SDK for Build Process
+-      uses: actions/setup-dotnet@v1
+-      with:    
+-        dotnet-version: '5.0.100-rc.2.20479.15'
++#    - name: Install .NET 5.0 rc SDK for Build Process
++#      uses: actions/setup-dotnet@v1
++#      with:    
++#        dotnet-version: '5.0.100-rc.2.20479.15'
+ 
+     - name: Setup Required Build Dependencies
+       run: pwsh .\setup.ps1

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/merge.yaml b/.github/workflows/merge.yaml
+index 41cffc0..07accf7 100644
+--- a/.github/workflows/merge.yaml
++++ b/.github/workflows/merge.yaml
+@@ -60,7 +60,7 @@ jobs:
+             try {
+               await github.rest.issues.addAssignees({
+                 assignees: assignees,
+-                issue_number: pullRequest.number
++                issue_number: pullRequest.number,
+                 owner: context.repo.owner,
+                 repo: context.repo.repo,
+               });

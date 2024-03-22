@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/combined.yaml b/.github/workflows/combined.yaml
+index 9287841..cfc9af8 100644
+--- a/.github/workflows/combined.yaml
++++ b/.github/workflows/combined.yaml
+@@ -22,7 +22,7 @@ jobs:
+           key: custom-component-ci
+       - uses: hacs/action@main
+         with:
+-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
++          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+           CATEGORY: integration
+       - uses: KTibow/ha-blueprint@stable
+         name: CI

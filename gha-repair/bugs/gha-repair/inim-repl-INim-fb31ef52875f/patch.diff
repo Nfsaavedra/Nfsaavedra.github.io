@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/nim.yml b/.github/workflows/nim.yml
+index 54f1a5d..3e20ec4 100644
+--- a/.github/workflows/nim.yml
++++ b/.github/workflows/nim.yml
+@@ -14,7 +14,7 @@ jobs:
+     steps:
+     - uses: actions/checkout@v2
+     - name: install curl
+-      run: apt update && apt install curl -y
++      run: sudo apt update && sudo apt install curl -y
+     - name: setup choosenim
+       run: ./setupci.sh
+     - name: Update nimble

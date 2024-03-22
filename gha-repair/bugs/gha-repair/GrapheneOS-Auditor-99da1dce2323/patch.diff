@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 8286ebe..fe94651 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -16,5 +16,6 @@ jobs:
+         with:
+           distribution: 'temurin'
+           java-version: 11
++          cache: gradle
+       - name: Build with Gradle
+         run: ./gradlew build --no-daemon

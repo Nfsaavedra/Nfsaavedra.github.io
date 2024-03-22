@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yaml b/.github/workflows/build.yaml
+index fb28330..267c452 100644
+--- a/.github/workflows/build.yaml
++++ b/.github/workflows/build.yaml
+@@ -117,7 +117,7 @@ jobs:
+             username: ${{ github.repository_owner }}
+             password: ${{ secrets.GITHUB_TOKEN }}
+       - name: Build and Push
+-        uses: docker/build-push-action@v5.0.0
++        uses: docker/build-push-action@v5.1.0
+         id: build_haos_builder
+         with:
+           context: .

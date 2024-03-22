@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/codeql.yml b/.github/workflows/codeql.yml
+index 2172a4f..3717cd9 100644
+--- a/.github/workflows/codeql.yml
++++ b/.github/workflows/codeql.yml
+@@ -35,7 +35,7 @@ jobs:
+     strategy:
+       fail-fast: false
+       matrix:
+-        language: ["javascript", "python", "typescript"]
++        language: ["javascript", "typescript"]
+         # CodeQL supports [ $supported-codeql-languages ]
+         # Learn more about CodeQL language support at https://aka.ms/codeql-docs/language-support
+ 

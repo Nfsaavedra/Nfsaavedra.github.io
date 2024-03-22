@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index f36ac1c..f46b4d4 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -13,7 +13,7 @@ jobs:
+   test:
+     runs-on: ubuntu-20.04
+     env:
+-      BUILD_REF: ${{ env.GITHUB_SHA}}
++      BUILD_REF: ${{ env.GITHUB_SHA }}
+       BUILD_VERSION: ${{ env.GITHUB_REF_NAME }}
+     steps:
+     - uses: actions/checkout@master

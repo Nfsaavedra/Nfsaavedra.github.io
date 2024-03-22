@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/pull_request.yml b/.github/workflows/pull_request.yml
+index 171742d..8ffbb91 100644
+--- a/.github/workflows/pull_request.yml
++++ b/.github/workflows/pull_request.yml
+@@ -8,7 +8,7 @@ jobs:
+     if: ${{ github.actor != 'dependabot[bot]' }}
+     strategy:
+       matrix:
+-        node-version: [12.x]
++        node-version: [16.x]
+         os: [ubuntu-latest]
+     steps:
+       - uses: actions/checkout@v1

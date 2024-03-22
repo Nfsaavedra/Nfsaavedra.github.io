@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/pvs-studio.yml b/.github/workflows/pvs-studio.yml
+index 929658e..4d8b054 100644
+--- a/.github/workflows/pvs-studio.yml
++++ b/.github/workflows/pvs-studio.yml
+@@ -4,9 +4,6 @@ on:
+   # Allows you to run this workflow manually from the Actions tab
+   workflow_dispatch:
+ 
+-  push:
+-  pull_request:
+-
+   workflow_run:
+     workflows: ["Style & Consistency"]
+     types:

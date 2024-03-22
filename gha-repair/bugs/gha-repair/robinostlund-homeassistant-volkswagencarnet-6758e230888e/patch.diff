@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/release.yaml b/.github/workflows/release.yaml
+index 81202c5..7f856c7 100644
+--- a/.github/workflows/release.yaml
++++ b/.github/workflows/release.yaml
+@@ -45,7 +45,6 @@ jobs:
+       #     draft: true
+       #     prerelease: true
+ 
+-
+       - name: Create Release
+         id: create_release
+         uses: release-drafter/release-drafter@v5

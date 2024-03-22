@@ -1,0 +1,30 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 2d815db..84b7790 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -21,10 +21,6 @@ jobs:
+       npm_config_disturl: https://atom.io/download/electron
+       npm_config_target: 9.4.0
+       npm_config_runtime: "electron"
+-      APPLEID: ${{ secrets.APPLEID }}
+-      APPLEIDPASS: ${{ secrets.APPLEIDPASS }}
+-      CSC_KEY_PASSWORD: ${{ secrets.CSC_KEY_PASSWORD }}
+-      CSC_LINK: ${{ secrets.CSC_LINK }}
+ 
+     steps:
+       - name: Checkout
+@@ -43,6 +39,14 @@ jobs:
+           yarn
+           cd ..
+ 
++      - name: Set env
++        if: matrix.platform == 'mac'
++        run: |
++          echo "APPLEID=${{ secrets.APPLEID }}" >> $GITHUB_ENV
++          echo "APPLEIDPASS=${{ secrets.APPLEIDPASS }}" >> $GITHUB_ENV
++          echo "CSC_LINK=${{ secrets.CSC_LINK }}" >> $GITHUB_ENV
++          echo "CSC_KEY_PASSWORD=${{ secrets.CSC_KEY_PASSWORD }}" >> $GITHUB_ENV
++
+       - name: Build
+         run: |
+           cd frontend

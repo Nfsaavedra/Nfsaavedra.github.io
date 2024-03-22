@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/tests.yaml b/.github/workflows/tests.yaml
+index b76de75..2a32498 100644
+--- a/.github/workflows/tests.yaml
++++ b/.github/workflows/tests.yaml
+@@ -7,10 +7,10 @@ on:
+     branches: [ master ]
+ jobs:
+   services:
+-  mongodb:
+-    image: mongo:3.4.23
+-    ports:
+-      - 27017:27017
++    mongodb:
++      image: mongo:3.4.23
++      ports:
++        - 27017:27017
+   build:
+     runs-on: ubuntu-latest
+     strategy:

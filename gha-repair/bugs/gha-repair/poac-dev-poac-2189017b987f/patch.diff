@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/linux.yml b/.github/workflows/linux.yml
+index e223e85..f0929bc 100644
+--- a/.github/workflows/linux.yml
++++ b/.github/workflows/linux.yml
+@@ -58,6 +58,12 @@ jobs:
+           sudo apt-get -qq update
+           sudo apt-get install -y -qq pkg-config cmake ${{ matrix.compiler.pacakge }}
+ 
++      - name: Restore & Cache CMake build results
++        uses: actions/cache@v2.1.3
++        with:
++          path: build
++          key: ${{ env.CACHE_KEY_PREFIX }}-${{ hashFiles('CMakeLists.txt', 'cmake/*.cmake') }}
++
+       - name: Install openssl
+         if: startsWith(matrix.compiler.cc, 'clang')
+         run: sudo apt-get install -y -qq libssl-dev

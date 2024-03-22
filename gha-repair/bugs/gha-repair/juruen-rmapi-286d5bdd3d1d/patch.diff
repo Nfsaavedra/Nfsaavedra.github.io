@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/go.yml b/.github/workflows/go.yml
+index 5b74410..9dadf28 100644
+--- a/.github/workflows/go.yml
++++ b/.github/workflows/go.yml
+@@ -33,7 +33,6 @@ jobs:
+ 
+     - name: Format
+       run: if [ "$(gofmt -s -l . | wc -l)" -gt 0 ]; then exit 1; fi
+-      if: matrix.os == 'ubuntu-latest'
+ 
+     - name: Build
+       run: go build -v .

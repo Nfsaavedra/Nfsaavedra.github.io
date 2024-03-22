@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index ee56700..ee205a8 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -2,7 +2,7 @@ name: CI
+ on: [pull_request]
+ jobs:
+   job:
+-    name: ${{ matrix.os }}
++    name: ${{ matrix.name }}
+     runs-on: ${{ matrix.os }}
+     continue-on-error: ${{ matrix.experimental }}
+     strategy:

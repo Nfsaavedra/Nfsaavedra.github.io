@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 37feb5a..5862475 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -71,6 +71,11 @@ jobs:
+         with:
+           name: build
+           path: ${{ github.workspace }}
++      - name: Upload agent binaries as artifacts
++        uses: actions/upload-artifact@v3
++        with:
++          name: elastic-apm-agent
++          path: ./elastic-apm-agent/target/elastic-apm-agent-*.jar
+ 
+   license:
+     name: License

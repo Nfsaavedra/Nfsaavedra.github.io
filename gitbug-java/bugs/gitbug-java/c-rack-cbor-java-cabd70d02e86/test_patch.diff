@@ -1,0 +1,51 @@
+diff --git a/src/test/java/co/nstant/in/cbor/encoder/SpecialEncoderTest.java b/src/test/java/co/nstant/in/cbor/encoder/SpecialEncoderTest.java
+index 387ee28..cf63490 100644
+--- a/src/test/java/co/nstant/in/cbor/encoder/SpecialEncoderTest.java
++++ b/src/test/java/co/nstant/in/cbor/encoder/SpecialEncoderTest.java
+@@ -19,13 +19,6 @@ public class SpecialEncoderTest {
+ 
+     }
+ 
+-    @Test(expected = CborException.class)
+-    public void shouldNotEncodeReserved() throws CborException {
+-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+-        Special dataItem = new Mock(SpecialType.UNALLOCATED);
+-        new CborEncoder(byteArrayOutputStream).encode(dataItem);
+-    }
+-
+     @Test(expected = ClassCastException.class)
+     public void shouldExpectDoublePrecisionFloatImplementation() throws CborException {
+         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+diff --git a/src/test/java/co/nstant/in/cbor/model/SpecialTypeTest.java b/src/test/java/co/nstant/in/cbor/model/SpecialTypeTest.java
+index 1d530c7..5ef08c9 100644
+--- a/src/test/java/co/nstant/in/cbor/model/SpecialTypeTest.java
++++ b/src/test/java/co/nstant/in/cbor/model/SpecialTypeTest.java
+@@ -3,13 +3,23 @@ package co.nstant.in.cbor.model;
+ import org.junit.Assert;
+ import org.junit.Test;
+ 
++import co.nstant.in.cbor.CborException;
++
+ public class SpecialTypeTest {
+ 
+-    @Test
+-    public void shouldDetectUnallocated() {
+-        Assert.assertTrue(SpecialType.ofByte(28).equals(SpecialType.UNALLOCATED));
+-        Assert.assertTrue(SpecialType.ofByte(29).equals(SpecialType.UNALLOCATED));
+-        Assert.assertTrue(SpecialType.ofByte(30).equals(SpecialType.UNALLOCATED));
++    @Test(expected = CborException.class)
++    public void shouldDetectUnallocated28() throws CborException {
++        SpecialType.ofByte(28);
++    }
++
++    @Test(expected = CborException.class)
++    public void shouldDetectUnallocated29() throws CborException {
++        SpecialType.ofByte(29);
++    }
++
++    @Test(expected = CborException.class)
++    public void shouldDetectUnallocated30() throws CborException {
++        SpecialType.ofByte(30);
+     }
+ 
+ }

@@ -1,0 +1,97 @@
+diff --git a/src/test/java/graphql/annotations/GraphQLDataFetcherTest.java b/src/test/java/graphql/annotations/GraphQLDataFetcherTest.java
+index 8100e58..3b17242 100644
+--- a/src/test/java/graphql/annotations/GraphQLDataFetcherTest.java
++++ b/src/test/java/graphql/annotations/GraphQLDataFetcherTest.java
+@@ -22,12 +22,14 @@ import graphql.annotations.annotationTypes.GraphQLName;
+ import graphql.annotations.processor.GraphQLAnnotations;
+ import graphql.schema.DataFetcher;
+ import graphql.schema.DataFetchingEnvironment;
++import graphql.schema.GraphQLFieldDefinition;
+ import graphql.schema.GraphQLSchema;
+ import graphql.schema.PropertyDataFetcher;
+ import org.testng.annotations.BeforeMethod;
+ import org.testng.annotations.Test;
+ 
+ import java.util.HashMap;
++import java.util.function.Supplier;
+ 
+ import static graphql.annotations.AnnotationsSchemaCreator.newAnnotationsSchema;
+ import static org.testng.Assert.*;
+@@ -54,7 +56,7 @@ public class GraphQLDataFetcherTest {
+         final HashMap<String, Object> data = result.getData();
+         assertNotNull(data);
+         assertTrue(((HashMap<String, Boolean>) data.get("sample")).get("isGreat"));
+-        assertFalse(((HashMap<String, Boolean>) data.get("sample")).get("isBad")); // TODO investigate why returned false instead of true
++        assertTrue(((HashMap<String, Boolean>) data.get("sample")).get("isBad"));
+     }
+ 
+     @Test
+@@ -84,7 +86,7 @@ public class GraphQLDataFetcherTest {
+         // Then
+         final HashMap<String, Object> data = result.getData();
+         assertNotNull(data);
+-        assertFalse(((HashMap<String, Boolean>) data.get("sample")).get("isBad")); // TODO investigate why returned true instead of false
++        assertTrue(((HashMap<String, Boolean>) data.get("sample")).get("isBad"));
+     }
+ 
+     @GraphQLName("Query")
+@@ -161,8 +163,10 @@ public class GraphQLDataFetcherTest {
+         }
+ 
+         @Override
+-        public Object get(DataFetchingEnvironment environment) {
+-            final Object result = super.get(environment);
++        public Object get( final GraphQLFieldDefinition fieldDefinition, final Object source, final Supplier supplier )
++            throws Exception
++        {
++            final Object result = super.get( fieldDefinition, source, supplier );
+             if (flip) {
+                 return !(Boolean) result;
+             } else {
+diff --git a/src/test/java/graphql/annotations/GraphQLDirectivesViaClassDefinitionTest.java b/src/test/java/graphql/annotations/GraphQLDirectivesViaClassDefinitionTest.java
+index 8d69b9c..710c75a 100644
+--- a/src/test/java/graphql/annotations/GraphQLDirectivesViaClassDefinitionTest.java
++++ b/src/test/java/graphql/annotations/GraphQLDirectivesViaClassDefinitionTest.java
+@@ -207,7 +207,7 @@ public class GraphQLDirectivesViaClassDefinitionTest {
+     }
+ 
+ 
+-    @Test(enabled = false) // TODO there is issue with coercing in DirectivesBuilder
++    @Test
+     public void queryName_directivesProvidedToRegistry_wiringIsActivated() throws Exception {
+         this.graphQLAnnotations.directive(UpperCase.class);
+ 
+@@ -218,21 +218,21 @@ public class GraphQLDirectivesViaClassDefinitionTest {
+         assertEquals(((Map<String, String>) result.getData()).get("name").toString(), "YARIN");
+     }
+ 
+-    @Test(enabled = false) // TODO there is issue with coercing in DirectivesBuilder
++    @Test
+     public void queryNameWithFalse_directivesProvidedToRegistry_wiringIsActivated() throws Exception {
+         GraphQLDirective upperCase = newDirective().name("upperCase").argument(builder -> builder.name("isActive").type(GraphQLBoolean))
+                 .validLocations(Introspection.DirectiveLocation.FIELD_DEFINITION).build();
+         this.graphQLAnnotations.getContainer().getDirectiveRegistry().put(upperCase.getName(), new DirectiveAndWiring(upperCase, UpperWiring.class));
+         GraphQLObjectType object = this.graphQLAnnotations.object(Query.class);
+         GraphQLCodeRegistry codeRegistry = graphQLAnnotations.getContainer().getCodeRegistryBuilder().build();
+-        GraphQLSchema schema = newSchema().query(object).codeRegistry(codeRegistry).build();
++        GraphQLSchema schema = newSchema().query(object).codeRegistry(codeRegistry).additionalDirective( upperCase ).build();
+ 
+         ExecutionResult result = GraphQL.newGraphQL(schema).build().execute("query { nameWithFalse }");
+         assertTrue(result.getErrors().isEmpty());
+         assertEquals(((Map<String, String>) result.getData()).get("nameWithFalse").toString(), "yarin");
+     }
+ 
+-    @Test(enabled = false) // TODO there is issue with coercing in DirectivesBuilder
++    @Test
+     public void queryNameWithNoArgs_directivesProvidedToRegistry_wiringIsActivated() throws Exception {
+         GraphQLSchema schema = newAnnotationsSchema().query(Query2.class).directive(UpperCaseNoDefault.class).build();
+ 
+@@ -248,7 +248,7 @@ public class GraphQLDirectivesViaClassDefinitionTest {
+         GraphQL.newGraphQL(schema).build().execute("query { nameWithNoArgs }");
+     }
+ 
+-    @Test(enabled = false) // TODO there is issue with coercing in DirectivesBuilder
++    @Test
+     public void queryName_chainedDirectives_wiringIsActivatedInCorrectOrder() throws Exception {
+         GraphQLSchema schema = newAnnotationsSchema().query(Query3.class).directives(SuffixDirective.class, UpperCase.class).build();
+ 

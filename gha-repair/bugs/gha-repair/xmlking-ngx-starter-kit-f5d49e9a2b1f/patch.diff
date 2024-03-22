@@ -1,0 +1,23 @@
+diff --git a/.github/workflows/push.yml b/.github/workflows/push.yml
+index 42e27c6..ae6a895 100644
+--- a/.github/workflows/push.yml
++++ b/.github/workflows/push.yml
+@@ -10,14 +10,14 @@ jobs:
+         uses: actions/setup-node@v1
+         with:
+           node-version: 12.x
+-      # - name: Install YARN
+-      #   run: npm install -g yarn
+       - name: Setup Angular CLI
+-        run: yarn global add @angular/cli
++        run: yarn global add @angular/cli &&
++          ng --version
+         env:
+           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+       - name: Install Dependencies
+-        run: yarn install
++        # run: yarn install
++        run: yarn --ignore-optional --frozen-lockfile
+         env:
+           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+       - name: Linting

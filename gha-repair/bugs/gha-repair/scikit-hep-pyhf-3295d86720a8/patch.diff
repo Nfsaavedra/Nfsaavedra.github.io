@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 80ffde4..71ab409 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -59,7 +59,6 @@ jobs:
+     - name: Report core project coverage with Codecov
+       if: >-
+         github.event_name != 'schedule' &&
+-        (matrix.python-version == '3.7' || matrix.python-version == '3.10') &&
+         matrix.os == 'ubuntu-latest'
+       uses: codecov/codecov-action@v3
+       with:

@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/create-release.yml b/.github/workflows/create-release.yml
+index 0be0fcb..b86efe6 100644
+--- a/.github/workflows/create-release.yml
++++ b/.github/workflows/create-release.yml
+@@ -2,10 +2,9 @@ name: Create draft release
+ 
+ on:
+   push:
+-    branches-ignore:
+-      - '2.3-maintenance'
+     tags:
+       - '[0-9]+.[0-9]+.[0-9]+*'
++      - '!2.3.*'
+ 
+ jobs:
+   build:

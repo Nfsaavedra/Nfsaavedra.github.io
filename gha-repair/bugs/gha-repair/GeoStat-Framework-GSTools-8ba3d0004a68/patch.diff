@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/develop.yml b/.github/workflows/develop.yml
+index fb3e059..fc02f32 100644
+--- a/.github/workflows/develop.yml
++++ b/.github/workflows/develop.yml
+@@ -41,6 +41,7 @@ jobs:
+           pip install -r requirements_setup.txt
+           pip install -r requirements.txt
+           pip install -r requirements_test.txt
++          echo PYVERSION WITHOUT DOT ${{ matrix.python-version//./ }}
+ 
+       - name: Build wheels
+         run: python -m cibuildwheel --output-dir dist

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/github-ci.yml b/.github/workflows/github-ci.yml
+index 91d9775..e0f6fec 100644
+--- a/.github/workflows/github-ci.yml
++++ b/.github/workflows/github-ci.yml
+@@ -30,6 +30,7 @@ jobs:
+           - 10.x
+           - 12.x
+           - 13.x
++          - 14.x
+     steps:
+       - uses: actions/checkout@v2
+       - uses: actions/setup-node@v1

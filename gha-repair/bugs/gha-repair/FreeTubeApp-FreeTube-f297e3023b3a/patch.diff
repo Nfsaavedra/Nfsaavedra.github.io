@@ -1,0 +1,9 @@
+diff --git a/.github/workflows/node.js.yml b/.github/workflows/node.js.yml
+index d68387e..915dcca 100644
+--- a/.github/workflows/node.js.yml
++++ b/.github/workflows/node.js.yml
+@@ -26,4 +26,3 @@ jobs:
+         node-version: ${{ matrix.node-version }}
+     - run: npm ci
+     - run: npm run build --if-present
+-    - run: npm test --if-present

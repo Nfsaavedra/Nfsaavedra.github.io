@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/mac_release.yml b/.github/workflows/mac_release.yml
+index 1d49c4a..aa1f6cd 100644
+--- a/.github/workflows/mac_release.yml
++++ b/.github/workflows/mac_release.yml
+@@ -69,8 +69,8 @@ jobs:
+             - name: Prepare deps
+               run: |
+                 mkdir ../lib ../include
+-                mv /usr/local/lib/libsqlite3* ../lib
+-                mv /usr/local/include/sqlite3* ../include
++                cp /usr/local/lib/libsqlite3* ../lib
++                cp /usr/local/include/sqlite3* ../include
+             
+             - name: Prepare output dir
+               run: mkdir output output/build output/build/Plugins

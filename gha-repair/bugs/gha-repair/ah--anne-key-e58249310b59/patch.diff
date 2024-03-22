@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 61dda6c..8698952 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -11,7 +11,7 @@ jobs:
+       - name: Install compiler
+         uses: actions-rs/toolchain@v1
+         with:
+-            toolchain: nightly-2020-03-19
++            profile: "minimal"
+             target: "thumbv7m-none-eabi"
+             override: true
+             components: rustfmt, clippy, llvm-tools-preview

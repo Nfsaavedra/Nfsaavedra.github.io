@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index dd7d712..bec5b09 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -20,8 +20,8 @@ jobs:
+       with:
+         package-path: cachix
+     
+-    - run: cabal sdist
+-    - run: cd cachix-api && cabal sdist
++    - run: cabal sdist cachix
++    - run: cabal sdist cachix-api
+ 
+     - uses: haskell-actions/hackage-publish@v1
+       with:

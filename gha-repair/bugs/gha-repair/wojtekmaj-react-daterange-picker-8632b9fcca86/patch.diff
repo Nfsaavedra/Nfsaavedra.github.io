@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/close-stale-issues.yml b/.github/workflows/close-stale-issues.yml
+index 5339c79..366da00 100644
+--- a/.github/workflows/close-stale-issues.yml
++++ b/.github/workflows/close-stale-issues.yml
+@@ -12,7 +12,7 @@ jobs:
+ 
+     steps:
+       - name: Close stale issues
+-        uses: actions/stale@v5
++        uses: actions/stale@v6
+         with:
+           days-before-issue-stale: 90
+           days-before-issue-close: 14

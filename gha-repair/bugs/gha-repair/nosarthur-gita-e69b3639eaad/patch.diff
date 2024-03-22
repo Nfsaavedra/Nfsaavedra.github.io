@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/nos.yml b/.github/workflows/nos.yml
+index 83b9eee..89bec37 100644
+--- a/.github/workflows/nos.yml
++++ b/.github/workflows/nos.yml
+@@ -24,4 +24,4 @@ jobs:
+       run: |
+           pytest tests --cov=./gita
+     - name: Upload coverage to Codecov
+-      uses: codecov/codecov-action@v2
++      uses: codecov/codecov-action@v3

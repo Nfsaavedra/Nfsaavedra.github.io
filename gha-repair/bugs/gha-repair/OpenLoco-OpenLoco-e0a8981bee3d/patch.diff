@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index f6b4c8f..6917953 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -60,7 +60,7 @@ jobs:
+       fail-fast: false
+       matrix:
+         compiler: [g++, clang++]
+-        distro: [focal, jammy]
++        distro: [jammy]
+     steps:
+       - name: Checkout
+         uses: actions/checkout@v3

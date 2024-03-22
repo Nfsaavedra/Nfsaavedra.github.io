@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/run-tests.yml b/.github/workflows/run-tests.yml
+index 180c0bc..737b3ab 100644
+--- a/.github/workflows/run-tests.yml
++++ b/.github/workflows/run-tests.yml
+@@ -39,4 +39,6 @@ jobs:
+           environment-file: ${{ matrix.environment-file }}
+           activate-environment: earthpy-dev
+       - run: conda list
++      - run: python -m keyring NASA_EARTHDATA NED_USERNAME ${{ secrets.EARTHDATA_USERNAME }}
++      - run: python -m keyring NASA_EARTHDATA NED_USERNAME ${{ secrets.EARTHDATA_PASSWORD }}
+       - run: pytest -v --color=yes

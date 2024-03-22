@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/build-deploy.yaml b/.github/workflows/build-deploy.yaml
+index 668927e..c00f7f6 100644
+--- a/.github/workflows/build-deploy.yaml
++++ b/.github/workflows/build-deploy.yaml
+@@ -8,9 +8,9 @@ on:
+     types:
+       - completed
+ 
++jobs:
+   build-and-deploy:
+     name: Build and Deploy to Kubernetes
+-    needs: lint-test
+     if: github.event.workflow_run.conclusion == 'success'
+     runs-on: ubuntu-latest
+ 

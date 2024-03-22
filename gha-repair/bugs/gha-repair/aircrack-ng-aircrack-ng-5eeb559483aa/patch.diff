@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/check-release-ready.yml b/.github/workflows/check-release-ready.yml
+index 30e045c..8d0de55 100644
+--- a/.github/workflows/check-release-ready.yml
++++ b/.github/workflows/check-release-ready.yml
+@@ -94,7 +94,7 @@ jobs:
+         run: |
+           wget https://w1.fi/hostapd/
+           LATEST_HOSTAPD=$(grep '.tar.gz' index.html | awk -F\" '{print $2}' | xargs basename)
+-          README_HOSTAPD=$(grep -E '^tar' patches/wpe/hostapd-wpe/README.md | awk '{print $3}')
++          README_HOSTAPD=$(grep -E '^tar' patches/wpe/hostapd-wpe/README.md | awk '{print $3}' | sed 's/\r//')
+           FILE_HOSTAPD=$(ls -1 patches/wpe/hostapd-wpe/ | grep hostapd)
+           FILE_HOSTAPD=${FILE_HOSTAPD%-wpe.patch}
+ 

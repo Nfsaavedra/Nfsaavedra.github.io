@@ -1,0 +1,38 @@
+diff --git a/.github/workflows/validate_issue.yaml b/.github/workflows/validate_issue.yaml
+index 6ed2eab..a77548c 100644
+--- a/.github/workflows/validate_issue.yaml
++++ b/.github/workflows/validate_issue.yaml
+@@ -1,16 +1,16 @@
+-on:
+-  issues:
+-    types: [opened, edited]
++# on:
++#   issues:
++#     types: [opened, edited]
+ 
+-jobs:
+-  auto_close_issues:
+-    runs-on: ubuntu-latest
+-    steps:
+-      - name: Checkout
+-        uses: actions/checkout@v1
+-      - name: Automatically close issues that don't follow the issue template
+-        uses: lucasbento/auto-close-issues@v1.0.2
+-        with:
+-          github-token: ${{ secrets.GITHUB_TOKEN }}
+-          issue-close-message: "@${issue.user.login}: hello! :wave:\n\nThis issue is being automatically closed because it does not follow the issue template."
+-          closed-issues-label: "🙁 Not following issue template"
+\ No newline at end of file
++# jobs:
++#   auto_close_issues:
++#     runs-on: ubuntu-latest
++#     steps:
++#       - name: Checkout
++#         uses: actions/checkout@v1
++#       - name: Automatically close issues that don't follow the issue template
++#         uses: lucasbento/auto-close-issues@v1.0.2
++#         with:
++#           github-token: ${{ secrets.GITHUB_TOKEN }}
++#           issue-close-message: "@${issue.user.login}: hello! :wave:\n\nThis issue is being automatically closed because it does not follow the issue template."
++#           closed-issues-label: "🙁 Not following issue template"
+\ No newline at end of file

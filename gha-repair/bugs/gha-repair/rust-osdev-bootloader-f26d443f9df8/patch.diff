@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 57863f2..abddbd2 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -124,5 +124,15 @@ jobs:
+     timeout-minutes: 2
+     steps:
+     - uses: actions/checkout@v1
++    - name: "Find latest Nightly with rustfmt"
++      id: component
++      uses: actions-rs/components-nightly@v1
++      with:
++        component: rustfmt
++    - name: "Add a rustup override for rustfmt nightly"
++      uses: actions-rs/toolchain@v1
++      with:
++          toolchain: ${{ steps.component.outputs.toolchain }}
++          override: true
+     - run: rustup component add rustfmt
+     - run: cargo fmt -- --check

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index b8e09aa..7e99d29 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -1,7 +1,7 @@
+ name: Core CI
+ 
+ on:
+-  push
++  push:
+   pull_request:
+     branches: [ master ]
+ 

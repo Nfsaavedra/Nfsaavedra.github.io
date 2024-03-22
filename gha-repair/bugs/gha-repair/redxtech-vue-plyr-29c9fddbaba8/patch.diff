@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/npm.yml b/.github/workflows/npm.yml
+index e75ea6d..25f63d6 100644
+--- a/.github/workflows/npm.yml
++++ b/.github/workflows/npm.yml
+@@ -27,12 +27,3 @@ jobs:
+         run: npm publish
+         env:
+           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+-
+-      - uses: actions/setup-node@v1
+-        with:
+-          registry-url: 'https://npm.pkg.github.com'
+-
+-      - name: Publish tag to GPR
+-        run: npm publish
+-        env:
+-          NODE_AUTH_TOKEN: ${{ secrets.GH_AUTH_TOKEN }}

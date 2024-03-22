@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/mac_release.yml b/.github/workflows/mac_release.yml
+index 20fb65c..7234061 100644
+--- a/.github/workflows/mac_release.yml
++++ b/.github/workflows/mac_release.yml
+@@ -11,6 +11,8 @@ env:
+ name: MacOSX release build
+ 
+ on:
++    schedule:
++        - cron: '0 3 * * *' # run at 3 AM UTC
+     repository_dispatch:
+         types: [mac_release]
+ 

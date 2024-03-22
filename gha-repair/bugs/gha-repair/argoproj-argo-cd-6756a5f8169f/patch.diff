@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci-build.yaml b/.github/workflows/ci-build.yaml
+index 6e08b1a..dd987e5 100644
+--- a/.github/workflows/ci-build.yaml
++++ b/.github/workflows/ci-build.yaml
+@@ -342,7 +342,7 @@ jobs:
+     runs-on: ubuntu-22.04
+     strategy:
+       matrix:
+-        k3s-version: [v1.24.1, v1.23.3, v1.22.6, v1.21.2]
++        k3s-version: [v1.24.3, v1.23.3, v1.22.6]
+     needs: 
+       - build-go
+     env:

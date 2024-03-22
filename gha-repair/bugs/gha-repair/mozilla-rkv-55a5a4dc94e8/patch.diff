@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index c9cb6d5..6545f7f 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -5,6 +5,10 @@ on:
+   push:
+     branches: main
+ 
++concurrency:
++  group: ${{ github.workflow }}-${{ github.ref }}
++  cancel-in-progress: true
++
+ env:
+   RUST_BACKTRACE: 1
+   CARGO_INCREMENTAL: 0

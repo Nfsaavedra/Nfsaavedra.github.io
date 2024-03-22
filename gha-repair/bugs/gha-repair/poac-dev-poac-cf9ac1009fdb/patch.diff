@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/macos.yml b/.github/workflows/macos.yml
+index 0a56430..d9759f6 100644
+--- a/.github/workflows/macos.yml
++++ b/.github/workflows/macos.yml
+@@ -20,6 +20,8 @@ jobs:
+     steps:
+       - uses: actions/checkout@v3
+ 
++      - run: brew update
++
+       - name: Install required libraries
+         run: brew install openssl ninja boost
+ 

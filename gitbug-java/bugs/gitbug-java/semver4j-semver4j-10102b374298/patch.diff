@@ -1,0 +1,14 @@
+diff --git a/src/main/java/org/semver4j/RangesList.java b/src/main/java/org/semver4j/RangesList.java
+index c70ac62..d1bc4f6 100644
+--- a/src/main/java/org/semver4j/RangesList.java
++++ b/src/main/java/org/semver4j/RangesList.java
+@@ -81,7 +81,8 @@ public class RangesList {
+     public String toString() {
+         return rangesList.stream()
+             .map(RangesList::formatRanges)
+-            .collect(joining(OR_JOINER));
++            .collect(joining(OR_JOINER))
++            .replaceAll("^\\(([^()]+)\\)$", "$1");
+     }
+ 
+     private static String formatRanges(List<Range> ranges) {

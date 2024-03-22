@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/win_release.yml b/.github/workflows/win_release.yml
+index c641a68..e0a96ea 100644
+--- a/.github/workflows/win_release.yml
++++ b/.github/workflows/win_release.yml
+@@ -34,7 +34,7 @@ jobs:
+                 version: ${{ env.QT_VERSION }}
+                 host: 'windows'
+                 arch: ${{ env.QT_ARCH }}
+-                dir: '${{ github.workspace }}/../'
++                dir: 'D:/'
+                 modules: 'qtscript'
+                 setup-python: 'false'
+                 

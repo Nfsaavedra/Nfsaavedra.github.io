@@ -1,0 +1,18 @@
+diff --git a/.github/workflows/mac_release.yml b/.github/workflows/mac_release.yml
+index d4dc8db..7be54c9 100644
+--- a/.github/workflows/mac_release.yml
++++ b/.github/workflows/mac_release.yml
+@@ -39,13 +39,6 @@ jobs:
+                 host: 'mac'
+                 dir: '${{ github.workspace }}/..'
+ 
+-            - name: fine python
+-              shell: bash
+-              run: |
+-                find $pythonLocation -iname "*python*.dylib*"
+-                find $pythonLocation -iname Python.h
+-                jgfyjd
+-
+             - name: Clone repo
+               uses: actions/checkout@v2
+               with:

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/go.yml b/.github/workflows/go.yml
+index 03d64bc..1f66ec2 100644
+--- a/.github/workflows/go.yml
++++ b/.github/workflows/go.yml
+@@ -60,6 +60,8 @@ jobs:
+ 
+     - name: Run semantic-release
+       run: $(yarn global bin)/semantic-release
++      env:
++        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+ 
+   release:
+     runs-on: ubuntu-latest

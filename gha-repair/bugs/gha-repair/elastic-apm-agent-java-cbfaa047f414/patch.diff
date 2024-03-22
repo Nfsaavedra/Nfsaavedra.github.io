@@ -1,0 +1,551 @@
+diff --git a/.ci/update-specs.yml b/.ci/update-specs.yml
+deleted file mode 100644
+index 7199790..0000000
+--- a/.ci/update-specs.yml
++++ /dev/null
+@@ -1,104 +0,0 @@
+-name: update-specs
+-
+-title: synchronize schema specs
+-
+-scms:
+-  default:
+-    kind: github
+-    spec:
+-      user: '{{ requiredEnv "GIT_USER" }}'
+-      email: '{{ requiredEnv "GIT_EMAIL" }}'
+-      owner: elastic
+-      repository: apm-agent-java
+-      token: '{{ requiredEnv "GITHUB_TOKEN" }}'
+-      username: '{{ requiredEnv "GIT_USER" }}'
+-      branch: main
+-
+-sources:
+-  sha:
+-    kind: file
+-    spec:
+-      file: 'https://github.com/elastic/apm-data/commit/main.patch'
+-      matchpattern: "^From\\s([0-9a-f]{40})\\s"
+-    transformers:
+-      - findsubmatch:
+-          pattern: "[0-9a-f]{40}"
+-  error.json:
+-    kind: file
+-    spec:
+-      file: https://raw.githubusercontent.com/elastic/apm-data/main/input/elasticapm/docs/spec/v2/error.json
+-  metadata.json:
+-    kind: file
+-    spec:
+-      file: https://raw.githubusercontent.com/elastic/apm-data/main/input/elasticapm/docs/spec/v2/metadata.json
+-  metricset.json:
+-    kind: file
+-    spec:
+-      file: https://raw.githubusercontent.com/elastic/apm-data/main/input/elasticapm/docs/spec/v2/metricset.json
+-  span.json:
+-    kind: file
+-    spec:
+-      file: https://raw.githubusercontent.com/elastic/apm-data/main/input/elasticapm/docs/spec/v2/span.json
+-  transaction.json:
+-    kind: file
+-    spec:
+-      file: https://raw.githubusercontent.com/elastic/apm-data/main/input/elasticapm/docs/spec/v2/transaction.json
+-
+-actions:
+-  pr:
+-    kind: "github/pullrequest"
+-    scmid: default
+-    sourceid: sha
+-    spec:
+-      automerge: false
+-      draft: false
+-      labels:
+-        - "automation"
+-      description: |-
+-        ### What
+-        APM agent json schema automatic sync
+-        ### Why
+-        *Changeset*
+-        * https://github.com/elastic/apm-data/commit/{{ source "sha" }}
+-
+-targets:
+-  error.json:
+-    name: error.json
+-    scmid: default
+-    sourceid: error.json
+-    kind: file
+-    spec:
+-      file: apm-agent-core/src/test/resources/apm-server-schema/current/error.json
+-      forcecreate: true
+-  metadata.json:
+-    name: metadata.json
+-    scmid: default
+-    sourceid: metadata.json
+-    kind: file
+-    spec:
+-      file: apm-agent-core/src/test/resources/apm-server-schema/current/metadata.json
+-      forcecreate: true
+-  metricset.json:
+-    name: metricset.json
+-    scmid: default
+-    sourceid: metricset.json
+-    kind: file
+-    spec:
+-      file: apm-agent-core/src/test/resources/apm-server-schema/current/metricset.json
+-      forcecreate: true
+-  span.json:
+-    name: span.json
+-    scmid: default
+-    sourceid: span.json
+-    kind: file
+-    spec:
+-      file: apm-agent-core/src/test/resources/apm-server-schema/current/span.json
+-      forcecreate: true
+-  transaction.json:
+-    name: transaction.json
+-    scmid: default
+-    sourceid: transaction.json
+-    kind: file
+-    spec:
+-      file: apm-agent-core/src/test/resources/apm-server-schema/current/transaction.json
+-      forcecreate: true
+diff --git a/.ci/updatecli.d/update-gherkin-specs.yml b/.ci/updatecli.d/update-gherkin-specs.yml
+new file mode 100644
+index 0000000..1e17f5f
+--- /dev/null
++++ b/.ci/updatecli.d/update-gherkin-specs.yml
+@@ -0,0 +1,116 @@
++name: update-gherkin-specs
++pipelineid: update-gherkin-specs
++
++scms:
++  default:
++    kind: github
++    spec:
++      user: '{{ requiredEnv "GIT_USER" }}'
++      email: '{{ requiredEnv "GIT_EMAIL" }}'
++      owner: elastic
++      repository: apm-agent-java
++      token: '{{ requiredEnv "GITHUB_TOKEN" }}'
++      username: '{{ requiredEnv "GIT_USER" }}'
++      branch: main
++
++sources:
++  sha:
++    kind: file
++    spec:
++      file: 'https://github.com/elastic/apm/commit/main.patch'
++      matchpattern: "^From\\s([0-9a-f]{40})\\s"
++    transformers:
++      - findsubmatch:
++          pattern: "[0-9a-f]{40}"
++
++  api_key.feature:
++    kind: file
++    spec:
++      file: https://raw.githubusercontent.com/elastic/apm/main/tests/agents/gherkin-specs/api_key.feature
++  azure_app_service_metadata.feature:
++    kind: file
++    spec:
++      file: https://raw.githubusercontent.com/elastic/apm/main/tests/agents/gherkin-specs/azure_app_service_metadata.feature
++  azure_functions_metadata.feature:
++    kind: file
++    spec:
++      file: https://raw.githubusercontent.com/elastic/apm/main/tests/agents/gherkin-specs/azure_functions_metadata.feature
++  otel_bridge.feature:
++    kind: file
++    spec:
++      file: https://raw.githubusercontent.com/elastic/apm/main/tests/agents/gherkin-specs/otel_bridge.feature
++  outcome.feature:
++    kind: file
++    spec:
++      file: https://raw.githubusercontent.com/elastic/apm/main/tests/agents/gherkin-specs/outcome.feature
++  user_agent.feature:
++    kind: file
++    spec:
++      file: https://raw.githubusercontent.com/elastic/apm/main/tests/agents/gherkin-specs/user_agent.feature
++
++actions:
++  pr:
++    kind: "github/pullrequest"
++    scmid: default
++    spec:
++      title: Update Gherkin specs
++      automerge: false
++      draft: false
++      labels:
++        - "automation"
++      description: |-
++        ### What
++        APM agent specs automatic sync
++        ### Why
++        *Changeset*
++        * https://github.com/elastic/apm/commit/{{ source "sha" }}
++
++targets:
++  api_key.feature:
++    name: api_key.feature
++    scmid: default
++    sourceid: api_key.feature
++    kind: file
++    spec:
++      file: apm-agent-core/src/test/resources/specs/api_key.feature
++      forcecreate: true
++  azure_app_service_metadata.feature:
++    name: azure_app_service_metadata.feature
++    scmid: default
++    sourceid: azure_app_service_metadata.feature
++    kind: file
++    spec:
++      file: apm-agent-core/src/test/resources/specs/azure_app_service_metadata.feature
++      forcecreate: true
++  azure_functions_metadata.feature:
++    name: azure_functions_metadata.feature
++    scmid: default
++    sourceid: azure_functions_metadata.feature
++    kind: file
++    spec:
++      file: apm-agent-core/src/test/resources/specs/azure_functions_metadata.feature
++      forcecreate: true
++  otel_bridge.feature:
++    name: otel_bridge.feature
++    scmid: default
++    sourceid: otel_bridge.feature
++    kind: file
++    spec:
++      file: apm-agent-core/src/test/resources/specs/otel_bridge.feature
++      forcecreate: true
++  outcome.feature:
++    name: outcome.feature
++    scmid: default
++    sourceid: outcome.feature
++    kind: file
++    spec:
++      file: apm-agent-core/src/test/resources/specs/outcome.feature
++      forcecreate: true
++  user_agent.feature:
++    name: user_agent.feature
++    scmid: default
++    sourceid: user_agent.feature
++    kind: file
++    spec:
++      file: apm-agent-core/src/test/resources/specs/user_agent.feature
++      forcecreate: true
+diff --git a/.ci/updatecli.d/update-json-specs.yml b/.ci/updatecli.d/update-json-specs.yml
+new file mode 100644
+index 0000000..1b5b14a
+--- /dev/null
++++ b/.ci/updatecli.d/update-json-specs.yml
+@@ -0,0 +1,120 @@
++name: update-jsons-specs
++pipelineid: update-jsons-specs
++
++scms:
++  default:
++    kind: github
++    spec:
++      user: '{{ requiredEnv "GIT_USER" }}'
++      email: '{{ requiredEnv "GIT_EMAIL" }}'
++      owner: elastic
++      repository: apm-agent-java
++      token: '{{ requiredEnv "GITHUB_TOKEN" }}'
++      username: '{{ requiredEnv "GIT_USER" }}'
++      branch: main
++
++sources:
++  sha:
++    kind: file
++    spec:
++      file: 'https://github.com/elastic/apm/commit/main.patch'
++      matchpattern: "^From\\s([0-9a-f]{40})\\s"
++    transformers:
++      - findsubmatch:
++          pattern: "[0-9a-f]{40}"
++
++  cgroup_parsing.json:
++    kind: file
++    spec:
++      file: https://raw.githubusercontent.com/elastic/apm/main/tests/agents/json-specs/cgroup_parsing.json
++  service_resource_inference.json:
++    kind: file
++    spec:
++      file: https://raw.githubusercontent.com/elastic/apm/main/tests/agents/json-specs/service_resource_inference.json
++  span_types.json:
++    kind: file
++    spec:
++      file: https://raw.githubusercontent.com/elastic/apm/main/tests/agents/json-specs/span_types.json
++  sql_signature_examples.json:
++    kind: file
++    spec:
++      file: https://raw.githubusercontent.com/elastic/apm/main/tests/agents/json-specs/sql_signature_examples.json
++  sql_token_examples.json:
++    kind: file
++    spec:
++      file: https://raw.githubusercontent.com/elastic/apm/main/tests/agents/json-specs/sql_token_examples.json
++  w3c_distributed_tracing.json:
++    kind: file
++    spec:
++      file: https://raw.githubusercontent.com/elastic/apm/main/tests/agents/json-specs/w3c_distributed_tracing.json
++  wildcard_matcher_tests.json:
++    kind: file
++    spec:
++      file: https://raw.githubusercontent.com/elastic/apm/main/tests/agents/json-specs/wildcard_matcher_tests.json
++actions:
++  pr:
++    kind: "github/pullrequest"
++    scmid: default
++    spec:
++      title: Update JSON specs
++      automerge: false
++      draft: false
++      labels:
++        - "automation"
++      description: |-
++        ### What
++        APM agent specs automatic sync
++        ### Why
++        *Changeset*
++        * https://github.com/elastic/apm/commit/{{ source "sha" }}
++
++targets:
++  cgroup_parsing.json:
++    name: cgroup_parsing.json
++    scmid: default
++    sourceid: cgroup_parsing.json
++    kind: file
++    spec:
++      file: apm-agent-core/src/test/resources/json-specs/cgroup_parsing.json
++  service_resource_inference.json:
++    name: service_resource_inference.json
++    scmid: default
++    sourceid: service_resource_inference.json
++    kind: file
++    spec:
++      file: apm-agent-core/src/test/resources/json-specs/service_resource_inference.json
++  span_types.json:
++    name: span_types.json
++    scmid: default
++    sourceid: span_types.json
++    kind: file
++    spec:
++      file: apm-agent-core/src/test/resources/json-specs/span_types.json
++  sql_signature_examples.json:
++    name: sql_signature_examples.json
++    scmid: default
++    sourceid: sql_signature_examples.json
++    kind: file
++    spec:
++      file: apm-agent-core/src/test/resources/json-specs/sql_signature_examples.json
++  sql_token_examples.json:
++    name: sql_token_examples.json
++    scmid: default
++    sourceid: sql_token_examples.json
++    kind: file
++    spec:
++      file: apm-agent-core/src/test/resources/json-specs/sql_token_examples.json
++  w3c_distributed_tracing.json:
++    name: w3c_distributed_tracing.json
++    scmid: default
++    sourceid: w3c_distributed_tracing.json
++    kind: file
++    spec:
++      file: apm-agent-core/src/test/resources/json-specs/w3c_distributed_tracing.json
++  wildcard_matcher_tests.json:
++    name: wildcard_matcher_tests.json
++    scmid: default
++    sourceid: wildcard_matcher_tests.json
++    kind: file
++    spec:
++      file: apm-agent-core/src/test/resources/json-specs/wildcard_matcher_tests.json
+diff --git a/.ci/updatecli.d/update-specs.yml b/.ci/updatecli.d/update-specs.yml
+new file mode 100644
+index 0000000..7199790
+--- /dev/null
++++ b/.ci/updatecli.d/update-specs.yml
+@@ -0,0 +1,104 @@
++name: update-specs
++
++title: synchronize schema specs
++
++scms:
++  default:
++    kind: github
++    spec:
++      user: '{{ requiredEnv "GIT_USER" }}'
++      email: '{{ requiredEnv "GIT_EMAIL" }}'
++      owner: elastic
++      repository: apm-agent-java
++      token: '{{ requiredEnv "GITHUB_TOKEN" }}'
++      username: '{{ requiredEnv "GIT_USER" }}'
++      branch: main
++
++sources:
++  sha:
++    kind: file
++    spec:
++      file: 'https://github.com/elastic/apm-data/commit/main.patch'
++      matchpattern: "^From\\s([0-9a-f]{40})\\s"
++    transformers:
++      - findsubmatch:
++          pattern: "[0-9a-f]{40}"
++  error.json:
++    kind: file
++    spec:
++      file: https://raw.githubusercontent.com/elastic/apm-data/main/input/elasticapm/docs/spec/v2/error.json
++  metadata.json:
++    kind: file
++    spec:
++      file: https://raw.githubusercontent.com/elastic/apm-data/main/input/elasticapm/docs/spec/v2/metadata.json
++  metricset.json:
++    kind: file
++    spec:
++      file: https://raw.githubusercontent.com/elastic/apm-data/main/input/elasticapm/docs/spec/v2/metricset.json
++  span.json:
++    kind: file
++    spec:
++      file: https://raw.githubusercontent.com/elastic/apm-data/main/input/elasticapm/docs/spec/v2/span.json
++  transaction.json:
++    kind: file
++    spec:
++      file: https://raw.githubusercontent.com/elastic/apm-data/main/input/elasticapm/docs/spec/v2/transaction.json
++
++actions:
++  pr:
++    kind: "github/pullrequest"
++    scmid: default
++    sourceid: sha
++    spec:
++      automerge: false
++      draft: false
++      labels:
++        - "automation"
++      description: |-
++        ### What
++        APM agent json schema automatic sync
++        ### Why
++        *Changeset*
++        * https://github.com/elastic/apm-data/commit/{{ source "sha" }}
++
++targets:
++  error.json:
++    name: error.json
++    scmid: default
++    sourceid: error.json
++    kind: file
++    spec:
++      file: apm-agent-core/src/test/resources/apm-server-schema/current/error.json
++      forcecreate: true
++  metadata.json:
++    name: metadata.json
++    scmid: default
++    sourceid: metadata.json
++    kind: file
++    spec:
++      file: apm-agent-core/src/test/resources/apm-server-schema/current/metadata.json
++      forcecreate: true
++  metricset.json:
++    name: metricset.json
++    scmid: default
++    sourceid: metricset.json
++    kind: file
++    spec:
++      file: apm-agent-core/src/test/resources/apm-server-schema/current/metricset.json
++      forcecreate: true
++  span.json:
++    name: span.json
++    scmid: default
++    sourceid: span.json
++    kind: file
++    spec:
++      file: apm-agent-core/src/test/resources/apm-server-schema/current/span.json
++      forcecreate: true
++  transaction.json:
++    name: transaction.json
++    scmid: default
++    sourceid: transaction.json
++    kind: file
++    spec:
++      file: apm-agent-core/src/test/resources/apm-server-schema/current/transaction.json
++      forcecreate: true
+diff --git a/.github/workflows/opentelemetry.yml b/.github/workflows/opentelemetry.yml
+index f1e39a6..dc0ea0c 100644
+--- a/.github/workflows/opentelemetry.yml
++++ b/.github/workflows/opentelemetry.yml
+@@ -6,7 +6,7 @@ on:
+     workflows:
+       - test
+       - test-reporter
+-      - update-specs
++      - updatecli
+     types: [completed]
+ 
+ jobs:
+diff --git a/.github/workflows/update-specs.yml b/.github/workflows/update-specs.yml
+deleted file mode 100644
+index 2369276..0000000
+--- a/.github/workflows/update-specs.yml
++++ /dev/null
+@@ -1,30 +0,0 @@
+-name: update-specs
+-
+-on:
+-  workflow_dispatch: ~
+-  schedule:
+-    - cron: '0 6 * * *'
+-
+-permissions:
+-  contents: read
+-
+-jobs:
+-  bump:
+-    runs-on: ubuntu-latest
+-    steps:
+-      - uses: actions/checkout@v3
+-      - uses: elastic/apm-pipeline-library/.github/actions/updatecli@current
+-        env:
+-          BRANCH_NAME: ${{ github.ref_name }}
+-        with:
+-          vaultUrl: ${{ secrets.VAULT_ADDR }}
+-          vaultRoleId: ${{ secrets.VAULT_ROLE_ID }}
+-          vaultSecretId: ${{ secrets.VAULT_SECRET_ID }}
+-          pipeline: ./.ci/update-specs.yml
+-      - if: failure()
+-        uses: elastic/apm-pipeline-library/.github/actions/notify-build-status@current
+-        with:
+-          vaultUrl: ${{ secrets.VAULT_ADDR }}
+-          vaultRoleId: ${{ secrets.VAULT_ROLE_ID }}
+-          vaultSecretId: ${{ secrets.VAULT_SECRET_ID }}
+-          slackChannel: "#apm-agent-java"
+diff --git a/.github/workflows/updatecli.yml b/.github/workflows/updatecli.yml
+new file mode 100644
+index 0000000..8a3c039
+--- /dev/null
++++ b/.github/workflows/updatecli.yml
+@@ -0,0 +1,28 @@
++name: updatecli
++
++on:
++  workflow_dispatch: ~
++  schedule:
++    - cron: '0 6 * * *'
++
++permissions:
++  contents: read
++
++jobs:
++  bump:
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v3
++      - uses: elastic/apm-pipeline-library/.github/actions/updatecli@current
++        with:
++          vaultUrl: ${{ secrets.VAULT_ADDR }}
++          vaultRoleId: ${{ secrets.VAULT_ROLE_ID }}
++          vaultSecretId: ${{ secrets.VAULT_SECRET_ID }}
++          pipeline: .ci/updatecli.d
++      - if: failure()
++        uses: elastic/apm-pipeline-library/.github/actions/notify-build-status@current
++        with:
++          vaultUrl: ${{ secrets.VAULT_ADDR }}
++          vaultRoleId: ${{ secrets.VAULT_ROLE_ID }}
++          vaultSecretId: ${{ secrets.VAULT_SECRET_ID }}
++          slackChannel: "#apm-agent-java"

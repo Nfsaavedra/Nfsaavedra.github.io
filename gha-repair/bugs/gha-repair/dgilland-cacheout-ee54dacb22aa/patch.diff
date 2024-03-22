@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index a06ab56..a96aa2a 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -21,7 +21,7 @@ jobs:
+ 
+       - name: Install dependencies
+         run: |
+-          pip install --upgrade pip
++          pip install --upgrade pip setuptools
+           pip install tox-gh-actions coveralls
+ 
+       - name: Run tests

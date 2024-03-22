@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/examples-build.yml b/.github/workflows/examples-build.yml
+index f13e60c..5067cbc 100644
+--- a/.github/workflows/examples-build.yml
++++ b/.github/workflows/examples-build.yml
+@@ -35,6 +35,6 @@ jobs:
+     - name: Commit Examples
+       uses: EndBug/add-and-commit@v7
+       with:
+-        add: 'example/bundle'
++        add: 'javascript/example/bundle'
+         message: 'update builds'
+         push: 'origin HEAD:examples --force'

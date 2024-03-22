@@ -1,0 +1,22 @@
+diff --git a/.github/workflows/release.yaml b/.github/workflows/release.yaml
+index 2d5ce81..dca0c66 100644
+--- a/.github/workflows/release.yaml
++++ b/.github/workflows/release.yaml
+@@ -1,10 +1,14 @@
+ name: Upload Release Asset
+ 
+ on:
++  # push:
++  #   # Sequence of patterns matched against refs/tags
++  #   tags:
++  #     - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
++
+   push:
+-    # Sequence of patterns matched against refs/tags
+-    tags:
+-      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
++    branches:
++      - development
+ 
+ jobs:
+   build:

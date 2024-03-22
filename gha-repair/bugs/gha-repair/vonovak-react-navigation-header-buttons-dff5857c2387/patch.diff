@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/nodejs.yml b/.github/workflows/nodejs.yml
+index c5bf07a..5118058 100644
+--- a/.github/workflows/nodejs.yml
++++ b/.github/workflows/nodejs.yml
+@@ -16,7 +16,7 @@ jobs:
+ 
+     strategy:
+       matrix:
+-        node-version: [10.x, 12.x]
++        node-version: [12.x]
+ 
+     steps:
+     - uses: actions/checkout@v2

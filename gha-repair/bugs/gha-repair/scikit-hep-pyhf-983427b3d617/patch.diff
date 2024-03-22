@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/docs.yml b/.github/workflows/docs.yml
+index cb6fef5..a678cf7 100644
+--- a/.github/workflows/docs.yml
++++ b/.github/workflows/docs.yml
+@@ -102,7 +102,7 @@ jobs:
+ 
+     steps:
+     - name: Setup Pages
+-      uses: actions/configure-pages@v2
++      uses: actions/configure-pages@v3
+ 
+     - name: Deploy to GitHub Pages
+       id: deployment

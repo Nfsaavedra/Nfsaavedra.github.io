@@ -1,0 +1,18 @@
+diff --git a/.github/workflows/build-wheels.yml b/.github/workflows/build-wheels.yml
+index 9c7bb99..172ab93 100644
+--- a/.github/workflows/build-wheels.yml
++++ b/.github/workflows/build-wheels.yml
+@@ -21,12 +21,7 @@ jobs:
+ 
+       - name: Install cibuildwheel
+         run: |
+-          python -m pip install cibuildwheel==1.6.4
+-
+-      - name: Install Visual C++ for Python 2.7
+-        if: runner.os == 'Windows'
+-        run: |
+-          choco install vcpython27 -f -y
++          python -m pip install cibuildwheel
+ 
+       - name: Build wheels
+         run: |

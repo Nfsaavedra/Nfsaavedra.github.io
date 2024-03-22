@@ -1,0 +1,23 @@
+diff --git a/.github/workflows/rust.yml b/.github/workflows/rust.yml
+index 06df685..c2c4b25 100644
+--- a/.github/workflows/rust.yml
++++ b/.github/workflows/rust.yml
+@@ -17,11 +17,12 @@ jobs:
+       - name: Run on Linux
+         if: ${{ matrix.os == 'ubuntu-latest' }}
+         uses: FedericoCarboni/setup-ffmpeg@v1
+-        id: setup-ffmpeg
++
++      - name: Run Cargo
+         run: |
+-          cargo fmt --all -- --check
+-          cargo clippy --all-features --all-targets -- --deny warnings
++          if [ "$RUNNER_OS" == "Linux" ]; then
++            cargo test --all-features
++            cargo clippy --all-features --all-targets -- --deny warnings
++            cargo fmt --all -- --check
++          fi
+           cargo build --all-features
+-
+-      - name: Run on macOS/Windows
+-        run: cargo build --all-features

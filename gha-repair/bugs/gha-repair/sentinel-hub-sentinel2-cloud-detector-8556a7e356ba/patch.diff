@@ -1,0 +1,80 @@
+diff --git a/.github/workflows/ci_action.yml b/.github/workflows/ci_action.yml
+index 1ec23a4..e0fb9ca 100644
+--- a/.github/workflows/ci_action.yml
++++ b/.github/workflows/ci_action.yml
+@@ -11,7 +11,7 @@ env:
+ 
+ jobs:
+ 
+-  check-code-black:
++  check-code-black-isort-flake8:
+     runs-on: ubuntu-latest
+     steps:
+       - name: Checkout branch
+@@ -19,12 +19,29 @@ jobs:
+         with:
+           ref: ${{ env.CHECKOUT_BRANCH }}
+ 
++      - name: Setup Python
++        uses: actions/setup-python@v2
++        with:
++          python-version: "3.8"
++          architecture: x64
++
++      - name: Prepare linters
++        run: pip install black[jupyter] isort flake8 nbqa
++
+       - name: Check code compliance with black
++        run: black . --check --diff
++
++      - name: Check code compliance with isort
++        run: |
++          isort . --check --diff
++          nbqa isort . --nbqa-diff
++
++      - name: Check code compliance with flake8
+         run: |
+-          pip install black[jupyter]
+-          black . --check --diff
++          flake8 .
++          nbqa flake8 .
+ 
+-  check-code-isort:
++  check-code-pylint:
+     runs-on: ubuntu-latest
+     steps:
+       - name: Checkout branch
+@@ -32,10 +49,17 @@ jobs:
+         with:
+           ref: ${{ env.CHECKOUT_BRANCH }}
+ 
+-      - name: Check code compliance with isort
+-        run: |
+-          pip install isort
+-          isort . --check --diff
++      - name: Setup Python
++        uses: actions/setup-python@v2
++        with:
++          python-version: "3.9"
++          architecture: x64
++
++      - name: Install packages
++        run: pip install -e .[DEV]
++
++      - name: Run pylint
++        run: pylint sentinelhub
+ 
+   test-on-github:
+     runs-on: ubuntu-latest
+@@ -72,10 +96,9 @@ jobs:
+             --sh_client_secret "${{ secrets.SH_CLIENT_SECRET }}"
+           pytest --cov --cov-report=term --cov-report=xml
+ 
+-      - name: Run pylint and reduced tests
++      - name: Run reduced tests
+         if: matrix.python-version != '3.9'
+         run: |
+-          pylint s2cloudless
+           pytest -m "not sh_integration"
+ 
+       - name: Upload code coverage

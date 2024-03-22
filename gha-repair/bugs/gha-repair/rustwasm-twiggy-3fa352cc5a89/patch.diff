@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index d7ba127..d112f69 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -46,5 +46,7 @@ jobs:
+       with:
+        toolchain: stable
+     - name: Run test script
++      env:
++        JOB: test
+       run: ./ci/script.sh
+     

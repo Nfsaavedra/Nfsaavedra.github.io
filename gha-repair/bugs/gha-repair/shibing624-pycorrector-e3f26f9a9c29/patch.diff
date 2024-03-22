@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/ubuntu.yml b/.github/workflows/ubuntu.yml
+index 821cf21..d7031bc 100644
+--- a/.github/workflows/ubuntu.yml
++++ b/.github/workflows/ubuntu.yml
+@@ -47,7 +47,7 @@ jobs:
+           pip install -r requirements.txt
+           pip install .
+           pip install pytest
+-      - name: PKG-TEST
+-        run: |
++#      - name: PKG-TEST
++#        run: |
+ #          python -m pytest
+-          echo "PKG-TEST done"
++#          echo "PKG-TEST done"

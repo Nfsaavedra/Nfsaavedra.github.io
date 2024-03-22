@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/continuous-integration.yaml b/.github/workflows/continuous-integration.yaml
+index b0ed00c..1f47253 100644
+--- a/.github/workflows/continuous-integration.yaml
++++ b/.github/workflows/continuous-integration.yaml
+@@ -73,7 +73,9 @@ jobs:
+         if: ${{ runner.os == 'Windows' }}
+         uses: MarkusJx/install-boost@v1.0.1
+         with:
+-          boost_version: 1.73.0
++          boost_version: 1.81.0
++          platform_version: 2022 
++          toolset: msvc
+ 
+       - name: "Install dependencies for macOS"
+         if: ${{ runner.os == 'macOS' }}

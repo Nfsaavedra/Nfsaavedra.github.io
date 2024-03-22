@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/image.yml b/.github/workflows/image.yml
+index ad81111..2a81325 100644
+--- a/.github/workflows/image.yml
++++ b/.github/workflows/image.yml
+@@ -22,6 +22,7 @@ jobs:
+         if [ ${{ github.event_name }} = 'push' ]; then
+           args=(
+             --tag ghcr.io/getsentry/snuba:latest
++            --tag ghcr.io/getsentry/snuba:amd64-latest
+             --push
+           )
+         else
+@@ -30,6 +31,7 @@ jobs:
+ 
+         docker buildx build \
+           --pull \
++          --platform linux/amd64 \
+           --cache-from ghcr.io/getsentry/snuba:latest \
+           --cache-to type=inline \
+           --tag ghcr.io/getsentry/snuba:${{ github.sha }} \

@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/python-package.yml b/.github/workflows/python-package.yml
+index 45fa3c8..d60e1c9 100644
+--- a/.github/workflows/python-package.yml
++++ b/.github/workflows/python-package.yml
+@@ -4,7 +4,10 @@ on:
+   push:
+     branches: [ master ]
+   pull_request:
+-    branches: [ master ]
++    branches:
++      - master
++      - 'dev*'
++      - 'release*'
+ 
+ jobs:
+   build:

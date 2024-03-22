@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 481c599..ab68972 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -41,7 +41,7 @@ jobs:
+     runs-on: ubuntu-20.04
+     strategy:
+       matrix:
+-        php-version: ['8.1', '8.0', '7.4']
++        php-version: ['8.2', '8.1', '8.0', '7.4']
+     steps:
+     - uses: actions/checkout@v3
+     - name: Install PHP

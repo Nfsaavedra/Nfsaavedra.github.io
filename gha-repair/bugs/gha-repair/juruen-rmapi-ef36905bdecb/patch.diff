@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/go.yml b/.github/workflows/go.yml
+index afdc0bc..8b7a643 100644
+--- a/.github/workflows/go.yml
++++ b/.github/workflows/go.yml
+@@ -37,6 +37,7 @@ jobs:
+         if [ -n "$out" ]; then
+           echo "gofmt needs to be run on the following files:" >&2
+           echo "$out" >&2
++          exit 1
+         fi
+ 
+     - name: Build

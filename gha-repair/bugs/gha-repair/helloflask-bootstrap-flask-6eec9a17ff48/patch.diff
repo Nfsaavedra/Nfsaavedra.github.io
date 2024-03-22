@@ -1,0 +1,22 @@
+diff --git a/.github/workflows/master_bootstrap-flask-example.yml b/.github/workflows/master_bootstrap-flask-example.yml
+index 7bd4a72..1254b6d 100644
+--- a/.github/workflows/master_bootstrap-flask-example.yml
++++ b/.github/workflows/master_bootstrap-flask-example.yml
+@@ -28,7 +28,7 @@ jobs:
+           source venv/bin/activate
+       
+       - name: Install dependencies
+-        run: pip install -r requirements.txt
++        run: pip install -r examples/requirements.txt
+         
+       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
+       
+@@ -37,7 +37,7 @@ jobs:
+         with:
+           name: python-app
+           path: |
+-            . 
++            ./examples/bootstrap5/
+             !venv/
+ 
+   deploy:

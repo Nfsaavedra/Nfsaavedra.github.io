@@ -1,0 +1,51 @@
+diff --git a/src/test/java/org/xtx/ut4converter/t3d/T3DDispatcherTest.java b/src/test/java/org/xtx/ut4converter/t3d/T3DDispatcherTest.java
+index 4c391e3..0a1acf8 100644
+--- a/src/test/java/org/xtx/ut4converter/t3d/T3DDispatcherTest.java
++++ b/src/test/java/org/xtx/ut4converter/t3d/T3DDispatcherTest.java
+@@ -26,6 +26,6 @@ class T3DDispatcherTest {
+ 
+         Assertions.assertNotNull(dispatcher);
+         final String convT3D = dispatcher.convertScaleAndToT3D(2d);
+-        System.out.println(convT3D);
++        Assertions.assertTrue(convT3D.contains("OutDelays(4)=7.0"));
+     }
+ }
+\ No newline at end of file
+diff --git a/src/test/resources/t3d/ue1/U1-Dispatcher.t3d b/src/test/resources/t3d/ue1/U1-Dispatcher.t3d
+index f353f22..7cea2e0 100644
+--- a/src/test/resources/t3d/ue1/U1-Dispatcher.t3d
++++ b/src/test/resources/t3d/ue1/U1-Dispatcher.t3d
+@@ -1,21 +1,15 @@
+ Begin Map
+-	Begin Actor Class=Dispatcher Name=Dispatcher5
+-		OutDelays(0)=1.0
+-		OutDelays(1)=1.0
+-		OutDelays(2)=1.0
+-		OutDelays(3)=1.0
+-		OutDelays(4)=1.0
+-		OutDelays(5)=1.0
+-		OutDelays(6)=1.0
+-		OutEvents(0)="scary1"
+-		OutEvents(1)="scary2"
+-		OutEvents(2)="scary3"
+-		OutEvents(3)="scary4"
+-		OutEvents(4)="scary5"
+-		OutEvents(5)="scary6"
+-		OutEvents(6)="scary7"
+-		OutEvents(7)="dispatcho2"
+-		Tag="trap2"
+-		Location=(X=-784.0,Y=-208.0,Z=-392.0)
++	Begin Actor Class=Dispatcher Name=Dispatcher0
++		OutDelays(2)=1.1
++		OutDelays(4)=7.0
++		OutEvents(0)="Hell"
++		OutEvents(1)="WF1"
++		OutEvents(2)="MW1"
++		OutEvents(3)="STS"
++		OutEvents(4)="EntryDoor"
++		OutEvents(5)="Water1"
++		OutEvents(6)="wATERsPLASH"
++		Tag="DIS1"
++		Location=(X=3058.65,Y=6281.61,Z=628.47)
+ 	End Actor
+ End Map

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index df88376..a94f91f 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -52,6 +52,7 @@ jobs:
+         run: |
+           export DEBIAN_FRONTEND=noninteractive
+           export TZ=Europe/Kiev
++          apt update
+           apt install -y curl
+           echo 'installing node 12x'
+           curl -sL https://deb.nodesource.com/setup_12.x | bash

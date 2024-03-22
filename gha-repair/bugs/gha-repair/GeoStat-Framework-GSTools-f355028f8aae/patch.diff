@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 7ff9c1b..0077a67 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -68,7 +68,7 @@ jobs:
+           fetch-depth: '0'
+ 
+       - name: Build wheels
+-        uses: pypa/cibuildwheel@v2.6.0
++        uses: pypa/cibuildwheel@v2.8.1
+         env:
+           CIBW_ARCHS: ${{ matrix.cfg.arch }}
+         with:

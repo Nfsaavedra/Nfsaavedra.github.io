@@ -1,0 +1,26 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 56bf213..9778854 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -30,10 +30,20 @@ jobs:
+         token: ${{secrets.CODECOV_TOKEN}}
+       env:
+         CI: true
++        
++    - name: Discord notification
++      if: success()
++      env:
++        DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
++      uses: Ilshidur/action-discord@master
++      with:
++        args: 'CI Build Passed'
++        
+     - name: Discord notification
++      if: failure()
+       env:
+         DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+       uses: Ilshidur/action-discord@master
+       with:
+-        args: 'Project CI Build Complete'
++        args: 'CI Build Failed'
+         

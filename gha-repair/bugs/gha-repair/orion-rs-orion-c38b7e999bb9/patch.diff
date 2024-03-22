@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/code_coverage.yml b/.github/workflows/code_coverage.yml
+index fb2d33d..dc011b4 100644
+--- a/.github/workflows/code_coverage.yml
++++ b/.github/workflows/code_coverage.yml
+@@ -31,6 +31,6 @@ jobs:
+           args: '-- --test-threads 1'
+ 
+       - name: Upload to codecov.io
+-        uses: codecov/codecov-action@f32b3a3741e1053eb607407145bc9619351dc93b
++        uses: codecov/codecov-action@e3c560433a6cc60aec8812599b7844a7b4fa0d71
+         with:
+           fail_ci_if_error: true
+\ No newline at end of file

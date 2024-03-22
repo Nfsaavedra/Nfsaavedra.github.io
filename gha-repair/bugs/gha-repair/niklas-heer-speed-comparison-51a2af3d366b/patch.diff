@@ -1,0 +1,21 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 6e7eed3..9b139fb 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -1,15 +1,6 @@
+ name: Run speed comparison
+ 
+-on:
+-  push:
+-    branches:
+-      - master
+-      - next
+-  pull_request_review:
+-    types: [submitted]
+-  pull_request:
+-    types:
+-      - labeled
++on: [push, pull_request]
+ 
+ jobs:
+   build:

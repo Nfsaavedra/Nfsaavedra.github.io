@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/python-package.yml b/.github/workflows/python-package.yml
+index f0898e7..dc9e186 100644
+--- a/.github/workflows/python-package.yml
++++ b/.github/workflows/python-package.yml
+@@ -34,6 +34,7 @@ jobs:
+       if: ${{ matrix.python-version==3.8 }}
+       uses: codecov/codecov-action@v3
+       with:
++        token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+         file: ./coverage.xml
+         name: codecov-umbrella
+         fail_ci_if_error: true

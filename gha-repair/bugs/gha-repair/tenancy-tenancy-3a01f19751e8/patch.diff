@@ -1,0 +1,111 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 58257ed..7306338 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -79,6 +79,13 @@ jobs:
+               if: ${{ ! matrix.experimental }}
+               run: composer require "laravel/laravel:${{ matrix.laravel }}" "laravel/framework:${{ matrix.laravel }}" --no-interaction --no-update
+ 
++            - name: Cache Composer Downloads
++              uses: actions/cache@v2
++              with:
++                  path: ${{ steps.composer-cache.outputs.dir }}
++                  key: ${{ runner.os }}-composer-${{ matrix.php }}-${{ matrix.laravel }}-${{ matrix.db }}
++                  restore-keys: ${{ runner.os }}-composer-
++
+             - name: Install Version Specific Dependencies (ignore-platform-req)
+               if: ${{ matrix.experimental }}
+               run: composer require "laravel/laravel:${{ matrix.laravel }}" "laravel/framework:${{ matrix.laravel }}" --no-interaction --no-update --ignore-platform-reqs
+@@ -87,13 +94,6 @@ jobs:
+               id: composer-cache
+               run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+ 
+-            - name: Cache Composer Downloads
+-              uses: actions/cache@v2
+-              with:
+-                  path: ${{ steps.composer-cache.outputs.dir }}
+-                  key: ${{ runner.os }}-composer-${{ github.sha }}-${{ hashFiles('**/composer.json') }}
+-                  restore-keys: ${{ runner.os }}-composer-
+-
+             - name: Install Composer dependencies
+               if: ${{ ! matrix.experimental }}
+               run: composer install --no-ansi --no-interaction
+diff --git a/phpcs.xml b/phpcs.xml
+new file mode 100644
+index 0000000..9f44f7b
+--- /dev/null
++++ b/phpcs.xml
+@@ -0,0 +1,13 @@
++<?xml version="1.0"?>
++<ruleset name="Tenancy codebase">
++    <description>The coding standard for our project.</description>
++
++    <file>./src</file>
++
++    <exclude-pattern>./build</exclude-pattern>
++    <exclude-pattern>./tests</exclude-pattern>
++
++    <arg value="np"/>
++
++    <rule ref="PSR2"/>
++</ruleset>
+diff --git a/sdk.phpunit.xml b/sdk.phpunit.xml
+new file mode 100644
+index 0000000..16746d9
+--- /dev/null
++++ b/sdk.phpunit.xml
+@@ -0,0 +1,40 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<phpunit backupGlobals="false"
++         backupStaticAttributes="false"
++         bootstrap="vendor/autoload.php"
++         colors="true"
++         convertErrorsToExceptions="true"
++         convertNoticesToExceptions="true"
++         convertWarningsToExceptions="true"
++         processIsolation="false"
++         stopOnFailure="false"
++>
++    <testsuites>
++        <testsuite name="Test Suite">
++            <directory suffix="Test.php">./tests/</directory>
++        </testsuite>
++    </testsuites>
++    <filter>
++        <whitelist processUncoveredFilesFromWhitelist="true">
++            <directory suffix=".php">./src/</directory>
++
++            <exclude>
++                <directory suffix=".php">./src/*/*/resources</directory>
++                <directory suffix=".php">./src/*/*/factories</directory>
++            </exclude>
++        </whitelist>
++    </filter>
++    <php>
++        <env name="APP_KEY" value="base64:aYWlZmotmdYnjvN9AAhDXSBl7Vo6RkZCu7eJ9pYJyt8="/>
++        <env name="APP_ENV" value="testing"/>
++        <env name="CACHE_DRIVER" value="array"/>
++        <env name="SESSION_DRIVER" value="array"/>
++        <env name="QUEUE_DRIVER" value="sync"/>
++        <env name="DB_CONNECTION" value="sqlite"/>
++        <env name="DB_DATABASE" value=":memory:"/>
++        <env name="TENANCY_MYSQL_HOST" value="tenancy_db"/>
++        <env name="TENANCY_DB" value="testing"/>
++        <env name="TENANCY_USERNAME" value="testing"/>
++        <env name="TENANCY_PASSWORD" value="testing"/>
++    </php>
++</phpunit>
+diff --git a/src/Tenancy/readme.md b/src/Tenancy/readme.md
+new file mode 100644
+index 0000000..f8b1155
+--- /dev/null
++++ b/src/Tenancy/readme.md
+@@ -0,0 +1,8 @@
++![tenancy logo](https://avatars3.githubusercontent.com/u/33319474?s=50&v=4)
++
++This is the successor of [hyn/multi-tenant](https://github.com/tenancy/multi-tenant). It is still
++in development. Feel free to show support by starring the project
++following progress via [twitter](https://twitter.com/laraveltenancy) and
++backing its development over at [OpenCollective](https://opencollective.com/tenancy).
++
++[![CircleCI](https://circleci.com/gh/tenancy/framework.svg?style=svg)](https://circleci.com/gh/tenancy/framework)

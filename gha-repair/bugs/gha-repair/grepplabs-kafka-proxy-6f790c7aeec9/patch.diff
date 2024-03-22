@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yaml b/.github/workflows/release.yaml
+index dc2b76d..a41e769 100644
+--- a/.github/workflows/release.yaml
++++ b/.github/workflows/release.yaml
+@@ -27,7 +27,7 @@ jobs:
+         uses: docker/metadata-action@v4
+         with:
+           images: |
+-            grepplabs/mqtt-proxy
++            grepplabs/kafka-proxy
+           tags: |
+             type=ref,event=branch
+             type=ref,event=pr

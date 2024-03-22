@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/go.yml b/.github/workflows/go.yml
+index 9d59799..4c26b69 100644
+--- a/.github/workflows/go.yml
++++ b/.github/workflows/go.yml
+@@ -15,4 +15,4 @@ jobs:
+       uses: actions/checkout@v1
+ 
+     - name: Build
+-      run: go build -mod=vendor .
++      run: go build

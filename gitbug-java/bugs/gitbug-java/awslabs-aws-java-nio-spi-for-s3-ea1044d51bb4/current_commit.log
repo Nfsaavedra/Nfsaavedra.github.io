@@ -1,0 +1,234 @@
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] 🚀  Start image=gitbugactions:latest
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   🐳  docker pull image=gitbugactions:latest platform= username= forcePull=false
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   🐳  docker create image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   🐳  docker run image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/0cd030e6-b653-4dd9-9285-b9bcccc51039] user=0 workdir=
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] ⭐ Run Main actions/checkout@v3
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   🐳  docker cp src=/tmp/0cd030e6-b653-4dd9-9285-b9bcccc51039/. dst=/tmp/0cd030e6-b653-4dd9-9285-b9bcccc51039
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/0cd030e6-b653-4dd9-9285-b9bcccc51039] user=0 workdir=
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   ✅  Success - Main actions/checkout@v3
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] ⭐ Run Main Set up JDK
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   🐳  docker cp src=/tmp/act-cache/c4922c8f-dae0-49c2-a391-8506d72e4c23/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   ❓  ::group::Installed distributions
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | Trying to resolve the latest version from remote
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | Resolved latest version as 11.0.21+9.1
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | Trying to download...
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | Downloading Java 11.0.21+9.1 (Corretto) from https://corretto.aws/downloads/resources/11.0.21.9.1/amazon-corretto-11.0.21.9.1-linux-x64.tar.gz ...
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   💬  ::debug::Downloading https://corretto.aws/downloads/resources/11.0.21.9.1/amazon-corretto-11.0.21.9.1-linux-x64.tar.gz
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   💬  ::debug::Destination /tmp/850038aa-5ecf-4242-8c0d-ef22c1698cae
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   💬  ::debug::download complete
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | Extracting Java archive...
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   💬  ::debug::Checking tar --version
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   💬  ::debug::tar (GNU tar) 1.34%0ACopyright (C) 2021 Free Software Foundation, Inc.%0ALicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.%0AThis is free software: you are free to change and redistribute it.%0AThere is NO WARRANTY, to the extent permitted by law.%0A%0AWritten by John Gilmore and Jay Fenlason.
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/9e0df217-796b-4d15-a37d-225c17289862 -f /tmp/850038aa-5ecf-4242-8c0d-ef22c1698cae
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   💬  ::debug::Caching tool Java_Corretto_jdk 11.0.21-9.1 x64
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   💬  ::debug::source dir: /tmp/9e0df217-796b-4d15-a37d-225c17289862/amazon-corretto-11.0.21.9.1-linux-x64
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   💬  ::debug::destination /opt/hostedtoolcache/Java_Corretto_jdk/11.0.21-9.1/x64
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   💬  ::debug::finished caching tool
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | Java 11.0.21+9.1 was downloaded
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | Setting Java 11.0.21+9.1 as the default
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | Creating toolchains.xml for JDK version 11 from corretto
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | Writing to /home/runner/.m2/toolchains.xml
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | 
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | Java configuration:
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |   Distribution: corretto
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |   Version: 11.0.21+9.1
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |   Path: /opt/hostedtoolcache/Java_Corretto_jdk/11.0.21-9.1/x64
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | 
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   ❓  ::endgroup::
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   ❓ add-matcher /run/act/actions/actions-setup-java@v3/.github/java.json
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | Creating settings.xml with server-id: github
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | Writing to /home/runner/.m2/settings.xml
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   ✅  Success - Main Set up JDK
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   ⚙  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Corretto_jdk/11.0.21-9.1/x64
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   ⚙  ::set-env:: JAVA_HOME_11_X64=/opt/hostedtoolcache/Java_Corretto_jdk/11.0.21-9.1/x64
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   ⚙  ::set-output:: path=/opt/hostedtoolcache/Java_Corretto_jdk/11.0.21-9.1/x64
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   ⚙  ::set-output:: version=11.0.21+9.1
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   ⚙  ::set-output:: distribution=Corretto
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   ⚙  ::add-path:: /opt/hostedtoolcache/Java_Corretto_jdk/11.0.21-9.1/x64/bin
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] ⭐ Run Main Setup Gradle
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   🐳  docker cp src=/tmp/act-cache/c4922c8f-dae0-49c2-a391-8506d72e4c23/act/gradle-gradle-build-action@v2.4.2/ dst=/var/run/act/actions/gradle-gradle-build-action@v2.4.2/
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/gradle-gradle-build-action@v2.4.2/] user=0 workdir=
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   🐳  docker exec cmd=[node /var/run/act/actions/gradle-gradle-build-action@v2.4.2/dist/main/index.js] user= workdir=
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   💬  ::debug::Determined user.home from java -version output: '/home/runner'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | Cache is disabled: will not restore state from previous builds.
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   ✅  Success - Main Setup Gradle
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   ⚙  ::set-env:: GRADLE_BUILD_ACTION_SETUP_COMPLETED=true
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   ⚙  ::set-env:: GRADLE_BUILD_ACTION_CACHE_RESTORED=true
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] ⭐ Run Main Execute Gradle build
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | Downloading https://services.gradle.org/distributions/gradle-7.1-bin.zip
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | ..........10%...........20%...........30%..........40%...........50%...........60%..........70%...........80%...........90%...........100%
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | 
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | Welcome to Gradle 7.1!
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | 
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | Here are the highlights of this release:
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |  - Faster incremental Java compilation
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |  - Easier source set configuration in the Kotlin DSL
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | 
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | For more details see https://docs.gradle.org/7.1/release-notes.html
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | 
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | Starting a Gradle Daemon (subsequent builds will be faster)
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | > Task :compileJava
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | > Task :processResources
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | > Task :classes
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | > Task :jar
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | 
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | > Task :javadoc
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | /tmp/0cd030e6-b653-4dd9-9285-b9bcccc51039/src/main/java/software/amazon/nio/spi/s3/S3FileSystemProvider.java:204: warning: no @param for client
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |     protected SeekableByteChannel newByteChannel(S3AsyncClient client, Path path, Set<? extends OpenOption> options, FileAttribute<?>... attrs) throws IOException {
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |                                   ^
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | /tmp/0cd030e6-b653-4dd9-9285-b9bcccc51039/src/main/java/software/amazon/nio/spi/s3/S3FileSystemProvider.java:204: warning: no @param for path
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |     protected SeekableByteChannel newByteChannel(S3AsyncClient client, Path path, Set<? extends OpenOption> options, FileAttribute<?>... attrs) throws IOException {
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |                                   ^
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | /tmp/0cd030e6-b653-4dd9-9285-b9bcccc51039/src/main/java/software/amazon/nio/spi/s3/S3FileSystemProvider.java:204: warning: no @param for options
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |     protected SeekableByteChannel newByteChannel(S3AsyncClient client, Path path, Set<? extends OpenOption> options, FileAttribute<?>... attrs) throws IOException {
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |                                   ^
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | /tmp/0cd030e6-b653-4dd9-9285-b9bcccc51039/src/main/java/software/amazon/nio/spi/s3/S3FileSystemProvider.java:204: warning: no @param for attrs
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |     protected SeekableByteChannel newByteChannel(S3AsyncClient client, Path path, Set<? extends OpenOption> options, FileAttribute<?>... attrs) throws IOException {
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |                                   ^
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | /tmp/0cd030e6-b653-4dd9-9285-b9bcccc51039/src/main/java/software/amazon/nio/spi/s3/S3FileSystemProvider.java:204: warning: no @return
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |     protected SeekableByteChannel newByteChannel(S3AsyncClient client, Path path, Set<? extends OpenOption> options, FileAttribute<?>... attrs) throws IOException {
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |                                   ^
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | /tmp/0cd030e6-b653-4dd9-9285-b9bcccc51039/src/main/java/software/amazon/nio/spi/s3/S3FileSystemProvider.java:204: warning: no @throws for java.io.IOException
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |     protected SeekableByteChannel newByteChannel(S3AsyncClient client, Path path, Set<? extends OpenOption> options, FileAttribute<?>... attrs) throws IOException {
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |                                   ^
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | /tmp/0cd030e6-b653-4dd9-9285-b9bcccc51039/src/main/java/software/amazon/nio/spi/s3/S3FileSystemProvider.java:249: warning: no @param for s3Client
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |     protected DirectoryStream<Path> newDirectoryStream(S3AsyncClient s3Client, Path dir, DirectoryStream.Filter<? super Path> filter) throws ExecutionException, InterruptedException {
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |                                     ^
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | /tmp/0cd030e6-b653-4dd9-9285-b9bcccc51039/src/main/java/software/amazon/nio/spi/s3/S3FileSystemProvider.java:249: warning: no @param for dir
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |     protected DirectoryStream<Path> newDirectoryStream(S3AsyncClient s3Client, Path dir, DirectoryStream.Filter<? super Path> filter) throws ExecutionException, InterruptedException {
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |                                     ^
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | /tmp/0cd030e6-b653-4dd9-9285-b9bcccc51039/src/main/java/software/amazon/nio/spi/s3/S3FileSystemProvider.java:249: warning: no @param for filter
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |     protected DirectoryStream<Path> newDirectoryStream(S3AsyncClient s3Client, Path dir, DirectoryStream.Filter<? super Path> filter) throws ExecutionException, InterruptedException {
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |                                     ^
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | /tmp/0cd030e6-b653-4dd9-9285-b9bcccc51039/src/main/java/software/amazon/nio/spi/s3/S3FileSystemProvider.java:249: warning: no @return
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |     protected DirectoryStream<Path> newDirectoryStream(S3AsyncClient s3Client, Path dir, DirectoryStream.Filter<? super Path> filter) throws ExecutionException, InterruptedException {
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |                                     ^
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | /tmp/0cd030e6-b653-4dd9-9285-b9bcccc51039/src/main/java/software/amazon/nio/spi/s3/S3FileSystemProvider.java:249: warning: no @throws for java.util.concurrent.ExecutionException
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |     protected DirectoryStream<Path> newDirectoryStream(S3AsyncClient s3Client, Path dir, DirectoryStream.Filter<? super Path> filter) throws ExecutionException, InterruptedException {
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |                                     ^
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | /tmp/0cd030e6-b653-4dd9-9285-b9bcccc51039/src/main/java/software/amazon/nio/spi/s3/S3FileSystemProvider.java:249: warning: no @throws for java.lang.InterruptedException
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |     protected DirectoryStream<Path> newDirectoryStream(S3AsyncClient s3Client, Path dir, DirectoryStream.Filter<? super Path> filter) throws ExecutionException, InterruptedException {
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |                                     ^
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | /tmp/0cd030e6-b653-4dd9-9285-b9bcccc51039/src/main/java/software/amazon/nio/spi/s3/S3FileSystemProvider.java:675: warning: no @param for s3Client
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |     protected void checkAccess(S3AsyncClient s3Client, Path path, AccessMode... modes) throws IOException, ExecutionException, InterruptedException {
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |                    ^
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | /tmp/0cd030e6-b653-4dd9-9285-b9bcccc51039/src/main/java/software/amazon/nio/spi/s3/S3FileSystemProvider.java:675: warning: no @param for path
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |     protected void checkAccess(S3AsyncClient s3Client, Path path, AccessMode... modes) throws IOException, ExecutionException, InterruptedException {
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |                    ^
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | /tmp/0cd030e6-b653-4dd9-9285-b9bcccc51039/src/main/java/software/amazon/nio/spi/s3/S3FileSystemProvider.java:675: warning: no @param for modes
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |     protected void checkAccess(S3AsyncClient s3Client, Path path, AccessMode... modes) throws IOException, ExecutionException, InterruptedException {
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |                    ^
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | /tmp/0cd030e6-b653-4dd9-9285-b9bcccc51039/src/main/java/software/amazon/nio/spi/s3/S3FileSystemProvider.java:675: warning: no @throws for java.io.IOException
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |     protected void checkAccess(S3AsyncClient s3Client, Path path, AccessMode... modes) throws IOException, ExecutionException, InterruptedException {
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |                    ^
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | /tmp/0cd030e6-b653-4dd9-9285-b9bcccc51039/src/main/java/software/amazon/nio/spi/s3/S3FileSystemProvider.java:675: warning: no @throws for java.util.concurrent.ExecutionException
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |     protected void checkAccess(S3AsyncClient s3Client, Path path, AccessMode... modes) throws IOException, ExecutionException, InterruptedException {
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |                    ^
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | /tmp/0cd030e6-b653-4dd9-9285-b9bcccc51039/src/main/java/software/amazon/nio/spi/s3/S3FileSystemProvider.java:675: warning: no @throws for java.lang.InterruptedException
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |     protected void checkAccess(S3AsyncClient s3Client, Path path, AccessMode... modes) throws IOException, ExecutionException, InterruptedException {
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |                    ^
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | /tmp/0cd030e6-b653-4dd9-9285-b9bcccc51039/src/main/java/software/amazon/nio/spi/s3/S3ReadAheadByteChannel.java:66: warning: no @param for timeout
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |     public S3ReadAheadByteChannel(S3Path path, int maxFragmentSize, int maxNumberFragments, S3AsyncClient client, S3SeekableByteChannel delegator, Long timeout, TimeUnit timeUnit) throws IOException {
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |            ^
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | /tmp/0cd030e6-b653-4dd9-9285-b9bcccc51039/src/main/java/software/amazon/nio/spi/s3/S3ReadAheadByteChannel.java:66: warning: no @param for timeUnit
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |     public S3ReadAheadByteChannel(S3Path path, int maxFragmentSize, int maxNumberFragments, S3AsyncClient client, S3SeekableByteChannel delegator, Long timeout, TimeUnit timeUnit) throws IOException {
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |            ^
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | /tmp/0cd030e6-b653-4dd9-9285-b9bcccc51039/src/main/java/software/amazon/nio/spi/s3/S3SeekableByteChannel.java:48: warning: no @param for s3Path
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |     protected S3SeekableByteChannel(S3Path s3Path, S3AsyncClient s3Client, long startAt) throws IOException {
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |               ^
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | /tmp/0cd030e6-b653-4dd9-9285-b9bcccc51039/src/main/java/software/amazon/nio/spi/s3/S3SeekableByteChannel.java:48: warning: no @param for s3Client
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |     protected S3SeekableByteChannel(S3Path s3Path, S3AsyncClient s3Client, long startAt) throws IOException {
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |               ^
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | /tmp/0cd030e6-b653-4dd9-9285-b9bcccc51039/src/main/java/software/amazon/nio/spi/s3/S3SeekableByteChannel.java:48: warning: no @param for startAt
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |     protected S3SeekableByteChannel(S3Path s3Path, S3AsyncClient s3Client, long startAt) throws IOException {
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |               ^
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | /tmp/0cd030e6-b653-4dd9-9285-b9bcccc51039/src/main/java/software/amazon/nio/spi/s3/S3SeekableByteChannel.java:48: warning: no @throws for java.io.IOException
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |     protected S3SeekableByteChannel(S3Path s3Path, S3AsyncClient s3Client, long startAt) throws IOException {
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |               ^
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | /tmp/0cd030e6-b653-4dd9-9285-b9bcccc51039/src/main/java/software/amazon/nio/spi/s3/S3SeekableByteChannel.java:57: warning: no @param for s3Path
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |     protected S3SeekableByteChannel(S3Path s3Path, long startAt) throws IOException {
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |               ^
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | /tmp/0cd030e6-b653-4dd9-9285-b9bcccc51039/src/main/java/software/amazon/nio/spi/s3/S3SeekableByteChannel.java:57: warning: no @param for startAt
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |     protected S3SeekableByteChannel(S3Path s3Path, long startAt) throws IOException {
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |               ^
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | /tmp/0cd030e6-b653-4dd9-9285-b9bcccc51039/src/main/java/software/amazon/nio/spi/s3/S3SeekableByteChannel.java:57: warning: no @throws for java.io.IOException
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |     protected S3SeekableByteChannel(S3Path s3Path, long startAt) throws IOException {
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   |               ^
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | 27 warnings
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | 
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | > Task :javadocJar
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | > Task :sourcesJar
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | > Task :assemble
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | > Task :compileTestJava
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | > Task :processTestResources
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | > Task :testClasses
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | > Task :test
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | > Task :jacocoTestReport
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | > Task :check
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | > Task :build
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | 
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | BUILD SUCCESSFUL in 55s
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | 10 actionable tasks: 10 executed
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   ✅  Success - Main Execute Gradle build
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] ⭐ Run Post Setup Gradle
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   🐳  docker exec cmd=[node /var/run/act/actions/gradle-gradle-build-action@v2.4.2/dist/post/index.js] user= workdir=
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | In final post-action step, saving state and writing summary
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | Cache is disabled: will not save state for later builds.
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   | Writing job summary
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   ✅  Success - Post Setup Gradle
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] ⭐ Run Post Set up JDK
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build]   ✅  Success - Post Set up JDK
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] 🏁  Job succeeded
+[0bea91d3-7e45-46ae-8d4f-8fb2e3b798b1/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision 'ea1044d51bb4f61af05b6651539a719b7a03c529'

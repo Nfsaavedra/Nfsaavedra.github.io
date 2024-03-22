@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/java-continuous-integration.yml b/.github/workflows/java-continuous-integration.yml
+index 3a09313..1d72993 100644
+--- a/.github/workflows/java-continuous-integration.yml
++++ b/.github/workflows/java-continuous-integration.yml
+@@ -43,7 +43,7 @@ jobs:
+         run: mvn -B clean package
+       - name: Test cnes-report
+         env:
+-          SONARQUBE_VERSION: 8.9.1-community
++          SONARQUBE_VERSION: 8.9-community
+         run: |
+           version=$(cat pom.xml | grep "<version>.*</version>" | head -1 |awk -F'[><]' '{print $3}');
+           echo "Starting docker";

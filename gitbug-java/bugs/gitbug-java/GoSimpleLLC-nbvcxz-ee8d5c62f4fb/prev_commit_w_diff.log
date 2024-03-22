@@ -1,0 +1,290 @@
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] 🚀  Start image=gitbugactions:latest
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   🐳  docker pull image=gitbugactions:latest platform= username= forcePull=false
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   🐳  docker create image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   🐳  docker run image=gitbugactions:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/1c9a75b4-2007-484f-a945-d6781567f72b] user=0 workdir=
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] 🧪  Matrix: map[java-version:8]
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] ⭐ Run Main actions/checkout@v3
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   🐳  docker cp src=/tmp/1c9a75b4-2007-484f-a945-d6781567f72b/. dst=/tmp/1c9a75b4-2007-484f-a945-d6781567f72b
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/1c9a75b4-2007-484f-a945-d6781567f72b] user=0 workdir=
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   ✅  Success - Main actions/checkout@v3
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] ⭐ Run Main actions/setup-java@v3
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   🐳  docker cp src=/tmp/act-cache/27c48a5b-2ef1-42b5-adfd-cea03259e653/act/actions-setup-java@v3/ dst=/var/run/act/actions/actions-setup-java@v3/
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-java@v3/] user=0 workdir=
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/setup/index.js] user= workdir=
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   ❓  ::group::Installed distributions
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   💬  ::debug::isExplicit: 11.0.20-1
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   💬  ::debug::explicit? true
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   💬  ::debug::isExplicit: 17.0.8-1
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   💬  ::debug::explicit? true
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   💬  ::debug::isExplicit: 21.0.0-35
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   💬  ::debug::explicit? true
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   💬  ::debug::isExplicit: 8.0.382-5
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   💬  ::debug::explicit? true
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Resolved Java 8.0.382+5 from tool-cache
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Setting Java 8.0.382+5 as the default
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Creating toolchains.xml for JDK version 8 from temurin
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Writing to /home/runner/.m2/toolchains.xml
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Java configuration:
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   |   Distribution: temurin
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   |   Version: 8.0.382+5
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   |   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.382-5/x64
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   ❓  ::endgroup::
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   ❓ add-matcher /run/act/actions/actions-setup-java@v3/.github/java.json
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Creating settings.xml with server-id: github
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Writing to /home/runner/.m2/settings.xml
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   ✅  Success - Main actions/setup-java@v3
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   ⚙  ::set-env:: JAVA_HOME=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.382-5/x64
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   ⚙  ::set-env:: JAVA_HOME_8_X64=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.382-5/x64
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   ⚙  ::set-output:: distribution=Temurin-Hotspot
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   ⚙  ::set-output:: path=/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.382-5/x64
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   ⚙  ::set-output:: version=8.0.382+5
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   ⚙  ::add-path:: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/8.0.382-5/x64/bin
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] ⭐ Run Main mvn -B install --no-transfer-progress
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] Scanning for projects...
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [WARNING] 
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [WARNING] Some problems were encountered while building the effective model for me.gosimple:nbvcxz:jar:1.5.1
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [WARNING] 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin org.apache.maven.plugins:maven-jar-plugin @ line 129, column 21
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [WARNING] 
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [WARNING] 
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [WARNING] 
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] Inspecting build with total of 1 modules...
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] Not installing Nexus Staging features:
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO]  * Preexisting staging related goal bindings found in 1 modules.
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [WARNING] The project me.gosimple:nbvcxz:jar:1.5.1 uses prerequisites which is only intended for maven-plugin projects but not for non maven-plugin projects. For such purposes you should use the maven-enforcer-plugin. See https://maven.apache.org/enforcer/enforcer-rules/requireMavenVersion.html
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] 
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] -------------------------< me.gosimple:nbvcxz >-------------------------
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] Building nbvcxz 1.5.1
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO]   from pom.xml
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] --------------------------------[ jar ]---------------------------------
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] 
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] --- maven-resources-plugin:3.1.0:resources (default-resources) @ nbvcxz ---
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] Copying 36 resources
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] 
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ nbvcxz ---
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] Changes detected - recompiling the module!
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] Compiling 34 source files to /tmp/1c9a75b4-2007-484f-a945-d6781567f72b/target/classes
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] /tmp/1c9a75b4-2007-484f-a945-d6781567f72b/src/main/java/me/gosimple/nbvcxz/matching/DictionaryMatcher.java: Some input files use unchecked or unsafe operations.
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] /tmp/1c9a75b4-2007-484f-a945-d6781567f72b/src/main/java/me/gosimple/nbvcxz/matching/DictionaryMatcher.java: Recompile with -Xlint:unchecked for details.
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] 
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] --- maven-resources-plugin:3.1.0:testResources (default-testResources) @ nbvcxz ---
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] skip non existing resourceDirectory /tmp/1c9a75b4-2007-484f-a945-d6781567f72b/src/test/resources
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] 
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ nbvcxz ---
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] Changes detected - recompiling the module!
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] Compiling 20 source files to /tmp/1c9a75b4-2007-484f-a945-d6781567f72b/target/test-classes
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] /tmp/1c9a75b4-2007-484f-a945-d6781567f72b/src/test/java/me/gosimple/nbvcxz/matching/match/BaseMatchTest.java: Some input files use or override a deprecated API.
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] /tmp/1c9a75b4-2007-484f-a945-d6781567f72b/src/test/java/me/gosimple/nbvcxz/matching/match/BaseMatchTest.java: Recompile with -Xlint:deprecation for details.
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] 
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ nbvcxz ---
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] Surefire report directory: /tmp/1c9a75b4-2007-484f-a945-d6781567f72b/target/surefire-reports
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | -------------------------------------------------------
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   |  T E S T S
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | -------------------------------------------------------
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Running me.gosimple.nbvcxz.NbvcxzTest
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Tests run: 4, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 4.074 sec <<< FAILURE!
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | testEstimate(me.gosimple.nbvcxz.NbvcxzTest)  Time elapsed: 2.939 sec  <<< FAILURE!
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | java.lang.AssertionError: shortened_password_shortened_password_shortened_password_shortened_password_shortened_password_shortened_password_shortened_password_shortened_password_shortened_password_shortened_password_shortened_password_shortened_password expected:<360.5676147181065> but was:<132.95506049872384>
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.Assert.fail(Assert.java:89)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.Assert.failNotEquals(Assert.java:835)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.Assert.assertEquals(Assert.java:555)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at me.gosimple.nbvcxz.NbvcxzTest.testEstimate(NbvcxzTest.java:125)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at java.lang.reflect.Method.invoke(Method.java:498)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at java.lang.reflect.Method.invoke(Method.java:498)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | testEstimateConcurrently(me.gosimple.nbvcxz.NbvcxzTest)  Time elapsed: 0.818 sec  <<< FAILURE!
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | java.lang.AssertionError: shortened_password_shortened_password_shortened_password_shortened_password_shortened_password_shortened_password_shortened_password_shortened_password_shortened_password_shortened_password_shortened_password_shortened_password expected:<360.5676147181065> but was:<132.95506049872384>
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.Assert.fail(Assert.java:89)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.Assert.failNotEquals(Assert.java:835)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.Assert.assertEquals(Assert.java:555)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at me.gosimple.nbvcxz.NbvcxzTest.testEstimateConcurrently(NbvcxzTest.java:182)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at java.lang.reflect.Method.invoke(Method.java:498)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at java.lang.reflect.Method.invoke(Method.java:498)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Running me.gosimple.nbvcxz.resources.DictionaryUtilTest
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Test of loadFile method, of class DictionaryUtil
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.221 sec
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Running me.gosimple.nbvcxz.resources.AdjacencyGraphUtilTest
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Test of calcAverageDegree method, of class AdjacencyGraphUtil
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Test of neighborsNumber method, of class AdjacencyGraphUtil
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Running me.gosimple.nbvcxz.resources.CharacterCaseUtilTest
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 sec
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Running me.gosimple.nbvcxz.scoring.TimeEstimateTest
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.134 sec
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Running me.gosimple.nbvcxz.scoring.ScoreTest
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.183 sec
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Running me.gosimple.nbvcxz.scoring.BruteForceUtilTest
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Test of calculateBrutForceCardinality method, of class BruteForceUtil
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Running me.gosimple.nbvcxz.matching.RepeatMatcherTest
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Running me.gosimple.nbvcxz.matching.YearMatcherTest
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Running me.gosimple.nbvcxz.matching.DateMatcherTest
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Running me.gosimple.nbvcxz.matching.SequenceMatcherTest
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Running me.gosimple.nbvcxz.matching.SpacialMatcherTest
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Running me.gosimple.nbvcxz.matching.DictionaryMatcherTest
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Test of dictionaryMatch method (without leet value), of class DictionaryMatcher
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Test of dictionaryMatch method (with LD calculation), of class DictionaryMatcher
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Test of dictionaryMatch method (with leet value), of class DictionaryMatcher
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.112 sec
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Running me.gosimple.nbvcxz.matching.match.RepeatMatchTest
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Test of guessEntropy method, of class RepeatMatch
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Running me.gosimple.nbvcxz.matching.match.SpacialMatchTest
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Test of guessEntropy method, of class SpacialMatch
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Running me.gosimple.nbvcxz.matching.match.YearMatchTest
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Test of guessEntropy method, of class YearMatch
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Running me.gosimple.nbvcxz.matching.match.DateMatchTest
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Test of guessEntropy method, of class DateMatch
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Running me.gosimple.nbvcxz.matching.match.SequenceMatchTest
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Test of guessEntropy method, of class SequenceMatch
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Running me.gosimple.nbvcxz.matching.match.BaseMatchTest
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Test of getToken method, of class BaseMatch
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Test of nCk method, of class BaseMatch.
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Test of log2 method, of class BaseMatch
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Test of the constructor of class BaseMatch
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Running me.gosimple.nbvcxz.matching.match.DictionaryMatchTest
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Test of guessEntropy method, of class DictionaryMatch
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Results :
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Failed tests:   testEstimate(me.gosimple.nbvcxz.NbvcxzTest): shortened_password_shortened_password_shortened_password_shortened_password_shortened_password_shortened_password_shortened_password_shortened_password_shortened_password_shortened_password_shortened_password_shortened_password expected:<360.5676147181065> but was:<132.95506049872384>
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   |   testEstimateConcurrently(me.gosimple.nbvcxz.NbvcxzTest): shortened_password_shortened_password_shortened_password_shortened_password_shortened_password_shortened_password_shortened_password_shortened_password_shortened_password_shortened_password_shortened_password_shortened_password expected:<360.5676147181065> but was:<132.95506049872384>
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | Tests run: 30, Failures: 2, Errors: 0, Skipped: 0
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | 
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] ------------------------------------------------------------------------
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] BUILD FAILURE
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] ------------------------------------------------------------------------
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] Total time:  23.752 s
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] Finished at: 2023-11-23T23:35:04Z
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [INFO] ------------------------------------------------------------------------
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project nbvcxz: There are test failures.
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [ERROR] 
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [ERROR] Please refer to /tmp/1c9a75b4-2007-484f-a945-d6781567f72b/target/surefire-reports for the individual test results.
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [ERROR] -> [Help 1]
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [ERROR] 
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [ERROR] 
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [ERROR] For more information about the errors and possible solutions, please read the following articles:
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   | [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   ❌  Failure - Main mvn -B install --no-transfer-progress
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] exitcode '1': failure
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] ⭐ Run Post actions/setup-java@v3
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-java@v3/dist/cleanup/index.js] user= workdir=
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build]   ✅  Success - Post actions/setup-java@v3
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] 🏁  Job failed
+[85f87032-a4dd-4b18-958d-53f1bba998e3/build] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '122c97d9eb71575bd12cf5c22e2ccd70ce826e62'

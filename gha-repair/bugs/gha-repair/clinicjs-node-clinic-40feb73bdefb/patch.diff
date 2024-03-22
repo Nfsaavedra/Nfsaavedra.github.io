@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/notify-release.yml b/.github/workflows/notify-release.yml
+index 5a73de8..2948112 100644
+--- a/.github/workflows/notify-release.yml
++++ b/.github/workflows/notify-release.yml
+@@ -10,6 +10,6 @@ jobs:
+     runs-on: ubuntu-latest
+     steps:
+       - name: Notify release
+-        uses: nearform/github-action-notify-release@v1.2.2
++        uses: nearform/github-action-notify-release@v1.2.7
+         with:
+           github-token: ${{ secrets.GITHUB_TOKEN }}

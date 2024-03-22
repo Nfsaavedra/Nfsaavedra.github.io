@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/app_build_and_test.yml b/.github/workflows/app_build_and_test.yml
+index 486b73c..0a3a4db 100644
+--- a/.github/workflows/app_build_and_test.yml
++++ b/.github/workflows/app_build_and_test.yml
+@@ -32,8 +32,8 @@ jobs:
+           java-version: 17
+       - name: Validate Gradle wrapper
+         uses: gradle/wrapper-validation-action@e6e38bacfdf1a337459f332974bb2327a31aaf4b
+-      - name: Run unit tests
+-        run: ./gradlew test --stacktrace
++      - name: Run all checks
++        run: ./gradlew check --stacktrace
+ 
+   ui-test:
+     runs-on: macos-latest

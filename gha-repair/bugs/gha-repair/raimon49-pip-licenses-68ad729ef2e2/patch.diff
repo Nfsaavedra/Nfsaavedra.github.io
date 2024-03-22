@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/python-package.yml b/.github/workflows/python-package.yml
+index db3a915..9281e66 100644
+--- a/.github/workflows/python-package.yml
++++ b/.github/workflows/python-package.yml
+@@ -12,7 +12,7 @@ jobs:
+     runs-on: ubuntu-latest
+     strategy:
+       matrix:
+-        python-version: ['3.7', '3.8', '3.9', '3.10']
++        python-version: ['3.7', '3.8', '3.9', '3.10', '3.11']
+         pip-version: ['', '==21.2.4']
+ 
+     steps:

@@ -1,0 +1,50 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 7b9efa2..896a9f7 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -88,6 +88,7 @@ jobs:
+         if: ${{ (matrix.ext == 'tar.gz') || (matrix.ext == 'rpm') || (matrix.ext == 'deb') }}
+         run: |
+           _TAR=hwatch-${{ steps.package_version.outputs.version }}.${{ matrix.target }}.tar.gz
++          mkdir -p package/bin
+           mv target/${{ matrix.target }}/release/hwatch package/bin
+           mkdir -p package/man
+           cp man/hwatch.1 package/man
+diff --git a/completion/_hwatch b/completion/_hwatch
+deleted file mode 100644
+index d899144..0000000
+--- a/completion/_hwatch
++++ /dev/null
+@@ -1,10 +0,0 @@
+-#compdef hwatch
+-_hwatch() {
+-    _arguments -s \
+-        '(-h --help)'{-h,--help}'[show help]' \
+-        '(-V --version)'{-V,--version}'[show version]' \
+-        '(-c --color)'{-c,--color}'[interpret ANSI color and style sequences]' \
+-        '(-d --differences)'{-d,--differences}'[highlight changes between updates]' \
+-        '(-l --logfile)'{-l,--logfile}'+[logging file]:include file:_files' \
+-        '(-n --interval)'{-n,--interval}'[seconds to wait between updates]:num:_values num 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20' \
+-}
+diff --git a/completion/bash/hwatch-completion.bash b/completion/bash/hwatch-completion.bash
+new file mode 100644
+index 0000000..e69de29
+diff --git a/completion/hwatch-completion.bash b/completion/hwatch-completion.bash
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/completion/zsh/_hwatch b/completion/zsh/_hwatch
+new file mode 100644
+index 0000000..d899144
+--- /dev/null
++++ b/completion/zsh/_hwatch
+@@ -0,0 +1,10 @@
++#compdef hwatch
++_hwatch() {
++    _arguments -s \
++        '(-h --help)'{-h,--help}'[show help]' \
++        '(-V --version)'{-V,--version}'[show version]' \
++        '(-c --color)'{-c,--color}'[interpret ANSI color and style sequences]' \
++        '(-d --differences)'{-d,--differences}'[highlight changes between updates]' \
++        '(-l --logfile)'{-l,--logfile}'+[logging file]:include file:_files' \
++        '(-n --interval)'{-n,--interval}'[seconds to wait between updates]:num:_values num 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20' \
++}

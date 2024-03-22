@@ -1,0 +1,33 @@
+diff --git a/.github/workflows/npmpublish.yml b/.github/workflows/npmpublish.yml
+index 2c5dd87..59aade4 100644
+--- a/.github/workflows/npmpublish.yml
++++ b/.github/workflows/npmpublish.yml
+@@ -5,18 +5,7 @@ on:
+     types: [created]
+ 
+ jobs:
+-  build:
+-    runs-on: ubuntu-latest
+-    steps:
+-      - uses: actions/checkout@v1
+-      - uses: actions/setup-node@v1
+-        with:
+-          node-version: 8
+-      - run: npm install
+-      - run: npm test
+-
+   publish-npm:
+-    needs: build
+     runs-on: ubuntu-latest
+     steps:
+       - uses: actions/checkout@v1
+@@ -24,7 +13,8 @@ jobs:
+         with:
+           node-version: 8
+           registry-url: https://registry.npmjs.org/
+-      - run: npm install
++      - run: npm install -g yarn
++      - run: yarn
+       - run: npm publish
+         env:
+           NODE_AUTH_TOKEN: ${{secrets.npm_token}}

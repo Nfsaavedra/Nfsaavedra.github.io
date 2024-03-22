@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/stale.yml b/.github/workflows/stale.yml
+index d0aae27..5cc3129 100644
+--- a/.github/workflows/stale.yml
++++ b/.github/workflows/stale.yml
+@@ -19,7 +19,7 @@ jobs:
+       # - No PRs marked as no-stale or pinned
+       # - No issues marked as no-stale, help-wanted or pinned
+       - name: 90 days stale issues & PRs policy
+-        uses: actions/stale@v5
++        uses: actions/stale@v6.0.0
+         with:
+           repo-token: ${{ secrets.GITHUB_TOKEN }}
+           days-before-stale: 90

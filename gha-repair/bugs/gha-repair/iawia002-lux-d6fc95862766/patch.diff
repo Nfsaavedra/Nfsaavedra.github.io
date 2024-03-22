@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index f64eed8..f98f9be 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -7,7 +7,7 @@ jobs:
+     strategy:
+       matrix:
+         go: ["1.16"]
+-        os: [ubuntu-latest, macOS-latest, windows-latest]
++        os: [ubuntu-latest, macOS-latest]
+     name: Go ${{ matrix.go }} in ${{ matrix.os }}
+     steps:
+     - uses: actions/checkout@v2

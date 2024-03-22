@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/3.2.yml b/.github/workflows/3.2.yml
+index 5cd913c..98b57ba 100644
+--- a/.github/workflows/3.2.yml
++++ b/.github/workflows/3.2.yml
+@@ -1,12 +1,10 @@
+ name: 3.2 branch Windows snapshot
+ 
+ on:
+-    - push:
++    push:
+         branches:
+-            - master
++            - 3.2
+ 
+-    - repository_dispatch:
+-        types: [build_win64_snapshot]
+ jobs:
+     build:
+         runs-on: windows-2019

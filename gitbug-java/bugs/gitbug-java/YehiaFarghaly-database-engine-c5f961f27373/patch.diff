@@ -1,0 +1,102 @@
+diff --git a/src/main/java/app/DBApp.java b/src/main/java/app/DBApp.java
+index 9094d5e..96beffc 100644
+--- a/src/main/java/app/DBApp.java
++++ b/src/main/java/app/DBApp.java
+@@ -178,22 +178,39 @@ public class DBApp implements IDatabase {
+ 			Validator.validateTable(strTableName, myTables);
+ 			Table table = Serializer.deserializeTable(strTableName);
+ 			if (action == Action.INSERT) {
+-				Validator.validateInsertionInput(table, htblColNameValue, myTables);
+-				table.insertTuple(htblColNameValue);
++				takeInsertAction(table, htblColNameValue);
+ 			} else if (action == Action.DELETE) {
+-				Validator.validateDeletionInput(table, htblColNameValue, myTables);
+-				table.deleteTuples(htblColNameValue);
++				takeDeleteAction(table, htblColNameValue);
+ 			} else {
+-				castClusteringKeyType(table);
+-				htblColNameValue.put(table.getPKColumn(), clusteringKey);
+-				Validator.validateUpdateInput(table, htblColNameValue, myTables);
+-				table.updateRecordsInTaple(clusteringKey, htblColNameValue);
++				takeUpdateAction(table, htblColNameValue);
+ 			}
+ 			Serializer.serializeTable(table);
+ 		} catch (CsvValidationException | ClassNotFoundException | IOException | ParseException e1) {
++			throw new DBAppException();
+ 		}
+ 	}
+ 
++	private void takeInsertAction(Table table, Hashtable<String, Object> htblColNameValue)
++			throws ClassNotFoundException, DBAppException, IOException, ParseException, CsvValidationException {
++		Validator.validateInsertionInput(table, htblColNameValue, myTables);
++		table.insertTuple(htblColNameValue);
++	}
++
++	private void takeDeleteAction(Table table, Hashtable<String, Object> htblColNameValue)
++			throws ClassNotFoundException, DBAppException, IOException, ParseException, CsvValidationException {
++		Validator.validateDeletionInput(table, htblColNameValue, myTables);
++		table.deleteTuples(htblColNameValue);
++	}
++
++	private void takeUpdateAction(Table table, Hashtable<String, Object> htblColNameValue)
++			throws DBAppException, CsvValidationException, ClassNotFoundException, IOException, ParseException {
++		castClusteringKeyType(table);
++		Validator.checkNoClusteringKey(htblColNameValue, table);
++		htblColNameValue.put(table.getPKColumn(), clusteringKey);
++		Validator.validateUpdateInput(table, htblColNameValue, myTables);
++		table.updateRecordsInTaple(clusteringKey, htblColNameValue);
++	}
++
+ 	private void castClusteringKeyType(Table table) {
+ 		clusteringKey = TypeCaster.castClusteringKey(table, clusteringKeyValue);
+ 	}
+diff --git a/src/main/java/util/validation/Validator.java b/src/main/java/util/validation/Validator.java
+index 2330f9f..450343c 100644
+--- a/src/main/java/util/validation/Validator.java
++++ b/src/main/java/util/validation/Validator.java
+@@ -34,8 +34,8 @@ public class Validator {
+ 		} else if (!validDataTypes(htblColNameType)) {
+ 			throw new DBAppException(Constants.ERROR_MESSAGE_DATATYPE);
+ 
+-		} else if (!validMinAndMax(htblColNameType, htblColNameMin, htblColNameMax)
+-				|| !sameColMinMax(htblColNameMin, htblColNameMax)) {
++		} else if (!sameCol(htblColNameMin, htblColNameMax, htblColNameType)
++				|| !validMinAndMax(htblColNameType, htblColNameMin, htblColNameMax)) {
+ 			throw new DBAppException(Constants.ERROR_MESSAGE_MIN_OR_MAX_NOT_VALID);
+ 
+ 		}
+@@ -86,9 +86,10 @@ public class Validator {
+ 		return true;
+ 	}
+ 
+-	private static boolean sameColMinMax(Hashtable<String, String> htblColNameMin,
+-			Hashtable<String, String> htblColNameMax) {
+-		return htblColNameMin.keySet().equals(htblColNameMax.keySet());
++	private static boolean sameCol(Hashtable<String, String> htblColNameMin, Hashtable<String, String> htblColNameMax,
++			Hashtable<String, String> htblColNameType) {
++		return htblColNameMin.keySet().equals(htblColNameMax.keySet())
++				&& htblColNameMin.keySet().equals(htblColNameType.keySet());
+ 
+ 	}
+ 
+@@ -113,6 +114,13 @@ public class Validator {
+ 			throw new DBAppException(Constants.ERROR_MESSAGE_TUPLE_DATA);
+ 	}
+ 
++	public static void checkNoClusteringKey(Hashtable<String, Object> htblColNameValue, Table table)
++			throws DBAppException {
++		if (htblColNameValue.containsKey(table.getPKColumn()))
++			throw new DBAppException(Constants.ERROR_MESSAGE_TUPLE_DATA);
++
++	}
++
+ 	private static boolean isValidTable(String tableName, HashSet<String> myTables) {
+ 		return myTables.contains(tableName);
+ 	}
+@@ -292,5 +300,4 @@ public class Validator {
+ 	private static boolean isFirstGreaterThanSecond(Object comp1, Object comp2) {
+ 		return Compare.compare(comp1, comp2) > 0;
+ 	}
+-
+ }
+\ No newline at end of file

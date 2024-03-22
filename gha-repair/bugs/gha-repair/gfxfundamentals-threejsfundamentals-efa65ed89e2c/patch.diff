@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/deploy-to-gh-pages.yml b/.github/workflows/deploy-to-gh-pages.yml
+index 32e2ec8..6fe4245 100644
+--- a/.github/workflows/deploy-to-gh-pages.yml
++++ b/.github/workflows/deploy-to-gh-pages.yml
+@@ -3,6 +3,7 @@ on:
+   push:
+     branches:
+       - master
++  pull_request:
+ jobs:
+   build-and-deploy:
+     runs-on: ubuntu-latest
+@@ -26,6 +27,7 @@ jobs:
+           LESSON_BUILDER_ENV: production
+ 
+       - name: Deploy 📦
++        if: ${{ github.event_name === 'push' }}
+         uses: JamesIves/github-pages-deploy-action@3.6.2
+         with:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

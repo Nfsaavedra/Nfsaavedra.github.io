@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 1687a25..b34e633 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -55,6 +55,9 @@ jobs:
+             version: ${{ env.RELEASE_VERSION }}
+           env:
+             DRY_RUN: ${{ github.event.inputs.dry_run }}
++        # Wait until the builds start. Craft should do this automatically
++        # but it is broken now.
++        - run: sleep 10
+         - uses: getsentry/craft@master
+           with:
+             action: publish

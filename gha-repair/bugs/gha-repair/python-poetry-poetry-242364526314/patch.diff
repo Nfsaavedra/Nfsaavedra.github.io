@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/skip.yml b/.github/workflows/skip.yml
+index 44a577e..5f61eaf 100644
+--- a/.github/workflows/skip.yml
++++ b/.github/workflows/skip.yml
+@@ -25,7 +25,7 @@ jobs:
+     runs-on: ubuntu-latest
+     strategy:
+       matrix:
+-        os: [Ubuntu, MacOS, Windows]
++        os: [Ubuntu, macOS, Windows]
+         python-version: ["3.6", "3.7", "3.8", "3.9", "3.10"]
+     steps:
+       - run: exit 0

@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/check-release-ready.yml b/.github/workflows/check-release-ready.yml
+index e6ed43e..c7021de 100644
+--- a/.github/workflows/check-release-ready.yml
++++ b/.github/workflows/check-release-ready.yml
+@@ -1,6 +1,14 @@
+ name: Release readiness
+ 
+ on:
++  push:
++    branches: [ master ]
++    paths:
++      - '.github/workflows/check-release-ready.yml'
++  pull_request:
++    branches: [ master ]
++    paths:
++      - '.github/workflows/check-release-ready.yml'
+   workflow_dispatch:
+ 
+ jobs:

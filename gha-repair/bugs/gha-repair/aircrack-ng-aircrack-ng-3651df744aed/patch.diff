@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/docker.yml b/.github/workflows/docker.yml
+index 6121981..b4597a0 100644
+--- a/.github/workflows/docker.yml
++++ b/.github/workflows/docker.yml
+@@ -46,11 +46,15 @@ jobs:
+         uses: hadolint/hadolint-action@v3.0.0
+         with:
+           dockerfile: Dockerfile
++          verbose: true
++          failure-threshold: error
+       - 
+         name: Lint Release Dockerfile
+         uses: hadolint/hadolint-action@v3.0.0
+         with:
+           dockerfile: './Dockerfile.release'
++          verbose: true
++          failure-threshold: error
+       -
+         name: Shellcheck package install script
+         uses: sudo-bot/action-shellcheck@latest

@@ -1,0 +1,21 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 9f2bfa9..5bc42ce 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -192,7 +192,7 @@ jobs:
+     runs-on: ubuntu-latest
+     strategy:
+       matrix:
+-        java: [ '11', '15' ]
++        java: [ '11', '16' ]
+     steps:
+     - uses: actions/checkout@v2
+     - name: Set up Ruby
+@@ -204,6 +204,7 @@ jobs:
+       uses: actions/setup-java@v2
+       with:
+         java-version: ${{ matrix.java }}
++        distribution: adopt
+     - uses: actions/cache@v1
+       with:
+         path: vendor/gems

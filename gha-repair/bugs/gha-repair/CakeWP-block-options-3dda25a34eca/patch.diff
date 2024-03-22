@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/support-check.yml b/.github/workflows/support-check.yml
+index a03d33f..9c3d5ec 100644
+--- a/.github/workflows/support-check.yml
++++ b/.github/workflows/support-check.yml
+@@ -20,5 +20,5 @@ jobs:
+         with:
+           plugin-slug: block-options
+           github-token: ${{ secrets.GITHUB_TOKEN }}
+-          random-assignees: farhan-shafi, muneebahmed0346
++          random-assignees: muneebahmed0346
+           repo-name: block-options

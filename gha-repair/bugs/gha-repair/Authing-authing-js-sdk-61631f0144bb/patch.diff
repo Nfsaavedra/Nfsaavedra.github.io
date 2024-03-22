@@ -1,0 +1,70 @@
+diff --git a/.github/workflows/publish.yml b/.github/workflows/publish.yml
+index 8cc562d..868032b 100644
+--- a/.github/workflows/publish.yml
++++ b/.github/workflows/publish.yml
+@@ -29,13 +29,18 @@ jobs:
+         with:
+           node-version: 12
+           registry-url: https://registry.npmjs.org/
++          
++      - name: before scripts
++        run: |
++          echo "Current branch: ${{ github.ref_name }}"
++          echo "Current publish version: ${{ github.event.inputs.version }}"
++          echo "Current user.name: ${{ github.event.inputs.name }}"
++          echo "Current user.email: ${{ github.event.inputs.email }}"
+ 
+-      - name: get version from package.json
+-        id: version
+-        uses: ashley-taylor/read-json-property-action@v1.0
+-        with:
+-          path: ./package.json
+-          property: version
++      - name: set git config
++        run: |
++          git config --global user.email ${{ github.event.inputs.email }}
++          git config --global user.name ${{ github.event.inputs.name }}
+ 
+       - name: before scripts
+         run: |
+@@ -68,7 +73,7 @@ jobs:
+         if: ${{ github.ref_name == 'master' }}
+         run: |
+           echo "上传打包到 CDN"
+-          echo "VERSION: ${{ steps.version.outputs.value }}"
++          echo "VERSION: ${{ github.event.inputs.version }}"
+           ossutil cp -f -r build oss://$CDN_OSS_PROD/packages/authing-js-sdk/$VERESION/
+         env:
+           VERESION: ${{ steps.version.outputs.value }}
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+new file mode 100644
+index 0000000..aa9422d
+--- /dev/null
++++ b/.github/workflows/test.yml
+@@ -0,0 +1,26 @@
++# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
++# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
++
++name: test
++
++on: [push]
++        
++jobs:
++
++  readyGo:
++
++    runs-on: ubuntu-latest
++      
++    steps:
++
++      - uses: actions/checkout@v2
++      - uses: actions/setup-node@v2
++        with:
++          node-version: 12
++          registry-url: https://registry.npmjs.org/
++          
++      - name: run test
++        run: |
++          npm install yarn -g
++          yarn
++          npm run build

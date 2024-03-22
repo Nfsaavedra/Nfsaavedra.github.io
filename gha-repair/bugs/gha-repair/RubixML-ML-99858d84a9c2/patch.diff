@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 3b4dc23..b992d28 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -35,5 +35,5 @@ jobs:
+       - name: Unit Tests
+         run: composer test
+ 
+-      - name: Coding Style
++      - name: Check Coding Style
+         run: composer check

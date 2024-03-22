@@ -1,0 +1,23 @@
+diff --git a/.github/workflows/win_release.yml b/.github/workflows/win_release.yml
+index 25e9b43..b06c529 100644
+--- a/.github/workflows/win_release.yml
++++ b/.github/workflows/win_release.yml
+@@ -88,12 +88,16 @@ jobs:
+             - name: Prepare output dir
+               shell: bash
+               run: mkdir output output/build output/build/Plugins
++
++            - name: Compile SQLiteStudio3 0
++              working-directory: output/build
++              run: |
++                pwd
++                ls -l ${{ env.Qt5_Dir }}/bin
+             
+             - name: Compile SQLiteStudio3
+               working-directory: output/build
+               run: |
+-                pwd
+-                la -l ${{ env.Qt5_Dir }}/bin
+                 qmake.exe CONFIG+=portable ..\..\SQLiteStudio3
+                 mingw32-make.exe -j 2
+             

@@ -1,0 +1,18 @@
+diff --git a/.github/workflows/tests.yml b/.github/workflows/tests.yml
+index cf15a05..a085165 100644
+--- a/.github/workflows/tests.yml
++++ b/.github/workflows/tests.yml
+@@ -46,13 +46,6 @@ jobs:
+           - '3.9'
+           - '3.10'
+           - '3.11'
+-          - 'pypy-3.8'
+-          - 'pypy-3.9'
+-        exclude:
+-          - os: 'windows-latest'
+-            python: 'pypy-3.8'
+-          - os: 'windows-latest'
+-            python: 'pypy-3.9'
+     steps:
+       - name: Checkout
+         uses: actions/checkout@v3

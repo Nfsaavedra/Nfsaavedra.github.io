@@ -1,0 +1,24 @@
+diff --git a/.github/workflows/3.2.yml b/.github/workflows/3.2.yml
+index 0d5c8b2..c33ec10 100644
+--- a/.github/workflows/3.2.yml
++++ b/.github/workflows/3.2.yml
+@@ -5,6 +5,9 @@ on:
+         branches:
+             - 3.2
+ 
++    repository_dispatch:
++        types: [build_win64_snapshot]
++
+ jobs:
+     build:
+         runs-on: windows-2019
+@@ -38,3 +41,9 @@ jobs:
+             
+             - name: Decompress dependencies
+               run: 7z x win64_deps.zip
++
++            - name: Debug tree
++              run: tree
++              
++            - name: QMake
++              run: qmake

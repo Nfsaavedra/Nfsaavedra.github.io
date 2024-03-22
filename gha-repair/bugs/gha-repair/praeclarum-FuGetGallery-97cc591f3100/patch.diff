@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/deploy.yml b/.github/workflows/deploy.yml
+index 43b6549..491f0a7 100644
+--- a/.github/workflows/deploy.yml
++++ b/.github/workflows/deploy.yml
+@@ -3,7 +3,7 @@ name: Deploy to Azure Web App
+ on:
+   push:
+     branches:
+-      - master
++      - deployed
+ 
+ env:
+   AZURE_WEBAPP_NAME: fuget

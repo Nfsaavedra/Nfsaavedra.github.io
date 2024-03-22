@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/traccar/protocol/Minifinder2ProtocolDecoder.java b/src/main/java/org/traccar/protocol/Minifinder2ProtocolDecoder.java
+index f8b0c34..cd8d8e0 100644
+--- a/src/main/java/org/traccar/protocol/Minifinder2ProtocolDecoder.java
++++ b/src/main/java/org/traccar/protocol/Minifinder2ProtocolDecoder.java
+@@ -151,7 +151,7 @@ public class Minifinder2ProtocolDecoder extends BaseProtocolDecoder {
+             sendResponse(channel, remoteAddress, index, type, buf);
+         }
+ 
+-        if (type == MSG_DATA) {
++        if (type == MSG_DATA || type == MSG_SERVICES) {
+ 
+             List<Position> positions = new LinkedList<>();
+             Set<Integer> keys = new HashSet<>();

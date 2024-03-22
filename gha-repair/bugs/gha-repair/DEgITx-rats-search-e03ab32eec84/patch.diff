@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 51e0719..ef330c1 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -33,7 +33,7 @@ jobs:
+       - name: Setup xvfb (Linux)
+         if: runner.os == 'Linux'
+         run: |
+-          sudo apt-get install -y xvfb
++          sudo apt-get install -y xvfb g++-multilib
+           sudo /usr/bin/Xvfb $DISPLAY -screen 0 1280x1024x24 &
+       - uses: actions/checkout@v2
+       - name: Setup node

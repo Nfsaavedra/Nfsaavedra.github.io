@@ -1,0 +1,28 @@
+diff --git a/.github/workflows/rust.yml b/.github/workflows/rust.yml
+index e2518bb..9033c05 100644
+--- a/.github/workflows/rust.yml
++++ b/.github/workflows/rust.yml
+@@ -124,6 +124,23 @@ jobs:
+           command: audit
+           args: ''
+ 
++  miri:
++    name: Miri
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v3
++      - uses: actions-rs/toolchain@v1
++        with:
++          profile: minimal
++          toolchain: nightly
++          override: true
++          components: miri
++      - name: Clippy (default features)
++        uses: actions-rs/cargo@v1
++        with:
++          command: miri
++          args: test --lib --workspace
++
+   clippy:
+     name: Clippy
+     runs-on: ubuntu-latest

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index cfe4541..65ee2d7 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -32,6 +32,8 @@ jobs:
+           go test -v -race -count=1 ./...
+   goreleaser:
+     runs-on: ubuntu-latest
++    env:
++      DOCKER_CLI_EXPERIMENTAL: "enabled"
+     steps:
+       -
+         name: Checkout

@@ -1,0 +1,22 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 8459a54..38f91ae 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -23,7 +23,7 @@ concurrency:
+ 
+ jobs:
+   tests:
+-    name: ${{ matrix.os }} / ${{ matrix.python-version }} ${{ matrix.suffix }}
++    name: ${{ matrix.os }} / ${{ matrix.python-version }}
+     runs-on: ${{ matrix.image }}
+     strategy:
+       matrix:
+@@ -54,7 +54,7 @@ jobs:
+ 
+       - name: Bootstrap poetry
+         run: |
+-          curl -sL https://install.python-poetry.org | python - -y ${{ matrix.bootstrap-args }}
++          curl -sL https://install.python-poetry.org | python - -y
+ 
+       - name: Update PATH
+         if: ${{ matrix.os != 'Windows' }}

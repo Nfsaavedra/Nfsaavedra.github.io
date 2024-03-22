@@ -1,0 +1,22 @@
+diff --git a/.github/workflows/cve-scan.yml b/.github/workflows/cve-scan.yml
+index 0a72907..266e266 100644
+--- a/.github/workflows/cve-scan.yml
++++ b/.github/workflows/cve-scan.yml
+@@ -3,7 +3,7 @@ name: cve-scan
+ on:
+   push:
+     branches:
+-      - 'master'
++      - "master"
+ 
+ permissions:
+   contents: read
+@@ -19,7 +19,7 @@ jobs:
+         run: |
+           IMAGE=test/podinfo:${GITHUB_SHA}
+           docker build -t ${IMAGE} .
+-          echo "::set-output name=image::$IMAGE"
++          echo "image=$IMAGE" >> $GITHUB_OUTPUT
+       - name: Run Trivy vulnerability scanner
+         uses: aquasecurity/trivy-action@master
+         with:

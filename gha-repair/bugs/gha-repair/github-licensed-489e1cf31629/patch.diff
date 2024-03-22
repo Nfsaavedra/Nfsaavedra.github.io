@@ -1,0 +1,22 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 36ddab2..1b75d9c 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -441,7 +441,7 @@ jobs:
+     steps:
+     - uses: actions/checkout@v3
+     - name: Setup python
+-      uses: actions/setup-python@v3
++      uses: actions/setup-python@v4
+       with:
+         python-version: ${{ matrix.python }}
+         architecture: x64
+@@ -479,7 +479,7 @@ jobs:
+     steps:
+     - uses: actions/checkout@v3
+     - name: Setup python
+-      uses: actions/setup-python@v3
++      uses: actions/setup-python@v4
+       with:
+         python-version: '3.x'
+         architecture: x64

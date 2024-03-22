@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index ca6fd22..a58e0c6 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -141,7 +141,7 @@ jobs:
+         instance: [0, 1]
+ 
+     env:
+-      USE_REDIS_INDEXER: 1
++      USE_INDEXER: 1
+ 
+     steps:
+       # Checkout codebase

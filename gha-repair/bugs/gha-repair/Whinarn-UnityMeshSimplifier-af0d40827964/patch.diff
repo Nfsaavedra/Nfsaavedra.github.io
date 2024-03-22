@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/commit_message_check.yml b/.github/workflows/commit_message_check.yml
+index 74ce19b..6317584 100644
+--- a/.github/workflows/commit_message_check.yml
++++ b/.github/workflows/commit_message_check.yml
+@@ -2,7 +2,7 @@ name: 'Commit Message Check'
+ on:
+   push:
+     branches:
+-      - '*'
++      - '**'
+ 
+ jobs:
+   check-commit-message:

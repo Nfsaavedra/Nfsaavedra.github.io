@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/deploy.yml b/.github/workflows/deploy.yml
+index 89fcee5..e889b6c 100644
+--- a/.github/workflows/deploy.yml
++++ b/.github/workflows/deploy.yml
+@@ -19,6 +19,8 @@ jobs:
+         with:
+           ref: ${{ github.event.workflow_run.head_branch }}
+ 
++      - run: git branch
++
+       - name: Login to DockerHub
+         uses: docker/login-action@v1
+         with:

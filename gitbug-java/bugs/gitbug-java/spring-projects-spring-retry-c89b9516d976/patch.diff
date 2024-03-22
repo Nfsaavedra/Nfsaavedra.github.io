@@ -1,0 +1,81 @@
+diff --git a/src/main/java/org/springframework/retry/backoff/ExponentialBackOffPolicy.java b/src/main/java/org/springframework/retry/backoff/ExponentialBackOffPolicy.java
+index 194f7d4..bd1f71c 100644
+--- a/src/main/java/org/springframework/retry/backoff/ExponentialBackOffPolicy.java
++++ b/src/main/java/org/springframework/retry/backoff/ExponentialBackOffPolicy.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright 2006-2022 the original author or authors.
++ * Copyright 2006-2023 the original author or authors.
+  *
+  * Licensed under the Apache License, Version 2.0 (the "License");
+  * you may not use this file except in compliance with the License.
+@@ -41,6 +41,7 @@ import org.springframework.util.ClassUtils;
+  * @author Dave Syer
+  * @author Gary Russell
+  * @author Artem Bilan
++ * @author Marius Lichtblau
+  */
+ @SuppressWarnings("serial")
+ public class ExponentialBackOffPolicy implements SleepingBackOffPolicy<ExponentialBackOffPolicy> {
+@@ -245,6 +246,7 @@ public class ExponentialBackOffPolicy implements SleepingBackOffPolicy<Exponenti
+ 			this.sleeper.sleep(sleepTime);
+ 		}
+ 		catch (InterruptedException e) {
++			Thread.currentThread().interrupt();
+ 			throw new BackOffInterruptedException("Thread interrupted while sleeping", e);
+ 		}
+ 	}
+diff --git a/src/main/java/org/springframework/retry/backoff/FixedBackOffPolicy.java b/src/main/java/org/springframework/retry/backoff/FixedBackOffPolicy.java
+index db12bb9..fc26986 100644
+--- a/src/main/java/org/springframework/retry/backoff/FixedBackOffPolicy.java
++++ b/src/main/java/org/springframework/retry/backoff/FixedBackOffPolicy.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright 2006-2022 the original author or authors.
++ * Copyright 2006-2023 the original author or authors.
+  *
+  * Licensed under the Apache License, Version 2.0 (the "License");
+  * you may not use this file except in compliance with the License.
+@@ -31,6 +31,7 @@ import org.springframework.util.Assert;
+  * @author Rob Harrop
+  * @author Dave Syer
+  * @author Artem Bilan
++ * @author Marius Lichtblau
+  */
+ public class FixedBackOffPolicy extends StatelessBackOffPolicy implements SleepingBackOffPolicy<FixedBackOffPolicy> {
+ 
+@@ -97,6 +98,7 @@ public class FixedBackOffPolicy extends StatelessBackOffPolicy implements Sleepi
+ 			sleeper.sleep(this.backOffPeriod.get());
+ 		}
+ 		catch (InterruptedException e) {
++			Thread.currentThread().interrupt();
+ 			throw new BackOffInterruptedException("Thread interrupted while sleeping", e);
+ 		}
+ 	}
+diff --git a/src/main/java/org/springframework/retry/backoff/UniformRandomBackOffPolicy.java b/src/main/java/org/springframework/retry/backoff/UniformRandomBackOffPolicy.java
+index ef696d8..68249f7 100644
+--- a/src/main/java/org/springframework/retry/backoff/UniformRandomBackOffPolicy.java
++++ b/src/main/java/org/springframework/retry/backoff/UniformRandomBackOffPolicy.java
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright 2006-2022 the original author or authors.
++ * Copyright 2006-2023 the original author or authors.
+  *
+  * Licensed under the Apache License, Version 2.0 (the "License");
+  * you may not use this file except in compliance with the License.
+@@ -32,6 +32,7 @@ import org.springframework.util.Assert;
+  * @author Rob Harrop
+  * @author Dave Syer
+  * @author Tomaz Fernandes
++ * @author Marius Lichtblau
+  */
+ public class UniformRandomBackOffPolicy extends StatelessBackOffPolicy
+ 		implements SleepingBackOffPolicy<UniformRandomBackOffPolicy> {
+@@ -138,6 +139,7 @@ public class UniformRandomBackOffPolicy extends StatelessBackOffPolicy
+ 			this.sleeper.sleep(min + delta);
+ 		}
+ 		catch (InterruptedException e) {
++			Thread.currentThread().interrupt();
+ 			throw new BackOffInterruptedException("Thread interrupted while sleeping", e);
+ 		}
+ 	}

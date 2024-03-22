@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/release-drafter.yml b/.github/workflows/release-drafter.yml
+index 607e1d2..8a21298 100644
+--- a/.github/workflows/release-drafter.yml
++++ b/.github/workflows/release-drafter.yml
+@@ -13,6 +13,6 @@ jobs:
+       pull-requests: read  # for release-drafter/release-drafter to read PR content and labels
+     runs-on: ubuntu-latest
+     steps:
+-      - uses: release-drafter/release-drafter@v5
++      - uses: release-drafter/release-drafter@v6
+         env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

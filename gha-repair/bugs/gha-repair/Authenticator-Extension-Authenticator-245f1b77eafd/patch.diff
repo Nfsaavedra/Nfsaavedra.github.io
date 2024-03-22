@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index e3e7189..b729442 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -65,4 +65,4 @@ jobs:
+           args: npm test
+ 
+       - name: Codecov
+-        uses: codecov/codecov-action@v1.4.1
++        uses: codecov/codecov-action@v1.5.0

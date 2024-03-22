@@ -1,0 +1,23 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 1e5a1ff..ef64d47 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -36,7 +36,10 @@ jobs:
+           args: --all-features
+ 
+       - name: Install wasm-pack
+-        run: cargo install --force wasm-pack
++        run: >
++          cargo install --force 
++                        --git https://github.com/boringcactus/wasm-pack.git
++                        --branch first-class-bins
+ 
+       - name: Print wasm-pack version
+         run: wasm-pack --version
+@@ -65,4 +68,4 @@ jobs:
+           prerelease: true
+           files: target/release/tinysearch
+         env:
+-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+\ No newline at end of file
++          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

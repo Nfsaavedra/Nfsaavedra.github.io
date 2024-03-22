@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/test-lint.yml b/.github/workflows/test-lint.yml
+index 337b105..63e7b90 100644
+--- a/.github/workflows/test-lint.yml
++++ b/.github/workflows/test-lint.yml
+@@ -43,6 +43,7 @@ jobs:
+           PGPASSWORD: postgres
+           RAILS_ENV: test
+         run: |
++          sudo apt-get update
+           sudo apt-get -yqq install libpq-dev imagemagick ffmpeg
+           yarn install
+           gem install bundler

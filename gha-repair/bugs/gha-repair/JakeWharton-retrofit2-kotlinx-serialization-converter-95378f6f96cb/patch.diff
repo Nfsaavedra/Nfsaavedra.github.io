@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/build.yaml b/.github/workflows/build.yaml
+index c5f48ef..7658b59 100644
+--- a/.github/workflows/build.yaml
++++ b/.github/workflows/build.yaml
+@@ -28,5 +28,5 @@ jobs:
+       - run: ./gradlew uploadArchives
+         if: ${{ github.ref == 'refs/heads/trunk' && github.repository == 'JakeWharton/retrofit2-kotlinx-serialization-converter' }}
+         env:
+-          ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.SONATYPE_NEXUS_USERNAME }}
+-          ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.SONATYPE_NEXUS_PASSWORD }}
++          ORG_GRADLE_PROJECT_SONATYPE_NEXUS_USERNAME: ${{ secrets.SONATYPE_NEXUS_USERNAME }}
++          ORG_GRADLE_PROJECT_SONATYPE_NEXUS_PASSWORD: ${{ secrets.SONATYPE_NEXUS_PASSWORD }}

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/typescript.yml b/.github/workflows/typescript.yml
+index af52097..17d8ea9 100644
+--- a/.github/workflows/typescript.yml
++++ b/.github/workflows/typescript.yml
+@@ -23,7 +23,7 @@ jobs:
+       - run: npm install --no-save typescript@4.2
+       - run: npm run test:dist:types
+ 
+-      - run: npm uninstall jest
++      - run: npm uninstall jest @types/jest
+       - run: npm install --no-save typescript@4.0
+       - run: npm run test:dist:types
+ 

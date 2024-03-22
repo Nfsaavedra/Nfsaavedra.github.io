@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/prs.yml b/.github/workflows/prs.yml
+index 997f34d..40e9ef4 100644
+--- a/.github/workflows/prs.yml
++++ b/.github/workflows/prs.yml
+@@ -20,4 +20,4 @@ jobs:
+       - name: Lint
+         run: npm run lint
+       - name: Test
+-        run: npm run test:coverage
++        run: npm run test:coverage -- --maxWorkers=2

@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/auto-close-duplicate.yaml b/.github/workflows/auto-close-duplicate.yaml
+index 3e977a8..4495c22 100644
+--- a/.github/workflows/auto-close-duplicate.yaml
++++ b/.github/workflows/auto-close-duplicate.yaml
+@@ -32,4 +32,5 @@ jobs:
+               - #{{ number }} [accuracy: ({{ accuracy }}%)]
+             {{/issues}}
+             If this is a mistake please explain why and ping @\unixfox, @\SamantazFox and @\TheFrenchGhosty.
++            
+             Please refrain from opening new issues, it won't help in solving your problem.
+\ No newline at end of file

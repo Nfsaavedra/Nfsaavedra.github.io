@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index e55641d..0d9dce6 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -31,6 +31,7 @@ jobs:
+     - name: Cleanup xvfb pidx
+       uses: bcomnes/cleanup-xvfb@v1
+     - uses: actions/upload-artifact@master
++      if: ${{ failure() }}
+       with:
+           name: failed-image
+           path: test/failed-image

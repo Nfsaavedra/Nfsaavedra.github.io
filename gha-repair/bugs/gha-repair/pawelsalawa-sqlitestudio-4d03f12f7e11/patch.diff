@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/win32_release.yml b/.github/workflows/win32_release.yml
+index c71c639..c0f9a95 100644
+--- a/.github/workflows/win32_release.yml
++++ b/.github/workflows/win32_release.yml
+@@ -90,6 +90,7 @@ jobs:
+             - name: Compile SQLiteStudio3
+               working-directory: output/build
+               run: |
++                echo "will run ${{ env.MINGW_DIR }}/bin/mingw32-make.exe -j 2"
+                 qmake.exe CONFIG+=portable ..\..\SQLiteStudio3
+                 ${{ env.MINGW_DIR }}/bin/mingw32-make.exe -j 2
+             

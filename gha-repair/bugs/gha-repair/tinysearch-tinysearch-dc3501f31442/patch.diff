@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/docker.yml b/.github/workflows/docker.yml
+index a341fc9..f974fc4 100644
+--- a/.github/workflows/docker.yml
++++ b/.github/workflows/docker.yml
+@@ -16,7 +16,7 @@ jobs:
+       - name: Publish to Registry
+         uses: elgohr/Publish-Docker-Github-Action@3.01
+         with:
+-          name: lycheeverse/lychee
++          name: tinysearch/cli
+           username: ${{ secrets.DOCKER_USERNAME }}
+           password: ${{ secrets.DOCKER_PASSWORD }}
+           snapshot: true

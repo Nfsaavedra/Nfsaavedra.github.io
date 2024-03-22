@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 3cac2ef..5b9b16c 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -3,7 +3,7 @@ name: CI
+ on: [create, pull_request, push]
+ 
+ env:
+-  IMAGE_ID: ${{ github.repository }}
++  IMAGE_ID: herve76/node-binance-trader
+ 
+ jobs:
+   docker:

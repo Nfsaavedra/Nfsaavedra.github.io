@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 4ffb1e7..d0c4566 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -76,7 +76,9 @@ jobs:
+           sed -i -e "/UNATTENDED/s/true/false/" docker-compose.yml 
+           docker-compose build
+           docker-compose up
+-PROFILE_URL
++
++      # Verify ISO attended created
++        name: Check iso attended
+         run: |
+           ls -lrt images/DAppNode-debian-bullseye-amd64.iso
+ 

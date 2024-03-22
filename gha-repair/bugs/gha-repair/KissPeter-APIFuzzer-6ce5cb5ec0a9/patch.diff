@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/python-app.yml b/.github/workflows/python-app.yml
+index b2912f7..ec38474 100644
+--- a/.github/workflows/python-app.yml
++++ b/.github/workflows/python-app.yml
+@@ -16,7 +16,7 @@ jobs:
+     strategy:
+       matrix:
+         os: [ ubuntu-latest ] # , macos-latest, windows-latest
+-        python-version: [ '3.7', '3.8', '3.9', '3.10', '3.11' ]
++        python-version: [ '3.8', '3.9', '3.10', '3.11' ]
+     steps:
+       - uses: actions/checkout@v3
+       - name: Set up Python

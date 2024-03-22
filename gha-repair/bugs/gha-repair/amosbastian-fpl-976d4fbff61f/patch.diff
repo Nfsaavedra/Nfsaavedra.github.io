@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/pytest.yaml b/.github/workflows/pytest.yaml
+index 6218e9d..e0437b4 100644
+--- a/.github/workflows/pytest.yaml
++++ b/.github/workflows/pytest.yaml
+@@ -34,9 +34,8 @@ jobs:
+       - name: Install dependencies
+         if: steps.cache-pipenv.outputs.cache-hit != 'true'
+         run: |
+-          pipenv install
++          pipenv install -e
+ 
+       - name: Run test suite
+         run: |
+-          pipenv run python setup.py install
+           pipenv run pytest tests/
+\ No newline at end of file

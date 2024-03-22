@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 5d2e2ef..b5689f5 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -16,7 +16,7 @@ jobs:
+ 
+     strategy:
+       matrix:
+-        node-version: [lts/dubnium, lts/erbium, stable]
++        node-version: [10, 12, 14]
+ 
+     steps:
+     - uses: actions/checkout@v2

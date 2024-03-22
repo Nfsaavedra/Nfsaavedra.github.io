@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/rust.yml b/.github/workflows/rust.yml
+index a4050d4..b6d2f35 100644
+--- a/.github/workflows/rust.yml
++++ b/.github/workflows/rust.yml
+@@ -18,7 +18,7 @@ jobs:
+           rustup component add clippy
+ 
+       - name: Init Submodules
+-        if: ${{ hashFiles('ffplayout-frontend/') != '' }}
++        if: ${{ hashFiles('ffplayout-frontend/package.json') == '' }}
+         run: |
+           git submodule update --init
+           

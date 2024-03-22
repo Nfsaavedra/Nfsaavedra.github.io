@@ -1,0 +1,198 @@
+diff --git a/.github/workflows/tests.yml b/.github/workflows/tests.yml
+index 2c2a3ea..13a1be8 100644
+--- a/.github/workflows/tests.yml
++++ b/.github/workflows/tests.yml
+@@ -89,6 +89,87 @@ jobs:
+         run: |
+           go test -tags sqlite -race ./...
+ 
++  crdbssl-tests:
++    name: Cockroach SSL tests
++    runs-on: ubuntu-latest
++
++    steps:
++      - name: Set up Go
++        uses: actions/setup-go@v1
++        with:
++          go-version: 1.13
++        id: go
++      - name: Checkout Code
++        uses: actions/checkout@v1
++        with:
++          fetch-depth: 1
++      - name: Get dependencies
++        run: |
++          go get -v -tags sqlite -t -d ./...
++      - name: Install Cockroach SSL
++        run: |
++          mkdir -p crdb/certs
++          pushd crdb
++          wget -qO- https://binaries.cockroachdb.com/cockroach-v2.1.0.linux-amd64.tgz | tar  zxv
++          mv cockroach-v2.1.0.linux-amd64/cockroach .
++          ./cockroach cert create-ca --certs-dir certs --ca-key key
++          ./cockroach cert create-client root --certs-dir certs --ca-key key
++          ./cockroach cert create-node localhost 127.0.0.1 `hostname -s` `hostname -f` --certs-dir certs --ca-key key
++          ./cockroach start --certs-dir certs --listen-addr localhost --port 26259 --http-port 8089 --background
++          popd
++      - name: Build and run soda
++        env:
++          SODA_DIALECT: "cockroach_ssl"
++        run: |
++          go build -v -tags sqlite -o tsoda ./soda
++          ./tsoda drop -e $SODA_DIALECT -p ./testdata/migrations
++          ./tsoda create -e $SODA_DIALECT -p ./testdata/migrations
++          ./tsoda migrate -e $SODA_DIALECT -p ./testdata/migrations
++      - name: Test
++        env:
++          SODA_DIALECT: "cockroach_ssl"
++        run: |
++          go test -tags sqlite -race ./...
++
++  crdb-tests:
++    name: Cockroach tests
++    runs-on: ubuntu-latest
++
++    steps:
++      - name: Set up Go
++        uses: actions/setup-go@v1
++        with:
++          go-version: 1.13
++        id: go
++      - name: Checkout Code
++        uses: actions/checkout@v1
++        with:
++          fetch-depth: 1
++      - name: Get dependencies
++        run: |
++          go get -v -tags sqlite -t -d ./...
++      - name: Install Cockroach
++        run: |
++          mkdir -p crdb
++          pushd crdb
++          wget -qO- https://binaries.cockroachdb.com/cockroach-v2.1.0.linux-amd64.tgz | tar  zxv
++          mv cockroach-v2.1.0.linux-amd64/cockroach .
++          ./cockroach start --insecure --background
++          popd
++      - name: Build and run soda
++        env:
++          SODA_DIALECT: "cockroach"
++        run: |
++          go build -v -tags sqlite -o tsoda ./soda
++          ./tsoda drop -e $SODA_DIALECT -p ./testdata/migrations
++          ./tsoda create -e $SODA_DIALECT -p ./testdata/migrations
++          ./tsoda migrate -e $SODA_DIALECT -p ./testdata/migrations
++      - name: Test
++        env:
++          SODA_DIALECT: "cockroach"
++        run: |
++          go test -tags sqlite -race ./...
++
+   sqlite-tests:
+     name: SQLite tests
+     runs-on: ${{ matrix.os }}
+diff --git a/azure-pipelines.yml b/azure-pipelines.yml
+deleted file mode 100644
+index c14c2a3..0000000
+--- a/azure-pipelines.yml
++++ /dev/null
+@@ -1,23 +0,0 @@
+-variables:
+-  GOBIN:  "$(GOPATH)/bin" # Go binaries path
+-  GOPATH: "$(system.defaultWorkingDirectory)/gopath" # Go workspace path
+-  modulePath: "$(GOPATH)/src/github.com/$(build.repository.name)" # Path to the module"s code
+-
+-jobs:
+-- job: Linux
+-  pool:
+-    vmImage: "ubuntu-16.04"
+-  strategy:
+-    matrix:
+-    # Cockroach
+-      go 1.13 (off) cockroach:
+-        go_version: "1.13"
+-        GO111MODULE: "off"
+-        SODA_DIALECT: "cockroach"
+-    # Cockroach SSL
+-      go 1.13 (off) cockroach SSL:
+-        go_version: "1.13"
+-        GO111MODULE: "off"
+-        SODA_DIALECT: "cockroach_ssl"
+-  steps:
+-    - template: azure-tests.yml
+\ No newline at end of file
+diff --git a/azure-tests.yml b/azure-tests.yml
+deleted file mode 100644
+index 1cb87ef..0000000
+--- a/azure-tests.yml
++++ /dev/null
+@@ -1,69 +0,0 @@
+-steps:
+-  - task: GoTool@0
+-    inputs:
+-      version: $(go_version)
+-  - task: Bash@3
+-    inputs:
+-      targetType: inline
+-      script: |
+-        mkdir -p "$(GOBIN)"
+-        mkdir -p "$(GOPATH)/pkg"
+-        mkdir -p "$(modulePath)"
+-        shopt -s extglob
+-        mv !(gopath) "$(modulePath)"
+-    displayName: "Setup Go Workspace"
+-  - task: Docker@1
+-    displayName: Run postgres image
+-    inputs:
+-      command: run
+-      imageName: postgres:9.6
+-      ports: "5432:5432"
+-    condition: and(succeeded(), eq(variables['SODA_DIALECT'], 'postgres'))
+-  - task: Docker@1
+-    displayName: Run mysql image
+-    inputs:
+-      command: run
+-      imageName: mysql:5.7
+-      ports: "3307:3306"
+-      envVars: |
+-        MYSQL_ROOT_PASSWORD=root
+-    condition: and(succeeded(), eq(variables['SODA_DIALECT'], 'mysql'))
+-  - task: Docker@1
+-    displayName: Run cockroach image
+-    inputs:
+-      command: run
+-      imageName: cockroachdb/cockroach:v1.1.1
+-      ports: "26257:26257"
+-      containerCommand: start --insecure
+-    condition: and(succeeded(), eq(variables['SODA_DIALECT'], 'cockroach'))
+-  - task: Bash@3
+-    displayName: Install Cockroach SSL
+-    inputs:
+-      targetType: inline
+-      script: |
+-        cd $(modulePath)
+-        mkdir -p crdb/certs
+-        pushd crdb
+-        wget -qO- https://binaries.cockroachdb.com/cockroach-v2.1.0.linux-amd64.tgz | tar  zxv
+-        mv cockroach-v2.1.0.linux-amd64/cockroach .
+-        ./cockroach cert create-ca --certs-dir certs --ca-key key
+-        ./cockroach cert create-client root --certs-dir certs --ca-key key
+-        ./cockroach cert create-node localhost 127.0.0.1 `hostname -s` `hostname -f` --certs-dir certs --ca-key key
+-        ./cockroach start --certs-dir certs --listen-addr localhost --port 26259 --http-port 8089 --background
+-        popd
+-    condition: and(succeeded(), eq(variables['SODA_DIALECT'], 'cockroach_ssl'))
+-  - script: |
+-      go get -t -v ./...
+-      go install -v -tags sqlite ./soda
+-    workingDirectory: "$(modulePath)"          
+-    displayName: "Install soda"
+-  - script: |
+-      $(GOBIN)/soda drop -e $(SODA_DIALECT) -p ./testdata/migrations
+-      $(GOBIN)/soda create -e $(SODA_DIALECT) -p ./testdata/migrations
+-      $(GOBIN)/soda migrate -e $(SODA_DIALECT) -p ./testdata/migrations
+-    workingDirectory: "$(modulePath)"         
+-    displayName: "Create DB & run migrations"
+-  - script: |
+-      go test -tags sqlite ./... -v
+-    workingDirectory: "$(modulePath)"
+-    displayName: "Tests"
+\ No newline at end of file

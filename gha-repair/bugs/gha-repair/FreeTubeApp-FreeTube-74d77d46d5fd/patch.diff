@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 9555fb1..9a871f7 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -52,6 +52,8 @@ jobs:
+         run: |
+           export DEBIAN_FRONTEND=noninteractive
+           export TZ=Europe/Kiev
++          apt install -y curl
++          curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+           apt update
+           apt install -y npm
+           apt install -y nodejs

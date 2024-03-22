@@ -1,0 +1,11 @@
+diff --git a/group/iter.go b/group/iter.go
+index 141f0b3..aaa0408 100644
+--- a/group/iter.go
++++ b/group/iter.go
+@@ -31,5 +31,5 @@ func MapErr[T any, R any](input []T, f func(*T) (R, error)) ([]R, error) {
+ 	g := New()
+ 	defer g.Wait()
+ 
+-	return conc.MapErrIn(New(), input, f)
++	return conc.MapErrIn(g, input, f)
+ }

@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/workflow_ci.yml b/.github/workflows/workflow_ci.yml
+index 8601752..58ae684 100644
+--- a/.github/workflows/workflow_ci.yml
++++ b/.github/workflows/workflow_ci.yml
+@@ -2,7 +2,7 @@
+ # https://github.com/actions/virtual-environments/tree/main/images
+ 
+ name: workflow ci
+-on: [push, pull_request]
++on: [push, pull_request, workflow_dispatch]
+ 
+ jobs:
+ 
+@@ -66,4 +66,4 @@ jobs:
+         uses: actions/upload-artifact@v2
+         with:
+           path: src/dist
+-          name: rhino.compute
+\ No newline at end of file
++          name: rhino.compute

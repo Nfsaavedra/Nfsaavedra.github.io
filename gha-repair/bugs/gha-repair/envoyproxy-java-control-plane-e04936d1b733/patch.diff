@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/scorecard.yml b/.github/workflows/scorecard.yml
+index 743ad4a..31c0043 100644
+--- a/.github/workflows/scorecard.yml
++++ b/.github/workflows/scorecard.yml
+@@ -33,7 +33,7 @@ jobs:
+         publish_results: true
+ 
+     - name: "Upload artifact"
+-      uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8  # v3.1.0
++      uses: actions/upload-artifact@694cdabd8bdb0f10b2cea11669e1bf5453eed0a6  # v4.2.0
+       with:
+         name: SARIF file
+         path: results.sarif

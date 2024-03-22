@@ -1,0 +1,40 @@
+diff --git a/.github/workflows/main.yaml b/.github/workflows/main.yaml
+index 6fa6baf..58d98a5 100644
+--- a/.github/workflows/main.yaml
++++ b/.github/workflows/main.yaml
+@@ -6,17 +6,14 @@ on:
+     - main
+   pull_request:
+ 
+-
+ concurrency:
+   group: ${{ github.workflow }}-${{ github.ref }}
+   cancel-in-progress: true
+ 
+-
+ jobs:
+   lint-test:
+     uses: ./.github/workflows/lint-test.yaml
+ 
+-
+   generate-sha-tag:
+     runs-on: ubuntu-latest
+     outputs:
+@@ -35,7 +32,6 @@ jobs:
+     with:
+       sha-tag: ${{ needs.generate-sha-tag.outputs.sha-tag }}
+ 
+-
+   build-deploy:
+     if: github.ref == 'refs/heads/main'
+     uses: ./.github/workflows/build-deploy.yaml
+@@ -44,8 +40,7 @@ jobs:
+       - generate-sha-tag
+     with:
+       sha-tag: ${{ needs.generate-sha-tag.outputs.sha-tag }}
+-      secrets: inherit
+-
++    secrets: inherit
+ 
+   sentry-release:
+     if: github.ref == 'refs/heads/main'

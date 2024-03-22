@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/commits.yml b/.github/workflows/commits.yml
+index 57f5d69..541a8f9 100644
+--- a/.github/workflows/commits.yml
++++ b/.github/workflows/commits.yml
+@@ -34,7 +34,7 @@ jobs:
+         TARGET: ${{ github.event.pull_request.base.ref }}
+       run: |
+         set -x
+-        [ "${TARGET}" = "master" ] && exit 0
++        [ "${TARGET}" = "main" ] && exit 0
+ 
+         echo "Invalid branch target: ${TARGET}"
+         exit 1

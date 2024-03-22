@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 21f75ee..d563ae3 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -153,5 +153,5 @@ jobs:
+         uses: JamesIves/github-pages-deploy-action@releases/v4
+         with:
+           folder: pages/
+-          clean: true
++          clean: ${{ github.repository == 'GlasgowEmbedded/glasgow' && github.event.ref == 'refs/heads/main' }}
+           single-commit: true

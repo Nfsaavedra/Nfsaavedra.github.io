@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/style.yml b/.github/workflows/style.yml
+index 4967ccb..eef38d3 100644
+--- a/.github/workflows/style.yml
++++ b/.github/workflows/style.yml
+@@ -3,8 +3,13 @@ name: Style Check
+ on: [push, pull_request]
+ 
+ jobs:
+-    build:
++    flake8:
+         runs-on: ubuntu-latest
+         steps:
+             - uses: actions/checkout@v1
+             - uses: TrueBrain/actions-flake8@master
++    mypy:
++        runs-on: ubuntu-latest
++        steps:
++            - uses: actions/checkout@v1
++            - uses: jpetrucciani/mypy-check@master

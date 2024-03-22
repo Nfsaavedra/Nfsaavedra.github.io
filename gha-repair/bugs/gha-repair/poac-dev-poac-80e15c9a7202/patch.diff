@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/macos.yml b/.github/workflows/macos.yml
+index 8d7811c..7a815ed 100644
+--- a/.github/workflows/macos.yml
++++ b/.github/workflows/macos.yml
+@@ -18,7 +18,7 @@ jobs:
+     strategy:
+       fail-fast: false
+       matrix:
+-        osver: [12, 13]
++        osver: [12, 13, 14]
+     steps:
+       - uses: actions/checkout@v4
+ 

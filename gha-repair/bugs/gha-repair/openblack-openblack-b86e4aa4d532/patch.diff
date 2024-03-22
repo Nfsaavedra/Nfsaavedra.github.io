@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/ci-vcpkg.yml b/.github/workflows/ci-vcpkg.yml
+index 50de978..4c19c6d 100644
+--- a/.github/workflows/ci-vcpkg.yml
++++ b/.github/workflows/ci-vcpkg.yml
+@@ -5,6 +5,7 @@ on:
+     tags:
+     branches:
+       - 'master'
++      - 'ci-tests/**'  # Branch namespace can be used to test changes to test before going to master
+ jobs:
+   build:
+     runs-on: ${{ matrix.os }}

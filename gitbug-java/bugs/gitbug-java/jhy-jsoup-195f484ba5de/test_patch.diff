@@ -1,0 +1,17 @@
+diff --git a/src/test/java/org/jsoup/nodes/ElementTest.java b/src/test/java/org/jsoup/nodes/ElementTest.java
+index 5f54cbd..a3538f9 100644
+--- a/src/test/java/org/jsoup/nodes/ElementTest.java
++++ b/src/test/java/org/jsoup/nodes/ElementTest.java
+@@ -2676,4 +2676,10 @@ public class ElementTest {
+         doc.body().outerHtml(builder);
+         assertEquals("<body>\n <div>\n  One\n </div>\n</body>", builder.toString());
+     }
+-}
+\ No newline at end of file
++
++    @Test void rubyInline() {
++        String html = "<ruby>T<rp>(</rp><rtc>!</rtc><rt>)</rt></ruby>";
++        Document doc = Jsoup.parse(html);
++        assertEquals(html, doc.body().html());
++    }
++}

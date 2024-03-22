@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/push.yml b/.github/workflows/push.yml
+index b5c0c09..520512a 100644
+--- a/.github/workflows/push.yml
++++ b/.github/workflows/push.yml
+@@ -6,6 +6,8 @@ on: [push, pull_request]
+ 
+ jobs:
+   test:
++    runs-on: ubuntu-latest
++    steps:
+     - uses: actions/checkout@v2
+     - uses: actions/setup-python@v2
+       with:

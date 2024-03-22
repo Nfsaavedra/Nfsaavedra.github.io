@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/requirements/requirements_molecule.txt b/.github/workflows/requirements/requirements_molecule.txt
+index 693e439..61d7403 100644
+--- a/.github/workflows/requirements/requirements_molecule.txt
++++ b/.github/workflows/requirements/requirements_molecule.txt
+@@ -3,4 +3,4 @@ jinja2==3.1.2
+ ansible-compat==4.1.10
+ molecule==6.0.2
+ molecule-plugins[docker]==23.5.0
+-docker==6.1.3
++docker==7.0.0

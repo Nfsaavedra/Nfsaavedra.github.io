@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/docs.yml b/.github/workflows/docs.yml
+index 47cd419..8580daa 100644
+--- a/.github/workflows/docs.yml
++++ b/.github/workflows/docs.yml
+@@ -91,7 +91,7 @@ jobs:
+         done
+ 
+     - name: Upload artifact
+-      uses: actions/upload-pages-artifact@v2
++      uses: actions/upload-pages-artifact@v3
+       with:
+         path: 'docs/_build/html'
+ 

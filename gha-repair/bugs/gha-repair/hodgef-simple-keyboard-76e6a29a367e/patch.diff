@@ -1,0 +1,18 @@
+diff --git a/.github/workflows/nodejs.yml b/.github/workflows/nodejs.yml
+index 7197f8e..88d0288 100644
+--- a/.github/workflows/nodejs.yml
++++ b/.github/workflows/nodejs.yml
+@@ -15,10 +15,11 @@ jobs:
+         
+     steps:
+     - uses: actions/checkout@v1
+-    - name: Use latest Node.js
++    - name: Use Node.js ${{ matrix.node_version }}
+       uses: actions/setup-node@v1
+       with:
+-        node-version: latest
++        node-version: ${{ matrix.node_version }}
++        
+     - name: npm install, build, and test
+       run: |
+         npm install -g codecov

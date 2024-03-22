@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/schedule.yml b/.github/workflows/schedule.yml
+index 47ee12c..9b7da69 100644
+--- a/.github/workflows/schedule.yml
++++ b/.github/workflows/schedule.yml
+@@ -33,9 +33,7 @@ jobs:
+         uses: actions/checkout@v2
+         with:
+           fetch-depth: 0
+-          ref: ${REF}
+-        env:
+-          REF: ${{ matrix.refs }}
++          ref: ${{ matrix.refs }}
+ 
+       - name: Show git info
+         run: |

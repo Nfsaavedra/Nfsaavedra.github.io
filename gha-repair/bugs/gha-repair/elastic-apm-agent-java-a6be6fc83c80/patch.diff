@@ -1,0 +1,43 @@
+diff --git a/.github/workflows/daily.yml b/.github/workflows/daily.yml
+new file mode 100644
+index 0000000..60a0e3a
+--- /dev/null
++++ b/.github/workflows/daily.yml
+@@ -0,0 +1,17 @@
++name: daily
++
++on:
++  workflow_dispatch:
++  schedule:
++    - cron: '0 6 * * *'
++
++permissions:
++  actions: write
++
++jobs:
++  run-jdk-compatibility-and-windows:
++    runs-on: ubuntu-latest
++    steps:
++      - run: gh workflow run main.yml -f jdk_compatibility_ci=true -f windows_ci=true --repo ${GITHUB_REPOSITORY}
++        env:
++          GH_TOKEN: ${{ github.token }}
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 4bcfb34..5850742 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -19,6 +19,7 @@ on:
+         required: false
+         type: boolean
+       # disabled by default, not required for merge
++      # used by the daily job .github/workflows/daily.yml
+       # opt-in with 'ci:jdk-compatibility' tag on PR
+       jdk_compatibility_ci:
+         description: 'Enable JDK compatibility tests'
+@@ -26,6 +27,7 @@ on:
+         required: false
+         type: boolean
+       # disabled by default, not required for merge
++      # used by the daily job .github/workflows/daily.yml
+       # opt-in with 'ci:windows' tag on PR
+       windows_ci:
+         description: 'Enable Windows build & tests'

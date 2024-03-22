@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/coverity.yml b/.github/workflows/coverity.yml
+index 3feb25e..2c09475 100644
+--- a/.github/workflows/coverity.yml
++++ b/.github/workflows/coverity.yml
+@@ -7,7 +7,7 @@ on:
+ 
+ jobs:
+   coverity:
+-    runs-on: ubuntu-latest
++    runs-on: ubuntu-22.04
+     steps:
+       - 
+         name: Git Checkout

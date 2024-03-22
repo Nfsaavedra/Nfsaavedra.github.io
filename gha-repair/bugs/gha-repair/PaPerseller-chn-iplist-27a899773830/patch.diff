@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/update-cnip.yml b/.github/workflows/update-cnip.yml
+index 783160e..48f9edf 100644
+--- a/.github/workflows/update-cnip.yml
++++ b/.github/workflows/update-cnip.yml
+@@ -6,8 +6,8 @@ on:
+   schedule: 
+     - cron:  '0 2 */15 * *'
+   
+-  watch:
+-    types: [started]
++#  watch:
++#    types: [started]
+ 
+ jobs:
+   build:

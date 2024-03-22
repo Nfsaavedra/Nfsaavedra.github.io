@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 06e0f7f..8822909 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -24,7 +24,7 @@ jobs:
+         bundler-cache: true
+ 
+     - name: RuboCop
+-      run: bundle exec rubocop || true # Ignore failures until #56 fixes Rubocop config
++      run: bundle exec rubocop
+ 
+     - name: Tests
+       run: bundle exec rake test

@@ -1,0 +1,18 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index d0964d5..9b84fad 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -50,12 +50,7 @@ jobs:
+           architecture: aarch64
+           distribution: ubuntu18.04
+           run: |
+-            apt install -y curl
+-            curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+-            apt update
+-            apt install -y nodejs
+-            apt install -y build-essential
+-            apt install -y npm
++            snap install node
+             npm install
+             npm run lint
+             npm run build --if-present

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/release-drafter.yml b/.github/workflows/release-drafter.yml
+index ef4a7d0..a533a4b 100644
+--- a/.github/workflows/release-drafter.yml
++++ b/.github/workflows/release-drafter.yml
+@@ -15,6 +15,6 @@ jobs:
+     name: Update release draft
+     runs-on: ubuntu-22.04
+     steps:
+-      - uses: release-drafter/release-drafter@v5
++      - uses: release-drafter/release-drafter@v6
+         env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

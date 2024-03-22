@@ -1,0 +1,28 @@
+diff --git a/src/test/java/com/ezylang/evalex/parser/ShuntingYardExceptionsTest.java b/src/test/java/com/ezylang/evalex/parser/ShuntingYardExceptionsTest.java
+index 8f23723..9a261b1 100644
+--- a/src/test/java/com/ezylang/evalex/parser/ShuntingYardExceptionsTest.java
++++ b/src/test/java/com/ezylang/evalex/parser/ShuntingYardExceptionsTest.java
+@@ -151,7 +151,9 @@ class ShuntingYardExceptionsTest extends BaseParserTest {
+         "Hello 1 + 1",
+         "Hello World",
+         "Hello 1",
+-        "1 2"
++        "1 2",
++        "e.1",
++        "E.1"
+       })
+   void testTooManyOperands(String expressionString) {
+     Expression expression = new Expression(expressionString);
+diff --git a/src/test/java/com/ezylang/evalex/parser/TokenizerNumberLiteralTest.java b/src/test/java/com/ezylang/evalex/parser/TokenizerNumberLiteralTest.java
+index 2c41fcb..a27c229 100644
+--- a/src/test/java/com/ezylang/evalex/parser/TokenizerNumberLiteralTest.java
++++ b/src/test/java/com/ezylang/evalex/parser/TokenizerNumberLiteralTest.java
+@@ -83,7 +83,7 @@ class TokenizerNumberLiteralTest extends BaseParserTest {
+   }
+ 
+   @ParameterizedTest
+-  @ValueSource(strings = {"2e", "2E", "2e+", "2E+", "2e-", "2E-", "2e."})
++  @ValueSource(strings = {"2e", "2E", "2e+", "2E+", "2e-", "2E-", "2e.", "2E.", "2ex", "2Ex"})
+   void testScientificLiteralsParseException(String expression) {
+     assertThatThrownBy(() -> new Tokenizer(expression, configuration).parse())
+         .isInstanceOf(ParseException.class)

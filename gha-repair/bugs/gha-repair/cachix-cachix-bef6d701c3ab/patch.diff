@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index dc3c745..9baa8e7 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -9,9 +9,9 @@ jobs:
+         os: [ubuntu-18.04, macos]
+     runs-on: ${{ matrix.os }}
+     steps:
+-    - uses: actions/checkout@v1
++    - uses: actions/checkout@v2
+     - uses: cachix/install-nix-action@v7
+-    - uses: cachix/cachix-action@v4
++    - uses: cachix/cachix-action@v5
+       with:
+         name: cachix
+         signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'

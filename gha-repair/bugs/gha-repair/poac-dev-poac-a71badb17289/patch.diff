@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/linux.yml b/.github/workflows/linux.yml
+index 003cafb..f87fb07 100644
+--- a/.github/workflows/linux.yml
++++ b/.github/workflows/linux.yml
+@@ -202,7 +202,7 @@ jobs:
+         if: matrix.build_type == 'Release'
+         with:
+           name: ${{ github.job }}-${{ matrix.compiler.package }}
+-          path: poac
++          path: ./build/poac
+ 
+       - uses: actions/setup-python@v2.2.1
+         if: success() && matrix.build_type == 'Coverage'

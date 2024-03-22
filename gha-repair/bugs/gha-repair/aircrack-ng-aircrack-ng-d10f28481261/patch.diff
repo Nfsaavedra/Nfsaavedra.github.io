@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/manual.yml b/.github/workflows/manual.yml
+index 91690a8..040943b 100644
+--- a/.github/workflows/manual.yml
++++ b/.github/workflows/manual.yml
+@@ -60,5 +60,5 @@ jobs:
+         uses: docker/build-push-action@v3
+         with:
+           platforms: linux/amd64
+-          build-args: IMAGE_BASE=${{ matrix.platform }}
++          build-args: "IMAGE_BASE=${{ matrix.platform }}"
+           push: false
+\ No newline at end of file

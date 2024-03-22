@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/next.yml b/.github/workflows/next.yml
+index e982f83..800d4af 100644
+--- a/.github/workflows/next.yml
++++ b/.github/workflows/next.yml
+@@ -19,7 +19,7 @@ jobs:
+           node-version: ${{ matrix.node-version }}
+       - run: npm install
+       - run: npm run build
+-      - run: npm test
++      - run: npm test -- --coverage
+         env:
+           CI: true
+       - name: Coveralls

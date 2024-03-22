@@ -1,0 +1,23 @@
+diff --git a/.github/workflows/linux-pcre.yml b/.github/workflows/linux-pcre.yml
+index 01fd7a8..f13e496 100644
+--- a/.github/workflows/linux-pcre.yml
++++ b/.github/workflows/linux-pcre.yml
+@@ -128,15 +128,9 @@ jobs:
+         run: |
+           CPUS=$(nproc)
+           case "${{ matrix.compiler.cc }}" in
+-            clang-12)
+-              CC=clang-11
+-              CXX=clang++-11
+-              export CFLAGS="-Werror -Wno-zero-length-array -Wno-deprecated-declarations"
+-              export CXXFLAGS="-Werror -Wno-zero-length-array -Wno-deprecated-declarations"
+-              ;;
+-            clang-11)
+-              CC=clang-11
+-              CXX=clang++-11
++            clang)
++              CC=clang
++              CXX=clang++
+               export CFLAGS="-Werror -Wno-zero-length-array -Wno-deprecated-declarations"
+               export CXXFLAGS="-Werror -Wno-zero-length-array -Wno-deprecated-declarations"
+               ;;

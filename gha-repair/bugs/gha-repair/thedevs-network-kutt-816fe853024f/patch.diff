@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/docker-build-latest.yaml b/.github/workflows/docker-build-latest.yaml
+index 119c233..f7c5d58 100644
+--- a/.github/workflows/docker-build-latest.yaml
++++ b/.github/workflows/docker-build-latest.yaml
+@@ -1,7 +1,7 @@
+ name: docker-build-latest
+ 
+ env:
+-  dockerhub_repository: "xescure/kutt"
++  dockerhub_repository: "kutt/kutt"
+   dockerhub_tag: "develop"
+ 
+ on:

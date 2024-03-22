@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 50f4eb5..c509b68 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -17,7 +17,7 @@ jobs:
+       - name: setup node
+         uses: actions/setup-node@v2
+         with:
+-          node-version: '12'
++          node-version: '14'
+           cache: 'npm'
+       - name: install dependencies
+         run: |

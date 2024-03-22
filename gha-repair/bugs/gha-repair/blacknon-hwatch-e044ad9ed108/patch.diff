@@ -1,0 +1,9 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index fb30ecd..4dc5042 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -227,3 +227,4 @@ jobs:
+           upload_url: ${{ steps.upload-url.outputs.url }}
+           asset_path: ./build-${{ matrix.target }}/hwatch-${{ needs.create-release.outputs.version }}.${{ matrix.target }}.${{ matrix.ext }}
+           asset_name: hwatch-${{ needs.create-release.outputs.version }}.${{ matrix.target }}.${{ matrix.ext }}
++          asset_content_type: application/octet-stream

@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/tests.yml b/.github/workflows/tests.yml
+index 1710238..7f89a7d 100644
+--- a/.github/workflows/tests.yml
++++ b/.github/workflows/tests.yml
+@@ -32,4 +32,4 @@ jobs:
+       run: npm run test
+     
+     - name: Rendering test suite
+-      run: npm run test-rendering
++      run: npm run test-render

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/rust-ci.yml b/.github/workflows/rust-ci.yml
+index b0c6d0a..51103e7 100644
+--- a/.github/workflows/rust-ci.yml
++++ b/.github/workflows/rust-ci.yml
+@@ -6,6 +6,8 @@ on:
+     paths:
+     - 'rust_snuba/**'
+   pull_request:
++    paths:
++    - 'rust_snuba/**'
+ 
+ jobs:
+   rust-linting:

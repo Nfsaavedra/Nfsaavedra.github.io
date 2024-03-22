@@ -1,0 +1,22 @@
+diff --git a/.github/workflows/ci-cross-compile.yml b/.github/workflows/ci-cross-compile.yml
+index 720f1b2..f9c1afb 100644
+--- a/.github/workflows/ci-cross-compile.yml
++++ b/.github/workflows/ci-cross-compile.yml
+@@ -136,11 +136,12 @@ jobs:
+         with:
+           arguments: assembleDebug -PusePrebuiltNativeLibs
+           build-root-directory: android
+-      - name: Run Gradle Assemble (Release)
+-        uses: gradle/gradle-build-action@v2
+-        with:
+-          arguments: assembleRelease -PusePrebuiltNativeLibs
+-          build-root-directory: android
++      # TODO(#632): Setup digital signing for Android release build
++      # - name: Run Gradle Assemble (Release)
++      #   uses: gradle/gradle-build-action@v2
++      #   with:
++      #     arguments: assembleRelease -PusePrebuiltNativeLibs
++      #     build-root-directory: android
+       - uses: actions/upload-artifact@v3
+         with:
+           name: openblack-android-apk-${{github.sha}}

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index ee044e9..cab1b8f 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -87,7 +87,7 @@ jobs:
+         uses: actions-rs/cargo@v1
+         with:
+           command: test
+-          args: --no-default-features --features=env-file,${{ matrix.client }}
++          args: --workspace -p rspotify --no-default-features --features=env-file,${{ matrix.client }}
+ 
+   lints:
+     name: Lints

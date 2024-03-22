@@ -1,0 +1,239 @@
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] 🚀  Start image=crawlergpt:latest
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   🐳  docker pull image=crawlergpt:latest platform= username= forcePull=false
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   🐳  docker create image=crawlergpt:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   🐳  docker run image=crawlergpt:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/e3756539-5556-4825-8aae-2967a52baf76] user=0 workdir=
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] ⭐ Run Main actions/checkout@v2
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   🐳  docker cp src=/tmp/e3756539-5556-4825-8aae-2967a52baf76/. dst=/tmp/e3756539-5556-4825-8aae-2967a52baf76
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/e3756539-5556-4825-8aae-2967a52baf76] user=0 workdir=
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   ✅  Success - Main actions/checkout@v2
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] ⭐ Run Main Setup Go
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   🐳  docker cp src=/tmp/act-cache/70c46585-1961-4115-968c-fbf09d4bfbdb/act/actions-setup-go@v2/ dst=/var/run/act/actions/actions-setup-go@v2/
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-go@v2/] user=0 workdir=
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-go@v2/dist/index.js] user= workdir=
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | Setup go stable version spec 1.19
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::isExplicit: 
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::explicit? false
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::isExplicit: 1.14.15
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::explicit? true
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::isExplicit: 1.15.15
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::explicit? true
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::isExplicit: 1.16.7
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::explicit? true
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::evaluating 3 versions
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::match not found
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | Attempting to download 1.19...
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::set auth
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | matching 1.19...
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::check 1.21.3 satisfies 1.19
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::check 1.21.2 satisfies 1.19
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::check 1.21.1 satisfies 1.19
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::check 1.21.0 satisfies 1.19
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::check 1.20.10 satisfies 1.19
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::check 1.20.9 satisfies 1.19
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::check 1.20.8 satisfies 1.19
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::check 1.20.7 satisfies 1.19
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::check 1.20.6 satisfies 1.19
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::check 1.20.5 satisfies 1.19
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::check 1.20.4 satisfies 1.19
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::check 1.20.3 satisfies 1.19
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::check 1.20.2 satisfies 1.19
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::check 1.20.1 satisfies 1.19
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::check 1.20.0 satisfies 1.19
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::check 1.19.13 satisfies 1.19
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::arm64===x64 && darwin===linux
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::x64===x64 && darwin===linux
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::x64===x64 && linux===linux
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::matched 1.19.13
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | Acquiring 1.19.13 from https://github.com/actions/go-versions/releases/download/1.19.13-6107263891/go-1.19.13-linux-x64.tar.gz
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::Downloading https://github.com/actions/go-versions/releases/download/1.19.13-6107263891/go-1.19.13-linux-x64.tar.gz
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::Destination /tmp/06d7489d-18a8-4ef3-b569-31f0bbff4bda
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::set auth
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::download complete
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | Extracting Go...
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::Checking tar --version
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::tar (GNU tar) 1.30%0ACopyright (C) 2017 Free Software Foundation, Inc.%0ALicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.%0AThis is free software: you are free to change and redistribute it.%0AThere is NO WARRANTY, to the extent permitted by law.%0A%0AWritten by John Gilmore and Jay Fenlason.
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword -C /tmp/3c39520d-c526-4837-9df2-98f02277da76 -f /tmp/06d7489d-18a8-4ef3-b569-31f0bbff4bda
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | Successfully extracted go to /tmp/3c39520d-c526-4837-9df2-98f02277da76
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | Adding to the cache ...
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::Caching tool go 1.19.13 x64
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::source dir: /tmp/3c39520d-c526-4837-9df2-98f02277da76
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::destination /opt/hostedtoolcache/go/1.19.13/x64
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::finished caching tool
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | Successfully cached go to /opt/hostedtoolcache/go/1.19.13/x64
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | Added go to the path
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::which go :/opt/hostedtoolcache/go/1.19.13/x64/bin/go:
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::go env GOPATH :/home/runneradmin/go:
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::creating /home/runneradmin/go
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::creating /home/runneradmin/go/bin
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   💬  ::debug::add bin true
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | Successfully setup go version 1.19
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   ❓ add-matcher /run/act/actions/actions-setup-go@v2/matchers.json
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | go version go1.19.13 linux/amd64
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | 
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   ❓  ::group::go env
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | GO111MODULE=""
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | GOARCH="amd64"
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | GOBIN=""
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | GOCACHE="/home/runneradmin/.cache/go-build"
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | GOENV="/home/runneradmin/.config/go/env"
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | GOEXE=""
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | GOEXPERIMENT=""
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | GOFLAGS=""
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | GOHOSTARCH="amd64"
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | GOHOSTOS="linux"
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | GOINSECURE=""
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | GOMODCACHE="/home/runneradmin/go/pkg/mod"
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | GONOPROXY=""
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | GONOSUMDB=""
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | GOOS="linux"
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | GOPATH="/home/runneradmin/go"
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | GOPRIVATE=""
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | GOPROXY="https://proxy.golang.org,direct"
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | GOROOT="/opt/hostedtoolcache/go/1.19.13/x64"
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | GOSUMDB="sum.golang.org"
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | GOTMPDIR=""
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | GOTOOLDIR="/opt/hostedtoolcache/go/1.19.13/x64/pkg/tool/linux_amd64"
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | GOVCS=""
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | GOVERSION="go1.19.13"
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | GCCGO="gccgo"
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | GOAMD64="v1"
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | AR="ar"
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | CC="gcc"
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | CXX="g++"
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | CGO_ENABLED="1"
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | GOMOD="/tmp/e3756539-5556-4825-8aae-2967a52baf76/go.mod"
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | GOWORK=""
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | CGO_CFLAGS="-g -O2"
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | CGO_CPPFLAGS=""
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | CGO_CXXFLAGS="-g -O2"
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | CGO_FFLAGS="-g -O2"
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | CGO_LDFLAGS="-g -O2"
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | PKG_CONFIG="pkg-config"
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | GOGCCFLAGS="-fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -fdebug-prefix-map=/tmp/go-build4138193168=/tmp/go-build -gno-record-gcc-switches"
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | 
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   ❓  ::endgroup::
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   ✅  Success - Main Setup Go
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   ⚙  ::set-env:: GOROOT=/opt/hostedtoolcache/go/1.19.13/x64
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   ⚙  ::add-path:: /opt/hostedtoolcache/go/1.19.13/x64/bin
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   ⚙  ::add-path:: /home/runneradmin/go/bin
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] ⭐ Run Main Run build
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   ✅  Success - Main Run build
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] ⭐ Run Main Run vet & lint
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/3] user= workdir=
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   ✅  Success - Main Run vet & lint
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] ⭐ Run Main Run tests
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/4] user= workdir=
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | go: downloading github.com/jstemmer/go-junit-report/v2 v2.0.0
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   ✅  Success - Main Run tests
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] ⭐ Run Main codecov
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   🐳  docker cp src=/tmp/act-cache/70c46585-1961-4115-968c-fbf09d4bfbdb/act/codecov-codecov-action@v1/ dst=/var/run/act/actions/codecov-codecov-action@v1/
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/codecov-codecov-action@v1/] user=0 workdir=
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   🐳  docker exec cmd=[node /var/run/act/actions/codecov-codecov-action@v1/dist/index.js] user= workdir=
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | [command]/usr/bin/bash codecov.sh -n  -F  -Q github-action-v1.5.2 -f ./profile.cov
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | 
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   |   _____          _
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   |  / ____|        | |
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | | |     ___   __| | ___  ___ _____   __
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | | |    / _ \ / _` |/ _ \/ __/ _ \ \ / /
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | | |___| (_) | (_| |  __/ (_| (_) \ V /
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   |  \_____\___/ \__,_|\___|\___\___/ \_/
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   |                               Bash-1.0.3
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | 
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | 
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | [0;36m==>[0m git version 2.33.0 found
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | [0;36m==>[0m curl 7.68.0 (x86_64-pc-linux-gnu) libcurl/7.68.0 OpenSSL/1.1.1f zlib/1.2.11 brotli/1.0.7 libidn2/2.2.0 libpsl/0.21.0 (+libidn2/2.2.0) libssh/0.9.3/openssl/zlib nghttp2/1.40.0 librtmp/2.3
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | Release-Date: 2020-01-08
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | Protocols: dict file ftp ftps gopher http https imap imaps ldap ldaps pop3 pop3s rtmp rtsp scp sftp smb smbs smtp smtps telnet tftp 
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | Features: AsynchDNS brotli GSS-API HTTP2 HTTPS-proxy IDN IPv6 Kerberos Largefile libz NTLM NTLM_WB PSL SPNEGO SSL TLS-SRP UnixSockets
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | [0;90m==>[0m GitHub Actions detected.
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   |     Env vars used:
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   |       -> GITHUB_ACTIONS:    true
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   |       -> GITHUB_HEAD_REF:   
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   |       -> GITHUB_REF:        refs/heads/master
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   |       -> GITHUB_REPOSITORY: paulmach/orb
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   |       -> GITHUB_RUN_ID:     1
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   |       -> GITHUB_SHA:        458ea58902031b20be9cd11cce2a46e5b23d1ff7
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   |       -> GITHUB_WORKFLOW:   6caf1001-a0c8-4d45-a12b-7ed216f156ca
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   |     [0;90mproject root:[0m .
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   |     [0;90mYaml found at:[0m codecov.yml
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   |     [0;90m->[0m Found 1 reports
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | [0;90m==>[0m Detecting git/mercurial file structure
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | [0;90m==>[0m Reading reports
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   |     [0;32m+[0m ./profile.cov [0;90mbytes=168209[0m
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | [0;90m==>[0m Appending adjustments
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   |     [0;36mhttps://docs.codecov.io/docs/fixing-reports[0m
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   |     [0;32m+[0m Found adjustments
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | [0;90m==>[0m Gzipping contents
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   |         36K	/tmp/codecov.WTaYog.gz
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | [0;90m==>[0m Uploading reports
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   |     [0;90murl:[0m https://codecov.io
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   |     [0;90mquery:[0m branch=master&commit=458ea58902031b20be9cd11cce2a46e5b23d1ff7&build=1&build_url=http%3A%2F%2Fgithub.com%2Fpaulmach%2Forb%2Factions%2Fruns%2F1&name=&tag=&slug=paulmach%2Forb&service=github-actions&flags=&pr=&job=6caf1001-a0c8-4d45-a12b-7ed216f156ca&cmd_args=n,F,Q,f
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | [0;90m->[0m  Pinging Codecov
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | https://codecov.io/upload/v4?package=github-action-v1.5.2-1.0.3&token=secret&branch=master&commit=458ea58902031b20be9cd11cce2a46e5b23d1ff7&build=1&build_url=http%3A%2F%2Fgithub.com%2Fpaulmach%2Forb%2Factions%2Fruns%2F1&name=&tag=&slug=paulmach%2Forb&service=github-actions&flags=&pr=&job=6caf1001-a0c8-4d45-a12b-7ed216f156ca&cmd_args=n,F,Q,f
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | [0;31m{'detail': ErrorDetail(string='Unable to locate build via Github Actions API. Please upload with the Codecov repository upload token to resolve issue.', code='not_found')}
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | 404[0m
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   | [0;90m==>[0m Uploading to Codecov
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   |   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   |                                  Dload  Upload   Total   Spent    Left  Speed
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   |   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 34958    0     0  100 34958      0   168k --:--:-- --:--:-- --:--:--  167k100 35129  100   171  100 34958    650   129k --:--:-- --:--:-- --:--:--  129k
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   |     [0;32m{'detail': ErrorDetail(string='Unable to locate build via Github Actions API. Please upload with the Codecov repository upload token to resolve issue.', code='not_found')}[0m
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test]   ✅  Success - Main codecov
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] 🏁  Job succeeded
+[6caf1001-a0c8-4d45-a12b-7ed216f156ca/build-and-test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '458ea58902031b20be9cd11cce2a46e5b23d1ff7'

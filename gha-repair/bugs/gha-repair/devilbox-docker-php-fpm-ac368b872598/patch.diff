@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/aaa-reuse-configure.yml b/.github/workflows/aaa-reuse-configure.yml
+index a6d80b2..6d9422e 100644
+--- a/.github/workflows/aaa-reuse-configure.yml
++++ b/.github/workflows/aaa-reuse-configure.yml
+@@ -125,4 +125,4 @@ jobs:
+           echo 'has_refs=${{ steps.set-matrix.outputs.has_refs }}'
+           echo 'matrix_build=${{ steps.set-matrix.outputs.matrix_build }}'
+           echo 'matrix_deploy=${{ steps.set-matrix.outputs.matrix_deploy }}'
+-          echo 'artifact_prefix=${{ steps.set-artifact-prefix.outputs.prefix }}
++          echo 'artifact_prefix=${{ steps.set-artifact-prefix.outputs.prefix }}'

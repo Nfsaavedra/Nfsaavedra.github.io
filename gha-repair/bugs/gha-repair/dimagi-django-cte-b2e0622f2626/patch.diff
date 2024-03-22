@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/tests.yml b/.github/workflows/tests.yml
+index 156afb8..dfd813c 100644
+--- a/.github/workflows/tests.yml
++++ b/.github/workflows/tests.yml
+@@ -24,7 +24,7 @@ jobs:
+         experimental: [false]
+         include:
+         - python: '3.9'
+-        - django: 'https://github.com/django/django/archive/refs/heads/main.zip#egg=Django'
++          django: 'https://github.com/django/django/archive/refs/heads/main.zip#egg=Django'
+           experimental: true
+           # NOTE this job will appear to pass even when it fails because of
+           # `continue-on-error: true`. Github Actions apparently does not

@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/python-tests.yml b/.github/workflows/python-tests.yml
+index 8848e56..b1e2cfc 100644
+--- a/.github/workflows/python-tests.yml
++++ b/.github/workflows/python-tests.yml
+@@ -31,4 +31,4 @@ jobs:
+     - name: Build packages
+       run: |
+         python3 setup.py sdist
+-        python3 setup,py bdist_wheel
++        python3 setup.py bdist_wheel

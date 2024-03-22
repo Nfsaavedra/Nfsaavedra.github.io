@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/publishef6.yml b/.github/workflows/publishef6.yml
+index 2c1baf5..1f316f6 100644
+--- a/.github/workflows/publishef6.yml
++++ b/.github/workflows/publishef6.yml
+@@ -19,6 +19,9 @@ jobs:
+         with:
+           dotnet-version: 3.1.300
+       
++      - name: Setup MSBuild.exe
++        uses: microsoft/setup-msbuild@v1.0.2
++
+       # Publish
+       - name: publish on version change
+         uses: rohith/publish-nuget@v2

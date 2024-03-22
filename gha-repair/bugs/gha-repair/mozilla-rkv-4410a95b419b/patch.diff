@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index d20e8d5..9639bc7 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -9,7 +9,7 @@ env:
+   # that we depend upon. When updating, pick a suitable nightly version
+   # from https://rust-lang.github.io/rustup-components-history/
+   # See .rustfmt.toml for the list of unstable features.
+-  KNOWN_TO_HAVE_RUSTFMT: nightly-2020-07-12
++  KNOWN_TO_HAVE_RUSTFMT: nightly-2022-08-12
+ 
+ defaults:
+   run:

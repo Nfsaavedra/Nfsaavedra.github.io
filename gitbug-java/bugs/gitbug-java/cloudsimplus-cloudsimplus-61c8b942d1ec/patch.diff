@@ -1,0 +1,13 @@
+diff --git a/src/main/java/org/cloudsimplus/hosts/HostAbstract.java b/src/main/java/org/cloudsimplus/hosts/HostAbstract.java
+index 19dfe5d..70d7fea 100644
+--- a/src/main/java/org/cloudsimplus/hosts/HostAbstract.java
++++ b/src/main/java/org/cloudsimplus/hosts/HostAbstract.java
+@@ -162,7 +162,7 @@ public abstract class HostAbstract extends ExecDelayableAbstract implements Host
+     }
+ 
+     public HostAbstract(final List<Pe> peList, final boolean activate) {
+-        this(defaultBwCapacity, defaultStorageCapacity, new HarddriveStorage(defaultRamCapacity), peList, activate);
++        this(defaultRamCapacity, defaultBwCapacity, new HarddriveStorage(defaultStorageCapacity), peList, activate);
+     }
+ 
+     protected HostAbstract(

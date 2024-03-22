@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/run-tests.yml b/.github/workflows/run-tests.yml
+index 2dd5c71..e9b966e 100644
+--- a/.github/workflows/run-tests.yml
++++ b/.github/workflows/run-tests.yml
+@@ -29,9 +29,9 @@ jobs:
+                     MYSQL_ALLOW_EMPTY_PASSWORD: yes
+                     MYSQL_DATABASE: laravel_query_builder
+                 ports:
+-                    - 3306
++                    - 3306:3306
+                 options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+-                
++
+ 
+         steps:
+             - name: Checkout code

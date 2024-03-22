@@ -1,0 +1,32 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 6ce00be..d5eded6 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -22,3 +22,5 @@ jobs:
+     - run:  nix build -L '.#ci' '.#cachix' --show-trace
+     # make sure it's all uploaded to cachix
+     - run: echo > /tmp/store-path-pre-build
++    # test watch-exec
++    - run: cachix watch-exec cachix -- nix-build genpaths.nix --substituters 'https://cache.nixos.org'
+diff --git a/genpaths.nix b/genpaths.nix
+new file mode 100644
+index 0000000..e2ee307
+--- /dev/null
++++ b/genpaths.nix
+@@ -0,0 +1,16 @@
++# Realizes <num>> of derivations with size of <size>MB
++# Useful for upload debugging 
++{ size ? 1 # MB
++, num ? 10 # count 
++, currentTime ? builtins.currentTime
++}:
++
++with (import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-22.11.tar.gz") {});
++
++let
++  drv = i: runCommand "${toString currentTime}-${toString i}" {} ''
++    dd if=/dev/random of=$out bs=1MB count=${toString size}
++  '';
++in writeText "empty-${toString num}-${toString size}MB" ''
++  ${lib.concatMapStringsSep "" drv (lib.range 1 num)}
++''

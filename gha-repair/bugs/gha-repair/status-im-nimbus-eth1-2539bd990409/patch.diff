@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index bba5ee2..db61a1a 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -1,7 +1,9 @@
+-name: nimbus-eth1 CI
++name: CI
+ on:
+   push:
+     paths-ignore: ['doc/**', 'docs/**', '**/*.md', 'hive_integration/**']
++    branches:
++      - master
+   pull_request:
+     paths-ignore: ['doc/**', 'docs/**', '**/*.md', 'hive_integration/**']
+ 

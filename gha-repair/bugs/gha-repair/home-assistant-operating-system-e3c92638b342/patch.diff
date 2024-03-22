@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/pr-checks.yml b/.github/workflows/pr-checks.yml
+index 653f33b..9ddabbd 100644
+--- a/.github/workflows/pr-checks.yml
++++ b/.github/workflows/pr-checks.yml
+@@ -19,7 +19,7 @@ jobs:
+         dockerfile: Dockerfile
+ 
+     - name: Check shell scripts
+-      uses: ludeeus/action-shellcheck@1.1.0
++      uses: ludeeus/action-shellcheck@2.0.0
+       with:
+         ignore: buildroot buildroot-external/package/xe-guest-utilities
+ 

@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/image.yaml b/.github/workflows/image.yaml
+index dfe6f06..710a83c 100644
+--- a/.github/workflows/image.yaml
++++ b/.github/workflows/image.yaml
+@@ -33,7 +33,9 @@ jobs:
+         id: image
+ 
+       # build
+-      - run: make image DEV_IMAGE=true DOCKER_PUSH=false IMAGE_NAMESPACE=docker.pkg.github.com/argoproj/argo-cd IMAGE_TAG=${{ steps.image.outputs.tag }}
++      - run: |
++          docker images -a --format "{{.ID}}" | xargs -I {} docker rmi {}
++          make image DEV_IMAGE=true DOCKER_PUSH=false IMAGE_NAMESPACE=docker.pkg.github.com/argoproj/argo-cd IMAGE_TAG=${{ steps.image.outputs.tag }}
+         working-directory: ./src/github.com/argoproj/argo-cd
+ 
+       # publish

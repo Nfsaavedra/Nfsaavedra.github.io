@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/python-app.yml b/.github/workflows/python-app.yml
+index 490e77b..928c98c 100644
+--- a/.github/workflows/python-app.yml
++++ b/.github/workflows/python-app.yml
+@@ -24,7 +24,7 @@ jobs:
+       env:
+         POETRY_VERSION: 1.5.1
+       run: |
+-        curl -sSL https://install.python-poetry.org | python3 -
++        curl -sSL https://install.python-poetry.org | python - &&\
+             poetry config virtualenvs.create false
+     - name: Install dependencies
+       run: |

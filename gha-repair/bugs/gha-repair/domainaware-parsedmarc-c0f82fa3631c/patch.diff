@@ -1,0 +1,78 @@
+diff --git a/.github/workflows/python-tests.yml b/.github/workflows/python-tests.yml
+index 4292604..7b844ed 100644
+--- a/.github/workflows/python-tests.yml
++++ b/.github/workflows/python-tests.yml
+@@ -29,6 +29,13 @@ jobs:
+       run: |
+         python -m pip install --upgrade pip
+         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
++    - name: Check README.rst syntax
++      run: |
++        rstcheck --report warning README.rst
++        - name: Test building documentation
++          run: |
++            cd docs
++            make html
+     - name: Run unit tests
+       run: |
+         coverage run tests.py
+@@ -41,13 +48,6 @@ jobs:
+     - name: Check code style
+       run: |
+         flake8 *.py parsedmarc/*.py
+-    - name: Check README.rst syntax
+-      run: |
+-        rstcheck --report warning README.rst
+-    - name: Test building documentation
+-      run: |
+-        cd docs
+-        make html
+     - name: Test building packages
+       run: |
+         python3 setup.py sdist
+diff --git a/.travis.yml b/.travis.yml
+deleted file mode 100644
+index eabf9e5..0000000
+--- a/.travis.yml
++++ /dev/null
+@@ -1,40 +0,0 @@
+-language: python
+-
+-os: linux
+-dist: focal
+-
+-python:
+-  - '3.6'
+-  - '3.7'
+-  - '3.8'
+-  - '3.9'
+-
+-# commands to install dependencies
+-before_install:
+-  - "sudo apt-get update"
+-  - "sudo apt-get install -y libemail-outlook-message-perl"
+-  - "curl -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.5.1.deb"
+-  - "sudo dpkg -i --force-confnew elasticsearch-*.deb"
+-  - "sudo systemctl restart elasticsearch"
+-  - "sudo systemctl --no-pager status elasticsearch"
+-
+-install:
+-  - "pip install --upgrade pip"
+-  - "pip install -U -r requirements.txt"
+-
+-# commands to run samples
+-script:
+-  - "flake8 *.py parsedmarc/*.py"
+-  - "rstcheck --report warning README.rst"
+-  - "cd docs"
+-  - "make html"
+-  - "cd .."
+-  - "coverage run tests.py"
+-  - "python setup.py install"
+-  - "parsedmarc --debug -c ci.ini samples/aggregate/*"
+-  - "parsedmarc --debug -c ci.ini samples/forensic/*"
+-  - "python setup.py sdist"
+-  - "python setup.py bdist_wheel"
+-
+-after_success:
+-  - "codecov"

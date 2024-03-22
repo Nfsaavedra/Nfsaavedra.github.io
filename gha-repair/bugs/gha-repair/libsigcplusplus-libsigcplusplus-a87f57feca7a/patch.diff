@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/autotools-clang-8.yml b/.github/workflows/autotools-clang-8.yml
+index 69416f3..8e2e423 100644
+--- a/.github/workflows/autotools-clang-8.yml
++++ b/.github/workflows/autotools-clang-8.yml
+@@ -9,7 +9,6 @@ jobs:
+ 
+     steps:
+     - uses: actions/checkout@v1
+-    - uses: docker://ubuntu:19.10
+     - name: Build
+       run: |
+         sudo apt update

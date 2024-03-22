@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/stale.yml b/.github/workflows/stale.yml
+index 7bbc050..75711eb 100644
+--- a/.github/workflows/stale.yml
++++ b/.github/workflows/stale.yml
+@@ -15,5 +15,5 @@ jobs:
+         repo-token: ${{ secrets.GITHUB_TOKEN }}
+         stale-issue-message: 'Stale issue message'
+         stale-pr-message: 'Stale pull request message'
+-        stale-issue-label: 'no-issue-activity'
+-        stale-pr-label: 'no-pr-activity'
++        stale-issue-label: 'no issue activity'
++        stale-pr-label: 'no pr activity'

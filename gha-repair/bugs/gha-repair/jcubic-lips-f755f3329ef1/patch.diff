@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/build.yaml b/.github/workflows/build.yaml
+index f599382..40d6f8a 100644
+--- a/.github/workflows/build.yaml
++++ b/.github/workflows/build.yaml
+@@ -9,9 +9,9 @@ jobs:
+       - name: Install ImageMagick
+         run: sudo apt-get -y install graphicsmagick
+       - name: checkout
+-        uses: actions/checkout@v2
++        uses: actions/checkout@v4
+       - name: setup node
+-        uses: actions/setup-node@v2
++        uses: actions/setup-node@v3
+         with:
+           node-version: '16'
+       - run: npm ci

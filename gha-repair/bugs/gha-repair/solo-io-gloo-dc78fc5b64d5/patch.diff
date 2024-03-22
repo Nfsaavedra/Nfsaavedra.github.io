@@ -1,0 +1,71 @@
+diff --git a/.github/workflows/notify-on-regression-failure-list.json b/.github/workflows/notify-on-regression-failure-list.json
+deleted file mode 100644
+index 684d690..0000000
+--- a/.github/workflows/notify-on-regression-failure-list.json
++++ /dev/null
+@@ -1,19 +0,0 @@
+-{
+-    "github_id": "slack_id",
+-    "__artberger": "U02BQ7EF3LY",
+-    "ben-taussig-solo": "U024KB026P7",
+-    "bewebi": "U01LDKSG4TW",
+-    "elcasteel": "U0239CFLF3M",
+-    "gunnar-solo": "U02GW11FVJP",
+-    "inFocus7": "U032J2NT4CF",
+-    "__jameshbarton" : "U017SFK32D8",
+-    "__jenshu": "U016LC0Q70A",
+-    "__jmunozro" : "U0214QV6L3Y",
+-    "kdorosh": "ULE7TSJ12",
+-    "__nfuden": "U02JCDBKEDT",
+-    "__Rachael-Graham": "U02BQ7E7W3S",
+-    "__saiskee": "U01D06A9NVA",
+-    "sam-heilbron": "U01DAPLBEBG",
+-    "bslabe123": "U036L35S0UV",
+-    "jackstine": "U037H74RSN7"
+-}
+diff --git a/.github/workflows/regression-tests.yaml b/.github/workflows/regression-tests.yaml
+index 081ede0..cb8e686 100644
+--- a/.github/workflows/regression-tests.yaml
++++ b/.github/workflows/regression-tests.yaml
+@@ -72,29 +72,3 @@ jobs:
+     steps:
+     - uses: actions/checkout@v3
+     - uses: ./.github/workflows/composite-actions/regression-tests
+-
+-  notify_slack:
+-    name: Notify slack
+-    runs-on: ubuntu-22.04
+-    if: ${{ github.event_name == 'pull_request' && failure() }}
+-    needs: [ regression_tests ]
+-    steps:
+-      - uses: actions/checkout@v3
+-      - uses: actions/setup-go@v4
+-        with:
+-          go-version-file: go.mod
+-      - uses: actions/download-artifact@v3
+-      - name: Set pull_request_url
+-        run: echo "pull_request_url=$(cat ${{ github.event_path }} | jq --raw-output .pull_request._links.html.href)" >> $GITHUB_ENV
+-      - name: Set direct_message_id
+-        run: echo "direct_message_id=$(cat ./.github/workflows/notify-on-regression-failure-list.json | jq -r '."${{ github.actor }}"')" >> $GITHUB_ENV
+-      - name: send slack message
+-        env:
+-          PARENT_JOB_URL: ${{ env.pull_request_url }}       # parent job hyperlink
+-          PREAMBLE: "Your recent Gloo PR regression tests"  # text to hyperlink at start of slack message
+-          SLACK_CHANNEL: ${{ env.direct_message_id }}       # DM to the user who ran CI
+-          SLACKBOT_BEARER: ${{ secrets.SLACKBOT_BEARER }}
+-        run: |
+-          test_results="$(cat */test-out.json | jq -c --slurp .)"
+-          echo $test_results
+-          go run .github/workflows/helpers/notify-from-json.go $test_results
+diff --git a/changelog/v1.15.0-beta8/remove-kube2e-pr-alerts.yaml b/changelog/v1.15.0-beta8/remove-kube2e-pr-alerts.yaml
+new file mode 100644
+index 0000000..5e11f63
+--- /dev/null
++++ b/changelog/v1.15.0-beta8/remove-kube2e-pr-alerts.yaml
+@@ -0,0 +1,5 @@
++changelog:
++  - type: NON_USER_FACING
++    description: Remove individual alerts on failred regression tests
++    issueLink: https://github.com/solo-io/solo-projects/issues/4964
++    resolvesIssue: false
+\ No newline at end of file

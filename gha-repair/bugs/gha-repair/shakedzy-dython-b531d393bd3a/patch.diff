@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/pytest.yml b/.github/workflows/pytest.yml
+index 143bf98..33846e6 100644
+--- a/.github/workflows/pytest.yml
++++ b/.github/workflows/pytest.yml
+@@ -11,6 +11,7 @@ on:
+       - "VERSION"
+       - "LICENSE"
+       - ".gitignore"
++      - "docs/*"
+   pull_request:
+     types: [opened, reopened, edited, synchronize]
+     branches: [ "master", "shakedzy:master" ]
+@@ -22,6 +23,7 @@ on:
+       - "VERSION"
+       - "LICENSE"
+       - ".gitignore"
++      - "docs/*"
+ 
+ permissions:
+   contents: read

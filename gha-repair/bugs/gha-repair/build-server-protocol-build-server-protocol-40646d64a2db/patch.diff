@@ -1,0 +1,9 @@
+diff --git a/.github/workflows/verify.yml b/.github/workflows/verify.yml
+index f46fd7c..23147bd 100644
+--- a/.github/workflows/verify.yml
++++ b/.github/workflows/verify.yml
+@@ -36,3 +36,4 @@ jobs:
+         with:
+             java-version: adopt@1.8
+       - run: sbt checkScalaFormat
++      - run: cd website && yarn install && yarn prettier --check .

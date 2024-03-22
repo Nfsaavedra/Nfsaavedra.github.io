@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/docs.yml b/.github/workflows/docs.yml
+index a678cf7..d4d5173 100644
+--- a/.github/workflows/docs.yml
++++ b/.github/workflows/docs.yml
+@@ -106,4 +106,4 @@ jobs:
+ 
+     - name: Deploy to GitHub Pages
+       id: deployment
+-      uses: actions/deploy-pages@v1
++      uses: actions/deploy-pages@v2

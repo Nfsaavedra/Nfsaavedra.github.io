@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 8d8f1a0..e70a527 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -46,7 +46,7 @@ jobs:
+         run: cargo test --doc --workspace
+ 
+       - name: Upload coverage
+-        uses: codecov/codecov-action@v2
++        uses: codecov/codecov-action@v3
+         with:
+           files: lcov.info
+ 

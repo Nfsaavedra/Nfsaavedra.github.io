@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/aunit_tests.yml b/.github/workflows/aunit_tests.yml
+index 8868ad2..3093609 100644
+--- a/.github/workflows/aunit_tests.yml
++++ b/.github/workflows/aunit_tests.yml
+@@ -5,10 +5,10 @@ on: [push]
+ jobs:
+   build:
+ 
+-    runs-on: ubuntu-20.04
++    runs-on: ubuntu-latest
+     
+     steps:
+-    - uses: actions/checkout@v2
++    - uses: actions/checkout@v3
+ 
+     - name: Setup
+       run: |

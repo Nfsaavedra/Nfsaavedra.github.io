@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/binary-release.yml b/.github/workflows/binary-release.yml
+index cb5a66e..c315b0b 100644
+--- a/.github/workflows/binary-release.yml
++++ b/.github/workflows/binary-release.yml
+@@ -9,7 +9,6 @@ on:
+ jobs:
+   audioserve-build:
+     runs-on: ubuntu-20.04
+-    if: ${{ needs.check_date.outputs.should_run != 'false' }}
+     steps:
+     - uses: actions/checkout@v2
+     - name: Build image

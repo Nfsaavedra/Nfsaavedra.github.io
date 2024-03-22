@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/release-drafter.yml b/.github/workflows/release-drafter.yml
+index abe972a..a870f60 100644
+--- a/.github/workflows/release-drafter.yml
++++ b/.github/workflows/release-drafter.yml
+@@ -13,7 +13,6 @@ jobs:
+       # Drafts your next Release notes as Pull Requests are merged into "master"
+       - uses: release-drafter/release-drafter@v5
+         with:
+-          # (Optional) specify config name to use, relative to .github/. Default: release-drafter.yml
+-          # config-name: my-config.yml
++          config-name: release-drafter.yml
+         env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+\ No newline at end of file

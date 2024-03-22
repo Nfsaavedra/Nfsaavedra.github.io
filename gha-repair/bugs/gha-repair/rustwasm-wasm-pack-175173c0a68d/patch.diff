@@ -1,0 +1,63 @@
+diff --git a/.github/workflows/approve.yml b/.github/workflows/approve.yml
+new file mode 100644
+index 0000000..ffe7e12
+--- /dev/null
++++ b/.github/workflows/approve.yml
+@@ -0,0 +1,15 @@
++name: Automatic Approve
++on:
++  schedule: 
++    - cron: "0 0 * * *"
++  workflow_dispatch:
++jobs:
++  automatic-approve:
++    name: Automatic Approve
++    runs-on: ubuntu-latest
++    steps:
++      - name: Automatic Approve
++        uses: mheap/automatic-approve-action@v1.1.0
++        with:
++          token: ${{ secrets.GITHUB_TOKEN }}
++          workflows: "test.yml"
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 1ab3d9e..a09516c 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -91,10 +91,8 @@ jobs:
+         if: matrix.build == 'windows'
+         shell: bash
+         run: |
+-          cp ./target/release/${{ env.RELEASE_BIN }}.exe ./dist/${{ env.RELEASE_BIN }}.exe
+-          cp ./target/release/${{ env.RELEASE_BIN }}.exe wasm-pack-init.exe
++          mv ./target/release/${{ env.RELEASE_BIN }}.exe ./dist/${{ env.RELEASE_BIN }}.exe
+           mv ${{ env.RELEASE_ADDS }} ./dist
+-          mv wasm-pack-init.exe ${{ env.RELEASE_DIR }}
+           7z a -ttar -so -an ./dist | 7z a -si ./${{ env.RELEASE_DIR }}/${{ env.RELEASE_BIN }}-${{ steps.get_version.outputs.VERSION }}-${{ env.WINDOWS_TARGET }}.tar.gz
+ 
+       - name: Create tarball (MacOS)
+@@ -136,7 +134,7 @@ jobs:
+         with:
+           name: linux
+ 
+-      - name: Download Windows tarball
++      - name: Download MacOS tarball
+         uses: actions/download-artifact@v1
+         with:
+           name: windows
+@@ -166,16 +164,6 @@ jobs:
+           asset_content_type: application/gzip
+           asset_name: wasm-pack-${{ steps.get_version.outputs.VERSION }}-${{ env.WINDOWS_TARGET }}.tar.gz
+ 
+-      - name: Release Windows init exe
+-        uses: actions/upload-release-asset@v1
+-        env:
+-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+-        with:
+-          upload_url: ${{ steps.create_release.outputs.upload_url }}
+-          asset_path: ./windows/wasm-pack-init.exe
+-          asset_content_type: application/vnd.microsoft.portable-executable
+-          asset_name: wasm-pack-init.exe
+-
+       - name: Release MacOS tarball
+         uses: actions/upload-release-asset@v1
+         env:

@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/validate.yaml b/.github/workflows/validate.yaml
+index 0197a38..96e8784 100644
+--- a/.github/workflows/validate.yaml
++++ b/.github/workflows/validate.yaml
+@@ -2,7 +2,11 @@ name: "Validate"
+ 
+ on:
+   push:
++    branches:
++      - master
+   pull_request:
++    branches:
++      - master
+   # push:
+   #   branches:
+   #     - main

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/win32_release.yml b/.github/workflows/win32_release.yml
+index 9a48a66..9c10957 100644
+--- a/.github/workflows/win32_release.yml
++++ b/.github/workflows/win32_release.yml
+@@ -51,7 +51,7 @@ jobs:
+             - uses: actions/setup-python@v2
+               with:
+                 python-version: ${{ env.PYTHON_VERSION }}
+-                architecture: 'x64'
++                architecture: 'x86'
+                 
+             - name: Clone repo
+               uses: actions/checkout@v2

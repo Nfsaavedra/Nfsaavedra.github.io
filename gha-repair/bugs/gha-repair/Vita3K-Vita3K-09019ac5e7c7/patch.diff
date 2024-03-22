@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/c-cpp.yml b/.github/workflows/c-cpp.yml
+index 614c6c5..b028164 100644
+--- a/.github/workflows/c-cpp.yml
++++ b/.github/workflows/c-cpp.yml
+@@ -111,6 +111,14 @@ jobs:
+         id: build_variable
+         run: echo "::set-output name=Build_Variable::$(git rev-list HEAD --count)"
+         if: matrix.os == 'ubuntu-latest'
++
++      - name: Bundle OpenSSL shared objects
++        id: bundle_openssl
++        run: |
++            cd build/${{ matrix.cmake_preset }}/bin/${{ matrix.config }}
++            cp /usr/lib/x86_64-linux-gnu/libssl.so.3 ./libssl.so.3
++            cp /usr/lib/x86_64-linux-gnu/libcrypto.so.3 ./libcrypto.so.3
++        if: matrix.os == 'ubuntu-latest'
+         
+       - name: Create DMG (macos-latest)
+         run: |

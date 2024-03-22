@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/update.yml b/.github/workflows/update.yml
+index b1cca73..87f225d 100644
+--- a/.github/workflows/update.yml
++++ b/.github/workflows/update.yml
+@@ -1,4 +1,4 @@
+-name: "Test"
++name: "Update"
+ on:
+   workflow_dispatch:
+   schedule:

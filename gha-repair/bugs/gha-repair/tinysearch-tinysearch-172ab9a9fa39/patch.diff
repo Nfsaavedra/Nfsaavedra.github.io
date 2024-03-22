@@ -1,0 +1,25 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 863dc64..4fd23c2 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -72,12 +72,20 @@ jobs:
+           use-cross: true 
+ 
+       - name: Optimize and package binary
++        if: ${{ !contains(matrix.target, 'mips') }}
+         run: |
+           cd target/${{ matrix.target }}/release
+           ${GNU_PREFIX}strip tinysearch
+           chmod +x tinysearch
+           tar -c tinysearch | gzip > tinysearch.tar.gz
+ 
++      - name: Package binary without optimization
++        if: ${{ contains(matrix.target, 'mips') }}
++        run: |
++          cd target/${{ matrix.target }}/release
++          chmod +x tinysearch
++          tar -c tinysearch | gzip > tinysearch.tar.gz
++
+       - name: Upload binary
+         uses: actions/upload-release-asset@v1
+         env:

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index a3a0034..a851edf 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -4,7 +4,7 @@ jobs:
+ 
+   release:
+     runs-on: ubuntu-latest
+-    if: startsWith(github.ref, 'refs/tags/')
++    # if: startsWith(github.ref, 'refs/tags/')
+     steps:
+       - name: Checkout
+         uses: actions/checkout@v2

@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index e6d4235..2b9bb40 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -95,5 +95,6 @@ jobs:
+ 
+     - name: Test and coverage
+       env:
++        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This is needed especially for fork PRs.
+         COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+       run: ${{ matrix.test_script_name }}

@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/run-tests.yml b/.github/workflows/run-tests.yml
+index f8a716b..4e33d6f 100644
+--- a/.github/workflows/run-tests.yml
++++ b/.github/workflows/run-tests.yml
+@@ -21,9 +21,6 @@ jobs:
+                       testbench: 5.*
+                     - laravel: 6.*
+                       testbench: 4.*
+-                exclude:
+-                    - php: 8.0
+-                      laravel: 6.*
+ 
+         name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.dependency-version }} - ${{ matrix.os }}
+ 

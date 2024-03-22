@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/autoMerge.yml b/.github/workflows/autoMerge.yml
+index cf26618..68a3dc3 100644
+--- a/.github/workflows/autoMerge.yml
++++ b/.github/workflows/autoMerge.yml
+@@ -27,4 +27,4 @@ jobs:
+         uses: maxkomarychev/merge-pal-action@v0.5.1
+         with:
+           # Token to perform api calls
+-          token: ${{ secrets.PUSH_TOKEN }}
++          token: ${{ secrets.MERGE_TOKEN }}

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/docs.yml b/.github/workflows/docs.yml
+index 00ce670..a621e7b 100644
+--- a/.github/workflows/docs.yml
++++ b/.github/workflows/docs.yml
+@@ -14,5 +14,6 @@ jobs:
+         with:
+           python-version: 3.x
+       - run: pip install mkdocs-material
++      - run: pip install git-revision-date
+       - run: mkdocs gh-deploy --force
+       
+\ No newline at end of file

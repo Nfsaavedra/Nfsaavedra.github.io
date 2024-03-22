@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/schedule.yml b/.github/workflows/schedule.yml
+index b6f88ff..1a99050 100644
+--- a/.github/workflows/schedule.yml
++++ b/.github/workflows/schedule.yml
+@@ -4,7 +4,7 @@ name: schedule
+ 
+ on:
+   schedule:
+-    - cron: '*/2 * * * *'
++    - cron: '*/5 * * * *'
+ 
+ jobs:
+   build:

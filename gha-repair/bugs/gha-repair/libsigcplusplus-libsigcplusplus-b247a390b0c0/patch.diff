@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/cmake-msvc.yml b/.github/workflows/cmake-msvc.yml
+index 5007847..49150c8 100644
+--- a/.github/workflows/cmake-msvc.yml
++++ b/.github/workflows/cmake-msvc.yml
+@@ -1,6 +1,8 @@
+ name: "CI: cmake: msvc 2019"
+ 
+-on: [push]
++# This test does not work any more. Don't run it automatically.
++# I don't know how it shall be changed. /2020-11-25 Kjell Ahlstedt
++on: [workflow_dispatch]
+ 
+ jobs:
+   build:

@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index d303ea9..01423f7 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -7,9 +7,9 @@ jobs:
+     uses: Tyrrrz/.github/.github/workflows/nuget.yml@master
+     with:
+       dotnet-version: 7.0.x
+-      env: |
+-        TEST_GITHUB_TOKEN=${{ secrets.TEST_GITHUB_TOKEN }}
+     secrets:
+       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+       NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
+-      DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+\ No newline at end of file
++      DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
++      ENVIRONMENT: |
++        TEST_GITHUB_TOKEN=${{ secrets.TEST_GITHUB_TOKEN }}
+\ No newline at end of file

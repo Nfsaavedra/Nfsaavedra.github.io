@@ -1,0 +1,23 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index d335b46..3fa5806 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -14,7 +14,7 @@ jobs:
+     strategy:
+       matrix:
+         node-version: [12.x]
+-        os: [ubuntu-latest, windows-latest]
++        os: [ubuntu-latest, windows-latest, macos-latest]
+ 
+     runs-on: ${{ matrix.os }}
+ 
+@@ -62,3 +62,9 @@ jobs:
+       with:
+         name: freetube-vue-0.8.0-setup-x64.exe
+         path: build/FreeTube-Vue Setup 0.8.0.exe
++    - name: Upload Mac .dmg Artifact
++      uses: actions/upload-artifact@v2
++      if: startsWith(matrix.os, 'macos')
++      with:
++        name: freetube-vue-0.8.0.dmg
++        path: build/FreeTube-Vue-0.8.0.dmg

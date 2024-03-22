@@ -1,0 +1,24 @@
+diff --git a/.github/workflows/regression-tests-and-codegen.yaml b/.github/workflows/regression-tests-and-codegen.yaml
+index 073414e..7c998c9 100644
+--- a/.github/workflows/regression-tests-and-codegen.yaml
++++ b/.github/workflows/regression-tests-and-codegen.yaml
+@@ -15,7 +15,7 @@ jobs:
+         go-version: 1.14
+       id: go
+     - name: Install Protoc
+-      uses: solo-io/setup-protoc@master
++      uses: arduino/setup-protoc@v1.1.2
+       with:
+         version: '3.6.1'
+         repo-token: ${{ secrets.GITHUB_TOKEN }}
+diff --git a/changelog/v1.6.0-beta11/use-upstream-setup-protoc.yaml b/changelog/v1.6.0-beta11/use-upstream-setup-protoc.yaml
+new file mode 100644
+index 0000000..9b3db08
+--- /dev/null
++++ b/changelog/v1.6.0-beta11/use-upstream-setup-protoc.yaml
+@@ -0,0 +1,4 @@
++changelog:
++  - type: NON_USER_FACING
++    description: Update upstream protoc setup action
++    issueLink: https://github.com/solo-io/gloo/issues/3810
+\ No newline at end of file

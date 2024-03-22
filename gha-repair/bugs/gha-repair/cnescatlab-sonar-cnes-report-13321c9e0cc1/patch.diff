@@ -1,0 +1,22 @@
+diff --git a/.github/workflows/java-continuous-integration.yml b/.github/workflows/java-continuous-integration.yml
+index a72a45c..9d48507 100644
+--- a/.github/workflows/java-continuous-integration.yml
++++ b/.github/workflows/java-continuous-integration.yml
+@@ -15,7 +15,7 @@ jobs:
+     runs-on: ubuntu-latest
+     strategy:
+       matrix:
+-        java: [ '11', '17', '21' ]
++        java: [ '11', '17' ]
+     name: Java ${{ matrix.Java }} CI
+     steps:
+       - name: Check out repository code
+@@ -97,7 +97,7 @@ jobs:
+         uses: actions/setup-java@v2
+         with:
+           distribution: 'adopt'
+-          java-version: '21'
++          java-version: '17'
+       - name: Cache Maven packages
+         uses: actions/cache@v2
+         with:

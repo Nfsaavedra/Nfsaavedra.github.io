@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/validate.yml b/.github/workflows/validate.yml
+index fa301b8..1bf6188 100644
+--- a/.github/workflows/validate.yml
++++ b/.github/workflows/validate.yml
+@@ -13,4 +13,4 @@ jobs:
+     - uses: actions/setup-dotnet@v1
+       with:
+         dotnet-version: '5.0.100' # SDK Version to use.
+-    - run: dotnet run -- -s Validate=true
++    - run: dotnet run -- -s Validate=true -l Debug

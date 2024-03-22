@@ -1,0 +1,22 @@
+diff --git a/.github/workflows/sonar-scanner.yml b/.github/workflows/sonar-scanner.yml
+index 808c903..8c3c28a 100644
+--- a/.github/workflows/sonar-scanner.yml
++++ b/.github/workflows/sonar-scanner.yml
+@@ -17,7 +17,7 @@ jobs:
+       with:
+         fetch-depth: 0
+     - name: Setup SonarQube scanner
+-      uses: nixel2007/sonarcloud-github-action@v1.4
++      uses: sonarsource/sonarcloud-github-action@master
+       env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+@@ -57,7 +57,7 @@ jobs:
+       with:
+         fetch-depth: 0
+     - name: Setup SonarQube scanner
+-      uses: nixel2007/sonarcloud-github-action@v1.4
++      uses: sonarsource/sonarcloud-github-action@master
+       env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

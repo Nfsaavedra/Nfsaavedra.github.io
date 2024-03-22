@@ -1,0 +1,90 @@
+diff --git a/.github/workflows/build.yaml b/.github/workflows/build.yaml
+new file mode 100644
+index 0000000..93eb11c
+--- /dev/null
++++ b/.github/workflows/build.yaml
+@@ -0,0 +1,23 @@
++name: yarn build
++on:
++  pull_request:
++    branches:
++      - master
++  push:
++    branches:
++      - master
++  workflow_dispatch: {}
++
++jobs:
++  npm-build:
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v3
++      - uses: actions/setup-node@v3
++        with:
++          node-version: 18
++      - run: npm i -g yarn
++      - run: yarn install
++      - run: yarn lint
++      - run: yarn zip
++      # Add publishing steps
+diff --git a/.github/workflows/master.yaml b/.github/workflows/master.yaml
+deleted file mode 100644
+index d98af29..0000000
+--- a/.github/workflows/master.yaml
++++ /dev/null
+@@ -1,20 +0,0 @@
+-name: master
+-on:
+-  push:
+-    branches:
+-      - master
+-  workflow_dispatch: {}
+-
+-jobs:
+-  npm-build:
+-    runs-on: ubuntu-latest
+-    steps:
+-      - uses: actions/checkout@v3
+-      - uses: actions/setup-node@v3
+-        with:
+-          node-version: 18
+-      - run: npm i -g yarn
+-      - run: yarn install
+-      - run: yarn lint
+-      - run: yarn zip
+-      # Add publishing steps
+diff --git a/.github/workflows/pull-request.yaml b/.github/workflows/pull-request.yaml
+deleted file mode 100644
+index 87d76f4..0000000
+--- a/.github/workflows/pull-request.yaml
++++ /dev/null
+@@ -1,19 +0,0 @@
+-name: pull-request
+-on:
+-  pull_request:
+-    branches:
+-      - master
+-  workflow_dispatch: {}
+-
+-jobs:
+-  npm-build:
+-    runs-on: ubuntu-latest
+-    steps:
+-      - uses: actions/checkout@v3
+-      - uses: actions/setup-node@v3
+-        with:
+-          node-version: 18
+-      - run: npm i -g yarn
+-      - run: yarn install
+-      - run: yarn lint
+-      - run: yarn zip
+diff --git a/.github/workflows/safari.yaml b/.github/workflows/safari.yaml
+index 3f61d14..1f0c96b 100644
+--- a/.github/workflows/safari.yaml
++++ b/.github/workflows/safari.yaml
+@@ -1,4 +1,4 @@
+-name: master
++name: safari build
+ on:
+   release:
+     types: [published]

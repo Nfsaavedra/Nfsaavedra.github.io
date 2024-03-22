@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/push.yml b/.github/workflows/push.yml
+index 0e21158..7bd21b9 100644
+--- a/.github/workflows/push.yml
++++ b/.github/workflows/push.yml
+@@ -13,7 +13,7 @@ jobs:
+         uses: actions/setup-node@v1
+         with:
+           node-version: 12.x
+-          # registry-url: <registry url>
++          # registry-url:  <registry url>
+         id: node
+       - name: Setup Tools
+         run: |

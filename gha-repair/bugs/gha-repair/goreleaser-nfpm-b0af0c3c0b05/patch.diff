@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/generate.yml b/.github/workflows/generate.yml
+index 9bfce70..a45227b 100644
+--- a/.github/workflows/generate.yml
++++ b/.github/workflows/generate.yml
+@@ -27,7 +27,7 @@ jobs:
+       - run: task docs:releases
+         env:
+           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+-      - uses: stefanzweifel/git-auto-commit-action@v4
++      - uses: stefanzweifel/git-auto-commit-action@v5
+         with:
+           commit_message: "docs: update cmd docs"
+           branch: main

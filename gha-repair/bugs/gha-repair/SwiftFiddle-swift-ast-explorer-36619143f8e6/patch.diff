@@ -1,0 +1,97 @@
+diff --git a/.github/workflows/run.yml b/.github/workflows/run.yml
+new file mode 100644
+index 0000000..787fa12
+--- /dev/null
++++ b/.github/workflows/run.yml
+@@ -0,0 +1,43 @@
++name: Run
++on:
++  workflow_dispatch:
++
++jobs:
++  run:
++    runs-on: ubuntu-latest
++    steps:
++      - uses: actions/checkout@v2
++      - name: Run
++        run: |
++          set -ex
++
++          mkdir -p ~/.ssh
++          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
++          chmod 600 ~/.ssh/id_rsa
++
++          TERM=xterm ssh -t -t -o 'StrictHostKeyChecking no' "${{ secrets.SSH_LOGIN_USER }}@${{ secrets.SSH_HOST }}" <<EOS
++          set -ex
++
++          [ -d app ] || git clone https://github.com/kishikawakatsumi/swift-ast-explorer.git app
++
++          cd app
++          git pull --rebase origin master
++
++          docker_compose='docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v "\$PWD:\$PWD" -w="\$PWD" docker/compose:latest'
++          eval \$docker_compose pull
++          eval \$docker_compose up --detach
++
++          docker image prune --force
++
++          exit 0
++          EOS
++
++      - name: Purge Cache
++        run: |
++          set -ex
++
++          curl -X POST "https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache" \
++            -H "X-Auth-Email: ${{ secrets.CLOUDFLARE_EMAIL }}" \
++            -H "X-Auth-Key: ${{ secrets.CLOUDFLARE_API_KEY }}" \
++            -H "Content-Type:application/json" \
++            --data '{"purge_everything":true}'
+diff --git a/.github/workflows/setup.yml b/.github/workflows/setup.yml
+index 4a2c108..f5f56cd 100644
+--- a/.github/workflows/setup.yml
++++ b/.github/workflows/setup.yml
+@@ -16,7 +16,7 @@ jobs:
+             --data "client_id=${{ secrets.GOOGLE_CLOUD_PLATFORM_CLIENT_ID }}" \
+             --data "client_secret=${{ secrets.GOOGLE_CLOUD_PLATFORM_CLIENT_SECRET }}" \
+             --data "grant_type=refresh_token" \
+-            | jq '.access_token' -r)
++            | jq -r '.access_token')
+ 
+           VM_NAME=swift-ast-explorer-$(date +%Y%m%d-%H%M%S)
+           VM_ZONE=us-west1-b
+@@ -86,3 +86,34 @@ jobs:
+             --header 'Content-Type: application/json' \
+             --compressed \
+             --data "$data"
++
++          ip_address=$(curl --silent --fail -X GET \
++            "https://compute.googleapis.com/compute/v1/projects/${{ secrets.GOOGLE_CLOUD_PLATFORM_PROJECT_ID }}/zones/$VM_ZONE/instances/$VM_NAME?key=${{ secrets.GOOGLE_CLOUD_PLATFORM_API_KEY }}" \
++            --header "Authorization: Bearer $GOOGLE_CLOUD_PLATFORM_ACCESS_TOKEN" \
++            --header 'Accept: application/json' \
++            --compressed \
++            | jq  -r '.[].networkInterfaces[].accessConfigs[].natIP')
++
++
++          docker login --username ${{ secrets.DOCKER_HUB_USERNAME }} --password ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
++          docker build --rm --no-cache --tag kishikawakatsumi/swift-ast-explorer .
++          docker push kishikawakatsumi/swift-ast-explorer
++
++          mkdir -p ~/.ssh
++          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
++          chmod 600 ~/.ssh/id_rsa
++
++          TERM=xterm ssh -t -t -o 'StrictHostKeyChecking no' "${{ secrets.SSH_LOGIN_USER }}@$ip_address" <<EOS
++          set -ex
++
++          [ -d app ] || git clone https://github.com/kishikawakatsumi/swift-ast-explorer.git app
++
++          cd app
++          git pull --rebase origin master
++
++          docker_compose='docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v "\$PWD:\$PWD" -w="\$PWD" docker/compose:latest'
++          eval \$docker_compose pull
++          docker image prune --force
++
++          exit 0
++          EOS

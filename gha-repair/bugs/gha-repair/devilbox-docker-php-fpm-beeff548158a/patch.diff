@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/linting.yml b/.github/workflows/linting.yml
+index 01d7e46..0816266 100644
+--- a/.github/workflows/linting.yml
++++ b/.github/workflows/linting.yml
+@@ -11,6 +11,7 @@ name: lint
+ # -------------------------------------------------------------------------------------------------
+ on:
+   # Runs on Pull Requests
++  workflow_dispatch:
+   pull_request:
+ 
+ 

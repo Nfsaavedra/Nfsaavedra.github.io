@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/lint-test.yml b/.github/workflows/lint-test.yml
+index 512e307..e99e6d1 100644
+--- a/.github/workflows/lint-test.yml
++++ b/.github/workflows/lint-test.yml
+@@ -98,8 +98,7 @@ jobs:
+         [flake8] %(code)s: %(text)s'"
+ 
+       - name: Run tests and generate coverage report
+-        run: |
+-            pytest -n auto --cov --disable-warnings -q
++        run: pytest -n auto --cov --disable-warnings -q
+ 
+       # This step will publish the coverage reports coveralls.io and
+       # print a "job" link in the output of the GitHub Action

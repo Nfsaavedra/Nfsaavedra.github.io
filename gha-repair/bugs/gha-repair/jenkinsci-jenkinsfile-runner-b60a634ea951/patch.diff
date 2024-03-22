@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/docker-cd.yml b/.github/workflows/docker-cd.yml
+index ad44556..c9c6734 100644
+--- a/.github/workflows/docker-cd.yml
++++ b/.github/workflows/docker-cd.yml
+@@ -1,9 +1,9 @@
+ name: Continuous Delivery
+ on:
+   push:
+-    branches: [ master, github-action-cicd ]
++    branches: [ main, github-action-cicd, java-11-update ]
+   pull_request:
+-    branches: [ master, github-action-cicd ]
++    branches: [ main, github-action-cicd, java-11-update ]
+ 
+ env:
+   IMAGE_NAME: ${{ github.repository }}

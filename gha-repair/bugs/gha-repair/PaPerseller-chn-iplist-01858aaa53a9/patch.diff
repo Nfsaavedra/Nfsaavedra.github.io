@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/update-cnip.yml b/.github/workflows/update-cnip.yml
+index 0c3a32f..63fa9a2 100644
+--- a/.github/workflows/update-cnip.yml
++++ b/.github/workflows/update-cnip.yml
+@@ -33,6 +33,7 @@ jobs:
+         run: |
+           wget 'https://raw.githubusercontent.com/PaPerseller/chn-iplist/master/scripts/generate.py'
+           python generate.py
++          rm update_chnip.py generate.py
+ 
+       - name: Commit file
+         run: |

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 4bbfce6..888bd39 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -68,7 +68,7 @@ jobs:
+         verbose: true
+ 
+ 
+-  test_3_11:
++  test_3_9_to_3_11:
+     name: Test / ${{ matrix.os }} / Python ${{ matrix.python-version }}
+     strategy:
+       fail-fast: false

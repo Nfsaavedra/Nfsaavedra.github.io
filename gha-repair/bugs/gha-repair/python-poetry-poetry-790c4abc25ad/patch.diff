@@ -1,0 +1,25 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index e5d6df5..b93d92b 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -18,11 +18,18 @@ on:
+ jobs:
+   tests:
+     name: ${{ matrix.os }} / ${{ matrix.python-version }} ${{ matrix.suffix }}
+-    runs-on: ${{ matrix.os }}-latest
++    runs-on: ${{ matrix.image }}
+     strategy:
+       matrix:
+-        os: [Ubuntu, MacOS, Windows]
++        os: [Ubuntu, macOS, Windows]
+         python-version: ["3.6", "3.7", "3.8", "3.9", "3.10"]
++        include:
++          - os: Ubuntu
++            image: ubuntu-latest
++          - os: Windows
++            image: windows-2022
++          - os: macOS
++            image: macos-11
+       fail-fast: false
+     defaults:
+       run:

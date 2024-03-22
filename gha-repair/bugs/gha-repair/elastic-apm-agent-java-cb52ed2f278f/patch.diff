@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/labeler.yml b/.github/workflows/labeler.yml
+index 89915f2..97869b5 100644
+--- a/.github/workflows/labeler.yml
++++ b/.github/workflows/labeler.yml
+@@ -26,6 +26,7 @@ jobs:
+         usernamesToExclude: |
+           apmmachine
+           dependabot
++          dependabot[bot]
+         GITHUB_TOKEN: ${{ secrets.APM_TECH_USER_TOKEN }}
+     - name: Show team membership
+       run: |

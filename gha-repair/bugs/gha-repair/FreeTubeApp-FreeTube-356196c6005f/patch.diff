@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/autoLabelIssue.yaml b/.github/workflows/autoLabelIssue.yaml
+index f5f14d5..7981dea 100644
+--- a/.github/workflows/autoLabelIssue.yaml
++++ b/.github/workflows/autoLabelIssue.yaml
+@@ -9,7 +9,7 @@ jobs:
+     steps:
+       - uses: Naturalclar/issue-action@v2.0.2
+         with:
+-          body: "both"
++          title-or-body: "body"
+           parameters: >-
+             [
+               {

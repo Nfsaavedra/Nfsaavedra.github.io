@@ -1,0 +1,23 @@
+diff --git a/.github/workflows/docs-gen-preview.yaml b/.github/workflows/docs-gen-preview.yaml
+index f997a09..3046b53 100644
+--- a/.github/workflows/docs-gen-preview.yaml
++++ b/.github/workflows/docs-gen-preview.yaml
+@@ -52,6 +52,7 @@ jobs:
+         GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+         SKIP_CHANGELOG_GENERATION: ${{ steps.community-pr-check.outputs.IS_COMMUNITY_PR }}
+         SKIP_SECURITY_SCAN: ${{ steps.community-pr-check.outputs.IS_COMMUNITY_PR }}
++        SKIP_ENTERPRISE_DOCS_GENERATION: ${{ steps.community-pr-check.outputs.IS_COMMUNITY_PR }}
+         USE_PR_SHA_AS_MASTER: ${{ github.event_name == 'pull_request' && !steps.community-pr-check.outputs.IS_COMMUNITY_PR }}
+         PULL_REQUEST_SHA: ${{ github.event.pull_request.head.sha }}
+     - name: Deploy to Firebase
+diff --git a/changelog/v1.9.0-beta3/skip-enterprise-docs-gen-preview-community-pr.yaml b/changelog/v1.9.0-beta3/skip-enterprise-docs-gen-preview-community-pr.yaml
+new file mode 100644
+index 0000000..7c827b8
+--- /dev/null
++++ b/changelog/v1.9.0-beta3/skip-enterprise-docs-gen-preview-community-pr.yaml
+@@ -0,0 +1,4 @@
++changelog:
++  - type: NON_USER_FACING
++    description: > 
++      Skip enterprise docs generation on community PRs during the docs-gen-preview workflow.
+\ No newline at end of file

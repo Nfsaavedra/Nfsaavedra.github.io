@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index ce8e4e1..6e7c2e7 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -410,7 +410,7 @@ jobs:
+     steps:
+     - uses: actions/checkout@v3
+     - name: Setup dotnet
+-      uses: actions/setup-dotnet@v3.0.1
++      uses: actions/setup-dotnet@v3.0.2
+       with:
+         dotnet-version: ${{ matrix.dotnet }}
+     - name: Set up Ruby

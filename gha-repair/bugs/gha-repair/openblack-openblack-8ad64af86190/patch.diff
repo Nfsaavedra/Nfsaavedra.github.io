@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/format-check.yml b/.github/workflows/format-check.yml
+index 61f43d1..c46786f 100644
+--- a/.github/workflows/format-check.yml
++++ b/.github/workflows/format-check.yml
+@@ -5,6 +5,7 @@ on:
+     tags:
+     branches:
+       - 'master'
++      - 'ci-tests/**'  # Branch namespace can be used to test changes to test before going to master
+ jobs:
+   formatting-check:
+     name: clang-format

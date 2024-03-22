@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/backport.yaml b/.github/workflows/backport.yaml
+index b28fb77..3b96dbb 100644
+--- a/.github/workflows/backport.yaml
++++ b/.github/workflows/backport.yaml
+@@ -24,7 +24,7 @@ jobs:
+     steps:
+       - name: Generate token
+         id: generate_token
+-        uses: tibdex/github-app-token@v1
++        uses: tibdex/github-app-token@v2
+         with:
+           app_id: ${{ secrets.POETRY_TOKEN_APP_ID }}
+           private_key: ${{ secrets.POETRY_TOKEN_APP_KEY }}

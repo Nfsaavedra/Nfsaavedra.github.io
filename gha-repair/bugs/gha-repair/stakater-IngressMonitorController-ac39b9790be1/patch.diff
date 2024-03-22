@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/pull_request.yml b/.github/workflows/pull_request.yml
+index 9bf1d85..d17c0b3 100644
+--- a/.github/workflows/pull_request.yml
++++ b/.github/workflows/pull_request.yml
+@@ -59,7 +59,7 @@ jobs:
+     - name: Set up Cluster
+       run: |
+         kubectl cluster-info
+-        kubectl apply -f deploy/crds
++        make install
+         mkdir -p .local
+         echo "${{ secrets.SECRET_KUBERNETES_RESOURCES }}" | base64 --decode > .local/test-config.yaml
+         

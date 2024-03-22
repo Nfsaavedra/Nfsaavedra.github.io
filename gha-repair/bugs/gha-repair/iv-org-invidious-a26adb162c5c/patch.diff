@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index f98fe09..4078034 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -38,7 +38,7 @@ jobs:
+         stable: [true]
+         crystal:
+           - 1.0.0
+-          - 1.1.0
++          - 1.1.1
+         include:
+           - crystal: nightly
+             stable: false

@@ -1,0 +1,23 @@
+diff --git a/src/test/java/org/traccar/protocol/TotemProtocolDecoderTest.java b/src/test/java/org/traccar/protocol/TotemProtocolDecoderTest.java
+index df57345..1e432bd 100644
+--- a/src/test/java/org/traccar/protocol/TotemProtocolDecoderTest.java
++++ b/src/test/java/org/traccar/protocol/TotemProtocolDecoderTest.java
+@@ -2,6 +2,7 @@ package org.traccar.protocol;
+ 
+ import org.junit.Test;
+ import org.traccar.ProtocolTest;
++import org.traccar.model.Position;
+ 
+ public class TotemProtocolDecoderTest extends ProtocolTest {
+ 
+@@ -10,6 +11,10 @@ public class TotemProtocolDecoderTest extends ProtocolTest {
+ 
+         var decoder = inject(new TotemProtocolDecoder(null));
+ 
++        verifyAttribute(decoder, text(
++                "$$0494E2123456789012345|150425223945,113.925525,22.55814,1122334455|38"),
++                Position.KEY_DRIVER_UNIQUE_ID, "1122334455");
++
+         verifyPosition(decoder, text(
+                 "$$0111AA353081090067318|0804400022070722520240400005B364ED5003107300001.700000002245.3919N10231.6952W000001860E"));
+ 

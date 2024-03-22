@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 5df8cc5..6a28203 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -112,4 +112,4 @@ jobs:
+         target_branch: gh-pages
+         build_dir: docs/_build/html
+       env:
+-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
++        GITHUB_PAT: ${{ secrets.GITHUB_PAT }}

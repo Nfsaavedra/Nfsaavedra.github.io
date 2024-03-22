@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/c-cpp.yml b/.github/workflows/c-cpp.yml
+index ae1104d..2ded220 100644
+--- a/.github/workflows/c-cpp.yml
++++ b/.github/workflows/c-cpp.yml
+@@ -211,11 +211,11 @@ jobs:
+             else
+               if [[ $f == *ubuntu-latest ]]
+               then
+-                if [[ $f == *AppImage* ]]
++                if [[ $f == *appimage* ]]
+                 then
+-                  cp $(basename $f)/$(basename $f).AppImage* ../artifacts/
++                  cp $(basename $f)/*.AppImage* artifacts/
+                 else
+-                  rm -f $(basename $f)/$(basename $f).AppImage*
++                  rm -f $(basename $f)/*.AppImage*
+                   echo "Compressing $f"
+                   (cd $(basename $f) && zip -r ../artifacts/$(basename $f  | cut -d "-" -f 4)-latest.zip *)
+                 fi

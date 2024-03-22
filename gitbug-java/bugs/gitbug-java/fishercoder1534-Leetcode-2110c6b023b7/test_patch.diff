@@ -1,0 +1,23 @@
+diff --git a/src/test/java/com/fishercoder/_235Test.java b/src/test/java/com/fishercoder/_235Test.java
+index ef01b11..4fcb0f7 100644
+--- a/src/test/java/com/fishercoder/_235Test.java
++++ b/src/test/java/com/fishercoder/_235Test.java
+@@ -49,4 +49,18 @@ public class _235Test {
+ 
+         assertEquals(p, solution1.lowestCommonAncestor(root, p, q));
+     }
++
++    @Test
++    public void test3() {
++        root = TreeUtils.constructBinaryTree(Arrays.asList(0, -1000000000, 1000000000));
++        TreeUtils.printBinaryTree(root);
++
++        p = TreeUtils.constructBinaryTree(Arrays.asList(-1000000000));
++        TreeUtils.printBinaryTree(p);
++
++        q = TreeUtils.constructBinaryTree(Arrays.asList(1000000000));
++        TreeUtils.printBinaryTree(q);
++
++        assertEquals(root, solution1.lowestCommonAncestor(root, p, q));
++    }
+ }

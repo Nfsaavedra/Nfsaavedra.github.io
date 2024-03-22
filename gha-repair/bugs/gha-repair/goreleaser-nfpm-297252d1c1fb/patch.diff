@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/lock.yml b/.github/workflows/lock.yml
+index 394e6d7..3bfb884 100644
+--- a/.github/workflows/lock.yml
++++ b/.github/workflows/lock.yml
+@@ -1,6 +1,9 @@
+-name: 'Lock threads'
++name: lock-inactive
+ 
+ on:
++  push:
++    branches:
++      - 'master'
+   schedule:
+     - cron: '0 * * * *'
+ 

@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 35ac79e..d1f3356 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -2,10 +2,14 @@ name: Tests
+ 
+ on:
+   push:
++    paths-ignore:
++      - 'docs/**'
+     branches:
+       - master
+       - develop
+   pull_request:
++    paths-ignore:
++      - 'docs/**'
+     branches:
+       - '**'
+ 

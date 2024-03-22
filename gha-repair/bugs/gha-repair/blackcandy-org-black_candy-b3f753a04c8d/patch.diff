@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release-edge-build.yml b/.github/workflows/release-edge-build.yml
+index 2dbe70a..314592b 100644
+--- a/.github/workflows/release-edge-build.yml
++++ b/.github/workflows/release-edge-build.yml
+@@ -3,7 +3,7 @@ name: Release Edge Build
+ on:
+   push:
+     branches:
+-      - edge-build
++      - master
+ 
+ jobs:
+   build:

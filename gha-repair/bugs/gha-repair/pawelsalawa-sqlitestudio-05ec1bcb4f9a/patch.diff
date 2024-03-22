@@ -1,0 +1,25 @@
+diff --git a/.github/workflows/tests.yml b/.github/workflows/tests.yml
+index 482e366..3ee4c4f 100644
+--- a/.github/workflows/tests.yml
++++ b/.github/workflows/tests.yml
+@@ -37,14 +37,18 @@ jobs:
+               with:
+                 python-version: ${{ env.PYTHON_VERSION }}
+                 architecture: 'x64'
+-                
++              
++            - name: Qt installation dir
++              id: qt-installation-dir
++              run: echo "DIR=$(readlink -f ${{ github.workspace }}/..)" >> $GITHUB_OUTPUT
++              
+             - name: Install Qt
+               uses: jurplel/install-qt-action@v3
+               with:
+                 cache: true
+                 version: ${{ matrix.QT_VERSION }}
+                 host: 'linux'
+-                dir: '${{ github.workspace }}/..'
++                dir: '${{ steps.qt-installation-dir.DIR }}'
+                 aqtversion: '==3.0.*'
+                 py7zrversion: '==0.20.*'
+                 setup-python: 'false'

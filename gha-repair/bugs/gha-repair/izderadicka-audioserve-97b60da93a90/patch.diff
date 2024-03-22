@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build_dev_image.yml b/.github/workflows/build_dev_image.yml
+index 20febf1..711509e 100644
+--- a/.github/workflows/build_dev_image.yml
++++ b/.github/workflows/build_dev_image.yml
+@@ -30,7 +30,7 @@ jobs:
+         docker --version
+     - uses: actions/checkout@v2
+     - name: Build image
+-      run: docker build --tag izderadicka/audioserve:unstable --build-arg CARGO_ARG="--features=transcoding-cache" .
++      run: docker build --tag izderadicka/audioserve:unstable --build-arg CARGO_ARGS="--features=transcoding-cache" .
+     - name: Publish image
+       run: |
+         docker login -u ${{secrets.DOCKERHUB_USER}} -p ${{secrets.DOCKERHUB_PASSWORD}}

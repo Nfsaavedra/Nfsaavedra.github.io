@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/CICD.yml b/.github/workflows/CICD.yml
+index f83e0ca..7cd7290 100644
+--- a/.github/workflows/CICD.yml
++++ b/.github/workflows/CICD.yml
+@@ -299,8 +299,7 @@ jobs:
+         Architecture: ${DPKG_ARCH}
+         Provides: ${{ env.PROJECT_NAME }}
+         Conflicts: ${DPKG_CONFLICTS}
+-        Description: cat(1) clone with wings.
+-          A cat(1) clone with syntax highlighting and Git integration.
++        Description: A command-line benchmarking tool
+         EOF
+ 
+         DPKG_PATH="${DPKG_STAGING}/${DPKG_NAME}"

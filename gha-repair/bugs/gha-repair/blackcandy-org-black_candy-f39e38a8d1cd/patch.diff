@@ -1,0 +1,22 @@
+diff --git a/.github/workflows/deploy.yml b/.github/workflows/deploy.yml
+index 21b37fe..0e80359 100644
+--- a/.github/workflows/deploy.yml
++++ b/.github/workflows/deploy.yml
+@@ -1,12 +1,10 @@
+ name: Deploy
+ 
+-on: [push]
+-
+-#on:
+-#  workflow_run:
+-#    workflows: ["Release Build"]
+-#    types:
+-#      - completed
++on:
++  workflow_run:
++    workflows: ["Release Build"]
++    types:
++      - completed
+ 
+ jobs:
+   deploy:

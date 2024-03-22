@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/auto-close-duplicate.yaml b/.github/workflows/auto-close-duplicate.yaml
+index aa6457e..2eea099 100644
+--- a/.github/workflows/auto-close-duplicate.yaml
++++ b/.github/workflows/auto-close-duplicate.yaml
+@@ -21,7 +21,7 @@ jobs:
+           # Get issues with state to compare. Supported state: 'all', 'closed', 'open'.
+           state: open
+           # If similarity is higher than this threshold([0,1]), issue will be marked as duplicate.
+-          threshold: 0.6
++          threshold: 0.9
+           # Reactions to be add to comment when potential duplicates are detected.
+           # Available reactions: "-1", "+1", "confused", "laugh", "heart", "hooray", "rocket", "eyes"
+           reactions: ''

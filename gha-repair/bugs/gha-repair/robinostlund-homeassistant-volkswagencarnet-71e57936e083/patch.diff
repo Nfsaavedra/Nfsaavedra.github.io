@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/release.yaml b/.github/workflows/release.yaml
+index dbf9ff0..dff3f1c 100644
+--- a/.github/workflows/release.yaml
++++ b/.github/workflows/release.yaml
+@@ -29,11 +29,12 @@ jobs:
+ 
+       - name: Upload Release Asset
+         id: upload-release-asset 
+-        uses: actions/upload-release-asset@v1
++        uses: actions/upload-release-asset@v1.0.2
+         env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         with:
+-          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
++          release_id: ${{ steps.create_release.outputs.id }}
++          upload_url: ${{ steps.create_release.outputs.upload_url }}
+           asset_path: ./custom_components/volkswagencarnet/volkswagencarnet.zip
+           asset_name: volkswagencarnet.zip
+           asset_content_type: application/zip
+\ No newline at end of file

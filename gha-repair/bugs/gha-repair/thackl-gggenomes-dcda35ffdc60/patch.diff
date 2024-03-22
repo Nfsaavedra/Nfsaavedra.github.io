@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/pkgdown.yaml b/.github/workflows/pkgdown.yaml
+index 4b987e4..49d7268 100644
+--- a/.github/workflows/pkgdown.yaml
++++ b/.github/workflows/pkgdown.yaml
+@@ -1,6 +1,8 @@
+ on:
+   push:
+     branches: master
++  pull_request:
++    branches: master
+ 
+ name: pkgdown
+ 

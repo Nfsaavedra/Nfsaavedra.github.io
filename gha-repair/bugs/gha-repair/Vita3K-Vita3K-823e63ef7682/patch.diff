@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/codeql-analysis.yml b/.github/workflows/codeql-analysis.yml
+index faf35ca..e538730 100644
+--- a/.github/workflows/codeql-analysis.yml
++++ b/.github/workflows/codeql-analysis.yml
+@@ -36,7 +36,7 @@ jobs:
+         run: |
+           sudo apt-get update
+           sudo apt-get -y install ccache libboost-filesystem-dev libboost-program-options-dev libboost-system-dev libgtk-3-dev libsdl2-dev
+-          echo "::set-env name=CCACHE_DIR::/tmp/ccache"
++          echo "CCACHE_DIR=/tmp/ccache" >> $GITHUB_ENV
+       
+       - uses: actions/cache@v1
+         with:

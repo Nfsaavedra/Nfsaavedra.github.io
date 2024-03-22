@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/run-tests.yml b/.github/workflows/run-tests.yml
+index 4f3d332..c287e97 100644
+--- a/.github/workflows/run-tests.yml
++++ b/.github/workflows/run-tests.yml
+@@ -19,7 +19,7 @@ jobs:
+                         testbench: ^6.6
+                     -   laravel: 9.*
+                         testbench: 7.*
+-                exclude
++                exclude:
+                     -   laravel: 10.*
+                         php: 8.0                
+ 

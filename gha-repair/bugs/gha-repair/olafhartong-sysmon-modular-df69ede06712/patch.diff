@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/matrix-build.yml b/.github/workflows/matrix-build.yml
+index 51a09de..b2bb369 100644
+--- a/.github/workflows/matrix-build.yml
++++ b/.github/workflows/matrix-build.yml
+@@ -1,4 +1,4 @@
+-name: Build Attack Matrix when 
++name: Build Attack Matrix
+ on:
+   push:
+     branches:
+@@ -7,7 +7,7 @@ on:
+     branches: [ master ]
+ 
+ jobs:
+-  generate-config:
++  generate-matrix:
+     runs-on: ubuntu-latest
+     steps:
+       - name: Checkout repo

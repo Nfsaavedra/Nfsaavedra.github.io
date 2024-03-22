@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index 1be1af0..c3c2be3 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -25,12 +25,14 @@ jobs:
+       - name: Install Dependencies
+         run: yarn --immutable
+ 
++      - name: Build
++        run: yarn build
++
+       - name: Create Release Pull Request or Publish to npm
+         uses: changesets/action@v1
+         with:
+           commit: 'chore: release pretty-quick'
+           title: 'chore: release pretty-quick'
+-          version: yarn run version
+           publish: yarn release
+         env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,79 @@
+diff --git a/src/main/java/org/traccar/protocol/HuaShengProtocol.java b/src/main/java/org/traccar/protocol/HuaShengProtocol.java
+index 4a0ebe5..1f8bafc 100644
+--- a/src/main/java/org/traccar/protocol/HuaShengProtocol.java
++++ b/src/main/java/org/traccar/protocol/HuaShengProtocol.java
+@@ -29,6 +29,7 @@ public class HuaShengProtocol extends BaseProtocol {
+     public HuaShengProtocol(Config config) {
+         setSupportedDataCommands(
+                 Command.TYPE_POSITION_PERIODIC,
++                Command.TYPE_OUTPUT_CONTROL,
+                 Command.TYPE_ALARM_ARM,
+                 Command.TYPE_ALARM_DISARM,
+                 Command.TYPE_SET_SPEED_LIMIT);
+diff --git a/src/main/java/org/traccar/protocol/HuaShengProtocolDecoder.java b/src/main/java/org/traccar/protocol/HuaShengProtocolDecoder.java
+index 993e369..2d952c7 100644
+--- a/src/main/java/org/traccar/protocol/HuaShengProtocolDecoder.java
++++ b/src/main/java/org/traccar/protocol/HuaShengProtocolDecoder.java
+@@ -50,6 +50,8 @@ public class HuaShengProtocolDecoder extends BaseProtocolDecoder {
+     public static final int MSG_HSO_RSP = 0x0003;
+     public static final int MSG_SET_REQ = 0xAA04;
+     public static final int MSG_SET_RSP = 0xFF05;
++    public static final int MSG_CTRL_REQ = 0xAA16;
++    public static final int MSG_CTRL_RSP = 0xFF17;
+ 
+     private void sendResponse(Channel channel, int type, int index, ByteBuf content) {
+         if (channel != null) {
+diff --git a/src/main/java/org/traccar/protocol/HuaShengProtocolEncoder.java b/src/main/java/org/traccar/protocol/HuaShengProtocolEncoder.java
+index 636196e..dc34f7b 100644
+--- a/src/main/java/org/traccar/protocol/HuaShengProtocolEncoder.java
++++ b/src/main/java/org/traccar/protocol/HuaShengProtocolEncoder.java
+@@ -27,13 +27,13 @@ public class HuaShengProtocolEncoder extends BaseProtocolEncoder {
+         super(protocol);
+     }
+ 
+-    private ByteBuf encodeContent(ByteBuf content) {
++    private ByteBuf encodeContent(int type, ByteBuf content) {
+ 
+         ByteBuf buf = Unpooled.buffer();
+         buf.writeByte(0xC0);
+         buf.writeShort(0x0000); // flag and version
+         buf.writeShort(12 + content.readableBytes());
+-        buf.writeShort(HuaShengProtocolDecoder.MSG_SET_REQ);
++        buf.writeShort(type);
+         buf.writeShort(0); // checksum
+         buf.writeInt(1); // index
+         buf.writeBytes(content);
+@@ -52,17 +52,31 @@ public class HuaShengProtocolEncoder extends BaseProtocolEncoder {
+                 content.writeShort(0x0002);
+                 content.writeShort(6); // length
+                 content.writeShort(command.getInteger(Command.KEY_FREQUENCY));
+-                return encodeContent(content);
++                return encodeContent(HuaShengProtocolDecoder.MSG_SET_REQ, content);
++            case Command.TYPE_OUTPUT_CONTROL:
++                /*
++0x01: Lock the relay1; //relay on
++0x02: Unlock the relay1; //relay off
++0x03: Lock the relay2; //relay2 on
++0x04: Unlock the relay2; //relay2 off
++0x05: Lock the relay3; //relay3 on
++0x06: Unlock the relay3; //realy3 off
++                 */
++                content.writeByte(
++                        (command.getInteger(Command.KEY_INDEX) - 1) * 2
++                        + (2 - command.getInteger(Command.KEY_DATA)));
++                return encodeContent(HuaShengProtocolDecoder.MSG_CTRL_REQ, content);
+             case Command.TYPE_ALARM_ARM:
+             case Command.TYPE_ALARM_DISARM:
+                 content.writeShort(0x0001);
+                 content.writeShort(5); // length
+                 content.writeByte(command.getType().equals(Command.TYPE_ALARM_ARM) ? 1 : 0);
++                return encodeContent(HuaShengProtocolDecoder.MSG_SET_REQ, content);
+             case Command.TYPE_SET_SPEED_LIMIT:
+                 content.writeShort(0x0004);
+                 content.writeShort(6); // length
+                 content.writeShort(command.getInteger(Command.KEY_DATA));
+-                return encodeContent(content);
++                return encodeContent(HuaShengProtocolDecoder.MSG_SET_REQ, content);
+             default:
+                 return null;
+         }

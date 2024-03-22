@@ -1,0 +1,48 @@
+diff --git a/.github/workflows/action_branch.yml b/.github/workflows/action_branch.yml
+index f52355d..58d5a68 100644
+--- a/.github/workflows/action_branch.yml
++++ b/.github/workflows/action_branch.yml
+@@ -94,7 +94,6 @@ jobs:
+       - configure
+       - base
+       - mods
+-      - mods-test
+     uses: devilbox/github-actions/.github/workflows/docker-multistage-build.yml@master
+     with:
+       matrix: ${{ needs.configure.outputs.matrix_build }}
+@@ -133,7 +132,7 @@ jobs:
+     needs:
+       - configure
+       - base
+-      - mods
++      - mods-test
+       - prod
+       - work
+     uses: devilbox/github-actions/.github/workflows/docker-multistage-push.yml@master
+@@ -151,7 +150,7 @@ jobs:
+     needs:
+       - configure
+       - base
+-      - mods
++      - mods-test
+       - prod
+       - work
+     uses: devilbox/github-actions/.github/workflows/docker-multistage-push.yml@master
+@@ -169,7 +168,7 @@ jobs:
+     needs:
+       - configure
+       - base
+-      - mods
++      - mods-test
+       - prod
+       - work
+     uses: devilbox/github-actions/.github/workflows/docker-multistage-push.yml@master
+@@ -187,7 +186,7 @@ jobs:
+     needs:
+       - configure
+       - base
+-      - mods
++      - mods-test
+       - prod
+       - work
+     uses: devilbox/github-actions/.github/workflows/docker-multistage-push.yml@master

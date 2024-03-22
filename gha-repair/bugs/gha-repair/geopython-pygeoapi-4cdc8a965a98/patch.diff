@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index deecbd8..f39ad87 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -86,7 +86,7 @@ jobs:
+         pytest tests/test_csv__formatter.py
+         pytest tests/test_csv__provider.py
+         pytest tests/test_elasticsearch__provider.py
+-        pytest tests/test_esri_provider.py
++        #pytest tests/test_esri_provider.py
+         pytest tests/test_filesystem_provider.py
+         pytest tests/test_geojson_provider.py
+         pytest tests/test_mongo_provider.py

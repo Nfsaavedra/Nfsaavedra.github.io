@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index de2aa85..fcfbf08 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -31,7 +31,7 @@ jobs:
+       - uses: dtolnay/rust-toolchain@miri
+       - run: cargo miri test
+         env:
+-          MIRIFLAGS: -Zmiri-tag-raw-pointers
++          MIRIFLAGS: -Zmiri-strict-provenance
+ 
+   clippy:
+     name: Clippy

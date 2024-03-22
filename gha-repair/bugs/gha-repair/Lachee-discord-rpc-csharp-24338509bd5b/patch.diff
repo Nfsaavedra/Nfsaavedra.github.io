@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/documentation.yml b/.github/workflows/documentation.yml
+index 3840465..3d6d2cb 100644
+--- a/.github/workflows/documentation.yml
++++ b/.github/workflows/documentation.yml
+@@ -3,7 +3,7 @@ name: Create Documentation 📚
+ on:
+   push:
+     branches:
+-      - main
++      - master
+ 
+ jobs:
+   # Build the documentation

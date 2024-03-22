@@ -1,0 +1,42 @@
+diff --git a/.github/workflows/code-quality.yaml b/.github/workflows/code-quality.yaml
+deleted file mode 100644
+index d4effbd..0000000
+--- a/.github/workflows/code-quality.yaml
++++ /dev/null
+@@ -1,19 +0,0 @@
+-name: Code Quality
+-
+-on:
+-  pull_request:
+-    paths-ignore:
+-      - 'docs/**'
+-      - '.cirrus.yml'
+-  push:
+-    branches: [master]
+-    paths-ignore:
+-      - 'docs/**'
+-      - '.cirrus.yml'
+-
+-jobs:
+-  pre-commit:
+-    name: Linting
+-    runs-on: ubuntu-latest
+-    steps:
+-      - run: exit 0
+diff --git a/.github/workflows/skip.yml b/.github/workflows/skip.yml
+index 10dbeed..44a577e 100644
+--- a/.github/workflows/skip.yml
++++ b/.github/workflows/skip.yml
+@@ -19,12 +19,6 @@ on:
+       - '**'
+ 
+ jobs:
+-  pre-commit:
+-    name: Linting
+-    runs-on: ubuntu-latest
+-    steps:
+-      - run: exit 0
+-
+   tests:
+     name: ${{ matrix.os }} / ${{ matrix.python-version }}
+     # we do not need os specific runners here, using linux is quicker

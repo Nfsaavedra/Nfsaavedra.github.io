@@ -1,0 +1,189 @@
+[38a2f6e6-9216-4513-b234-956ef5157840/test] 🚀  Start image=crawlergpt:latest
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   🐳  docker pull image=crawlergpt:latest platform= username= forcePull=false
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   🐳  docker create image=crawlergpt:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   🐳  docker run image=crawlergpt:latest platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[]
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/4c46809d-435b-4319-91fa-07aed16371d8] user=0 workdir=
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] 🧪  Matrix: map[go-version:1.17.x os:ubuntu-latest]
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] ⭐ Run Main Install Go
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   🐳  docker cp src=/tmp/act-cache/54c536b1-c740-4c76-8653-736aa3a53492/act/actions-setup-go@v3/ dst=/var/run/act/actions/actions-setup-go@v3/
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   🐳  docker exec cmd=[chown -R 1012:1013 /var/run/act/actions/actions-setup-go@v3/] user=0 workdir=
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   🐳  docker exec cmd=[node /var/run/act/actions/actions-setup-go@v3/dist/setup/index.js] user= workdir=
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | Setup go version spec 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::isExplicit: 
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::explicit? false
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::isExplicit: 1.14.15
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::explicit? true
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::isExplicit: 1.15.15
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::explicit? true
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::isExplicit: 1.16.7
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::explicit? true
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::evaluating 3 versions
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::match not found
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | Attempting to download 1.17.x...
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::No manifest cached
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::set auth
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | matching 1.17.x...
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.21.3 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.21.2 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.21.1 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.21.0 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.20.10 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.20.9 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.20.8 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.20.7 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.20.6 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.20.5 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.20.4 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.20.3 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.20.2 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.20.1 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.20.0 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.19.13 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.19.12 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.19.11 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.19.10 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.19.9 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.19.8 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.19.7 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.19.6 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.19.5 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.19.4 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.19.3 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.19.2 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.19.1 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.19.0 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.18.10 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.18.9 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.18.8 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.18.7 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.18.6 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.18.5 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.18.4 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.18.3 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.18.2 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.18.1 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.18.0 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::check 1.17.13 satisfies 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::x64===x64 && darwin===linux
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::x64===x64 && linux===linux
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::matched 1.17.13
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | Acquiring 1.17.13 from https://github.com/actions/go-versions/releases/download/1.17.13-2779743212/go-1.17.13-linux-x64.tar.gz
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::Downloading https://github.com/actions/go-versions/releases/download/1.17.13-2779743212/go-1.17.13-linux-x64.tar.gz
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::Destination /tmp/1bc11895-e422-48bf-8a81-181ad89993d2
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::set auth
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::download complete
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | Extracting Go...
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::Checking tar --version
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::tar (GNU tar) 1.30%0ACopyright (C) 2017 Free Software Foundation, Inc.%0ALicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.%0AThis is free software: you are free to change and redistribute it.%0AThere is NO WARRANTY, to the extent permitted by law.%0A%0AWritten by John Gilmore and Jay Fenlason.
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /tmp/1ac47b64-8d6e-4a21-b11d-30d674bc9eb6 -f /tmp/1bc11895-e422-48bf-8a81-181ad89993d2
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | Successfully extracted go to /tmp/1ac47b64-8d6e-4a21-b11d-30d674bc9eb6
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | Adding to the cache ...
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::Caching tool go 1.17.13 x64
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::source dir: /tmp/1ac47b64-8d6e-4a21-b11d-30d674bc9eb6
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::destination /opt/hostedtoolcache/go/1.17.13/x64
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::finished caching tool
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | Successfully cached go to /opt/hostedtoolcache/go/1.17.13/x64
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | Added go to the path
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::which go :/opt/hostedtoolcache/go/1.17.13/x64/bin/go:
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::go env GOPATH :/home/runneradmin/go:
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::creating /home/runneradmin/go
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::creating /home/runneradmin/go/bin
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   💬  ::debug::add bin true
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | Successfully set up Go version 1.17.x
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   ❓ add-matcher /run/act/actions/actions-setup-go@v3/matchers.json
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | go version go1.17.13 linux/amd64
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | 
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   ❓  ::group::go env
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | GO111MODULE=""
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | GOARCH="amd64"
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | GOBIN=""
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | GOCACHE="/home/runneradmin/.cache/go-build"
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | GOENV="/home/runneradmin/.config/go/env"
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | GOEXE=""
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | GOEXPERIMENT=""
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | GOFLAGS=""
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | GOHOSTARCH="amd64"
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | GOHOSTOS="linux"
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | GOINSECURE=""
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | GOMODCACHE="/home/runneradmin/go/pkg/mod"
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | GONOPROXY=""
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | GONOSUMDB=""
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | GOOS="linux"
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | GOPATH="/home/runneradmin/go"
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | GOPRIVATE=""
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | GOPROXY="https://proxy.golang.org,direct"
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | GOROOT="/opt/hostedtoolcache/go/1.17.13/x64"
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | GOSUMDB="sum.golang.org"
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | GOTMPDIR=""
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | GOTOOLDIR="/opt/hostedtoolcache/go/1.17.13/x64/pkg/tool/linux_amd64"
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | GOVCS=""
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | GOVERSION="go1.17.13"
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | GCCGO="gccgo"
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | AR="ar"
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | CC="gcc"
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | CXX="g++"
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | CGO_ENABLED="1"
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | GOMOD="/dev/null"
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | CGO_CFLAGS="-g -O2"
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | CGO_CPPFLAGS=""
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | CGO_CXXFLAGS="-g -O2"
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | CGO_FFLAGS="-g -O2"
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | CGO_LDFLAGS="-g -O2"
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | PKG_CONFIG="pkg-config"
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | GOGCCFLAGS="-fPIC -m64 -pthread -fmessage-length=0 -fdebug-prefix-map=/tmp/go-build2762857665=/tmp/go-build -gno-record-gcc-switches"
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | 
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   ❓  ::endgroup::
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   ✅  Success - Main Install Go
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   ⚙  ::set-output:: go-version=1.17.13
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   ⚙  ::add-path:: /opt/hostedtoolcache/go/1.17.13/x64/bin
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   ⚙  ::add-path:: /home/runneradmin/go/bin
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] ⭐ Run Main Checkout code
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   🐳  docker cp src=/tmp/4c46809d-435b-4319-91fa-07aed16371d8/. dst=/tmp/4c46809d-435b-4319-91fa-07aed16371d8
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   🐳  docker exec cmd=[chown -R 1012:1013 /tmp/4c46809d-435b-4319-91fa-07aed16371d8] user=0 workdir=
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   ✅  Success - Main Checkout code
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] ⭐ Run Main Test
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   🐳  docker exec cmd=[bash --noprofile --norc -e -o pipefail /var/run/act/workflow/2] user= workdir=
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   | go: downloading github.com/jstemmer/go-junit-report/v2 v2.0.0
+[38a2f6e6-9216-4513-b234-956ef5157840/test]   ❌  Failure - Main Test
+[38a2f6e6-9216-4513-b234-956ef5157840/test] exitcode '1': failure
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'
+[38a2f6e6-9216-4513-b234-956ef5157840/test] 🏁  Job failed
+[38a2f6e6-9216-4513-b234-956ef5157840/test] unable to get git ref: failed to identify reference (tag/branch) for the checked-out revision '5aa5f93593151c525b9e618d87721040056f077a'

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index ba6314b..e40589b 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -18,6 +18,7 @@ jobs:
+           platform: 'linux'
+     runs-on: ${{ matrix.os }}
+     env:
++      npm_config_disturl: https://atom.io/download/electron
+       npm_config_target: 9.3.1
+       npm_config_runtime: "electron"
+       APPLEID: ${{ secrets.APPLEID }}

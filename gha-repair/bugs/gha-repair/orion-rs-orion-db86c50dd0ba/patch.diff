@@ -1,0 +1,63 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 2e6d68e..46672c4 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -172,3 +172,20 @@ jobs:
+         with:
+           command: doc
+           args: --no-deps --all-features
++  
++  cargo-deny:
++    runs-on: ubuntu-latest
++    strategy:
++      matrix:
++        checks:
++          - advisories
++          - bans licenses sources
++
++    # Prevent sudden announcement of a new advisory from failing ci:
++    continue-on-error: ${{ matrix.checks == 'advisories' }}
++
++    steps:
++    - uses: actions/checkout@v2
++    - uses: EmbarkStudios/cargo-deny-action@v1
++      with:
++        command: check ${{ matrix.checks }}
+diff --git a/deny.toml b/deny.toml
+new file mode 100644
+index 0000000..6264fee
+--- /dev/null
++++ b/deny.toml
+@@ -0,0 +1,31 @@
++targets = [
++    { triple = "x86_64-unknown-linux-gnu" },
++    { triple = "x86_64-unknown-linux-musl" },
++    { triple = "x86_64-apple-darwin" },
++    { triple = "x86_64-pc-windows-msvc" },
++]
++
++[advisories]
++unmaintained = "deny"
++yanked = "deny"
++notice = "deny"
++unsound = "deny"
++vulnerability = "deny"
++
++[licenses]
++unlicensed = "deny"
++# We want really high confidence when inferring licenses from text
++confidence-threshold = 0.93
++allow = [
++    "MIT",
++    "BSD-3-Clause",
++    "Apache-2.0",
++]
++
++[bans]
++multiple-versions = "allow" # We don't maintain Cargo lockfile, so this isn't really feasible to deny
++wildcards = "deny" # Dependencies should not have be specified with '*'
++
++[sources]
++unknown-registry = "deny" # crates.io is allowed and a known register by default
++unknown-git = "deny"
+\ No newline at end of file

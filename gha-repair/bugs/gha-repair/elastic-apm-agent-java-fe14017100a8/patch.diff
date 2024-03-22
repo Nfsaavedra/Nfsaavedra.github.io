@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/labeler.yml b/.github/workflows/labeler.yml
+index 9381405..dbaddf0 100644
+--- a/.github/workflows/labeler.yml
++++ b/.github/workflows/labeler.yml
+@@ -20,7 +20,7 @@ jobs:
+         username: ${{ github.actor }}
+         team: 'apm'
+         GITHUB_TOKEN: ${{ secrets.APM_TECH_USER_TOKEN }}
+-    - if: ${{ !steps.checkUserMember.outputs.isTeamMember }}
++    - if: ${{ steps.checkUserMember.outputs.isTeamMember != 'true' }}
+       uses: AlexanderWert/issue-labeler@v2.3
+       with:
+         repo-token: "${{ secrets.GITHUB_TOKEN }}"

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/check-coverage.yml b/.github/workflows/check-coverage.yml
+index 7ef3fbb..c102a62 100644
+--- a/.github/workflows/check-coverage.yml
++++ b/.github/workflows/check-coverage.yml
+@@ -6,7 +6,7 @@ on:
+   push:
+     branches: [ master ]
+   pull_request:
+-    branches: [ master ]
++    branches: [ '**' ]
+ 
+ # A workflow run is made up of one or more jobs that can run sequentially or in parallel
+ jobs:

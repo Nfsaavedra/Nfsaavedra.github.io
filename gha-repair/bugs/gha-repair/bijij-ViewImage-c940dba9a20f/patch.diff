@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/publish.yml b/.github/workflows/publish.yml
+index 6e42007..8f0d3ab 100644
+--- a/.github/workflows/publish.yml
++++ b/.github/workflows/publish.yml
+@@ -34,7 +34,7 @@ jobs:
+       run: |
+         VERSION_NUMBER=$(jq -r .version manifest.json)
+         ACCESS_TOKEN=$(jwtgen -a HS256 -s ${CLIENT_SECRET} -c "iss=${CLIENT_ID}" -e 300)
+-        curl -H "Authorization: JTW ${ACCESS_TOKEN}" -g -XPUT --form "upload=@package.zip" "https://addons.mozilla.org/api/v3/addons/${APP_ID}/versions/${VERSION_NUMBER}"
++        curl -H "Authorization: JTW ${ACCESS_TOKEN}" -g -XPUT --form "upload=@package.zip" "https://addons.mozilla.org/api/v3/addons/${APP_ID}/versions/${VERSION_NUMBER}/"
+ 
+     - name: Deploy to Chrome
+       env: 

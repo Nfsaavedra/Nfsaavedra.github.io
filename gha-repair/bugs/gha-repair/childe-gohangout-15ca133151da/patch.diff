@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/ci.yaml b/.github/workflows/ci.yaml
+index 7d51e45..0aebfc9 100644
+--- a/.github/workflows/ci.yaml
++++ b/.github/workflows/ci.yaml
+@@ -43,6 +43,7 @@ jobs:
+         uses: golangci/golangci-lint-action@v3
+         with:
+           version: v1.53
++        continue-on-error: true
+ 
+       - name: Test
+         run: make test

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 592ffc1..eea6bf1 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -38,7 +38,7 @@ jobs:
+       - name: Build
+         run: |
+           python setup.py sdist -d dist
+-          python setup.py --openmp build_exty --inplace
++          python setup.py --openmp build_ext --inplace
+ 
+       - name: Run tests
+         run: |

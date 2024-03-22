@@ -1,0 +1,23 @@
+diff --git a/.github/workflows/node.js.yml b/.github/workflows/node.js.yml
+index e8cd52c..5464090 100644
+--- a/.github/workflows/node.js.yml
++++ b/.github/workflows/node.js.yml
+@@ -9,6 +9,10 @@ on:
+   pull_request:
+     branches: [ master ]
+ 
++defaults:
++  run:
++    working-directory: ./javascript
++
+ jobs:
+   build:
+ 
+@@ -24,7 +28,6 @@ jobs:
+       uses: actions/setup-node@v1
+       with:
+         node-version: ${{ matrix.node-version }}
+-    - run: cd ./javascript
+     - run: npm install
+     - run: npm run lint
+     - run: npm run build

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/style.yml b/.github/workflows/style.yml
+index 6c76985..15de80a 100644
+--- a/.github/workflows/style.yml
++++ b/.github/workflows/style.yml
+@@ -104,7 +104,7 @@ env:
+ 
+ jobs:
+   clang_format:
+-    runs-on: ubuntu-18.04
++    runs-on: ubuntu-22.04
+ 
+     name: Clang-Format
+ 

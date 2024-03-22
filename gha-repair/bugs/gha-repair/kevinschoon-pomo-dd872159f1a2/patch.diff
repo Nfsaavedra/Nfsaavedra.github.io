@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/pomo.yaml b/.github/workflows/pomo.yaml
+index b3e1917..7b86ba4 100644
+--- a/.github/workflows/pomo.yaml
++++ b/.github/workflows/pomo.yaml
+@@ -1,6 +1,6 @@
+ name: pomo
+ 
+-on: ["push"]
++on: ["push", "pull_request"]
+ 
+ jobs:
+ 

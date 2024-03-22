@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/publish-doc-to-remote.yml b/.github/workflows/publish-doc-to-remote.yml
+index 7a910bb..70197b1 100644
+--- a/.github/workflows/publish-doc-to-remote.yml
++++ b/.github/workflows/publish-doc-to-remote.yml
+@@ -33,6 +33,6 @@ jobs:
+       uses: selenehyun/gh-push@master
+       env:
+         GITHUB_TOKEN: ${{ secrets.DOC_PUSHER_ACCESS_TOKEN }}
+-        COMMIT_FILES: docs/*
++        COMMIT_FILES: docs/build/html/*
+         REPO_FULLNAME: centre-borelli/ruptures-docs
+         BRANCH: master

@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 1a70027..276d1b3 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -41,6 +41,7 @@ jobs:
+           
+       - name: Build docs
+         if: matrix.python-version == '3.10' && matrix.os == 'ubuntu-latest'
++        continue-on-error: true
+         run: |
+           sudo apt install pandoc -y
+           sphinx-build docs/source _build/html -W

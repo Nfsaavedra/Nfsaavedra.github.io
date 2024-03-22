@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/docs.yml b/.github/workflows/docs.yml
+index de6c23b..00ce670 100644
+--- a/.github/workflows/docs.yml
++++ b/.github/workflows/docs.yml
+@@ -4,7 +4,6 @@ on:
+   push:
+     branches:
+       - master
+-      - main
+ 
+ jobs:
+   deploy:
+diff --git a/docs/CNAME b/docs/CNAME
+new file mode 100644
+index 0000000..fe65d2b
+--- /dev/null
++++ b/docs/CNAME
+@@ -0,0 +1,1 @@
++docs.rubixml.com

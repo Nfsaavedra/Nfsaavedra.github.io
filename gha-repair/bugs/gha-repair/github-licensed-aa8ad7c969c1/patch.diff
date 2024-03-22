@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 720e93c..80b2745 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -69,7 +69,7 @@ jobs:
+       with:
+         ruby-version: 2.6
+     - name: Setup Haskell
+-      uses: actions/setup-haskell@v1
++      uses: haskell/actions/setup@v1
+       with:
+         ghc-version: ${{ matrix.ghc }}
+         cabal-version: ${{ matrix.cabal }}

@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 13e3fd0..bd50689 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -9,6 +9,11 @@ on:
+     # (draft) PR if we need CI. See https://github.com/orgs/community/discussions/26276#discussioncomment-3251154
+     # for the general idea.
+     branches: main
++    paths-ignore:
++      - screenshots/**
++      - README.md
++      - CHANGELOG.md
++      - LICENSE
+   pull_request:
+ 
+ jobs:

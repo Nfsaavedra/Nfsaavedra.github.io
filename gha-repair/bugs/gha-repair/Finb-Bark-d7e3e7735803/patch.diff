@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/testflight.yaml b/.github/workflows/testflight.yaml
+index 716856b..211147d 100644
+--- a/.github/workflows/testflight.yaml
++++ b/.github/workflows/testflight.yaml
+@@ -1,7 +1,7 @@
+ name: Deploy to Testflight 
+ 
+ on:
+-  workflow_dispatch
++  workflow_dispatch:
+     inputs:
+       buildNumber:
+         description: 'Build Number'

@@ -1,0 +1,18 @@
+diff --git a/.github/workflows/scanbuild.yml b/.github/workflows/scanbuild.yml
+index c4e32ae..77d7aa7 100644
+--- a/.github/workflows/scanbuild.yml
++++ b/.github/workflows/scanbuild.yml
+@@ -54,4 +54,11 @@ jobs:
+         uses: github/codeql-action/upload-sarif@v2
+         with:
+           sarif_file: results.sarif
+-          category: scanbuild
+\ No newline at end of file
++          category: scanbuild
++
++      -
++        name: Archive artifacts (Push)
++        uses: actions/upload-artifact@v3
++        with:
++          name: scanbuild
++          path: results.sarif

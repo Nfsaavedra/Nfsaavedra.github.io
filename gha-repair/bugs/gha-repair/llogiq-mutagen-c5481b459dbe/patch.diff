@@ -1,0 +1,64 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 1e11054..b0d67e9 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -9,7 +9,7 @@ jobs:
+     name: Test
+     runs-on: ubuntu-latest
+     steps:
+-      - uses: actions/checkout@v2
++      - uses: actions/checkout@v3
+       - uses: actions-rs/toolchain@v1
+         with:
+           toolchain: nightly
+@@ -23,7 +23,7 @@ jobs:
+     name: Code format
+     runs-on: ubuntu-latest
+     steps:
+-      - uses: actions/checkout@v2
++      - uses: actions/checkout@v3
+       - uses: actions-rs/toolchain@v1
+         with:
+           toolchain: nightly
+@@ -41,7 +41,7 @@ jobs:
+     permissions: write-all
+     runs-on: ubuntu-latest
+     steps:
+-      - uses: actions/checkout@v2
++      - uses: actions/checkout@v3
+       - uses: actions-rs/toolchain@v1
+         with:
+           components: clippy
+diff --git a/.github/workflows/security_audit.yml b/.github/workflows/security_audit.yml
+new file mode 100644
+index 0000000..0403d9f
+--- /dev/null
++++ b/.github/workflows/security_audit.yml
+@@ -0,0 +1,27 @@
++name: Security Audit
++
++on:
++  schedule:
++    # Runs at 00:00 UTC everyday
++    - cron: '0 0 * * *'
++  push:
++    paths:
++      - '**/Cargo.toml'
++      - '**/Cargo.lock'
++  pull_request:
++
++jobs:
++  security_audit:
++    runs-on: ubuntu-latest
++    steps:
++      - name: Checkout repository
++        uses: actions/checkout@v3
++      - name: Install Rust
++        uses: actions-rs/toolchain@v1
++        with:
++          toolchain: nightly
++          profile: minimal
++          override: true
++      - uses: actions-rs/audit-check@v1.2.0
++        with:
++          token: ${{ secrets.GITHUB_TOKEN }}

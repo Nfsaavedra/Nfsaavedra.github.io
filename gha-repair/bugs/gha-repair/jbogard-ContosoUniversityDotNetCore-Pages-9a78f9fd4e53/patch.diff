@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/main.yaml b/.github/workflows/main.yaml
+index 0daf2ca..3535f85 100644
+--- a/.github/workflows/main.yaml
++++ b/.github/workflows/main.yaml
+@@ -32,10 +32,6 @@ jobs:
+       uses: actions/setup-dotnet@v1
+       with:
+         dotnet-version: '3.1.x'
+-    - name: Setup dotnet 2.1
+-      uses: actions/setup-dotnet@v1
+-      with:
+-        dotnet-version: '2.1.x'
+ 
+     - name: Setup Required Build Dependencies
+       run: pwsh .\setup.ps1

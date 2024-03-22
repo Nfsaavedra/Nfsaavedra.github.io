@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/pifile.yml b/.github/workflows/pifile.yml
+index cf1647d..349e91d 100644
+--- a/.github/workflows/pifile.yml
++++ b/.github/workflows/pifile.yml
+@@ -142,7 +142,7 @@ jobs:
+         with:
+           tag_name: ${{needs.version.outputs.version }}
+           release_name: ${{needs.version.outputs.buildname }}
+-          body: ${{steps.github_release.outputs.changelog}}
++          #body: ${{steps.github_release.outputs.changelog}}
+           draft: true
+           prerelease: true
+ # Upload release artifacts

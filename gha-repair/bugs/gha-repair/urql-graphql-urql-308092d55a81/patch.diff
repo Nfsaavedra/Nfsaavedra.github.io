@@ -1,0 +1,19 @@
+diff --git a/.github/workflows/site.yml b/.github/workflows/site.yml
+index f323def..adc09ac 100644
+--- a/.github/workflows/site.yml
++++ b/.github/workflows/site.yml
+@@ -3,8 +3,14 @@ name: Site
+ on:
+   pull_request:
+     branches: main
++    paths:
++      - 'docs/**'
++      - 'packages/site/**'
+   push:
+     branches: main
++    paths:
++      - 'docs/**'
++      - 'packages/site/**'
+ 
+ jobs:
+   site:

@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 2ee5407..101a075 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -33,5 +33,12 @@ jobs:
+           eval \$dc up --detach
+ 
+           docker image prune --force
++
++          curl -X POST "https://api.cloudflare.com/client/v4/zones/${{ secrets.CLOUDFLARE_ZONE_ID }}/purge_cache" \
++            -H "X-Auth-Email: ${{ secrets.CLOUDFLARE_EMAIL }}" \
++            -H "X-Auth-Key: ${{ secrets.CLOUDFLARE_API_KEY }}" \
++            -H "Content-Type:application/json" \
++            --data '{"purge_everything":true}'
++
+           exit 0
+           EOC

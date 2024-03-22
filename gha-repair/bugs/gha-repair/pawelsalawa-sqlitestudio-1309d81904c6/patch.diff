@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/tests.yml b/.github/workflows/tests.yml
+index 1ca0191..1dee62e 100644
+--- a/.github/workflows/tests.yml
++++ b/.github/workflows/tests.yml
+@@ -45,6 +45,7 @@ jobs:
+                 version: ${{ matrix.QT_VERSION }}
+                 host: 'linux'
+                 dir: '${{ github.workspace }}/..'
++                aqtversion: '==2.2.*'
+                 setup-python: 'false'
+ 
+             - name: Clone repo

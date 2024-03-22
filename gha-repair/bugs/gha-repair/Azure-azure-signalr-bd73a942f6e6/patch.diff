@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/line_endings.yml b/.github/workflows/line_endings.yml
+index 9d6331a..cdae307 100644
+--- a/.github/workflows/line_endings.yml
++++ b/.github/workflows/line_endings.yml
+@@ -2,8 +2,7 @@ name: Line Endings Check
+ on:
+  pull_request:
+    branches: 
+-    - ci
+-    - dev
++    - '**/**'
+ jobs:
+   line-endings-check:
+     runs-on: ubuntu-latest

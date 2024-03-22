@@ -1,0 +1,28 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 1c9d266..a57dc07 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -25,6 +25,11 @@ jobs:
+     - run: yarn run build
+     - run: yarn run coverage
+     - run: yarn run doc
++
++    - run: npm i markdown-to-html-cli -g
++    - name: markdown-to-html
++      working-directory: packages/core
++      run: markdown-to-html --output docs/index.html
+     
+     - name: Deploy
+       uses: peaceiris/actions-gh-pages@v3
+@@ -32,11 +37,6 @@ jobs:
+         github_token: ${{ secrets.GITHUB_TOKEN }}
+         publish_dir: ./packages/core/docs
+ 
+-    - run: npm i markdown-to-html-cli -g
+-    - name: markdown-to-html
+-      working-directory: packages/core
+-      run: markdown-to-html --output docs/index.html
+-
+     - name: Is a tag created auto?
+       id: create_tag
+       uses: jaywcjlove/create-tag-action@v1.2.1

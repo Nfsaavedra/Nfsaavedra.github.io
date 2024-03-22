@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index d10ca2c..0709414 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -11,7 +11,7 @@ jobs:
+         with:
+           fetch-depth: 0
+ 
+-      - uses: actions/setup-go@268d8c0ca0432bb2cf416faae41297df9d262d7f
++      - uses: actions/setup-go@c4a742cab115ed795e34d4513e2cf7d472deb55f
+         with:
+           go-version: 1.19.x
+           cache: true

@@ -1,0 +1,28 @@
+diff --git a/.github/workflows/linting.yml b/.github/workflows/linting.yml
+index 3c252d5..dadde1b 100644
+--- a/.github/workflows/linting.yml
++++ b/.github/workflows/linting.yml
+@@ -19,7 +19,7 @@ on:
+ # -------------------------------------------------------------------------------------------------
+ jobs:
+   lint:
+-    name: "[ ${{ matrix.job }} ]"
++    name: "Lint"
+     runs-on: ubuntu-latest
+     steps:
+       # ------------------------------------------------------------
+@@ -27,12 +27,13 @@ jobs:
+       # ------------------------------------------------------------
+       - name: Checkout repository
+         uses: actions/checkout@v2
++        with:
++          fetch-depth: 0
+ 
+       # ------------------------------------------------------------
+       # Lint repository
+       # ------------------------------------------------------------
+       - name: Lint workflow
+-        id: vars
+         run: |
+           make lint-workflow
+ 

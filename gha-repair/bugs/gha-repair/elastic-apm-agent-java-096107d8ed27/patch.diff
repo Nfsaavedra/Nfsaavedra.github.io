@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 6842516..cdbf2cc 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -116,8 +116,13 @@ jobs:
+           path: |
+             ./apm-agent-plugin-sdk/target/apm-agent-plugin-sdk-*.jar
+             !./**/*-sources.jar
+-
+-
++      - name: Upload benchmark binaries as artifacts
++        uses: actions/upload-artifact@v3
++        with:
++          name: apm-agent-benchmarks
++          path: |
++            ./apm-agent-benchmarks/target/benchmarks*.jar
++            !./**/*-sources.jar
+ 
+   license:
+     name: License

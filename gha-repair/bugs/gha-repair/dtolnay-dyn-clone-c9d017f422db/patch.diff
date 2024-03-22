@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index aeff51e..b785c58 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -31,6 +31,9 @@ jobs:
+       - uses: dtolnay/rust-toolchain@master
+         with:
+           toolchain: ${{matrix.rust}}
++      - name: Enable type layout randomization
++        run: echo RUSTFLAGS=${RUSTFLAGS}\ -Zrandomize-layout >> $GITHUB_ENV
++        if: matrix.rust == 'nightly'
+       - run: cargo test
+ 
+   msrv:

@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index fe3b284..4732c7c 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -12,8 +12,7 @@ jobs:
+         with:
+           node-version: 14
+ 
+-      # Install dependencies required for native module builds
+-      - run: sudo apt update && sudo apt install -y build-essential
++      # Install Python, for native module builds
+       - uses: actions/setup-python@v2
+ 
+       # Install & build & test:

@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/nim.yml b/.github/workflows/nim.yml
+index 3e20ec4..3bed989 100644
+--- a/.github/workflows/nim.yml
++++ b/.github/workflows/nim.yml
+@@ -18,8 +18,8 @@ jobs:
+     - name: setup choosenim
+       run: ./setupci.sh
+     - name: Update nimble
+-      run: nimble update
++      run: .nimble/bin/nimble update
+     - name: Build INim
+-      run: nimble build
++      run: .nimble/bin/nimble build
+     - name: Run tests
+-      run: nimble test -d:prompt_no_history
++      run: .nimble/bin/nimble test -d:prompt_no_history

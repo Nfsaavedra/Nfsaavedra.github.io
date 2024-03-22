@@ -1,0 +1,59 @@
+diff --git a/.github/workflows/dotnetcore.yml b/.github/workflows/dotnetcore.yml
+index 5aa694b..807ffd1 100644
+--- a/.github/workflows/dotnetcore.yml
++++ b/.github/workflows/dotnetcore.yml
+@@ -1,4 +1,4 @@
+-name: Unit Tests
++name: Publish
+ 
+ on: [push]
+ 
+@@ -12,9 +12,20 @@ jobs:
+     name: Running tests on ${{ matrix.runs-on }}. 
+     steps:
+     - uses: actions/checkout@master
+-    - name: Setup .NET Core
+-      uses: actions/setup-dotnet@v1
+       with:
+         dotnet-version: 3.0.100
+     - name: Build & Run tests
+       run: dotnet test --configuration Release
++    - name: Publish
++      if: github.ref == 'refs/heads/master'
++      run: |
++        $scriptLocationDirectory=(Get-Location).ToString()
++        $scriptLocationFilePath=[System.IO.Path]::Combine($scriptLocationDirectory, "Publish.Nuget.ps1")
++        $nugetExecutable=[System.IO.Path]::Combine($scriptLocationDirectory, "nuget", "nuget.exe")
++        $projects = 'Musoq.Converter', 'Musoq.Evaluator', 'Musoq.Parser', 'Musoq.Plugins', 'Musoq.Schema'
++        foreach ($project in $projects) {
++          pushd
++          cd "./$project/bin/Release"
++          Invoke-Expression "$scriptLocationFilePath $nugetExecutable $project '${{ secrets.nuget_musoq_key }}'"
++          popd
++        }
+diff --git a/Publish.Nuget.ps1 b/Publish.Nuget.ps1
+new file mode 100644
+index 0000000..0e13e1b
+--- /dev/null
++++ b/Publish.Nuget.ps1
+@@ -0,0 +1,16 @@
++﻿param([String] $nuget, [String]$project, [String]$apiKey)
++
++$fileName=Get-ChildItem -Path $path -File | Select-Object -First 1 | Select -exp Name
++$text = Invoke-Expression "$nuget list Puchaczov" | Select-String -Pattern $project | Out-String
++$name,$version = $text.trim().split(" ")
++$publishedFileName = "$name.$version.nupkg"
++
++if ($fileName -ne $publishedFileName){
++	echo "Publishing $fileName...";
++	Invoke-Expression "$nuget push './$fileName' -Source https://api.nuget.org/v3/index.json -ApiKey $apiKey"
++	echo "done."
++}
++else
++{
++	echo "File $publishedFileName has already been published. Skipping."
++}
+diff --git a/nuget/nuget.exe b/nuget/nuget.exe
+new file mode 100644
+index 0000000..feb104d
+Binary files /dev/null and b/nuget/nuget.exe differ

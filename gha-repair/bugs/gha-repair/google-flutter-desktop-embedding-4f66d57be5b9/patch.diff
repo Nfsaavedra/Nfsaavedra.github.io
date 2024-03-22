@@ -1,0 +1,32 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 3d0e191..b66415e 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -57,21 +57,25 @@ jobs:
+       run: flutter doctor -v
+     - name: Build example debug	
+       run: |	
+-        flutter packages get	
++        flutter packages get
++        flutter clean	
+         flutter build -v ${{matrix.TARGET}} --debug	
+       working-directory: ${{ github.workspace }}/fde/example	
+     - name: Build example release	
+       run: |	
+         flutter packages get	
++        flutter clean	
+         flutter build -v ${{matrix.TARGET}} --release	
+       working-directory: ${{ github.workspace }}/fde/example	
+     - name: Build testbed debug	
+       run: |	
+-        flutter packages get	
++        flutter packages get
++        flutter clean		
+         flutter build -v ${{matrix.TARGET}} --debug	
+       working-directory: ${{ github.workspace }}/fde/testbed	
+     - name: Build testbed release	
+       run: |	
+         flutter packages get	
++        flutter clean	
+         flutter build -v ${{matrix.TARGET}} --release	
+       working-directory: ${{ github.workspace }}/fde/testbed

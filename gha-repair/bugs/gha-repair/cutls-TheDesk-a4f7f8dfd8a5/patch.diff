@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/build-debug-macos.yml b/.github/workflows/build-debug-macos.yml
+index 4b038d3..7eaf1cc 100644
+--- a/.github/workflows/build-debug-macos.yml
++++ b/.github/workflows/build-debug-macos.yml
+@@ -30,8 +30,8 @@ jobs:
+     - run: cd app && yarn
+     - run: cd app && yarn build:all
+     - name: Deploy to S3
+-        env:
+-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+-        run:
+-          aws s3 sync --delete --region ap-northeast-1 ./build/ s3://cutls-s3-backup/debug
+\ No newline at end of file
++      env:
++        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
++        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
++      run:
++        aws s3 sync --delete --region ap-northeast-1 ./build/ s3://cutls-s3-backup/debug
+\ No newline at end of file

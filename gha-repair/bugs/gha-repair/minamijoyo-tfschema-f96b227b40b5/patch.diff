@@ -1,0 +1,9 @@
+diff --git a/.github/workflows/lint.yaml b/.github/workflows/lint.yaml
+index cdcfb33..c5ab3af 100644
+--- a/.github/workflows/lint.yaml
++++ b/.github/workflows/lint.yaml
+@@ -23,3 +23,4 @@ jobs:
+       uses: golangci/golangci-lint-action@v3
+       with:
+         version: v1.54.2
++        args: --timeout=5m

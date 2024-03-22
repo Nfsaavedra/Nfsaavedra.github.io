@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/milestone.yml b/.github/workflows/milestone.yml
+index 0a7e3ff..60bdbcd 100644
+--- a/.github/workflows/milestone.yml
++++ b/.github/workflows/milestone.yml
+@@ -25,7 +25,7 @@ jobs:
+       statuses: none
+ 
+     steps:
+-      - uses: actions/github-script@v4
++      - uses: actions/github-script@v5
+         with:
+           script: |
+             if (!context.payload.pull_request.merged) {

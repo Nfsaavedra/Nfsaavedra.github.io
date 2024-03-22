@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/main.yml b/.github/workflows/main.yml
+index 2ce0d4b..93f66f6 100644
+--- a/.github/workflows/main.yml
++++ b/.github/workflows/main.yml
+@@ -9,6 +9,9 @@ on:
+   pull_request:
+     branches:
+       - master
++    paths-ignore:
++      -'fastlane/**'
++      -'README.md'
+   workflow_dispatch:
+ jobs:
+   build:

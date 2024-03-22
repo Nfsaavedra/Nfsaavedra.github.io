@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 5c080b4..a07ad09 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -19,6 +19,6 @@ jobs:
+       - run: yarn run test:ci
+ 
+       - name: "Upload coverage reports"
+-        uses: codecov/codecov-action@v2
++        uses: codecov/codecov-action@v3
+         with:
+           fail_ci_if_error: true

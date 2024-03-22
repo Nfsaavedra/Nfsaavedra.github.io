@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/pythonapp.yml b/.github/workflows/pythonapp.yml
+index 4324ee6..55c70b3 100644
+--- a/.github/workflows/pythonapp.yml
++++ b/.github/workflows/pythonapp.yml
+@@ -28,4 +28,4 @@ jobs:
+       run: |
+         sudo apt install ffmpeg
+         pip install pytest
+-        pytest
++        pytest -vv

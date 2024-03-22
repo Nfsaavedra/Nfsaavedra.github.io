@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/label.yml b/.github/workflows/label.yml
+index eab14c0..504e384 100644
+--- a/.github/workflows/label.yml
++++ b/.github/workflows/label.yml
+@@ -14,6 +14,6 @@ jobs:
+     runs-on: ubuntu-latest
+ 
+     steps:
+-    - uses: actions/labeler@v3
++    - uses: actions/labeler@v1
+       with:
+         repo-token: "${{ secrets.GITHUB_TOKEN }}"

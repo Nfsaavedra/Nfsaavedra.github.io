@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/build-android-toolchain-5.4.yml b/.github/workflows/build-android-toolchain-5.4.yml
+index ca5e10b..5231c6b 100644
+--- a/.github/workflows/build-android-toolchain-5.4.yml
++++ b/.github/workflows/build-android-toolchain-5.4.yml
+@@ -485,4 +485,4 @@ jobs:
+     - uses: actions/upload-artifact@v2
+       with:
+         name: swift-android-5.4
+-        path: ~/out/swift-android-5.4.zip
++        path: ~/out/swift-android-5.4-r1.zip

@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/continuous-integration.yml b/.github/workflows/continuous-integration.yml
+index 3432790..d638a03 100644
+--- a/.github/workflows/continuous-integration.yml
++++ b/.github/workflows/continuous-integration.yml
+@@ -18,7 +18,9 @@ jobs:
+         run: swift test --enable-test-discovery
+         env:
+           PYTHON_VERSION: 2
++          PYTHON_LOADER_LOGGING: TRUE
+       - name: Test (Python 3)
+         run: swift test --enable-test-discovery
+         env:
+           PYTHON_VERSION: 3
++          PYTHON_LOADER_LOGGING: TRUE

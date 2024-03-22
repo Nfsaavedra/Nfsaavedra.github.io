@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/mac_release.yml b/.github/workflows/mac_release.yml
+index 66af1e0..b80559e 100644
+--- a/.github/workflows/mac_release.yml
++++ b/.github/workflows/mac_release.yml
+@@ -19,7 +19,10 @@ jobs:
+ 
+         steps:
+              - name: debug
+-               run: xcrun --show-sdk-path
++               run: |
++                SDK_PATH=$(xcrun --show-sdk-path)
++                TCL_CONFIG=$SDK_PATH/System/Library/Frameworks/Tcl.framework/Versions/Current/tclConfig.sh
++                grep TCL_LIBS $TCL_CONFIG
+         
+             # - name: Cache Qt
+               # id: cache-qt

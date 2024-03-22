@@ -1,0 +1,18 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index bc86a82..7fd1564 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -28,7 +28,13 @@ jobs:
+     name: Node ${{ matrix.node_version }} - ${{ matrix.architecture }} on ${{ matrix.os }}
+     env:
+       GH_TOKEN: ${{ SECRETS.GH_TOKEN }}
++      DISPLAY: :0
+     steps:
++      - name: Setup xvfb (Linux)
++        if: runner.os == 'Linux'
++        run: |
++          sudo apt-get install -y xvfb
++          sudo /usr/bin/Xvfb $DISPLAY -screen 0 1280x1024x24 &
+       - uses: actions/checkout@v2
+       - name: Setup node
+         uses: actions/setup-node@v2

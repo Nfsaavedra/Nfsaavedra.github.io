@@ -1,0 +1,24 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 759a694..a939162 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -85,10 +85,15 @@ jobs:
+ 
+           ${{ steps.changelog.outputs.changelog }}
+ 
+-    - uses: JS-DevTools/npm-publish@v1
+-      with:
+-        token: ${{ secrets.NPM_TOKEN }}
+-        package: ./packages/core/package.json
++    - run: npm publish
++      continue-on-error: true
++      env:
++        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
++
++    # - uses: JS-DevTools/npm-publish@v1
++    #   with:
++    #     token: ${{ secrets.NPM_TOKEN }}
++    #     package: ./packages/core/package.json
+ 
+     # - run: npm install @jsdevtools/npm-publish -g
+     # - run: npm-publish --token="${{ secrets.NPM_TOKEN }}" ./packages/core/package.json

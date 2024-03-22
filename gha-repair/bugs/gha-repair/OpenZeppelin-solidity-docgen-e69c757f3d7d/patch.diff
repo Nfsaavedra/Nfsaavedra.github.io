@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index d52a563..ae165c1 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -9,7 +9,7 @@ jobs:
+   build:
+     runs-on: ubuntu-latest
+     steps:
+-    - uses: actions/checkout@v2
++    - uses: actions/checkout@v3
+     - uses: actions/setup-node@v3
+       with:
+         node-version: 16

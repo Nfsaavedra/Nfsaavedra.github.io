@@ -1,0 +1,21 @@
+diff --git a/.github/workflows/tests.yml b/.github/workflows/tests.yml
+index b88d94c..f66dd3e 100644
+--- a/.github/workflows/tests.yml
++++ b/.github/workflows/tests.yml
+@@ -47,11 +47,11 @@ jobs:
+                 host: 'linux'
+                 dir: '${{ github.workspace }}/..'
+                 
+-             - name: find python
+-               run: |
+-                 find $pythonLocation -name libpython
+-                 ls -l $pythonLocation/lib
+-                 sdfsgfh
++            - name: find python
++              run: |
++                find $pythonLocation -name libpython
++                ls -l $pythonLocation/lib
++                sdfsgfh
+ 
+             - name: Clone repo
+               uses: actions/checkout@v2

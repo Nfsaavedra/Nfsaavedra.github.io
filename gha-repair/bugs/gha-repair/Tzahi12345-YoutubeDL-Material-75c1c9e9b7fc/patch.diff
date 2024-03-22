@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/docker-release.yml b/.github/workflows/docker-release.yml
+index 22036f5..96ec2c8 100644
+--- a/.github/workflows/docker-release.yml
++++ b/.github/workflows/docker-release.yml
+@@ -1,4 +1,4 @@
+-name: docker
++name: docker-release
+ 
+ on:
+   workflow_dispatch:

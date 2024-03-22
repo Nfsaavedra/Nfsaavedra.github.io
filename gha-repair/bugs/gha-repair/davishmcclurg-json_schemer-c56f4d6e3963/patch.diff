@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index b8013c1..24739bf 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -6,7 +6,7 @@ jobs:
+       fail-fast: false
+       matrix:
+         os: [ubuntu-latest, windows-latest, macos-latest]
+-        ruby: [2.4, 2.5, 2.6, 2.7, 3.0, head, jruby, jruby-head, truffleruby, truffleruby-head]
++        ruby: [2.4, 2.5, 2.6, 2.7, 3.0, 3.1, head, jruby, jruby-head, truffleruby, truffleruby-head]
+         exclude:
+           - os: windows-latest
+             ruby: jruby

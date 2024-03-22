@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/schema.yml b/.github/workflows/schema.yml
+index acd80c4..25c643b 100644
+--- a/.github/workflows/schema.yml
++++ b/.github/workflows/schema.yml
+@@ -4,7 +4,7 @@ name: "Schema"
+ 
+ on:
+   schedule:
+-    - cron: "0 12 * * *"
++    - cron: "0 * * * *"
+ 
+ jobs:
+   schema:

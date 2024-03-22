@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index 1e9a4ce..d514146 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -28,7 +28,7 @@ jobs:
+       - run: make build-js
+       - uses: golangci/golangci-lint-action@v3
+         with:
+-          version: v1.45
++          version: v1.53
+           args: --timeout=5m
+           skip-cache: true
+       - run: go mod download

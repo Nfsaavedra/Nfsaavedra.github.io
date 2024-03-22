@@ -1,0 +1,12 @@
+diff --git a/otelcli/span_background.go b/otelcli/span_background.go
+index f31a4d2..6fb0057 100644
+--- a/otelcli/span_background.go
++++ b/otelcli/span_background.go
+@@ -54,6 +54,7 @@ func init() {
+ 	addCommonParams(spanBgCmd)
+ 	addSpanParams(spanBgCmd)
+ 	addClientParams(spanBgCmd)
++	addAttrParams(spanBgCmd)
+ }
+ 
+ // spanBgSockfile returns the full filename for the socket file under the

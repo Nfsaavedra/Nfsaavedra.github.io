@@ -1,0 +1,27 @@
+diff --git a/.github/workflows/action.yml b/.github/workflows/action.yml
+index fc92e16..82d5f44 100644
+--- a/.github/workflows/action.yml
++++ b/.github/workflows/action.yml
+@@ -1,20 +1,17 @@
+ name: CI
+ 
+ on:
+-  push
++  push:
+     branches:
+       - master
+-    paths:
+-      - *.cs
+-      - *.csproj
+ 
+ jobs:
+   build:
+     runs-on: windows-latest
+-    
+     steps:
+     - uses: actions/checkout@v1
+     - uses: actions/setup-dotnet@v1
+       with:
+         dotnet-version: '2.2.401'
++        
+     - run: dotnet test source\DefaultEcs.Test\DefaultEcs.Test.csproj -c Release

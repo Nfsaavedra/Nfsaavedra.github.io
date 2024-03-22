@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/unittest.yml b/.github/workflows/unittest.yml
+index c187e25..2462d18 100644
+--- a/.github/workflows/unittest.yml
++++ b/.github/workflows/unittest.yml
+@@ -18,9 +18,9 @@
+          os: ['ubuntu-latest']
+          environment-file: [.ci/39.yaml, .ci/310.yaml, .ci/311.yaml, .ci/311-DEV.yaml]
+          include:
+-           - environment-file: ci/311.yaml
++           - environment-file: .ci/311.yaml
+              os: macos-latest
+-           - environment-file: ci/311.yaml
++           - environment-file: .ci/311.yaml
+              os: windows-latest
+        fail-fast: false
+      defaults:

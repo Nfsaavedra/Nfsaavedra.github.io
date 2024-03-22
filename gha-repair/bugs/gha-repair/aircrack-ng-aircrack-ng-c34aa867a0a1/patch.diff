@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/alpine.yml b/.github/workflows/alpine.yml
+index 9d9ea7c..8277927 100644
+--- a/.github/workflows/alpine.yml
++++ b/.github/workflows/alpine.yml
+@@ -8,6 +8,7 @@ on:
+       - '.devcontainer/**'
+       - '.github/ISSUE_TEMPLATE/**'
+       - '.github/workflows/coverity.yml'
++      - '.github/workflows/docker.yml'
+       - '.github/workflows/docker-release.yml'
+       - '.github/workflows/linux.yml'
+       - '.github/workflows/linux-pcre.yml'

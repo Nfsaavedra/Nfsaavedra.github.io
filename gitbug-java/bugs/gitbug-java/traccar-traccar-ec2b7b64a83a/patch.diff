@@ -1,0 +1,40 @@
+diff --git a/src/main/java/org/traccar/protocol/Jt600FrameDecoder.java b/src/main/java/org/traccar/protocol/Jt600FrameDecoder.java
+index bfefb94..f7890f8 100644
+--- a/src/main/java/org/traccar/protocol/Jt600FrameDecoder.java
++++ b/src/main/java/org/traccar/protocol/Jt600FrameDecoder.java
+@@ -35,7 +35,7 @@ public class Jt600FrameDecoder extends BaseFrameDecoder {
+         char type = (char) buf.getByte(buf.readerIndex());
+ 
+         if (type == '$') {
+-            boolean longFormat = Jt600ProtocolDecoder.isLongFormat(buf, buf.readerIndex() + 1);
++            boolean longFormat = Jt600ProtocolDecoder.isLongFormat(buf);
+             int length = buf.getUnsignedShort(buf.readerIndex() + (longFormat ? 8 : 7)) + 10;
+             if (length <= buf.readableBytes()) {
+                 return buf.readRetainedSlice(length);
+diff --git a/src/main/java/org/traccar/protocol/Jt600ProtocolDecoder.java b/src/main/java/org/traccar/protocol/Jt600ProtocolDecoder.java
+index 9ed44f5..dc763de 100644
+--- a/src/main/java/org/traccar/protocol/Jt600ProtocolDecoder.java
++++ b/src/main/java/org/traccar/protocol/Jt600ProtocolDecoder.java
+@@ -86,8 +86,8 @@ public class Jt600ProtocolDecoder extends BaseProtocolDecoder {
+ 
+     }
+ 
+-    static boolean isLongFormat(ByteBuf buf, int flagIndex) {
+-        return buf.getUnsignedByte(flagIndex) >> 4 >= 7;
++    static boolean isLongFormat(ByteBuf buf) {
++        return buf.getUnsignedByte(buf.readerIndex() + 8) == 0;
+     }
+ 
+     static void decodeBinaryLocation(ByteBuf buf, Position position) {
+@@ -123,9 +123,9 @@ public class Jt600ProtocolDecoder extends BaseProtocolDecoder {
+ 
+         List<Position> positions = new LinkedList<>();
+ 
+-        buf.readByte(); // header
++        boolean longFormat = isLongFormat(buf);
+ 
+-        boolean longFormat = isLongFormat(buf, buf.readerIndex());
++        buf.readByte(); // header
+ 
+         String id = String.valueOf(Long.parseLong(ByteBufUtil.hexDump(buf.readSlice(5))));
+         DeviceSession deviceSession = getDeviceSession(channel, remoteAddress, id);

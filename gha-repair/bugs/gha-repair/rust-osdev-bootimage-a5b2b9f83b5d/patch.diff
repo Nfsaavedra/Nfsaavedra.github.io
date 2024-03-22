@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index cdb4490..fbad28e 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -139,4 +139,7 @@ jobs:
+     steps:
+     - uses: actions/checkout@v1
+     - run: rustup toolchain install nightly --profile minimal --component clippy
+-    - run: cargo +nightly clippy -- -D warnings
++    - name: "Run `cargo clippy`"
++      uses: actions-rs/cargo@v1
++      with:
++        command: clippy

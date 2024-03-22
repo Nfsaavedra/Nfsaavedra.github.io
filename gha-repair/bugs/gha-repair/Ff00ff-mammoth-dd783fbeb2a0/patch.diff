@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/master.yml b/.github/workflows/master.yml
+index 1310977..b6bd23f 100644
+--- a/.github/workflows/master.yml
++++ b/.github/workflows/master.yml
+@@ -11,9 +11,6 @@ env:
+ jobs:
+   build:
+     runs-on: ubuntu-latest
+-    strategy:
+-      matrix:
+-        node-version: [12.x, 14.x]
+     steps:
+       - uses: actions/checkout@v2
+       - name: Use Node.js ${{ matrix.node-version }}

@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/action.yml b/.github/workflows/action.yml
+index 64250f1..7da08b8 100644
+--- a/.github/workflows/action.yml
++++ b/.github/workflows/action.yml
+@@ -6,8 +6,7 @@ jobs:
+     strategy:
+       matrix:
+         erlang:
+-          - 1:23.3.4.5-1
+-          - 1:24.1.5-1
++          - 1:25.0.4-1
+     steps:
+       - uses: actions/checkout@v2
+       - name: Install Erlang

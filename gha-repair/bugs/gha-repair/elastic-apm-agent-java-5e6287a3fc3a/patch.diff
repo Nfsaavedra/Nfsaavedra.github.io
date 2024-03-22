@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/addToProject.yml b/.github/workflows/addToProject.yml
+index 593c34a..1754159 100644
+--- a/.github/workflows/addToProject.yml
++++ b/.github/workflows/addToProject.yml
+@@ -4,7 +4,7 @@ name: Auto Assign to Project(s)
+ on:
+   issues:
+     types: [opened, edited, milestoned]
+-  pull_request:
++  pull_request_target:
+     types: [opened, edited, milestoned]
+ env:
+   MY_GITHUB_TOKEN: ${{ secrets.APM_TECH_USER_TOKEN }}

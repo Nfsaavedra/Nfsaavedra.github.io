@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/subsplit.yml b/.github/workflows/subsplit.yml
+index d665a37..edfd7ba 100644
+--- a/.github/workflows/subsplit.yml
++++ b/.github/workflows/subsplit.yml
+@@ -12,11 +12,6 @@ jobs:
+         steps:
+             - uses: actions/checkout@master
+ 
+-            - name: Select PHP version
+-              uses: shivammathur/setup-php@master
+-              with:
+-                  php-version: '7.3'
+-
+             - name: Clone subsplit
+               run: git clone https://github.com/dflydev/git-subsplit.git ~/subsplit
+ 

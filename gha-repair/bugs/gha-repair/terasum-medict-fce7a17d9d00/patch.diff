@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release-latest.yml b/.github/workflows/release-latest.yml
+index d5424a5..9443122 100644
+--- a/.github/workflows/release-latest.yml
++++ b/.github/workflows/release-latest.yml
+@@ -27,7 +27,7 @@ jobs:
+             asset_prefix: medict-windows-x64
+           - name: macos
+             os: macos-latest
+-            asset_prefix: medict-macos-x64
++            asset_prefix: medict-macos-amd64
+ 
+     steps:
+       # checkout source code

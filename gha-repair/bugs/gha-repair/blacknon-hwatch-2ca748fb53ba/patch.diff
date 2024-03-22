@@ -1,0 +1,18 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index ac8a5bf..123edbb 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -69,9 +69,12 @@ jobs:
+         uses: actions-rs/cargo@v1
+         with:
+           command: build
+-          args: --verbose --release --target=${{ matrix.target }}
++          args: --release --target=${{ matrix.target }}
+           use-cross: true
+ 
++      - name: wait 3 seconds.
++        run: sleep 3
++
+       - name: Check release binary
+         run: find target/ -type f -name "hwatch"
+ 

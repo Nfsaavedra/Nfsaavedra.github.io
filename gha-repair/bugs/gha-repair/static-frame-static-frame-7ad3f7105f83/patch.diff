@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/test_forward.yml b/.github/workflows/test_forward.yml
+index e78c5d5..c048bce 100644
+--- a/.github/workflows/test_forward.yml
++++ b/.github/workflows/test_forward.yml
+@@ -33,6 +33,7 @@ jobs:
+ 
+     - name: Install dependencies
+       run: |
++        sudo apt-get install libhdf5-dev
+         python -m pip install --upgrade pip
+         pip install -r requirements-test-forward.txt
+ 

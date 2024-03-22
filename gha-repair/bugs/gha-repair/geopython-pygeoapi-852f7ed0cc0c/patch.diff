@@ -1,0 +1,41 @@
+diff --git a/.github/workflows/lint.yml b/.github/workflows/lint.yml
+index b0f2777..a8eaae7 100644
+--- a/.github/workflows/lint.yml
++++ b/.github/workflows/lint.yml
+@@ -2,14 +2,12 @@ name: Lint
+ 
+ on:
+   push:
+-    paths:
+-      - '*.py'
+-      - '!**.md'   
++    paths-ignore:
++      - '**.md'   
+   pull_request:
+     branches:
+       - master
+-    paths:
+-      - '*.py'  
++    paths-ignore: 
+       - '!**.md'  
+   release:
+     types:
+@@ -22,9 +20,9 @@ jobs:
+       - name: Setup Python
+         uses: actions/setup-python@v1
+         with:
+-          python-version: 3.7.4
++          python-version: 3.7.14
+           architecture: x64
+-      - name: Checkout PyTorch
++      - name: Checkout pygeoapi
+         uses: actions/checkout@master
+       - name: Install flake8
+         run: pip install flake8
+@@ -33,4 +31,4 @@ jobs:
+         with:
+           checkName: 'flake8_py3'   # NOTE: this needs to be the same as the job name
+         env:
+-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+\ No newline at end of file
++          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

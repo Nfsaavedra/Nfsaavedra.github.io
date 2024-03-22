@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/nodejs.yml b/.github/workflows/nodejs.yml
+index 1ecaf90..6dabe2c 100644
+--- a/.github/workflows/nodejs.yml
++++ b/.github/workflows/nodejs.yml
+@@ -17,8 +17,8 @@ jobs:
+         with:
+           node-version: ${{ matrix.node-version }}
+           cache: 'yarn'
+-      - name: yarn install
+-        run: yarn install
++      - name: Verify lockfile and install dependencies
++        run: yarn install --frozen-lockfile
+       - name: lint
+         run: yarn lint
+       - name: test

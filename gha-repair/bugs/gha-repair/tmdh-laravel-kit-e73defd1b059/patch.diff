@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index a03488b..7fe111a 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -7,6 +7,7 @@ on:
+     paths-ignore:
+       - "screenshots/**"
+       - "README.md"
++  workflow_dispatch:
+ 
+ jobs:
+   release:

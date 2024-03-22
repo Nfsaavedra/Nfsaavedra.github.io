@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/win64_release.yml b/.github/workflows/win64_release.yml
+index 0e6c2ce..cd89689 100644
+--- a/.github/workflows/win64_release.yml
++++ b/.github/workflows/win64_release.yml
+@@ -15,6 +15,8 @@ env:
+ name: Windows 64-bit release build
+ 
+ on:
++    schedule:
++        - cron: '0 2 * * *' # run at 2 AM UTC
+     repository_dispatch:
+         types: [win64_release]
+ 

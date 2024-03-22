@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/aspnetcore.yml b/.github/workflows/aspnetcore.yml
+index 4e0cb1f..05a3994 100644
+--- a/.github/workflows/aspnetcore.yml
++++ b/.github/workflows/aspnetcore.yml
+@@ -1,6 +1,9 @@
+ name: ASP.NET Core CI
+ 
+-on: [push]
++on:
++  push:
++    paths-ignore:
++    - 'docs/**'
+ 
+ jobs:
+   build:

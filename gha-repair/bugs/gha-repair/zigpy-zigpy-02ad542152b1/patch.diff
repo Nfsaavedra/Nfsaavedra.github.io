@@ -1,0 +1,16 @@
+diff --git a/.github/workflows/publish-to-pypi.yml b/.github/workflows/publish-to-pypi.yml
+index a8ca956..94fcd7f 100644
+--- a/.github/workflows/publish-to-pypi.yml
++++ b/.github/workflows/publish-to-pypi.yml
+@@ -1,8 +1,8 @@
+ name: Publish distributions to PyPI and TestPyPI
+ on:
+-  push:
+-    tags:
+-      - "*"
++  release:
++    types:
++      - released
+ 
+ jobs:
+   build-and-publish:

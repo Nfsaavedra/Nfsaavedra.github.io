@@ -1,0 +1,74 @@
+diff --git a/src/main/java/org/traccar/helper/Parser.java b/src/main/java/org/traccar/helper/Parser.java
+index aa39e1a..c2aea28 100644
+--- a/src/main/java/org/traccar/helper/Parser.java
++++ b/src/main/java/org/traccar/helper/Parser.java
+@@ -50,6 +50,17 @@ public class Parser {
+     public boolean hasNext(int number) {
+         for (int i = position; i < position + number; i++) {
+             String value = matcher.group(i);
++            if (value == null || value.isEmpty()) {
++                position += number;
++                return false;
++            }
++        }
++        return true;
++    }
++
++    public boolean hasNextAny(int number) {
++        for (int i = position; i < position + number; i++) {
++            String value = matcher.group(i);
+             if (value != null && !value.isEmpty()) {
+                 return true;
+             }
+diff --git a/src/main/java/org/traccar/protocol/Gl200TextProtocolDecoder.java b/src/main/java/org/traccar/protocol/Gl200TextProtocolDecoder.java
+index 517499f..28308ab 100644
+--- a/src/main/java/org/traccar/protocol/Gl200TextProtocolDecoder.java
++++ b/src/main/java/org/traccar/protocol/Gl200TextProtocolDecoder.java
+@@ -956,7 +956,7 @@ public class Gl200TextProtocolDecoder extends BaseProtocolDecoder {
+             position.set(Position.KEY_POWER, power * 0.001);
+         }
+ 
+-        if (parser.hasNext(12)) {
++        if (parser.hasNextAny(12)) {
+ 
+             position.set(Position.KEY_ODOMETER, parser.nextDouble() * 1000);
+             position.set(Position.KEY_HOURS, parseHours(parser.next()));
+diff --git a/src/main/java/org/traccar/protocol/Gps103ProtocolDecoder.java b/src/main/java/org/traccar/protocol/Gps103ProtocolDecoder.java
+index 28efa3c..d1c35b4 100644
+--- a/src/main/java/org/traccar/protocol/Gps103ProtocolDecoder.java
++++ b/src/main/java/org/traccar/protocol/Gps103ProtocolDecoder.java
+@@ -225,7 +225,7 @@ public class Gps103ProtocolDecoder extends BaseProtocolDecoder {
+                     getConfig(), parser.nextHexInt(0), parser.nextHexInt(0))));
+         }
+ 
+-        if (parser.hasNext(20)) {
++        if (parser.hasNextAny(20)) {
+ 
+             String utcHours = parser.next();
+             String utcMinutes = parser.next();
+diff --git a/src/main/java/org/traccar/protocol/StartekProtocolDecoder.java b/src/main/java/org/traccar/protocol/StartekProtocolDecoder.java
+index 8e3624c..d75da7f 100644
+--- a/src/main/java/org/traccar/protocol/StartekProtocolDecoder.java
++++ b/src/main/java/org/traccar/protocol/StartekProtocolDecoder.java
+@@ -221,7 +221,7 @@ public class StartekProtocolDecoder extends BaseProtocolDecoder {
+             }
+         }
+ 
+-        if (parser.hasNext(6)) {
++        if (parser.hasNextAny(6)) {
+             position.set(Position.KEY_RPM, parser.nextInt());
+             position.set(Position.KEY_ENGINE_LOAD, parser.nextInt());
+             position.set("airFlow", parser.nextInt());
+diff --git a/src/main/java/org/traccar/protocol/WialonProtocolDecoder.java b/src/main/java/org/traccar/protocol/WialonProtocolDecoder.java
+index 3d57525..b87ba2b 100644
+--- a/src/main/java/org/traccar/protocol/WialonProtocolDecoder.java
++++ b/src/main/java/org/traccar/protocol/WialonProtocolDecoder.java
+@@ -101,7 +101,7 @@ public class WialonProtocolDecoder extends BaseProtocolDecoder {
+             position.setTime(new Date());
+         }
+ 
+-        if (parser.hasNext(9)) {
++        if (parser.hasNextAny(9)) {
+             position.setLatitude(parser.nextCoordinate());
+             position.setLongitude(parser.nextCoordinate());
+             position.setSpeed(UnitsConverter.knotsFromKph(parser.nextDouble(0)));

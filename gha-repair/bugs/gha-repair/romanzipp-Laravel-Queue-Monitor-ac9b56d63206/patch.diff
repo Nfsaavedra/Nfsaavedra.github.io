@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/tests.yml b/.github/workflows/tests.yml
+index 712c88d..2a8fe12 100644
+--- a/.github/workflows/tests.yml
++++ b/.github/workflows/tests.yml
+@@ -8,7 +8,7 @@ jobs:
+     strategy:
+       fail-fast: false
+       matrix:
+-        php: [7.2, 7.3, 7.4, 8.0]
++        php: ["7.2", "7.3", "7.4", "8.0", "8.1", "8.2"]
+         composer-dependency: [prefer-stable, prefer-lowest]
+ 
+     name: "PHP ${{ matrix.php }} - ${{ matrix.composer-dependency }}"

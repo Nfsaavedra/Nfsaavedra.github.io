@@ -1,0 +1,30 @@
+diff --git a/.github/workflows/cargo.yml b/.github/workflows/cargo.yml
+index 231873c..91e6773 100644
+--- a/.github/workflows/cargo.yml
++++ b/.github/workflows/cargo.yml
+@@ -213,6 +213,25 @@ jobs:
+         key: ${{ env.DIST }}-${{ env.LLVM }}-${{ env.BCC }}
+     - name: Run CI
+       run: bash -e build/ci.sh
++  focal-llvm_9-bcc_v0_23_0:
++    name: focal / llvm 9 / bcc 0.23.0
++    runs-on: ubuntu-20.04
++    env:
++      BCC: "0.23.0"
++      DIST: focal
++      FEATURES: v0_23_0
++      LLVM: "9"
++      STATIC: true
++    steps:
++    - uses: actions/checkout@v2
++    - name: BCC Build Cache
++      uses: actions/cache@v2
++      with:
++        path: |
++          deps
++        key: ${{ env.DIST }}-${{ env.LLVM }}-${{ env.BCC }}
++    - name: Run CI
++      run: bash -e build/ci.sh
+   rustfmt:
+     runs-on: ubuntu-latest
+     steps:

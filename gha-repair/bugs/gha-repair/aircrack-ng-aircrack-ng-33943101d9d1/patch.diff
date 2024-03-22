@@ -1,0 +1,10 @@
+diff --git a/.github/workflows/alpine.yml b/.github/workflows/alpine.yml
+index 0e71b07..9a43a8a 100644
+--- a/.github/workflows/alpine.yml
++++ b/.github/workflows/alpine.yml
+@@ -1,4 +1,4 @@
+-name: Alpine Linux
++name: Alpine Linux CI
+ 
+ on:
+   push:

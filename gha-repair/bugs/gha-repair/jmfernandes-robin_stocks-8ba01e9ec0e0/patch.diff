@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/pythonapp.yml b/.github/workflows/pythonapp.yml
+index 5639973..34d55d0 100644
+--- a/.github/workflows/pythonapp.yml
++++ b/.github/workflows/pythonapp.yml
+@@ -13,6 +13,7 @@ jobs:
+       uses: actions/setup-python@v1
+       with:
+         python-version: 3.7
++        robin_username: ${{ secrets.username }}
+     - name: Install dependencies
+       run: |
+         python -m pip install --upgrade pip

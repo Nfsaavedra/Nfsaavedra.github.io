@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/coverity.yml b/.github/workflows/coverity.yml
+index cf27763..9d86e98 100644
+--- a/.github/workflows/coverity.yml
++++ b/.github/workflows/coverity.yml
+@@ -26,7 +26,7 @@ jobs:
+ 
+           SKIP=false
+           if [ ${COV_REV} == ${CUR_REV} ] ||
+-             [ -z "$(git diff --name-only ${COV_REV}..HEAD | grep -v -f .coverityignore | grep -v coverityignore)" ]; then
++             [ -z "$(git diff --name-only ${COV_REV}..HEAD -- | grep -v -f .coverityignore | grep -v coverityignore)" ]; then
+              SKIP=true
+           fi
+           echo "skip=${SKIP}" >> $GITHUB_OUTPUT

@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/linux.yml b/.github/workflows/linux.yml
+index f7daac8..5c7d1bd 100644
+--- a/.github/workflows/linux.yml
++++ b/.github/workflows/linux.yml
+@@ -34,7 +34,7 @@ jobs:
+     env:
+       CXX: ${{ matrix.compiler.cxx }}-${{ matrix.compiler.ver }}
+     steps:
+-      - uses: actions/checkout@v3
++      - uses: actions/checkout@v4
+ 
+       - name: Setup Clang
+         if: startsWith(matrix.compiler.cxx, 'clang')

@@ -1,0 +1,14 @@
+diff --git a/src/main/java/org/traccar/protocol/KhdProtocolDecoder.java b/src/main/java/org/traccar/protocol/KhdProtocolDecoder.java
+index d7c236c..dd2e1db 100644
+--- a/src/main/java/org/traccar/protocol/KhdProtocolDecoder.java
++++ b/src/main/java/org/traccar/protocol/KhdProtocolDecoder.java
+@@ -205,6 +205,9 @@ public class KhdProtocolDecoder extends BaseProtocolDecoder {
+                                 }
+                             }
+                             break;
++                        case 0x20:
++                            position.set(Position.KEY_BATTERY_LEVEL, buf.readUnsignedByte());
++                            break;
+                         case 0x23:
+                             Network network = new Network();
+                             int count = buf.readUnsignedByte();

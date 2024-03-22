@@ -1,0 +1,15 @@
+diff --git a/.github/workflows/latest-tag.yml b/.github/workflows/latest-tag.yml
+index 51d5679..1c56056 100644
+--- a/.github/workflows/latest-tag.yml
++++ b/.github/workflows/latest-tag.yml
+@@ -1,8 +1,8 @@
+ name: "Latest tag"
+ on:
+   push:
+-    branches:
+-      - master
++    tags:
++      - v**
+ jobs:
+   latest-tag:
+     runs-on: ubuntu-latest

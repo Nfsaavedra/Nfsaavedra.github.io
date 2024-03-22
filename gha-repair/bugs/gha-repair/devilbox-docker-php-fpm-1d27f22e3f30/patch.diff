@@ -1,0 +1,2880 @@
+diff --git a/.github/workflows/aaa-build.yml b/.github/workflows/aaa-build.yml
+deleted file mode 100644
+index 3d1fe72..0000000
+--- a/.github/workflows/aaa-build.yml
++++ /dev/null
+@@ -1,172 +0,0 @@
+----
+-
+-# -------------------------------------------------------------------------------------------------
+-# Job Name
+-# -------------------------------------------------------------------------------------------------
+-name: build
+-
+-
+-# -------------------------------------------------------------------------------------------------
+-# When to run
+-# -------------------------------------------------------------------------------------------------
+-on:
+-  push:
+-
+-
+-jobs:
+-
+-  # -----------------------------------------------------------------------------------------------
+-  # (1/8) Determine parameter settings
+-  # -----------------------------------------------------------------------------------------------
+-  params:
+-    uses: ./.github/workflows/aaa-reuse-params.yml
+-
+-
+-  # -----------------------------------------------------------------------------------------------
+-  # (2/8) Configure Build and Deploy Matrices
+-  # -----------------------------------------------------------------------------------------------
+-  configure:
+-    needs: [params]
+-    uses: ./.github/workflows/aaa-reuse-configure.yml
+-    with:
+-      enabled: true
+-      can_deploy: ${{ github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags/') || startsWith(github.ref, 'refs/heads/release-') }}
+-      matrix: ${{ needs.params.outputs.matrix }}
+-      refs: ${{ needs.params.outputs.refs }}
+-    secrets:
+-      dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
+-      dockerhub_password: ${{ secrets.DOCKERHUB_PASSWORD }}
+-
+-
+-  # -----------------------------------------------------------------------------------------------
+-  # (3/8) Build & Test base
+-  # -----------------------------------------------------------------------------------------------
+-  build-base:
+-    needs:
+-      - params
+-      - configure
+-    uses: ./.github/workflows/aaa-reuse-build.yml
+-    with:
+-      enabled: true
+-      can_deploy: ${{ github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags/') || startsWith(github.ref, 'refs/heads/release-') }}
+-      build_matrix: ${{ needs.configure.outputs.matrix_build }}
+-      has_refs: ${{ needs.configure.outputs.has_refs }}
+-      artifact_prefix: ${{ needs.configure.outputs.artifact_prefix }}
+-      flavour: base
+-    secrets:
+-      dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
+-      dockerhub_password: ${{ secrets.DOCKERHUB_PASSWORD }}
+-
+-
+-  # -----------------------------------------------------------------------------------------------
+-  # (4/8) Build & Test mods
+-  # -----------------------------------------------------------------------------------------------
+-  build-mods:
+-    needs:
+-      - params
+-      - configure
+-      - build-base
+-    uses: ./.github/workflows/aaa-reuse-build.yml
+-    with:
+-      enabled: true
+-      can_deploy: ${{ github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags/') || startsWith(github.ref, 'refs/heads/release-') }}
+-      build_matrix: ${{ needs.configure.outputs.matrix_build }}
+-      has_refs: ${{ needs.configure.outputs.has_refs }}
+-      artifact_prefix: ${{ needs.configure.outputs.artifact_prefix }}
+-      flavour: mods
+-    secrets:
+-      dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
+-      dockerhub_password: ${{ secrets.DOCKERHUB_PASSWORD }}
+-
+-
+-  # -----------------------------------------------------------------------------------------------
+-  # (5/8) Build & Test prod
+-  # -----------------------------------------------------------------------------------------------
+-  build-prod:
+-    needs:
+-      - params
+-      - configure
+-      - build-base
+-      - build-mods
+-    uses: ./.github/workflows/aaa-reuse-build.yml
+-    with:
+-      enabled: true
+-      can_deploy: ${{ github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags/') || startsWith(github.ref, 'refs/heads/release-') }}
+-      build_matrix: ${{ needs.configure.outputs.matrix_build }}
+-      has_refs: ${{ needs.configure.outputs.has_refs }}
+-      artifact_prefix: ${{ needs.configure.outputs.artifact_prefix }}
+-      flavour: prod
+-    secrets:
+-      dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
+-      dockerhub_password: ${{ secrets.DOCKERHUB_PASSWORD }}
+-
+-
+-  # -----------------------------------------------------------------------------------------------
+-  # (6/8) Build & Test work
+-  # -----------------------------------------------------------------------------------------------
+-  build-work:
+-    needs:
+-      - params
+-      - configure
+-      - build-base
+-      - build-mods
+-      - build-prod
+-    uses: ./.github/workflows/aaa-reuse-build.yml
+-    with:
+-      enabled: true
+-      can_deploy: ${{ github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags/') || startsWith(github.ref, 'refs/heads/release-') }}
+-      build_matrix: ${{ needs.configure.outputs.matrix_build }}
+-      has_refs: ${{ needs.configure.outputs.has_refs }}
+-      artifact_prefix: ${{ needs.configure.outputs.artifact_prefix }}
+-      flavour: work
+-    secrets:
+-      dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
+-      dockerhub_password: ${{ secrets.DOCKERHUB_PASSWORD }}
+-
+-
+-  # -----------------------------------------------------------------------------------------------
+-  # (7/8) Push images
+-  # -----------------------------------------------------------------------------------------------
+-  push-image:
+-    needs:
+-      - params
+-      - configure
+-      - build-base
+-      - build-mods
+-      - build-prod
+-      - build-work
+-    uses: ./.github/workflows/aaa-reuse-deploy-images.yml
+-    with:
+-      enabled: true
+-      can_deploy: ${{ github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags/') || startsWith(github.ref, 'refs/heads/release-') }}
+-      build_matrix: ${{ needs.configure.outputs.matrix_build }}
+-      has_refs: ${{ needs.configure.outputs.has_refs }}
+-      artifact_prefix: ${{ needs.configure.outputs.artifact_prefix }}
+-    secrets:
+-      dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
+-      dockerhub_password: ${{ secrets.DOCKERHUB_PASSWORD }}
+-
+-
+-  # -----------------------------------------------------------------------------------------------
+-  # (8/8) Push Manifests
+-  # -----------------------------------------------------------------------------------------------
+-  push-manifest:
+-    needs:
+-      - params
+-      - configure
+-      - build-base
+-      - build-mods
+-      - build-prod
+-      - build-work
+-      - push-image
+-    uses: ./.github/workflows/aaa-reuse-deploy-manifests.yml
+-    with:
+-      enabled: true
+-      can_deploy: ${{ github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags/') || startsWith(github.ref, 'refs/heads/release-') }}
+-      deploy_matrix: ${{ needs.configure.outputs.matrix_deploy }}
+-      params_matrix: ${{ needs.params.outputs.matrix }}
+-      has_refs: ${{ needs.configure.outputs.has_refs }}
+-      artifact_prefix: ${{ needs.configure.outputs.artifact_prefix }}
+-    secrets:
+-      dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
+-      dockerhub_password: ${{ secrets.DOCKERHUB_PASSWORD }}
+diff --git a/.github/workflows/aaa-reuse-build.yml b/.github/workflows/aaa-reuse-build.yml
+deleted file mode 100644
+index fbd6864..0000000
+--- a/.github/workflows/aaa-reuse-build.yml
++++ /dev/null
+@@ -1,239 +0,0 @@
+-name: Build multi-arch images
+-
+-on:
+-  workflow_call:
+-    ###
+-    ### Variables
+-    ###
+-    inputs:
+-      enabled:
+-        description: 'Determines wheather this workflow is enabled at all (will run or skip).'
+-        required: true
+-        type: boolean
+-      can_deploy:
+-        description: 'Determines wheather this workflow will also deploy (login and push).'
+-        required: true
+-        type: boolean
+-      build_matrix:
+-        description: 'The build matrix'
+-        required: true
+-        type: string
+-      has_refs:
+-        description: 'The ref build matrix as JSON string (list of git refs to build/deploy).'
+-        required: true
+-        type: string
+-      artifact_prefix:
+-        description: 'Unique artifact name prefix (to avoid overriding existing artifcats during parallel runs).'
+-        required: true
+-        type: string
+-      flavour:
+-        description: 'The flavour to build (base, mods, prod or work).'
+-        required: true
+-        type: string
+-    ###
+-    ### Secrets
+-    ###
+-    secrets:
+-      dockerhub_username:
+-        description: 'The username for Dockerhub.'
+-        required: false
+-      dockerhub_password:
+-        description: 'The password for Dockerhub.'
+-        required: false
+-
+-jobs:
+-  # -----------------------------------------------------------------------------------------------
+-  # JOB: BUILD
+-  # -----------------------------------------------------------------------------------------------
+-  build:
+-    name: ${{ matrix.name }}-${{ matrix.version }}-${{ inputs.flavour }} (${{ matrix.arch }}) ${{ matrix.refs }}
+-    runs-on: ubuntu-latest
+-    strategy:
+-      fail-fast: false
+-      matrix:
+-        include: ${{ fromJson(inputs.build_matrix) }}
+-    if: inputs.enabled
+-    steps:
+-
+-      # ------------------------------------------------------------
+-      # Setup repository
+-      # ------------------------------------------------------------
+-      - name: "[SETUP] Checkout repository (current)"
+-        uses: actions/checkout@v3
+-        with:
+-          fetch-depth: 0
+-        if: inputs.has_refs == 0
+-
+-      - name: "[SETUP] Checkout repository (ref: ${{ matrix.refs }})"
+-        uses: actions/checkout@v3
+-        with:
+-          fetch-depth: 0
+-          ref: ${{ matrix.refs }}
+-        if: inputs.has_refs != 0
+-
+-      - name: "[SETUP] Setup QEMU environment"
+-        uses: docker/setup-qemu-action@v1
+-        with:
+-          image: tonistiigi/binfmt:latest
+-          platforms: all
+-
+-      - name: "[SETUP] Set artifact names"
+-        id: set-artifact-name
+-        run: |
+-          PRE_HASH="$( git rev-parse HEAD | head -c 10 )"
+-          VERSION="${{ matrix.version }}"
+-          ARCH="$( echo "${{ matrix.arch }}" | sed 's|/|-|g' )"
+-
+-          NAME_BASE="${{ inputs.artifact_prefix }}-${PRE_HASH}-${VERSION}-${ARCH}-base"
+-          NAME_MODS="${{ inputs.artifact_prefix }}-${PRE_HASH}-${VERSION}-${ARCH}-mods"
+-          NAME_PROD="${{ inputs.artifact_prefix }}-${PRE_HASH}-${VERSION}-${ARCH}-prod"
+-          NAME_WORK="${{ inputs.artifact_prefix }}-${PRE_HASH}-${VERSION}-${ARCH}-work"
+-
+-          echo "::set-output name=base::${NAME_BASE}"
+-          echo "::set-output name=mods::${NAME_MODS}"
+-          echo "::set-output name=prod::${NAME_PROD}"
+-          echo "::set-output name=work::${NAME_WORK}"
+-
+-      # ------------------------------------------------------------
+-      # Artifact Import
+-      # ------------------------------------------------------------
+-
+-      ###
+-      ### Download and import base
+-      ###
+-      - name: "[Artifact Load] Download base"
+-        uses: actions/download-artifact@v3
+-        with:
+-          name: ${{ steps.set-artifact-name.outputs.base }}
+-        if: ${{ inputs.flavour == 'mods' }}
+-
+-      - name: "[Artifact Load] Import base"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          command: |
+-            make load INFILE=${{ steps.set-artifact-name.outputs.base }}
+-        if: ${{ inputs.flavour == 'mods' }}
+-
+-      ###
+-      ### Download and import mods
+-      ###
+-      - name: "[Artifact Load] Download mods"
+-        uses: actions/download-artifact@v3
+-        with:
+-          name: ${{ steps.set-artifact-name.outputs.mods }}
+-        if: ${{ inputs.flavour == 'prod' }}
+-
+-      - name: "[Artifact Load] Import mods"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          command: |
+-            make load INFILE=${{ steps.set-artifact-name.outputs.mods }}
+-        if: ${{ inputs.flavour == 'prod' }}
+-
+-      ###
+-      ### Download and import prod
+-      ###
+-      - name: "[Artifact Load] Download prod"
+-        uses: actions/download-artifact@v3
+-        with:
+-          name: ${{ steps.set-artifact-name.outputs.prod }}
+-        if: ${{ inputs.flavour == 'work' }}
+-
+-      - name: "[Artifact Load] Import prod"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          command: |
+-            make load INFILE=${{ steps.set-artifact-name.outputs.prod }}
+-        if: ${{ inputs.flavour == 'work' }}
+-
+-
+-      # ------------------------------------------------------------
+-      # Build
+-      # ------------------------------------------------------------
+-      - name: Build
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          command: |
+-            make build VERSION=${{ matrix.version }} FLAVOUR=${{ inputs.flavour }} ARCH=${{ matrix.arch }}
+-
+-      # ------------------------------------------------------------
+-      # Test
+-      # ------------------------------------------------------------
+-      #- name: Test
+-      #  uses: cytopia/shell-command-retry-action@v0.1.2
+-      #  with:
+-      #    command: |
+-      #      make test VERSION=${{ matrix.version }} FLAVOUR=${{ inputs.flavour }} ARCH=${{ matrix.arch }}
+-
+-
+-      # ------------------------------------------------------------
+-      # Artifact Expot
+-      # ------------------------------------------------------------
+-
+-      ###
+-      ### Export and Upload base
+-      ###
+-      - name: "[Artifact Save] Export base"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          command: |
+-            make save VERSION=${{ matrix.version }} FLAVOUR=base ARCH=${{ matrix.arch }} OUTFILE=${{ steps.set-artifact-name.outputs.base }}
+-        if: ${{ inputs.flavour == 'base' }}
+-
+-      - name: "[Artifact Save] Upload base"
+-        uses: actions/upload-artifact@v3
+-        with:
+-          name: ${{ steps.set-artifact-name.outputs.base }}
+-          path: ${{ steps.set-artifact-name.outputs.base }}
+-        if: ${{ inputs.flavour == 'base' }}
+-
+-      ###
+-      ### Export and Upload mods
+-      ###
+-      - name: "[Artifact Save] Export mods"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          command: |
+-            make save VERSION=${{ matrix.version }} FLAVOUR=mods ARCH=${{ matrix.arch }} OUTFILE=${{ steps.set-artifact-name.outputs.mods }}
+-        if: ${{ inputs.flavour == 'mods' }}
+-
+-      - name: "[Artifact Save] Upload mods"
+-        uses: actions/upload-artifact@v3
+-        with:
+-          name: ${{ steps.set-artifact-name.outputs.mods }}
+-          path: ${{ steps.set-artifact-name.outputs.mods }}
+-        if: ${{ inputs.flavour == 'mods' }}
+-
+-      ###
+-      ### Export and Upload prod
+-      ###
+-      - name: "[Artifact Save] Export prod"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          command: |
+-            make save VERSION=${{ matrix.version }} FLAVOUR=prod ARCH=${{ matrix.arch }} OUTFILE=${{ steps.set-artifact-name.outputs.prod }}
+-        if: ${{ inputs.flavour == 'prod' }}
+-
+-      - name: "[Artifact Save] Upload prod"
+-        uses: actions/upload-artifact@v3
+-        with:
+-          name: ${{ steps.set-artifact-name.outputs.prod }}
+-          path: ${{ steps.set-artifact-name.outputs.prod }}
+-        if: ${{ inputs.flavour == 'prod' }}
+-
+-      ###
+-      ### Export and Upload work
+-      ###
+-      - name: "[Artifact Save] Export work"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          command: |
+-            make save VERSION=${{ matrix.version }} FLAVOUR=work ARCH=${{ matrix.arch }} OUTFILE=${{ steps.set-artifact-name.outputs.work }}
+-        if: ${{ inputs.flavour == 'work' }}
+-
+-      - name: "[Artifact Save] Upload work"
+-        uses: actions/upload-artifact@v3
+-        with:
+-          name: ${{ steps.set-artifact-name.outputs.work }}
+-          path: ${{ steps.set-artifact-name.outputs.work }}
+-        if: ${{ inputs.flavour == 'work' }}
+diff --git a/.github/workflows/aaa-reuse-configure.yml b/.github/workflows/aaa-reuse-configure.yml
+deleted file mode 100644
+index aecbf91..0000000
+--- a/.github/workflows/aaa-reuse-configure.yml
++++ /dev/null
+@@ -1,148 +0,0 @@
+----
+-name: Configure Pipeline for multi-arch image build
+-
+-on:
+-  workflow_call:
+-    ###
+-    ### Variables
+-    ###
+-    inputs:
+-      enabled:
+-        description: 'Determines wheather this workflow is enabled at all (will run or skip).'
+-        required: true
+-        type: boolean
+-      can_deploy:
+-        description: 'Determines wheather this workflow will also deploy (login and push).'
+-        required: true
+-        type: boolean
+-      matrix:
+-        description: 'The version build matrix as JSON string ( list of objects: [{NAME, VERSION[], ARCH[]}] ).'
+-        required: true
+-        type: string
+-      refs:
+-        description: 'The ref build matrix as JSON string (list of git refs to build/deploy).'
+-        required: false
+-        type: string
+-    ###
+-    ### Secrets
+-    ###
+-    secrets:
+-      dockerhub_username:
+-        description: 'The username for Dockerhub.'
+-        required: false
+-      dockerhub_password:
+-        description: 'The password for Dockerhub.'
+-        required: false
+-    ###
+-    ### Outouts
+-    ###
+-    outputs:
+-      can_login:
+-        description: "Can we login"
+-        value: ${{ jobs.configure.outputs.can_login }}
+-      has_refs:
+-        description: "Do we have refs"
+-        value: ${{ jobs.configure.outputs.has_refs }}
+-      matrix_build:
+-        description: "The determined build matrix"
+-        value: ${{ jobs.configure.outputs.matrix_build }}
+-      matrix_deploy:
+-        description: "The determined deploy matrix"
+-        value: ${{ jobs.configure.outputs.matrix_deploy }}
+-      artifact_prefix:
+-        description: "The determined unique artifact prefix"
+-        value: ${{ jobs.configure.outputs.artifact_prefix }}
+-
+-jobs:
+-
+-  # -----------------------------------------------------------------------------------------------
+-  # JOB (1/3): CONFIGURE
+-  # -----------------------------------------------------------------------------------------------
+-  configure:
+-    name: Configure
+-    if: inputs.enabled
+-    runs-on: ubuntu-latest
+-
+-    ###
+-    ### Outputs
+-    ###
+-    outputs:
+-      can_login: ${{ steps.set-login.outputs.can_login }}
+-      has_refs: ${{ steps.set-matrix.outputs.has_refs }}
+-      matrix_build: ${{ steps.set-matrix.outputs.matrix_build }}
+-      matrix_deploy: ${{ steps.set-matrix.outputs.matrix_deploy }}
+-      artifact_prefix: ${{ steps.set-artifact-prefix.outputs.prefix }}
+-
+-    ###
+-    ### Steps
+-    ###
+-    steps:
+-      - name: "[Set-Output] Set Docker login capabilities"
+-        id: set-login
+-        shell: bash
+-        run: |
+-          if [ "${{ env.ENV_USER }}" = '' ] || [ "${{ env.ENV_PASS }}" = '' ]; then
+-            echo "::set-output name=can_login::0"
+-          else
+-            echo "::set-output name=can_login::1"
+-          fi
+-        env:
+-          ENV_USER: ${{ secrets.dockerhub_username }}
+-          ENV_PASS: ${{ secrets.dockerhub_password }}
+-
+-      - name: "[Set-Output] Set Build Matrix & Deploy Matrix"
+-        id: set-matrix
+-        shell: bash
+-        run: |
+-          if [ "${{ inputs.refs }}" != "" ]; then
+-            MATRIX_BUILD="$( \
+-              jq -M -c \
+-                --argjson refs   '${{ inputs.refs }}' \
+-                'map({name:.NAME, version:.VERSION[], flavour:.FLAVOUR[], arch:.ARCH[], refs:$refs[]})' <<<'${{ inputs.matrix }}' \
+-            )"
+-            MATRIX_DEPLOY="$( \
+-              jq -M -c \
+-                --argjson refs   '${{ inputs.refs }}' \
+-                'map({name:.NAME, version:.VERSION[], flavour:.FLAVOUR[], refs:$refs[]})' <<<'${{ inputs.matrix }}' \
+-            )"
+-            echo "::set-output name=matrix_build::${MATRIX_BUILD}"
+-            echo "::set-output name=matrix_deploy::${MATRIX_DEPLOY}"
+-            echo "::set-output name=has_refs::1"
+-          else
+-            MATRIX_BUILD="$( \
+-              jq -M -c \
+-                'map({name:.NAME, version:.VERSION[], flavour:.FLAVOUR[], arch:.ARCH[]})' <<<'${{ inputs.matrix }}' \
+-            )"
+-            MATRIX_DEPLOY="$( \
+-              jq -M -c \
+-                'map({name:.NAME, version:.VERSION[], flavour:.FLAVOUR[]})' <<<'${{ inputs.matrix }}' \
+-            )"
+-            echo "::set-output name=matrix_build::${MATRIX_BUILD}"
+-            echo "::set-output name=matrix_deploy::${MATRIX_DEPLOY}"
+-            echo "::set-output name=has_refs::0"
+-          fi
+-
+-      - name: "[Set-Output] Set unique Artifact prefix"
+-        id: set-artifact-prefix
+-        shell: bash
+-        run: |
+-          PRE_DATE="$( date +"%s" )"
+-          PRE_RAND="$( echo $RANDOM | md5sum | head -c 10 )"
+-          echo "::set-output name=prefix::${PRE_DATE}-${PRE_RAND}"
+-
+-      - name: "[DEBUG] Show Workflow Inputs"
+-        shell: bash
+-        run: |
+-          echo 'enabled: ${{ inputs.enabled }}'
+-          echo 'can_deploy: ${{ inputs.can_deploy }}'
+-          echo 'matrix: ${{ inputs.matrix }}'
+-          echo 'refs: ${{ inputs.refs }}'
+-
+-      - name: "[DEBUG] Show Determined Settings"
+-        shell: bash
+-        run: |
+-          echo 'can_login=${{ steps.set-login.outputs.can_login }}'
+-          echo 'has_refs=${{ steps.set-matrix.outputs.has_refs }}'
+-          echo 'matrix_build=${{ steps.set-matrix.outputs.matrix_build }}'
+-          echo 'matrix_deploy=${{ steps.set-matrix.outputs.matrix_deploy }}'
+-          echo 'artifact_prefix=${{ steps.set-artifact-prefix.outputs.prefix }}'
+diff --git a/.github/workflows/aaa-reuse-deploy-images.yml b/.github/workflows/aaa-reuse-deploy-images.yml
+deleted file mode 100644
+index 867d273..0000000
+--- a/.github/workflows/aaa-reuse-deploy-images.yml
++++ /dev/null
+@@ -1,252 +0,0 @@
+-name: Deploy multi-arch images
+-
+-on:
+-  workflow_call:
+-    ###
+-    ### Variables
+-    ###
+-    inputs:
+-      enabled:
+-        description: 'Determines wheather this workflow is enabled at all (will run or skip).'
+-        required: true
+-        type: boolean
+-      can_deploy:
+-        description: 'Determines wheather this workflow will also deploy (login and push).'
+-        required: true
+-        type: boolean
+-      build_matrix:
+-        description: 'The build matrix'
+-        required: true
+-        type: string
+-      has_refs:
+-        description: 'The ref build matrix as JSON string (list of git refs to build/deploy).'
+-        required: true
+-        type: string
+-      artifact_prefix:
+-        description: 'Unique artifact name prefix (to avoid overriding existing artifcats during parallel runs).'
+-        required: true
+-        type: string
+-    ###
+-    ### Secrets
+-    ###
+-    secrets:
+-      dockerhub_username:
+-        description: 'The username for Dockerhub.'
+-        required: false
+-      dockerhub_password:
+-        description: 'The password for Dockerhub.'
+-        required: false
+-
+-jobs:
+-  deploy:
+-    name: ${{ matrix.name }}-${{ matrix.version }}-${{ inputs.flavour }} (${{ matrix.arch }}) ${{ matrix.refs }}
+-    runs-on: ubuntu-latest
+-    strategy:
+-      fail-fast: false
+-      matrix:
+-        include: ${{ fromJson(inputs.build_matrix) }}
+-    if: inputs.enabled
+-    steps:
+-
+-      # ------------------------------------------------------------
+-      # Setup repository
+-      # ------------------------------------------------------------
+-      - name: "[SETUP] Checkout repository (current)"
+-        uses: actions/checkout@v3
+-        with:
+-          fetch-depth: 0
+-        if: inputs.has_refs == 0
+-
+-      - name: "[SETUP] Checkout repository (ref: ${{ matrix.refs }})"
+-        uses: actions/checkout@v3
+-        with:
+-          fetch-depth: 0
+-          ref: ${{ matrix.refs }}
+-        if: inputs.has_refs != 0
+-
+-      - name: "[SETUP] Setup QEMU environment"
+-        uses: docker/setup-qemu-action@v1
+-        with:
+-          image: tonistiigi/binfmt:latest
+-          platforms: all
+-
+-      - name: "[SETUP] Determine Docker tag"
+-        id: tag
+-        uses: cytopia/docker-tag-action@v0.4.15
+-
+-      - name: "[SETUP] Set artifact names"
+-        id: set-artifact-name
+-        run: |
+-          PRE_HASH="$( git rev-parse HEAD | head -c 10 )"
+-          VERSION="${{ matrix.version }}"
+-          ARCH="$( echo "${{ matrix.arch }}" | sed 's|/|-|g' )"
+-
+-          NAME_BASE="${{ inputs.artifact_prefix }}-${PRE_HASH}-${VERSION}-${ARCH}-base"
+-          NAME_MODS="${{ inputs.artifact_prefix }}-${PRE_HASH}-${VERSION}-${ARCH}-mods"
+-          NAME_PROD="${{ inputs.artifact_prefix }}-${PRE_HASH}-${VERSION}-${ARCH}-prod"
+-          NAME_WORK="${{ inputs.artifact_prefix }}-${PRE_HASH}-${VERSION}-${ARCH}-work"
+-
+-          echo "::set-output name=base::${NAME_BASE}"
+-          echo "::set-output name=mods::${NAME_MODS}"
+-          echo "::set-output name=prod::${NAME_PROD}"
+-          echo "::set-output name=work::${NAME_WORK}"
+-
+-      # ------------------------------------------------------------
+-      # Artifact Import
+-      # ------------------------------------------------------------
+-      # FIXME: Remove if: always()
+-
+-      ###
+-      ### Download and import base
+-      ###
+-      - name: "[Artifact Load] Download base"
+-        uses: actions/download-artifact@v3
+-        with:
+-          name: ${{ steps.set-artifact-name.outputs.base }}
+-        if: always()
+-
+-      - name: "[Artifact Load] Import base"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          retries: 2
+-          command: |
+-            make load INFILE=${{ steps.set-artifact-name.outputs.base }}
+-        if: always()
+-
+-      ###
+-      ### Download and import mods
+-      ###
+-      - name: "[Artifact Load] Download mods"
+-        uses: actions/download-artifact@v3
+-        with:
+-          name: ${{ steps.set-artifact-name.outputs.mods }}
+-        if: always()
+-
+-      - name: "[Artifact Load] Import mods"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          retries: 2
+-          command: |
+-            make load INFILE=${{ steps.set-artifact-name.outputs.mods }}
+-        if: always()
+-
+-      ###
+-      ### Download and import prod
+-      ###
+-      - name: "[Artifact Load] Download prod"
+-        uses: actions/download-artifact@v3
+-        with:
+-          name: ${{ steps.set-artifact-name.outputs.prod }}
+-        if: always()
+-
+-      - name: "[Artifact Load] Import prod"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          retries: 2
+-          command: |
+-            make load INFILE=${{ steps.set-artifact-name.outputs.prod }}
+-        if: always()
+-
+-      ###
+-      ### Download and import prod
+-      ###
+-      - name: "[Artifact Load] Download work"
+-        uses: actions/download-artifact@v3
+-        with:
+-          name: ${{ steps.set-artifact-name.outputs.work }}
+-        if: always()
+-
+-      - name: "[Artifact Load] Import work"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          retries: 2
+-          command: |
+-            make load INFILE=${{ steps.set-artifact-name.outputs.work }}
+-        if: always()
+-
+-      # ------------------------------------------------------------
+-      # Re-tag images
+-      # ------------------------------------------------------------
+-      - name: "[Docker Tag] base"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          retries: 2
+-          command: |
+-            make tag VERSION=${{ matrix.version }} FLAVOUR=base TAG=${{ steps.tag.outputs.docker-tag }}
+-        if: always()
+-
+-      - name: "[Docker Tag] mods"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          retries: 2
+-          command: |
+-            make tag VERSION=${{ matrix.version }} FLAVOUR=mods TAG=${{ steps.tag.outputs.docker-tag }}
+-        if: always()
+-
+-      - name: "[Docker Tag] prod"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          retries: 2
+-          command: |
+-            make tag VERSION=${{ matrix.version }} FLAVOUR=prod TAG=${{ steps.tag.outputs.docker-tag }}
+-        if: always()
+-
+-      - name: "[Docker Tag] work"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          retries: 2
+-          command: |
+-            make tag VERSION=${{ matrix.version }} FLAVOUR=work TAG=${{ steps.tag.outputs.docker-tag }}
+-        if: always()
+-
+-      - name: "[Docker Tag] Show images"
+-        run: |
+-          docker images
+-        if: always()
+-
+-
+-      # ------------------------------------------------------------
+-      # Login
+-      # ------------------------------------------------------------
+-      - name: "Login"
+-        uses: docker/login-action@v1
+-        with:
+-          username: ${{ secrets.DOCKERHUB_USERNAME }}
+-          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+-        if: always()
+-
+-
+-      # ------------------------------------------------------------
+-      # Push images
+-      # ------------------------------------------------------------
+-      - name: "[Push Image] base"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          retries: 2
+-          command: |
+-            make push VERSION=${{ matrix.version }} FLAVOUR=base TAG=${{ steps.tag.outputs.docker-tag }}
+-        if: always()
+-
+-      - name: "[Push Image] mods"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          retries: 2
+-          command: |
+-            make push VERSION=${{ matrix.version }} FLAVOUR=mods TAG=${{ steps.tag.outputs.docker-tag }}
+-        if: always()
+-
+-      - name: "[Push Image] prod"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          retries: 2
+-          command: |
+-            make push VERSION=${{ matrix.version }} FLAVOUR=prod TAG=${{ steps.tag.outputs.docker-tag }}
+-        if: always()
+-
+-      - name: "[Push Image] work"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          retries: 2
+-          command: |
+-            make push VERSION=${{ matrix.version }} FLAVOUR=work TAG=${{ steps.tag.outputs.docker-tag }}
+-        if: always()
+diff --git a/.github/workflows/aaa-reuse-deploy-manifests.yml b/.github/workflows/aaa-reuse-deploy-manifests.yml
+deleted file mode 100644
+index b4603b9..0000000
+--- a/.github/workflows/aaa-reuse-deploy-manifests.yml
++++ /dev/null
+@@ -1,179 +0,0 @@
+-name: Deploy multi-arch image manifests
+-
+-on:
+-  workflow_call:
+-    ###
+-    ### Variables
+-    ###
+-    inputs:
+-      enabled:
+-        description: 'Determines wheather this workflow is enabled at all (will run or skip).'
+-        required: true
+-        type: boolean
+-      can_deploy:
+-        description: 'Determines wheather this workflow will also deploy (login and push).'
+-        required: true
+-        type: boolean
+-      deploy_matrix:
+-        description: 'The version deploy matrix as JSON string ( list of objects: [{NAME, VERSION[], ARCH[]}] ).'
+-        required: true
+-        type: string
+-      params_matrix:
+-        description: 'The build matrix set via params.yml.'
+-        required: true
+-        type: string
+-      artifact_prefix:
+-        description: 'Unique artifact name prefix (to avoid overriding existing artifcats during parallel runs).'
+-        required: true
+-        type: string
+-      has_refs:
+-        description: 'The ref build matrix as JSON string (list of git refs to build/deploy).'
+-        required: true
+-        type: string
+-
+-    ###
+-    ### Secrets
+-    ###
+-    secrets:
+-      dockerhub_username:
+-        description: 'The username for Dockerhub.'
+-        required: false
+-      dockerhub_password:
+-        description: 'The password for Dockerhub.'
+-        required: false
+-
+-jobs:
+-  # -----------------------------------------------------------------------------------------------
+-  # JOB (3/3): DEPLOY
+-  # -----------------------------------------------------------------------------------------------
+-  deploy:
+-    name: ${{ matrix.name }}-${{ matrix.version }} (${{ matrix.flavour }}) ${{ matrix.refs }}
+-    runs-on: ubuntu-latest
+-    strategy:
+-      fail-fast: false
+-      matrix:
+-        include: ${{ fromJson(inputs.deploy_matrix) }}
+-    # FIXME: re-enable
+-    #if: inputs.enabled && inputs.can_deploy
+-    steps:
+-      # ------------------------------------------------------------
+-      # Setup repository
+-      # ------------------------------------------------------------
+-      - name: "[SETUP] Checkout repository (current)"
+-        uses: actions/checkout@v3
+-        with:
+-          fetch-depth: 0
+-        if: ${{ inputs.has_refs == 0 }}
+-
+-      - name: "[SETUP] Checkout repository (ref: ${{ matrix.refs }})"
+-        uses: actions/checkout@v3
+-        with:
+-          fetch-depth: 0
+-          ref: ${{ matrix.refs }}
+-        if: ${{ inputs.has_refs != 0 }}
+-
+-      - name: "[SETUP] Setup QEMU environment"
+-        uses: docker/setup-qemu-action@v1
+-        with:
+-          image: tonistiigi/binfmt:latest
+-          platforms: all
+-
+-      - name: "[SETUP] Determine Docker tag"
+-        id: tag
+-        uses: cytopia/docker-tag-action@v0.4.15
+-
+-      - name: "[SETUP] Determine manifest arches"
+-        id: manifest
+-        run: |
+-          ARCHES="$( echo '${{ inputs.params_matrix }}' \
+-            | jq 'group_by(.NAME, .VERSION, .ARCH)' \
+-            | jq 'map({NAME: .[].NAME, VERSION: .[].VERSION[], FLAVOUR: .[].FLAVOUR[], ARCHES: .[].ARCH|join(",")})' \
+-            | jq '.[] | select(.NAME=="${{ matrix.name }}" and .VERSION=="${{ matrix.version }}" and .FLAVOUR=="${{ matrix.flavour }}") | .ARCHES' \
+-            | jq -c -M \
+-          )"
+-          echo "::set-output name=arches::${ARCHES}"
+-          echo "ARCHES: ${ARCHES}"
+-
+-
+-      # ------------------------------------------------------------
+-      # Login
+-      # ------------------------------------------------------------
+-      - name: "Login"
+-        uses: docker/login-action@v1
+-        with:
+-          username: ${{ secrets.DOCKERHUB_USERNAME }}
+-          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+-        if: always()
+-
+-
+-      # ------------------------------------------------------------
+-      # Create Manifest
+-      # ------------------------------------------------------------
+-
+-      - name: "[Create Manifest] base (${{ steps.manifest.outputs.arches }})"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          retries: 2
+-          command: |
+-            make manifest-create VERSION=${{ matrix.version }} FLAVOUR=base ARCHES=${{ steps.manifest.outputs.arches }} TAG=${{ steps.tag.outputs.docker-tag }}
+-        if: always()
+-
+-      - name: "[Create Manifest] mods (${{ steps.manifest.outputs.arches }})"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          retries: 2
+-          command: |
+-            make manifest-create VERSION=${{ matrix.version }} FLAVOUR=mods ARCHES=${{ steps.manifest.outputs.arches }} TAG=${{ steps.tag.outputs.docker-tag }}
+-        if: always()
+-
+-      - name: "[Create Manifest] prod (${{ steps.manifest.outputs.arches }})"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          retries: 2
+-          command: |
+-            make manifest-create VERSION=${{ matrix.version }} FLAVOUR=prod ARCHES=${{ steps.manifest.outputs.arches }} TAG=${{ steps.tag.outputs.docker-tag }}
+-        if: always()
+-
+-      - name: "[Create Manifest] work (${{ steps.manifest.outputs.arches }})"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          retries: 2
+-          command: |
+-            make manifest-create VERSION=${{ matrix.version }} FLAVOUR=work ARCHES=${{ steps.manifest.outputs.arches }} TAG=${{ steps.tag.outputs.docker-tag }}
+-        if: always()
+-
+-      # ------------------------------------------------------------
+-      # Deploy Manifest
+-      # ------------------------------------------------------------
+-
+-      - name: "[Push Manifest] base: ${{ steps.tag.outputs.docker-tag }}"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          retries: 2
+-          command: |
+-            make manifest-push VERSION=${{ matrix.version }} FLAVOUR=base TAG=${{ steps.tag.outputs.docker-tag }}
+-        if: always()
+-
+-      - name: "[Push Manifest] mods: ${{ steps.tag.outputs.docker-tag }}"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          retries: 2
+-          command: |
+-            make manifest-push VERSION=${{ matrix.version }} FLAVOUR=mods TAG=${{ steps.tag.outputs.docker-tag }}
+-        if: always()
+-
+-      - name: "[Push Manifest] prod: ${{ steps.tag.outputs.docker-tag }}"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          retries: 2
+-          command: |
+-            make manifest-push VERSION=${{ matrix.version }} FLAVOUR=prod TAG=${{ steps.tag.outputs.docker-tag }}
+-        if: always()
+-
+-      - name: "[Push Manifest] work: ${{ steps.tag.outputs.docker-tag }}"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          retries: 2
+-          command: |
+-            make manifest-push VERSION=${{ matrix.version }} FLAVOUR=work TAG=${{ steps.tag.outputs.docker-tag }}
+-        if: always()
+diff --git a/.github/workflows/aaa-reuse-params.yml b/.github/workflows/aaa-reuse-params.yml
+deleted file mode 100644
+index 1c664d7..0000000
+--- a/.github/workflows/aaa-reuse-params.yml
++++ /dev/null
+@@ -1,70 +0,0 @@
+----
+-
+-# -------------------------------------------------------------------------------------------------
+-# Job Name
+-# -------------------------------------------------------------------------------------------------
+-name: params
+-
+-
+-# -------------------------------------------------------------------------------------------------
+-# Custom Variables
+-# -------------------------------------------------------------------------------------------------
+-env:
+-  MATRIX: >-
+-    [
+-      {
+-        "NAME":    "PHP",
+-        "VERSION": ["5.3", "5.4"],
+-        "FLAVOUR": ["default"],
+-        "ARCH":    ["linux/amd64"]
+-      }
+-    ]
+-
+-
+-# -------------------------------------------------------------------------------------------------
+-# When to run
+-# -------------------------------------------------------------------------------------------------
+-on:
+-  workflow_call:
+-    outputs:
+-      matrix:
+-        description: "The determined version matrix"
+-        value: ${{ jobs.params.outputs.matrix }}
+-      refs:
+-        description: "The determined git ref matrix (only during scheduled run)"
+-        value: ${{ jobs.params.outputs.refs }}
+-
+-jobs:
+-  params:
+-    runs-on: ubuntu-latest
+-
+-    outputs:
+-      matrix: ${{ steps.set-matrix.outputs.matrix }}
+-      refs: ${{ steps.set-refs.outputs.matrix }}
+-
+-    steps:
+-      - name: "[Set-Output] Matrix"
+-        id: set-matrix
+-        run: |
+-          echo "::set-output name=matrix::$( echo '${{ env.MATRIX }}' | jq -M -c )"
+-
+-      - name: "[Set-Output] Matrix 'Refs' (master branch and latest tag)"
+-        id: set-refs
+-        uses: cytopia/git-ref-matrix-action@v0.1.4
+-        with:
+-          repository_default_branch: master
+-          branches: master
+-          num_latest_tags: 1
+-        if: github.event_name == 'schedule'
+-
+-      - name: "[DEBUG] Show settings'"
+-        run: |
+-          echo 'Matrix'
+-          echo '--------------------'
+-          echo '${{ steps.set-matrix.outputs.matrix }}'
+-          echo
+-
+-          echo 'Matrix: Refs'
+-          echo '--------------------'
+-          echo '${{ steps.set-matrix-refs.outputs.matrix }}'
+-          echo
+diff --git a/.github/workflows/params.yml b/.github/workflows/params.yml
+new file mode 100644
+index 0000000..1c664d7
+--- /dev/null
++++ b/.github/workflows/params.yml
+@@ -0,0 +1,70 @@
++---
++
++# -------------------------------------------------------------------------------------------------
++# Job Name
++# -------------------------------------------------------------------------------------------------
++name: params
++
++
++# -------------------------------------------------------------------------------------------------
++# Custom Variables
++# -------------------------------------------------------------------------------------------------
++env:
++  MATRIX: >-
++    [
++      {
++        "NAME":    "PHP",
++        "VERSION": ["5.3", "5.4"],
++        "FLAVOUR": ["default"],
++        "ARCH":    ["linux/amd64"]
++      }
++    ]
++
++
++# -------------------------------------------------------------------------------------------------
++# When to run
++# -------------------------------------------------------------------------------------------------
++on:
++  workflow_call:
++    outputs:
++      matrix:
++        description: "The determined version matrix"
++        value: ${{ jobs.params.outputs.matrix }}
++      refs:
++        description: "The determined git ref matrix (only during scheduled run)"
++        value: ${{ jobs.params.outputs.refs }}
++
++jobs:
++  params:
++    runs-on: ubuntu-latest
++
++    outputs:
++      matrix: ${{ steps.set-matrix.outputs.matrix }}
++      refs: ${{ steps.set-refs.outputs.matrix }}
++
++    steps:
++      - name: "[Set-Output] Matrix"
++        id: set-matrix
++        run: |
++          echo "::set-output name=matrix::$( echo '${{ env.MATRIX }}' | jq -M -c )"
++
++      - name: "[Set-Output] Matrix 'Refs' (master branch and latest tag)"
++        id: set-refs
++        uses: cytopia/git-ref-matrix-action@v0.1.4
++        with:
++          repository_default_branch: master
++          branches: master
++          num_latest_tags: 1
++        if: github.event_name == 'schedule'
++
++      - name: "[DEBUG] Show settings'"
++        run: |
++          echo 'Matrix'
++          echo '--------------------'
++          echo '${{ steps.set-matrix.outputs.matrix }}'
++          echo
++
++          echo 'Matrix: Refs'
++          echo '--------------------'
++          echo '${{ steps.set-matrix-refs.outputs.matrix }}'
++          echo
+diff --git a/.github/workflows/zzz-build.yml b/.github/workflows/zzz-build.yml
+index f3da0ad..0c298fa 100644
+--- a/.github/workflows/zzz-build.yml
++++ b/.github/workflows/zzz-build.yml
+@@ -15,14 +15,19 @@ on:
+ 
+ jobs:
+ 
+-  # (1/2) Determine repository params
++  # -----------------------------------------------------------------------------------------------
++  # (1/8) Determine parameter settings
++  # -----------------------------------------------------------------------------------------------
+   params:
+-    uses: ./.github/workflows/zzz-params.yml
++    uses: ./.github/workflows/params.yml
+ 
+-  # (2/2) Build
+-  docker:
++
++  # -----------------------------------------------------------------------------------------------
++  # (2/8) Configure Build and Deploy Matrices
++  # -----------------------------------------------------------------------------------------------
++  configure:
+     needs: [params]
+-    uses: ./.github/workflows/zzz-reuse.yml
++    uses: ./.github/workflows/zzz-reuse-configure.yml
+     with:
+       enabled: true
+       can_deploy: ${{ github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags/') || startsWith(github.ref, 'refs/heads/release-') }}
+@@ -31,3 +36,137 @@ jobs:
+     secrets:
+       dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
+       dockerhub_password: ${{ secrets.DOCKERHUB_PASSWORD }}
++
++
++  # -----------------------------------------------------------------------------------------------
++  # (3/8) Build & Test base
++  # -----------------------------------------------------------------------------------------------
++  build-base:
++    needs:
++      - params
++      - configure
++    uses: ./.github/workflows/zzz-reuse-build.yml
++    with:
++      enabled: true
++      can_deploy: ${{ github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags/') || startsWith(github.ref, 'refs/heads/release-') }}
++      build_matrix: ${{ needs.configure.outputs.matrix_build }}
++      has_refs: ${{ needs.configure.outputs.has_refs }}
++      artifact_prefix: ${{ needs.configure.outputs.artifact_prefix }}
++      flavour: base
++    secrets:
++      dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
++      dockerhub_password: ${{ secrets.DOCKERHUB_PASSWORD }}
++
++
++  # -----------------------------------------------------------------------------------------------
++  # (4/8) Build & Test mods
++  # -----------------------------------------------------------------------------------------------
++  build-mods:
++    needs:
++      - params
++      - configure
++      - build-base
++    uses: ./.github/workflows/zzz-reuse-build.yml
++    with:
++      enabled: true
++      can_deploy: ${{ github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags/') || startsWith(github.ref, 'refs/heads/release-') }}
++      build_matrix: ${{ needs.configure.outputs.matrix_build }}
++      has_refs: ${{ needs.configure.outputs.has_refs }}
++      artifact_prefix: ${{ needs.configure.outputs.artifact_prefix }}
++      flavour: mods
++    secrets:
++      dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
++      dockerhub_password: ${{ secrets.DOCKERHUB_PASSWORD }}
++
++
++  # -----------------------------------------------------------------------------------------------
++  # (5/8) Build & Test prod
++  # -----------------------------------------------------------------------------------------------
++  build-prod:
++    needs:
++      - params
++      - configure
++      - build-base
++      - build-mods
++    uses: ./.github/workflows/zzz-reuse-build.yml
++    with:
++      enabled: true
++      can_deploy: ${{ github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags/') || startsWith(github.ref, 'refs/heads/release-') }}
++      build_matrix: ${{ needs.configure.outputs.matrix_build }}
++      has_refs: ${{ needs.configure.outputs.has_refs }}
++      artifact_prefix: ${{ needs.configure.outputs.artifact_prefix }}
++      flavour: prod
++    secrets:
++      dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
++      dockerhub_password: ${{ secrets.DOCKERHUB_PASSWORD }}
++
++
++  # -----------------------------------------------------------------------------------------------
++  # (6/8) Build & Test work
++  # -----------------------------------------------------------------------------------------------
++  build-work:
++    needs:
++      - params
++      - configure
++      - build-base
++      - build-mods
++      - build-prod
++    uses: ./.github/workflows/zzz-reuse-build.yml
++    with:
++      enabled: true
++      can_deploy: ${{ github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags/') || startsWith(github.ref, 'refs/heads/release-') }}
++      build_matrix: ${{ needs.configure.outputs.matrix_build }}
++      has_refs: ${{ needs.configure.outputs.has_refs }}
++      artifact_prefix: ${{ needs.configure.outputs.artifact_prefix }}
++      flavour: work
++    secrets:
++      dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
++      dockerhub_password: ${{ secrets.DOCKERHUB_PASSWORD }}
++
++
++  # -----------------------------------------------------------------------------------------------
++  # (7/8) Push images
++  # -----------------------------------------------------------------------------------------------
++  push-image:
++    needs:
++      - params
++      - configure
++      - build-base
++      - build-mods
++      - build-prod
++      - build-work
++    uses: ./.github/workflows/zzz-reuse-deploy-images.yml
++    with:
++      enabled: true
++      can_deploy: ${{ github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags/') || startsWith(github.ref, 'refs/heads/release-') }}
++      build_matrix: ${{ needs.configure.outputs.matrix_build }}
++      has_refs: ${{ needs.configure.outputs.has_refs }}
++      artifact_prefix: ${{ needs.configure.outputs.artifact_prefix }}
++    secrets:
++      dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
++      dockerhub_password: ${{ secrets.DOCKERHUB_PASSWORD }}
++
++
++  # -----------------------------------------------------------------------------------------------
++  # (8/8) Push Manifests
++  # -----------------------------------------------------------------------------------------------
++  push-manifest:
++    needs:
++      - params
++      - configure
++      - build-base
++      - build-mods
++      - build-prod
++      - build-work
++      - push-image
++    uses: ./.github/workflows/zzz-reuse-deploy-manifests.yml
++    with:
++      enabled: true
++      can_deploy: ${{ github.ref == 'refs/heads/master' || startsWith(github.ref, 'refs/tags/') || startsWith(github.ref, 'refs/heads/release-') }}
++      deploy_matrix: ${{ needs.configure.outputs.matrix_deploy }}
++      params_matrix: ${{ needs.params.outputs.matrix }}
++      has_refs: ${{ needs.configure.outputs.has_refs }}
++      artifact_prefix: ${{ needs.configure.outputs.artifact_prefix }}
++    secrets:
++      dockerhub_username: ${{ secrets.DOCKERHUB_USERNAME }}
++      dockerhub_password: ${{ secrets.DOCKERHUB_PASSWORD }}
+diff --git a/.github/workflows/zzz-params.yml b/.github/workflows/zzz-params.yml
+deleted file mode 100644
+index edb0997..0000000
+--- a/.github/workflows/zzz-params.yml
++++ /dev/null
+@@ -1,70 +0,0 @@
+----
+-
+-# -------------------------------------------------------------------------------------------------
+-# Job Name
+-# -------------------------------------------------------------------------------------------------
+-name: params
+-
+-
+-# -------------------------------------------------------------------------------------------------
+-# Custom Variables
+-# -------------------------------------------------------------------------------------------------
+-env:
+-  MATRIX: >-
+-    [
+-      {
+-        "NAME":    "PHP",
+-        "VERSION": ["5.3", "5.4"],
+-        "FLAVOUR": ["default"],
+-        "ARCH":    ["linux/amd64", "linux/arm64"]
+-      }
+-    ]
+-
+-
+-# -------------------------------------------------------------------------------------------------
+-# When to run
+-# -------------------------------------------------------------------------------------------------
+-on:
+-  workflow_call:
+-    outputs:
+-      matrix:
+-        description: "The determined version matrix"
+-        value: ${{ jobs.params.outputs.matrix }}
+-      refs:
+-        description: "The determined git ref matrix (only during scheduled run)"
+-        value: ${{ jobs.params.outputs.refs }}
+-
+-jobs:
+-  params:
+-    runs-on: ubuntu-latest
+-
+-    outputs:
+-      matrix: ${{ steps.set-matrix.outputs.matrix }}
+-      refs: ${{ steps.set-refs.outputs.matrix }}
+-
+-    steps:
+-      - name: "[Set-Output] Matrix"
+-        id: set-matrix
+-        run: |
+-          echo "::set-output name=matrix::$( echo '${{ env.MATRIX }}' | jq -M -c )"
+-
+-      - name: "[Set-Output] Matrix 'Refs' (master branch and latest tag)"
+-        id: set-refs
+-        uses: cytopia/git-ref-matrix-action@v0.1.4
+-        with:
+-          repository_default_branch: master
+-          branches: master
+-          num_latest_tags: 1
+-        if: github.event_name == 'schedule'
+-
+-      - name: "[DEBUG] Show settings'"
+-        run: |
+-          echo 'Matrix'
+-          echo '--------------------'
+-          echo '${{ steps.set-matrix.outputs.matrix }}'
+-          echo
+-
+-          echo 'Matrix: Refs'
+-          echo '--------------------'
+-          echo '${{ steps.set-matrix-refs.outputs.matrix }}'
+-          echo
+diff --git a/.github/workflows/zzz-reuse-build.yml b/.github/workflows/zzz-reuse-build.yml
+new file mode 100644
+index 0000000..c2d4b40
+--- /dev/null
++++ b/.github/workflows/zzz-reuse-build.yml
+@@ -0,0 +1,240 @@
++---
++name: Build multi-arch images
++
++on:
++  workflow_call:
++    ###
++    ### Variables
++    ###
++    inputs:
++      enabled:
++        description: 'Determines wheather this workflow is enabled at all (will run or skip).'
++        required: true
++        type: boolean
++      can_deploy:
++        description: 'Determines wheather this workflow will also deploy (login and push).'
++        required: true
++        type: boolean
++      build_matrix:
++        description: 'The build matrix'
++        required: true
++        type: string
++      has_refs:
++        description: 'The ref build matrix as JSON string (list of git refs to build/deploy).'
++        required: true
++        type: string
++      artifact_prefix:
++        description: 'Unique artifact name prefix (to avoid overriding existing artifcats during parallel runs).'
++        required: true
++        type: string
++      flavour:
++        description: 'The flavour to build (base, mods, prod or work).'
++        required: true
++        type: string
++    ###
++    ### Secrets
++    ###
++    secrets:
++      dockerhub_username:
++        description: 'The username for Dockerhub.'
++        required: false
++      dockerhub_password:
++        description: 'The password for Dockerhub.'
++        required: false
++
++jobs:
++  # -----------------------------------------------------------------------------------------------
++  # JOB: BUILD
++  # -----------------------------------------------------------------------------------------------
++  build:
++    name: ${{ matrix.name }}-${{ matrix.version }}-${{ inputs.flavour }} (${{ matrix.arch }}) ${{ matrix.refs }}
++    runs-on: ubuntu-latest
++    strategy:
++      fail-fast: false
++      matrix:
++        include: ${{ fromJson(inputs.build_matrix) }}
++    if: inputs.enabled
++    steps:
++
++      # ------------------------------------------------------------
++      # Setup repository
++      # ------------------------------------------------------------
++      - name: "[SETUP] Checkout repository (current)"
++        uses: actions/checkout@v3
++        with:
++          fetch-depth: 0
++        if: inputs.has_refs == 0
++
++      - name: "[SETUP] Checkout repository (ref: ${{ matrix.refs }})"
++        uses: actions/checkout@v3
++        with:
++          fetch-depth: 0
++          ref: ${{ matrix.refs }}
++        if: inputs.has_refs != 0
++
++      - name: "[SETUP] Setup QEMU environment"
++        uses: docker/setup-qemu-action@v1
++        with:
++          image: tonistiigi/binfmt:latest
++          platforms: all
++
++      - name: "[SETUP] Set artifact names"
++        id: set-artifact-name
++        run: |
++          PRE_HASH="$( git rev-parse HEAD | head -c 10 )"
++          VERSION="${{ matrix.version }}"
++          ARCH="$( echo "${{ matrix.arch }}" | sed 's|/|-|g' )"
++
++          NAME_BASE="${{ inputs.artifact_prefix }}-${PRE_HASH}-${VERSION}-${ARCH}-base"
++          NAME_MODS="${{ inputs.artifact_prefix }}-${PRE_HASH}-${VERSION}-${ARCH}-mods"
++          NAME_PROD="${{ inputs.artifact_prefix }}-${PRE_HASH}-${VERSION}-${ARCH}-prod"
++          NAME_WORK="${{ inputs.artifact_prefix }}-${PRE_HASH}-${VERSION}-${ARCH}-work"
++
++          echo "::set-output name=base::${NAME_BASE}"
++          echo "::set-output name=mods::${NAME_MODS}"
++          echo "::set-output name=prod::${NAME_PROD}"
++          echo "::set-output name=work::${NAME_WORK}"
++
++      # ------------------------------------------------------------
++      # Artifact Import
++      # ------------------------------------------------------------
++
++      ###
++      ### Download and import base
++      ###
++      - name: "[Artifact Load] Download base"
++        uses: actions/download-artifact@v3
++        with:
++          name: ${{ steps.set-artifact-name.outputs.base }}
++        if: ${{ inputs.flavour == 'mods' }}
++
++      - name: "[Artifact Load] Import base"
++        uses: cytopia/shell-command-retry-action@v0.1.2
++        with:
++          command: |
++            make load INFILE=${{ steps.set-artifact-name.outputs.base }}
++        if: ${{ inputs.flavour == 'mods' }}
++
++      ###
++      ### Download and import mods
++      ###
++      - name: "[Artifact Load] Download mods"
++        uses: actions/download-artifact@v3
++        with:
++          name: ${{ steps.set-artifact-name.outputs.mods }}
++        if: ${{ inputs.flavour == 'prod' }}
++
++      - name: "[Artifact Load] Import mods"
++        uses: cytopia/shell-command-retry-action@v0.1.2
++        with:
++          command: |
++            make load INFILE=${{ steps.set-artifact-name.outputs.mods }}
++        if: ${{ inputs.flavour == 'prod' }}
++
++      ###
++      ### Download and import prod
++      ###
++      - name: "[Artifact Load] Download prod"
++        uses: actions/download-artifact@v3
++        with:
++          name: ${{ steps.set-artifact-name.outputs.prod }}
++        if: ${{ inputs.flavour == 'work' }}
++
++      - name: "[Artifact Load] Import prod"
++        uses: cytopia/shell-command-retry-action@v0.1.2
++        with:
++          command: |
++            make load INFILE=${{ steps.set-artifact-name.outputs.prod }}
++        if: ${{ inputs.flavour == 'work' }}
++
++
++      # ------------------------------------------------------------
++      # Build
++      # ------------------------------------------------------------
++      - name: Build
++        uses: cytopia/shell-command-retry-action@v0.1.2
++        with:
++          command: |
++            make build VERSION=${{ matrix.version }} FLAVOUR=${{ inputs.flavour }} ARCH=${{ matrix.arch }}
++
++      # ------------------------------------------------------------
++      # Test
++      # ------------------------------------------------------------
++      - name: Test
++        uses: cytopia/shell-command-retry-action@v0.1.2
++        with:
++          command: |
++            make test VERSION=${{ matrix.version }} FLAVOUR=${{ inputs.flavour }} ARCH=${{ matrix.arch }}
++
++
++      # ------------------------------------------------------------
++      # Artifact Expot
++      # ------------------------------------------------------------
++
++      ###
++      ### Export and Upload base
++      ###
++      - name: "[Artifact Save] Export base"
++        uses: cytopia/shell-command-retry-action@v0.1.2
++        with:
++          command: |
++            make save VERSION=${{ matrix.version }} FLAVOUR=base ARCH=${{ matrix.arch }} OUTFILE=${{ steps.set-artifact-name.outputs.base }}
++        if: ${{ inputs.flavour == 'base' }}
++
++      - name: "[Artifact Save] Upload base"
++        uses: actions/upload-artifact@v3
++        with:
++          name: ${{ steps.set-artifact-name.outputs.base }}
++          path: ${{ steps.set-artifact-name.outputs.base }}
++        if: ${{ inputs.flavour == 'base' }}
++
++      ###
++      ### Export and Upload mods
++      ###
++      - name: "[Artifact Save] Export mods"
++        uses: cytopia/shell-command-retry-action@v0.1.2
++        with:
++          command: |
++            make save VERSION=${{ matrix.version }} FLAVOUR=mods ARCH=${{ matrix.arch }} OUTFILE=${{ steps.set-artifact-name.outputs.mods }}
++        if: ${{ inputs.flavour == 'mods' }}
++
++      - name: "[Artifact Save] Upload mods"
++        uses: actions/upload-artifact@v3
++        with:
++          name: ${{ steps.set-artifact-name.outputs.mods }}
++          path: ${{ steps.set-artifact-name.outputs.mods }}
++        if: ${{ inputs.flavour == 'mods' }}
++
++      ###
++      ### Export and Upload prod
++      ###
++      - name: "[Artifact Save] Export prod"
++        uses: cytopia/shell-command-retry-action@v0.1.2
++        with:
++          command: |
++            make save VERSION=${{ matrix.version }} FLAVOUR=prod ARCH=${{ matrix.arch }} OUTFILE=${{ steps.set-artifact-name.outputs.prod }}
++        if: ${{ inputs.flavour == 'prod' }}
++
++      - name: "[Artifact Save] Upload prod"
++        uses: actions/upload-artifact@v3
++        with:
++          name: ${{ steps.set-artifact-name.outputs.prod }}
++          path: ${{ steps.set-artifact-name.outputs.prod }}
++        if: ${{ inputs.flavour == 'prod' }}
++
++      ###
++      ### Export and Upload work
++      ###
++      - name: "[Artifact Save] Export work"
++        uses: cytopia/shell-command-retry-action@v0.1.2
++        with:
++          command: |
++            make save VERSION=${{ matrix.version }} FLAVOUR=work ARCH=${{ matrix.arch }} OUTFILE=${{ steps.set-artifact-name.outputs.work }}
++        if: ${{ inputs.flavour == 'work' }}
++
++      - name: "[Artifact Save] Upload work"
++        uses: actions/upload-artifact@v3
++        with:
++          name: ${{ steps.set-artifact-name.outputs.work }}
++          path: ${{ steps.set-artifact-name.outputs.work }}
++        if: ${{ inputs.flavour == 'work' }}
+diff --git a/.github/workflows/zzz-reuse-configure.yml b/.github/workflows/zzz-reuse-configure.yml
+new file mode 100644
+index 0000000..aecbf91
+--- /dev/null
++++ b/.github/workflows/zzz-reuse-configure.yml
+@@ -0,0 +1,148 @@
++---
++name: Configure Pipeline for multi-arch image build
++
++on:
++  workflow_call:
++    ###
++    ### Variables
++    ###
++    inputs:
++      enabled:
++        description: 'Determines wheather this workflow is enabled at all (will run or skip).'
++        required: true
++        type: boolean
++      can_deploy:
++        description: 'Determines wheather this workflow will also deploy (login and push).'
++        required: true
++        type: boolean
++      matrix:
++        description: 'The version build matrix as JSON string ( list of objects: [{NAME, VERSION[], ARCH[]}] ).'
++        required: true
++        type: string
++      refs:
++        description: 'The ref build matrix as JSON string (list of git refs to build/deploy).'
++        required: false
++        type: string
++    ###
++    ### Secrets
++    ###
++    secrets:
++      dockerhub_username:
++        description: 'The username for Dockerhub.'
++        required: false
++      dockerhub_password:
++        description: 'The password for Dockerhub.'
++        required: false
++    ###
++    ### Outouts
++    ###
++    outputs:
++      can_login:
++        description: "Can we login"
++        value: ${{ jobs.configure.outputs.can_login }}
++      has_refs:
++        description: "Do we have refs"
++        value: ${{ jobs.configure.outputs.has_refs }}
++      matrix_build:
++        description: "The determined build matrix"
++        value: ${{ jobs.configure.outputs.matrix_build }}
++      matrix_deploy:
++        description: "The determined deploy matrix"
++        value: ${{ jobs.configure.outputs.matrix_deploy }}
++      artifact_prefix:
++        description: "The determined unique artifact prefix"
++        value: ${{ jobs.configure.outputs.artifact_prefix }}
++
++jobs:
++
++  # -----------------------------------------------------------------------------------------------
++  # JOB (1/3): CONFIGURE
++  # -----------------------------------------------------------------------------------------------
++  configure:
++    name: Configure
++    if: inputs.enabled
++    runs-on: ubuntu-latest
++
++    ###
++    ### Outputs
++    ###
++    outputs:
++      can_login: ${{ steps.set-login.outputs.can_login }}
++      has_refs: ${{ steps.set-matrix.outputs.has_refs }}
++      matrix_build: ${{ steps.set-matrix.outputs.matrix_build }}
++      matrix_deploy: ${{ steps.set-matrix.outputs.matrix_deploy }}
++      artifact_prefix: ${{ steps.set-artifact-prefix.outputs.prefix }}
++
++    ###
++    ### Steps
++    ###
++    steps:
++      - name: "[Set-Output] Set Docker login capabilities"
++        id: set-login
++        shell: bash
++        run: |
++          if [ "${{ env.ENV_USER }}" = '' ] || [ "${{ env.ENV_PASS }}" = '' ]; then
++            echo "::set-output name=can_login::0"
++          else
++            echo "::set-output name=can_login::1"
++          fi
++        env:
++          ENV_USER: ${{ secrets.dockerhub_username }}
++          ENV_PASS: ${{ secrets.dockerhub_password }}
++
++      - name: "[Set-Output] Set Build Matrix & Deploy Matrix"
++        id: set-matrix
++        shell: bash
++        run: |
++          if [ "${{ inputs.refs }}" != "" ]; then
++            MATRIX_BUILD="$( \
++              jq -M -c \
++                --argjson refs   '${{ inputs.refs }}' \
++                'map({name:.NAME, version:.VERSION[], flavour:.FLAVOUR[], arch:.ARCH[], refs:$refs[]})' <<<'${{ inputs.matrix }}' \
++            )"
++            MATRIX_DEPLOY="$( \
++              jq -M -c \
++                --argjson refs   '${{ inputs.refs }}' \
++                'map({name:.NAME, version:.VERSION[], flavour:.FLAVOUR[], refs:$refs[]})' <<<'${{ inputs.matrix }}' \
++            )"
++            echo "::set-output name=matrix_build::${MATRIX_BUILD}"
++            echo "::set-output name=matrix_deploy::${MATRIX_DEPLOY}"
++            echo "::set-output name=has_refs::1"
++          else
++            MATRIX_BUILD="$( \
++              jq -M -c \
++                'map({name:.NAME, version:.VERSION[], flavour:.FLAVOUR[], arch:.ARCH[]})' <<<'${{ inputs.matrix }}' \
++            )"
++            MATRIX_DEPLOY="$( \
++              jq -M -c \
++                'map({name:.NAME, version:.VERSION[], flavour:.FLAVOUR[]})' <<<'${{ inputs.matrix }}' \
++            )"
++            echo "::set-output name=matrix_build::${MATRIX_BUILD}"
++            echo "::set-output name=matrix_deploy::${MATRIX_DEPLOY}"
++            echo "::set-output name=has_refs::0"
++          fi
++
++      - name: "[Set-Output] Set unique Artifact prefix"
++        id: set-artifact-prefix
++        shell: bash
++        run: |
++          PRE_DATE="$( date +"%s" )"
++          PRE_RAND="$( echo $RANDOM | md5sum | head -c 10 )"
++          echo "::set-output name=prefix::${PRE_DATE}-${PRE_RAND}"
++
++      - name: "[DEBUG] Show Workflow Inputs"
++        shell: bash
++        run: |
++          echo 'enabled: ${{ inputs.enabled }}'
++          echo 'can_deploy: ${{ inputs.can_deploy }}'
++          echo 'matrix: ${{ inputs.matrix }}'
++          echo 'refs: ${{ inputs.refs }}'
++
++      - name: "[DEBUG] Show Determined Settings"
++        shell: bash
++        run: |
++          echo 'can_login=${{ steps.set-login.outputs.can_login }}'
++          echo 'has_refs=${{ steps.set-matrix.outputs.has_refs }}'
++          echo 'matrix_build=${{ steps.set-matrix.outputs.matrix_build }}'
++          echo 'matrix_deploy=${{ steps.set-matrix.outputs.matrix_deploy }}'
++          echo 'artifact_prefix=${{ steps.set-artifact-prefix.outputs.prefix }}'
+diff --git a/.github/workflows/zzz-reuse-deploy-images.yml b/.github/workflows/zzz-reuse-deploy-images.yml
+new file mode 100644
+index 0000000..a951a64
+--- /dev/null
++++ b/.github/workflows/zzz-reuse-deploy-images.yml
+@@ -0,0 +1,238 @@
++name: Deploy multi-arch images
++
++on:
++  workflow_call:
++    ###
++    ### Variables
++    ###
++    inputs:
++      enabled:
++        description: 'Determines wheather this workflow is enabled at all (will run or skip).'
++        required: true
++        type: boolean
++      can_deploy:
++        description: 'Determines wheather this workflow will also deploy (login and push).'
++        required: true
++        type: boolean
++      build_matrix:
++        description: 'The build matrix'
++        required: true
++        type: string
++      has_refs:
++        description: 'The ref build matrix as JSON string (list of git refs to build/deploy).'
++        required: true
++        type: string
++      artifact_prefix:
++        description: 'Unique artifact name prefix (to avoid overriding existing artifcats during parallel runs).'
++        required: true
++        type: string
++    ###
++    ### Secrets
++    ###
++    secrets:
++      dockerhub_username:
++        description: 'The username for Dockerhub.'
++        required: false
++      dockerhub_password:
++        description: 'The password for Dockerhub.'
++        required: false
++
++jobs:
++  deploy:
++    name: ${{ matrix.name }}-${{ matrix.version }}-${{ inputs.flavour }} (${{ matrix.arch }}) ${{ matrix.refs }}
++    runs-on: ubuntu-latest
++    strategy:
++      fail-fast: false
++      matrix:
++        include: ${{ fromJson(inputs.build_matrix) }}
++    if: inputs.enabled
++    steps:
++
++      # ------------------------------------------------------------
++      # Setup repository
++      # ------------------------------------------------------------
++      - name: "[SETUP] Checkout repository (current)"
++        uses: actions/checkout@v3
++        with:
++          fetch-depth: 0
++        if: inputs.has_refs == 0
++
++      - name: "[SETUP] Checkout repository (ref: ${{ matrix.refs }})"
++        uses: actions/checkout@v3
++        with:
++          fetch-depth: 0
++          ref: ${{ matrix.refs }}
++        if: inputs.has_refs != 0
++
++      - name: "[SETUP] Setup QEMU environment"
++        uses: docker/setup-qemu-action@v1
++        with:
++          image: tonistiigi/binfmt:latest
++          platforms: all
++
++      - name: "[SETUP] Determine Docker tag"
++        id: tag
++        uses: cytopia/docker-tag-action@v0.4.15
++
++      - name: "[SETUP] Set artifact names"
++        id: set-artifact-name
++        run: |
++          PRE_HASH="$( git rev-parse HEAD | head -c 10 )"
++          VERSION="${{ matrix.version }}"
++          ARCH="$( echo "${{ matrix.arch }}" | sed 's|/|-|g' )"
++
++          NAME_BASE="${{ inputs.artifact_prefix }}-${PRE_HASH}-${VERSION}-${ARCH}-base"
++          NAME_MODS="${{ inputs.artifact_prefix }}-${PRE_HASH}-${VERSION}-${ARCH}-mods"
++          NAME_PROD="${{ inputs.artifact_prefix }}-${PRE_HASH}-${VERSION}-${ARCH}-prod"
++          NAME_WORK="${{ inputs.artifact_prefix }}-${PRE_HASH}-${VERSION}-${ARCH}-work"
++
++          echo "::set-output name=base::${NAME_BASE}"
++          echo "::set-output name=mods::${NAME_MODS}"
++          echo "::set-output name=prod::${NAME_PROD}"
++          echo "::set-output name=work::${NAME_WORK}"
++
++      # ------------------------------------------------------------
++      # Artifact Import
++      # ------------------------------------------------------------
++
++      ###
++      ### Download and import base
++      ###
++      - name: "[Artifact Load] Download base"
++        uses: actions/download-artifact@v3
++        with:
++          name: ${{ steps.set-artifact-name.outputs.base }}
++
++      - name: "[Artifact Load] Import base"
++        uses: cytopia/shell-command-retry-action@v0.1.2
++        with:
++          retries: 2
++          command: |
++            make load INFILE=${{ steps.set-artifact-name.outputs.base }}
++
++      ###
++      ### Download and import mods
++      ###
++      - name: "[Artifact Load] Download mods"
++        uses: actions/download-artifact@v3
++        with:
++          name: ${{ steps.set-artifact-name.outputs.mods }}
++
++      - name: "[Artifact Load] Import mods"
++        uses: cytopia/shell-command-retry-action@v0.1.2
++        with:
++          retries: 2
++          command: |
++            make load INFILE=${{ steps.set-artifact-name.outputs.mods }}
++
++      ###
++      ### Download and import prod
++      ###
++      - name: "[Artifact Load] Download prod"
++        uses: actions/download-artifact@v3
++        with:
++          name: ${{ steps.set-artifact-name.outputs.prod }}
++
++      - name: "[Artifact Load] Import prod"
++        uses: cytopia/shell-command-retry-action@v0.1.2
++        with:
++          retries: 2
++          command: |
++            make load INFILE=${{ steps.set-artifact-name.outputs.prod }}
++
++      ###
++      ### Download and import prod
++      ###
++      - name: "[Artifact Load] Download work"
++        uses: actions/download-artifact@v3
++        with:
++          name: ${{ steps.set-artifact-name.outputs.work }}
++
++      - name: "[Artifact Load] Import work"
++        uses: cytopia/shell-command-retry-action@v0.1.2
++        with:
++          retries: 2
++          command: |
++            make load INFILE=${{ steps.set-artifact-name.outputs.work }}
++
++      # ------------------------------------------------------------
++      # Re-tag images
++      # ------------------------------------------------------------
++      - name: "[Docker Tag] base"
++        uses: cytopia/shell-command-retry-action@v0.1.2
++        with:
++          retries: 2
++          command: |
++            make tag VERSION=${{ matrix.version }} FLAVOUR=base TAG=${{ steps.tag.outputs.docker-tag }}
++
++      - name: "[Docker Tag] mods"
++        uses: cytopia/shell-command-retry-action@v0.1.2
++        with:
++          retries: 2
++          command: |
++            make tag VERSION=${{ matrix.version }} FLAVOUR=mods TAG=${{ steps.tag.outputs.docker-tag }}
++
++      - name: "[Docker Tag] prod"
++        uses: cytopia/shell-command-retry-action@v0.1.2
++        with:
++          retries: 2
++          command: |
++            make tag VERSION=${{ matrix.version }} FLAVOUR=prod TAG=${{ steps.tag.outputs.docker-tag }}
++
++      - name: "[Docker Tag] work"
++        uses: cytopia/shell-command-retry-action@v0.1.2
++        with:
++          retries: 2
++          command: |
++            make tag VERSION=${{ matrix.version }} FLAVOUR=work TAG=${{ steps.tag.outputs.docker-tag }}
++
++      - name: "[Docker Tag] Show images"
++        run: |
++          docker images
++
++
++      # ------------------------------------------------------------
++      # Login
++      # ------------------------------------------------------------
++      - name: "Login"
++        uses: docker/login-action@v1
++        with:
++          username: ${{ secrets.DOCKERHUB_USERNAME }}
++          password: ${{ secrets.DOCKERHUB_PASSWORD }}
++        if: ${{ inputs.can_deploy }}
++
++
++      # ------------------------------------------------------------
++      # Push images
++      # ------------------------------------------------------------
++      - name: "[Push Image] base"
++        uses: cytopia/shell-command-retry-action@v0.1.2
++        with:
++          retries: 2
++          command: |
++            make push VERSION=${{ matrix.version }} FLAVOUR=base TAG=${{ steps.tag.outputs.docker-tag }}
++        if: ${{ inputs.can_deploy }}
++
++      - name: "[Push Image] mods"
++        uses: cytopia/shell-command-retry-action@v0.1.2
++        with:
++          retries: 2
++          command: |
++            make push VERSION=${{ matrix.version }} FLAVOUR=mods TAG=${{ steps.tag.outputs.docker-tag }}
++        if: ${{ inputs.can_deploy }}
++
++      - name: "[Push Image] prod"
++        uses: cytopia/shell-command-retry-action@v0.1.2
++        with:
++          retries: 2
++          command: |
++            make push VERSION=${{ matrix.version }} FLAVOUR=prod TAG=${{ steps.tag.outputs.docker-tag }}
++        if: ${{ inputs.can_deploy }}
++
++      - name: "[Push Image] work"
++        uses: cytopia/shell-command-retry-action@v0.1.2
++        with:
++          retries: 2
++          command: |
++            make push VERSION=${{ matrix.version }} FLAVOUR=work TAG=${{ steps.tag.outputs.docker-tag }}
++        if: ${{ inputs.can_deploy }}
+diff --git a/.github/workflows/zzz-reuse-deploy-manifests.yml b/.github/workflows/zzz-reuse-deploy-manifests.yml
+new file mode 100644
+index 0000000..4af1a5b
+--- /dev/null
++++ b/.github/workflows/zzz-reuse-deploy-manifests.yml
+@@ -0,0 +1,170 @@
++name: Deploy multi-arch image manifests
++
++on:
++  workflow_call:
++    ###
++    ### Variables
++    ###
++    inputs:
++      enabled:
++        description: 'Determines wheather this workflow is enabled at all (will run or skip).'
++        required: true
++        type: boolean
++      can_deploy:
++        description: 'Determines wheather this workflow will also deploy (login and push).'
++        required: true
++        type: boolean
++      deploy_matrix:
++        description: 'The version deploy matrix as JSON string ( list of objects: [{NAME, VERSION[], ARCH[]}] ).'
++        required: true
++        type: string
++      params_matrix:
++        description: 'The build matrix set via params.yml.'
++        required: true
++        type: string
++      artifact_prefix:
++        description: 'Unique artifact name prefix (to avoid overriding existing artifcats during parallel runs).'
++        required: true
++        type: string
++      has_refs:
++        description: 'The ref build matrix as JSON string (list of git refs to build/deploy).'
++        required: true
++        type: string
++
++    ###
++    ### Secrets
++    ###
++    secrets:
++      dockerhub_username:
++        description: 'The username for Dockerhub.'
++        required: false
++      dockerhub_password:
++        description: 'The password for Dockerhub.'
++        required: false
++
++jobs:
++  # -----------------------------------------------------------------------------------------------
++  # JOB (3/3): DEPLOY
++  # -----------------------------------------------------------------------------------------------
++  deploy:
++    name: ${{ matrix.name }}-${{ matrix.version }} (${{ matrix.flavour }}) ${{ matrix.refs }}
++    runs-on: ubuntu-latest
++    strategy:
++      fail-fast: false
++      matrix:
++        include: ${{ fromJson(inputs.deploy_matrix) }}
++    if: inputs.enabled && inputs.can_deploy
++    steps:
++      # ------------------------------------------------------------
++      # Setup repository
++      # ------------------------------------------------------------
++      - name: "[SETUP] Checkout repository (current)"
++        uses: actions/checkout@v3
++        with:
++          fetch-depth: 0
++        if: ${{ inputs.has_refs == 0 }}
++
++      - name: "[SETUP] Checkout repository (ref: ${{ matrix.refs }})"
++        uses: actions/checkout@v3
++        with:
++          fetch-depth: 0
++          ref: ${{ matrix.refs }}
++        if: ${{ inputs.has_refs != 0 }}
++
++      - name: "[SETUP] Setup QEMU environment"
++        uses: docker/setup-qemu-action@v1
++        with:
++          image: tonistiigi/binfmt:latest
++          platforms: all
++
++      - name: "[SETUP] Determine Docker tag"
++        id: tag
++        uses: cytopia/docker-tag-action@v0.4.15
++
++      - name: "[SETUP] Determine manifest arches"
++        id: manifest
++        run: |
++          ARCHES="$( echo '${{ inputs.params_matrix }}' \
++            | jq 'group_by(.NAME, .VERSION, .ARCH)' \
++            | jq 'map({NAME: .[].NAME, VERSION: .[].VERSION[], FLAVOUR: .[].FLAVOUR[], ARCHES: .[].ARCH|join(",")})' \
++            | jq '.[] | select(.NAME=="${{ matrix.name }}" and .VERSION=="${{ matrix.version }}" and .FLAVOUR=="${{ matrix.flavour }}") | .ARCHES' \
++            | jq -c -M \
++          )"
++          echo "::set-output name=arches::${ARCHES}"
++          echo "ARCHES: ${ARCHES}"
++
++
++      # ------------------------------------------------------------
++      # Login
++      # ------------------------------------------------------------
++      - name: "Login"
++        uses: docker/login-action@v1
++        with:
++          username: ${{ secrets.DOCKERHUB_USERNAME }}
++          password: ${{ secrets.DOCKERHUB_PASSWORD }}
++
++
++      # ------------------------------------------------------------
++      # Create Manifest
++      # ------------------------------------------------------------
++
++      - name: "[Create Manifest] base (${{ steps.manifest.outputs.arches }})"
++        uses: cytopia/shell-command-retry-action@v0.1.2
++        with:
++          retries: 2
++          command: |
++            make manifest-create VERSION=${{ matrix.version }} FLAVOUR=base ARCHES=${{ steps.manifest.outputs.arches }} TAG=${{ steps.tag.outputs.docker-tag }}
++
++      - name: "[Create Manifest] mods (${{ steps.manifest.outputs.arches }})"
++        uses: cytopia/shell-command-retry-action@v0.1.2
++        with:
++          retries: 2
++          command: |
++            make manifest-create VERSION=${{ matrix.version }} FLAVOUR=mods ARCHES=${{ steps.manifest.outputs.arches }} TAG=${{ steps.tag.outputs.docker-tag }}
++
++      - name: "[Create Manifest] prod (${{ steps.manifest.outputs.arches }})"
++        uses: cytopia/shell-command-retry-action@v0.1.2
++        with:
++          retries: 2
++          command: |
++            make manifest-create VERSION=${{ matrix.version }} FLAVOUR=prod ARCHES=${{ steps.manifest.outputs.arches }} TAG=${{ steps.tag.outputs.docker-tag }}
++
++      - name: "[Create Manifest] work (${{ steps.manifest.outputs.arches }})"
++        uses: cytopia/shell-command-retry-action@v0.1.2
++        with:
++          retries: 2
++          command: |
++            make manifest-create VERSION=${{ matrix.version }} FLAVOUR=work ARCHES=${{ steps.manifest.outputs.arches }} TAG=${{ steps.tag.outputs.docker-tag }}
++
++
++      # ------------------------------------------------------------
++      # Deploy Manifest
++      # ------------------------------------------------------------
++
++      - name: "[Push Manifest] base: ${{ steps.tag.outputs.docker-tag }}"
++        uses: cytopia/shell-command-retry-action@v0.1.2
++        with:
++          retries: 2
++          command: |
++            make manifest-push VERSION=${{ matrix.version }} FLAVOUR=base TAG=${{ steps.tag.outputs.docker-tag }}
++
++      - name: "[Push Manifest] mods: ${{ steps.tag.outputs.docker-tag }}"
++        uses: cytopia/shell-command-retry-action@v0.1.2
++        with:
++          retries: 2
++          command: |
++            make manifest-push VERSION=${{ matrix.version }} FLAVOUR=mods TAG=${{ steps.tag.outputs.docker-tag }}
++
++      - name: "[Push Manifest] prod: ${{ steps.tag.outputs.docker-tag }}"
++        uses: cytopia/shell-command-retry-action@v0.1.2
++        with:
++          retries: 2
++          command: |
++            make manifest-push VERSION=${{ matrix.version }} FLAVOUR=prod TAG=${{ steps.tag.outputs.docker-tag }}
++
++      - name: "[Push Manifest] work: ${{ steps.tag.outputs.docker-tag }}"
++        uses: cytopia/shell-command-retry-action@v0.1.2
++        with:
++          retries: 2
++          command: |
++            make manifest-push VERSION=${{ matrix.version }} FLAVOUR=work TAG=${{ steps.tag.outputs.docker-tag }}
+diff --git a/.github/workflows/zzz-reuse.yml b/.github/workflows/zzz-reuse.yml
+deleted file mode 100644
+index 96fc05f..0000000
+--- a/.github/workflows/zzz-reuse.yml
++++ /dev/null
+@@ -1,639 +0,0 @@
+-name: Build multi-arch image
+-
+-on:
+-  workflow_call:
+-    ###
+-    ### Variables
+-    ###
+-    inputs:
+-      enabled:
+-        description: 'Determines wheather this workflow is enabled at all (will run or skip).'
+-        required: true
+-        type: boolean
+-      can_deploy:
+-        description: 'Determines wheather this workflow will also deploy (login and push).'
+-        required: true
+-        type: boolean
+-      matrix:
+-        description: 'The version build matrix as JSON string ( list of objects: [{NAME, VERSION[], ARCH[]}] ).'
+-        required: true
+-        type: string
+-      refs:
+-        description: 'The ref build matrix as JSON string (list of git refs to build/deploy).'
+-        required: false
+-        type: string
+-    ###
+-    ### Secrets
+-    ###
+-    secrets:
+-      dockerhub_username:
+-        description: 'The username for Dockerhub.'
+-        required: false
+-      dockerhub_password:
+-        description: 'The password for Dockerhub.'
+-        required: false
+-
+-jobs:
+-
+-  # -----------------------------------------------------------------------------------------------
+-  # JOB (1/3): CONFIGURE
+-  # -----------------------------------------------------------------------------------------------
+-  configure:
+-    name: Configure
+-    runs-on: ubuntu-latest
+-    outputs:
+-      can_login: ${{ steps.set-login.outputs.can_login }}
+-      has_refs: ${{ steps.set-matrix.outputs.has_refs }}
+-      matrix_build: ${{ steps.set-matrix.outputs.matrix_build }}
+-      matrix_deploy: ${{ steps.set-matrix.outputs.matrix_deploy }}
+-      artifact_base: ${{ steps.set-artifact.outputs.base }}
+-      artifact_mods: ${{ steps.set-artifact.outputs.mods }}
+-      artifact_prod: ${{ steps.set-artifact.outputs.prod }}
+-      artifact_work: ${{ steps.set-artifact.outputs.work }}
+-    if: inputs.enabled
+-    steps:
+-      - name: "[Set-Output] Set Docker login capabilities"
+-        id: set-login
+-        shell: bash
+-        run: |
+-          if [ "${{ env.ENV_USER }}" = '' ] || [ "${{ env.ENV_PASS }}" = '' ]; then
+-            echo "::set-output name=can_login::0"
+-          else
+-            echo "::set-output name=can_login::1"
+-          fi
+-        env:
+-          ENV_USER: ${{ secrets.dockerhub_username }}
+-          ENV_PASS: ${{ secrets.dockerhub_password }}
+-
+-      - name: "[Set-Output] Set Build & Deploy Matrix"
+-        id: set-matrix
+-        shell: bash
+-        run: |
+-          if [ "${{ inputs.refs }}" != "" ]; then
+-            MATRIX_BUILD="$( \
+-              jq -M -c \
+-                --argjson refs   '${{ inputs.refs }}' \
+-                'map({name:.NAME, version:.VERSION[], flavour:.FLAVOUR[], arch:.ARCH[], refs:$refs[]})' <<<'${{ inputs.matrix }}' \
+-            )"
+-            MATRIX_DEPLOY="$( \
+-              jq -M -c \
+-                --argjson refs   '${{ inputs.refs }}' \
+-                'map({name:.NAME, version:.VERSION[], flavour:.FLAVOUR[], refs:$refs[]})' <<<'${{ inputs.matrix }}' \
+-            )"
+-            echo "::set-output name=matrix_build::${MATRIX_BUILD}"
+-            echo "::set-output name=matrix_deploy::${MATRIX_DEPLOY}"
+-            echo "::set-output name=has_refs::1"
+-          else
+-            MATRIX_BUILD="$( \
+-              jq -M -c \
+-                'map({name:.NAME, version:.VERSION[], flavour:.FLAVOUR[], arch:.ARCH[]})' <<<'${{ inputs.matrix }}' \
+-            )"
+-            MATRIX_DEPLOY="$( \
+-              jq -M -c \
+-                'map({name:.NAME, version:.VERSION[], flavour:.FLAVOUR[]})' <<<'${{ inputs.matrix }}' \
+-            )"
+-            echo "::set-output name=matrix_build::${MATRIX_BUILD}"
+-            echo "::set-output name=matrix_deploy::${MATRIX_DEPLOY}"
+-            echo "::set-output name=has_refs::0"
+-          fi
+-
+-      - name: "[Set-Output] Set unique Artifact filenames"
+-        id: set-artifact
+-        shell: bash
+-        run: |
+-          #PRE_HASH="$( git rev-parse HEAD | head -c 10 )"
+-          PRE_DATE="$( date +"%s" )"
+-          #BASE="${PRE_HASH}-${PRE_DATE}-base"
+-          #MODS="${PRE_HASH}-${PRE_DATE}-mods"
+-          #PROD="${PRE_HASH}-${PRE_DATE}-prod"
+-          #WORK="${PRE_HASH}-${PRE_DATE}-work"
+-          BASE="${PRE_DATE}-base"
+-          MODS="${PRE_DATE}-mods"
+-          PROD="${PRE_DATE}-prod"
+-          WORK="${PRE_DATE}-work"
+-
+-          echo "::set-output name=base::${BASE}"
+-          echo "::set-output name=mods::${MODS}"
+-          echo "::set-output name=prod::${PROD}"
+-          echo "::set-output name=work::${WORK}"
+-
+-      - name: "[DEBUG] Workflow Inputs"
+-        shell: bash
+-        run: |
+-          echo 'enabled: ${{ inputs.enabled }} '
+-          echo 'can_deploy: ${{ inputs.can_deploy }} '
+-          echo 'matrix: ${{ inputs.matrix }} '
+-          echo 'refs: ${{ inputs.refs }} '
+-
+-      - name: "[DEBUG] Determined Settings"
+-        shell: bash
+-        run: |
+-          echo 'can_login=${{ steps.set-login.outputs.can_login }}'
+-          echo 'has_refs=${{ steps.set-matrix.outputs.has_refs }}'
+-          echo 'matrix_build=${{ steps.set-matrix.outputs.matrix_build }}'
+-          echo 'matrix_deploy=${{ steps.set-matrix.outputs.matrix_deploy }}'
+-          echo 'artifact_base=${{ steps.set-artifact.outputs.base }}'
+-          echo 'artifact_mods=${{ steps.set-artifact.outputs.mods }}'
+-          echo 'artifact_prod=${{ steps.set-artifact.outputs.prod }}'
+-          echo 'artifact_work=${{ steps.set-artifact.outputs.work }}'
+-
+-
+-  # -----------------------------------------------------------------------------------------------
+-  # JOB (2/3): BUILD-BASE
+-  # -----------------------------------------------------------------------------------------------
+-  build-base:
+-    needs: [configure]
+-    name: Build ${{ matrix.name }}-${{ matrix.version }} (${{ matrix.arch }}) ${{ matrix.refs }}
+-    runs-on: ubuntu-latest
+-    strategy:
+-      fail-fast: false
+-      matrix:
+-        include: ${{ fromJson(needs.configure.outputs.matrix_build) }}
+-    if: inputs.enabled
+-    steps:
+-      # ------------------------------------------------------------
+-      # Setup repository
+-      # ------------------------------------------------------------
+-      - name: "[SETUP] Checkout repository (current)"
+-        uses: actions/checkout@v3
+-        with:
+-          fetch-depth: 0
+-        if: needs.configure.outputs.has_refs == 0
+-
+-      - name: "[SETUP] Checkout repository (ref: ${{ matrix.refs }})"
+-        uses: actions/checkout@v3
+-        with:
+-          fetch-depth: 0
+-          ref: ${{ matrix.refs }}
+-        if: needs.configure.outputs.has_refs != 0
+-
+-      - name: "[SETUP] Setup QEMU environment"
+-        uses: docker/setup-qemu-action@v1
+-        with:
+-          image: tonistiigi/binfmt:latest
+-          platforms: all
+-
+-      - name: "[SETUP] Determine Docker tag"
+-        id: tag
+-        uses: cytopia/docker-tag-action@v0.4.15
+-
+-      # ------------------------------------------------------------
+-      # Build
+-      # ------------------------------------------------------------
+-      - name: Build
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          command: |
+-            make build VERSION=${{ matrix.version }} FLAVOUR=base ARCH=${{ matrix.arch }} TAG=${{ steps.tag.outputs.docker-tag }}
+-
+-      # ------------------------------------------------------------
+-      # Test
+-      # ------------------------------------------------------------
+-      #- name: Test
+-      #  uses: cytopia/shell-command-retry-action@v0.1.2
+-      #  with:
+-      #    command: |
+-      #      make test VERSION=${{ matrix.version }} FLAVOUR=base ARCH=${{ matrix.arch }} TAG=${{ steps.tag.outputs.docker-tag }}
+-
+-      # ------------------------------------------------------------
+-      # Export
+-      # ------------------------------------------------------------
+-      - name: "[Artifact] Set name"
+-        id: artifact
+-        run: |
+-            PREFIX="${{ needs.configure.outputs.artifact_base }}"
+-            VERSION="${{ matrix.version }}"
+-            ARCH="${{ matrix.arch }}"
+-            TAG="${{ steps.tag.outputs.docker-tag }}"
+-            NAME="$( echo "${PREFIX}-${VERSION}-${ARCH}-${TAG}" | sed 's|/|-|g' )"
+-            echo "::set-output name=file::${NAME}"
+-            echo "file=${NAME}"
+-
+-      - name: "[Artifact] Export"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          command: |
+-            make save VERSION=${{ matrix.version }} FLAVOUR=base ARCH=${{ matrix.arch }} TAG=${{ steps.tag.outputs.docker-tag }} OUTFILE=${{ steps.artifact.outputs.file }}
+-
+-      - name: "[Artifact] Upload"
+-        uses: actions/upload-artifact@v3
+-        with:
+-          name: ${{ steps.artifact.outputs.file }}
+-          path: ${{ steps.artifact.outputs.file }}
+-
+-
+-  # -----------------------------------------------------------------------------------------------
+-  # JOB (2/3): BUILD-MODS
+-  # -----------------------------------------------------------------------------------------------
+-  build-mods:
+-    needs: [configure, build-base]
+-    name: Build ${{ matrix.name }}-${{ matrix.version }} (${{ matrix.arch }}) ${{ matrix.refs }}
+-    runs-on: ubuntu-latest
+-    strategy:
+-      fail-fast: false
+-      matrix:
+-        include: ${{ fromJson(needs.configure.outputs.matrix_build) }}
+-    if: inputs.enabled
+-    steps:
+-      # ------------------------------------------------------------
+-      # Setup repository
+-      # ------------------------------------------------------------
+-      - name: "[SETUP] Checkout repository (current)"
+-        uses: actions/checkout@v3
+-        with:
+-          fetch-depth: 0
+-        if: needs.configure.outputs.has_refs == 0
+-
+-      - name: "[SETUP] Checkout repository (ref: ${{ matrix.refs }})"
+-        uses: actions/checkout@v3
+-        with:
+-          fetch-depth: 0
+-          ref: ${{ matrix.refs }}
+-        if: needs.configure.outputs.has_refs != 0
+-
+-      - name: "[SETUP] Setup QEMU environment"
+-        uses: docker/setup-qemu-action@v1
+-        with:
+-          image: tonistiigi/binfmt:latest
+-          platforms: all
+-
+-      - name: "[SETUP] Determine Docker tag"
+-        id: tag
+-        uses: cytopia/docker-tag-action@v0.4.15
+-
+-      # ------------------------------------------------------------
+-      # Import
+-      # ------------------------------------------------------------
+-      - name: "[Import] Set name"
+-        id: import
+-        run: |
+-            PREFIX="${{ needs.configure.outputs.artifact_base }}"
+-            VERSION="${{ matrix.version }}"
+-            ARCH="${{ matrix.arch }}"
+-            TAG="${{ steps.tag.outputs.docker-tag }}"
+-            NAME="$( echo "${PREFIX}-${VERSION}-${ARCH}-${TAG}" | sed 's|/|-|g' )"
+-            echo "::set-output name=file::${NAME}"
+-            echo "file=${NAME}"
+-
+-      - name: "[Import] Download"
+-        uses: actions/download-artifact@v3
+-        with:
+-          name: ${{ steps.import.outputs.file }}
+-
+-      - name: "[Import] load"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          command: |
+-            make load VERSION=${{ matrix.version }} FLAVOUR=mods ARCH=${{ matrix.arch }} TAG=${{ steps.tag.outputs.docker-tag }} INFILE=${{ steps.import.outputs.file }}
+-
+-      # ------------------------------------------------------------
+-      # Build
+-      # ------------------------------------------------------------
+-      - name: Build
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          command: |
+-            make build VERSION=${{ matrix.version }} FLAVOUR=mods ARCH=${{ matrix.arch }} TAG=${{ steps.tag.outputs.docker-tag }}
+-
+-      # ------------------------------------------------------------
+-      # Test
+-      # ------------------------------------------------------------
+-      #- name: Test
+-      #  uses: cytopia/shell-command-retry-action@v0.1.2
+-      #  with:
+-      #    command: |
+-      #      make test VERSION=${{ matrix.version }} FLAVOUR=mods ARCH=${{ matrix.arch }} TAG=${{ steps.tag.outputs.docker-tag }}
+-
+-      # ------------------------------------------------------------
+-      # Export
+-      # ------------------------------------------------------------
+-      - name: "[Artifact] Set name"
+-        id: artifact
+-        run: |
+-            PREFIX="${{ needs.configure.outputs.artifact_mods }}"
+-            VERSION="${{ matrix.version }}"
+-            ARCH="${{ matrix.arch }}"
+-            TAG="${{ steps.tag.outputs.docker-tag }}"
+-            NAME="$( echo "${PREFIX}-${VERSION}-${ARCH}-${TAG}" | sed 's|/|-|g' )"
+-            echo "::set-output name=file::${NAME}"
+-            echo "file=${NAME}"
+-
+-      - name: "[Artifact] Export"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          command: |
+-            make save VERSION=${{ matrix.version }} FLAVOUR=mods ARCH=${{ matrix.arch }} TAG=${{ steps.tag.outputs.docker-tag }} OUTFILE=${{ steps.artifact.outputs.file }}
+-
+-      - name: "[Artifact] Upload"
+-        uses: actions/upload-artifact@v3
+-        with:
+-          name: ${{ steps.artifact.outputs.file }}
+-          path: ${{ steps.artifact.outputs.file }}
+-
+-
+-  # -----------------------------------------------------------------------------------------------
+-  # JOB (2/3): BUILD-PROD
+-  # -----------------------------------------------------------------------------------------------
+-  build-prod:
+-    needs: [configure, build-base, build-mods]
+-    name: Build ${{ matrix.name }}-${{ matrix.version }} (${{ matrix.arch }}) ${{ matrix.refs }}
+-    runs-on: ubuntu-latest
+-    strategy:
+-      fail-fast: false
+-      matrix:
+-        include: ${{ fromJson(needs.configure.outputs.matrix_build) }}
+-    if: inputs.enabled
+-    steps:
+-      # ------------------------------------------------------------
+-      # Setup repository
+-      # ------------------------------------------------------------
+-      - name: "[SETUP] Checkout repository (current)"
+-        uses: actions/checkout@v3
+-        with:
+-          fetch-depth: 0
+-        if: needs.configure.outputs.has_refs == 0
+-
+-      - name: "[SETUP] Checkout repository (ref: ${{ matrix.refs }})"
+-        uses: actions/checkout@v3
+-        with:
+-          fetch-depth: 0
+-          ref: ${{ matrix.refs }}
+-        if: needs.configure.outputs.has_refs != 0
+-
+-      - name: "[SETUP] Setup QEMU environment"
+-        uses: docker/setup-qemu-action@v1
+-        with:
+-          image: tonistiigi/binfmt:latest
+-          platforms: all
+-
+-      - name: "[SETUP] Determine Docker tag"
+-        id: tag
+-        uses: cytopia/docker-tag-action@v0.4.15
+-
+-      # ------------------------------------------------------------
+-      # Import
+-      # ------------------------------------------------------------
+-      - name: "[Import] Set name"
+-        id: import
+-        run: |
+-            PREFIX="${{ needs.configure.outputs.artifact_mods }}"
+-            VERSION="${{ matrix.version }}"
+-            ARCH="${{ matrix.arch }}"
+-            TAG="${{ steps.tag.outputs.docker-tag }}"
+-            NAME="$( echo "${PREFIX}-${VERSION}-${ARCH}-${TAG}" | sed 's|/|-|g' )"
+-            echo "::set-output name=file::${NAME}"
+-            echo "file=${NAME}"
+-
+-      - name: "[Import] Download"
+-        uses: actions/download-artifact@v3
+-        with:
+-          name: ${{ steps.import.outputs.file }}
+-
+-      - name: "[Import] load"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          command: |
+-            make load VERSION=${{ matrix.version }} FLAVOUR=prod ARCH=${{ matrix.arch }} TAG=${{ steps.tag.outputs.docker-tag }} INFILE=${{ steps.import.outputs.file }}
+-
+-      # ------------------------------------------------------------
+-      # Build
+-      # ------------------------------------------------------------
+-      - name: Build
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          command: |
+-            make build VERSION=${{ matrix.version }} FLAVOUR=prod ARCH=${{ matrix.arch }} TAG=${{ steps.tag.outputs.docker-tag }}
+-
+-      # ------------------------------------------------------------
+-      # Test
+-      # ------------------------------------------------------------
+-      #- name: Test
+-      #  uses: cytopia/shell-command-retry-action@v0.1.2
+-      #  with:
+-      #    command: |
+-      #      make test VERSION=${{ matrix.version }} FLAVOUR=prod ARCH=${{ matrix.arch }} TAG=${{ steps.tag.outputs.docker-tag }}
+-
+-      # ------------------------------------------------------------
+-      # Export
+-      # ------------------------------------------------------------
+-      - name: "[Artifact] Set name"
+-        id: artifact
+-        run: |
+-            PREFIX="${{ needs.configure.outputs.artifact_prod }}"
+-            VERSION="${{ matrix.version }}"
+-            ARCH="${{ matrix.arch }}"
+-            TAG="${{ steps.tag.outputs.docker-tag }}"
+-            NAME="$( echo "${PREFIX}-${VERSION}-${ARCH}-${TAG}" | sed 's|/|-|g' )"
+-            echo "::set-output name=file::${NAME}"
+-            echo "file=${NAME}"
+-
+-      - name: "[Artifact] Export"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          command: |
+-            make save VERSION=${{ matrix.version }} FLAVOUR=prod ARCH=${{ matrix.arch }} TAG=${{ steps.tag.outputs.docker-tag }} OUTFILE=${{ steps.artifact.outputs.file }}
+-
+-      - name: "[Artifact] Upload"
+-        uses: actions/upload-artifact@v3
+-        with:
+-          name: ${{ steps.artifact.outputs.file }}
+-          path: ${{ steps.artifact.outputs.file }}
+-
+-
+-  # -----------------------------------------------------------------------------------------------
+-  # JOB (2/3): BUILD-WORK
+-  # -----------------------------------------------------------------------------------------------
+-  build-work:
+-    needs: [configure, build-base, build-mods, build-prod]
+-    name: Build ${{ matrix.name }}-${{ matrix.version }} (${{ matrix.arch }}) ${{ matrix.refs }}
+-    runs-on: ubuntu-latest
+-    strategy:
+-      fail-fast: false
+-      matrix:
+-        include: ${{ fromJson(needs.configure.outputs.matrix_build) }}
+-    if: inputs.enabled
+-    steps:
+-      # ------------------------------------------------------------
+-      # Setup repository
+-      # ------------------------------------------------------------
+-      - name: "[SETUP] Checkout repository (current)"
+-        uses: actions/checkout@v3
+-        with:
+-          fetch-depth: 0
+-        if: needs.configure.outputs.has_refs == 0
+-
+-      - name: "[SETUP] Checkout repository (ref: ${{ matrix.refs }})"
+-        uses: actions/checkout@v3
+-        with:
+-          fetch-depth: 0
+-          ref: ${{ matrix.refs }}
+-        if: needs.configure.outputs.has_refs != 0
+-
+-      - name: "[SETUP] Setup QEMU environment"
+-        uses: docker/setup-qemu-action@v1
+-        with:
+-          image: tonistiigi/binfmt:latest
+-          platforms: all
+-
+-      - name: "[SETUP] Determine Docker tag"
+-        id: tag
+-        uses: cytopia/docker-tag-action@v0.4.15
+-
+-      # ------------------------------------------------------------
+-      # Import
+-      # ------------------------------------------------------------
+-      - name: "[Import] Set name"
+-        id: import
+-        run: |
+-            PREFIX="${{ needs.configure.outputs.artifact_prod }}"
+-            VERSION="${{ matrix.version }}"
+-            ARCH="${{ matrix.arch }}"
+-            TAG="${{ steps.tag.outputs.docker-tag }}"
+-            NAME="$( echo "${PREFIX}-${VERSION}-${ARCH}-${TAG}" | sed 's|/|-|g' )"
+-            echo "::set-output name=file::${NAME}"
+-            echo "file=${NAME}"
+-
+-      - name: "[Import] Download"
+-        uses: actions/download-artifact@v3
+-        with:
+-          name: ${{ steps.import.outputs.file }}
+-
+-      - name: "[Import] load"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          command: |
+-            make load VERSION=${{ matrix.version }} FLAVOUR=work ARCH=${{ matrix.arch }} TAG=${{ steps.tag.outputs.docker-tag }} INFILE=${{ steps.import.outputs.file }}
+-
+-      # ------------------------------------------------------------
+-      # Build
+-      # ------------------------------------------------------------
+-      - name: Build
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          command: |
+-            make build VERSION=${{ matrix.version }} FLAVOUR=work ARCH=${{ matrix.arch }} TAG=${{ steps.tag.outputs.docker-tag }}
+-
+-      # ------------------------------------------------------------
+-      # Test
+-      # ------------------------------------------------------------
+-      #- name: Test
+-      #  uses: cytopia/shell-command-retry-action@v0.1.2
+-      #  with:
+-      #    command: |
+-      #      make test VERSION=${{ matrix.version }} FLAVOUR=work ARCH=${{ matrix.arch }} TAG=${{ steps.tag.outputs.docker-tag }}
+-
+-      # ------------------------------------------------------------
+-      # Export
+-      # ------------------------------------------------------------
+-      - name: "[Artifact] Set name"
+-        id: artifact
+-        run: |
+-            PREFIX="${{ needs.configure.outputs.artifact_work }}"
+-            VERSION="${{ matrix.version }}"
+-            ARCH="${{ matrix.arch }}"
+-            TAG="${{ steps.tag.outputs.docker-tag }}"
+-            NAME="$( echo "${PREFIX}-${VERSION}-${ARCH}-${TAG}" | sed 's|/|-|g' )"
+-            echo "::set-output name=file::${NAME}"
+-            echo "file=${NAME}"
+-
+-      - name: "[Artifact] Export"
+-        uses: cytopia/shell-command-retry-action@v0.1.2
+-        with:
+-          command: |
+-            make save VERSION=${{ matrix.version }} FLAVOUR=work ARCH=${{ matrix.arch }} TAG=${{ steps.tag.outputs.docker-tag }} OUTFILE=${{ steps.artifact.outputs.file }}
+-
+-      - name: "[Artifact] Upload"
+-        uses: actions/upload-artifact@v3
+-        with:
+-          name: ${{ steps.artifact.outputs.file }}
+-          path: ${{ steps.artifact.outputs.file }}
+-
+-
+-
+-
+-
+-
+-
+-#      # ------------------------------------------------------------
+-#      # Deploy
+-#      # ------------------------------------------------------------
+-#      - name: Docker login
+-#        uses: docker/login-action@v1
+-#        with:
+-#          username: ${{ secrets.dockerhub_username }}
+-#          password: ${{ secrets.dockerhub_password }}
+-#        if: needs.configure.outputs.can_login == 1 && inputs.can_deploy
+-#
+-#      - name: Docker push architecture image
+-#        uses: cytopia/shell-command-retry-action@v0.1.2
+-#        with:
+-#          command: |
+-#            make push NAME=${{ matrix.name }} VERSION=${{ matrix.version }} FLAVOUR=${{ matrix.flavour }} ARCH=${{ matrix.arch }} TAG=${{ steps.tag.outputs.docker-tag }}
+-#        if: needs.configure.outputs.can_login == 1 && inputs.can_deploy
+-#
+-#  # -----------------------------------------------------------------------------------------------
+-#  # JOB (3/3): DEPLOY
+-#  # -----------------------------------------------------------------------------------------------
+-#  deploy:
+-#    needs: [configure, build]
+-#    name: Deploy ${{ matrix.name }}-${{ matrix.version }} (${{ matrix.flavour }}) ${{ matrix.refs }}
+-#    runs-on: ubuntu-latest
+-#    strategy:
+-#      fail-fast: false
+-#      matrix:
+-#        include: ${{ fromJson(needs.configure.outputs.matrix_deploy) }}
+-#    if: inputs.enabled && needs.configure.outputs.can_login == 1 && inputs.can_deploy
+-#    steps:
+-#      # ------------------------------------------------------------
+-#      # Setup repository
+-#      # ------------------------------------------------------------
+-#      - name: "[SETUP] Checkout repository (current)"
+-#        uses: actions/checkout@v3
+-#        with:
+-#          fetch-depth: 0
+-#        if: needs.configure.outputs.has_refs == 0
+-#
+-#      - name: "[SETUP] Checkout repository (ref: ${{ matrix.refs }})"
+-#        uses: actions/checkout@v3
+-#        with:
+-#          fetch-depth: 0
+-#          ref: ${{ matrix.refs }}
+-#        if: needs.configure.outputs.has_refs != 0
+-#
+-#      - name: "[SETUP] Determine Docker tag"
+-#        id: tag
+-#        uses: cytopia/docker-tag-action@v0.4.15
+-#
+-#      - name: "[SETUP] Determine manifest arches"
+-#        id: manifest
+-#        run: |
+-#          ARCHES="$( echo '${{ inputs.matrix }}' \
+-#            | jq 'group_by(.NAME, .VERSION, .ARCH)' \
+-#            | jq 'map({NAME: .[].NAME, VERSION: .[].VERSION[], FLAVOUR: .[].FLAVOUR[], ARCHES: .[].ARCH|join(",")})' \
+-#            | jq '.[] | select(.NAME=="${{ matrix.name }}" and .VERSION=="${{ matrix.version }}" and .FLAVOUR=="${{ matrix.flavour }}") | .ARCHES' \
+-#            | jq -c -M \
+-#          )"
+-#          echo "::set-output name=arches::${ARCHES}"
+-#          echo "ARCHES: ${ARCHES}"
+-#
+-#
+-#      # ------------------------------------------------------------
+-#      # Deploy
+-#      # ------------------------------------------------------------
+-#      - name: "[DEPLOY] Login"
+-#        uses: docker/login-action@v1
+-#        with:
+-#          username: ${{ secrets.DOCKERHUB_USERNAME }}
+-#          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+-#
+-#      - name: "[DEPLOY] Create Docker manifest for architectures: ${{ steps.manifest.outputs.arches }}"
+-#        uses: cytopia/shell-command-retry-action@v0.1.2
+-#        with:
+-#          command: |
+-#            make manifest-create NAME=${{ matrix.name }} VERSION=${{ matrix.version }} FLAVOUR=${{ matrix.flavour }} ARCHES=${{ steps.manifest.outputs.arches }} TAG=${{ steps.tag.outputs.docker-tag }}
+-#
+-#      - name: "[DEPLOY] Publish Docker manifest: ${{ steps.tag.outputs.docker-tag }}"
+-#        uses: cytopia/shell-command-retry-action@v0.1.2
+-#        with:
+-#          command: |
+-#            make manifest-push NAME=${{ matrix.name }} VERSION=${{ matrix.version }} FLAVOUR=${{ matrix.flavour }} TAG=${{ steps.tag.outputs.docker-tag }}

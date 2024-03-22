@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/release.yaml b/.github/workflows/release.yaml
+index 7b6b945..97dc47e 100644
+--- a/.github/workflows/release.yaml
++++ b/.github/workflows/release.yaml
+@@ -27,7 +27,7 @@ jobs:
+           zip volkswagencarnet.zip -r ./
+ 
+       - name: Upload zip to release
+-        uses: svenstaro/upload-release-action@2.5.0
++        uses: svenstaro/upload-release-action@2.6.1
+         with:
+           repo_token: ${{ secrets.GITHUB_TOKEN }}
+           file: ./custom_components/volkswagencarnet/volkswagencarnet.zip

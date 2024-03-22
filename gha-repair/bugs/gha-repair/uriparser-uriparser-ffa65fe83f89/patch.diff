@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build-and-test.yml b/.github/workflows/build-and-test.yml
+index e4080e5..a95545d 100644
+--- a/.github/workflows/build-and-test.yml
++++ b/.github/workflows/build-and-test.yml
+@@ -87,7 +87,7 @@ jobs:
+         run: |-
+           sudo apt-get install --yes --no-install-recommends -V \
+               clang-15 \
+-              llvm-15
++              libclang-rt-15-dev
+ 
+       - name: Build, test and install
+         run: |-

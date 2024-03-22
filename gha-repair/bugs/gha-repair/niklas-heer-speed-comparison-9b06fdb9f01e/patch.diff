@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 9b139fb..b6b00f4 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -5,7 +5,6 @@ on: [push, pull_request]
+ jobs:
+   build:
+     runs-on: ubuntu-latest
+-    if: github.ref == 'refs/heads/master' || github.event.review.state == 'approved' || github.event.label.name == 'enable-ci'
+     steps:
+       - uses: actions/checkout@v3
+       - name: Put back the git branch into git (Earthly uses it for tagging)

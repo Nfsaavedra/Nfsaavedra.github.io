@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/crankshaft.yml b/.github/workflows/crankshaft.yml
+index c94a975..9e3e9af 100644
+--- a/.github/workflows/crankshaft.yml
++++ b/.github/workflows/crankshaft.yml
+@@ -39,7 +39,7 @@ jobs:
+       - 
+         name: Set the version
+         id: set_version
+-        run: sed -i "s/crankshaft-ng/${version}/g" config
++        run: sed -i "s|crankshaft-ng|${version}|g" config
+         env:
+           version: ${{ steps.get_version.outputs.version }}
+       -

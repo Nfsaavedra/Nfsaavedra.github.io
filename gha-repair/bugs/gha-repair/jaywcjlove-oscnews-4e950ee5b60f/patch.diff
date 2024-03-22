@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+index 8f0c9d9..bfa2ecb 100644
+--- a/.github/workflows/ci.yml
++++ b/.github/workflows/ci.yml
+@@ -10,6 +10,8 @@ jobs:
+     runs-on: ubuntu-18.04
+     steps:
+       - uses: actions/checkout@master
++        with:
++          submodules: true
+ 
+       - name: Setup Node
+         uses: actions/setup-node@v1

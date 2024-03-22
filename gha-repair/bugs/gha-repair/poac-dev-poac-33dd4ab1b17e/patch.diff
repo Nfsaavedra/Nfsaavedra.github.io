@@ -1,0 +1,121 @@
+diff --git a/.github/workflows/coverage.yml b/.github/workflows/coverage.yml
+deleted file mode 100644
+index 27a0713..0000000
+--- a/.github/workflows/coverage.yml
++++ /dev/null
+@@ -1,45 +0,0 @@
+-name: Coverage
+-
+-on:
+-  workflow_run:
+-    workflows: [ "Linux" ]
+-    types: [ completed ]
+-
+-jobs:
+-  upload:
+-    runs-on: ubuntu-20.04
+-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+-    steps:
+-      - name: Download coverage build artifact
+-        uses: actions/github-script@v3.1.0
+-        with:
+-          script: |
+-            var artifacts = await github.actions.listWorkflowRunArtifacts({
+-               owner: context.repo.owner,
+-               repo: context.repo.repo,
+-               run_id: ${{github.event.workflow_run.id }},
+-            });
+-            var matchArtifact = artifacts.data.artifacts.filter((artifact) => {
+-              return artifact.name == "coverage-build-artifact"
+-            })[0];
+-            var download = await github.actions.downloadArtifact({
+-               owner: context.repo.owner,
+-               repo: context.repo.repo,
+-               artifact_id: matchArtifact.id,
+-               archive_format: 'zip',
+-            });
+-            var fs = require('fs');
+-            fs.writeFileSync('${{github.workspace}}/coverage-build-artifact.zip', Buffer.from(download.data));
+-      - run: unzip coverage-build-artifact.zip
+-
+-      - uses: actions/setup-python@v2.2.1
+-
+-      - name: Upload coverage to Coveralls
+-        run: |
+-          pip install cpp-coveralls
+-          coveralls --gcov-options '\-lp' -t ${{ secrets.COVERALLS_TOKEN }}
+-
+-      - name: Upload coverage to Codecov
+-        uses: codecov/codecov-action@v1
+-        with:
+-          token: ${{ secrets.CODECOV_TOKEN }}
+diff --git a/.github/workflows/coveralls.yml b/.github/workflows/coveralls.yml
+new file mode 100644
+index 0000000..137dac8
+--- /dev/null
++++ b/.github/workflows/coveralls.yml
+@@ -0,0 +1,41 @@
++name: Coveralls
++
++on:
++  workflow_run:
++    workflows: [ "Linux" ]
++    branches: [ main ]
++    types: [ completed ]
++
++jobs:
++  upload:
++    runs-on: ubuntu-20.04
++    if: ${{ github.event.workflow_run.conclusion == 'success' }}
++    steps:
++      - name: Download coverage build artifact
++        uses: actions/github-script@v3.1.0
++        with:
++          script: |
++            var artifacts = await github.actions.listWorkflowRunArtifacts({
++               owner: context.repo.owner,
++               repo: context.repo.repo,
++               run_id: ${{github.event.workflow_run.id }},
++            });
++            var matchArtifact = artifacts.data.artifacts.filter((artifact) => {
++              return artifact.name == "coverage-build-artifact"
++            })[0];
++            var download = await github.actions.downloadArtifact({
++               owner: context.repo.owner,
++               repo: context.repo.repo,
++               artifact_id: matchArtifact.id,
++               archive_format: 'zip',
++            });
++            var fs = require('fs');
++            fs.writeFileSync('${{github.workspace}}/coverage-build-artifact.zip', Buffer.from(download.data));
++      - run: unzip coverage-build-artifact.zip
++
++      - uses: actions/setup-python@v2.2.1
++
++      - name: Upload coverage to Coveralls
++        run: |
++          pip install cpp-coveralls
++          coveralls --gcov-options '\-lp' -t ${{ secrets.COVERALLS_TOKEN }}
+diff --git a/.github/workflows/linux.yml b/.github/workflows/linux.yml
+index 92c9615..4475f2d 100644
+--- a/.github/workflows/linux.yml
++++ b/.github/workflows/linux.yml
+@@ -204,9 +204,16 @@ jobs:
+           name: ${{ github.job }}-${{ matrix.compiler.package }}
+           path: ./build/poac
+ 
+-      - name: Upload build artifact when Coverage
++      - name: Upload build artifact for Coveralls
+         uses: actions/upload-artifact@v2.2.2
+-        if: success() && matrix.build_type == 'Coverage'
++        if: >
++          success() &&
++          github.ref == 'refs/heads/main' &&
++          matrix.build_type == 'Coverage'
+         with:
+           name: coverage-build-artifact
+           path: .
++
++      - name: Upload coverage to Codecov
++        uses: codecov/codecov-action@v1
++        if: success() && matrix.build_type == 'Coverage'

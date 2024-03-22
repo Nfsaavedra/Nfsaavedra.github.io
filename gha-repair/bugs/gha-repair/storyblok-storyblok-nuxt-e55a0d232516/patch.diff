@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/tests.yml b/.github/workflows/tests.yml
+index 5a7fed0..9d9e398 100644
+--- a/.github/workflows/tests.yml
++++ b/.github/workflows/tests.yml
+@@ -19,6 +19,8 @@ jobs:
+           cache: "npm"
+       - name: Install dependencies
+         run: npm ci
++      - name: Build lib
++        run: npm run build
+       - name: Cypress run
+         run: npm run test:e2e
+       # - name: Release

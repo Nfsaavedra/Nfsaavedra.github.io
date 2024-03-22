@@ -1,0 +1,23 @@
+diff --git a/.actionspanel/buttons.yml b/.actionspanel/buttons.yml
+deleted file mode 100644
+index 3d19992..0000000
+--- a/.actionspanel/buttons.yml
++++ /dev/null
+@@ -1,3 +0,0 @@
+-buttons:
+-  - title: Build 3.2 Windows snapshot
+-    action: "build_win64_snapshot"
+\ No newline at end of file
+diff --git a/.github/workflows/3.2.yml b/.github/workflows/3.2.yml
+index 6cbf85f..b6b9af5 100644
+--- a/.github/workflows/3.2.yml
++++ b/.github/workflows/3.2.yml
+@@ -40,7 +40,7 @@ jobs:
+               run: (new-object System.Net.WebClient).DownloadFile('https://www.dropbox.com/s/b5t6lb9e7riytq1/win64_deps.zip?dl=1', '..\win64_deps.zip')
+             
+             - name: Decompress dependencies
+-              run: 7z x -o .. ..\win64_deps.zip
++              run: 7z x -o.. ..\win64_deps.zip
+ 
+             - name: Debug pwd
+               run: pwd

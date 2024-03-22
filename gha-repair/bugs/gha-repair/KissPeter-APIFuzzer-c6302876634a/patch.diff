@@ -1,0 +1,17 @@
+diff --git a/.github/workflows/update-branch.yaml b/.github/workflows/update-branch.yaml
+index 9699f1a..f650367 100644
+--- a/.github/workflows/update-branch.yaml
++++ b/.github/workflows/update-branch.yaml
+@@ -21,11 +21,5 @@ jobs:
+     steps:
+       - uses: lcdsmao/update-branch@v3
+         with:
+-          # Or use personal access token
+           token: ${{ secrets.GITHUB_TOKEN }}
+-          # Optionally set the maximum amount of pull requests to match against (default: 50)
+-          fetchMaxPr: 50
+-          # Optionally set the maximum amount of pull request checks to fetch (default: 100)
+-          fetchMaxPrChecks: 100
+-          # Optionally set the maximum amount of pull request labels to fetch (default: 10)
+-          fetchMaxPrLabels: 10
++

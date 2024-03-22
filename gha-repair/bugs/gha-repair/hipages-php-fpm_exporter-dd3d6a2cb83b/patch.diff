@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 5df5b22..4cbcba1 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -80,7 +80,6 @@ jobs:
+       id: scan
+       with:
+         image: "hipages/php-fpm_exporter:latest"
+-        fail-build: true
+         acs-report-enable: true
+ 
+     - name: Upload Anchore scan SARIF report

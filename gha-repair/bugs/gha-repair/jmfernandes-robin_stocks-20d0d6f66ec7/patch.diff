@@ -1,0 +1,24 @@
+diff --git a/.github/workflows/pythonapp.yml b/.github/workflows/pythonapp.yml
+index 7dfb367..48eecd3 100644
+--- a/.github/workflows/pythonapp.yml
++++ b/.github/workflows/pythonapp.yml
+@@ -9,9 +9,7 @@ jobs:
+ 
+     steps:
+     - uses: actions/checkout@v1
+-    - name: Set up Python 3.7
+-      env:
+-        robin_username: ${{ secrets.username }}
++    - name: Set up Python 3.7    
+       uses: actions/setup-python@v1
+       with:
+         python-version: 3.7
+@@ -27,6 +25,8 @@ jobs:
+         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+     - name: Test with pytest
++      env:
++        robin_username: ${{ secrets.username }}
+       run: |
+         pip install pytest
+         pytest

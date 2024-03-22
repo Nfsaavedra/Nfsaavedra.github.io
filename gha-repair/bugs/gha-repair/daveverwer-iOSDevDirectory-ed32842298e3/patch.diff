@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/redirect-scan.yml b/.github/workflows/redirect-scan.yml
+index fcfc361..7d3d8d4 100644
+--- a/.github/workflows/redirect-scan.yml
++++ b/.github/workflows/redirect-scan.yml
+@@ -3,7 +3,7 @@ name: Redirect Scan
+ on:
+   workflow_dispatch:
+   schedule:
+-    - cron: "0 18 * * 5"
++    - cron: "0 7 * * 5"
+ 
+ jobs:
+   validate:

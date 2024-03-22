@@ -1,0 +1,12 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 2b3db7e..e6842b7 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -14,5 +14,7 @@ jobs:
+     - uses: cachix/cachix-action@v7
+       with:
+         name: cachix
++        installCommand: nix-env -if .
+         signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
++    - run: echo " " >> cachix/CHANGELOG.md
+     - run: nix-build ci.nix

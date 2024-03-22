@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/deployment.yml b/.github/workflows/deployment.yml
+index 3be8693..52ac101 100644
+--- a/.github/workflows/deployment.yml
++++ b/.github/workflows/deployment.yml
+@@ -3,13 +3,13 @@ name: Deployment
+ on:
+   push:
+     branches:
+-      - master
++      - main
+ 
+ jobs:
+   deploy:
+     runs-on: ubuntu-latest
+     steps:
+-      - uses: actions/checkout@master
++      - uses: actions/checkout@v3
+       - run: npm ci
+       - run: npm run test
+       - run: npm run build

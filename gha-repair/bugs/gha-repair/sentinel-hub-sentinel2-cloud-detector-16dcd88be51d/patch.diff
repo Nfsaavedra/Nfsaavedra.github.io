@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/ci_action.yml b/.github/workflows/ci_action.yml
+index e0fb9ca..a373a51 100644
+--- a/.github/workflows/ci_action.yml
++++ b/.github/workflows/ci_action.yml
+@@ -59,7 +59,7 @@ jobs:
+         run: pip install -e .[DEV]
+ 
+       - name: Run pylint
+-        run: pylint sentinelhub
++        run: pylint s2cloudless
+ 
+   test-on-github:
+     runs-on: ubuntu-latest

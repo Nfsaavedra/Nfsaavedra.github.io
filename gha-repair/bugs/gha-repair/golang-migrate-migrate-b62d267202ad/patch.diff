@@ -1,0 +1,11 @@
+diff --git a/.github/workflows/ci.yaml b/.github/workflows/ci.yaml
+index 1726ae8..7fc7227 100644
+--- a/.github/workflows/ci.yaml
++++ b/.github/workflows/ci.yaml
+@@ -92,3 +92,6 @@ jobs:
+       - run: package_cloud push golang-migrate/migrate/debian/buster dist/migrate.linux-amd64.deb
+         env:
+           PACKAGECLOUD_TOKEN: ${{ secrets.PACKAGECLOUD_TOKEN }}
++      - run: package_cloud push golang-migrate/migrate/debian/bullseye dist/migrate.linux-amd64.deb
++        env:
++          PACKAGECLOUD_TOKEN: ${{ secrets.PACKAGECLOUD_TOKEN }}

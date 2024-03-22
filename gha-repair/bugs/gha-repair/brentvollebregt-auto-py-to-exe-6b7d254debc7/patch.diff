@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index 1562a06..0b19aa4 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -2,6 +2,8 @@ name: Run Tests
+ 
+ on:
+   workflow_dispatch:
++  schedule:
++    - cron: '0 0 * * *'
+   push:
+     branches:
+     - master

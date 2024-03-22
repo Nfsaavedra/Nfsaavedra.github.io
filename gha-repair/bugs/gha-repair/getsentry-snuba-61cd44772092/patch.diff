@@ -1,0 +1,9 @@
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index d3d7ce5..e619d53 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -28,3 +28,4 @@ jobs:
+         with:
+           version: ${{ github.event.inputs.version }}
+           force: ${{ github.event.inputs.force }}
++          calver: true

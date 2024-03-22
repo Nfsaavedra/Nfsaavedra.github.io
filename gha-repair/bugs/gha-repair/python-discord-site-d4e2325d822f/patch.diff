@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/main.yaml b/.github/workflows/main.yaml
+index 8414f94..6fa6baf 100644
+--- a/.github/workflows/main.yaml
++++ b/.github/workflows/main.yaml
+@@ -30,6 +30,8 @@ jobs:
+ 
+   publish-static-preview:
+     uses: ./.github/workflows/static-preview.yaml
++    needs:
++      - generate-sha-tag
+     with:
+       sha-tag: ${{ needs.generate-sha-tag.outputs.sha-tag }}
+ 

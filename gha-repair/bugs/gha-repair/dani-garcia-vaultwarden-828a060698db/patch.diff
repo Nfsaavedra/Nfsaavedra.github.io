@@ -1,0 +1,33 @@
+diff --git a/.github/workflows/build.yml b/.github/workflows/build.yml
+index d7ed561..e2084f9 100644
+--- a/.github/workflows/build.yml
++++ b/.github/workflows/build.yml
+@@ -82,10 +82,11 @@ jobs:
+         with:
+           profile: minimal
+           target: ${{ matrix.target-triple }}
++          components: clippy
+       # End Uses the rust-toolchain file to determine version
+ 
+ 
+-      # Run cargo tests (In release mode to speed up cargo build afterwards)
++      # Run cargo tests (In release mode to speed up future builds)
+       - name: '`cargo test --release --features ${{ matrix.features }} --target ${{ matrix.target-triple }}`'
+         uses: actions-rs/cargo@v1
+         with:
+@@ -94,6 +95,15 @@ jobs:
+       # End Run cargo tests
+ 
+ 
++      # Run cargo clippy (In release mode to speed up future builds)
++      - name: '`cargo clippy --release --features ${{ matrix.features }} --target ${{ matrix.target-triple }}`'
++        uses: actions-rs/cargo@v1
++        with:
++          command: clippy
++          args: --release --features ${{ matrix.features }} --target ${{ matrix.target-triple }}
++      # End Run cargo clippy
++
++
+       # Build the binary
+       - name: '`cargo build --release --features ${{ matrix.features }} --target ${{ matrix.target-triple }}`'
+         uses: actions-rs/cargo@v1

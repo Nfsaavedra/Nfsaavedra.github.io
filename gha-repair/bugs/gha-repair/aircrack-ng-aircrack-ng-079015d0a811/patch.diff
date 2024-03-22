@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/check-release-ready.yml b/.github/workflows/check-release-ready.yml
+index 13a03a6..22fbc4e 100644
+--- a/.github/workflows/check-release-ready.yml
++++ b/.github/workflows/check-release-ready.yml
+@@ -103,7 +103,7 @@ jobs:
+             DO_FAIL=1
+           fi
+ 
+-          if [ "${{steps.configure.outputs.VERSION }}" = "${{steps.git.outputs.LAST}}" ];
++          if [ "${{steps.configure.outputs.VERSION }}" = "${{steps.git.outputs.LAST}}" ]; then
+             echo "[!] Version and date in configure.ac must be updated"
+             DO_FAIL=1
+           fi

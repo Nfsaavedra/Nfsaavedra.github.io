@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/build-and-test.yml b/.github/workflows/build-and-test.yml
+index 5a36350..8251537 100644
+--- a/.github/workflows/build-and-test.yml
++++ b/.github/workflows/build-and-test.yml
+@@ -34,7 +34,7 @@ jobs:
+               -DMINGW=ON
+     runs-on: ubuntu-latest
+     steps:
+-      - uses: actions/checkout@v2.3.5
++      - uses: actions/checkout@v2.4.0
+ 
+       - name: Add Clang/LLVM repositories (Non-MinGW)
+         if: "${{ ! contains(matrix.cmake_args, 'mingw') }}"

@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/nodejs.yml b/.github/workflows/nodejs.yml
+index 84c20e8..fca69be 100644
+--- a/.github/workflows/nodejs.yml
++++ b/.github/workflows/nodejs.yml
+@@ -18,8 +18,7 @@ jobs:
+ 
+     steps:
+       - uses: actions/checkout@v2
+-      - name: Checkout submodules
+-        uses: textbook/git-checkout-submodule-action@master
++        with: { submodules: true }
+       - name: Use Node.js ${{ matrix.node-version }}
+         uses: actions/setup-node@v1
+         with:

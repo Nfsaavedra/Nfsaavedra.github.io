@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/ContinuousIntegration.yml b/.github/workflows/ContinuousIntegration.yml
+index 38d1b73..a65f172 100644
+--- a/.github/workflows/ContinuousIntegration.yml
++++ b/.github/workflows/ContinuousIntegration.yml
+@@ -17,5 +17,5 @@ jobs:
+     - run: dotnet tool install -g coverlet.console
+     - run: coverlet source\DefaultEcs.Test\bin\Release\netcoreapp2.2\DefaultEcs.Test.dll -t "dotnet" -a "vstest source\DefaultEcs.Test\bin\Release\netcoreapp2.2\DefaultEcs.Test.dll" -o coverage\lcov.info -f lcov
+     - uses: coverallsapp/github-action@master
+-        with:
+-          github-token: ${{ secrets.github_token }}
+\ No newline at end of file
++      with:
++        github-token: ${{ secrets.github_token }}
+\ No newline at end of file

@@ -1,0 +1,20 @@
+diff --git a/.github/workflows/test.yml b/.github/workflows/test.yml
+index e0a7149..a15183f 100644
+--- a/.github/workflows/test.yml
++++ b/.github/workflows/test.yml
+@@ -382,6 +382,7 @@ jobs:
+       with:
+         node-version: 12
+         cache: yarn
++        cache-dependency-path: test/fixtures/yarn/v1/yarn.lock
+     - name: Install Yarn
+       run: npm install -g yarn@${YARN_VERSION}
+       env:
+@@ -405,6 +406,7 @@ jobs:
+       with:
+         node-version: 12
+         cache: yarn
++        cache-dependency-path: test/fixtures/yarn/berry/yarn.lock
+     - name: Install Yarn
+       run: npm install -g yarn
+     - name: Set up Ruby

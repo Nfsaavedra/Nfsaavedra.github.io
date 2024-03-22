@@ -1,0 +1,23 @@
+diff --git a/translations/en/en_test.go b/translations/en/en_test.go
+index 9cb6deb..69f4ee0 100644
+--- a/translations/en/en_test.go
++++ b/translations/en/en_test.go
+@@ -130,6 +130,7 @@ func TestTranslations(t *testing.T) {
+ 		IPAddrv6          string            `validate:"ip6_addr"`
+ 		UinxAddr          string            `validate:"unix_addr"` // can't fail from within Go's net package currently, but maybe in the future
+ 		MAC               string            `validate:"mac"`
++		FQDN              string            `validate:"fqdn"`
+ 		IsColor           string            `validate:"iscolor"`
+ 		StrPtrMinLen      *string           `validate:"min=10"`
+ 		StrPtrMaxLen      *string           `validate:"max=1"`
+@@ -227,6 +228,10 @@ func TestTranslations(t *testing.T) {
+ 			expected: "MAC must contain a valid MAC address",
+ 		},
+ 		{
++			ns:       "Test.FQDN",
++			expected: "FQDN must be a valid FQDN",
++		},
++		{
+ 			ns:       "Test.IPAddr",
+ 			expected: "IPAddr must be a resolvable IP address",
+ 		},

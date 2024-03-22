@@ -1,0 +1,449 @@
+diff --git a/src/test/generated_resources/inner_scoped_element/Catalogue.java b/src/test/generated_resources/inner_scoped_element/Catalogue.java
+index da83bf3..bd7e319 100644
+--- a/src/test/generated_resources/inner_scoped_element/Catalogue.java
++++ b/src/test/generated_resources/inner_scoped_element/Catalogue.java
+@@ -1,140 +1,140 @@
+-
+-package inner_scoped_element;
+-
+-import java.util.ArrayList;
+-import java.util.List;
+-import jakarta.xml.bind.JAXBElement;
+-import jakarta.xml.bind.annotation.XmlAccessType;
+-import jakarta.xml.bind.annotation.XmlAccessorType;
+-import jakarta.xml.bind.annotation.XmlElement;
+-import jakarta.xml.bind.annotation.XmlElementRef;
+-import jakarta.xml.bind.annotation.XmlElementRefs;
+-import jakarta.xml.bind.annotation.XmlElementWrapper;
+-import jakarta.xml.bind.annotation.XmlRootElement;
+-import jakarta.xml.bind.annotation.XmlType;
+-
+-
+-/**
+- * <p>Java class for anonymous complex type.
+- * 
+- * <p>The following schema fragment specifies the expected content contained within this class.
+- * 
+- * <pre>
+- * &lt;complexType&gt;
+- *   &lt;complexContent&gt;
+- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+- *       &lt;sequence&gt;
+- *         &lt;element name="stockage_collection"&gt;
+- *           &lt;complexType&gt;
+- *             &lt;complexContent&gt;
+- *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+- *                 &lt;sequence minOccurs="0"&gt;
+- *                   &lt;element name="stockage" maxOccurs="unbounded" minOccurs="0"&gt;
+- *                     &lt;complexType&gt;
+- *                       &lt;complexContent&gt;
+- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+- *                           &lt;all&gt;
+- *                             &lt;element name="collection" minOccurs="0"&gt;
+- *                               &lt;complexType&gt;
+- *                                 &lt;complexContent&gt;
+- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+- *                                     &lt;sequence maxOccurs="unbounded" minOccurs="0"&gt;
+- *                                       &lt;element name="effect" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+- *                                       &lt;element name="term" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+- *                                     &lt;/sequence&gt;
+- *                                   &lt;/restriction&gt;
+- *                                 &lt;/complexContent&gt;
+- *                               &lt;/complexType&gt;
+- *                             &lt;/element&gt;
+- *                           &lt;/all&gt;
+- *                         &lt;/restriction&gt;
+- *                       &lt;/complexContent&gt;
+- *                     &lt;/complexType&gt;
+- *                   &lt;/element&gt;
+- *                 &lt;/sequence&gt;
+- *               &lt;/restriction&gt;
+- *             &lt;/complexContent&gt;
+- *           &lt;/complexType&gt;
+- *         &lt;/element&gt;
+- *       &lt;/sequence&gt;
+- *     &lt;/restriction&gt;
+- *   &lt;/complexContent&gt;
+- * &lt;/complexType&gt;
+- * </pre>
+- * 
+- * 
+- */
+-@XmlAccessorType(XmlAccessType.FIELD)
+-@XmlType(name = "", propOrder = {
+-    "stockageCollection"
+-})
+-@XmlRootElement(name = "catalogue")
+-public class Catalogue {
+-
+-    @XmlElementWrapper(name = "stockage_collection", required = true)
+-    @XmlElement(name = "stockage")
+-    protected List<Catalogue.Stockage> stockageCollection = new ArrayList<Catalogue.Stockage>();
+-
+-    public List<Catalogue.Stockage> getStockageCollection() {
+-        return stockageCollection;
+-    }
+-
+-    public void setStockageCollection(List<Catalogue.Stockage> stockageCollection) {
+-        this.stockageCollection = stockageCollection;
+-    }
+-
+-
+-    /**
+-     * <p>Java class for anonymous complex type.
+-     * 
+-     * <p>The following schema fragment specifies the expected content contained within this class.
+-     * 
+-     * <pre>
+-     * &lt;complexType&gt;
+-     *   &lt;complexContent&gt;
+-     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+-     *       &lt;all&gt;
+-     *         &lt;element name="collection" minOccurs="0"&gt;
+-     *           &lt;complexType&gt;
+-     *             &lt;complexContent&gt;
+-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+-     *                 &lt;sequence maxOccurs="unbounded" minOccurs="0"&gt;
+-     *                   &lt;element name="effect" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+-     *                   &lt;element name="term" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+-     *                 &lt;/sequence&gt;
+-     *               &lt;/restriction&gt;
+-     *             &lt;/complexContent&gt;
+-     *           &lt;/complexType&gt;
+-     *         &lt;/element&gt;
+-     *       &lt;/all&gt;
+-     *     &lt;/restriction&gt;
+-     *   &lt;/complexContent&gt;
+-     * &lt;/complexType&gt;
+-     * </pre>
+-     * 
+-     * 
+-     */
+-    @XmlAccessorType(XmlAccessType.FIELD)
+-    @XmlType(name = "", propOrder = {
+-
+-    })
+-    public static class Stockage {
+-
+-        @XmlElementWrapper
+-        @XmlElementRefs({
+-            @XmlElementRef(name = "effect", type = JAXBElement.class, required = false),
+-            @XmlElementRef(name = "term", type = JAXBElement.class, required = false)
+-        })
+-        protected List<JAXBElement<String>> collection = new ArrayList<JAXBElement<String>>();
+-
+-        public List<JAXBElement<String>> getCollection() {
+-            return collection;
+-        }
+-
+-        public void setCollection(List<JAXBElement<String>> collection) {
+-            this.collection = collection;
+-        }
+-
+-    }
+-
+-}
++
++package inner_scoped_element;
++
++import java.util.ArrayList;
++import java.util.List;
++import jakarta.xml.bind.JAXBElement;
++import jakarta.xml.bind.annotation.XmlAccessType;
++import jakarta.xml.bind.annotation.XmlAccessorType;
++import jakarta.xml.bind.annotation.XmlElement;
++import jakarta.xml.bind.annotation.XmlElementRef;
++import jakarta.xml.bind.annotation.XmlElementRefs;
++import jakarta.xml.bind.annotation.XmlElementWrapper;
++import jakarta.xml.bind.annotation.XmlRootElement;
++import jakarta.xml.bind.annotation.XmlType;
++
++
++/**
++ * <p>Java class for anonymous complex type.
++ * 
++ * <p>The following schema fragment specifies the expected content contained within this class.
++ * 
++ * <pre>
++ * &lt;complexType&gt;
++ *   &lt;complexContent&gt;
++ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
++ *       &lt;sequence&gt;
++ *         &lt;element name="stockage"&gt;
++ *           &lt;complexType&gt;
++ *             &lt;complexContent&gt;
++ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
++ *                 &lt;sequence minOccurs="0"&gt;
++ *                   &lt;element name="stockage" maxOccurs="unbounded" minOccurs="0"&gt;
++ *                     &lt;complexType&gt;
++ *                       &lt;complexContent&gt;
++ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
++ *                           &lt;all&gt;
++ *                             &lt;element name="collection" minOccurs="0"&gt;
++ *                               &lt;complexType&gt;
++ *                                 &lt;complexContent&gt;
++ *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
++ *                                     &lt;sequence maxOccurs="unbounded" minOccurs="0"&gt;
++ *                                       &lt;element name="effect" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
++ *                                       &lt;element name="term" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
++ *                                     &lt;/sequence&gt;
++ *                                   &lt;/restriction&gt;
++ *                                 &lt;/complexContent&gt;
++ *                               &lt;/complexType&gt;
++ *                             &lt;/element&gt;
++ *                           &lt;/all&gt;
++ *                         &lt;/restriction&gt;
++ *                       &lt;/complexContent&gt;
++ *                     &lt;/complexType&gt;
++ *                   &lt;/element&gt;
++ *                 &lt;/sequence&gt;
++ *               &lt;/restriction&gt;
++ *             &lt;/complexContent&gt;
++ *           &lt;/complexType&gt;
++ *         &lt;/element&gt;
++ *       &lt;/sequence&gt;
++ *     &lt;/restriction&gt;
++ *   &lt;/complexContent&gt;
++ * &lt;/complexType&gt;
++ * </pre>
++ * 
++ * 
++ */
++@XmlAccessorType(XmlAccessType.FIELD)
++@XmlType(name = "", propOrder = {
++    "stockage"
++})
++@XmlRootElement(name = "catalogue")
++public class Catalogue {
++
++    @XmlElementWrapper(required = true)
++    @XmlElement(name = "stockage")
++    protected List<Catalogue.StockageStockage> stockage = new ArrayList<Catalogue.StockageStockage>();
++
++    public List<Catalogue.StockageStockage> getStockage() {
++        return stockage;
++    }
++
++    public void setStockage(List<Catalogue.StockageStockage> stockage) {
++        this.stockage = stockage;
++    }
++
++
++    /**
++     * <p>Java class for anonymous complex type.
++     * 
++     * <p>The following schema fragment specifies the expected content contained within this class.
++     * 
++     * <pre>
++     * &lt;complexType&gt;
++     *   &lt;complexContent&gt;
++     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
++     *       &lt;all&gt;
++     *         &lt;element name="collection" minOccurs="0"&gt;
++     *           &lt;complexType&gt;
++     *             &lt;complexContent&gt;
++     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
++     *                 &lt;sequence maxOccurs="unbounded" minOccurs="0"&gt;
++     *                   &lt;element name="effect" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
++     *                   &lt;element name="term" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
++     *                 &lt;/sequence&gt;
++     *               &lt;/restriction&gt;
++     *             &lt;/complexContent&gt;
++     *           &lt;/complexType&gt;
++     *         &lt;/element&gt;
++     *       &lt;/all&gt;
++     *     &lt;/restriction&gt;
++     *   &lt;/complexContent&gt;
++     * &lt;/complexType&gt;
++     * </pre>
++     * 
++     * 
++     */
++    @XmlAccessorType(XmlAccessType.FIELD)
++    @XmlType(name = "", propOrder = {
++
++    })
++    public static class StockageStockage {
++
++        @XmlElementWrapper
++        @XmlElementRefs({
++            @XmlElementRef(name = "effect", type = JAXBElement.class, required = false),
++            @XmlElementRef(name = "term", type = JAXBElement.class, required = false)
++        })
++        protected List<JAXBElement<String>> collection = new ArrayList<JAXBElement<String>>();
++
++        public List<JAXBElement<String>> getCollection() {
++            return collection;
++        }
++
++        public void setCollection(List<JAXBElement<String>> collection) {
++            this.collection = collection;
++        }
++
++    }
++
++}
+diff --git a/src/test/generated_resources/inner_scoped_element/ObjectFactory.java b/src/test/generated_resources/inner_scoped_element/ObjectFactory.java
+index 685a398..ff0d391 100644
+--- a/src/test/generated_resources/inner_scoped_element/ObjectFactory.java
++++ b/src/test/generated_resources/inner_scoped_element/ObjectFactory.java
+@@ -1,63 +1,63 @@
+-
+-package inner_scoped_element;
+-
+-import javax.xml.namespace.QName;
+-import jakarta.xml.bind.JAXBElement;
+-import jakarta.xml.bind.annotation.XmlElementDecl;
+-import jakarta.xml.bind.annotation.XmlRegistry;
+-
+-
+-/**
+- * This object contains factory methods for each 
+- * Java content interface and Java element interface 
+- * generated in the inner_scoped_element package. 
+- * <p>An ObjectFactory allows you to programatically 
+- * construct new instances of the Java representation 
+- * for XML content. The Java representation of XML 
+- * content can consist of schema derived interfaces 
+- * and classes representing the binding of schema 
+- * type definitions, element declarations and model 
+- * groups.  Factory methods for each of these are 
+- * provided in this class.
+- * 
+- */
+-@XmlRegistry
+-public class ObjectFactory {
+-
+-    private final static QName _CatalogueStockageCollectionStockageCollectionEffect_QNAME = new QName("", "effect");
+-    private final static QName _CatalogueStockageCollectionStockageCollectionTerm_QNAME = new QName("", "term");
+-
+-    /**
+-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: inner_scoped_element
+-     * 
+-     */
+-    public ObjectFactory() {
+-    }
+-
+-    /**
+-     * Create an instance of {@link Catalogue }
+-     * 
+-     */
+-    public Catalogue createCatalogue() {
+-        return new Catalogue();
+-    }
+-
+-    /**
+-     * Create an instance of {@link Catalogue.Stockage }
+-     * 
+-     */
+-    public Catalogue.Stockage createCatalogueStockage() {
+-        return new Catalogue.Stockage();
+-    }
+-
+-    @XmlElementDecl(namespace = "", name = "effect", scope = Catalogue.Stockage.class)
+-    public JAXBElement<String> createCatalogueStockageEffect(String value) {
+-        return new JAXBElement<String>(new QName("", "effect"), String.class, Catalogue.Stockage.class, value);
+-    }
+-
+-    @XmlElementDecl(namespace = "", name = "term", scope = Catalogue.Stockage.class)
+-    public JAXBElement<String> createCatalogueStockageTerm(String value) {
+-        return new JAXBElement<String>(new QName("", "term"), String.class, Catalogue.Stockage.class, value);
+-    }
+-
+-}
++
++package inner_scoped_element;
++
++import javax.xml.namespace.QName;
++import jakarta.xml.bind.JAXBElement;
++import jakarta.xml.bind.annotation.XmlElementDecl;
++import jakarta.xml.bind.annotation.XmlRegistry;
++
++
++/**
++ * This object contains factory methods for each 
++ * Java content interface and Java element interface 
++ * generated in the inner_scoped_element package. 
++ * <p>An ObjectFactory allows you to programatically 
++ * construct new instances of the Java representation 
++ * for XML content. The Java representation of XML 
++ * content can consist of schema derived interfaces 
++ * and classes representing the binding of schema 
++ * type definitions, element declarations and model 
++ * groups.  Factory methods for each of these are 
++ * provided in this class.
++ * 
++ */
++@XmlRegistry
++public class ObjectFactory {
++
++    private final static QName _CatalogueStockageStockageCollectionEffect_QNAME = new QName("", "effect");
++    private final static QName _CatalogueStockageStockageCollectionTerm_QNAME = new QName("", "term");
++
++    /**
++     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: inner_scoped_element
++     * 
++     */
++    public ObjectFactory() {
++    }
++
++    /**
++     * Create an instance of {@link Catalogue }
++     * 
++     */
++    public Catalogue createCatalogue() {
++        return new Catalogue();
++    }
++
++    /**
++     * Create an instance of {@link Catalogue.StockageStockage }
++     * 
++     */
++    public Catalogue.StockageStockage createCatalogueStockageStockage() {
++        return new Catalogue.StockageStockage();
++    }
++
++    @XmlElementDecl(namespace = "", name = "effect", scope = Catalogue.StockageStockage.class)
++    public JAXBElement<String> createCatalogueStockageStockageEffect(String value) {
++        return new JAXBElement<String>(new QName("", "effect"), String.class, Catalogue.StockageStockage.class, value);
++    }
++
++    @XmlElementDecl(namespace = "", name = "term", scope = Catalogue.StockageStockage.class)
++    public JAXBElement<String> createCatalogueStockageStockageTerm(String value) {
++        return new JAXBElement<String>(new QName("", "term"), String.class, Catalogue.StockageStockage.class, value);
++    }
++
++}
+diff --git a/src/test/resources/com/sun/tools/xjc/addon/xew/inner-scoped-element.xml b/src/test/resources/com/sun/tools/xjc/addon/xew/inner-scoped-element.xml
+index 9d8d955..f8f948d 100644
+--- a/src/test/resources/com/sun/tools/xjc/addon/xew/inner-scoped-element.xml
++++ b/src/test/resources/com/sun/tools/xjc/addon/xew/inner-scoped-element.xml
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <catalogue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="inner-scoped-element.xsd">
+-	<stockage_collection>
++	<stockage>
+ 		<stockage>
+ 			<collection>
+ 				<term>solar panels</term>
+@@ -15,5 +15,5 @@
+ 				<effect>maintenance costs</effect>
+ 			</collection>
+ 		</stockage>
+-	</stockage_collection>
++	</stockage>
+ </catalogue>
+diff --git a/src/test/resources/com/sun/tools/xjc/addon/xew/inner-scoped-element.xsd b/src/test/resources/com/sun/tools/xjc/addon/xew/inner-scoped-element.xsd
+index 7f2fac9..64885ae 100644
+--- a/src/test/resources/com/sun/tools/xjc/addon/xew/inner-scoped-element.xsd
++++ b/src/test/resources/com/sun/tools/xjc/addon/xew/inner-scoped-element.xsd
+@@ -16,7 +16,8 @@
+ 	<xsd:element name="catalogue">
+ 		<xsd:complexType>
+ 			<xsd:sequence>
+-				<xsd:element name="stockage_collection">
++                <!-- Also tests the scenario when element/class names collide within parent class. -->
++				<xsd:element name="stockage">
+ 					<xsd:complexType>
+ 						<xsd:sequence minOccurs="0">
+ 							<xsd:element name="stockage" minOccurs="0" maxOccurs="unbounded">

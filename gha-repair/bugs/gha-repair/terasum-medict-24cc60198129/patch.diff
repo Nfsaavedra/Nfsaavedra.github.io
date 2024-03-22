@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/build.yaml b/.github/workflows/build.yaml
+index 9f63f62..55ee30e 100644
+--- a/.github/workflows/build.yaml
++++ b/.github/workflows/build.yaml
+@@ -23,6 +23,9 @@ jobs:
+           $tag = $env:GITHUB_REF -replace "refs/tags/", ""
+           echo "::set-output name=tag::$(echo $tag)"
+ 
++      - name: Setup node and pnpm
++        uses: dafnik/setup-node-pnpm@v1
++
+       - name: Install Go
+         uses: actions/setup-go@v2
+         with:

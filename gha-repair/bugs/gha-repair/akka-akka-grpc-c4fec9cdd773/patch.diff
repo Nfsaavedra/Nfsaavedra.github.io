@@ -1,0 +1,14 @@
+diff --git a/.github/workflows/link-validator.yml b/.github/workflows/link-validator.yml
+index 2d09777..2dee66d 100644
+--- a/.github/workflows/link-validator.yml
++++ b/.github/workflows/link-validator.yml
+@@ -1,8 +1,7 @@
+ name: Link Validator
+ 
+ on:
+-  pull_request_target:
+-    branches: [main, master]
++  pull_request:
+   schedule:
+     - cron:  '0 6 * * 1'
+ 

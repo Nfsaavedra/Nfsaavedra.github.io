@@ -1,0 +1,13 @@
+diff --git a/.github/workflows/dependabot-dedupe.yml b/.github/workflows/dependabot-dedupe.yml
+index d7330ea..9bde4e8 100644
+--- a/.github/workflows/dependabot-dedupe.yml
++++ b/.github/workflows/dependabot-dedupe.yml
+@@ -54,7 +54,7 @@ jobs:
+       - name: Commit changes
+         run: |
+           git add .
+-          git commit -m 'Dedupe dependencies' || true
++          git commit -m '[dependabot skip] Dedupe dependencies' || true
+         working-directory: ${{ env.WORKING_DIRECTORY }}
+ 
+       - name: Push changes

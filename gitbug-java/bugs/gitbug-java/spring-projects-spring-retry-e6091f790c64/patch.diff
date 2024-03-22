@@ -1,0 +1,16 @@
+diff --git a/src/main/java/org/springframework/retry/backoff/BackOffPolicyBuilder.java b/src/main/java/org/springframework/retry/backoff/BackOffPolicyBuilder.java
+index da1dd8c..72c9185 100644
+--- a/src/main/java/org/springframework/retry/backoff/BackOffPolicyBuilder.java
++++ b/src/main/java/org/springframework/retry/backoff/BackOffPolicyBuilder.java
+@@ -267,7 +267,10 @@ public class BackOffPolicyBuilder {
+ 			return policy;
+ 		}
+ 		FixedBackOffPolicy policy = new FixedBackOffPolicy();
+-		if (this.delay != null) {
++		if (this.delaySupplier != null) {
++			policy.backOffPeriodSupplier(this.delaySupplier);
++		}
++		else if (this.delay != null) {
+ 			policy.setBackOffPeriod(this.delay);
+ 		}
+ 		if (this.sleeper != null) {
