@@ -64,5 +64,10 @@ export const PUBLICATIONS = [
                 link: "https://figshare.com/articles/dataset/GLITCH_Replication_Package_with_Code_and_Datasets_ASE_2022_/19726603/2"
             }
         ]
+    },
+    {
+        doi: "http://dx.doi.org/10.1109/ase56229.2023.00162",
+        abstract: "This paper presents GLITCH, a new technology-agnostic framework that enables automated polyglot code smell detection for Infrastructure as Code scripts. GLITCH uses an intermediate representation on which different code smell detectors can be defined. It currently supports the detection of nine security smells and nine design & implementation smells in scripts written in Ansible, Chef, Docker, Puppet, or Terraform. Studies conducted with GLITCH not only show that GLITCH can reduce the effort of writing code smell analyses for multiple IaC technologies, but also that it has higher precision and recall than current state-of-the-art tools. A video describing and demonstrating GLITCH is available at: https://youtu.be/E4RhCcZjWbk.",
+        pdf: "https://arxiv.org/pdf/2308.09458.pdf"
     }
 ];

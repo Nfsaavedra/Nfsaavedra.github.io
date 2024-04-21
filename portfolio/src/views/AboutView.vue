@@ -15,11 +15,20 @@
           <h2>📖 Teaching</h2>
           <h5>Teaching Assistant: </h5>
           <ul>
-            <li><a href="https://fenix.tecnico.ulisboa.pt/disciplinas/LP2/2021-2022/1-semestre" target="_blank">Logic for Programming 2021/2022 @ IST</a></li>
-            <b-badge>Excellent Teacher Award</b-badge>
-            <li><a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65179577/2020-2021/1-semestre" target="_blank">Object Oriented Programming 2020/2021 @ IST</a></li>
-            <b-badge>Excellent Teacher Award</b-badge>
+            <li>
+              <a href="https://fenix.tecnico.ulisboa.pt/disciplinas/IP-Ead/2023-2024/1-semestre" target="_blank">Introduction to Programming 2023/2024 @ IST</a>
+            </li>
+            <li>
+              <a href="https://fenix.tecnico.ulisboa.pt/disciplinas/FProg-2/2023-2024/1-semestre" target="_blank">Foundations of Programming 2023/2024 @ IST</a>&nbsp;⭐
+            </li>
+            <li>
+              <a href="https://fenix.tecnico.ulisboa.pt/disciplinas/LP2/2021-2022/1-semestre" target="_blank">Logic for Programming 2021/2022 @ IST</a>&nbsp;⭐
+            </li>
+            <li>
+              <a href="https://fenix.tecnico.ulisboa.pt/disciplinas/PO65179577/2020-2021/1-semestre" target="_blank">Object Oriented Programming 2020/2021 @ IST</a>&nbsp;⭐
+            </li>
           </ul>
+          ⭐&nbsp;<b-badge>Excellent Teacher Award</b-badge>
         </div>
         <div class="col-lg-6 col-xl-4">
           <h2>🔬 Research Interests</h2>
@@ -27,6 +36,7 @@
             <li><h5>Software Reliability</h5></li>
             <li><h5>Software Verification</h5></li>
             <li><h5>Infrastructure as Code</h5></li>
+            <li><h5>Automatic Program Repair</h5></li>
           </ul>
         </div>
         <div class="col-lg-6 col-xl-4">
@@ -62,15 +72,23 @@
         <div class="col-lg-6 col-xl-4">
           <h2>🎓 Education</h2>
           <ul>
-            <li><h5 style="margin-bottom: 0px;">MSc in Computer Science and Engineering</h5><span style="color: rgb(48, 48, 48)">Instituto Superior Técnico</span></li>
-            <li><h5 style="margin-bottom: 0px;">BSc in Computer Science and Engineering</h5><span style="color: rgb(48, 48, 48)">Instituto Superior Técnico</span></li>
+            <li>
+              <h5 style="margin-bottom: 0px;">MSc in Computer Science and Engineering</h5>
+              <span style="color: rgb(48, 48, 48); display: block">Instituto Superior Técnico</span>
+              <span style="color: rgb(48, 48, 48)">(19 out of 20)</span>
+            </li>
+            <li>
+              <h5 style="margin-bottom: 0px;">BSc in Computer Science and Engineering</h5>
+              <span style="color: rgb(48, 48, 48); display: block">Instituto Superior Técnico</span>
+              <span style="color: rgb(48, 48, 48)">(18 out of 20)</span>
+            </li>
           </ul>
         </div>
         <div class="col-lg-6 col-xl-4">
           <h2>➕ Other Experiences</h2>
           <ul>
             <li><a href="https://www.codingame.com/multiplayer/bot-programming/tic-tac-toe/leaderboard" target="_blank">Top 500 on CodinGame's Ultimate Tic Tac Toe</a><span style="color: rgb(48, 48, 48)"> (Nfsaavedra)</span></li>
-            <li><a href="https://github.com/ansible-collections/community.aws/pull/1724" target="_blank">Contributor of the Ansible module community.aws</a></li>
+            <li>Contributor to the Ansible module <a href="https://github.com/ansible-collections/community.aws/pull/1724" target="_blank">community.aws</a></li>
           </ul>
         </div>
         <div class="col-lg-6 col-xl-4">

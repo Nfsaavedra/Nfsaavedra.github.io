@@ -26,7 +26,7 @@
     <router-view id="view" style="padding-bottom: 4vh;"/>
     <footer class="justify-content-center justify-content-xl-between">
       <div class="d-none d-xl-block" style="margin-left: 12vh"/>
-      <div>©2022-2023 Nuno Saavedra</div>
+      <div>©2022-2024 Nuno Saavedra</div>
       <div class="d-none d-xl-block">
         <b-avatar href="mailto: nuno@saavedra.pt" style="background-color: white;" size="3vh" target="_blank" src="img/email.svg"></b-avatar>
         <b-avatar href="https://github.com/Nfsaavedra" style="background-color: white;" size="3vh" target="_blank" src="img/github.svg"></b-avatar>
