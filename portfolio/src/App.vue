@@ -13,7 +13,7 @@
 
         <b-collapse id="navbar-toggle-collapse" is-nav>
           <b-navbar-nav style="margin-left: 25%; width: 50%;" align="center" justified>
-            <b-nav-item  href="/">Home</b-nav-item >
+            <b-nav-item  href="/#/">Home</b-nav-item >
             <b-nav-item  href="/#/about">About Me</b-nav-item>
             <!-- <b-nav-item  href="/#/projects">Projects</b-nav-item > -->
             <b-nav-item  href="/#/publications">Publications</b-nav-item>

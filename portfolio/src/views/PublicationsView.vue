@@ -40,6 +40,11 @@ export default {
     };
   },
   async created() {
+    if (this.$session.get("publications")) {
+      this.publications = this.$session.get("publications");
+      return;
+    }
+    
     const publications = {};
     const response = await axios.get('https://pub.orcid.org/v3.0/0000-0003-4148-5991/works');
     const works = response.data.group;
@@ -69,6 +74,7 @@ export default {
     }
 
     this.publications = Object.values(publications);
+    this.$session.set("publications", this.publications);
   },
   methods: {
     getMonthName(monthNumber) {
