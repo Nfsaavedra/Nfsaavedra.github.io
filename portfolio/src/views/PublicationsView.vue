@@ -66,7 +66,6 @@ export default {
         'conference': work['journal-title'].value
       };
     }
-
     for (let i = 0; i < PUBLICATIONS.length; i++) {
       publications[PUBLICATIONS[i]['doi']]['abstract'] = PUBLICATIONS[i]['abstract'];
       publications[PUBLICATIONS[i]['doi']]['pdf'] = PUBLICATIONS[i]['pdf'];

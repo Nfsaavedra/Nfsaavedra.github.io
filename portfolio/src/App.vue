@@ -19,6 +19,7 @@
             <b-nav-item  href="/#/publications">Publications</b-nav-item>
             <!-- <b-nav-item  href="/#/blog">Blog</b-nav-item> -->
             <!-- <b-nav-item  href="/#/contacts">Contacts</b-nav-item> -->
+            <b-nav-item  href="/#/supervisions">MSc Supervisions</b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </div>
