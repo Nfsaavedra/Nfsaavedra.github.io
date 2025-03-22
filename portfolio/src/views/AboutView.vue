@@ -36,7 +36,7 @@
             <li><h5>Software Reliability</h5></li>
             <li><h5>Software Verification</h5></li>
             <li><h5>Infrastructure as Code</h5></li>
-            <li><h5>Automatic Program Repair</h5></li>
+            <li><h5>Automated Program Repair</h5></li>
           </ul>
         </div>
         <div class="col-lg-6 col-xl-4">
@@ -94,14 +94,28 @@
         <div class="col-lg-6 col-xl-4">
           <h2>♟️ Hobbies</h2>
           <ul>
-            <li><h5>Running/Hiking</h5></li>
-            <li><h5>Chess</h5></li>
-            <li><h5>Anime</h5></li>
-            <li><h5>Gaming</h5></li>
+            <li><h5>🏃‍♂️ Running/Hiking</h5></li>
+            <li><h5>♟️ Chess</h5></li>
+            <li><h5>🎌 Anime</h5></li>
+            <li><h5>🎮 Gaming</h5></li>
+            <li><h5>🎹 Piano</h5></li>
           </ul>
         </div>
       </div>
-    </div>
+      <div class="row">
+        <div class="col-lg-6 col-xl-4">
+            <h2>📝 Service</h2>
+            <ul>
+              <li>
+                <h5 style="margin-bottom: 0px;">Reviewer, ECOOP 2025</h5>
+              </li>
+              <li>
+                <h5 style="margin-bottom: 0px;">Reviewer, SANER 2024</h5>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
   </div>
 </template>
 

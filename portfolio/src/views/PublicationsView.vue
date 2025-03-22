@@ -13,7 +13,9 @@
           <div style="display: inline; margin-right: 8px;">{{ publication['authors'] }} - {{ publication['date'] }}</div>
           <b-badge pill :href="publication['link']" target="_blank">DOI</b-badge>
           <b-badge pill v-if="publication['pdf']" :href="publication['pdf']" target="_blank">PDF</b-badge>
-          <b-badge v-for="b in publication['badges']" target="_blank" pill :href="b['link']" :key="b['name']">
+          <b-badge 
+            v-for="b in publication['badges']" 
+            :variant="b['name'].toLowerCase().includes('award') ? 'warning' : ''" target="_blank" pill :href="b['link']" :key="b['name']">
             {{ b['name'] }}
           </b-badge>
         </div>
@@ -50,26 +52,43 @@ export default {
     const works = response.data.group;
 
     for (let i = 0; i < works.length; i++) {
-      const work = (await axios.get('https://pub.orcid.org/v3.0' + works[i]['work-summary'][0]['path'])).data;
-      let contributors = '';
+      try {
+        const work = (await axios.get('https://pub.orcid.org/v3.0' + works[i]['work-summary'][0]['path'])).data;
+        let contributors = '';
 
-      for (let e = 0; e < work.contributors.contributor.length; e++) {
-        contributors += work.contributors.contributor[e]['credit-name'].value + ", ";
+        if (work.contributors && work.contributors.contributor) {
+          for (let e = 0; e < work.contributors.contributor.length; e++) {
+            const contributor = work.contributors.contributor[e];
+            if (contributor['credit-name'] && contributor['credit-name'].value) {
+              contributors += contributor['credit-name'].value + ", ";
+            }
+          }
+          contributors = contributors ? contributors.slice(0, contributors.length - 2) : '';
+        }
+
+        if (work['url'] && work['url'].value) {
+          const publicationData = {
+            'title': work['title'] && work['title']['title'] ? work['title']['title'].value : 'Untitled',
+            'authors': contributors || 'Unknown authors',
+            'date': this.getFormattedDate(work['publication-date']),
+            'link': work['url'].value,
+            'conference': work['journal-title'] && work['journal-title'].value ? work['journal-title'].value : 'Unknown venue'
+          };
+          
+          publications[work['url'].value] = publicationData;
+        }
+      } catch (error) {
+        console.error('Error processing work:', error);
       }
-      contributors = contributors.slice(0, contributors.length - 2);
-
-      publications[work['url'].value] = {
-        'title': work['title']['title'].value,
-        'authors': contributors,
-        'date': this.getMonthName(work['publication-date']['month'].value) + " " + work['publication-date']['year'].value,
-        'link': work['url'].value,
-        'conference': work['journal-title'].value
-      };
     }
+    
     for (let i = 0; i < PUBLICATIONS.length; i++) {
-      publications[PUBLICATIONS[i]['doi']]['abstract'] = PUBLICATIONS[i]['abstract'];
-      publications[PUBLICATIONS[i]['doi']]['pdf'] = PUBLICATIONS[i]['pdf'];
-      publications[PUBLICATIONS[i]['doi']]['badges'] = PUBLICATIONS[i]['badges'];
+      const pub = PUBLICATIONS[i];
+      if (pub['doi'] && publications[pub['doi']]) {
+        if (pub['abstract']) publications[pub['doi']]['abstract'] = pub['abstract'];
+        if (pub['pdf']) publications[pub['doi']]['pdf'] = pub['pdf'];
+        if (pub['badges']) publications[pub['doi']]['badges'] = pub['badges'];
+      }
     }
 
     this.publications = Object.values(publications);
@@ -80,6 +99,22 @@ export default {
       const date = new Date();
       date.setMonth(monthNumber - 1);
       return date.toLocaleString('en-US', { month: 'long' });
+    },
+    getFormattedDate(publicationDate) {
+      if (!publicationDate) return 'Unknown date';
+      
+      let dateStr = '';
+      if (publicationDate['month'] && publicationDate['month'].value) {
+        dateStr += this.getMonthName(publicationDate['month'].value) + " ";
+      }
+      
+      if (publicationDate['year'] && publicationDate['year'].value) {
+        dateStr += publicationDate['year'].value;
+      } else {
+        dateStr = dateStr.trim() || 'Unknown date';
+      }
+      
+      return dateStr;
     },
     abstract_begin(string) {
       let words = string.split(" ");

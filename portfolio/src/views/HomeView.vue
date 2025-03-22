@@ -3,19 +3,32 @@
     <div style="display: flex; justify-content: center; background-color: black;">
       <b-carousel
         id="carousel-fade"
-        style="background-color: black; max-width: 1920px; max-height: 1080px"
+        style="background-color: black; max-width: 1920px; max-height: 1080px; width: 100%;"
         fade
         indicators
         img-height="480"
       >
         <b-carousel-slide>
+          <h1 class="d-none d-xl-block">Do Experts Agree About Smelly Infrastructure?</h1>
+          <h2>Check out our new study that will appear in IEEE TSE (2025)</h2>
+          <template #img>
+            <a href="https://ieeexplore.ieee.org/document/10934743/" target="_blank">
+              <img
+                class="d-block img-fluid w-100 overlay carousel-image"
+                :src="img_code2"
+              />
+            </a>
+          </template>
+        </b-carousel-slide>
+        <b-carousel-slide>
           <h1 class="d-none d-xl-block">Contribute to GLITCH!</h1>
+          <h2>A technology-agnostic framework to detects IaC smells!</h2>
           <template #img>
             <a href="https://github.com/sr-lab/GLITCH" target="_blank">
               <img
-                class="d-block img-fluid w-100 overlay"
+                class="d-block img-fluid w-100 overlay carousel-image"
                 :src="img_code"
-              >
+              />
             </a>
           </template>
         </b-carousel-slide>
@@ -51,13 +64,15 @@
 </template>
 
 <script>
-import code from "@/assets/code-glitch.jpg"
+import code from "@/assets/code-glitch.webp"
+import code2 from "@/assets/code2.jpg"
 
 export default {
   name: 'HomeView',
   data() {
     return {
-      img_code: code
+      img_code: code,
+      img_code2: code2
     };
   }
 }
@@ -67,6 +82,13 @@ export default {
 .overlay {
    object-fit: cover;
    opacity: 0.6;
+}
+
+.carousel-image {
+   height: 480px;
+   width: 100%;
+   object-fit: cover;
+   object-position: center;
 }
 
 a {
