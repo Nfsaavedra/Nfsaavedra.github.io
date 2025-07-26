@@ -1,4 +1,3 @@
-import './registerServiceWorker'
 import '@/scss/custom.scss'
 import '@/scss/leaflet-fix.scss'
 import 'leaflet/dist/leaflet.css'

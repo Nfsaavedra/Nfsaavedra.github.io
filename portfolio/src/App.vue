@@ -45,11 +45,7 @@ export default {
     name: 'App',    
     metaInfo() {
       return { 
-          meta: [
-            { 'http-equiv': 'cache-control', content: 'no-cache' },    
-            { 'http-equiv': 'expires', content: '0' },
-            { 'http-equiv': 'pragma', content: 'no-cache' },    
-          ]
+          meta: []
       };
     }
 }
