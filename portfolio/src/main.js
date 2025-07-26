@@ -1,6 +1,7 @@
 import './registerServiceWorker'
 import '@/scss/custom.scss'
 import '@/scss/leaflet-fix.scss'
+import 'leaflet/dist/leaflet.css'
 
 import {BootstrapVue, IconsPlugin} from 'bootstrap-vue'
 import Vue from 'vue'
