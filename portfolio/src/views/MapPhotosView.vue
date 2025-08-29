@@ -126,6 +126,17 @@ export default {
             'Disneyland Paris',
           ]
         },
+        {
+          name: 'Pisões de Teresa',
+          description: 'August 2025',
+          position: [40.04637820301593, -8.187552594828766],
+          photos: [
+            '/photos/Pisoes.webp',
+          ],
+          captions: [
+            'Pisões de Teresa',
+          ]
+        },
       ]
     };
   },
