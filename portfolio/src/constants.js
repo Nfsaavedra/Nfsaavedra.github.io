@@ -59,14 +59,7 @@ export const PUBLICATIONS = [
     badges: [
       {
         name: 'Dataset',
-        link:
-            'https://figshare.com/articles/dataset/GLITCH_Replication_Package_with_Code_and_Datasets_ASE_2022_/19726603/2'
       },
-      {
-        name: 'Artifact Evaluation Award (Reusable)',
-        link:
-            'https://www.acm.org/publications/policies/artifact-review-and-badging-current#reusable'
-      }
     ]
   },
   {
@@ -98,5 +91,19 @@ export const PUBLICATIONS = [
     abstract:
         'Code smells are anti-patterns that violate code understandability, re-usability, changeability, and maintainability. It is important to identify code smells and locate them in the code. For this purpose, automated detection of code smells is a sought-after feature for development tools; however, the design and evaluation of such tools depends on the quality of oracle datasets. The typical approach for creating an oracle dataset involves multiple developers independently inspecting and annotating code examples for their existing code smells. Since multiple inspectors cast votes about each code example, it is possible for the inspectors to disagree about the presence of smells. Such disagreements introduce ambiguity into how smells should be interpreted. Prior work has studied developer perceptions of code smells in traditional source code; however, smells in Infrastructure-as-Code (IaC) have not been investigated. To understand the real-world impact of disagreements among developers and their perceptions of IaC code smells, we conduct an empirical study on the oracle dataset of GLITCH—a state-of-the-art detection tool for security code smells in IaC. We analyze GLITCH’s oracle dataset for code smell issues, their types, and individual annotations of the inspectors. Furthermore, we investigate possible confounding factors associated with the incidences of developer misaligned perceptions of IaC code smells. Finally, we triangulate developer perceptions of code smells in traditional source code with our results on IaC. Our study reveals that unlike developer perceptions of smells in traditional source code, their perceptions of smells in IaC are more substantially impacted by subjective interpretation of smell types and their co-occurrence relationships. For instance, the interpretation of admins by default, empty passwords, and hard-coded secrets varies considerably among raters and are more susceptible to misidentification than other IaC code smells. Consequently, the manual identification of IaC code smells involves annotation disagreements among developers—46.3% of studied IaC code smell incidences have at least one dissenting vote among three inspectors. Meanwhile, only 1.6% of code smell incidences in traditional source code are affected by inspector bias stemming from these disagreements. Hence, relying solely on the majority voting, would not fully represent the breadth of interpretation of the IaC under scrutiny.',
     pdf: '/articles/10.1109-TSE.2025.3553383-2.pdf'
+  },
+  {
+    doi: 'http://dx.doi.org/10.1145/3713081.3731735',
+    abstract:
+        'Infrastructure as Code (IaC) enables scalable and automated IT infrastructure management but is prone to errors that can lead to security vulnerabilities, outages, and data loss. While prior research has focused on detecting IaC issues, Automated Program Repair (APR) remains underexplored, largely due to the lack of suitable specifications. In this work, we propose InfraFix, the first technology-agnostic framework for repairing IaC scripts. Unlike prior approaches, InfraFix allows APR techniques to be guided by diverse information sources. Additionally, we introduce a novel approach for generating repair scenarios, enabling large-scale evaluation of APR techniques for IaC. We implement and evaluate InfraFix using an SMT-based repair module and a state inference module that uses system calls, demonstrating its effectiveness across 254,288 repair scenarios with a success rate of 95.7%. Our work provides a foundation for advancing APR in IaC by enabling researchers to experiment with new state inference and repair techniques using InfraFix and to evaluate their approaches at scale with our repair scenario generation method.'
+  },
+  {
+    doi: 'http://dx.doi.org/10.1109/icse55347.2025.00161',
+    abstract:
+        'Formal verification using proof assistants, such as Coq, enables the creation of high-quality software. However, the verification process requires significant expertise and manual effort to write proofs. Recent work has explored automating proof synthesis using machine learning and large language models (LLMs). This work has shown that identifying relevant premises, such as lemmas and definitions, can aid synthesis. We present Rango, a fully automated proof synthesis tool for Coq that automatically identifies relevant premises and also similar proofs from the current project and uses them during synthesis. Rango uses retrieval augmentation at every step of the proof to automatically determine which proofs and premises to include in the context of its fine-tuned LLM. In this way, Rango adapts to the project and to the evolving state of the proof. We create a new dataset, CoqStoq, of 2,226 open-source Coq projects and 196,929 theorems from GitHub, which includes both training data and a curated evaluation benchmark of well-maintained projects. On this benchmark, Rango synthesizes proofs for 32.0% of the theorems, which is 29% more theorems than the prior state-of-the-art tool Tactician. Our evaluation also shows that Rango adding relevant proofs to its context leads to a 47% increase in the number of theorems proven.',
+    badges: [{
+      name: 'ACM SIGSOFT Distinguished Paper Award',
+      link: 'https://www.sigsoft.org/awards/distinguishedPaperAward.html'
+    }]
   }
 ];
