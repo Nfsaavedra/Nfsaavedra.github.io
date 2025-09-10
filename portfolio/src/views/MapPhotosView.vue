@@ -137,6 +137,17 @@ export default {
             'Pisões de Teresa',
           ]
         },
+        {
+          name: 'Iceland',
+          description: 'April 2024',
+          position: [65.68294972706724, -17.550222525608977],
+          photos: [
+            '/photos/Iceland.webp',
+          ],
+          captions: [
+            'Goðafoss',
+          ]
+        }
       ]
     };
   },
@@ -228,6 +239,12 @@ export default {
   padding: 10px;
   width: fit-content;
   margin: 0 auto;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+::v-deep .carousel:hover .carousel-caption-custom {
+  opacity: 1;
 }
 
 ::v-deep .carousel-caption-custom h3 {
