@@ -2,10 +2,10 @@
   <div>
     <h1>MSc Supervisions</h1>
     <b-card 
-      v-for="supervision in supervisions" 
+      v-for="supervision in reversedSupervisions" 
       :key="supervision['title']"
       class="mx-auto" 
-      style="max-width: 50%;" 
+      style="max-width: 50%; margin-bottom: 1.5rem;" 
     >
       <b-card-body>
         <div class="d-flex align-items-start">
@@ -41,9 +41,28 @@ export default {
           cosupervised: "João F. Ferreira and Alberto Abad",
           year: "2023-2024",
           url: "https://fenix.tecnico.ulisboa.pt/cursos/meic-a/dissertacao/283828618791087"
+        },
+        {
+          student: "Adriana Nunes",
+          title: "LLM-Based Detection of Security Smells in Infrastructure as Code",
+          cosupervised: "João F. Ferreira and Alexandra Mendes",
+          year: "2024-2025",
+          url: "https://fenix.tecnico.ulisboa.pt/cursos/meic-a/dissertacao/1128253548924041"
+        },
+        {
+          student: "Simão Fonseca",
+          title: "Automated Detection of Errors and Security Vulnerabilities in Infrastructure as Code Scripts",
+          cosupervised: "João F. Ferreira and Alexandra Mendes",
+          year: "2024-2025",
+          url: "https://fenix.tecnico.ulisboa.pt/cursos/meic-a/dissertacao/1409728525633641"
         }
       ]
     };
+  },
+  computed: {
+    reversedSupervisions() {
+      return [...this.supervisions].reverse();
+    }
   }
 };
 </script>
