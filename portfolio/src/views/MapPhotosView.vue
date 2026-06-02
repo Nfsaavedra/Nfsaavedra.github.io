@@ -25,6 +25,7 @@
         
         <b-carousel
           id="photo-carousel"
+          v-model="carouselIndex"
           :interval="4000"
           controls
           indicators
@@ -48,6 +49,7 @@
 <script>
 import { LMap, LTileLayer, LMarker, LTooltip } from 'vue2-leaflet';
 import { Icon } from 'leaflet';
+import { MAP_LOCATIONS, getLocationById } from '@/data/mapLocations.js';
 
 export default {
   name: 'MapPhotosView',
@@ -58,15 +60,23 @@ export default {
     LTooltip
   },
   mounted() {
-    // Fix for leaflet map container not rendering properly
     this.$nextTick(() => {
       window.dispatchEvent(new Event('resize'));
       setTimeout(() => {
         if (this.$refs.map && this.$refs.map.mapObject) {
           this.$refs.map.mapObject.invalidateSize();
         }
+        this.applyRouteLocation();
       }, 250);
     });
+  },
+  watch: {
+    '$route.query': {
+      handler() {
+        this.applyRouteLocation();
+      },
+      deep: true
+    }
   },
   data() {
     return {
@@ -84,6 +94,7 @@ export default {
       },
       currentLocation: null,
       showPhotoGallery: false,
+      carouselIndex: 0,
       // Custom icon for markers
       customIcon: new Icon({
         iconUrl: 'https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-512.png',
@@ -92,68 +103,31 @@ export default {
         popupAnchor: [0, -40],
         tooltipAnchor: [16, -28]
       }),
-      locations: [
-        {
-          name: 'Abrantes',
-          description: 'July 2022',
-          position: [39.449231, -8.192028],
-          photos: [
-            '/photos/Abrantes.webp',
-          ],
-          captions: [
-            'Ponte Rodoviária de Abrantes',
-          ]
-        },
-        {
-          name: 'Trondheim',
-          description: 'June 2025',
-          position: [63.3739150644068, 10.781664797055672],
-          photos: [
-            '/photos/Trondheim.webp',
-          ],
-          captions: [
-            'Storfossen',
-          ]
-        },
-        {
-          name: 'Paris',
-          description: 'February 2025',
-          position: [48.87275403106653, 2.7764030386937617],
-          photos: [
-            '/photos/Disneyland.webp',
-          ],
-          captions: [
-            'Disneyland Paris',
-          ]
-        },
-        {
-          name: 'Pisões de Teresa',
-          description: 'August 2025',
-          position: [40.04637820301593, -8.187552594828766],
-          photos: [
-            '/photos/Pisoes.webp',
-          ],
-          captions: [
-            'Pisões de Teresa',
-          ]
-        },
-        {
-          name: 'Iceland',
-          description: 'April 2024',
-          position: [65.68294972706724, -17.550222525608977],
-          photos: [
-            '/photos/Iceland.webp',
-          ],
-          captions: [
-            'Goðafoss',
-          ]
-        }
-      ]
+      locations: MAP_LOCATIONS
     };
   },
   methods: {
-    openPopupCarousel(location) {
+    applyRouteLocation() {
+      const locationId = this.$route.query.location;
+      if (!locationId) return;
+
+      const location = getLocationById(locationId);
+      if (!location) return;
+
+      const photoIndex = Math.min(
+        Math.max(parseInt(this.$route.query.photo, 10) || 0, 0),
+        location.photos.length - 1
+      );
+
+      if (this.$refs.map && this.$refs.map.mapObject) {
+        this.$refs.map.mapObject.setView(location.position, 8);
+      }
+
+      this.openPopupCarousel(location, photoIndex);
+    },
+    openPopupCarousel(location, photoIndex = 0) {
       this.currentLocation = location;
+      this.carouselIndex = photoIndex;
       this.showPhotoGallery = true;
     },
     getPhotoCaption(index) {
