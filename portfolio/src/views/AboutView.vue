@@ -41,6 +41,10 @@
         </div>
         <div class="col-lg-6 col-xl-4">
           <h2>🏭 Industry Experience</h2>
+          <h5>Co-Founder</h5>
+          <ul>
+            <a href="https://codeset.ai" target="_blank"><li id="codeset" class="job">Codeset</li></a>
+          </ul>
           <h5>Full-Stack Software Engineer</h5>
           <ul>
             <li id="caravela" class="job">Caravela Energy Partners</li>
@@ -111,6 +115,9 @@
               </li>
               <li>
                 <h5 style="margin-bottom: 0px;">Reviewer, SANER 2024</h5>
+              </li>
+              <li>
+                <h5 style="margin-bottom: 0px;">Reviewer, Journal of Systems and Software 2026</h5>
               </li>
             </ul>
           </div>

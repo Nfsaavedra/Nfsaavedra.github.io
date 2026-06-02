@@ -50,7 +50,7 @@
       <div class="d-block mx-30">
         <h1 style="text-align: left; color: #535e79">About Me</h1>
         <p class="vw-xl-40" style="width: calc(100vw - 60px); font-size: 17pt; text-align: justify;">
-        I am a PhD student at <a href="https://www.inesc-id.pt/" target="_blank">INESC-ID</a> and <a href="https://tecnico.ulisboa.pt" target="_blank">Instituto Superior Técnico</a>.
+        I am a co-founder of <a href="https://codeset.ai" target="_blank">Codeset</a> and a PhD student at <a href="https://www.inesc-id.pt/" target="_blank">INESC-ID</a> and <a href="https://tecnico.ulisboa.pt" target="_blank">Instituto Superior Técnico</a>.
         During my Master's, I developed <a href="https://github.com/sr-lab/GLITCH" target="_blank">GLITCH</a>, a polyglot code smell detection framework for IaC.
         I published two papers about GLITCH at <a href="https://dl.acm.org/doi/10.1145/3551349.3556945" target="_blank">ASE 2022</a> and <a href="https://ieeexplore.ieee.org/document/10298400" target="_blank">ASE 2023</a>.
         I have experience as a Full-stack Software Developer. 
